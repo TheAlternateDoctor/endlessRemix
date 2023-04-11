@@ -1,0 +1,63 @@
+sequenceQuiz:
+	set_cat 0
+	call changeEngine
+	engine 0x7
+	sub 4
+	0x29<2> 
+    rest 0xC
+    0x102<1>
+    0x101<1>
+    rest 0xC
+	0xB3 9, 0x7
+    fade<1> 1,1,1
+    random 1
+    switch
+    case 0
+        async_call quiz1
+    endswitch
+stop
+
+quiz1:
+    0x105<1>
+    0x101<2>
+    rest 0x30
+    0x101<2>
+    rest 0x18
+    0x101<3>
+    rest 0x18
+    0x101<2>
+    rest 0x18
+    0x101<3>
+    rest 0x18
+    rest 0x30
+    0x101<2>
+    rest 0x30
+    0x101<2>
+    rest 0x30
+    0x101<2>
+    rest 0x30
+    0x105
+    0x101<0>
+    0x100<1>
+    0x104<1> 0x30*8
+    0x104 1
+    input 1
+    play_sfx 0x1000B91
+    rest 0x30*8
+    0x102<2>
+    0x102<3>
+    if 1
+        play_sfx 0x1000B8E
+        play_sfx 0x1000B90
+        0x100<3>
+        0x101<5>
+    else
+        play_sfx 0x1000B8F
+        play_sfx 0x10002B6
+        0x100<4>
+        0x101<6>
+    endif
+    0x105<2>
+
+
+stop

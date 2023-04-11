@@ -1,0 +1,16 @@
+Condvar
+0 - Score
+1 - Used Cellanim (1 if 5)
+3 - Debug Endless, starting point of the block. Random if 1337
+4 - Game variant. For instance, 0 for Space Dance, 1 for Cosmic Dance
+5 - multiple sfx (for recreations) - gets bigger with more slots, ie:1 is 6, 2 is 7, etc...
+6 - speed
+7 - "Game state". For Instance in Marcher, 0 means standing still while 1 is marching.
+9 - Engine loaded
+10 - Debug mode
+
+Subs
+0 - Pattern
+2 - Late loading stuff (for recreations)
+3 - Pre-pattern stuff
+4 - deadSub(Endless) - Unused for now, as there is no lifecheck.

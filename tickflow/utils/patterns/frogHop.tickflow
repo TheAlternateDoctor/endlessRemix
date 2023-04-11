@@ -1,0 +1,146 @@
+preSequenceFrogHop:
+random 2
+if 1
+    play_sfx 0x1000E3B
+    rest 0x30
+    play_sfx 0x1000E3C
+    rest 0x30
+    play_sfx 0x1000E3D
+    rest 0x30
+    play_sfx 0x1000E3E
+    0xB3 7,1
+else
+    0xB3 7, 0
+endif
+stop
+
+sequenceFrogHop:
+	set_cat 0
+	call changeEngine
+	engine 0x14
+	sub 4
+	0x29<2> 
+    rest 0xC
+    input 1
+    0x101<1>
+    0xB2 7
+    if 1
+        random 1
+        switch
+        case 0
+            async_call frogHopShake1
+        endswitch
+    else
+        random 1
+        switch
+        case 0
+            async_call frogHop1
+        endswitch
+    endif
+    rest 0xC
+	0xB3 9, 0x14
+    fade<1> 1,1,1
+    input 1
+stop
+
+frogHopShake1:
+    0x101<1> 
+    0x103<8> 0, 1
+    0x100 0, 0xC
+    rest 0xC
+    sub 0x57
+    sub 0x58
+    sub 0x60
+    0x100 0, 0x30
+    rest 0x30	// 1.0 beats
+    async_call frogHopOnlyYahoo
+    rest 0x90
+    async_sub 0x79
+    rest 0x60
+    async_sub 0x87
+    rest 0xC0
+    async_sub 0xA6
+    rest 0x30
+    async_sub 0xAD
+stop
+
+frogHop1:
+rest 0xC
+async_call frogHopBeatAnim
+async_call yahooNo
+rest 0xF0
+async_call frogHopBeatAnim
+rest 0x30
+async_call frogHopBeatAnim
+rest 0x30
+async_call frogHopBeatAnim
+async_call yeahYeahYeahNo
+rest 0xC0
+async_call spinItBoysNo
+stop
+
+frogHopBeatAnim:
+0x103 0, 0
+0x103 1, 0
+0x103 2, 0
+0x103 3, 0
+0x103 4, 0
+0x103 5, 0
+stop
+
+frogHopOnlyYahoo:
+async_call frogHopOnlyYahooSolo
+async_call frogHopOnlyYahooFront
+async_call frogHopOnlyYahooBack
+    async_call frogHopOnlyYahooSfx
+rest 0x30	// 1.0 beats
+async_sub 0x5F
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+stop
+frogHopOnlyYahooSolo:
+0x100 0, 0x30
+rest 0x30	// 1.0 beats
+0x8E 1
+0x102 0x1000E2B
+0x100 0, 0x30
+rest 0x18	// 0.5 beats
+0x102 0x1000E2C
+0x100 0, 0x30
+rest 0x18	// 0.5 beats
+stop 
+frogHopOnlyYahooFront:
+sub 0x57
+rest 0x18	// 0.5 beats
+sub 0x59
+stop
+frogHopOnlyYahooBack:
+sub 0x58
+rest 0x30	// 1.0 beats
+sub 0x58
+rest 0x30	// 1.0 beats
+sub 0x58
+rest 0xC	// 0.25 beats
+0x103<6> 5
+rest 0xC	// 0.25 beats
+sub 0x5A
+stop 
+frogHopOnlyYahooSfx:
+// sub 0x60
+// rest 0x30	// 1.0 beats
+async_sub 0x62
+rest 0x18	// 0.5 beats
+0xB2 4
+if 1
+async_sub 0x64
+else
+async_sub 0x63
+endif
+rest 0x18	// 0.5 beats
+rest 0x30	// 1.0 beats
+async_sub 0x69
+rest 0x18	// 0.5 beats
+async_sub 0x6A
+rest 0x18	// 0.5 beats
+stop 
+stop 

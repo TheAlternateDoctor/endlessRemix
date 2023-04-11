@@ -1,0 +1,988 @@
+phrase:
+rest 0x30
+0xA2
+0x102 1
+0x103 0
+rest 0x18   // 0.5 beats
+0x102 1
+rest 0x18   // 0.5 beats
+0x102 1
+0x103 0
+rest 0x18   // 0.5 beats
+0x102 1
+0x100 0, 0x30
+rest 0x18   // 0.5 beats
+0x103 0
+0x100 0, 0x30
+random 2
+if 1
+    async_call speech1
+else
+    async_call speech2
+endif
+rest 0x48   // 1.5 beats
+0xA2<2>
+if 0
+    0x40<1> 0x10011AA, 0xA0
+endif
+stop
+
+
+shortphrase:
+rest 0x30
+0xA2
+0x102 1
+0x103 0
+rest 0x18   // 0.5 beats
+0x102 1
+rest 0x18   // 0.5 beats
+0x103 0
+rest 0x18   // 0.5 beats
+0x100 0, 0x30
+rest 0x18   // 0.5 beats
+0x103 0
+0x100 0, 0x30
+random 2
+if 1
+    async_call speech1
+else
+    async_call speech2
+endif
+rest 0x48   // 1.5 beats
+0xA2<2>
+if 0
+    0x40<1> 0x10011AA, 0xA0
+endif
+stop
+
+
+speech1:
+rest 0xC   // 0.25 beats
+0x101 0
+rest 0x18   // 0.5 beats
+0x101 1
+rest 0x18   // 0.5 beats
+0x101 2
+stop
+
+
+speech2:
+rest 0xC   // 0.25 beats
+0x101 1
+rest 0x18   // 0.5 beats
+0x101 0
+rest 0x18   // 0.5 beats
+0x101 2
+stop
+
+
+boing:
+rest 0x30
+0xA2
+random 2
+if 1
+    0x101<2> 0
+else
+    0x101<2> 1
+endif
+0x102 1
+0x103 0
+rest 0x18   // 0.5 beats
+0x102 1
+rest 0x18   // 0.5 beats
+0x102 1
+0x103 0
+rest 0xC   // 0.25 beats
+0x104 1
+rest 0xC   // 0.25 beats
+0x102 0
+0x100 2, 0x30
+rest 0x48   // 1.5 beats
+0xA2<2>
+if 0
+    0x40<1> 0x10011A6, 0xA0
+endif
+stop
+
+
+shortboing:
+rest 0x30
+0xA2
+random 2
+if 1
+    0x101<2> 0
+else
+    0x101<2> 1
+endif
+0x102 1
+0x103 0
+rest 0x18   // 0.5 beats
+0x102 1
+rest 0x18   // 0.5 beats
+0x103 0
+rest 0xC   // 0.25 beats
+0x104 1
+rest 0xC   // 0.25 beats
+0x102 0
+0x100 2, 0x30
+rest 0x48   // 1.5 beats
+0xA2<2>
+if 0
+    0x40<1> 0x10011A6, 0xA0
+endif
+stop
+
+
+voicespeedup:
+0xB2 1
+switch
+    case 2
+    case 5
+    case 7
+    case 10
+    case 13
+    case 16
+    case 18
+    case 21
+        play_sfx 0x100054A
+    break
+    case 23
+        play_sfx 0x1000549
+    default
+        play_sfx 0x1000544
+endswitch
+rest 0x18
+0xB4 1, 1
+stop
+
+
+manzaiSpeedup:
+rest 0x30
+0xB3 3, 0
+0x25 0x108, 0x100, 0x200
+0xB2 1
+if_lt 24
+    async_call voicespeedup
+endif
+0x106<3> 0
+input 0
+zoom_gradual 3, 4, 4, 0x60, 0xF0, 0xF0
+0x106<1>
+0x104<1> 0
+0x104<1> 1
+rest 0x18	// 0.5 beats
+0x101<1> 2
+rest 0x18	// 0.5 beats
+0x106
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x106
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x106
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x106
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x106
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x106<2>
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x106<3> 1
+0x104<1> 0
+0x104<1> 1
+zoom_gradual 3, 4, 4, 0x60, 0x150, 0x150
+rest 0x18	// 0.5 beats
+0x101<1> 1
+rest 0x18	// 0.5 beats
+input 1
+0xB3 3, 1
+stop
+
+
+saffronspeedup:
+rest 0x30
+input 0
+zoom_gradual 3, 4, 4, 0x60, 0xF0, 0xF0
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+rest 0x30   // 1.0 beats
+0x103 0
+0x103 1
+zoom_gradual 3, 4, 4, 0x60, 0x150, 0x150
+input 1
+stop
+
+
+random:
+random 5
+if_geq 3
+    async_call randomboing
+else
+    async_call randomphrase
+endif
+stop
+
+
+randomphrase:
+random 33
+if_geq 29
+    async_call mzvoice_rshortphrase
+    async_call shortphrase
+else
+    async_call mzvoice_rphrase
+    async_call phrase
+endif 
+stop
+
+
+randomboing:
+random 30
+if 29
+    async_call mzvoice_denwariB
+    async_call shortboing
+else
+    async_call mzvoice_rboing
+    async_call boing
+endif 
+stop
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// --- Individual voice line subs ---
+
+mzvoice_rest = 0x18
+
+// Aichini aichinna
+
+mzvoice_aichini:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029F
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_aichiniB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x1000295
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Ammete amena
+
+mzvoice_ammete:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x1000296
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_ammeteB:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x1000297
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Chainani nichaina
+
+mzvoice_chainani:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000298
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_chainaniB:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000299
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Denwari denwa (short animation)
+
+mzvoice_denwari:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029A
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_denwariB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029B
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Futonga futtonda
+
+mzvoice_futonga:
+    rest mzvoice_rest + 0x15
+    play_sfx 0x100029C
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_futongaB:
+    rest mzvoice_rest + 0x15
+    play_sfx 0x100029D
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Hiromega hirameida
+
+mzvoice_hiromega:
+    rest mzvoice_rest + 0x15
+    play_sfx 0x100029E
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_hiromegaB:
+    rest mzvoice_rest + 0x15
+    play_sfx 0x1000295
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Ikagari katta
+
+mzvoice_ikagari:
+    rest mzvoice_rest + 0x24
+    play_sfx 0x1000296
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_ikagariB:
+    rest mzvoice_rest + 0x24
+    play_sfx 0x1000297
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Ikugawa ikura (short animation)
+
+mzvoice_ikugawa:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x1000298
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Kaeru burikaeru
+
+mzvoice_kaeru:
+    rest mzvoice_rest + 0x15
+    play_sfx 0x1000299
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_kaeruB:
+    rest mzvoice_rest + 0x15
+    play_sfx 0x100029A
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Karewa kare
+
+mzvoice_karewa:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029B
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_karewaB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029C
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Kouchaga kouchou
+
+mzvoice_kouchaga:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029D
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_kouchagaB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029E
+    play_sfx 0x100054C
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Kusaga kusai (short animation)
+
+mzvoice_kusaga:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000295
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Megaminiwa megane
+
+mzvoice_megaminiwa:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000296
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_megaminiwaB:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000297
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Mikanga mikannai
+
+mzvoice_mikanga:
+    rest mzvoice_rest + 0x13
+    play_sfx 0x1000298
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_mikangaB:
+    rest mzvoice_rest + 0x13
+    play_sfx 0x1000299
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Nekoga nekoronda
+
+mzvoice_nekoga:
+    rest mzvoice_rest + 0x1F
+    play_sfx 0x100029A
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_nekogaB:
+    rest mzvoice_rest + 0x1F
+    play_sfx 0x100029B
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Okanewa okkane
+
+mzvoice_okanewa:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029C
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_okanewaB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029D
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Okureze kitte okure
+
+mzvoice_okurezu:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029E
+    play_sfx 0x1000551
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_okurezuB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x1000295
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Omochino kimochi
+
+mzvoice_omochino:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000296
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_omochinoB:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000297
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Omoino hoka omoi
+
+mzvoice_omoino:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x1000298
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_omoinoB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x1000299
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Puringa tappurin
+
+mzvoice_puringa:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029A
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_puringaB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029B
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Rakudawa rakugana
+
+mzvoice_rakudawa:
+    rest mzvoice_rest + 0xF
+    play_sfx 0x100029C
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_rakudawaB:
+    rest mzvoice_rest + 0xF
+    play_sfx 0x100029D
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Roukada katarouka
+
+mzvoice_roukada:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x100029E
+    play_sfx 0x1000552
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_roukadaB:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000295
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Saiyo minasai
+
+mzvoice_saiyo:
+    rest mzvoice_rest + 0x1B
+    play_sfx 0x1000296
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_saiyoB:
+    rest mzvoice_rest + 0x1B
+    play_sfx 0x1000297
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Sakana kana masakana
+
+mzvoice_sakana:
+    rest mzvoice_rest + 0x13
+    play_sfx 0x1000298
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_sakanaB:
+    rest mzvoice_rest + 0x13
+    play_sfx 0x1000299
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Saruga saru (short animation)
+
+mzvoice_saruga:
+    rest mzvoice_rest + 0xC
+    play_sfx 0x100029A
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Suikawa yasuika
+
+mzvoice_suikawa:
+    rest mzvoice_rest + 0x10
+    play_sfx 0x100029B
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_suikawaB:
+    rest mzvoice_rest + 0x10
+    play_sfx 0x100029C
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Taiga tabetaina
+
+mzvoice_taiga:
+    rest mzvoice_rest + 0x24
+    play_sfx 0x100029D
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_taigaB:
+    rest mzvoice_rest + 0x24
+    play_sfx 0x100029E
+    play_sfx 0x1000553
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Tainini kittai
+
+mzvoice_tainini:
+    rest mzvoice_rest + 0x21
+    play_sfx 0x1000295
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_taininiB:
+    rest mzvoice_rest + 0x21
+    play_sfx 0x1000296
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Taiyo gami taiyou
+
+mzvoice_taiyo:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x1000297
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_taiyoB:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x1000298
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Toilet ni ittoire
+
+mzvoice_toilet:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x1000299
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_toiletB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029A
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Tonakaiyo otonokoi
+
+mzvoice_tonakaiyo:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029B
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_tonakaiyoB:
+    rest mzvoice_rest + 0x18
+    play_sfx 0x100029C
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Torinikuga torininkui
+
+mzvoice_torinikuga:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x100029D
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_torinikugaB:
+    rest mzvoice_rest + 0x16
+    play_sfx 0x100029E
+    play_sfx 0x1000554
+    0x40<1> 0x100054B, 0x100
+stop
+
+// Umette umena
+
+mzvoice_umette:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000295
+    play_sfx 0x1000555
+    0x40<1> 0x100054B, 0x100
+stop
+
+mzvoice_umetteB:
+    rest mzvoice_rest + 0x17
+    play_sfx 0x1000296
+    play_sfx 0x1000555
+    0x40<1> 0x100054B, 0x100
+stop
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+mzvoice_rphrase:
+random 29
+switch
+    case 0
+        async_call mzvoice_aichini
+    break
+    case 1
+        async_call mzvoice_ammete
+    break
+    case 2
+        async_call mzvoice_chainani
+    break
+    case 3
+        async_call mzvoice_futonga
+    break
+    case 4
+        async_call mzvoice_hiromega
+    break
+    case 5
+        async_call mzvoice_ikagari
+    break
+    case 6
+        async_call mzvoice_kaeru
+    break
+    case 7
+        async_call mzvoice_karewa
+    break
+    case 8
+        async_call mzvoice_kouchaga
+    break
+    case 9
+        async_call mzvoice_megaminiwa
+    break
+    case 10
+        async_call mzvoice_mikanga
+    break
+    case 11
+        async_call mzvoice_nekoga
+    break
+    case 12
+        async_call mzvoice_okanewa
+    break
+    case 13
+        async_call mzvoice_okurezu
+    break
+    case 14
+        async_call mzvoice_omochino
+    break
+    case 15
+        async_call mzvoice_omoino
+    break
+    case 16
+        async_call mzvoice_puringa
+    break
+    case 17
+        async_call mzvoice_rakudawa
+    break
+    case 18
+        async_call mzvoice_roukada
+    break
+    case 19
+        async_call mzvoice_saiyo
+    break
+    case 20
+        async_call mzvoice_sakana
+    break
+    case 21
+        async_call mzvoice_suikawa
+    break
+    case 22
+        async_call mzvoice_taiga
+    break
+    case 23
+        async_call mzvoice_tainini
+    break
+    case 24
+        async_call mzvoice_taiyo
+    break
+    case 25
+        async_call mzvoice_toilet
+    break
+    case 26
+        async_call mzvoice_tonakaiyo
+    break
+    case 27
+        async_call mzvoice_torinikuga
+    break
+    case 28
+        async_call mzvoice_umette
+    break
+endswitch
+stop
+
+mzvoice_rshortphrase:
+random 4
+switch
+    case 0
+        async_call mzvoice_denwari
+    break
+    case 1
+        async_call mzvoice_ikugawa
+    break
+    case 2
+        async_call mzvoice_kusaga
+    break
+    case 3
+        async_call mzvoice_saruga
+    break
+endswitch
+stop
+
+mzvoice_rboing:
+random 29
+switch
+    case 0
+        async_call mzvoice_aichiniB
+    break
+    case 1
+        async_call mzvoice_ammeteB
+    break
+    case 2
+        async_call mzvoice_chainaniB
+    break
+    case 3
+        async_call mzvoice_futongaB
+    break
+    case 4
+        async_call mzvoice_hiromegaB
+    break
+    case 5
+        async_call mzvoice_ikagariB
+    break
+    case 6
+        async_call mzvoice_kaeruB
+    break
+    case 7
+        async_call mzvoice_karewaB
+    break
+    case 8
+        async_call mzvoice_kouchagaB
+    break
+    case 9
+        async_call mzvoice_megaminiwaB
+    break
+    case 10
+        async_call mzvoice_mikangaB
+    break
+    case 11
+        async_call mzvoice_nekogaB
+    break
+    case 12
+        async_call mzvoice_okanewaB
+    break
+    case 13
+        async_call mzvoice_okurezuB
+    break
+    case 14
+        async_call mzvoice_omochinoB
+    break
+    case 15
+        async_call mzvoice_omoinoB
+    break
+    case 16
+        async_call mzvoice_puringaB
+    break
+    case 17
+        async_call mzvoice_rakudawaB
+    break
+    case 18
+        async_call mzvoice_roukadaB
+    break
+    case 19
+        async_call mzvoice_saiyoB
+    break
+    case 20
+        async_call mzvoice_sakanaB
+    break
+    case 21
+        async_call mzvoice_suikawaB
+    break
+    case 22
+        async_call mzvoice_taigaB
+    break
+    case 23
+        async_call mzvoice_taininiB
+    break
+    case 24
+        async_call mzvoice_taiyoB
+    break
+    case 25
+        async_call mzvoice_toiletB
+    break
+    case 26
+        async_call mzvoice_tonakaiyoB
+    break
+    case 27
+        async_call mzvoice_torinikugaB
+    break
+    case 28
+        async_call mzvoice_umetteB
+    break
+endswitch
+stop

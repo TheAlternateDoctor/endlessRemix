@@ -1,0 +1,60 @@
+// Warning!
+// Sneaky Spirits subs needs to be copied here first,
+// then the 0x107 command at the end needs to be removed.
+// Not removing it will result in the speed going back to normal
+// at the end of the sub!
+sequenceSneakySpirits:
+	set_cat 0
+	call changeEngine
+	engine 0x2
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x2
+    fade<1> 1,1,1
+    input 1
+    0x101<1> 0xFA, 0
+    0x107<1> 0
+    random 1
+    switch
+    case 0
+        async_call sneakySpirits1
+    endswitch
+stop
+
+sneakySpirits1:
+    call sneakySpiritsSub56
+    call sneakySpiritsSub56
+stop
+
+sneakySpiritsSub56:
+0x105 1
+0x104 0x100
+0x102 0
+rest 0x30	// 1.0 beats
+0x104 0x100
+0x102 1
+rest 0x30	// 1.0 beats
+0x104 0x100
+0x102 2
+rest 0x30	// 1.0 beats
+0x101 
+0x104 0x100
+0x102 3
+rest 0x30	// 1.0 beats
+0x104 0x100
+0x102 4
+rest 0x30	// 1.0 beats
+0x104 0x100
+0x102 5
+rest 0x30	// 1.0 beats
+0x104 0x100
+0x102 6
+0x100 0
+rest 0x30	// 1.0 beats
+0x105 0
+0x104 0x100
+rest 0x30	// 1.0 beats
+0x103 
+// 0x107 // Removing it is important! Else it'll go back to normal speed
+return 

@@ -1,0 +1,221 @@
+yeahYeahYeahNo:
+    async_call yeahYeahYeahNoPlayer //7C
+    rest 0x30	// 1.0 beats
+    async_call yeahYeahYeahNoFront //7A
+    async_call yeahYeahYeahNoBack //7B
+    async_call yeahYeahYeahNoSFX //7F
+    rest 0x30	// 1.0 beats
+    async_sub 0x5F
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop
+
+yahooNo:
+    async_call yahooNoPlayer //91
+    rest 0x30	// 1.0 beats
+    async_call yahooNoFront //8F
+    async_call yahooNoBack //90
+    async_call yahooNoSFX //94
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    async_sub 0x5F
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop 
+
+yahooNoRemix:
+    async_call yahooNoPlayerRemix //91
+    async_call yahooNoFront //8F
+    async_call yahooNoBack //90
+    async_call yahooNoSFX //94
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    async_sub 0x5F
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop 
+
+spinItBoysNo:
+    async_call spinItBoysNoPlayer //A9
+    rest 0x2A	// 0.875 beats
+    async_sub 0xAC //AC
+    rest 6	// 0.125 beats
+    async_call spinLady //A7
+    async_call spinItBoysNoBack //A8
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    async_sub 0x5F
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop 
+
+//Composite subs, shouldn't be used in game
+yeahYeahYeahNoPlayer:
+    0x8E 0
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    0x8E 1
+    0x102 0x1000E2A
+    0x100 0, 0x30
+    rest 0x18	// 0.5 beats
+    0x102 0x1000E2A
+    0x100 0, 0x30
+    rest 0x18	// 0.5 beats
+    0x102 0x1000E2A
+    0x100 0, 0x30
+    rest 0x30	// 1.0 beats
+    0x8E 0
+stop 
+
+yeahYeahYeahNoFront:
+    sub 0x57
+    rest 0x18	// 0.5 beats
+    sub 0x57
+    rest 0x18	// 0.5 beats
+    sub 0x59
+stop 
+
+yeahYeahYeahNoBack:
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    sub 0x58
+    rest 0x18	// 0.5 beats
+    sub 0x58
+    rest 0xC	// 0.25 beats
+    0x103<6> 5
+    rest 0xC	// 0.25 beats
+    sub 0x5A
+stop 
+
+yeahYeahYeahNoSFX:
+    async_call yeahYeahYeahLady
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    async_call yeahYeahYeahDancers
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop
+
+yeahYeahYeahLady:
+    0x103<5> 1, 2
+    play_sfx 0x1000E2F
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E2F
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E2F
+    rest 0x30	// 1.0 beats
+    0x103<5> 1, 0
+stop 
+
+yeahYeahYeahDancers:
+    0x103<5> 2, 2
+    0x103<5> 3, 2
+    0x103<5> 4, 2
+    0x103<5> 5, 2
+    play_sfx 0x1000E34
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E34
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E34
+    rest 0x30	// 1.0 beats
+    0x103<5> 2, 0
+    0x103<5> 3, 0
+    0x103<5> 4, 0
+    0x103<5> 5, 0
+stop 
+
+yahooNoPlayer:
+    0x8E 0
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    0x8E 1
+    0x102 0x1000E2B
+    0x100 0, 0x30
+    rest 0x18	// 0.5 beats
+    0x102 0x1000E2C
+    0x100 0, 0x30
+    rest 0x18	// 0.5 beats
+    0x8E 0
+stop 
+
+yahooNoPlayerRemix:
+    0x8E 0
+    rest 0x30	// 1.0 beats
+    0x8E 1
+    0x102 0x1000E2B
+    0x100 0, 0x30
+    rest 0x18	// 0.5 beats
+    0x102 0x1000E2C
+    0x100 0, 0x30
+    rest 0x18	// 0.5 beats
+    0x8E 0
+stop 
+
+yahooNoFront:
+    sub 0x57
+    rest 0x18	// 0.5 beats
+    sub 0x59
+    rest 0x18	// 0.5 beats
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop 
+
+yahooNoBack:
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    sub 0x58
+    rest 0x10	// 0.25 beats
+    0x103<6> 5
+    rest 0x10	// 0.25 beats
+    sub 0x5A
+    rest 0x18	// 0.5 beats
+stop 
+
+yahooNoSFX:
+    async_sub 0x62
+    rest 0x18	// 0.5 beats
+    async_sub 0x64
+    rest 0x18	// 0.5 beats
+    rest 0x30	// 1.0 beats
+    async_sub 0x69
+    rest 0x18	// 0.5 beats
+    async_sub 0x6B
+stop 
+
+spinItBoysNoPlayer:
+    0x8E 0
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    0x8E 2
+    0x102 0x1000E2D
+    0x100 1, 0x30
+    rest 0x30	// 1.0 beats
+    0x102 0x1000E2E
+    0x100 2, 0x30
+    rest 0x30	// 1.0 beats
+    0x8E 0
+stop 
+
+spinItBoysNoBack:
+    rest 0x30	// 1.0 beats
+    rest 0x18	// 0.5 beats
+    rest 0xC	// 0.25 beats
+    0x103<7> 5
+    rest 0xC	// 0.25 beats
+    sub 0x5C
+    rest 0x30	// 1.0 beats
+    sub 0x5E
+    rest 0x30	// 1.0 beats
+stop 
+
+spinLady:
+    0x103<3> 1
+    0x103<3> 0
+    rest 0x30	// 1.0 beats
+    0x103<4> 1
+    0x103<4> 0
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+    rest 0x30	// 1.0 beats
+stop 

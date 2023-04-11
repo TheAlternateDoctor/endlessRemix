@@ -1,0 +1,14 @@
+dazzlesCrouch: //play 0x18 before
+set_cat 0
+play_sfx 0x100100F
+rest 0x18	// 1.0 beats
+async_sub 0x57
+rest 0x18	// 1.0 beats
+play_sfx 0x1001010
+stop
+
+dazzlesBeatAnim:
+0x101 1
+0x102
+rest 0x30
+goto dazzlesBeatAnim

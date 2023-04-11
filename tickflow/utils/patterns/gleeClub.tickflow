@@ -1,0 +1,53 @@
+sequenceGleeClub:
+	set_cat 0
+	call changeEngine
+	engine 0x13
+	sub 4
+	0x29<2> 
+    rest 0x18
+    0x10D
+	0xB3 9, 0x13
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call gleeClub1
+    endswitch
+stop
+
+gleeClub1:
+    0x104 0, 0, 0x1000DAF, 0, -7
+    0x104 1, 0, 0x1000DAF, 0, -5
+    0x104 2, 0, 0x1000DAF, 0, 0
+    0x104<1> 0,0,0
+    0x104<1> 1,0,0
+    0x104<1> 2,0,0
+    rest 0xC0
+    0x104<1> 0,2,0
+    rest 0x30
+    0x104<1> 1,2,0
+    0x100 2
+    rest 0x30
+    //Shut!
+    rest 0x30
+    0x106
+    rest 0x30
+    0x104<1> 0,0,0
+    rest 0x30
+    0x104<1> 1,0,0
+    0x100 0
+    rest 0x30
+    //Sing!
+    rest 0x30
+    0x105<1>
+    0x100 2
+    rest 0x30
+    0x104<1> 0,2,0
+    0x104<1> 1,2,0
+    0x105<2>
+    //Shut!
+    rest 0x30
+    0x105
+    0x106
+stop

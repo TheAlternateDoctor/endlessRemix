@@ -1,0 +1,871 @@
+
+countin:
+async_call countinBeat
+rest 0x1E	// 0.5 beats
+play_sfx 0x10002DF
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+play_sfx 0x10002E0
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+play_sfx 0x10002DF
+rest 0x30	// 1.0 beats
+play_sfx 0x10002E0
+rest 0x30	// 1.0 beats
+play_sfx 0x10002E1
+rest 0x30	// 1.0 beats
+play_sfx 0x10002E2
+rest 0x30	// 1.0 beats
+stop 
+
+countinBeat:
+rest 0x30
+//1!
+0x106<1> 0
+0x101
+rest 0x60
+//2!
+0x106<1> 0
+0x101
+rest 0x60
+//1
+0x106<1> 0
+0x101
+rest 0x30
+//2
+0x106<1> 0
+0x101
+rest 0x30
+//3
+0x106<1> 0
+0x101
+rest 0x30
+//4
+0x106<1> 0
+0x101
+rest 0x30
+stop
+
+ready:
+0x40<1> 0x1000B1C, 0x158
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B13, 0x158
+stop
+
+andbom:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B1F, 0x140
+stop 
+
+andtap:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B21, 0x160
+stop 
+
+tapvoice:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B1B, 0x124
+stop 
+
+tapvoicewithslap:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B1B, 0x124
+0x40<1> 0x1000B15, 0x120
+stop 
+
+performancecheckfourbeat:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+stop 
+
+performancecheckfourbeatleg:
+0xA2
+0x9F<5> 2
+rest 0x2F	// 0.5 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
+
+0xA2
+0x9F<5> 2
+rest 0x2F	// 0.5 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
+stop 
+
+performancecheckfourbeatlegreturn:
+0xA2
+0x9F<5> 2
+rest 0x2F	// 0.5 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
+
+0xA2
+0x9F<5> 2
+rest 0x2F	// 0.5 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
+stop 
+
+fourbeatstep:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatleg
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x102 5
+stop 
+
+fourbeatstepprep:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatleg
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+async_call ready
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// >0.875 beats
+rest 8	// <0.167 beats
+0x103 0xE
+0x102 0xE
+stop 
+
+fourbeatstepinitial:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatlegreturn
+async_call tapvoice
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x102 5
+stop 
+
+fourbeatstepinitialprep:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatlegreturn
+async_call tapvoice
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+async_call ready
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// >0.875 beats
+rest 8	// <0.167 beats
+0x103 0xE
+0x102 0xE
+stop 
+
+fourbeatstepreturn:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatlegreturn
+async_call tapvoicewithslap
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x102 5
+stop 
+
+fourbeatstepprepreturn:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatlegreturn
+async_call tapvoicewithslap
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+async_call ready
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// >0.875 beats
+rest 8	// <0.167 beats
+0x103 0xE
+0x102 0xE
+stop 
+
+fourbeatstepreturnskillstar:
+async_call performancecheckfourbeat
+async_call performancecheckfourbeatlegreturn
+async_call tapvoicewithslap
+0x100
+rest 0x2F	// 0.5 beats
+0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+async_sub 0x43, 0xC
+async_sub 0x4B, 0xC
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x100
+0x102 5
+rest 0x2F	// 0.5 beats
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x102 5
+stop 
+
+performancechecktwobeat:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+stop 
+
+performancechecktwobeatleg:
+0xA2
+0x9F<5> 2
+rest 0x2F	// 0.5 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
+stop 
+
+twobeatstep:
+async_call performancechecktwobeat
+async_call performancechecktwobeatleg
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+//0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100 1
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x2D	// >0.875 beats
+0x102 5
+stop
+
+twobeatstepprep:
+async_call performancechecktwobeat
+async_call performancechecktwobeatleg
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+//0x103 1
+rest 1	// 0.5 beats
+async_call ready
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// <0.875 beats
+rest 8	// <0.167 beats
+0x103 0xE
+0x102 0xE
+stop 
+
+twobeatstepprepreturn:
+async_call performancechecktwobeat
+async_call performancechecktwobeatleg
+async_call tapvoicewithslap
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+0x103 1
+rest 1	// 0.5 beats
+async_call ready
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// <0.875 beats
+rest 8	// <0.167 beats
+0x103 0xE
+0x102 0xE
+stop 
+
+threebomvisual:
+rest 0x30	// 1.0 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x18	// 0.5 beats
+stop
+
+threebomvoice:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B19, 0x130
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1A, 0x130
+rest 0x18	// 0.5 beats
+stop
+
+threebomfinalvisual:
+rest 0x30	// 1.0 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x18	// 0.5 beats
+0x102 5
+stop
+
+threebomfinalvoice:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B19, 0x130
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1A, 0x130
+rest 0x18	// 0.5 beats
+0x40<1> 0x1000B1B, 0x124
+0x40<1> 0x1000B15, 0x120
+stop
+
+bomswap:
+rest 0x28	// <0.75 beats
+0x103 8
+rest 8	// 1 tick
+stop 
+
+bomswapfinal:
+rest 8	// 8 ticks
+rest 0x27	// <1.0 beats
+0x103 1
+rest 1	// 1 tick
+0x103 5
+stop 
+
+performancecheckthreebom:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+stop 
+
+threebom:
+async_call andbom
+rest 0x18	// 0.5 beats
+0x8E 1
+async_call threebomvisual
+async_call threebomvoice
+async_call bomswap
+async_call performancecheckthreebom
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x18	// 0.5 beats
+stop
+
+threebomfinal:
+async_call andbom
+rest 0x18	// 0.5 beats
+0x8E 1
+async_call threebomfinalvisual
+async_call threebomfinalvoice
+async_call bomswap
+async_call performancecheckthreebom
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x18	// 0.5 beats
+async_call bomswapfinal
+0x100
+stop
+
+zerobomvisual:
+rest 0x30	// 1.0 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+stop
+
+zerobomvoice:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B19, 0x130
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1A, 0x130
+rest 0x24	// 0.75 beats
+stop
+
+performancecheckzerobom:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+stop 
+
+zerobom:
+async_call andtap
+rest 0x18	// 0.5 beats
+0x8E 1
+async_call zerobomvisual
+async_call zerobomvoice
+async_call bomswap
+async_call performancecheckzerobom
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+stop
+
+eightbomvisual:
+rest 0x30	// 1.0 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+stop
+
+eightbomvoice:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B19, 0x130
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1A, 0x130
+rest 0x24	// 0.75 beats
+stop
+
+performancecheckeightbom:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+stop 
+
+eightbom:
+async_call andbom
+rest 0x18	// 0.5 beats
+0x8E 1
+async_call eightbomvisual
+async_call eightbomvoice
+async_call bomswap
+async_call performancecheckeightbom
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+stop
+
+fivebomvisual:
+rest 0x30	// 1.0 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x24	// 0.75 beats
+0x102 7
+rest 0x24	// 0.75 beats
+0x102 6
+rest 0x30	// 1.0 beats
+stop
+
+fivebomvoice:
+rest 0x30	// 1.0 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1E, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B20, 0x2A0
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B19, 0x130
+rest 0x24	// 0.75 beats
+0x40<1> 0x1000B1A, 0x130
+rest 0x30	// 1.0 beats
+stop
+
+performancecheckfivebom:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x12	// 0.375 beats
+0x104
+rest 0x12	// 0.375 beats
+0x106<1> 0
+rest 0x30	// 1.0 beats
+stop 
+
+fivebom:
+async_call andbom
+rest 0x18	// 0.5 beats
+0x8E 1
+async_call fivebomvisual
+async_call fivebomvoice
+async_call bomswap
+async_call performancecheckfivebom
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x18	// 0.5 beats
+0x8F 7		// Star activation (placed a couple beats early because the Tap Trial scene requires 3 inputs to get the star)
+rest 0xC	// 0.25 beats
+0x100
+rest 0x30	// 1.0 beats
+stop
+
+// In case you need this pattern without the skill star...
+fivebomnostar:
+async_call andbom
+rest 0x18	// 0.5 beats
+0x8E 1
+async_call fivebomvisual
+async_call fivebomvoice
+async_call bomswap
+async_call performancecheckfivebom
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x24	// 0.75 beats
+0x100
+rest 0x30	// 1.0 beats
+stop

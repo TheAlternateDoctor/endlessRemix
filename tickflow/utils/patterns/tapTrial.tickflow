@@ -1,0 +1,29 @@
+sequenceTap:
+	set_cat 0
+	call changeEngine
+	engine 0xC
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0xC
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call tapTrial1
+    endswitch
+stop
+
+tapTrial1:
+    0x101
+    rest 0x30
+    0x101
+    rest 0x30
+    sub 0x56
+    sub 0x57
+    sub 0x56
+    sub 0x56
+    sub 0x56
+    sub 0x5B
+stop

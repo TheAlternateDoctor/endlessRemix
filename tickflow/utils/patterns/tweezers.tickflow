@@ -1,0 +1,43 @@
+sequenceTweezers:
+	set_cat 0
+	call changeEngine
+	engine 0x3
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        call tweezers1
+    endswitch
+stop
+
+tweezers1:
+    0x101
+    0x100 1
+    rest 0x18
+    0x100 1
+    rest 0x18
+    0x100 0
+    rest 0x30
+    0x100 0
+    0x102
+    rest 0x60
+    rest 0xA8
+    0x105 0
+    rest 0x18
+    
+    0x101
+    0x100 3
+    rest 0x48
+    0x100 0
+    rest 0x18
+    0x102
+    rest 0x18
+    0x100 1
+    rest 0x18
+    0x100 0
+stop

@@ -1,0 +1,32 @@
+sequenceCheerReaders:
+	set_cat 0
+    random 1 //Earlier to accomodate the starting time
+    switch
+    case 0
+        async_call cheerReaders1
+    endswitch
+	call changeEngine
+	engine 0x20
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x20
+    fade<1> 1,1,1
+    input 1
+    0x8B 0,0
+stop
+
+cheerReaders1:
+set_cat 0
+async_call oneTwoThreeDown
+rest 0x90
+rest 0x18
+async_call rahRahSisBoomBaBoomUp
+rest 0xC0
+rest 0x18
+async_call oneTwoThreeSoloDown
+rest 0x60
+async_call oneTwoThreeGirlsUp
+rest 0x60
+async_call oneTwoThreeSoloDown
+stop

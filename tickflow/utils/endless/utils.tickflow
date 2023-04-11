@@ -1,0 +1,985 @@
+loadNextGame:
+    0xB2 10
+    if 1
+        0xB2 3
+        if 1337
+            goto 0xD0C6
+        endif
+    else
+        label 0xD0C6
+        random 0x4D
+    endif
+    switch
+        case 0x0 //Jimmy T.
+            0xB2 9
+            if 0x0 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x0
+                endif
+                set_func 0, sequenceSpaceball
+                async_call loadSpaceball
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x1 //TF2
+            0xB2 9
+            if 0x1 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x1
+                endif
+                set_func 0, sequenceClappyTrio
+                async_call loadSnappyTrio
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x2 //Phantom Thief
+            0xB2 9
+            if 0x2 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x2
+                endif
+                set_func 0, sequenceSneakySpirits
+                async_call loadSneakySpirits
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x3 //Zelda Cooking
+            0xB2 9
+            if 0x3 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3
+                endif
+                set_func 0, sequenceTweezers
+                async_call loadTweezers
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x4 //Warioware
+            0xB2 9
+            if 0x4 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x4
+                endif
+                set_func 0, sequenceHopping
+                async_call loadHopping
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x5 //Cadence of Hyrule
+            0xB2 9
+            if 0x5 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x5
+                endif
+                set_func 0, sequenceMarcher
+                async_call loadMarcher
+                set_func 3, preSequenceMarcher
+                set_func 2, nop
+            endif
+        break
+        case 0x6 //Sonic
+            0xB2 9
+            if 0x6 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x6
+                endif
+                set_func 0, sequenceNightWalk
+                async_call loadNightWalk
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x7 //Kahoot
+            0xB2 9
+            if 0x7 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x7
+                endif
+                set_func 0, sequenceQuiz
+                async_call loadQuiz
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x9 //VVVVVV Rescue
+            0xB2 9
+            if 0x9 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x9
+                endif
+                set_func 0, sequenceRatRace
+                async_call loadRatRace
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0xB //Smash
+            0xB2 9
+            if 0xB //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0xB
+                endif
+                set_func 0, sequenceSpaceDance
+                async_call loadSpaceDance
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0xC //Rhythm Masters
+            0xB2 9
+            if 0xC //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0xC
+                endif
+                set_func 0, sequenceTap
+                async_call loadTap
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0xE //Pokémon Mystery Dungeon
+            0xB2 9
+            if 0xE //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0xE
+                endif
+                set_func 0, sequenceAirboarders
+                async_call loadAirboarders
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x11 //Kirby Victory
+            0xB2 9
+            if 0x11 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x11
+                endif
+                set_func 0, sequenceDazzles
+                async_call loadDazzles
+                set_func 3, nop
+                set_func 2, loadDazzlesLate
+            endif
+        break
+        case 0x12 //Victory Game & Watch
+            0xB2 9
+            if 0x12 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x12
+                endif
+                set_func 0, sequenceFreezeFrame
+                async_call loadFreezeFrame
+                set_func 3, nop
+                set_func 2, nop
+                0xB3 3, 0x21
+            endif
+        break
+        case 0x13 //Wii Music
+            0xB2 9
+            if 0x13 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x13
+                endif
+                set_func 0, sequenceGleeClub
+                async_call loadGleeClub
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x14 //The Lick
+            0xB2 9
+            if 0x14 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x14
+                endif
+                set_func 0, sequenceFrogHop
+                async_call loadFrogHop
+                set_func 3, preSequenceFrogHop
+                set_func 2, nop
+            endif
+        break
+        case 0x16 //Pokémon TM
+            0xB2 9
+            if 0x16 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x16
+                endif
+                set_func 0, sequenceDogNinja
+                async_call loadDogNinja
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x19 //Duck Hunt
+            0xB2 9
+            if 0x19 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x19
+                endif
+                set_func 0, sequenceShootEmUp
+                async_call loadShootEmUp
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x1B //Hat in Time
+            0xB2 9
+            if 0x1B //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x1B
+                endif
+                set_func 0, sequenceMunchyMonk
+                async_call loadMunchyMonk
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x1C //Valve
+            0xB2 9
+            if 0x1C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x1C
+                endif
+                set_func 0, sequenceBtSWii
+                async_call loadBtSWii
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x20 //Duke Nukem
+            0xB2 9
+            if 0x20 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x20
+                endif
+                set_func 0, sequenceCheerReaders
+                async_call loadCheerReaders
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x21 //Klonoa Heroes
+            0xB2 9
+            if 0x21 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x21
+                endif
+                set_func 0, sequenceDoubleDate
+                async_call loadDoubleDate
+                set_func 3, nop
+                set_func 2, nop
+                0xB3 3, 0x12
+            endif
+        break
+        case 0x22 //Splatoon
+            0xB2 9
+            if 0x22 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x22
+                endif
+                set_func 0, sequenceCatchOfTheDay
+                async_call loadCatchOfTheDay
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x23 //Galaga
+            0xB2 9
+            if 0x23 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x23
+                endif
+                set_func 0, sequenceMicroRow
+                async_call loadMicroRow
+                set_func 3, nop
+                set_func 2, loadMicroRowLate
+            endif
+        break
+        case 0x24 //Pac Man
+            0xB2 9
+            if 0x24 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x24
+                endif
+                set_func 0, sequenceForkLifter
+                async_call loadForkLifter
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x25 //Rhythm Dr
+            0xB2 9
+            if 0x25 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x25
+                endif
+                set_func 0, sequenceGolf
+                async_call loadGolf
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x26 //Cave Story
+            0xB2 9
+            if 0x26 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x26
+                endif
+                set_func 0, sequenceFlipperFlop
+                async_call loadFlipperFlop
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x27 //YokaiWatch
+            0xB2 9
+            if 0x27 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x27
+                endif
+                set_func 0, sequenceRingSide
+                async_call loadRingSide
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x28 //Remix GBA
+            0xB2 9
+            if 0x28 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x28
+                endif
+                set_func 0, sequenceKarate
+                async_call loadKarate
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x2E //Mission Failed (MGS)
+            0xB2 9
+            if 0x2E //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x2E
+                endif
+                set_func 0, sequenceLaunchParty
+                async_call loadLaunchParty
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x2F //Miitopia
+            0xB2 9
+            if 0x2F //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x2F
+                endif
+                set_func 0, sequenceBoardMeeting
+                async_call loadBoardMeeting
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x30 //Iai Giri
+            0xB2 9
+            if 0x30 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x30
+                endif
+                set_func 0, sequenceSSWii
+                async_call loadSSWii
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x31 //Banjo Kazooie
+            0xB2 9
+            if 0x31 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x31
+                endif
+                set_func 0, sequenceSeeSaw
+                async_call loadSeeSaw
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x32 //Rayman
+            0xB2 9
+            if 0x32 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x32
+                endif
+                set_func 0, sequencePackingPests
+                async_call loadPackingPests
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x35 //Rivals of Aether
+            0xB2 9
+            if 0x35 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x35
+                endif
+                set_func 0, sequenceAnimalAcrobat
+                async_call loadAnimalAcrobat
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x36 //Badge Pokémon
+            0xB2 9
+            if 0x36 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x36
+                endif
+                set_func 0, sequenceTongueLashing
+                async_call loadTongueLashing
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x37 //Super Metroid
+            0xB2 9
+            if 0x37 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x37
+                endif
+                set_func 0, sequenceSuperSamuraiSlice
+                async_call loadSuperSamuraiSlice
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x38 //Animal Crossing Dodo
+            0xB2 9
+            if 0x38 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x38
+                endif
+                set_func 0, sequenceFruitBasket
+                async_call loadFruitBasket
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x3A //Klonoa
+            0xB2 9
+            if 0x3A //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3A
+                endif
+                set_func 0, sequencePajama
+                async_call loadPajama
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x3B //CSD
+            0xB2 9
+            if 0x3B //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3B
+                endif
+                set_func 0, sequenceCatchyTune
+                async_call loadCatchyTune
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x3C //Wii Fit
+            0xB2 9
+            if 0x3C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3C
+                endif
+                set_func 0, sequenceSumoBros
+                async_call loadSumoBros
+                set_func 3, nop
+                set_func 2, loadSumoLate
+            endif
+        break
+        case 0x3D //Michael Jackson
+            0xB2 9
+            if 0x3D //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3D
+                endif
+                set_func 0, sequenceTangotronic
+                async_call loadTangotronic
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x3E //Finned Frontier, EA Sports
+            0xB2 9
+            if 0x3E //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3E
+                endif
+                set_func 0, sequenceKitties
+                async_call loadKitties
+                set_func 3, nop
+            endif
+        break
+        case 0x3F //Zelda Mastersword
+            0xB2 9
+            if 0x3F //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x3F
+                endif
+                set_func 0, sequenceLumbearjack
+                async_call loadLumbearjack
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x40 //Sick Beats
+            0xB2 9
+            if 0x40 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x40
+                endif
+                set_func 0, sequenceSickBeats
+                async_call loadSickBeats
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x41 //Coin Toss
+            0xB2 9
+            if 0x41 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x41
+                endif
+                set_func 0, sequenceCoinToss
+                async_call loadCoinToss
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x42 //Clap Trap
+            0xB2 9
+            if 0x42 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x42
+                endif
+                set_func 0, sequenceClapTrap
+                async_call loadClapTrap
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x43 //Tutorial
+            0xB2 9
+            if 0x4F //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x43
+                endif
+                set_func 0, sequenceTutorial
+                async_call loadTutorial
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x44 //Daft Punk
+            0xB2 9
+            if 0x11 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x44
+                endif
+                set_func 0, sequenceDJSchool
+                async_call loadDJSchool
+                set_func 3, nop
+                set_func 2, loadDJSchoolLate
+            endif
+        break
+        case 0x45 //Here Is
+            0xB2 9
+            if 0x1C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x45
+                endif
+                set_func 0, sequenceBtSDS
+                async_call loadBtSDS
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x46 //Konga Conga Kappa
+            0xB2 9
+            if 0x3C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x46
+                endif
+                set_func 0, sequenceManzai
+                async_call loadManzai //help
+                // set_func 3, unloadManzai
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x47 //Accumula Town
+            0xB2 9
+            if 0x23 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x47
+                endif
+                set_func 0, sequenceFinned
+                async_call loadFinned
+                set_func 3, nop
+                set_func 2, loadFinnedLate
+            endif
+        break
+        case 0x48 //Open Sesame Tofu!
+            0xB2 9
+            if 0x3C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x48
+                endif
+                set_func 0, sequenceMeatGrinder
+                async_call loadMeatGrinder
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0x49 //Ballance
+            0xB2 9
+            if 0x1B //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x49
+                endif
+                set_func 0, sequenceSoumen
+                async_call loadSoumen
+                set_func 3, nop
+                set_func 2, loadSoumenLate
+            endif
+        break
+        case 0x4A //Battle Start Melodii
+            0xB2 9
+            if 0x3C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x4A
+                endif
+                set_func 0, sequenceUpbeat
+                async_call loadUpbeat
+                set_func 3, nop
+                set_func 2, loadUpbeatLate
+            endif
+        break
+        case 0x4B //Groove Rush #1
+            0xB2 9
+            if 0xC //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x4B
+                endif
+                set_func 0, sequenceTapTroupe
+                async_call loadTapTroupe
+                set_func 3, nop
+                set_func 2, loadTapTroupeLate
+            endif
+        break
+        case 0x4C //Mole Cricket
+            0xB2 9
+            if 0x13 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x4B
+                endif
+                set_func 0, sequenceSplashdown
+                async_call loadSplashdown
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        default //Restart until we get something damnit
+            goto loadNextGame
+        break
+    endswitch
+    call text
+stop
+
+playNextGame:
+    get_async 0, 0
+	rest 0x30
+	async_call loadNextGame,0x60
+	rest 0x30*7
+	rest 0x30*3
+    get_async 3, 0x18
+    rest 0x30*5 - 0x18
+	get_async 2, 0
+    rest 0x18
+	fade 1,1,1
+    // call lifeCheck
+return
+
+deadSubEndless: //Just save, but then continue
+	0x2D 0
+	0x21 120
+	input 0
+	set_cat 0
+	0x76 1, 1	// Which screen to affect
+	0x77 1, 0xFF	// Immediate opacity level
+	0x78 1, 0,0,0	// Color, RGB
+	0x79 1, 0	// Depth of the screen.
+	engine 0x43
+	0xAF<6> 1
+	rest 0xC
+	0xAF<6> 0
+	fade<1> 1, 1, 1
+	
+	0xB2 0
+	rest 0x18
+	0x10D<1>
+
+	0x2D 1
+	rest 0x18	// 1.0 beats
+	speed 0x100
+	0xAF<2> 1, 0, 0x50DFC6
+	play_sfx 0x1000AB7
+	rest 0xC0	// 4.0 beats
+	fade 1, 0, 0x60
+	rest 0x60
+	set_func 5, nop
+	set_func 4, nopR
+	0x67<2>
+    0x77 1, 0x0
+return
+
+nop:
+stop
+
+nopR:
+return

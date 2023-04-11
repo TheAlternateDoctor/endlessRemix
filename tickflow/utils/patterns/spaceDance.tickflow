@@ -1,0 +1,52 @@
+sequenceSpaceDance:
+	set_cat 0
+	call changeEngine
+	engine 0xB
+	sub 4
+	0x29<2> 
+    rest 0x18
+    setrest 0, 0x18
+    setrest 1, 0x18
+	0xB3 9, 0xB
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call spaceDance1
+    endswitch
+stop
+
+spaceDance1:
+0x110
+async_call beatSpaceDance
+rest 0x30
+async_sub 0x59
+rest 0x60
+async_call beatSpaceDance
+rest 0x30
+async_call beatSpaceDance
+rest 0x30
+async_sub 0x59
+rest 0x30
+async_call beatSpaceDance
+rest 0x30
+async_sub 0x5C
+rest 0x60
+async_call beatSpaceDance
+rest 0x30
+async_call beatSpaceDance
+rest 0x30
+async_sub 0x56
+stop
+
+beatSpaceDance: //Modified in case of cosmic dance
+0xB2 4
+if 1
+    0x108
+endif
+0x101<0>
+0x101<1>
+0x101<2>
+0x101<3>
+stop

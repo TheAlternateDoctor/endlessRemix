@@ -1,0 +1,34 @@
+
+sequenceUpbeat:
+	set_cat 0
+    play_sfx 0x10002DF
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x18
+    async_call upbeatCountinNew, 0x18
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+    input 1
+    rest 0xA8
+    async_call metronome, 0x18
+    async_call cycle
+stop
+
+upbeatCountinNew:
+play_sfx 0x1000B0B
+play_sfx 0x10002E0
+0x103 0
+rest 0x30
+play_sfx 0x1000B0B
+play_sfx 0x10002E1
+0x103 0
+rest 0x30
+play_sfx 0x1000B0B
+play_sfx 0x10002E2
+0x103 0
+rest 0x30
+play_sfx 0x1000B0B
+0x103 0
+stop

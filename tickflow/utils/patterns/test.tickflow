@@ -1,0 +1,398 @@
+
+
+sequenceBtSWii:
+	set_cat 0
+	call changeEngine
+	engine 0x1C
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x1C
+    fade<1> 1,1,1
+stop
+
+sequenceDoubleDate:
+	set_cat 0
+	call changeEngine
+	engine 0x21
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x21
+    fade<1> 1,1,1
+stop
+
+sequenceCatchOfTheDay:
+	set_cat 0
+	call changeEngine
+	engine 0x22
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x22
+    fade<1> 1,1,1
+stop
+
+sequenceMicroRow:
+	set_cat 0
+	call changeEngine
+	engine 0x23
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x23
+    fade<1> 1,1,1
+stop
+
+sequenceForkLifter:
+	set_cat 0
+	call changeEngine
+	engine 0x24
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x24
+    fade<1> 1,1,1
+stop
+
+sequenceGolf:
+	set_cat 0
+	call changeEngine
+	engine 0x25
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x25
+    fade<1> 1,1,1
+stop
+
+sequenceFlipperFlop:
+	set_cat 0
+	call changeEngine
+	engine 0x26
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x26
+    fade<1> 1,1,1
+stop
+
+sequenceRingSide:
+	set_cat 0
+	call changeEngine
+	engine 0x27
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x27
+    fade<1> 1,1,1
+stop
+
+sequenceKarate:
+	set_cat 0
+	call changeEngine
+	engine 0x28
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x28
+    fade<1> 1,1,1
+stop
+
+sequenceLaunchParty:
+	set_cat 0
+	call changeEngine
+	engine 0x2E
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x2E
+    fade<1> 1,1,1
+stop
+
+sequenceBoardMeeting:
+	set_cat 0
+	call changeEngine
+	engine 0x2F
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x2F
+    fade<1> 1,1,1
+stop
+
+sequenceSSWii:
+	set_cat 0
+	call changeEngine
+	engine 0x30
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x30
+    fade<1> 1,1,1
+stop
+
+sequenceSeeSaw:
+	set_cat 0
+	call changeEngine
+	engine 0x31
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x31
+    fade<1> 1,1,1
+stop
+
+sequencePackingPests:
+	set_cat 0
+	call changeEngine
+	engine 0x32
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x32
+    fade<1> 1,1,1
+stop
+
+sequenceAnimalAcrobat:
+	set_cat 0
+	call changeEngine
+	engine 0x35
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x35
+    fade<1> 1,1,1
+stop
+
+sequenceTongueLashing:
+	set_cat 0
+	call changeEngine
+	engine 0x36
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x36
+    fade<1> 1,1,1
+stop
+
+sequenceSuperSamuraiSlice:
+	set_cat 0
+	call changeEngine
+	engine 0x37
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x37
+    fade<1> 1,1,1
+stop
+
+sequenceFruitBasket:
+	set_cat 0
+	call changeEngine
+	engine 0x38
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x38
+    fade<1> 1,1,1
+stop
+
+sequencePajama:
+	set_cat 0
+	call changeEngine
+	engine 0x3A
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3A
+    fade<1> 1,1,1
+stop
+
+sequenceCatchyTune:
+	set_cat 0
+	call changeEngine
+	engine 0x3B
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3B
+    fade<1> 1,1,1
+stop
+
+sequenceSumoBros:
+	set_cat 0
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+stop
+
+sequenceTangotronic:
+	set_cat 0
+	call changeEngine
+	engine 0x3D
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3D
+    fade<1> 1,1,1
+stop
+
+sequenceKitties:
+	set_cat 0
+	call changeEngine
+	engine 0x3E
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3E
+    fade<1> 1,1,1
+stop
+
+sequenceLumbearjack:
+	set_cat 0
+	call changeEngine
+	engine 0x3F
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3F
+    fade<1> 1,1,1
+stop
+
+sequenceSickBeats:
+	set_cat 0
+	call changeEngine
+	engine 0x40
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x40
+    fade<1> 1,1,1
+stop
+
+sequenceCoinToss:
+	set_cat 0
+	call changeEngine
+	engine 0x41
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x41
+    fade<1> 1,1,1
+stop
+
+sequenceClapTrap:
+	set_cat 0
+	call changeEngine
+	engine 0x42
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x42
+    fade<1> 1,1,1
+stop
+
+sequenceTutorial:
+	set_cat 0
+	call changeEngine
+	engine 0x4F
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x4F
+    fade<1> 1,1,1
+stop
+
+sequenceDJSchool:
+	set_cat 0
+	call changeEngine
+	engine 0x11
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x11
+    fade<1> 1,1,1
+stop
+
+sequenceBtSDS:
+	set_cat 0
+	call changeEngine
+	engine 0x1C
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x1C
+    fade<1> 1,1,1
+stop
+
+sequenceManzai:
+	set_cat 0
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+stop
+
+sequenceFinned:
+	set_cat 0
+	call changeEngine
+	engine 0x23
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x23
+    fade<1> 1,1,1
+stop
+
+sequenceMeatGrinder:
+	set_cat 0
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+stop
+
+sequenceSoumen:
+	set_cat 0
+	call changeEngine
+	engine 0x1B
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x1B
+    fade<1> 1,1,1
+stop
+
+sequenceTapTroupe:
+	set_cat 0
+	call changeEngine
+	engine 0xC
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0xC
+    fade<1> 1,1,1
+stop
+
+sequenceSplashdown:
+	set_cat 0
+	call changeEngine
+	engine 0x13
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x13
+    fade<1> 1,1,1
+stop
+
