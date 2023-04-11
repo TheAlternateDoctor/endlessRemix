@@ -244,32 +244,6 @@ else
 endif
 stop
 
-loadKarateNDS:
-0xB2 1
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0x60
-0xB2 1
-if 1
-    set_sfx 4, u"GROUP_KARATE"
-    set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
-    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
-    game_effect 0x28, 4
-    game_cellanim 0x28, 4
-    0xB3 1, 0
-else
-    set_sfx 5, u"GROUP_KARATE"
-    set_cellanim 5, u"rom:/cellanim/rvlKarate_2.zlib", -1
-    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
-    game_effect 0x28, 5
-    game_cellanim 0x28, 5
-    0xB3 1, 1
-endif
-stop
-
 loadSpaceball:
 0xB2 1
 if 1
@@ -553,31 +527,6 @@ else
     0xB3 1, 1
 endif
     0x2B 0x15, 0x10
-stop
-loadKarate3DS:
-0xB2 1
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0x60
-0xB2 1
-if 1
-    set_sfx 4, u"GROUP_KARATE"
-    set_cellanim 4, u"rom:/cellanim/rvlKarate_4.zlib", -1
-    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
-    game_effect 0x28, 4
-    game_cellanim 0x28, 4
-    0xB3 1, 0
-else
-    set_sfx 5, u"GROUP_KARATE"
-    set_cellanim 5, u"rom:/cellanim/rvlKarate_4.zlib", -1
-    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
-    game_effect 0x28, 5
-    game_cellanim 0x28, 5
-    0xB3 1, 1
-endif
 stop
 
 loadKitties:
@@ -907,31 +856,6 @@ loadFinnedLate:
         set_sfx 5, u"GROUP_FRONTIER"
     endif
 stop
-loadKarateWii:
-0xB2 1
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0x60
-0xB2 1
-if 1
-    set_sfx 4, u"GROUP_KARATE"
-    set_cellanim 4, u"rom:/cellanim/rvlKarate_3.zlib", -1
-    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
-    game_effect 0x28, 4
-    game_cellanim 0x28, 4
-    0xB3 1, 0
-else
-    set_sfx 5, u"GROUP_KARATE"
-    set_cellanim 5, u"rom:/cellanim/rvlKarate_3.zlib", -1
-    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
-    game_cellanim 0x28, 5
-    game_effect 0x28, 5
-    0xB3 1, 1
-endif
-stop
 
 loadTangotronic:
 0xB2 1
@@ -1238,14 +1162,14 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_KARATE"
-    set_cellanim 4, u"rom:/cellanim/rvlKarate_1.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/rvlKarate_3.zlib", -1
     set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
     game_effect 0x28, 4
     game_cellanim 0x28, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_KARATE"
-    set_cellanim 5, u"rom:/cellanim/rvlKarate_1.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/rvlKarate_2.zlib", -1
     set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
     game_effect 0x28, 5
     game_cellanim 0x28, 5
@@ -1336,6 +1260,15 @@ else
     set_cellanim 5, u"rom:/cellanim/rvlAssemble_v0.zlib", -1
     game_cellanim 0x1C, 5
     0xB3 1, 1
+endif
+stop
+
+loadBtSWiiLate:
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_OTTOSEI"
+else
+    set_sfx 5, u"GROUP_OTTOSEI"
 endif
 stop
 
@@ -1586,12 +1519,12 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SHIWAKE"
-    set_cellanim 4, u"rom:/cellanim/rvlSort_rayman.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/rvlSort_long.zlib", -1
     game_cellanim 0x32, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_SHIWAKE"
-    set_cellanim 5, u"rom:/cellanim/rvlSort_rayman.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/rvlSort_long.zlib", -1
     game_cellanim 0x32, 5
     0xB3 1, 1
 endif

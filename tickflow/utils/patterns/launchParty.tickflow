@@ -1,0 +1,34 @@
+sequenceLaunchParty:
+	set_cat 0
+	call changeEngine
+	engine 0x2E
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x2E
+    fade<1> 1,1,1
+    0x106 1
+    0x105<1>
+    input 1
+    random 1
+    switch
+    case 0
+        async_call launchParty1
+    endswitch
+stop
+
+launchParty1:
+    0x102<0> 1
+    0x103
+    0x102<1> 2
+    0x100 1
+    rest 0xC0
+    0x102<1> 1
+    0x100 2
+    rest 0xC0
+    0x102<1> 0
+    0x100 1
+    rest 0xC0
+    0x102<1> 5
+    0x100 0
+stop

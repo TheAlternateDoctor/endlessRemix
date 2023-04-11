@@ -1,0 +1,55 @@
+preSequenceMicroRow:
+rest 0x18
+play_sfx 0x10002DF
+rest 0x30
+play_sfx 0x10002E0
+rest 0x30
+play_sfx 0x10002E1
+rest 0x30
+play_sfx 0x10002E7
+stop
+
+sequenceMicroRow:
+	set_cat 0
+	call changeEngine
+	engine 0x23
+	sub 4
+	0x29<2> 
+    rest 0x18
+    0x10B 1
+    0x10A 1
+    0x103 1
+    0x101 0x52FC2C, 6, 0
+    0x102 0x52FC5C, 3
+    0x108 
+    0x103 3
+    0x102<2>
+	0xB3 9, 0x23
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call microRow1
+    endswitch
+stop
+
+microRow1:
+async_call microRowFirstRow
+rest 0x48
+async_sub 0x58
+rest 0x60
+async_sub 0x5A
+rest 0xC0
+async_sub 0x58
+rest 0x60
+async_sub 0x58
+rest 0x60
+async_sub 0x5A
+stop
+
+microRowFirstRow:
+0x100 0x30, 0
+rest 0x30	// 1.0 beats
+0x102<1> 
+stop

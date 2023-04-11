@@ -1,0 +1,38 @@
+sequenceForkLifter:
+	set_cat 0
+	call changeEngine
+	engine 0x24
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x24
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call forkLifter1
+    endswitch
+stop
+
+forkLifter1:
+    0x100 0
+    rest 0x90
+    0x102
+    rest 0x30
+    0x100 0
+    rest 0x30
+    0x100 0
+    rest 0x78
+    0x102
+    rest 0x18
+    0x100 0
+    rest 0x18
+    0x100 0
+    rest 0x18
+    0x100 0
+    rest 0x90
+    0x100 0
+    rest 0x90
+    0x102
+stop

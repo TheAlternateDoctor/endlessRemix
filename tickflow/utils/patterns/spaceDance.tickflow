@@ -19,28 +19,57 @@ stop
 
 spaceDance1:
 0x110
-async_call beatSpaceDance
+async_call beatSpaceDanceDependant
 rest 0x30
-async_sub 0x59
+async_call andPoseDependantW
 rest 0x60
-async_call beatSpaceDance
+async_call beatSpaceDanceDependant
 rest 0x30
-async_call beatSpaceDance
+async_call beatSpaceDanceDependant
 rest 0x30
-async_sub 0x59
+async_call andPoseDependantW
 rest 0x30
-async_call beatSpaceDance
+async_call beatSpaceDanceDependant
 rest 0x30
-async_sub 0x5C
-rest 0x60
-async_call beatSpaceDance
+async_call letsSitDownDependantW
+rest 0x90
+async_call beatSpaceDanceDependant
 rest 0x30
-async_call beatSpaceDance
+async_call beatSpaceDanceDependant
 rest 0x30
-async_sub 0x56
+async_call punchDependantW
 stop
 
-beatSpaceDance: //Modified in case of cosmic dance
+andPoseDependantW:
+async_sub 0x59
+0xB2 4
+if 1
+    0x10C
+    rest 0x30
+    0x109
+endif
+stop
+
+letsSitDownDependantW:
+async_sub 0x5C
+rest 0x30
+0xB2 4
+if 1
+    0x10D
+    rest 0x30
+    0x10A
+endif
+stop
+
+punchDependantW:
+async_sub 0x56
+0xB2 4
+if 1
+    async_sub 0x5F
+endif
+stop
+
+beatSpaceDanceDependant: //Modified in case of cosmic dance
 0xB2 4
 if 1
     0x108

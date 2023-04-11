@@ -1,0 +1,39 @@
+sequenceBoardMeeting:
+	set_cat 0
+	call changeEngine
+	engine 0x2F
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x2F
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call boardMeeting1
+    endswitch
+    async_call boardMeetingBeatAnimsAssistant
+stop
+
+boardMeeting1:
+    0x102<1>
+    rest 0x30
+    async_sub 0x5D
+    rest 0x60
+    async_sub 0x5F
+    rest 0xC0
+    0x102
+    rest 0x30
+    0x102<1>
+    rest 0x30
+    async_sub 0x59
+    rest 0x90
+    async_sub 0x56
+    async_sub 0x63
+stop
+
+boardMeetingBeatAnimsAssistant:
+0x105
+rest 0x30
+goto boardMeetingBeatAnimsAssistant

@@ -1,3 +1,3 @@
 //Debug config file.
 debugMode=1 //Enables debug mode.
-cyclingMode=6022 // Tells which game to play at the beginning, after Basketball Girls.
+cyclingMode=0xB // Tells which game to play at the beginning, after Basketball Girls.

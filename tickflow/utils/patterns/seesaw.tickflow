@@ -1,0 +1,41 @@
+sequenceSeeSaw:
+	set_cat 0
+	call changeEngine
+	engine 0x31
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x31
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call seesaw1
+    endswitch
+stop
+
+seesaw1:
+// play_sfx 0x1000964
+0x104 1, see1
+0x104 0, saw1
+0x102 0
+0x101 1
+0x100<3> 1, 0
+0x100<3> 0, 0
+0x100<4> 1, 0
+fade<1> 1, 1, 1
+0x100<1> 1
+0x100 0
+rest 0xC0
+rest 0x60
+0x102 1
+stop
+
+see1:
+bytes 1, 1, 0, 0, 0
+return
+
+saw1:
+bytes 1, 1, 0, 0, 0
+return

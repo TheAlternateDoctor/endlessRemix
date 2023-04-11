@@ -1,0 +1,35 @@
+sequenceRingSide:
+	set_cat 0
+	call changeEngine
+	engine 0x27
+	sub 4
+	0x29<2> 
+    rest 0x18
+    0x101 0
+    0x109 1
+	0xB3 9, 0x27
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call ringside1
+    endswitch
+    async_call ringsideBeatAnims
+stop
+
+ringside1:
+async_sub 0x56
+rest 0x90
+async_sub 0x57
+rest 0xF0
+async_sub 0x56
+rest 0x90
+async_sub 0x59
+rest 0xC0
+stop
+
+ringsideBeatAnims:
+0x106
+rest 0x30
+goto ringsideBeatAnims

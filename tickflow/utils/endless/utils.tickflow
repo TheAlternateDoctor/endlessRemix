@@ -232,7 +232,6 @@ loadNextGame:
                 async_call loadFreezeFrame
                 set_func 3, nop
                 set_func 2, nop
-                0xB3 3, 0x21
             endif
         break
         case 0x13 //Wii Music
@@ -311,7 +310,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceMunchyMonk
                 async_call loadMunchyMonk
-                set_func 3, nop
+                set_func 3, preSequenceMunchyMonk
                 set_func 2, nop
             endif
         break
@@ -328,7 +327,7 @@ loadNextGame:
                 set_func 0, sequenceBtSWii
                 async_call loadBtSWii
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadBtSWiiLate
             endif
         break
         case 0x20 //Duke Nukem
@@ -361,7 +360,6 @@ loadNextGame:
                 async_call loadDoubleDate
                 set_func 3, nop
                 set_func 2, nop
-                0xB3 3, 0x12
             endif
         break
         case 0x22 //Splatoon
@@ -392,7 +390,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceMicroRow
                 async_call loadMicroRow
-                set_func 3, nop
+                set_func 3, preSequenceMicroRow
                 set_func 2, loadMicroRowLate
             endif
         break
@@ -440,7 +438,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceFlipperFlop
                 async_call loadFlipperFlop
-                set_func 3, nop
+                set_func 3, preSequenceFlipperFlop
                 set_func 2, nop
             endif
         break

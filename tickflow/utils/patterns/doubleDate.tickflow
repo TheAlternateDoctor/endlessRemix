@@ -1,0 +1,37 @@
+sequenceDoubleDate:
+	set_cat 0
+	call changeEngine
+	engine 0x21
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x21
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call doubleDate1
+    endswitch
+    async_call doubleDateBeat
+stop
+
+doubleDate1:
+0x100 0, 0, 0x30
+play_sfx 0x1000662
+rest 0x90
+async_sub 0x56
+rest 0xC0
+async_sub 0x56
+rest 0x60
+async_sub 0x58
+rest 0x60
+async_sub 0x5B
+stop
+
+doubleDateBeat:
+0x102
+0x103
+0x104
+rest 0x30
+goto doubleDateBeat
