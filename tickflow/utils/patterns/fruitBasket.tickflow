@@ -1,0 +1,29 @@
+sequenceFruitBasket:
+	set_cat 0
+	call changeEngine
+	engine 0x38
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x38
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call fruitBasket1
+    endswitch
+stop
+
+fruitBasket1:
+play_sfx 0x100119C
+0x100 0x60, 1, 0, 0
+rest 0x60
+async_sub 0x58
+rest 0x30
+async_sub 0x57
+rest 0x30
+async_sub 0x5C
+rest 0xC0
+async_sub 0x58
+stop

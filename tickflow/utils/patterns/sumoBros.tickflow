@@ -1,0 +1,121 @@
+preSequenceSumoBros:
+random 2
+if 1
+    rest 0x18
+    play_sfx 0x10011A5
+    0xB3 7, 1
+else
+    rest 0x18
+    play_sfx 0x10011A6
+    0xB3 7, 0
+endif
+stop
+
+sequenceSumoBros:
+	set_cat 0
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0xC
+    0x108 0
+    input 1
+    0xB2 7
+    if 1
+        random 1
+        switch
+        case 0
+            async_call sumoBrosSlap1
+        endswitch
+    else
+        random 1
+        switch
+        case 0
+            async_call sumoBrosStomp1
+        endswitch
+    endif
+    rest 0xC
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+stop
+
+sumoBrosSlap1:
+async_call sumoBrosEarly4Slaps
+rest 0xC
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+async_sub 0x5B
+async_sub 0x58
+rest 0xC0
+async_sub 0x60
+rest 0x60
+async_sub 0x59
+rest 0x60
+0x100 1, 0x30
+0x101<1> 2
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x104<1> 1
+rest 0x30
+async_sub 0x65
+stop
+
+sumoBrosStomp1:
+    async_call sumoBrosEarly2Stomp
+    rest 0xC
+    0x106<2>
+    rest 0x60
+    0x106<2>
+    rest 0x30
+    async_sub 0x57
+    async_sub 0x61
+    rest 0xC0
+    async_sub 0x5A
+    0x102 0
+    0x102 1
+    rest 0x30
+    async_call SumoBrosInuBeatAnims
+    rest 0x90
+    async_sub 0x5A
+stop
+
+sumoBrosEarly4Slaps:
+0x100 0, 0xC
+rest 0xC
+0x101 0
+rest 0x30	// 1.0 beats
+0x100 0, 0x18
+0x101 1
+rest 0x30	// 1.0 beats
+0x100 0, 0x18
+0x101 0
+rest 0x30	// 1.0 beats
+0x100 0, 0x18
+0x101 1
+stop
+
+sumoBrosEarly2Stomp:
+0x100 1, 0xC
+0x101<1> 0
+rest 0xC	// 0.5 beats
+0x104<1> 1
+rest 0x30	// 1.0 beats
+0x100 1, 0x30
+0x101<1> 1
+0x104 0
+0x104 1
+rest 0x30	// 1.0 beats
+0x104<1> 1
+rest 0x30	// 1.0 beats
+stop 
+
+SumoBrosInuBeatAnims:
+0x106
+rest 0x30
+goto SumoBrosInuBeatAnims

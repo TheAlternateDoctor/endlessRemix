@@ -42,6 +42,13 @@
 #include utils/patterns/samuraiSliceWii.tickflow
 #include utils/patterns/seesaw.tickflow
 #include utils/patterns/packingPests.tickflow
+#include utils/patterns/animalAcrobat.tickflow
+#include utils/patterns/tongueLashing.tickflow
+#include utils/patterns/superSamuraiSlice.tickflow
+#include utils/patterns/fruitBasket.tickflow
+#include utils/patterns/pajamaParty.tickflow
+#include utils/patterns/catchyTune.tickflow
+#include utils/patterns/sumoBros.tickflow
 #include utils/patterns/mrUpbeat.tickflow
 #include utils/patterns/test.tickflow
 

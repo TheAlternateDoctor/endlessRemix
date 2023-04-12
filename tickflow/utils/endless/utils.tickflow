@@ -566,7 +566,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceAnimalAcrobat
                 async_call loadAnimalAcrobat
-                set_func 3, nop
+                set_func 3, preSequenceAnimalAcrobat
                 set_func 2, nop
             endif
         break

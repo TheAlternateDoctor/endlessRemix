@@ -1,2 +1,3 @@
 bin/*.bin
 **.code-workspace
+**/C00.bin

@@ -1,0 +1,36 @@
+sequenceCatchyTune:
+	set_cat 0
+	call changeEngine
+	engine 0x3B
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3B
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call catchyTune1
+    endswitch
+    async_call catchyTuneBeatAnims
+stop
+
+catchyTune1:
+    0x100 0, 1, 0x30, 0
+    rest 0xC0
+    0x100 0, 1, 0x30, 0
+    rest 0xC0
+    0x100 0, 1, 0x30, 0
+    0x100 0, 0, 0x30, 0
+    rest 0xA8
+    0x100 0, 1, 0x30, 0
+    rest 0x18
+    0x100 0, 0, 0x30, 0
+stop
+
+catchyTuneBeatAnims:
+0x102 0
+0x102 1
+rest 0x30
+goto catchyTuneBeatAnims
