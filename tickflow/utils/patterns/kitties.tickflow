@@ -1,0 +1,88 @@
+sequenceKitties:
+	set_cat 0
+    random 1
+    switch
+    case 0
+        async_call kitties1
+    endswitch
+	call changeEngine
+	engine 0x3E
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3E
+    fade<1> 1,1,1
+    input 1
+stop
+
+kitties1:
+    set_cat 0
+    async_call kittiesClap
+    rest 0xC
+    0x101 6
+    rest 0x24
+    rest 0x90
+    0x102
+    call kittiesRandomLocation
+    async_sub 0x5A
+    rest 0xC0
+    0x102
+    call kittiesRandomLocation
+    async_sub 0x56
+    rest 0xC0
+    async_sub 0x58
+stop
+
+//Does not include center, it feels too important imo
+//Also allows using the spin
+kittiesRandomLocation:
+random 6
+switch
+case 0
+    0x101 0
+    break
+case 1
+    0x101 1
+    break
+case 2
+    0x101 2
+    break
+case 3
+    0x101 3
+    break
+case 4
+    0x101 4
+    break
+case 5
+    0x101 5
+    break
+endswitch
+return
+
+kittiesClap:
+set_cat 0
+play_sfx 0x10010CC
+rest 0x10	// 0.33333334 beats
+rest 8	// 0.16666667 beats
+0x102<1> 2, 0
+rest 0x10	// 0.33333334 beats
+play_sfx 0x10010CD
+rest 8	// 0.16666667 beats
+rest 0x10	// 0.33333334 beats
+0x102<1> 1, 0
+rest 8	// 0.16666667 beats
+play_sfx 0x10010CE
+rest 0x10	// 0.33333334 beats
+rest 8	// 0.16666667 beats
+0x102<1> 0, 0
+rest 0x10	// 0.33333334 beats
+rest 8	// 0.16666667 beats
+0x100 0, 0x18
+0x100 1, 0x30
+rest 0x18	// 0.5 beats
+0x102<2> 1
+play_sfx 0x10010CF
+rest 0x18	// 0.5 beats
+0x102<2> 0
+rest 0x30	// 1.0 beats
+stop

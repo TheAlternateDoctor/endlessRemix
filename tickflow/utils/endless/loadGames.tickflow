@@ -36,13 +36,13 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_NTR_COIN_TOSS"
-    set_cellanim 4, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+    set_sfx 4, u"GROUP_NTR_COIN_TOSS_REMIX"
+    set_cellanim 4, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 4
     0xB3 1, 0
 else
-    set_sfx 5, u"GROUP_NTR_COIN_TOSS"
-    set_cellanim 5, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+    set_sfx 5, u"GROUP_NTR_COIN_TOSS_REMIX"
+    set_cellanim 5, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 5
     0xB3 1, 1
 endif
@@ -184,7 +184,7 @@ else
 endif
 stop
 
-loadDJSchool:
+loadBasketGirls:
 0xB2 1
 if 1
     async_call unloadGameSlot4
@@ -194,32 +194,34 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_cellanim 4, u"rom:/cellanim/ntrDJSchool_v0.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
-    game_cellanim 0x11, 4
-    game_effect 0x11, 4
+    game_cellanim 0x3C, 4
+    game_effect 0x3C, 4
     0xB3 1, 0
 else
-    set_cellanim 5, u"rom:/cellanim/ntrDJSchool_v0.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/rvlBasket_v0.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
-    game_cellanim 0x11, 5
-    game_effect 0x11, 5
+    game_cellanim 0x3C, 5
+    game_effect 0x3C, 5
     0xB3 1, 1
 endif
 stop
 
-loadDJSchoolLate:
+loadBasketGirlsLate:
 async_call unloadSpeAudio
 rest 0xC
 0xB2 1
 if 1
-    set_sfx 5, u"GROUP_NTR_DJ_SCHOOL_EN"
-    set_sfx 6, u"GROUP_NTR_DJ_SCHOOL_JP"
+    set_sfx 5, u"GROUP_BASKET"
+    set_sfx 6, u"GROUP_BASKET_EN"
+    set_sfx 7, u"GROUP_BASKET_JP"
 else
-    set_sfx 4, u"GROUP_NTR_DJ_SCHOOL_EN"
-    set_sfx 6, u"GROUP_NTR_DJ_SCHOOL_JP"
+    set_sfx 4, u"GROUP_BASKET"
+    set_sfx 6, u"GROUP_BASKET_EN"
+    set_sfx 7, u"GROUP_BASKET_JP"
 endif
-0xB3 5,1
+0xB3 5,2
 stop
 
 loadForkLifter:
@@ -539,15 +541,22 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_PANPAN"
     set_cellanim 4, u"rom:/cellanim/ctrTeppan_long.zlib", -1
     game_cellanim 0x3E, 4
     0xB3 1, 0
 else
-    set_sfx 5, u"GROUP_PANPAN"
     set_cellanim 5, u"rom:/cellanim/ctrTeppan_long.zlib", -1
     game_cellanim 0x3E, 5
     0xB3 1, 1
+endif
+stop
+
+loadKittiesLate:
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_PANPAN"
+else
+    set_sfx 5, u"GROUP_PANPAN"
 endif
 stop
 
@@ -872,7 +881,7 @@ if 1
     set_sfx 4, u"GROUP_TANGO"
     set_model 0, u"rom:/model/ctrTango_long.zlib", 1
     set_effect 4, u"rom:/effect/ctrTango.zlib", -1
-    set_cellanim 4, u"rom:/cellanim/ctrTango_moonwalk.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/ctrTango_long.zlib", -1
     game_cellanim 0x3D, 4
     game_model 0x3D, 0
     game_effect 0x3D, 4
@@ -881,7 +890,7 @@ else
     set_sfx 5, u"GROUP_TANGO"
     set_model 1, u"rom:/model/ctrTango_long.zlib", 1
     set_effect 5, u"rom:/effect/ctrTango.zlib", -1
-    set_cellanim 5, u"rom:/cellanim/ctrTango_moonwalk.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/ctrTango_long.zlib", -1
     game_cellanim 0x3D, 5
     game_model 0x3D, 1
     game_effect 0x3D, 5
@@ -1430,6 +1439,16 @@ else
     0xB3 1, 1
 endif
 stop
+
+loadBtSDSlate:
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_NTR_ASSEMBLE"
+else
+    set_sfx 5, u"GROUP_NTR_ASSEMBLE"
+endif
+stop
+
 loadBRF:
 0xB2 1
 if 1

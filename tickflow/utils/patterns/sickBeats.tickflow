@@ -1,0 +1,80 @@
+sequenceSickBeats:
+	set_cat 0
+	call changeEngine
+	engine 0x40
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x40
+    fade<1> 1,1,1
+    input 1
+    0xAF<6> 0
+    random 1
+    switch
+    case 0
+        async_call sickBeats1
+    endswitch
+    async_call sickBeatsBeatAnims
+    0x10A 2
+stop
+
+sickBeats1:
+0x10C
+async_call sickBeats1Virus1
+async_sub 0x5C
+rest 0xC0
+async_sub 0x5B
+rest 0x30
+async_sub 0x58
+rest 0x90
+async_sub 0x59
+stop
+
+sickBeats1Virus1:
+0x100 
+0x101 0
+0x102 
+0x102 
+rest 0x30	// 1.0 beats
+0x105 
+if 0
+	goto 0x6F
+endif 
+0x103 0x30
+rest 0x30	// 1.0 beats
+0x104 
+rest 0x30	// 1.0 beats
+0x105 
+if 0
+	goto 0x6F
+endif 
+0x103 0x30
+rest 0x30	// 1.0 beats
+0x104 
+rest 0x30	// 1.0 beats
+0x105 
+if 0
+	goto 0x6F
+endif 
+0x102 
+rest 0x60	// 2.0 beats
+0x106<1> 
+rest 0x30	// 1.0 beats
+0x106<2> 
+rest 0x30	// 1.0 beats
+0x106<3> 
+rest 0x60	// 2.0 beats
+0x10A<1> 
+if 1
+	0x106<4> 
+	rest 0x30	// 1.0 beats
+	0x106 
+	rest 0x30	// 1.0 beats
+endif 
+label 0x6F
+stop 
+
+sickBeatsBeatAnims:
+0x107
+rest 0x30
+goto sickBeatsBeatAnims

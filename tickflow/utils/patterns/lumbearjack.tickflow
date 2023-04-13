@@ -1,0 +1,30 @@
+sequenceLumbearjack:
+	set_cat 0
+	call changeEngine
+	engine 0x3F
+	sub 4
+	0x29<2> 
+    rest 0xC
+    input 1
+    random 1
+    switch
+    case 0
+        async_call lumbearjack1
+    endswitch
+    rest 0xC
+	0xB3 9, 0x3F
+    fade<1> 1,1,1
+    0x103<3>
+    async_call lumbearjackBeatAnims
+stop
+
+lumbearjack1:
+    async_call startLogRight
+    rest 0xC
+    rest 0xA8
+    async_call mediumLogLeft
+    rest 0xC0
+    async_call smallLogRight
+    rest 0x90
+    async_call mediumLogLeft
+stop

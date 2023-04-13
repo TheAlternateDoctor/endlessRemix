@@ -1,0 +1,46 @@
+sequenceClapTrap:
+	set_cat 0
+	call changeEngine
+	engine 0x42
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x42
+    fade<1> 1,1,1
+    input 1
+    0xAF<6> 0
+    random 1
+    switch
+    case 0
+        async_call clapTrap1
+    endswitch
+stop
+
+clapTrap1:
+rest 0x30
+async_call clapTrapNormal
+rest 0xC0
+async_call clapTrapNormal
+rest 0xC0
+async_call clapTrapNormal
+rest 0xC0
+async_call clapTrapQuick
+
+stop
+
+clapTrapNormal:
+0x105<1> 
+0x102 1
+0x100 0x60
+play_sfx 0x1000AB8
+rest 0x60
+0x102 0
+stop
+
+clapTrapQuick:
+0x102 1
+0x100 0x30
+play_sfx 0x1000AB9
+rest 0x30
+0x102 0
+stop

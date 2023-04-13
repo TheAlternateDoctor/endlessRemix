@@ -1,0 +1,72 @@
+sequenceTutorial:
+	set_cat 0
+	call changeEngine
+	engine 0x4F
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x4F
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call drumPractice1
+    endswitch
+    0x103 0
+    0x103 2
+stop
+
+drumPractice1:
+async_call drumPracticeBeatAnim
+rest 0x30
+async_call hitDrumLeft
+rest 0x60
+async_call drumPracticeBeatAnim
+rest 0x30
+async_call drumPracticeBeatAnim
+rest 0x30
+async_call hitDrumRight
+rest 0x60
+async_call drumPracticeBeatAnim
+rest 0x30
+async_call drumPracticeBeatAnim
+rest 0x30
+async_call hitDrumLeft
+rest 0x60
+async_call hitDrumRight
+rest 0x60
+async_call hitDrumLeft
+stop
+
+drumPracticeBeatAnim:
+0x103<1> 0
+0x103<1> 1
+0x103<1> 2
+stop
+
+hitDrumLeft:
+	0x103<5> 0
+	0x103<5> 1
+	0x103<5> 2
+	0x103<2> 0, 1
+	0x103<2> 1, 1
+	0x103<2> 2, 1
+	0x100 0x30, 0
+	rest 0x30
+	0x103<4> 0, 1
+	0x103<4> 2, 1
+stop
+
+hitDrumRight:
+	0x103<5> 0
+	0x103<5> 1
+	0x103<5> 2
+	0x103<2> 0, 0
+	0x103<2> 1, 0
+	0x103<2> 2, 0
+	0x100 0x30, 0
+	rest 0x30
+	0x103<4> 0, 0
+	0x103<4> 2, 0
+stop

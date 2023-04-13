@@ -1,0 +1,32 @@
+sequenceCoinToss:
+	set_cat 0
+	call changeEngine
+	engine 0x41
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x41
+    fade<1> 1,1,1
+    input 1
+    0xAF<6> 0
+    0x102 1
+    0x10A 
+    0x10A<5> 
+    0x10A<1> 
+    input 0
+    0x103 0
+    fade<1> 1, 1, 1
+    rest 0xC0	// 4.0 beats
+    0x10A<6> 
+    rest 0xC0	// 4.0 beats
+    input 1
+    0x103 1
+    0x10A<3> 
+    0x10A<2> 
+    rest 0x30	// 1.0 beats
+    0x10A<4> 
+    rest 0x30	// 1.0 beats
+    rest 0x60	// 2.0 beats
+    rest 0xC0	// 4.0 beats
+    rest 0x60	// 2.0 beats
+stop

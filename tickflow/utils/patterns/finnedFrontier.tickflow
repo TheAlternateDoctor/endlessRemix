@@ -1,0 +1,32 @@
+preSequenceFinned:
+async_call loadFinnedLate
+rest 0x60
+play_sfx 0x1000B1F
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B21
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B21
+rest 0x18	// 0.5 beats
+0x8E 0
+stop
+
+sequenceFinned:
+	set_cat 0
+	call changeEngine
+	engine 0x23
+	sub 4
+	0x29<2> 
+    rest 0xC //Allows preparing the first scale
+    random 1
+    switch
+    case 0
+        async_call finnedFrontier1
+    endswitch
+    input 1
+    rest 0xC
+	0xB3 9, 0x23
+    fade<1> 1,1,1
+stop
+
+finnedFrontier1:
+stop

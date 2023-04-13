@@ -1,0 +1,100 @@
+sequenceBtSDS:
+	set_cat 0
+	call changeEngine
+	engine 0x1C
+	sub 4
+	0x29<2> 
+    rest 0xC //Allows preparing the first scale
+    random 1
+    switch
+    case 0
+        async_call builtToScaleDS1
+    endswitch
+    rest 0xC
+	0xB3 9, 0x1C
+    fade<1> 1,1,1
+    input 1
+stop
+
+builtToScaleDS1:
+    async_call builtToScaleDS1Scale
+    rest 0xC
+    async_call builtToScaleDSslotA50Remix
+    rest 0xC0
+    async_call slotB25
+    rest 0x90
+    async_call slotC100
+stop
+
+builtToScaleDS1Scale:
+    play_sfx 0x1000598 //Up speed
+    rest 1
+    play_sfx 0x1000598 //Up speed
+    rest 1
+    play_sfx 0x1000598 //Up speed
+    rest 0xA
+    play_sfx 0x1000597 //Scale
+    rest 0xC0
+    play_sfx 0x1000598 //Up speed
+    rest 1
+    play_sfx 0x100059A //Up pitch
+    rest 1
+    play_sfx 0x100059A //Up pitch
+    rest 1
+    play_sfx 0x100059A //Up pitch
+    rest 0x2D
+    play_sfx 0x1000597 //Scale
+    rest 0x60
+    play_sfx 0x100059B //Down speed
+    rest 0x1
+    play_sfx 0x100059B //Down speed
+    rest 0x1
+    play_sfx 0x100059B //Down speed
+    rest 0x1
+    play_sfx 0x1000599 //Down pitch
+    rest 0x1
+    play_sfx 0x1000599 //Down pitch
+    rest 0x1
+    play_sfx 0x1000599 //Down pitch
+    rest 0x2B
+    play_sfx 0x1000597 //Scale
+stop
+
+builtToScaleDSslotA50Remix:
+    0x103 0, 1
+    0x103<3> 0
+    0x103<1> 0, 1, -3
+    0x103<1> 0, 0, 3
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, -2
+    0x103<1> 0, 0, 2
+    rest 0x18	// 0.5 beats
+    async_call charge
+    0x102 -1, 2, 0, 1, 0
+    0x103<2> 0
+    0x103<1> 0, 1, -1
+    0x103<1> 0, 0, 1
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 0
+    0x103<1> 0, 0, 0
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 1
+    0x103<1> 0, 0, -1
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 2
+    0x103<1> 0, 0, -2
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 3
+    0x103<1> 0, 0, -3
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 4
+    0x103<1> 0, 0, -4
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 5
+    0x103<1> 0, 0, -5
+    rest 0x18	// 0.5 beats
+    0x103<1> 0, 1, 6
+    0x103<1> 0, 0, -6
+    rest 0x18	// 0.5 beats
+    0x103 0, 0
+stop 

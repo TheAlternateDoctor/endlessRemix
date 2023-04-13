@@ -695,6 +695,7 @@ loadNextGame:
                 set_func 0, sequenceKitties
                 async_call loadKitties
                 set_func 3, nop
+                set_func 2, loadKittiesLate
             endif
         break
         case 0x3F //Zelda Mastersword
@@ -787,10 +788,10 @@ loadNextGame:
                     0xB3 3, 1337
                     0xB3 0, 0x44
                 endif
-                set_func 0, sequenceDJSchool
-                async_call loadDJSchool
+                set_func 0, sequenceBasketGirls
+                async_call loadBasketGirls
                 set_func 3, nop
-                set_func 2, loadDJSchoolLate
+                set_func 2, loadBasketGirlsLate
             endif
         break
         case 0x45 //Here Is
@@ -806,26 +807,26 @@ loadNextGame:
                 set_func 0, sequenceBtSDS
                 async_call loadBtSDS
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadBtSDSlate
             endif
         break
-        case 0x46 //Konga Conga Kappa
-            0xB2 9
-            if 0x3C //Stop games from being played next to each other
-                goto loadNextGame
-            else
-                0xB2 10
-                if 1
-                    0xB3 3, 1337
-                    0xB3 0, 0x46
-                endif
-                set_func 0, sequenceManzai
-                async_call loadManzai //help
-                // set_func 3, unloadManzai
-                set_func 3, nop
-                set_func 2, nop
-            endif
-        break
+        // case 0x46 //Konga Conga Kappa
+        //     0xB2 9
+        //     if 0x3C //Stop games from being played next to each other
+        //         goto loadNextGame
+        //     else
+        //         0xB2 10
+        //         if 1
+        //             0xB3 3, 1337
+        //             0xB3 0, 0x46
+        //         endif
+        //         set_func 0, sequenceManzai
+        //         async_call loadManzai //help
+        //         // set_func 3, unloadManzai
+        //         set_func 3, nop
+        //         set_func 2, nop
+        //     endif
+        // break
         case 0x47 //Accumula Town
             0xB2 9
             if 0x23 //Stop games from being played next to each other
@@ -838,8 +839,8 @@ loadNextGame:
                 endif
                 set_func 0, sequenceFinned
                 async_call loadFinned
-                set_func 3, nop
-                set_func 2, loadFinnedLate
+                set_func 3, preSequenceFinned
+                set_func 2, nop
             endif
         break
         case 0x48 //Open Sesame Tofu!
