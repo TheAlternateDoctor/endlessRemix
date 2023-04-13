@@ -3,6 +3,8 @@ rest 0x78
 play_sfx 0x10002E1
 rest 0x30
 play_sfx 0x10002E7
+rest 0x18
+play_sfx 0x10010BE
 stop
 
 sequenceAnimalAcrobat:
@@ -26,5 +28,5 @@ sequenceAnimalAcrobat:
 stop
 
 animalAcrobat1:
-bytes 2, 0, 3
+bytes 2, 0, 3, 6
 return

@@ -26,7 +26,6 @@ superSamuraiSlice1:
     rest 0xC0
     async_sub 0x5A
     async_sub 0x5B
-    rest 0x30
     async_sub 0x77
 stop
 

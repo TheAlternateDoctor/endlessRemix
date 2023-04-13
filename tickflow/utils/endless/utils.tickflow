@@ -662,8 +662,8 @@ loadNextGame:
                 endif
                 set_func 0, sequenceSumoBros
                 async_call loadSumoBros
-                set_func 3, nop
-                set_func 2, loadSumoLate
+                set_func 3, preSequenceSumoBros
+                set_func 2, nop
             endif
         break
         case 0x3D //Michael Jackson
