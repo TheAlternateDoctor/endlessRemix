@@ -158,7 +158,7 @@ else
 endif
 stop
 
-loadSnappyTrio:
+loadClappyTrio:
 0xB2 1
 if 1
     async_call unloadGameSlot4
@@ -169,15 +169,57 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_PATI"
-    set_cellanim 4, u"rom:/cellanim/agbClap_arrange.zlib", -1
-    set_layout 6, u"rom:/layout/agbClap_arrange.zlib", -1
+    random 4
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/agbClap_short.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_short.zlib", -1
+        0xB3 7, 0
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/agbClap_long.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/agbClap_arrange.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_arrange.zlib", -1
+        0xB3 7, 2
+        break
+    case 3
+        set_cellanim 4, u"rom:/cellanim/agbClap_remix02.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_remix02.zlib", -1
+        0xB3 7, 3
+        break
+    endswitch
     game_cellanim 1, 4
     game_layout 1, 6
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_PATI"
-    set_cellanim 5, u"rom:/cellanim/agbClap_arrange.zlib", -1
-    set_layout 7, u"rom:/layout/agbClap_arrange.zlib", -1
+    random 4
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/agbClap_short.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_short.zlib", -1
+        0xB3 7, 0
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/agbClap_long.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/agbClap_arrange.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_arrange.zlib", -1
+        0xB3 7, 2
+        break
+    case 3
+        set_cellanim 5, u"rom:/cellanim/agbClap_remix02.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_remix02.zlib", -1
+        0xB3 7, 3
+        break
+    endswitch
     game_cellanim 1, 5
     game_layout 1, 7
     0xB3 1, 1
@@ -1588,12 +1630,14 @@ endif
 rest 0x60
 0xB2 1
 if 1
+        set_sfx 4, u"GROUP_MEAT"
     set_cellanim 4, u"rom:/cellanim/skiMeat_tofu.zlib", -1
     set_effect 4, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
     0xB3 1, 0
 else
+        set_sfx 5, u"GROUP_MEAT"
     set_cellanim 5, u"rom:/cellanim/skiMeat_tofu.zlib", -1
     set_effect 5, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 5

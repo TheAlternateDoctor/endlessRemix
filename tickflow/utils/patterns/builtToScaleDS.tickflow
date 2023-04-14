@@ -58,6 +58,10 @@ builtToScaleDS1Scale:
     play_sfx 0x1000599 //Down pitch
     rest 0x2B
     play_sfx 0x1000597 //Scale
+    rest 0x30
+    //I need to fckin reset because I forgot to implement it
+    play_sfx 0x100059B //Down speed
+    rest 0x1
 stop
 
 builtToScaleDSslotA50Remix:

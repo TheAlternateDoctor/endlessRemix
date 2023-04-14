@@ -1,0 +1,31 @@
+sequenceSoumen:
+	set_cat 0
+	call changeEngine
+	engine 0x1B
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x1B
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call soumen1
+    endswitch
+    async_call somenBeat
+    0x106<1>
+    0x104<1>
+    zoom 3, -0xAE, 0xAE
+    pan 3, -0x35, 0x8
+stop
+
+soumen1:
+async_call shorthand
+rest 0x90
+async_call bothhands
+rest 0xF0
+async_call shorthand
+rest 0x90
+async_call offbeathand
+stop

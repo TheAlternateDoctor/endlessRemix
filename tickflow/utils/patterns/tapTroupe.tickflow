@@ -1,0 +1,44 @@
+preSequenceTapTroupe:
+rest 0x48
+play_sfx 0x10002DF
+rest 0x30
+play_sfx 0x10002E0
+rest 0x30
+play_sfx 0x10002E1
+rest 0x30
+play_sfx 0x10002E2
+stop
+
+sequenceTapTroupe:
+	set_cat 0
+	call changeEngine
+	engine 0xC
+	sub 4
+	0x29<2> 
+    0x105 1
+    rest 0x18
+	0xB3 9, 0xC
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call tapTroupe1
+    endswitch
+    zoom 3, 0x168, 0x168
+    pan 3, 8, 0
+    0x102 0
+    0x103 0
+stop
+
+tapTroupe1:
+async_call fourbeatstepinitialprep
+rest 0xC0
+async_call zerobom
+rest 0x60
+async_call threebeatstepprepreturn
+rest 0x90
+async_call threebom
+rest 0xC0
+async_call fourbeatstepreturn
+stop

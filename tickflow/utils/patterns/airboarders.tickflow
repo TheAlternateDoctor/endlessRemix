@@ -16,6 +16,7 @@ sequenceAirboarders:
     case 0
         async_call airboarders1
     endswitch
+    async_call airboarderBeatAnims
 stop
 
 airboarders1:
@@ -27,18 +28,18 @@ async_call airboarderCrouch
 rest 0xC0
 async_call airboarderCrouch
 rest 0xC0
-async_call beatAirboarder
 rest 0x30
 async_call airboarderCharge
 rest 0xC0
 async_call airboarderJump
 stop
 
-beatAirboarder:
+airboarderBeatAnims:
 0x105 0
 0x105 1
 0x105 2
-stop
+rest 0x30
+goto airboarderBeatAnims
 
 airboarderCrouch:
 play_sfx 0x1000FCF

@@ -1,3 +1,16 @@
+//Use setup at the very start of the game, before the fadein
+//Use fourbeatswim, twobeatdash for inputs
+//transitionfromdash and transitiontodash (the sfx) should be used 2.5 beats before transitionning
+
+finnedSetup:
+    zoom 3, 0x300, 0x300
+    0x101 path, 0x10, 1
+    0x102 startingplacement, 4
+    0x103 3
+	0x102<2>
+	0x102<4> 3
+	0x102<4> 4
+stop
 
 checker:
 label 0x202
@@ -169,6 +182,29 @@ play_sfx 0x1000B19
 // 0x3B 1, 2, "flea_bubble00", -0x40, 0, 0x100, 0x18
 stop 
 
+fourbeatremix:
+0x100 0xC, 0
+rest 0xC	// 0.5 beats
+play_sfx 0x1000B19
+0x102<1> 
+// 0x3B 1, 2, "flea_bubble00", -0x40, 0, 0x100, -0x10
+0x100 0x30, 0
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B19
+0x102<1> 
+// 0x3B 1, 2, "flea_bubble00", -0x40, 0, 0x100, 0xC
+0x100 0x30, 0
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B19
+0x102<1> 
+// 0x3B 1, 2, "flea_bubble00", -0x40, 0, 0x100, 0x18
+0x100 0x30, 0
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B19
+0x102<1> 
+// 0x3B 1, 2, "flea_bubble00", -0x40, 0, 0x100, 0x18
+stop 
+
 twobeatdash:
 0x100 0x18, 1
 rest 0x18	// 0.5 beats
@@ -222,6 +258,15 @@ play_sfx 0x1000B21
 rest 0x18	// 0.5 beats
 pan_gradual  3, 3, 3, 0x24, -0x2C, 0
 0x8E 0
+stop
+
+transitionfromdashRemix:
+play_sfx 0x1000B1F
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B21
+rest 0x30	// 1.0 beats
+play_sfx 0x1000B21
+rest 0x18	// 0.5 beats
 stop
 
 camerafollow:

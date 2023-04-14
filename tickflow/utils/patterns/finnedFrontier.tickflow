@@ -16,7 +16,8 @@ sequenceFinned:
 	engine 0x23
 	sub 4
 	0x29<2> 
-    rest 0xC //Allows preparing the first scale
+    rest 0xC
+    async_call finnedSetup
     random 1
     switch
     case 0
@@ -29,4 +30,21 @@ sequenceFinned:
 stop
 
 finnedFrontier1:
+async_call fourbeatremix
+rest 0xC
+//First swim
+rest 0x18
+async_call transitiontodash, 0x18
+rest 0x90
+async_call twobeatdash
+async_call transitionfromdash, 0x48
+rest 0x60
+async_call twobeatdash
+rest 0x60
+async_call fourbeatswim
+async_call transitiontodash, 0x48
+rest 0xC0
+async_call twobeatdash
+rest 0x60
+async_call twobeatdash
 stop

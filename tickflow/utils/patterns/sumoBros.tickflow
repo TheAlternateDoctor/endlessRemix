@@ -68,6 +68,7 @@ sumoBrosSlap1:
     rest 0x30	// 1.0 beats
     0x104<1> 1
     rest 0x30
+    0x107 1
     async_sub 0x65
 stop
 
@@ -93,19 +94,14 @@ stop
 sumoBrosEarly4Slaps:
     0x100 0, 0xC
     rest 0xC
-    play_sfx 0x1000291
     0x101 0
     rest 0x18	// 1.0 beats
     0x100 0, 0x18
     0x101 1
-    rest 0x18	// 1.0 beats
-    play_sfx 0x1000291
-    rest 0x18	// 1.0 beats
+    rest 0x30
     0x100 0, 0x18
     0x101 0
-    rest 0x18	// 1.0 beats
-    play_sfx 0x1000291
-    rest 0x18	// 1.0 beats
+    rest 0x30
     0x100 0, 0x18
     0x101 1
 stop

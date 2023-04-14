@@ -37,6 +37,8 @@ rest 0x60
 async_call hitDrumRight
 rest 0x60
 async_call hitDrumLeft
+rest 0x60
+async_call drumPracticeBeatAnim
 stop
 
 drumPracticeBeatAnim:

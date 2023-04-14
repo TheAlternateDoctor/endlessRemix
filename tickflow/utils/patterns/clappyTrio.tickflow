@@ -13,6 +13,21 @@ sequenceClappyTrio:
     case 0
         call clappyTrio1
     endswitch
+    0xB2 7
+    switch
+    case 0
+        0x105<2> 0x5031CD
+        break
+    case 1
+        0x105<2> 0x503122
+        break
+    case 2
+        0x105<2> 0x503074
+        break
+    case 3
+        0x105<2> 0x509CDB
+        break
+    endswitch
 stop
 
 clappyTrio1:

@@ -368,6 +368,21 @@ rest 0x18	// 0.5 beats
 0x106<1> 0
 stop 
 
+performancecheckthreebeat:
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+rest 0x18	// 0.5 beats
+0x104
+rest 0x18	// 0.5 beats
+0x106<1> 0
+stop 
+
 performancechecktwobeatleg:
 0xA2
 0x9F<5> 2
@@ -377,6 +392,31 @@ if 0
  0x103 1
 endif
 rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
+stop 
+
+performancecheckthreebeatleg:
+0xA2
+0x9F<5> 2
+rest 0x2F	// 0.5 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 1	// 0.5 beats
+
+rest 3	// <0.125 beats
+0xA2<2> 
+if 0
+ 0x103 1
+endif
+rest 0x2D	// >0.875 beats
 
 rest 3	// <0.125 beats
 0xA2<2> 
@@ -432,6 +472,32 @@ rest 0x2F	// 0.5 beats
 rest 1	// 0.5 beats
 async_call ready
 0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// <0.875 beats
+rest 8	// <0.167 beats
+0x103 0xE
+0x102 0xE
+stop 
+
+threebeatstepprepreturn:
+async_call performancecheckthreebeat
+async_call performancecheckthreebeatleg
+async_call tapvoicewithslap
+0x100
+rest 0x2F	// 0.5 beats
+0x8E 0
+0x103 1
+rest 1	// 0.5 beats
+0x102 4
+0x100
+rest 3	// <0.125 beats
+//0x103 1
+rest 0x25	// <0.875 beats
+rest 8	// <0.167 beats
+async_call ready
+0x102 5
 0x100
 rest 3	// <0.125 beats
 //0x103 1

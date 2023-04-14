@@ -1,0 +1,59 @@
+sequenceMeatGrinder:
+	set_cat 0
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+    input 1
+    random 1
+    switch
+    case 0
+        async_call meatGrinder1
+    endswitch
+stop
+
+meatGrinder1:
+async_call meatGrinder1beatAnims
+rest 0x30
+async_call meatmain
+rest 0xC0
+async_call meatmain
+rest 0x90
+async_call meatcall
+rest 0x30
+async_call meatchain
+rest 0x30
+async_call meatchain
+rest 0x18
+async_call meatchain
+stop
+
+meatGrinder1beatAnims:
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x30
+//call
+rest 0xC0
+rest 0x30
+0x106
+rest 0x30
+0x106
+rest 0x18
+0x106
+stop

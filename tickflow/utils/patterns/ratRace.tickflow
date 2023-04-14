@@ -13,6 +13,7 @@ sequenceRatRace:
     case 0
         async_call ratRace1
     endswitch
+    0x105 2
 stop
 
 ratRace1:

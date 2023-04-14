@@ -37,7 +37,7 @@ loadNextGame:
                     0xB3 0, 0x1
                 endif
                 set_func 0, sequenceClappyTrio
-                async_call loadSnappyTrio
+                async_call loadClappyTrio
                 set_func 3, nop
                 set_func 2, nop
             endif
@@ -903,7 +903,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceTapTroupe
                 async_call loadTapTroupe
-                set_func 3, nop
+                set_func 3, preSequenceTapTroupe
                 set_func 2, loadTapTroupeLate
             endif
         break
@@ -915,7 +915,7 @@ loadNextGame:
                 0xB2 10
                 if 1
                     0xB3 3, 1337
-                    0xB3 0, 0x4B
+                    0xB3 0, 0x4C
                 endif
                 set_func 0, sequenceSplashdown
                 async_call loadSplashdown
