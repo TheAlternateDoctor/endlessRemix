@@ -103,7 +103,7 @@ loadNextGame:
                 set_func 0, sequenceMarcher
                 async_call loadMarcher
                 set_func 3, preSequenceMarcher
-                set_func 2, nop
+                set_func 2, loadMarcherLate
             endif
         break
         case 0x6 //Sonic
@@ -780,7 +780,7 @@ loadNextGame:
         break
         case 0x44 //Daft Punk
             0xB2 9
-            if 0x11 //Stop games from being played next to each other
+            if 0x3C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
@@ -794,22 +794,22 @@ loadNextGame:
                 set_func 2, loadBasketGirlsLate
             endif
         break
-        case 0x45 //Here Is
-            0xB2 9
-            if 0x1C //Stop games from being played next to each other
-                goto loadNextGame
-            else
-                0xB2 10
-                if 1
-                    0xB3 3, 1337
-                    0xB3 0, 0x45
-                endif
-                set_func 0, sequenceBtSDS
-                async_call loadBtSDS
-                set_func 3, nop
-                set_func 2, loadBtSDSlate
-            endif
-        break
+        // case 0x45 //Here Is
+        //     0xB2 9
+        //     if 0x1C //Stop games from being played next to each other
+        //         goto loadNextGame
+        //     else
+        //         0xB2 10
+        //         if 1
+        //             0xB3 3, 1337
+        //             0xB3 0, 0x45
+        //         endif
+        //         set_func 0, sequenceBtSDS
+        //         async_call loadBtSDS
+        //         set_func 3, nop
+        //         set_func 2, loadBtSDSlate
+        //     endif
+        // break
         // case 0x46 //Konga Conga Kappa
         //     0xB2 9
         //     if 0x3C //Stop games from being played next to each other
@@ -915,6 +915,7 @@ loadNextGame:
                 0xB2 10
                 if 1
                     0xB3 3, 1337
+                    0xB3 3, 0x4A
                     0xB3 0, 0x4C
                 endif
                 set_func 0, sequenceSplashdown
@@ -927,7 +928,7 @@ loadNextGame:
             goto loadNextGame
         break
     endswitch
-    call text
+    // call text
 stop
 
 playNextGame:

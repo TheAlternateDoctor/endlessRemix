@@ -7,12 +7,13 @@ sequenceHopping:
     rest 0x18
 	0xB3 9, 0x4
     fade<1> 1,1,1
-    input 1
     random 1
     switch
     case 0
-        call hopping1
+        async_call hopping1
     endswitch
+    rest 0x30
+    input 1
 stop
 
 hopping1:

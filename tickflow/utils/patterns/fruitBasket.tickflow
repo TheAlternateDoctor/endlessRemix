@@ -13,6 +13,7 @@ sequenceFruitBasket:
     case 0
         async_call fruitBasket1
     endswitch
+    async_call fruitBasketBeatAnims
 stop
 
 fruitBasket1:
@@ -27,3 +28,8 @@ async_sub 0x5C
 rest 0xC0
 async_sub 0x58
 stop
+
+fruitBasketBeatAnims:
+0x102
+rest 0x30
+goto fruitBasketBeatAnims

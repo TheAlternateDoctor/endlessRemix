@@ -9,13 +9,14 @@ sequenceRingSide:
     0x109 1
 	0xB3 9, 0x27
     fade<1> 1,1,1
-    input 1
     random 1
     switch
     case 0
         async_call ringside1
     endswitch
     async_call ringsideBeatAnims
+    rest 0x60
+    input 1
 stop
 
 ringside1:

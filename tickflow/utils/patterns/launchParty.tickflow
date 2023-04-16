@@ -8,13 +8,18 @@ sequenceLaunchParty:
 	0xB3 9, 0x2E
     fade<1> 1,1,1
     0x106 1
-    0x105<1>
+    0xB2 7
+    if 0
+        0x105<1>
+    endif
     input 1
     random 1
     switch
     case 0
         async_call launchParty1
     endswitch
+    rest 0x60
+    input 1
 stop
 
 launchParty1:

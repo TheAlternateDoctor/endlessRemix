@@ -12,7 +12,7 @@ sequenceNightWalk:
     case 0
         async_call nightWalk1
     endswitch
-    rest 0xC0
+    rest 0x90
     input 1
 stop
 

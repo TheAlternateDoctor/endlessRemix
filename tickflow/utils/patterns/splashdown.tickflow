@@ -15,6 +15,7 @@ sequenceSplashdown:
     rest 0xC
 	0xB3 9, 0x13
     fade<1> 1,1,1
+    rest 0x30
     input 1
 stop
 

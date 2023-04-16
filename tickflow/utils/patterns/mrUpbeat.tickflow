@@ -16,6 +16,12 @@ sequenceUpbeat:
     rest 0xA8
     async_call metronome, 0x18
     async_call cycle
+    rest 0xC0*2
+    rest 0x48
+    kill_loc cycle
+    rest 0x18
+    kill_loc metronome
+    play_sfx 0x1000B0F
 stop
 
 upbeatCountinNew:

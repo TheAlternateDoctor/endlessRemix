@@ -1,10 +1,9 @@
 preSequenceAnimalAcrobat:
+rest 0x30
 rest 0x78
 play_sfx 0x10002E1
 rest 0x30
 play_sfx 0x10002E7
-rest 0x18
-play_sfx 0x10010BE
 stop
 
 sequenceAnimalAcrobat:
@@ -13,18 +12,17 @@ sequenceAnimalAcrobat:
 	engine 0x35
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x18
+	0xB3 9, 0x35
+    fade<1> 1,1,1
     random 1
     switch
     case 0
         0x102<1> animalAcrobat1, 4        // Load pattern
     endswitch
-    0x102 0xC                        // Start executing pattern (in 1 beat)
+    0x102 0x30                        // Start executing pattern (in 1 beat)0x100059B
     input 1                            // Enable input
-    0x101<1> 0xC                    // Jump now, grab in .25 beat
-    rest 0xC
-	0xB3 9, 0x35
-    fade<1> 1,1,1
+    0x101<1> 0x30                    // Jump now, grab in .25 beat
 stop
 
 animalAcrobat1:

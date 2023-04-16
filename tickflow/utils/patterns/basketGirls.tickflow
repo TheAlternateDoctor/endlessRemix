@@ -37,6 +37,7 @@ async_call basketThrow
 stop
 
 basketGirlsStart:
+0x101 1
 async_call basketBeat
 rest 0x30
 async_call basketBeat

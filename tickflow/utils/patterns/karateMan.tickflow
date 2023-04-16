@@ -13,6 +13,7 @@ sequenceKarate:
     case 0
         async_call karate1
     endswitch
+    async_call karateBGbeat
 stop
 
 karate1:
@@ -52,3 +53,18 @@ rest 0x30
 0x104 0
 rest 0x60
 goto karate1beatAnims
+
+karateBGbeat:
+0xB2 4
+switch
+case 0
+    label 0xBEA7
+    0x111
+    rest 0x30
+    goto 0xBEA7
+case 2
+    0x113<5>
+    break
+endswitch
+stop
+

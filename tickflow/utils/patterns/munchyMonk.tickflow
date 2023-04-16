@@ -31,7 +31,6 @@ sequenceMunchyMonk:
     async_call munchyMonkBeat
 	0xB3 9, 0x1B
     fade<1> 1,1,1
-    input 1
     0xB2 7
     switch
     case 0
@@ -56,6 +55,8 @@ sequenceMunchyMonk:
         endswitch
         break
     endswitch
+    rest 0x18
+    input 1
 stop
 
 munchyMonkOne1:

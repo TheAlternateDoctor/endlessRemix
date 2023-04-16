@@ -7,13 +7,14 @@ sequenceRatRace:
     rest 0x18
 	0xB3 9, 0x9
     fade<1> 1,1,1
-    input 1
     random 1
     switch
     case 0
         async_call ratRace1
     endswitch
     0x105 2
+    rest 0x60
+    input 1
 stop
 
 ratRace1:
