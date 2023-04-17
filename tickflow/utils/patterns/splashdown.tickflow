@@ -1,3 +1,6 @@
+// In need of fixing!
+// It is weirdly offbeat and I cannot for the life of me know how to fix it.
+
 sequenceSplashdown:
     0x2B 0x13, 8
 	set_cat 0

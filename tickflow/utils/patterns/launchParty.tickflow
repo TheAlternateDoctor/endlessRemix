@@ -1,3 +1,10 @@
+// Has two variants, use 0xB2 7 to know.
+// 0 starts in space,
+// 1 starts on the ground.
+// Warning! 1 is also used by cellanims
+// without a space setting, like Remix 6 Wii!
+// DO NOT LAUNCH THE ROCKET IN THIS VARIANT.
+
 sequenceLaunchParty:
 	set_cat 0
 	call changeEngine

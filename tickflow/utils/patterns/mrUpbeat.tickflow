@@ -1,3 +1,4 @@
+// Due to the simplicity of the game, no other patterns are allowed for this game.
 
 sequenceUpbeat:
 	set_cat 0

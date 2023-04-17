@@ -1,3 +1,6 @@
+// The camera is automatically setup
+// like the start of the minigame.
+
 sequenceTangotronic:
 	set_cat 0
 	call changeEngine

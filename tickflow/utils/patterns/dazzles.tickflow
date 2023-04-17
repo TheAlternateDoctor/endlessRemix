@@ -1,3 +1,5 @@
+// Has a game tickflow for use in early cues.
+
 sequenceDazzles:
     random 1 //Earlier to accomodate the starting time
     switch

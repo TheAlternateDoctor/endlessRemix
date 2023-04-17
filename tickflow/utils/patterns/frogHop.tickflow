@@ -1,3 +1,5 @@
+// Has 2 starting states, dancing and not dancing.
+
 preSequenceFrogHop:
 random 2
 if 1

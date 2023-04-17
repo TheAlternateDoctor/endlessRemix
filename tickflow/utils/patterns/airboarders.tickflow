@@ -1,3 +1,7 @@
+// Camera starts in the Final Remix state.
+// Added 3 subs for ease of use: airboarderCrouch, airboarderCharge and airboarderJump.
+// All have the warning SFX except Jump.
+
 sequenceAirboarders:
 	set_cat 0
 	call changeEngine

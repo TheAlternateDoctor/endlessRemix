@@ -1,3 +1,5 @@
+// Starts in onbeat swim state.
+
 preSequenceFinned:
 async_call loadFinnedLate
 rest 0x60

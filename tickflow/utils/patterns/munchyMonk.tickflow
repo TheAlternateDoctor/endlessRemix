@@ -1,3 +1,7 @@
+// Has 3 starting states,
+// 1 dumpling, 2 dumplings and 3 dumplings.
+// Place your subs accordingly.
+
 preSequenceMunchyMonk:
 rest 0xC0
 random 3

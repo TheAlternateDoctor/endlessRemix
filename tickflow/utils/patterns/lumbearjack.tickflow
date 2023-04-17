@@ -1,3 +1,6 @@
+// Automatically spawns both cats,
+// and automatically start the beat anims.
+
 sequenceLumbearjack:
 	set_cat 0
 	call changeEngine

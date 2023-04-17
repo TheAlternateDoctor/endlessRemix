@@ -1,3 +1,11 @@
+// Has 2 variants, use 0xB2 4 to determine which one.
+// 0 is Space Dance, 
+// 1 is Cosmic Dance.
+// You can also make use of subs beatSpaceDanceDependant,
+// andPoseDependantW, letsSitDownDependantW
+// and punchDependantW to exclude Gramps but include Lady
+// during your pattern.
+
 sequenceSpaceDance:
 	set_cat 0
 	call changeEngine

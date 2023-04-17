@@ -1,3 +1,9 @@
+// Automatically stops inputs 1 beat before transitionning.
+// Don't put anything there!
+// It's used to allow the player to lift their fingers
+// in preparation for a keep the beat game.
+// Starts with the sing setup.
+
 sequenceGleeClub:
     0x2B 0x13, 0x10
 	set_cat 0
@@ -15,6 +21,9 @@ sequenceGleeClub:
     case 0
         async_call gleeClub1
     endswitch
+    0x104 0, 0, 0x1000DAF, 0, -7
+    0x104 1, 0, 0x1000DAF, 0, -5
+    0x104 2, 0, 0x1000DAF, 0, 0
     rest 0xC0
     rest 0xC0
     rest 0xC0
@@ -23,9 +32,6 @@ sequenceGleeClub:
 stop
 
 gleeClub1:
-    0x104 0, 0, 0x1000DAF, 0, -7
-    0x104 1, 0, 0x1000DAF, 0, -5
-    0x104 2, 0, 0x1000DAF, 0, 0
     0x104<1> 0,0,0
     0x104<1> 1,0,0
     0x104<1> 2,0,0

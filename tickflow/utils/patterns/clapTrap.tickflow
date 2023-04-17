@@ -1,3 +1,5 @@
+// Can only use half beat and quarter beat cues.
+
 sequenceClapTrap:
 	set_cat 0
 	call changeEngine

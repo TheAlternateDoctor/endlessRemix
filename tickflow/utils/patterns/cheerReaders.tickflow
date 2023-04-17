@@ -1,3 +1,7 @@
+// Starts 0x18 beats early.
+// Don't forget to use set_cat 0,
+// else the pattern will be killed later on!
+
 sequenceCheerReaders:
 	set_cat 0
     random 1 //Earlier to accomodate the starting time

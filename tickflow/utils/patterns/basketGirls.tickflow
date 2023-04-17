@@ -1,3 +1,7 @@
+// The throw takes 2 beats to work.
+// However, beat anims should only start 3 beats after,
+// as it interrupts the hoop anim.
+
 presequenceBasketGirls:
 rest 0xC0
 async_call loadBasketGirlsLate

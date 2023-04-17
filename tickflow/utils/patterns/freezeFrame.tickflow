@@ -1,3 +1,5 @@
+// May require early subs, like the 3 cars one included.
+
 sequenceFreezeFrame:
 	set_cat 0
 	call changeEngine
@@ -24,6 +26,9 @@ stop
 
 freezeFrameEarly3Cars:
 play_sfx 0x1000E08
+0x103 0, 0
+0x103 1, 0
+0x103 2, 0
 rest 0x30	// 1.0 beats
 play_sfx 0x1000DFC
 0x104 

@@ -1,3 +1,5 @@
+// Automatically start the beat anims.
+
 sequenceDoubleDate:
 	set_cat 0
 	call changeEngine

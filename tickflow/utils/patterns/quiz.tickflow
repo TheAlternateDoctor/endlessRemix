@@ -1,3 +1,6 @@
+// Starts with inputs disabled, you need to enable them yourself during the player's turn.
+// Enabling them earlier allows the player to add to their podium during the host's turn!
+
 sequenceQuiz:
 	set_cat 0
 	call changeEngine

@@ -1,3 +1,6 @@
+// Starts with the camera moving.
+// Starts in floor mode.
+
 sequenceNightWalk:
 	set_cat 0
 	call changeEngine
@@ -12,13 +15,13 @@ sequenceNightWalk:
     case 0
         async_call nightWalk1
     endswitch
+    0x102
     rest 0x90
     input 1
 stop
 
 nightWalk1:
     0x101 1
-    0x102
     0x103
     0x100 0x30 * 4, 0
     0x100 0x30 * 5, 1

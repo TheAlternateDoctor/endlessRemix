@@ -1,3 +1,6 @@
+// Has 2 starting states.
+// Put your pattern in the same block as the pattern you want to start with.
+
 preSequenceSumoBros:
 async_call loadSumoLate
 random 2

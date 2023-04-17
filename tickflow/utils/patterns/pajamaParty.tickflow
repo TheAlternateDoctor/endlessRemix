@@ -1,3 +1,6 @@
+// Starts with the background closed.
+// Make sure to open it if you use a throw!
+
 sequencePajama:
 	set_cat 0
 	call changeEngine

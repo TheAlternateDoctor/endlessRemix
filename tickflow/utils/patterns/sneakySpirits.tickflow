@@ -3,6 +3,7 @@
 // then the 0x107 command at the end needs to be removed.
 // Not removing it will result in the speed going back to normal
 // at the end of the sub!
+
 sequenceSneakySpirits:
 	set_cat 0
 	call changeEngine

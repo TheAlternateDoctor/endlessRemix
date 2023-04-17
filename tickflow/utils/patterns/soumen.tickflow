@@ -1,3 +1,6 @@
+// On Paradise, inputs do not play.
+// Cues however, does.
+
 sequenceSoumen:
 	set_cat 0
 	call changeEngine

@@ -1,3 +1,7 @@
+// Animal Acrobat doesn't use subs for its patterns.
+// Instead, we use 0x102 for the pattern.
+// This means no decoration like vines or waterfalls! It may interfere with normal cellanims
+
 preSequenceAnimalAcrobat:
 rest 0x30
 rest 0x78

@@ -1,3 +1,6 @@
+// No automatic bat anims.
+// Don't forget to add your own!
+
 sequenceDogNinja:
 	set_cat 0
 	call changeEngine

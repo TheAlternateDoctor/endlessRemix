@@ -1,3 +1,5 @@
+// Due to the simplicity of the game, no other patterns are allowed.
+
 sequenceCoinToss:
 	set_cat 0
 	call changeEngine

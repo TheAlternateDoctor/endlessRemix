@@ -1,3 +1,8 @@
+// Has 2 starting states, Marching and not marching.
+// Also has 2 variants, use 0xB2 4 to know.
+// 0 is normal, 
+// 1 has a pointing cellanim.
+
 preSequenceMarcher:
 0xB2 4
 if 1

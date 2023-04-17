@@ -1,3 +1,5 @@
+// Camera starts at 4 by default.
+
 sequenceSpaceball:
 	set_cat 0
 	call changeEngine

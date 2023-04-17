@@ -1,3 +1,7 @@
+// Starts with bubbles (enabled), various shapes trail,
+// And apparently Final Remix's path.
+// However, may have a different path on Paradise.
+
 preSequenceMicroRow:
 rest 0x18
 play_sfx 0x10002DF
@@ -18,7 +22,6 @@ sequenceMicroRow:
     rest 0x18
     0x10B 1
     0x10A 1
-    0x103 1
     0x101 0x52FC2C, 6, 0
     0x102 0x52FC5C, 3
     0x108 

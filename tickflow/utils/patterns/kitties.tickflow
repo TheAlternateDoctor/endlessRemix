@@ -1,3 +1,6 @@
+// Has a sub to randomise the spawning
+// pattern of the cats, kittiesRandomLocation.
+
 sequenceKitties:
 	set_cat 0
     random 1

@@ -1,3 +1,6 @@
+// Automatic Beat anims.
+// Starts 1/4th of a beat early.
+
 sequenceCatchyTune:
 	set_cat 0
 	call changeEngine
