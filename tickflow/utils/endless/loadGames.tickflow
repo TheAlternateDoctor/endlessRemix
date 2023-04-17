@@ -1322,7 +1322,7 @@ else
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ctrFruitbasket_remix09.zlib", -1
-        0x2B 0x38, 1
+        0x2B 0x38, 3
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrFruitbasket.zlib", -1

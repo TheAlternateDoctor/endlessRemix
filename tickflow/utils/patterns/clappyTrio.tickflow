@@ -15,16 +15,16 @@ sequenceClappyTrio:
     0xB2 7
     switch
     case 0
-        0x105<2> 0x5031CD
+        0x105<2> "Clap_ver_short.bflyt"
         break
     case 1
-        0x105<2> 0x503122
+        0x105<2> "Clap_ver_long.bflyt"
         break
     case 2
-        0x105<2> 0x503074
+        0x105<2> "Clap_ver_arrange.bflyt"
         break
     case 3
-        0x105<2> 0x509CDB
+        0x105<2> "Clap_ver_remix.bflyt"
         break
     endswitch
     rest 0x30

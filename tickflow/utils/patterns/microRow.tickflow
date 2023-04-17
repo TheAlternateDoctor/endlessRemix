@@ -31,7 +31,7 @@ sequenceMicroRow:
     case 0
         async_call microRow1
     endswitch
-    rest 0x30
+    rest 0x18
     input 1
 stop
 
