@@ -2940,7 +2940,7 @@ if 1
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_SPACE"
-    random 2random 3 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
+    random 3 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/agbSpaceDance_long.zlib", -1

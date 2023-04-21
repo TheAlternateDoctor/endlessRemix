@@ -1,0 +1,86 @@
+name: Build C00
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+          
+      - name: Install zip
+        uses: montudor/action-zip@v1
+
+      - name: Create out folder
+        run: mkdir -p out/
+          
+      - name: Build C00.bin
+        run: |
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/C00.bin
+          
+      - name: Pack the Remix
+        run: |
+          cd romfs
+          zip -qq -r ../out/endlessRemix.zip .
+          cd ../out
+          zip -qq -r endlessRemix.zip C00.bin
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Latest Remix
+          path: out/endlessRemix.zip
+          
+  debug:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+
+      - name: Install zip
+        uses: montudor/action-zip@v1
+          
+      - name: Create out/debug folder
+        run: mkdir -p out/debug
+          
+      - name: Build C00.bin
+        run: |
+          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
+
+      - name: Pack the Remix
+        run: |
+          cd romfs
+          zip -qq -r ../out/debug/endlessRemix.zip .
+          cd ../out/debug
+          zip -qq -r endlessRemix.zip C00.bin
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Debug Remix
+          path: out/debug/endlessRemix.zip
