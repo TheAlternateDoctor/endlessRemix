@@ -187,7 +187,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_FISHING"
-    random 3
+    random 4
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlFishing_v0.zlib", -1
@@ -198,12 +198,15 @@ if 1
     case 2
         set_cellanim 4, u"rom:/cellanim/rvlFishing_remix05.zlib", -1
         break
+    case 3
+        set_cellanim 4, u"rom:/cellanim/rvlFishing_klonoa.zlib", -1
+        break
     endswitch
     game_cellanim 0x22, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_FISHING"
-    random 3
+    random 4
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlFishing_v0.zlib", -1
@@ -213,6 +216,9 @@ else
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/rvlFishing_remix05.zlib", -1
+        break
+    case 3
+        set_cellanim 5, u"rom:/cellanim/rvlFishing_klonoa.zlib", -1
         break
     endswitch
     game_cellanim 0x22, 5
@@ -873,7 +879,7 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrTeppan_long.zlib", -1
@@ -881,17 +887,23 @@ if 1
     case 1
         set_cellanim 4, u"rom:/cellanim/ctrTeppan_remix2.zlib", -1
         break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/ctrTeppan_klonoa.zlib", -1
+        break
     endswitch
     game_cellanim 0x3E, 4
     0xB3 1, 0
 else
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrTeppan_long.zlib", -1
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ctrTeppan_remix2.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/ctrTeppan_klonoa.zlib", -1
         break
     endswitch
     game_cellanim 0x3E, 5
@@ -1112,7 +1124,7 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    random 8
+    random 9
     switch // VARIANTS: 0 is normal, 1 is pointing
     case 0
         set_sfx 4, u"GROUP_AGB_MARCH"
@@ -1154,11 +1166,16 @@ if 1
         set_cellanim 4, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
         0xB3 4, 1
         break
+    case 8
+        set_sfx 4, u"GROUP_AGB_MARCH"
+        set_cellanim 4, u"rom:/cellanim/agbMarcher_crypt.zlib", -1
+        0xB3 4, 0
+        break
     endswitch
     game_cellanim 0x5, 4
     0xB3 1, 0
 else
-    random 8
+    random 9
     switch // VARIANTS: 0 is normal, 1 is point
     case 0
         set_sfx 5, u"GROUP_AGB_MARCH"
@@ -1199,6 +1216,11 @@ else
         set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
         set_cellanim 5, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
         0xB3 4, 1
+        break
+    case 8
+        set_sfx 5, u"GROUP_AGB_MARCH"
+        set_cellanim 5, u"rom:/cellanim/agbMarcher_crypt.zlib", -1
+        0xB3 4, 0
         break
     endswitch
     game_cellanim 0x5, 5
@@ -1273,7 +1295,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_FRUITSBASKET"
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrFruitbasket_short.zlib", -1
@@ -1295,6 +1317,10 @@ if 1
         set_cellanim 4, u"rom:/cellanim/ctrFruitbasket_remix09.zlib", -1
         0x2B 0x38, 3
         break
+    case 5
+        set_cellanim 4, u"rom:/cellanim/ctrFruitbasket_zong.zlib", -1
+        0x2B 0x38, 3
+        break
     endswitch
     set_effect 4, u"rom:/effect/ctrFruitbasket.zlib", -1
     game_cellanim 0x38, 4
@@ -1302,7 +1328,7 @@ if 1
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_FRUITSBASKET"
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrFruitbasket_short.zlib", -1
@@ -1322,6 +1348,10 @@ else
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ctrFruitbasket_remix09.zlib", -1
+        0x2B 0x38, 3
+        break
+    case 5
+        set_cellanim 5, u"rom:/cellanim/ctrFruitbasket_zong.zlib", -1
         0x2B 0x38, 3
         break
     endswitch
@@ -1700,7 +1730,15 @@ if 1
     random 2
     switch
     case 0
-        set_cellanim 4, u"rom:/cellanim/ctrTango_long.zlib", -1
+        random 2
+        switch
+        case 0
+            set_cellanim 4, u"rom:/cellanim/ctrTango_long.zlib", -1
+            break
+        case 1
+            set_cellanim 4, u"rom:/cellanim/ctrTango_moonwalk.zlib", -1
+            break
+        endswitch
         random 2
         if 0
             0x2B 0x3D, 2
@@ -1724,7 +1762,15 @@ else
     random 2
     switch
     case 0
-        set_cellanim 5, u"rom:/cellanim/ctrTango_long.zlib", -1
+        random 2
+        switch
+        case 0
+            set_cellanim 5, u"rom:/cellanim/ctrTango_long.zlib", -1
+            break
+        case 1
+            set_cellanim 5, u"rom:/cellanim/ctrTango_moonwalk.zlib", -1
+            break
+        endswitch
         random 2
         if 0
             0x2B 0x3D, 2
@@ -1928,7 +1974,7 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrSumou_long.zlib", -1
@@ -1936,19 +1982,25 @@ if 1
     case 1
         set_cellanim 4, u"rom:/cellanim/ctrSumou_remixLED.zlib", -1
         break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/ctrSumou_crypt.zlib", -1
+        break
     endswitch
     set_effect 4, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
     0xB3 1, 0
 else
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrSumou_long.zlib", -1
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ctrSumou_remixLED.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/ctrSumou_crypt.zlib", -1
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrSumou.zlib", -1
@@ -2162,7 +2214,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_SHUGYO"
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrShugyo_long.zlib", -1
@@ -2179,12 +2231,15 @@ if 1
     case 4
         set_cellanim 4, u"rom:/cellanim/ntrShugyo_remix7.zlib", -1
         break
+    case 5
+        set_cellanim 4, u"rom:/cellanim/ntrShugyo_klonoa.zlib", -1
+        break
     endswitch
     game_cellanim 0x1B, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_SHUGYO"
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ntrShugyo_long.zlib", -1
@@ -2200,6 +2255,9 @@ else
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ntrShugyo_remix7.zlib", -1
+        break
+    case 5
+        set_cellanim 5, u"rom:/cellanim/ntrShugyo_klonoa.zlib", -1
         break
     endswitch
     game_cellanim 0x1B, 5
@@ -2256,7 +2314,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_KARATE"
-    random 16
+    random 17
     switch //VARIANTS: 0 has alternating background, 1 has gradient, 2 has flowers
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlKarate_0.zlib", -1
@@ -2317,8 +2375,13 @@ if 1
     case 14
         set_cellanim 4, u"rom:/cellanim/rvlKarate_tempo.zlib", -1
         0xB3 4, 0
+        break
     case 15
         set_cellanim 4, u"rom:/cellanim/winKarate_Mania.zlib", -1
+        0xB3 4, 1
+        break
+    case 16
+        set_cellanim 4, u"rom:/cellanim/rvlKarate_klonoa.zlib", -1
         0xB3 4, 1
         break
     endswitch
@@ -2328,7 +2391,7 @@ if 1
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_KARATE"
-    random 16
+    random 17
     switch //VARIANTS: 0 has alternating background, 1 has gradient, 2 has flowers
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlKarate_0.zlib", -1
@@ -2389,8 +2452,13 @@ else
     case 14
         set_cellanim 5, u"rom:/cellanim/rvlKarate_tempo.zlib", -1
         0xB3 4, 0
-    case 14
+        break
+    case 15
         set_cellanim 5, u"rom:/cellanim/winKarate_Mania.zlib", -1
+        0xB3 4, 1
+        break
+    case 16
+        set_cellanim 5, u"rom:/cellanim/rvlKarate_klonoa.zlib", -1
         0xB3 4, 1
         break
     endswitch
@@ -2815,12 +2883,28 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_IAI"
-    set_cellanim 4, u"rom:/cellanim/rvlSamurai_long.zlib", -1
+    random 2
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/rvlSamurai_long.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/rvlSamurai_klonoa.zlib", -1
+        break
+    endswitch
     game_cellanim 0x30, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_IAI"
-    set_cellanim 5, u"rom:/cellanim/rvlSamurai_long.zlib", -1
+    random 2
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/rvlSamurai_long.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/rvlSamurai_klonoa.zlib", -1
+        break
+    endswitch
     game_cellanim 0x30, 5
     0xB3 1, 1
 endif
@@ -2837,26 +2921,40 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_SPACE"
-    random 2 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
-    if 1
+    random 3 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
+    switch
+    case 0
         set_cellanim 4, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
         0xB3 4, 0
-    else
+        break
+    case 1
         set_cellanim 4, u"rom:/cellanim/agbSpaceDance_arrange.zlib", -1
         0xB3 4, 1
-    endif
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/agbSpaceDance_zong.zlib", -1
+        0xB3 4, 0
+        break
+    endswitch
     game_cellanim 0xB, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_SPACE"
-    random 2
-    if 1
+    random 2random 3 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
+    switch
+    case 0
         set_cellanim 5, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
         0xB3 4, 0
-    else
+        break
+    case 1
         set_cellanim 5, u"rom:/cellanim/agbSpaceDance_arrange.zlib", -1
         0xB3 4, 1
-    endif
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/agbSpaceDance_zong.zlib", -1
+        0xB3 4, 0
+        break
+    endswitch
     game_cellanim 0xB, 5
     0xB3 1, 1
 endif
@@ -3018,7 +3116,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_WOOD_CAT"
-    random 3
+    random 4
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
@@ -3029,6 +3127,9 @@ if 1
     case 2
         set_cellanim 4, u"rom:/cellanim/ctrWoodCat_remix04.zlib", -1
         break
+    case 3
+        set_cellanim 4, u"rom:/cellanim/ctrWoodCat_klonoa.zlib", -1
+        break
     endswitch
     set_effect 4, u"rom:/effect/ctrWoodCat.zlib", -1
     game_cellanim 0x3F, 4
@@ -3036,7 +3137,7 @@ if 1
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_WOOD_CAT"
-    random 3
+    random 4
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
@@ -3046,6 +3147,9 @@ else
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/ctrWoodCat_remix04.zlib", -1
+        break
+    case 3
+        set_cellanim 5, u"rom:/cellanim/ctrWoodCat_klonoa.zlib", -1
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrWoodCat.zlib", -1
@@ -3066,7 +3170,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SHIWAKE"
-    random 6
+    random 7
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlSort_long.zlib", -1
@@ -3086,12 +3190,15 @@ if 1
     case 5
         set_cellanim 4, u"rom:/cellanim/rvlSort_bread_arr.zlib", -1
         break
+    case 6
+        set_cellanim 4, u"rom:/cellanim/rvlSort_rayman.zlib", -1
+        break
     endswitch
     game_cellanim 0x32, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_SHIWAKE"
-    random 6
+    random 7
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlSort_long.zlib", -1
@@ -3110,6 +3217,9 @@ else
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/rvlSort_bread_arr.zlib", -1
+        break
+    case 6
+        set_cellanim 5, u"rom:/cellanim/rvlSort_rayman.zlib", -1
         break
     endswitch
     game_cellanim 0x32, 5
@@ -3157,13 +3267,16 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_MEAT"
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/skiMeat_long.zlib", -1
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/skiMeat_tofu.zlib", -1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/skiMeat_arrange.zlib", -1
         break
     endswitch
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
@@ -3172,13 +3285,16 @@ if 1
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_MEAT"
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/skiMeat_long.zlib", -1
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/skiMeat_tofu.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/skiMeat_arrange.zlib", -1
         break
     endswitch
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
