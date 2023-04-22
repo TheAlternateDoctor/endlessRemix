@@ -20,7 +20,7 @@ sequenceKarate:
     random 1
     switch
     case 0
-        async_call karate1
+        async_call karate2
     endswitch
     async_call karateBGbeat
 stop
@@ -44,6 +44,30 @@ rest 0x30
 //Actual lightbulb launch
 rest 0x60
 async_sub 0x73
+stop
+
+karate2:
+async_call karate1beatAnims
+0x10D 1
+0x100 0
+rest 0x60
+0x100 0
+rest 0x60
+0x100 0
+rest 0x60
+0x100 5
+rest 0x60
+0x100 0
+rest 0x30 + 0x18
+async_sub 0x88
+rest 0x18
+0x100 0
+rest 0x60
+0x100 0
+rest 0x30
+0x100 0
+rest 0x30
+0x100 5
 stop
 
 karate1beatAnims:
