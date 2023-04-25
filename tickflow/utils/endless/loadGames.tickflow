@@ -2165,6 +2165,48 @@ else
 endif
 stop
 
+loadBunnyHop:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_RABBIT"
+    random 2
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/agbRabbit_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/agbRabbit_rmx3.zlib", -1
+        break
+    endswitch
+    set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
+    game_cellanim 0x8, 4
+    game_effect 0x8, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_RABBIT"
+    random 2
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/agbRabbit_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/agbRabbit_rmx3.zlib", -1
+        break
+    endswitch
+    set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
+    game_cellanim 0x8, 5
+    game_effect 0x8, 5
+    0xB3 1, 1
+endif
+stop
+
 loadRatRace:
 0xB2 1
 if 1
@@ -2773,6 +2815,50 @@ else
 endif
 stop
 
+loadNinjaBodyguard:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_TONO"
+    random 3
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/agbTono_long.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/agbTono_arrange.zlib", -1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/agbTono_long_kor.zlib", -1
+        break
+    endswitch
+    game_cellanim 0xD, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_TONO"
+    random 3
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/agbTono_long.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/agbTono_arrange.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/agbTono_long_kor.zlib", -1
+        break
+    endswitch
+    game_cellanim 0xD, 5
+    0xB3 1, 1
+endif
+stop
+
 loadAirboarders:
 0xB2 1
 if 1
@@ -2906,6 +2992,38 @@ else
         break
     endswitch
     game_cellanim 0x30, 5
+    0xB3 1, 1
+endif
+stop
+
+loadPowerCalligraphy:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_SHUJI"
+    random 1
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/agbShuji_v0.zlib", -1
+        break
+    endswitch
+    game_cellanim 0xA, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_SHUJI"
+    random 1
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/agbShuji_v0.zlib", -1
+        break
+    endswitch
+    game_cellanim 0xA, 5
     0xB3 1, 1
 endif
 stop

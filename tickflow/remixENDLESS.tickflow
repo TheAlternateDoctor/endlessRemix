@@ -63,6 +63,9 @@
 #include utils/patterns/mrUpbeat.tickflow
 #include utils/patterns/tapTroupe.tickflow
 #include utils/patterns/splashdown.tickflow
+#include utils/patterns/bunnyHop.tickflow
+#include utils/patterns/powerCalligraphy.tickflow
+#include utils/patterns/ninjaBodyguard.tickflow
 
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow

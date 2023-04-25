@@ -138,6 +138,22 @@ loadNextGame:
                 set_func 2, nop
             endif
         break
+        case 0x8 //VVVVVV Rescue
+            0xB2 9
+            if 0x8 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x8
+                endif
+                set_func 0, sequenceBunnyHop
+                async_call loadBunnyHop
+                set_func 3, preSequenceBunnyHop
+                set_func 2, nop
+            endif
+        break
         case 0x9 //VVVVVV Rescue
             0xB2 9
             if 0x9 //Stop games from being played next to each other
@@ -150,6 +166,22 @@ loadNextGame:
                 endif
                 set_func 0, sequenceRatRace
                 async_call loadRatRace
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0xA //Smash
+            0xB2 9
+            if 0xA //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0xA
+                endif
+                set_func 0, sequencePowerCalligraphy
+                async_call loadPowerCalligraphy
                 set_func 3, nop
                 set_func 2, nop
             endif
@@ -182,6 +214,22 @@ loadNextGame:
                 endif
                 set_func 0, sequenceTap
                 async_call loadTap
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
+        case 0xD //Rhythm Masters
+            0xB2 9
+            if 0xD //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0xD
+                endif
+                set_func 0, sequenceNinjaBodyguard
+                async_call loadNinjaBodyguard
                 set_func 3, nop
                 set_func 2, nop
             endif

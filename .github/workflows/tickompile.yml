@@ -21,9 +21,6 @@ jobs:
           java-version: 8
           distribution: adopt
           java-package: jre
-          
-      - name: Install zip
-        uses: montudor/action-zip@v1
 
       - name: Create out folder
         run: mkdir -p out/
@@ -57,9 +54,6 @@ jobs:
           java-version: 8
           distribution: adopt
           java-package: jre
-
-      - name: Install zip
-        uses: montudor/action-zip@v1
           
       - name: Create out/debug folder
         run: mkdir -p out/debug
