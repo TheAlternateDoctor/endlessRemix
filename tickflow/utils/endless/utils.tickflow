@@ -266,6 +266,22 @@ loadNextGame:
                 set_func 2, nop
             endif
         break
+        case 0x10 //Pokémon Mystery Dungeon
+            0xB2 9
+            if 0x10 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x10
+                endif
+                set_func 0, sequenceBlueBirds
+                async_call loadBlueBirds
+                set_func 3, nop
+                set_func 2, nop
+            endif
+        break
         case 0x11 //Kirby Victory
             0xB2 9
             if 0x11 //Stop games from being played next to each other

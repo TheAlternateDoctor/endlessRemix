@@ -1,0 +1,29 @@
+//No automatic beat anims. Add to taste.
+
+sequenceBlueBirds:
+	set_cat 0
+	call changeEngine
+	engine 0x10
+	sub 4
+	0x29<2> 
+    rest 0x18
+	0xB3 9, 0x10
+    fade<1> 1,1,1
+    random 1
+    switch
+    case 0
+        async_call blueBirds1
+    endswitch
+    rest 0x48
+    input 1
+stop
+
+blueBirds1:
+    async_sub 0x57
+    rest 0xC0
+    async_sub 0x57
+    rest 0xC0
+    async_sub 0x5B
+    rest 0xC0
+    async_sub 0x61
+stop

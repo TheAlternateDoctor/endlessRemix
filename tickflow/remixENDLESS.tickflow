@@ -67,6 +67,7 @@
 #include utils/patterns/powerCalligraphy.tickflow
 #include utils/patterns/ninjaBodyguard.tickflow
 #include utils/patterns/lockstep.tickflow
+#include utils/patterns/blueBirds.tickflow
 
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow

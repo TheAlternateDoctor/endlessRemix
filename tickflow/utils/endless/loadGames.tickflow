@@ -2939,6 +2939,52 @@ else
 endif
 stop
 
+loadBlueBirds:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    random 3
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_2.zlib", -1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_rmx2.zlib", -1
+        break
+    endswitch
+    set_layout 6, u"rom:/layout/ntrBlueBirds.zlib", -1
+    game_cellanim 0x10, 4
+    game_layout 0x10, 6
+    0xB3 1, 0
+else
+    random 3
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_2.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_rmx2.zlib", -1
+        break
+    endswitch
+    set_layout 7, u"rom:/layout/ntrBlueBirds.zlib", -1
+    game_cellanim 0x10, 5
+    game_layout 0x10, 7
+    0xB3 1, 1
+endif
+stop
+
 loadDazzles:
 0xB2 1
 if 1
