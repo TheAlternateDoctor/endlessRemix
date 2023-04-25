@@ -1,0 +1,130 @@
+// Has 2 starting states, onbeat and offbeat.
+
+preSequenceLockstep:
+set_cat 0
+random 2
+if 1
+    rest 0x90
+    play_sfx 0x1000E0F
+    rest 0x30
+    play_sfx 0x1000E0F
+    rest 0x30
+    play_sfx 0x1000E0C
+    0xB3 7, 1
+else
+    rest 0x60
+    play_sfx 0x1000E0C
+    rest 0x30	// 1.0 beats
+    play_sfx 0x1000E0C
+    rest 0x30	// 1.0 beats
+    play_sfx 0x1000E0C
+    rest 0x30	// 1.0 beats
+    play_sfx 0x1000E0D
+    rest 0x48
+    play_sfx 0x1000E0E
+    rest 0x18	// 0.5 beats
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E0E
+    rest 0x18	// 0.5 beats
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E0E
+    rest 0x18	// 0.5 beats
+    rest 0x18	// 0.5 beats
+    play_sfx 0x1000E0E
+    rest 0x18	// 0.5 beats
+    0xB3 7, 0
+endif
+stop
+
+sequenceLockstep:
+	set_cat 0
+	call changeEngine
+	engine 0x14
+	sub 4
+	0x29<2> 
+    rest 0xC
+    input 1
+    0xB2 7
+    if 1
+        0x103 1
+        0x105 0
+        random 1
+        switch
+        case 0
+            async_call lockstepOnbeat1
+        endswitch
+    else
+        0x103 0
+        0x105 1
+        random 1
+        switch
+        case 0
+            async_call lockstepOffbeat1
+        endswitch
+    endif
+    rest 0xC
+	0xB3 9, 0x14
+    fade<1> 1,1,1
+    input 1
+stop
+
+lockstepOnbeat1:
+0x100 1, 0xC
+rest 0xC
+0x102
+async_call lockstepOnStep
+rest 0x30
+async_call lockstepOnStep
+rest 0x30
+async_call lockstepOnStep
+rest 0x30
+async_sub 0x57
+async_sub 0x60, 0x30
+async_sub 0x63, 0x30
+rest 0xC0
+async_sub 0x58
+async_sub 0x64, 0x30
+async_sub 0x61, 0x90
+rest 0xC0
+async_sub 0x59
+async_sub 0x65, 0x30
+rest 0x60
+async_sub 0x62, 0x30
+stop
+
+lockstepOffbeat1:
+0x100 0, 0x24
+rest 0x24
+0x102
+async_call lockstepOffStep
+rest 0x18
+async_sub 0x61, 0x30
+rest 0x18
+async_call lockstepOffStep
+rest 0x30
+async_call lockstepOffStep
+rest 0x18
+async_sub 0x59
+async_sub 0x65, 0x30
+rest 0xC0
+async_sub 0x57
+async_sub 0x60, 0x30
+async_sub 0x63, 0x30
+async_sub 0x61, 0x90
+rest 0xC0
+async_sub 0x59
+async_sub 0x65, 0x30
+async_sub 0x62, 0x90
+stop
+
+lockstepOnStep:
+0x100 1, 0x30
+rest 0x30
+0x102
+stop
+
+lockstepOffStep:
+0x100 0, 0x30
+rest 0x30
+0x102
+stop

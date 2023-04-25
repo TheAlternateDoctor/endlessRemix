@@ -2885,6 +2885,60 @@ else
 endif
 stop
 
+loadLockstep:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    random 5
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_red.zlib", -1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_remix6.zlib", -1
+        break
+    case 3
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v1.zlib", -1
+        break
+    case 4
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v2.zlib", -1
+        break
+    endswitch
+    game_cellanim 0xF, 4
+    0xB3 1, 0
+else
+    random 5
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_red.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_remix6.zlib", -1
+        break
+    case 3
+        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_v1.zlib", -1
+        break
+    case 4
+        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_v2.zlib", -1
+        break
+    endswitch
+    game_cellanim 0xF, 5
+    0xB3 1, 1
+endif
+stop
+
 loadDazzles:
 0xB2 1
 if 1
