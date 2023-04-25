@@ -2895,6 +2895,7 @@ endif
 rest 0x60
 0xB2 1
 if 1
+    set_sfx 4, u"GROUP_NTR_BACKBEAT"
     random 5
     switch
     case 0
@@ -2916,6 +2917,7 @@ if 1
     game_cellanim 0xF, 4
     0xB3 1, 0
 else
+    set_sfx 5, u"GROUP_NTR_BACKBEAT"
     random 5
     switch
     case 0
@@ -2949,6 +2951,7 @@ endif
 rest 0x60
 0xB2 1
 if 1
+    set_sfx 4, u"GROUP_NTR_BLUE_BIRDS"
     random 3
     switch
     case 0
@@ -2966,6 +2969,7 @@ if 1
     game_layout 0x10, 6
     0xB3 1, 0
 else
+    set_sfx 5, u"GROUP_NTR_BLUE_BIRDS"
     random 3
     switch
     case 0
