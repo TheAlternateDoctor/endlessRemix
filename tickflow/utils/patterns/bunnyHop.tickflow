@@ -20,10 +20,7 @@ sequenceBunnyHop:
     rest 0xC
     input 1
     0x102
-    0x101<1> 0
     0x104 0
-    0x103 0
-    0x103<1>
     random 1
     switch
     case 0
@@ -31,9 +28,10 @@ sequenceBunnyHop:
         break
     endswitch
     rest 0xC
+    0x103 0
+    0x103<1>
 	0xB3 9, 0x8
     fade<1> 1,1,1
-    input 1
 stop
 
 bunnyHop1:
@@ -51,5 +49,5 @@ bunnyHop1:
     0x100 1, 0xC + 0x30 * 12
     0x100 3, 0xC + 0x30 * 13
     0x100 0, 0xC + 0x30 * 14
-    0x100 0, 0xC + 0x30 * 15
+    0x100 6, 0xC + 0x30 * 15
 stop

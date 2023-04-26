@@ -15,7 +15,6 @@ sequenceGleeClub:
     0x10D
 	0xB3 9, 0x13
     fade<1> 1,1,1
-    input 1
     random 1
     switch
     case 0
@@ -24,7 +23,9 @@ sequenceGleeClub:
     0x104 0, 0, 0x1000DAF, 0, -7
     0x104 1, 0, 0x1000DAF, 0, -5
     0x104 2, 0, 0x1000DAF, 0, 0
-    rest 0xC0
+    rest 0x60
+    input 1
+    rest 0x60
     rest 0xC0
     rest 0xC0
     rest 0x90
