@@ -1,0 +1,24 @@
+basketGirlsStartCheck:
+    rest 0x300
+    async_call checkApress
+    rest 0xC0
+    async_call checkApress
+    rest 0xC0
+    async_call checkApress
+    rest 0xC0
+    async_call checkApress
+    rest 0xC0
+    async_call checkApress
+stop
+
+basketGirls1Check:
+async_call checkApress
+rest 0xC0
+async_call checkApress
+rest 0xC0
+async_call checkApress
+rest 0x60
+async_call checkApress
+rest 0x60
+async_call checkApress
+stop
