@@ -286,7 +286,7 @@ label 0x54D
 0xB3 0,0
 
 async_call basketGirlsStart
-async_call basketGirlsStartCheck
+async_call checkA2
 rest 0x30
 input 1
 async_call loadNextGame

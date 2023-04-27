@@ -11,6 +11,7 @@ Condvar
 
 Subs
 0 - Pattern
+1 - Input check sub
 2 - Late loading stuff (for recreations)
 3 - Pre-pattern stuff
 4 - deadSub(Endless) - Unused for now, as there is no lifecheck.

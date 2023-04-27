@@ -1,13 +1,31 @@
 // Call checkXpress a beat early.
 
+checkA2:
+label 0xA2CE
+0xA2
+rest 1
+0xA2<2>
+if 1
+    0x40<1> 0x10002AF, 0x300
+    rest 0x60
+endif
+goto 0xA2CE
+
+
 checkApress:
+    set_cat 0
     0x201
     if_lt 0x103
         stop
     endif
     rest 0x28
     async_call waitApress
+    0x200<2> 0
+    if 1
+        goto 0xAAAE
+    endif
     label 0xAAAA
+    set_condvar 0
     0x200<2> 0
     if 1
         kill_loc waitApress
@@ -19,7 +37,8 @@ checkApress:
 stop
 
 waitApress:
-    rest 16
-    play_sfx 0x10002AF
+    set_cat 0
+    rest 15
+    0x40<1> 0x10002AF, 0x300
     kill_loc checkApress
 stop

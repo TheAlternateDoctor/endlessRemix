@@ -24,6 +24,7 @@ loadNextGame:
                 async_call loadSpaceball
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x1 //TF2
@@ -40,6 +41,7 @@ loadNextGame:
                 async_call loadClappyTrio
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x2 //Phantom Thief
@@ -56,6 +58,7 @@ loadNextGame:
                 async_call loadSneakySpirits
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x3 //Zelda Cooking
@@ -72,6 +75,7 @@ loadNextGame:
                 async_call loadTweezers
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x4 //Warioware
@@ -88,6 +92,7 @@ loadNextGame:
                 async_call loadHopping
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x5 //Cadence of Hyrule
@@ -104,6 +109,7 @@ loadNextGame:
                 async_call loadMarcher
                 set_func 3, preSequenceMarcher
                 set_func 2, loadMarcherLate
+                set_func 1, checkA2
             endif
         break
         case 0x6 //Sonic
@@ -120,6 +126,7 @@ loadNextGame:
                 async_call loadNightWalk
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x7 //Kahoot
@@ -136,6 +143,7 @@ loadNextGame:
                 async_call loadQuiz
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x8 //VVVVVV Rescue
@@ -152,6 +160,7 @@ loadNextGame:
                 async_call loadBunnyHop
                 set_func 3, preSequenceBunnyHop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x9 //VVVVVV Rescue
@@ -168,6 +177,7 @@ loadNextGame:
                 async_call loadRatRace
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0xA //Smash
@@ -184,6 +194,7 @@ loadNextGame:
                 async_call loadPowerCalligraphy
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0xB //Smash
@@ -200,6 +211,7 @@ loadNextGame:
                 async_call loadSpaceDance
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0xC //Rhythm Masters
@@ -216,6 +228,7 @@ loadNextGame:
                 async_call loadTap
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0xD //Rhythm Masters
@@ -232,6 +245,7 @@ loadNextGame:
                 async_call loadNinjaBodyguard
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0xE //Pokémon Mystery Dungeon
@@ -248,6 +262,7 @@ loadNextGame:
                 async_call loadAirboarders
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0xF //Pokémon Mystery Dungeon
@@ -264,6 +279,7 @@ loadNextGame:
                 async_call loadLockstep
                 set_func 3, preSequenceLockstep
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x10 //Pokémon Mystery Dungeon
@@ -280,6 +296,7 @@ loadNextGame:
                 async_call loadBlueBirds
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x11 //Kirby Victory
@@ -296,6 +313,7 @@ loadNextGame:
                 async_call loadDazzles
                 set_func 3, nop
                 set_func 2, loadDazzlesLate
+                set_func 1, checkA2
             endif
         break
         case 0x12 //Victory Game & Watch
@@ -312,6 +330,7 @@ loadNextGame:
                 async_call loadFreezeFrame
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x13 //Wii Music
@@ -328,6 +347,7 @@ loadNextGame:
                 async_call loadGleeClub
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x14 //The Lick
@@ -344,6 +364,7 @@ loadNextGame:
                 async_call loadFrogHop
                 set_func 3, preSequenceFrogHop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x16 //Pokémon TM
@@ -360,6 +381,7 @@ loadNextGame:
                 async_call loadDogNinja
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x19 //Duck Hunt
@@ -376,6 +398,7 @@ loadNextGame:
                 async_call loadShootEmUp
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x1B //Hat in Time
@@ -392,6 +415,7 @@ loadNextGame:
                 async_call loadMunchyMonk
                 set_func 3, preSequenceMunchyMonk
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x1C //Valve
@@ -406,8 +430,9 @@ loadNextGame:
                 endif
                 set_func 0, sequenceBtSWii
                 async_call loadBtSWii
-                set_func 3, nop
-                set_func 2, loadBtSWiiLate
+                set_func 3, preSequenceBtSWii
+                set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x20 //Duke Nukem
@@ -424,6 +449,7 @@ loadNextGame:
                 async_call loadCheerReaders
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x21 //Klonoa Heroes
@@ -440,6 +466,7 @@ loadNextGame:
                 async_call loadDoubleDate
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x22 //Splatoon
@@ -456,6 +483,7 @@ loadNextGame:
                 async_call loadCatchOfTheDay
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x23 //Galaga
@@ -472,6 +500,7 @@ loadNextGame:
                 async_call loadMicroRow
                 set_func 3, preSequenceMicroRow
                 set_func 2, loadMicroRowLate
+                set_func 1, checkA2
             endif
         break
         case 0x24 //Pac Man
@@ -488,6 +517,7 @@ loadNextGame:
                 async_call loadForkLifter
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x25 //Rhythm Dr
@@ -504,6 +534,7 @@ loadNextGame:
                 async_call loadGolf
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x26 //Cave Story
@@ -520,6 +551,7 @@ loadNextGame:
                 async_call loadFlipperFlop
                 set_func 3, preSequenceFlipperFlop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x27 //YokaiWatch
@@ -536,6 +568,7 @@ loadNextGame:
                 async_call loadRingSide
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x28 //Remix GBA
@@ -552,6 +585,7 @@ loadNextGame:
                 async_call loadKarate
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x2E //Mission Failed (MGS)
@@ -568,6 +602,7 @@ loadNextGame:
                 async_call loadLaunchParty
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x2F //Miitopia
@@ -584,6 +619,7 @@ loadNextGame:
                 async_call loadBoardMeeting
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x30 //Iai Giri
@@ -600,6 +636,7 @@ loadNextGame:
                 async_call loadSSWii
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x31 //Banjo Kazooie
@@ -616,6 +653,7 @@ loadNextGame:
                 async_call loadSeeSaw
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x32 //Rayman
@@ -632,6 +670,7 @@ loadNextGame:
                 async_call loadPackingPests
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x35 //Rivals of Aether
@@ -648,6 +687,7 @@ loadNextGame:
                 async_call loadAnimalAcrobat
                 set_func 3, preSequenceAnimalAcrobat
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x36 //Badge Pokémon
@@ -664,6 +704,7 @@ loadNextGame:
                 async_call loadTongueLashing
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x37 //Super Metroid
@@ -680,6 +721,7 @@ loadNextGame:
                 async_call loadSuperSamuraiSlice
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x38 //Animal Crossing Dodo
@@ -696,6 +738,7 @@ loadNextGame:
                 async_call loadFruitBasket
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x3A //Klonoa
@@ -712,6 +755,7 @@ loadNextGame:
                 async_call loadPajama
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x3B //CSD
@@ -728,6 +772,7 @@ loadNextGame:
                 async_call loadCatchyTune
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x3C //Wii Fit
@@ -744,6 +789,7 @@ loadNextGame:
                 async_call loadSumoBros
                 set_func 3, preSequenceSumoBros
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x3D //Michael Jackson
@@ -760,6 +806,7 @@ loadNextGame:
                 async_call loadTangotronic
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x3E //Finned Frontier, EA Sports
@@ -776,6 +823,7 @@ loadNextGame:
                 async_call loadKitties
                 set_func 3, nop
                 set_func 2, loadKittiesLate
+                set_func 1, checkA2
             endif
         break
         case 0x3F //Zelda Mastersword
@@ -792,6 +840,7 @@ loadNextGame:
                 async_call loadLumbearjack
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x40 //Sick Beats
@@ -808,6 +857,7 @@ loadNextGame:
                 async_call loadSickBeats
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x41 //Coin Toss
@@ -824,6 +874,7 @@ loadNextGame:
                 async_call loadCoinToss
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x42 //Clap Trap
@@ -840,6 +891,7 @@ loadNextGame:
                 async_call loadClapTrap
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x43 //Tutorial
@@ -856,6 +908,7 @@ loadNextGame:
                 async_call loadTutorial
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x44 //Daft Punk
@@ -872,6 +925,7 @@ loadNextGame:
                 async_call loadBasketGirls
                 set_func 3, nop
                 set_func 2, loadBasketGirlsLate
+                set_func 1, checkA2
             endif
         break
         // case 0x45 //Here Is
@@ -921,6 +975,7 @@ loadNextGame:
                 async_call loadFinned
                 set_func 3, preSequenceFinned
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x48 //Open Sesame Tofu!
@@ -937,6 +992,7 @@ loadNextGame:
                 async_call loadMeatGrinder
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         case 0x49 //Ballance
@@ -953,6 +1009,7 @@ loadNextGame:
                 async_call loadSoumen
                 set_func 3, nop
                 set_func 2, loadSoumenLate
+                set_func 1, checkA2
             endif
         break
         case 0x4A //Battle Start Melodii
@@ -969,6 +1026,7 @@ loadNextGame:
                 async_call loadUpbeat
                 set_func 3, nop
                 set_func 2, loadUpbeatLate
+                set_func 1, checkA2
             endif
         break
         case 0x4B //Groove Rush #1
@@ -985,6 +1043,7 @@ loadNextGame:
                 async_call loadTapTroupe
                 set_func 3, preSequenceTapTroupe
                 set_func 2, loadTapTroupeLate
+                set_func 1, checkA2
             endif
         break
         case 0x4C //Mole Cricket
@@ -995,25 +1054,30 @@ loadNextGame:
                 0xB2 10
                 if 1
                     0xB3 3, 1337
-                    0xB3 3, 0x4A
                     0xB3 0, 0x4C
                 endif
                 set_func 0, sequenceSplashdown
                 async_call loadSplashdown
                 set_func 3, nop
                 set_func 2, nop
+                set_func 1, checkA2
             endif
         break
         default //Restart until we get something damnit
             goto loadNextGame
         break
     endswitch
-    // call text
+    0xB2 10
+    if 1
+        call text
+    endif
 stop
 
 playNextGame:
     get_async 0, 0
-	rest 0x30
+	rest 0x18
+    get_async 1, 0
+	rest 0x18
 	async_call loadNextGame,0x60
 	rest 0x30*7
 	rest 0x30*3

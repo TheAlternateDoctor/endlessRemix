@@ -1,14 +1,31 @@
 basketGirlsStartCheck:
-    rest 0x300
-    async_call checkApress
-    rest 0xC0
-    async_call checkApress
-    rest 0xC0
-    async_call checkApress
-    rest 0xC0
-    async_call checkApress
-    rest 0xC0
-    async_call checkApress
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+rest 0x30
+async_call checkApress
+rest 0x60
+rest 0x30
+rest 0x30
+async_call checkApress
+rest 0x60
+rest 0x30
+rest 0x30
+async_call checkApress
+rest 0x60
+rest 0x30
+rest 0x30
+async_call checkApress
+rest 0x60
+rest 0x30
+rest 0x30
+async_call checkApress
 stop
 
 basketGirls1Check:
