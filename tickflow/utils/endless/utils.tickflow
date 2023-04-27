@@ -75,7 +75,7 @@ loadNextGame:
                 async_call loadTweezers
                 set_func 3, nop
                 set_func 2, nop
-                set_func 1, checkA2
+                set_func 1, checkOnion
             endif
         break
         case 0x4 //Warioware
@@ -330,7 +330,7 @@ loadNextGame:
                 async_call loadFreezeFrame
                 set_func 3, nop
                 set_func 2, nop
-                set_func 1, checkA2
+                set_func 1, checkFreezeFrame
             endif
         break
         case 0x13 //Wii Music
