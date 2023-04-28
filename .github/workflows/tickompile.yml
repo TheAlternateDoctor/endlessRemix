@@ -22,24 +22,59 @@ jobs:
           distribution: adopt
           java-package: jre
 
-      - name: Create out folder
-        run: mkdir -p out/
+      - name: Set up structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          mkdir -p out/
+          cd romfs
+          cp -r . ../out/
           
       - name: Build C00.bin
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
-          
-      - name: Pack the Remix
-        run: |
-          cd romfs
-          cp -r . ../out/
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
           name: Latest Remix
+          path: out/
+
+  release-lite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+
+      - name: Set up structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          mkdir -p out/
+          cd romfs
+          cp -r ./UScellanim ../out/
+          cp -r ./USlayout ../out/
+          cp -r ./sound ../out/
+          
+      - name: Build C00.bin
+        run: |
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/C00.bin
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Latest Remix (Lite)
           path: out/
           
   debug:
@@ -55,22 +90,57 @@ jobs:
           distribution: adopt
           java-package: jre
           
-      - name: Create out/debug folder
-        run: mkdir -p out/debug
+      - name: Set up structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          mkdir -p out/debug
+          cd romfs
+          cp -r . ../out/debug
           
       - name: Build C00.bin
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
-
-      - name: Pack the Remix
-        run: |
-          cd romfs
-          cp -r . ../out/debug/
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
           name: Debug Remix
+          path: out/debug/
+          
+  debug-lite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+          
+      - name: Set up structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          mkdir -p out/debug
+          cd romfs
+          cp -r ./UScellanim ../out/debug
+          cp -r ./USlayout ../out/debug
+          cp -r ./sound ../out/debug
+          
+      - name: Build C00.bin
+        run: |
+          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Debug Remix (Lite)
           path: out/debug/
