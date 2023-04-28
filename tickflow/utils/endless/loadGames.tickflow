@@ -281,7 +281,7 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_PATI"
-    random 4
+    random 8
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/agbClap_short.zlib", -1
@@ -303,13 +303,33 @@ if 1
         set_layout 6, u"rom:/layout/agbClap_remix.zlib", -1
         0xB3 7, 3
         break
+    case 4
+        set_cellanim 4, u"rom:/cellanim/agbClap_BW.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 5
+        set_cellanim 4, u"rom:/cellanim/agbClap_mario.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 6
+        set_cellanim 4, u"rom:/cellanim/agbClap_party.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 7
+        set_cellanim 4, u"rom:/cellanim/agbClap_tempo.zlib", -1
+        set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
     endswitch
     game_cellanim 1, 4
     game_layout 1, 6
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_PATI"
-    random 4
+    random 8
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/agbClap_short.zlib", -1
@@ -330,6 +350,26 @@ else
         set_cellanim 5, u"rom:/cellanim/agbClap_remix02.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_remix.zlib", -1
         0xB3 7, 3
+        break
+    case 4
+        set_cellanim 5, u"rom:/cellanim/agbClap_BW.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 5
+        set_cellanim 5, u"rom:/cellanim/agbClap_mario.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 6
+        set_cellanim 5, u"rom:/cellanim/agbClap_party.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
+        break
+    case 7
+        set_cellanim 5, u"rom:/cellanim/agbClap_tempo.zlib", -1
+        set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
+        0xB3 7, 1
         break
     endswitch
     game_cellanim 1, 5
