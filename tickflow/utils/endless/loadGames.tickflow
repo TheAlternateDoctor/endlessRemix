@@ -1,3 +1,12 @@
+loadSong:
+random 100
+if_gt 90
+	set_sfx 0xA, u"GROUP_WSD_ENDLESS_JAM"
+else
+	set_sfx 0xA, u"GROUP_WSD_ENDLESS"
+endif
+return
+
 loadTutorial:
     set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
     set_cellanim 9, u"rom:/cellanim/common.zlib", -1

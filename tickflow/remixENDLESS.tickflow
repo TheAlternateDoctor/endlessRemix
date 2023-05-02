@@ -446,15 +446,7 @@ set_sfx 6, u"GROUP_BASKET_EN"
 rest 0x18	// 0.5 beats
 set_sfx 7, u"GROUP_BASKET_JP"
 rest 0x18	// 0.5 beats
-rest 0xC	// 0.25 beats
-// set_sfx 9, u"GROUP_ENDLESS"
-rest 0xC	// 0.5 beats
-random 100
-if_gt 90
-	set_sfx 0xA, u"GROUP_WSD_ENDLESS_JAM"
-else
-	set_sfx 0xA, u"GROUP_WSD_ENDLESS"
-endif
+call loadSong
 sub 3
 0x83 0
 

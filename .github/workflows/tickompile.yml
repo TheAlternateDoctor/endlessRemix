@@ -63,7 +63,7 @@ jobs:
           cd romfs
           cp -r ./UScellanim ../out/
           cp -r ./USlayout ../out/
-          cp -r ./sound ../out/
+          cp -r ./USsound ../out/
           
       - name: Build C00.bin
         run: |
@@ -133,7 +133,7 @@ jobs:
           cd romfs
           cp -r ./UScellanim ../out/debug
           cp -r ./USlayout ../out/debug
-          cp -r ./sound ../out/debug
+          cp -r ./USsound ../out/debug
           
       - name: Build C00.bin
         run: |
