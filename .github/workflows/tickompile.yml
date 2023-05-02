@@ -33,6 +33,7 @@ jobs:
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
@@ -68,6 +69,7 @@ jobs:
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
@@ -101,6 +103,7 @@ jobs:
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
 
@@ -136,6 +139,7 @@ jobs:
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
           sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
 
