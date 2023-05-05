@@ -9,7 +9,50 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  romfs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up structure
+        run: |
+          mkdir -p out/
+          cd romfs
+          cp -r ./cellanim ../out/
+          cp -r ./sound ../out/
+          cd romfs-lite
+          cp -r ./cellanim ../out/
+          cp -r ./layout ../out/
+          cp -r ./sound ../out/
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: RomFS
+          path: romfs/
+
+  romfs-lite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up structure
+        run: |
+          mkdir -p out/
+          cd romfs-lite
+          cp -r ./cellanim ../out/
+          cp -r ./layout ../out/
+          cp -r ./sound ../out/
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: RomFS
+          path: out/
+
+  c00s:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,61 +68,42 @@ jobs:
       - name: Set up structure
         run: |
           wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
-          mkdir -p out/
-          cd romfs
-          cp -r . ../out/
+          mkdir -p out
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           
       - name: Build C00.bin
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: Latest Remix
-          path: out/
-
-  release-lite:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Java
-        uses: actions/setup-java@v3.9.0
-        with:
-          java-version: 8
-          distribution: adopt
-          java-package: jre
-
-      - name: Set up structure
-        run: |
-          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
-          mkdir -p out/
-          cd romfs
-          cp -r ./UScellanim ../out/
-          cp -r ./USlayout ../out/
-          cp -r ./USsound ../out/
           
-      - name: Build C00.bin
+      - name: Build C00.bin (debug)
+        run: |
+          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/debug/C00-debug.bin
+          
+      - name: Build C00.bin lite
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/C00.bin
+          java -jar tickompiler.jar p bin/ base.bin out/C00-lite.bin
+
+      - name: Build C00.bin lite (debug)
+        run: |
+          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/debug/C00-debug-lite.bin
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
-          name: Latest Remix (Lite)
+          name: Latest C00.bins
           path: out/
           
-  debug:
+  saltwater:
     runs-on: ubuntu-latest
 
     steps:
@@ -94,57 +118,41 @@ jobs:
           
       - name: Set up structure
         run: |
+          wget https://github.com/patataofcourse/Deckompiler/releases/download/v0.2.1/Deckompiler-linux.zip
           wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
-          mkdir -p out/debug
-          cd romfs
-          cp -r . ../out/debug
+          unzip Deckompiler-linux.zip 
+          mkdir -p out
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           
-      - name: Build C00.bin
+      - name: Build release btk
         run: |
-          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: Debug Remix
-          path: out/debug/
+          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS.btk bin/remixENDLESS.tempo
           
-  debug-lite:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Java
-        uses: actions/setup-java@v3.9.0
-        with:
-          java-version: 8
-          distribution: adopt
-          java-package: jre
-          
-      - name: Set up structure
-        run: |
-          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
-          mkdir -p out/debug
-          cd romfs
-          cp -r ./UScellanim ../out/debug
-          cp -r ./USlayout ../out/debug
-          cp -r ./USsound ../out/debug
-          
-      - name: Build C00.bin
+      - name: Build release btk (debug)
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
-          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/debug/C00.bin
+          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-debug.btk bin/remixENDLESS.tempo
+          
+      - name: Build release btk lite
+        run: |
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-lite.btk bin/remixENDLESS.tempo
+
+      - name: Build release btk lite (debug)
+        run: |
+          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-debug-lite.btk bin/remixENDLESS.tempo
+
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
-          name: Debug Remix (Lite)
-          path: out/debug/
+          name:Latest Saltwater btks
+          path: out/

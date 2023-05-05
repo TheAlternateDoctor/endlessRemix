@@ -1076,7 +1076,10 @@ stop
 playNextGame:
     get_async 0, 0
 	rest 0x18
-    get_async 1, 0
+    0x201
+    if_geq 0x103
+        get_async 1, 0
+    endif
 	rest 0x18
 	async_call loadNextGame,0x60
 	rest 0x30*7
