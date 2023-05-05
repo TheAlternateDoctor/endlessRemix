@@ -21,7 +21,7 @@ jobs:
           cd romfs
           cp -r ./cellanim ../out/
           cp -r ./sound ../out/
-          cd romfs-lite
+          cd ../romfs-lite
           cp -r ./cellanim ../out/
           cp -r ./layout ../out/
           cp -r ./sound ../out/
@@ -82,7 +82,7 @@ jobs:
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/debug/C00-debug.bin
+          java -jar tickompiler.jar p bin/ base.bin out/C00-debug.bin
           
       - name: Build C00.bin lite
         run: |
@@ -95,7 +95,7 @@ jobs:
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/debug/C00-debug-lite.bin
+          java -jar tickompiler.jar p bin/ base.bin out/C00-debug-lite.bin
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
@@ -121,6 +121,7 @@ jobs:
           wget https://github.com/patataofcourse/Deckompiler/releases/download/v0.2.1/Deckompiler-linux.zip
           wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
           unzip Deckompiler-linux.zip 
+          chmod u+x deckompiler
           mkdir -p out
           sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x5E/' tickflow/remixENDLESS.tickflow
           
