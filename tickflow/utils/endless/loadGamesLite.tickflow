@@ -15,7 +15,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_VIRUS"
@@ -37,7 +37,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_COIN_TOSS_REMIX"
@@ -59,7 +59,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SIRAHA"
@@ -81,7 +81,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_KURU_SHOW"
@@ -103,7 +103,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_WRESTLER"
@@ -125,7 +125,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_FISHING"
@@ -147,7 +147,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_GOMA"
@@ -191,7 +191,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_PATI"
@@ -259,7 +259,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
@@ -299,7 +299,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_KUSI"
@@ -321,7 +321,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_BATTER"
@@ -359,7 +359,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_ROCKET"
@@ -383,7 +383,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_CAMERA_MAN"
@@ -409,7 +409,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_FROG"
@@ -433,7 +433,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_W_DATE"
@@ -455,7 +455,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/swfSoumen_v0.zlib", -1
@@ -493,7 +493,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/agbMetro_v0.zlib", -1
@@ -532,7 +532,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/rvlTap_long.zlib", -1
@@ -575,7 +575,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SPLASH"
@@ -597,7 +597,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_JIKKEN"
@@ -624,7 +624,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/ctrTeppan_long.zlib", -1
@@ -653,7 +653,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_SHOOTING"
@@ -707,7 +707,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_RABBIT"
@@ -733,7 +733,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_NINJA"
@@ -775,7 +775,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_MARCH"
@@ -802,7 +802,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_BATTING"
@@ -829,7 +829,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_FRUITSBASKET"
@@ -883,7 +883,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_BLANCO"
@@ -937,7 +937,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_STEP"
@@ -987,7 +987,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_CHORUS"
@@ -1037,7 +1037,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_BOOKS"
@@ -1075,7 +1075,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SEE_SAW"
@@ -1097,7 +1097,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     rest 0xC	// 0.25 beats
@@ -1136,7 +1136,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 set_model 4, u"rom:/__test/DefaultFragmentLight.bcenv", 1
 set_model 5, u"rom:/__test/DefaultSceneEnvironmentSetting.bcenv", 1
 0xB2 1
@@ -1198,7 +1198,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_QUIZ"
@@ -1224,7 +1224,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     random 3
@@ -1279,7 +1279,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_IAI_NEW"
@@ -1333,7 +1333,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     random 2
@@ -1382,7 +1382,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_AIM"
@@ -1426,7 +1426,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_ROBOT"
@@ -1484,7 +1484,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_CTR_CHAMELEON"
@@ -1510,7 +1510,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_RAT"
@@ -1532,7 +1532,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_SHUGYO"
@@ -1570,7 +1570,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_PAJAMAS"
@@ -1592,7 +1592,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_KARATE"
@@ -1670,7 +1670,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_HAIR"
@@ -1720,7 +1720,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_NIGHT_WALK"
@@ -1742,7 +1742,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_GOLF"
@@ -1798,7 +1798,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/rvlAssemble_v0.zlib", -1
@@ -1827,7 +1827,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_HOPPING"
@@ -1849,7 +1849,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_TONO"
@@ -1871,7 +1871,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_AIR_BOARD"
@@ -1897,7 +1897,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_BACKBEAT"
@@ -1919,7 +1919,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_BLUE_BIRDS"
@@ -1945,7 +1945,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/ntrBoxShow_v0.zlib", -1
@@ -1978,7 +1978,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_IAI"
@@ -2000,7 +2000,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_SHUJI"
@@ -2022,7 +2022,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_SPACE"
@@ -2064,7 +2064,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/ntrAssemble_v0.zlib", -1
@@ -2093,7 +2093,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_SHORT_LIVE"
@@ -2115,7 +2115,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_TAP"
@@ -2173,7 +2173,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_WOOD_CAT"
@@ -2221,7 +2221,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SHIWAKE"
@@ -2243,7 +2243,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_cellanim 4, u"rom:/cellanim/rvlComedians_long.zlib", -1
@@ -2272,7 +2272,7 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-rest 0x60
+rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_MEAT"
