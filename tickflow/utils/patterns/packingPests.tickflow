@@ -1,8 +1,8 @@
 // Has the ding sound. Feel free to use it!
 
-sequencePackingPe
-    rest 0x8sts:
+sequencePackingPests:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x32
 	sub 4
