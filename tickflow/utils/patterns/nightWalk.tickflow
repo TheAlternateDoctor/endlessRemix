@@ -3,11 +3,12 @@
 
 sequenceNightWalk:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x6
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
 	0xB3 9, 0x6
     fade<1> 1,1,1
     random 1

@@ -8,11 +8,12 @@ sequenceTongueLashing:
     case 0
         async_call tongueLashing1
     endswitch
+    rest 0x8
 	call changeEngine
 	engine 0x36
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
 	0xB3 9, 0x36
     fade<1> 1,1,1
     input 1
@@ -23,6 +24,7 @@ tongueLashing1:
     set_cat 0
     play_sfx 0x1001131
     rest 0x18
+    set_cat 0x7D0
     0x100<1> -0x1C2, -0xB4, -0xB4, 0x1001134
     async_call tongueLashingYellow //Separated in two due to issues with later games.
     0x107<1> 0, 1

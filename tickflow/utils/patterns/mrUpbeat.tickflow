@@ -3,13 +3,14 @@
 sequenceUpbeat:
 	set_cat 0
     play_sfx 0x10002DF
+    rest 0x8
 	call changeEngine
 	engine 0x3C
 	sub 4
 	0x29<2> 
     zoom 3, 0xC8, 0xC8
     pan 3, 0, -0x20
-    rest 0x18
+    rest 0x10
     async_call upbeatCountinNew, 0x18
 	0xB3 9, 0x3C
     fade<1> 1,1,1

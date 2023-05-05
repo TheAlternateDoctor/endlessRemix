@@ -8,11 +8,12 @@
 
 sequenceSpaceDance:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0xB
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
     setrest 0, 0x18
     setrest 1, 0x18
 	0xB3 9, 0xB

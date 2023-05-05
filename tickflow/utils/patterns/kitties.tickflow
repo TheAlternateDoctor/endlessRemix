@@ -8,11 +8,12 @@ sequenceKitties:
     case 0
         async_call kitties1
     endswitch
+    rest 0x8
 	call changeEngine
 	engine 0x3E
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
 	0xB3 9, 0x3E
     fade<1> 1,1,1
     input 1
@@ -22,6 +23,7 @@ kitties1:
     set_cat 0
     async_call kittiesClap
     rest 0xC
+    set_cat 0x7D0
     0x101 6
     rest 0x24
     rest 0x90
@@ -67,6 +69,7 @@ set_cat 0
 play_sfx 0x10010CC
 rest 0x10	// 0.33333334 beats
 rest 8	// 0.16666667 beats
+set_cat 0x7D0
 0x102<1> 2, 0
 rest 0x10	// 0.33333334 beats
 play_sfx 0x10010CD

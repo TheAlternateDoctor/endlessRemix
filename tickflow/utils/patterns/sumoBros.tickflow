@@ -17,11 +17,12 @@ stop
 
 sequenceSumoBros:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x3C
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x8
     0x108 0
     input 1
     0xB2 7
@@ -40,7 +41,7 @@ sequenceSumoBros:
             break
         endswitch
     endif
-    rest 0xC
+    rest 0x8
 	0xB3 9, 0x3C
     fade<1> 1,1,1
 stop

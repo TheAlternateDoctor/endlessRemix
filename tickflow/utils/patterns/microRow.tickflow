@@ -15,11 +15,12 @@ stop
 
 sequenceMicroRow:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x23
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
     0x10B 1
     0x10A 1
     0x101 0x52FC2C, 6, 0

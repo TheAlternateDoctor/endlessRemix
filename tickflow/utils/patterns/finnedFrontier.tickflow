@@ -14,11 +14,12 @@ stop
 
 sequenceFinned:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x23
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x8
     async_call finnedSetup
     random 1
     switch
@@ -26,7 +27,7 @@ sequenceFinned:
         async_call finnedFrontier1
     endswitch
     input 1
-    rest 0xC
+    rest 0x8
 	0xB3 9, 0x23
     fade<1> 1,1,1
 stop

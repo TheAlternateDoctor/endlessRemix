@@ -23,15 +23,16 @@ stop
 
 sequenceMunchyMonk:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x1B
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x8
     0x106<1>
     0x104<1>
     0x107 1, 0xC0
-    rest 0xC
+    rest 0x8
     async_call munchyMonkBeat
 	0xB3 9, 0x1B
     fade<1> 1,1,1

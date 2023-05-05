@@ -3,18 +3,19 @@
 
 sequenceLumbearjack:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x3F
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x8
     input 1
     random 1
     switch
     case 0
         async_call lumbearjack1
     endswitch
-    rest 0xC
+    rest 0x8
 	0xB3 9, 0x3F
     fade<1> 1,1,1
     0x103<3>

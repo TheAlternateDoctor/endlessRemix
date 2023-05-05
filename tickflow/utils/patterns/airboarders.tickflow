@@ -4,11 +4,12 @@
 
 sequenceAirboarders:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0xE
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
     0x103<2> 0, 3, 0, -0xA, 8, 0xA
     0x103<1> 0, 3, 0, 4, 1
     0x103<4> 0, 3, 0, 0x5A

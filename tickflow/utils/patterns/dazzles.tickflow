@@ -1,4 +1,8 @@
-// Has a game tickflow for use in early cues.
+// Starts 0x18 beats early.
+// Don't forget to use set_cat 0,
+// else the pattern will be killed later on!
+// Also remember to set_cat 0x7D0 half a beat later
+// so the game can be properly killed when the player fails.
 
 sequenceDazzles:
     random 1 //Earlier to accomodate the starting time
@@ -7,11 +11,12 @@ sequenceDazzles:
         async_call dazzles1
     endswitch
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x11
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
 	0xB3 9, 0x11
     fade<1> 1,1,1
     async_call dazzlesBeatAnim
@@ -22,8 +27,9 @@ stop
 dazzles1:
 set_cat 0 // Necessary to not make it die when switching engines
 async_call dazzlesCrouch
-rest 0x90
 rest 0x18
+set_cat 0x7D0
+rest 0x90
 async_sub 0x5B
 rest 0xC0
 rest 0x18

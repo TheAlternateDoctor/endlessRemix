@@ -1,6 +1,8 @@
 // Starts 0x18 beats early.
 // Don't forget to use set_cat 0,
 // else the pattern will be killed later on!
+// Also remember to set_cat 0x7D0 half a beat later
+// so the game can be properly killed when the player fails.
 
 sequenceCheerReaders:
 	set_cat 0
@@ -9,11 +11,12 @@ sequenceCheerReaders:
     case 0
         async_call cheerReaders1
     endswitch
+    rest 0x8
 	call changeEngine
 	engine 0x20
 	sub 4
 	0x29<2> 
-    rest 0x18
+    rest 0x10
 	0xB3 9, 0x20
     fade<1> 1,1,1
     0x8B 0,0
@@ -24,8 +27,9 @@ stop
 cheerReaders1:
 set_cat 0
 async_call oneTwoThreeDown
-rest 0x90
 rest 0x18
+set_cat 0x7D0
+rest 0x90
 async_call rahRahSisBoomBaBoomUp
 rest 0xC0
 rest 0x18

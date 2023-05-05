@@ -25,11 +25,12 @@ stop
 
 sequenceMarcher:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0x5
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x8
     0x65<4> 0x78, 0x32
     0x65<3> 0, -0x5A
     0x65<5> 2
@@ -59,7 +60,7 @@ sequenceMarcher:
         endswitch
         input 1
     endif
-    rest 0xC
+    rest 0x8
 	0xB3 9, 0x5
     fade<1> 1,1,1
 stop

@@ -2,8 +2,8 @@
 
 preSequenceLockstep:
 set_cat 0
-// random 2
-// if 1
+random 2
+if 1
     rest 0x60
     play_sfx 0x1000E0F
     rest 0x30
@@ -11,26 +11,27 @@ set_cat 0
     rest 0x30
     play_sfx 0x1000E0C
     0xB3 7, 1
-// else
-    // rest 0x30
-    // play_sfx 0x1000E0C
-    // rest 0x30	// 1.0 beats
-    // play_sfx 0x1000E0C
-    // rest 0x30	// 1.0 beats
-    // play_sfx 0x1000E0C
-    // rest 0x30	// 1.0 beats
-    // play_sfx 0x1000E0D
-    // 0xB3 7, 0
-// endif
+else
+    rest 0x30
+    play_sfx 0x1000E0C
+    rest 0x30	// 1.0 beats
+    play_sfx 0x1000E0C
+    rest 0x30	// 1.0 beats
+    play_sfx 0x1000E0C
+    rest 0x30	// 1.0 beats
+    play_sfx 0x1000E0D
+    0xB3 7, 0
+endif
 stop
 
 sequenceLockstep:
 	set_cat 0
+    rest 0x8
 	call changeEngine
 	engine 0xF
 	sub 4
 	0x29<2> 
-    rest 0xC
+    rest 0x8
     input 1
     0xB2 7
     if 1
@@ -50,7 +51,7 @@ sequenceLockstep:
             async_call lockstepOffbeat1
         endswitch
     endif
-    rest 0xC
+    rest 0x8
 	0xB3 9, 0xF
     fade<1> 1,1,1
     input 1
