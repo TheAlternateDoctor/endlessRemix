@@ -15,6 +15,7 @@ sequenceTutorial:
     switch
     case 0
         async_call drumPractice1
+        async_call drumPracticeCheck1
     endswitch
     0x103 0
     0x103 2

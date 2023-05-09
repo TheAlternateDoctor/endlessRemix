@@ -1,0 +1,14 @@
+
+ssWiiCheck1:
+    async_call checkApress, 0x30
+    rest 0xC0
+    async_call checkApress, 0x30
+    rest 0x30
+    async_call checkApress, 0x30
+    rest 0x90
+    async_call checkApress, 0x30
+    rest 0xC0
+    async_call checkApress, 0x30
+    rest 0x30
+    async_call checkApress, 0x30
+stop

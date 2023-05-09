@@ -55,7 +55,7 @@ rest 1
 goto 0xC012
 
 failInput:
-    0x40<1> 0x10002AF, 0x300
+    play_sfx 0x10002C2
 stop
 
 checkApress:

@@ -50,6 +50,11 @@ quiz1:
     play_sfx 0x1000B91
     rest 0x30*8
     0x102<2>
+    async_call quizCheck
+    0x105<2>
+stop
+
+quizCheck:
     0x102<3>
     if 1
         play_sfx 0x1000B8E
@@ -61,8 +66,6 @@ quiz1:
         play_sfx 0x10002B6
         0x100<4>
         0x101<6>
+        async_call failInput
     endif
-    0x105<2>
-
-
 stop

@@ -9,6 +9,7 @@ sequenceDazzles:
     switch
     case 0
         async_call dazzles1
+        async_call dazzlesCheck1
     endswitch
 	set_cat 0
     rest 0x8

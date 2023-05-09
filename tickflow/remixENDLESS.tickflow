@@ -70,6 +70,10 @@
 #include utils/patterns/blueBirds.tickflow
 
 #include utils/performance/utils.tickflow
+#include utils/performance/drumPractice.tickflow
+#include utils/performance/bunnyHop.tickflow
+#include utils/performance/samuraiSliceWii.tickflow
+#include utils/performance/dazzles.tickflow
 
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow

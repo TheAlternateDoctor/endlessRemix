@@ -17,6 +17,7 @@ sequenceSSWii:
     switch
     case 0
         async_call ssWii1
+        async_call ssWiiCheck1
     endswitch
     async_call ssWiiBeatAnims
 stop

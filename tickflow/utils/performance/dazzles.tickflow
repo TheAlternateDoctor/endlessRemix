@@ -1,0 +1,13 @@
+dazzlesCheck1:
+set_cat 0 // Necessary to not make it die when switching engines
+rest 0x18
+async_call checkAhold, 0x30
+set_cat 0x7D0
+rest 0x90
+async_call checkArelease, 0x60
+rest 0xC0
+rest 0x18
+async_call checkAhold, 0x48
+rest 0xA8
+async_call checkArelease, 0x60
+stop
