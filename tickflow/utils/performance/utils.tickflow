@@ -199,13 +199,13 @@ checkBhold:
     endif
     rest 0x28
     async_call waitBhold
-    0x200<2> 0
+    0x200<2> 1
     if 1
         goto 0xAAAE
     endif
     label 0xAAAA
     set_condvar 0
-    0x200<2> 0
+    0x200<2> 1
     if 1
         kill_loc waitBhold
         goto 0xAAAB
@@ -214,7 +214,7 @@ checkBhold:
     goto 0xAAAA
     label 0xAAAB
     set_condvar 0
-    0x200<2> 0
+    0x200<2> 1
     if 0
         async_call failInput
         stop
@@ -240,13 +240,13 @@ checkBrelease:
     rest 0x28
     kill_loc waitBhold
     async_call waitBrelease
-    0x200<2> 0
+    0x200<2> 1
     if 0
         goto 0xAAAE
     endif
     label 0xAAAA
     set_condvar 0
-    0x200<2> 0
+    0x200<2> 1
     if 0
         kill_loc waitBrelease
         goto 0xAAAE
