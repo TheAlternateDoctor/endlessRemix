@@ -34,7 +34,7 @@ stop
 
 finnedFrontier1:
 async_call fourbeatremix
-rest 0xC
+rest 0x8
 //First swim
 rest 0x18
 async_call transitiontodash, 0x18

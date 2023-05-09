@@ -66,8 +66,8 @@ sequenceMarcher:
 stop
 
 marcherWalk1:
-0x100 0xC, 0
-rest 0xC
+0x100 0x8, 0
+rest 0x8
 0x104<1>
 0x104<2>
 0x104<3>
@@ -88,7 +88,7 @@ rest 0x48
 stop
 
 marcher1:
-rest 0xC
+rest 0x8
 async_call marcherBeat
 rest 0x30
 async_call marcherBeat

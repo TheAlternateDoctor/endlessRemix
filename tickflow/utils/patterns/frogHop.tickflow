@@ -49,8 +49,8 @@ stop
 frogHopShake1:
     0x101<1> 
     0x103<8> 0, 1
-    0x100 0, 0xC
-    rest 0xC
+    0x100 0, 0x8
+    rest 0x8
     sub 0x57
     sub 0x58
     sub 0x60
@@ -68,7 +68,7 @@ frogHopShake1:
 stop
 
 frogHop1:
-rest 0xC
+rest 0x8
 async_call frogHopBeatAnim
 async_call yahooNo
 rest 0xF0

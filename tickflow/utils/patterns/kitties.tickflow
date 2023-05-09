@@ -23,9 +23,9 @@ kitties1:
     set_cat 0
     async_call kittiesClap
     rest 0xC
-    set_cat 0x7D0
     0x101 6
     rest 0x24
+    set_cat 0x7D0
     rest 0x90
     0x102
     call kittiesRandomLocation
