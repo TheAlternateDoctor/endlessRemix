@@ -1,0 +1,264 @@
+// Call checkXpress/hold/release a beat early.
+// Call earlyCheckApress 8 ticks early
+
+checkA2:
+    0xA1
+    label 0xA2CE
+    0xA2
+    rest 1
+    0xA2<2>
+    if 1
+        async_call failInput
+        rest 0x60
+    endif
+goto 0xA2CE
+
+checkOnion:
+    rest 0xC0
+    rest 0xC0
+    0x106 0
+    if 0
+        async_call failInput
+    endif
+    rest 0xC0
+    rest 0xA7
+    0x106 0
+    if 0
+        async_call failInput
+    endif
+stop
+
+checkFreezeFrame:
+    label 0xFFCE
+    rest 0xC0
+    rest 0x30
+    0x104<2>
+    if_neq 0
+        async_call failInput
+    endif
+    rest 0xC0
+    rest 0x60
+    rest 0x48
+    0x104<2>
+    if_neq 0
+        async_call failInput
+    endif
+goto 0xFFCE
+
+checkCoinToss:
+label 0xC012
+0x102<1>
+if 4
+    async_call failInput
+endif
+rest 1
+goto 0xC012
+
+failInput:
+    0x40<1> 0x10002AF, 0x300
+stop
+
+checkApress:
+    set_cat 0
+    0x201
+    if_lt 0x103
+        stop
+    endif
+    rest 0x28
+    async_call waitApress
+    0x200<2> 0
+    if 1
+        goto 0xAAAE
+    endif
+    label 0xAAAA
+    set_condvar 0
+    0x200<2> 0
+    if 1
+        kill_loc waitApress
+        goto 0xAAAE
+    endif
+    rest 1
+    goto 0xAAAA
+    label 0xAAAE
+stop
+
+waitApress:
+    set_cat 0
+    rest 15
+    async_call failInput
+    kill_loc checkApress
+stop
+
+earlyCheckApress:
+    set_cat 0
+    0x201
+    if_lt 0x103
+        stop
+    endif
+    async_call earlyWaitApress
+    0x200<2> 0
+    if 1
+        goto 0xAAAE
+    endif
+    label 0xAAAA
+    set_condvar 0
+    0x200<2> 0
+    if 1
+        kill_loc earlyWaitApress
+        goto 0xAAAE
+    endif
+    rest 1
+    goto 0xAAAA
+    label 0xAAAE
+stop
+
+earlyWaitApress:
+    set_cat 0
+    rest 15
+    async_call failInput
+    kill_loc earlyCheckApress
+stop
+
+checkAhold:
+    set_cat 0
+    0x201
+    if_lt 0x103
+        stop
+    endif
+    rest 0x28
+    async_call waitAhold
+    0x200<2> 0
+    if 1
+        goto 0xAAAE
+    endif
+    label 0xAAAA
+    set_condvar 0
+    0x200<2> 0
+    if 1
+        kill_loc waitAhold
+        goto 0xAAAB
+    endif
+    rest 1
+    goto 0xAAAA
+    label 0xAAAB
+    set_condvar 0
+    0x200<2> 0
+    if 0
+        async_call failInput
+        stop
+    endif
+    rest 1
+    goto 0xAAAB
+    label 0xAAAE
+stop
+
+waitAhold:
+    set_cat 0
+    rest 15
+    async_call failInput
+    kill_loc checkAhold
+stop
+
+checkArelease:
+    set_cat 0
+    0x201
+    if_lt 0x103
+        stop
+    endif
+    rest 0x28
+    kill_loc waitAhold
+    async_call waitArelease
+    0x200<2> 0
+    if 0
+        goto 0xAAAE
+    endif
+    label 0xAAAA
+    set_condvar 0
+    0x200<2> 0
+    if 0
+        kill_loc waitArelease
+        goto 0xAAAE
+    endif
+    rest 1
+    goto 0xAAAA
+    label 0xAAAE
+stop
+
+waitArelease:
+    set_cat 0
+    rest 15
+    async_call failInput
+    kill_loc checkArelease
+stop
+
+checkBhold:
+    set_cat 0
+    0x201
+    if_lt 0x103
+        stop
+    endif
+    rest 0x28
+    async_call waitBhold
+    0x200<2> 0
+    if 1
+        goto 0xAAAE
+    endif
+    label 0xAAAA
+    set_condvar 0
+    0x200<2> 0
+    if 1
+        kill_loc waitBhold
+        goto 0xAAAB
+    endif
+    rest 1
+    goto 0xAAAA
+    label 0xAAAB
+    set_condvar 0
+    0x200<2> 0
+    if 0
+        async_call failInput
+        stop
+    endif
+    rest 1
+    goto 0xAAAB
+    label 0xAAAE
+stop
+
+waitBhold:
+    set_cat 0
+    rest 15
+    async_call failInput
+    kill_loc checkBhold
+stop
+
+checkBrelease:
+    set_cat 0
+    0x201
+    if_lt 0x103
+        stop
+    endif
+    rest 0x28
+    kill_loc waitBhold
+    async_call waitBrelease
+    0x200<2> 0
+    if 0
+        goto 0xAAAE
+    endif
+    label 0xAAAA
+    set_condvar 0
+    0x200<2> 0
+    if 0
+        kill_loc waitBrelease
+        goto 0xAAAE
+    endif
+    rest 1
+    goto 0xAAAA
+    label 0xAAAE
+stop
+
+waitBrelease:
+    set_cat 0
+    rest 15
+    async_call failInput
+    kill_loc checkBrelease
+stop

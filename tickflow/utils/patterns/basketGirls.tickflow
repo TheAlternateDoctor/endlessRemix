@@ -26,7 +26,6 @@ sequenceBasketGirls:
     switch
     case 0
         async_call basketGirls1
-        async_call basketGirls1Check
     endswitch
 stop
 

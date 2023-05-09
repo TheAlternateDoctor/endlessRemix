@@ -874,7 +874,7 @@ loadNextGame:
                 async_call loadCoinToss
                 set_func 3, nop
                 set_func 2, nop
-                set_func 1, checkA2
+                set_func 1, checkCoinToss
             endif
         break
         case 0x42 //Clap Trap
