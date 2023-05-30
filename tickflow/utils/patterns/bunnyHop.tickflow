@@ -26,7 +26,7 @@ sequenceBunnyHop:
     switch
     case 0
         async_call bunnyHop1
-        async_call bunnyHopCheck1
+        // async_call bunnyHopCheck1
         break
     endswitch
     rest 0x8

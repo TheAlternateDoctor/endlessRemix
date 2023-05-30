@@ -1,4 +1,5 @@
 drumPracticeCheck1:
+rest 0x30
 async_call checkApress
 rest 0x60
 rest 0x30

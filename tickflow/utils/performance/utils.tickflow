@@ -46,16 +46,20 @@ checkFreezeFrame:
 goto 0xFFCE
 
 checkCoinToss:
-label 0xC012
+rest 0x30*15
 0x102<1>
-if 4
+if 2
     async_call failInput
 endif
-rest 1
-goto 0xC012
+stop
 
 failInput:
-    play_sfx 0x10002C2
+    set_cat 0
+    0x40<1> 0x10002C2, 0x300
+    kill_cat 0x7D0
+    rest 0x60
+    play_sfx 0x1000291
+    // play_sfx 0x1000AB7
 stop
 
 checkApress:
@@ -166,7 +170,7 @@ checkArelease:
         stop
     endif
     rest 0x28
-    kill_loc waitAhold
+    kill_loc checkAhold
     async_call waitArelease
     0x200<2> 0
     if 0

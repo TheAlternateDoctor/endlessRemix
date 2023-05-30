@@ -313,7 +313,7 @@ loadNextGame:
                 async_call loadDazzles
                 set_func 3, nop
                 set_func 2, loadDazzlesLate
-                set_func 1, checkA2
+                set_func 1, nop
             endif
         break
         case 0x12 //Victory Game & Watch
