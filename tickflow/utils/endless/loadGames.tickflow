@@ -3165,6 +3165,9 @@ if 1
     case 0
         set_cellanim 4, u"rom:/cellanim/agbShuji_v0.zlib", -1
         break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/agbShuji_r1wii.zlib", -1
+        break
     endswitch
     game_cellanim 0xA, 4
     0xB3 1, 0
@@ -3174,6 +3177,9 @@ else
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/agbShuji_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/agbShuji_r1wii.zlib", -1
         break
     endswitch
     game_cellanim 0xA, 5
