@@ -235,18 +235,11 @@ input 0
 
 0xB3 0,0 //Score
 0xB3 1,0 //Celanim
-0xB3 2,1 //Audio slot (Useless?)
+0xB3 2,3 //Lives
 0xB3 3,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 10,debugMode //Enables Debug mode
-
-
-0xA7<2> 
-if 1 //No practice
-	0xB3 4,1 //No song indicator
-else
-	0xB3 4,0
-endif
 0xB3 5,2 //Slot 7 has SFX
+
 
 0x67<5> 2
 0x67<3> -0x6E
@@ -306,10 +299,7 @@ fade 1,1,1
 
 //main loop
 async_call speedup
-label 0x1009
-	call playNextGame
-goto 0x1009
-
+async_call playNextGame
 stop 
 
 

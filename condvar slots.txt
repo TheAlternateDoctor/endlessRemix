@@ -1,6 +1,7 @@
 Condvar
 0 - Score
 1 - Used Cellanim (1 if 5)
+2 - Lives. Starts at 3
 3 - Debug Endless, starting point of the block. Random if 1337
 4 - Game variant. For instance, 0 for Space Dance, 1 for Cosmic Dance
 5 - multiple sfx (for recreations) - gets bigger with more slots, ie:1 is 6, 2 is 7, etc...

@@ -1074,23 +1074,31 @@ loadNextGame:
 stop
 
 playNextGame:
-    get_async 0, 0
-	rest 0x18
-    0x201
-    if_geq 0x103
-        get_async 1, 0
+    set_cat 0
+    label 0x1009
+    0xB2 2
+    if_gt 0
+        get_async 0, 0
+        rest 0x18
+        0x201
+        if_geq 0x103
+            get_async 1, 0
+        endif
+        rest 0x18
+        async_call loadNextGame,0x60
+        rest 0x30*7
+        rest 0x30*3
+        get_async 3, 0x18
+        rest 0x30*5 - 0x18
+        get_async 2, 0
+        rest 0x18
+        // 0xB2 2
+        // if_gt 0
+        //     fade 1,1,1
+        // endif
+        goto 0x1009
     endif
-	rest 0x18
-	async_call loadNextGame,0x60
-	rest 0x30*7
-	rest 0x30*3
-    get_async 3, 0x18
-    rest 0x30*5 - 0x18
-	get_async 2, 0
-    rest 0x18
-	fade 1,1,1
-    // call lifeCheck
-return
+stop
 
 deadSubEndless: //Just save, but then continue
 	0x2D 0
