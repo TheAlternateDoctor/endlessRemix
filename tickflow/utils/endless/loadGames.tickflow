@@ -3,7 +3,11 @@ random 100
 if_gt 90
 	set_sfx 0xA, u"GROUP_WSD_ENDLESS_JAM"
 else
-	set_sfx 0xA, u"GROUP_WSD_ENDLESS"
+    if_gt 85
+	    set_sfx 0xA, u"GROUP_WSD_ENDLESS_RICK"
+    else
+	    set_sfx 0xA, u"GROUP_WSD_ENDLESS"
+    endif
 endif
 return
 
@@ -3160,7 +3164,7 @@ rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_AGB_SHUJI"
-    random 1
+    random 2
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/agbShuji_v0.zlib", -1
@@ -3173,7 +3177,7 @@ if 1
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_SHUJI"
-    random 1
+    random 2
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/agbShuji_v0.zlib", -1
