@@ -1079,6 +1079,7 @@ playNextGame:
     0xB2 2
     if_gt 0
         0xB3 12, 0
+        0xB3 13, 1
         get_async 0, 0
         rest 0x18
         0x201
@@ -1112,18 +1113,21 @@ lifeScoreCounter:
 goto lifeScoreCounter
 
 updateScore:
-0xB2 13
-set_countdown_condvar
-label 0x5C02
-get_countdown
-if_gt 0
-    0xB4 0, 1
-else
-    goto 0xE2D
+0xB2 12
+if 0
+    0xB2 13
+    set_countdown_condvar
+    label 0x5C02
+    get_countdown
+    if_gt 0
+        0xB4 0, 1
+    else
+        goto 0xE2D
+    endif
+    goto 0x5C02
+    label 0xE2D
+    call score
 endif
-goto 0x5C02
-label 0xE2D
-call score
 stop
 
 nop:

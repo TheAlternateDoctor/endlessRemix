@@ -23,6 +23,7 @@ sequenceAnimalAcrobat:
     random 1
     switch
     case 0
+        0xB3 13, 1
         0x102<1> animalAcrobat1, 4        // Load pattern
     endswitch
     0x102 0x30                        // Start executing pattern (in 1 beat)0x100059B
