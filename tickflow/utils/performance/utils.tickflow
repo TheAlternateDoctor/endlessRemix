@@ -53,6 +53,16 @@ if 2
 endif
 stop
 
+checkSickBeats:
+label 0x51C3
+0x108
+if 1
+    async_call failInput
+    rest 0x60
+    0x106<4>
+rest 1
+goto 0x51C3
+
 failInput:
     0xB4 2, -1
     0xB2 2
