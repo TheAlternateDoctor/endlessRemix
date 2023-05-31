@@ -64,6 +64,8 @@ rest 1
 goto 0x51C3
 
 failInput:
+    0xB3 12, 1
+    call life
     async_call waitAfterFail
     0xB4 2, -1
     0xB2 2

@@ -1069,7 +1069,7 @@ loadNextGame:
     endswitch
     0xB2 10
     if 1
-        call text
+        call score
     endif
 stop
 
@@ -1078,6 +1078,7 @@ playNextGame:
     label 0x1009
     0xB2 2
     if_gt 0
+        0xB3 12, 0
         get_async 0, 0
         rest 0x18
         0x201
@@ -1102,13 +1103,28 @@ stop
 
 lifeScoreCounter:
     set_cat 0
-    call text
+    call score
     rest 0xC0
     0x201
     if_geq 0x103
         call life
     endif
 goto lifeScoreCounter
+
+updateScore:
+0xB2 13
+set_countdown_condvar
+label 0x5C02
+get_countdown
+if_gt 0
+    0xB4 0, 1
+else
+    goto 0xE2D
+endif
+goto 0x5C02
+label 0xE2D
+call score
+stop
 
 nop:
 stop

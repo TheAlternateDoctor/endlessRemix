@@ -10,6 +10,8 @@ Condvar
 9 - Engine loaded
 10 - Debug mode
 11 - PerfCheck lock. Stops button press checks for a bit so the player doesn't lose multiple lives quickly
+12 - PerfCheck miss. Is set to 1 if the player missed during the section, 0 otherwise
+13 - Score to add. Adds that many to the score counter at the end of the section
 
 Subs
 0 - Pattern
