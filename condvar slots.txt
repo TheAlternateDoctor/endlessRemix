@@ -9,6 +9,7 @@ Condvar
 7 - "Game state". For Instance in Marcher, 0 means standing still while 1 is marching.
 9 - Engine loaded
 10 - Debug mode
+11 - PerfCheck lock. Stops button press checks for a bit so the player doesn't lose multiple lives quickly
 
 Subs
 0 - Pattern

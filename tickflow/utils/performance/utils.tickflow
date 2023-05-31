@@ -64,6 +64,7 @@ rest 1
 goto 0x51C3
 
 failInput:
+    async_call waitAfterFail
     0xB4 2, -1
     0xB2 2
     0x40<1> 0x10002C2, 0x300
@@ -116,6 +117,11 @@ substopper:
     goto 0xBBBB
 stop
 
+waitAfterFail:
+0xB3 11, 1
+rest 0x60
+0xB3 11, 0
+
 checkApress:
     set_cat 0
     0x201
@@ -123,21 +129,24 @@ checkApress:
         stop
     endif
     rest 0x28
-    async_call waitApress
-    0x200<2> 0
-    if 1
-        goto 0xAAAE
+    0xB2 11
+    if_neq 1
+        async_call waitApress
+        0x200<2> 0
+        if 1
+            goto 0xAAAE
+        endif
+        label 0xAAAA
+        set_condvar 0
+        0x200<2> 0
+        if 1
+            kill_loc waitApress
+            goto 0xAAAE
+        endif
+        rest 1
+        goto 0xAAAA
+        label 0xAAAE
     endif
-    label 0xAAAA
-    set_condvar 0
-    0x200<2> 0
-    if 1
-        kill_loc waitApress
-        goto 0xAAAE
-    endif
-    rest 1
-    goto 0xAAAA
-    label 0xAAAE
 stop
 
 waitApress:
@@ -153,21 +162,24 @@ earlyCheckApress:
     if_lt 0x103
         stop
     endif
-    async_call earlyWaitApress
-    0x200<2> 0
-    if 1
-        goto 0xAAAE
+    0xB2 11
+    if_neq 1
+        async_call earlyWaitApress
+        0x200<2> 0
+        if 1
+            goto 0xAAAE
+        endif
+        label 0xAAAA
+        set_condvar 0
+        0x200<2> 0
+        if 1
+            kill_loc earlyWaitApress
+            goto 0xAAAE
+        endif
+        rest 1
+        goto 0xAAAA
+        label 0xAAAE
     endif
-    label 0xAAAA
-    set_condvar 0
-    0x200<2> 0
-    if 1
-        kill_loc earlyWaitApress
-        goto 0xAAAE
-    endif
-    rest 1
-    goto 0xAAAA
-    label 0xAAAE
 stop
 
 earlyWaitApress:
@@ -184,30 +196,33 @@ checkAhold:
         stop
     endif
     rest 0x28
-    async_call waitAhold
-    0x200<2> 0
-    if 1
-        goto 0xAAAE
-    endif
-    label 0xAAAA
-    set_condvar 0
-    0x200<2> 0
-    if 1
-        kill_loc waitAhold
+    0xB2 11
+    if_neq 1
+        async_call waitAhold
+        0x200<2> 0
+        if 1
+            goto 0xAAAE
+        endif
+        label 0xAAAA
+        set_condvar 0
+        0x200<2> 0
+        if 1
+            kill_loc waitAhold
+            goto 0xAAAB
+        endif
+        rest 1
+        goto 0xAAAA
+        label 0xAAAB
+        set_condvar 0
+        0x200<2> 0
+        if 0
+            async_call failInput
+            stop
+        endif
+        rest 1
         goto 0xAAAB
+        label 0xAAAE
     endif
-    rest 1
-    goto 0xAAAA
-    label 0xAAAB
-    set_condvar 0
-    0x200<2> 0
-    if 0
-        async_call failInput
-        stop
-    endif
-    rest 1
-    goto 0xAAAB
-    label 0xAAAE
 stop
 
 waitAhold:
@@ -224,22 +239,25 @@ checkArelease:
         stop
     endif
     rest 0x28
-    kill_loc checkAhold
-    async_call waitArelease
-    0x200<2> 0
-    if 0
-        goto 0xAAAE
+    0xB2 11
+    if_neq 1
+        kill_loc checkAhold
+        async_call waitArelease
+        0x200<2> 0
+        if 0
+            goto 0xAAAE
+        endif
+        label 0xAAAA
+        set_condvar 0
+        0x200<2> 0
+        if 0
+            kill_loc waitArelease
+            goto 0xAAAE
+        endif
+        rest 1
+        goto 0xAAAA
+        label 0xAAAE
     endif
-    label 0xAAAA
-    set_condvar 0
-    0x200<2> 0
-    if 0
-        kill_loc waitArelease
-        goto 0xAAAE
-    endif
-    rest 1
-    goto 0xAAAA
-    label 0xAAAE
 stop
 
 waitArelease:
@@ -256,30 +274,33 @@ checkBhold:
         stop
     endif
     rest 0x28
-    async_call waitBhold
-    0x200<2> 1
-    if 1
-        goto 0xAAAE
-    endif
-    label 0xAAAA
-    set_condvar 0
-    0x200<2> 1
-    if 1
-        kill_loc waitBhold
+    0xB2 11
+    if_neq 1
+        async_call waitBhold
+        0x200<2> 1
+        if 1
+            goto 0xAAAE
+        endif
+        label 0xAAAA
+        set_condvar 0
+        0x200<2> 1
+        if 1
+            kill_loc waitBhold
+            goto 0xAAAB
+        endif
+        rest 1
+        goto 0xAAAA
+        label 0xAAAB
+        set_condvar 0
+        0x200<2> 1
+        if 0
+            async_call failInput
+            stop
+        endif
+        rest 1
         goto 0xAAAB
+        label 0xAAAE
     endif
-    rest 1
-    goto 0xAAAA
-    label 0xAAAB
-    set_condvar 0
-    0x200<2> 1
-    if 0
-        async_call failInput
-        stop
-    endif
-    rest 1
-    goto 0xAAAB
-    label 0xAAAE
 stop
 
 waitBhold:
@@ -296,22 +317,25 @@ checkBrelease:
         stop
     endif
     rest 0x28
-    kill_loc waitBhold
-    async_call waitBrelease
-    0x200<2> 1
-    if 0
-        goto 0xAAAE
+    0xB2 11
+    if_neq 1
+        kill_loc waitBhold
+        async_call waitBrelease
+        0x200<2> 1
+        if 0
+            goto 0xAAAE
+        endif
+        label 0xAAAA
+        set_condvar 0
+        0x200<2> 1
+        if 0
+            kill_loc waitBrelease
+            goto 0xAAAE
+        endif
+        rest 1
+        goto 0xAAAA
+        label 0xAAAE
     endif
-    label 0xAAAA
-    set_condvar 0
-    0x200<2> 1
-    if 0
-        kill_loc waitBrelease
-        goto 0xAAAE
-    endif
-    rest 1
-    goto 0xAAAA
-    label 0xAAAE
 stop
 
 waitBrelease:
