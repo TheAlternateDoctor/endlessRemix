@@ -245,14 +245,6 @@ input 0
 0x67<3> -0x6E
 0x67<4> 0x14
 0x67<7> 0xD0
-// 0x67<1> 2,"scoreCounter_0"
-// set_func 5, text
-0xB2 10
-if 0
-	set_func 4, deadSubEndless
-else
-	set_func 4, nopR
-endif
 
 call changeEngine
 engine 0x3C
@@ -266,6 +258,12 @@ set_cat 0
 async_call startingGame
 rest 0x30
 fade<1> 1,1,1
+0x201
+if_geq 0x103
+	0x67<1> 2,"lifeCounter_3"
+else
+    0x67<1> 2,"scoreCounter_0"
+endif
 rest 0x30
 label 0x54D
 0x9C<2>
@@ -299,6 +297,7 @@ fade 1,1,1
 
 //main loop
 async_call speedup
+async_call lifeScoreCounter
 async_call playNextGame
 stop 
 

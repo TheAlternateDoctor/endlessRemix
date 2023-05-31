@@ -6007,3 +6007,22 @@ switch
     0x67<1> 2,"scoreCounter_999"
 endswitch
 return
+
+life:
+    0xB2 2
+    switch
+        case 0
+        0x67<1> 2,"lifeCounter_0"
+        break
+        case 1
+        0x67<1> 2,"lifeCounter_1"
+        break
+        case 2
+        0x67<1> 2,"lifeCounter_2"
+        break
+        case 3
+        0x67<1> 2,"lifeCounter_3"
+        break
+    endswitch
+return
+        
