@@ -296,8 +296,9 @@ fade 1,1,1
 0xA2
 
 //main loop
+async_call updateScore
 async_call speedup
-async_call lifeScoreCounter
+// async_call lifeScoreCounter, 0x18
 async_call playNextGame
 stop 
 

@@ -5,7 +5,7 @@ checkA2:
     0xA1
     label 0xA2CE
     0xA2
-    rest 1
+    rest 2
     0xA2<2>
     if 1
         async_call failInput
@@ -57,17 +57,19 @@ checkSickBeats:
 label 0x51C3
 0x108
 if 1
+    0x109 1
     async_call failInput
     rest 0x60
     0x106<4>
+endif
 rest 1
 goto 0x51C3
 
 failInput:
     0xB3 12, 1
+    0xB4 2, -1
     call life
     async_call waitAfterFail
-    0xB4 2, -1
     0xB2 2
     0x40<1> 0x10002C2, 0x300
     if 0
@@ -125,6 +127,7 @@ waitAfterFail:
 0xB3 11, 1
 rest 0x60
 0xB3 11, 0
+stop
 
 checkApress:
     set_cat 0

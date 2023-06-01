@@ -3002,7 +3002,7 @@ switch
     default
     0x67<1> 2,"scoreCounter_999"
 endswitch
-stop
+return
 textCondvar:
 switch
     case 0

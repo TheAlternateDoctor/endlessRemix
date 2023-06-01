@@ -1077,7 +1077,7 @@ playNextGame:
     set_cat 0
     label 0x1009
     0xB2 2
-    if_gt 0
+    if_neq 0
         0xB3 12, 0
         0xB3 13, 1
         get_async 0, 0
@@ -1095,9 +1095,10 @@ playNextGame:
         get_async 2, 0
         rest 0x18
         0xB2 2
-        if_gt 0
+        if_neq 0
             fade 1,1,1
         endif
+        async_call updateScore
         goto 0x1009
     endif
 stop
@@ -1110,6 +1111,7 @@ lifeScoreCounter:
     if_geq 0x103
         call life
     endif
+    rest 0xC0
 goto lifeScoreCounter
 
 updateScore:
@@ -1124,6 +1126,8 @@ if 0
     else
         goto 0xE2D
     endif
+    dec_countdown
+    rest 1
     goto 0x5C02
     label 0xE2D
     call score

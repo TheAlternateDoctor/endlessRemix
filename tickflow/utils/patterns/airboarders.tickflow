@@ -19,7 +19,6 @@ sequenceAirboarders:
     switch
     case 0
         async_call airboarders1
-        0xB3 13, 1
     endswitch
     async_call airboarderBeatAnims
     rest 0x30
