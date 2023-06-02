@@ -23,6 +23,7 @@ jobs:
           cp -r ./sound ../out/
           cd ../romfs-lite
           cp -r ./cellanim ../out/
+          cp -r ./USmessage ../out/
           cp -r ./layout ../out/
           cp -r ./sound ../out/
 
@@ -42,6 +43,7 @@ jobs:
         run: |
           mkdir -p out/
           cd romfs-lite
+          cp -r ./USmessage ../out/
           cp -r ./cellanim ../out/
           cp -r ./layout ../out/
           cp -r ./sound ../out/
