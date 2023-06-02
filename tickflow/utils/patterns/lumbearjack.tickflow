@@ -25,7 +25,7 @@ stop
 lumbearjack1:
     async_call startLogRight
     rest 0x8
-    rest 0xB0
+    rest 0xA8
     async_call mediumLogLeft
     rest 0xC0
     async_call smallLogRight

@@ -1105,6 +1105,8 @@ stop
 
 lifeScoreCounter:
     set_cat 0
+    rest 0x18
+    label 0x115C
     call score
     rest 0xC0
     0x201
@@ -1112,7 +1114,7 @@ lifeScoreCounter:
         call life
     endif
     rest 0xC0
-goto lifeScoreCounter
+goto 0x115C
 
 updateScore:
 0xB2 12

@@ -290,15 +290,17 @@ get_async 3, 0x60
 rest 0x30 * 6
 	get_async 2, 0
 rest 0x18
-fade 1,1,1
-// call lifeCheck
+0xB2 2
+if_neq 0
+    fade 1,1,1
+endif
 
 0xA2
 
 //main loop
 async_call updateScore
 async_call speedup
-// async_call lifeScoreCounter, 0x18
+async_call lifeScoreCounter
 async_call playNextGame
 stop 
 
