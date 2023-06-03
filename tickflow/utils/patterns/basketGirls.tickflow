@@ -4,7 +4,7 @@
 
 presequenceBasketGirls:
     async_call loadBasketGirlsLate2
-    rest 0x60
+    rest 0x30
     label 0x5005
     play_sfx 0x10011A5
     rest 0x30

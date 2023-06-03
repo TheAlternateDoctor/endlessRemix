@@ -668,7 +668,7 @@ loadNextGame:
                 endif
                 set_func 0, sequencePackingPests
                 async_call loadPackingPests
-                set_func 3, nop
+                set_func 3, presequencePackingPests
                 set_func 2, nop
                 set_func 1, checkA2
             endif

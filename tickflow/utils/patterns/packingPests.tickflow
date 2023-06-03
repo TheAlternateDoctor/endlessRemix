@@ -1,5 +1,16 @@
 // Has the ding sound. Feel free to use it!
 
+presequencePackingPests:
+rest 0x30
+play_sfx 0x100048F
+rest 0x30
+play_sfx 0x1000493
+rest 0x30
+play_sfx 0x1000490
+rest 0x30
+play_sfx 0x1000494
+stop
+
 sequencePackingPests:
 	set_cat 0
     rest 0x8
