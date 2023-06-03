@@ -108,7 +108,7 @@ loadNextGame:
                 set_func 0, sequenceMarcher
                 async_call loadMarcher
                 set_func 3, preSequenceMarcher
-                set_func 2, loadMarcherLate
+                set_func 2, nop
                 set_func 1, checkA2
             endif
         break
@@ -923,7 +923,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceBasketGirls
                 async_call loadBasketGirls
-                set_func 3, nop
+                set_func 3, presequenceBasketGirls
                 set_func 2, loadBasketGirlsLate
                 set_func 1, checkA2
             endif

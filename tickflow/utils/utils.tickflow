@@ -153,11 +153,22 @@ stop
 
 //Unloads Special case audio
 unloadSpeAudio:
-0xB2 5
-if_geq 1
-    remove_sfx 6
-endif
-if_geq 2
-    remove_sfx 7
+0xB2 1
+if 1
+	0xB2 5
+	if_geq 1
+		remove_sfx 6
+	endif
+	if_geq 2
+		remove_sfx 7
+	endif
+else
+	0xB2 6
+	if_geq 1
+		remove_sfx 0xB
+	endif
+	if_geq 2
+		remove_sfx 0xC
+	endif
 endif
 stop

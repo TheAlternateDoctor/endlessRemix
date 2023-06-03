@@ -319,22 +319,22 @@ if 1
     case 4
         set_cellanim 4, u"rom:/cellanim/agbClap_BW.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/agbClap_mario.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     case 6
         set_cellanim 4, u"rom:/cellanim/agbClap_party.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     case 7
         set_cellanim 4, u"rom:/cellanim/agbClap_tempo.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     endswitch
     game_cellanim 1, 4
@@ -367,22 +367,22 @@ else
     case 4
         set_cellanim 5, u"rom:/cellanim/agbClap_BW.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/agbClap_mario.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/agbClap_party.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     case 7
         set_cellanim 5, u"rom:/cellanim/agbClap_tempo.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 7, 4
         break
     endswitch
     game_cellanim 1, 5
@@ -420,15 +420,23 @@ async_call unloadSpeAudio
 rest 0xC
 0xB2 1
 if 1
-    set_sfx 5, u"GROUP_BASKET"
     set_sfx 6, u"GROUP_BASKET_EN"
     set_sfx 7, u"GROUP_BASKET_JP"
+    0xB3 5,2
+else
+    set_sfx 0xB, u"GROUP_BASKET_EN"
+    set_sfx 0xC, u"GROUP_BASKET_JP"
+    0xB3 14,2
+endif
+stop
+
+loadBasketGirlsLate2:
+0xB2 1
+if 1
+    set_sfx 5, u"GROUP_BASKET"
 else
     set_sfx 4, u"GROUP_BASKET"
-    set_sfx 6, u"GROUP_BASKET_EN"
-    set_sfx 7, u"GROUP_BASKET_JP"
 endif
-0xB3 5,2
 stop
 
 loadForkLifter:
@@ -659,13 +667,13 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_NTR_FROG"
     set_cellanim 4, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
-    0xB3 4, 1
+    0x2B 0x14, 1
     game_cellanim 0x14, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_FROG"
     set_cellanim 5, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
-    0xB3 4, 1
+    0x2B 0x14, 1
     game_cellanim 0x14, 5
     0xB3 1, 1
 endif
@@ -731,7 +739,6 @@ stop
 
 
 loadSoumenLate:
-rest 0xC
 async_call unloadSpeAudio
 rest 0xC
 0xB2 1
@@ -739,12 +746,13 @@ if 1
     set_sfx 5, u"GROUP_SOUMEN"
     set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
     set_sfx 7, u"GROUP_SOUMEN_INPUT_JP"
+    0xB3 5,2
 else
     set_sfx 4, u"GROUP_SOUMEN"
-    set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 7, u"GROUP_SOUMEN_INPUT_JP"
+    set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
+    set_sfx 0xC, u"GROUP_SOUMEN_INPUT_JP"
+    0xB3 14,2
 endif
-0xB3 5,2
 stop
 
 loadUpbeat:
@@ -779,11 +787,12 @@ rest 0xC
 if 1
     set_sfx 5, u"GROUP_METRO"
     set_sfx 6, u"GROUP_METRO_HELP"
+    0xB3 5,2
 else
     set_sfx 4, u"GROUP_METRO"
-    set_sfx 6, u"GROUP_METRO_HELP"
+    set_sfx 0xB, u"GROUP_METRO_HELP"
+    0xB3 14,1
 endif
-0xB3 5,1
 stop
 
 loadTapTroupe:
@@ -838,11 +847,12 @@ rest 0xC
 if 1
     set_sfx 5, u"GROUP_RVL_TAP"
     set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+    0xB3 5,1
 else
     set_sfx 4, u"GROUP_RVL_TAP"
-    set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+    set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+    0xB3 14,1
 endif
-0xB3 5,1
 stop
 
 loadSplashdown:
@@ -1177,105 +1187,119 @@ endif
 rest 0xC
 0xB2 1
 if 1
-    random 9
-    switch // VARIANTS: 0 is normal, 1 is pointing
-    case 0
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_v0.zlib", -1
-        0xB3 4, 0
-        break
-    case 1
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_remix7.zlib", -1
-        0xB3 4, 0
-        break
-    case 2
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_remix7P.zlib", -1
-        0xB3 4, 1
-        break
-    case 3
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_tempo.zlib", -1
-        0xB3 4, 0
-        break
-    case 4
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_tempoP.zlib", -1
-        0xB3 4, 1
-        break
-    case 5
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_v0P.zlib", -1
-        0xB3 4, 1
-        break
-    case 6
-        set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_v1.zlib", -1
-        0xB3 4, 0
-        break
-    case 7
-        set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
-        0xB3 4, 1
-        break
-    case 8
-        set_sfx 4, u"GROUP_AGB_MARCH"
-        set_cellanim 4, u"rom:/cellanim/agbMarcher_crypt.zlib", -1
-        0xB3 4, 0
-        break
-    endswitch
+    random 4 // For the pointing cellanim
+    if 0 //Pointing (1/4 chances)
+        random 4
+        switch
+        case 0
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_v0P.zlib", -1
+            0x2B 0x5, 2
+            break
+        case 1
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_tempoP.zlib", -1
+            0x2B 0x5, 2
+            break
+        case 2
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_remix7P.zlib", -1
+            0x2B 0x5, 2
+            break
+        case 3
+            set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
+            0x2B 0x5, 3
+            break
+        endswitch
+    else //Not pointing (3/4 chances)
+        random 5
+        switch
+        case 0
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_v0.zlib", -1
+            0x2B 0x5, 0
+            break
+        case 1
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_remix7.zlib", -1
+            0x2B 0x5, 0
+            break
+        case 2
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_tempo.zlib", -1
+            0x2B 0x5, 0
+            break
+        case 3
+            set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_v1.zlib", -1
+            0x2B 0x5, 1
+            break
+        case 4
+            set_sfx 4, u"GROUP_AGB_MARCH"
+            set_cellanim 4, u"rom:/cellanim/agbMarcher_crypt.zlib", -1
+            0x2B 0x5, 0
+            break
+        endswitch
+    endif
     game_cellanim 0x5, 4
     0xB3 1, 0
 else
-    random 9
-    switch // VARIANTS: 0 is normal, 1 is point
-    case 0
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_v0.zlib", -1
-        0xB3 4, 0
-        break
-    case 1
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_remix7.zlib", -1
-        0xB3 4, 0
-        break
-    case 2
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_remix7P.zlib", -1
-        0xB3 4, 1
-        break
-    case 3
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_tempo.zlib", -1
-        0xB3 4, 0
-        break
-    case 4
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_tempoP.zlib", -1
-        0xB3 4, 1
-        break
-    case 5
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_v0P.zlib", -1
-        0xB3 4, 1
-        break
-    case 6
-        set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_v1.zlib", -1
-        0xB3 4, 0
-        break
-    case 7
-        set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
-        0xB3 4, 1
-        break
-    case 8
-        set_sfx 5, u"GROUP_AGB_MARCH"
-        set_cellanim 5, u"rom:/cellanim/agbMarcher_crypt.zlib", -1
-        0xB3 4, 0
-        break
-    endswitch
+    random 4 // For the pointing cellanim
+    if 0 //Pointing (1/4 chances)
+        random 4
+        switch
+        case 0
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_v0P.zlib", -1
+            0x2B 0x5, 2
+            break
+        case 1
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_tempoP.zlib", -1
+            0x2B 0x5, 2
+            break
+        case 2
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_remix7P.zlib", -1
+            0x2B 0x5, 2
+            break
+        case 3
+            set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
+            0x2B 0x5, 3
+            break
+        endswitch
+    else //Not pointing (3/4 chances)
+        random 5
+        switch
+        case 0
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_v0.zlib", -1
+            0x2B 0x5, 0
+            break
+        case 1
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_remix7.zlib", -1
+            0x2B 0x5, 0
+            break
+        case 2
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_tempo.zlib", -1
+            0x2B 0x5, 0
+            break
+        case 3
+            set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_v1.zlib", -1
+            0x2B 0x5, 1
+            break
+        case 4
+            set_sfx 5, u"GROUP_AGB_MARCH"
+            set_cellanim 5, u"rom:/cellanim/agbMarcher_crypt.zlib", -1
+            0x2B 0x5, 0
+            break
+        endswitch
+    endif
     game_cellanim 0x5, 5
     0xB3 1, 1
 endif
@@ -1284,9 +1308,26 @@ stop
 loadMarcherLate:
     async_call unloadSpeAudio
     rest 0xC
-    set_sfx 6, u"GROUP_AGB_MARCH_AR_JP"
-    0xB3 5, 1
+    0x2B<1> 0x5
+    if 1
+        async_call loadMarcherLateSlot
+        0xB3 5,1
+    endif
+    if 3
+        async_call loadMarcherLateSlot
+        0xB3 14,1
+    endif
 stop
+
+loadMarcherLateSlot: //Help me I am in pain
+    0xB2 1
+    if 1
+        set_sfx 6, u"GROUP_AGB_MARCH_AR_JP"
+    else
+        set_sfx 0xB, u"GROUP_AGB_MARCH_AR_JP"
+    endif
+stop
+
 
 loadExhibitionMatch:
 0xB2 1
@@ -1756,13 +1797,16 @@ stop
 loadFinnedLate:
     async_call unloadSpeAudio
     rest 0xC
-    set_sfx 6, u"GROUP_FRONTIER2"
     0xB3 5, 1
     0xB2 1
     if 0
         set_sfx 4, u"GROUP_FRONTIER"
+        set_sfx 0xB, u"GROUP_FRONTIER2"
+        0xB3 14,1
     else
         set_sfx 5, u"GROUP_FRONTIER"
+        set_sfx 6, u"GROUP_FRONTIER2"
+        0xB3 5,1
     endif
 stop
 
@@ -1962,23 +2006,23 @@ if 1
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_long.zlib", -1
-        0xB3 4, 0
+        0x2B 0x37, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_arrange.zlib", -1
-        0xB3 4, 1
+        0x2B 0x37, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_wario.zlib", -1
-        0xB3 4, 0
+        0x2B 0x37, 0
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_arrange_kor.zlib", -1
-        0xB3 4, 1
+        0x2B 0x37, 1
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_arrange_low.zlib", -1
-        0xB3 4, 1
+        0x2B 0x37, 1
         break
     endswitch
     set_effect 4, u"rom:/effect/ctrDotSamurai.zlib", -1
@@ -1991,23 +2035,23 @@ else
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_long.zlib", -1
-        0xB3 4, 0
+        0x2B 0x37, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_arrange.zlib", -1
-        0xB3 4, 1
+        0x2B 0x37, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_wario.zlib", -1
-        0xB3 4, 0
+        0x2B 0x37, 0
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_arrange_kor.zlib", -1
-        0xB3 4, 1
+        0x2B 0x37, 1
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_arrange_low.zlib", -1
-        0xB3 4, 1
+        0x2B 0x37, 1
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrDotSamurai.zlib", -1
@@ -2413,71 +2457,71 @@ if 1
     switch //VARIANTS: 0 has alternating background, 1 has gradient, 2 has flowers
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlKarate_0.zlib", -1
-        0xB3 4, 0
+        0x2B 0x28, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/rvlKarate_1.zlib", -1
-        0xB3 4, 0
+        0x2B 0x28, 0
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/rvlKarate_3.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/rvlKarate_4.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/rvlKarate_remix00.zlib", -1
-        0xB3 4, 2
+        0x2B 0x28,2
         break
     case 6
         set_cellanim 4, u"rom:/cellanim/rvlKarate_2_arrange.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 7
         set_cellanim 4, u"rom:/cellanim/rvlKarate_mario3.zlib", -1
-        0xB3 4, 2
+        0x2B 0x28,2
         break
     case 8
         set_cellanim 4, u"rom:/cellanim/rvlKarate_R7.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 9
         set_cellanim 4, u"rom:/cellanim/rvlKarate_remix6.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 10
         set_cellanim 4, u"rom:/cellanim/rvlKarate_remix9.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 11
         set_cellanim 4, u"rom:/cellanim/rvlKarate_remix09.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 12
         set_cellanim 4, u"rom:/cellanim/rvlKarate_remix09_cat.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 13
         set_cellanim 4, u"rom:/cellanim/rvlKarate_sans.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 14
         set_cellanim 4, u"rom:/cellanim/rvlKarate_tempo.zlib", -1
-        0xB3 4, 0
+        0x2B 0x28, 0
         break
     case 15
         set_cellanim 4, u"rom:/cellanim/winKarate_Mania.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 16
         set_cellanim 4, u"rom:/cellanim/rvlKarate_klonoa.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     endswitch
     set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
@@ -2490,71 +2534,71 @@ else
     switch //VARIANTS: 0 has alternating background, 1 has gradient, 2 has flowers
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlKarate_0.zlib", -1
-        0xB3 4, 0
+        0x2B 0x28, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/rvlKarate_1.zlib", -1
-        0xB3 4, 0
+        0x2B 0x28, 0
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/rvlKarate_2.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/rvlKarate_3.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/rvlKarate_4.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/rvlKarate_remix00.zlib", -1
-        0xB3 4, 2
+        0x2B 0x28,2
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/rvlKarate_2_arrange.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 7
         set_cellanim 5, u"rom:/cellanim/rvlKarate_mario3.zlib", -1
-        0xB3 4, 2
+        0x2B 0x28,2
         break
     case 8
         set_cellanim 5, u"rom:/cellanim/rvlKarate_R7.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 9
         set_cellanim 5, u"rom:/cellanim/rvlKarate_remix6.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 10
         set_cellanim 5, u"rom:/cellanim/rvlKarate_remix9.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 11
         set_cellanim 5, u"rom:/cellanim/rvlKarate_remix09.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 12
         set_cellanim 5, u"rom:/cellanim/rvlKarate_remix09_cat.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 13
         set_cellanim 5, u"rom:/cellanim/rvlKarate_sans.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 14
         set_cellanim 5, u"rom:/cellanim/rvlKarate_tempo.zlib", -1
-        0xB3 4, 0
+        0x2B 0x28, 0
         break
     case 15
         set_cellanim 5, u"rom:/cellanim/winKarate_Mania.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     case 16
         set_cellanim 5, u"rom:/cellanim/rvlKarate_klonoa.zlib", -1
-        0xB3 4, 1
+        0x2B 0x28,1
         break
     endswitch
     set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
@@ -2701,27 +2745,22 @@ if 1
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlGolf_long.zlib", -1
         0x2B 0x25, 3
-        0xB3 4, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/rvlGolf_arrange.zlib", -1
         0x2B 0x25, 5
-        0xB3 4, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/rvlGolf_remixLED.zlib", -1
         0x2B 0x25, 6
-        0xB3 4, 0
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/rvlGolf_remix1.zlib", -1
         0x2B 0x25, 3
-        0xB3 4, 0
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/rvlGolf_remix09.zlib", -1
         0x2B 0x25, 0x10
-        0xB3 4, 0
         break
     endswitch
     game_cellanim 0x25, 4
@@ -2733,27 +2772,22 @@ else
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlGolf_long.zlib", -1
         0x2B 0x25, 3
-        0xB3 4, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/rvlGolf_arrange.zlib", -1
         0x2B 0x25, 5
-        0xB3 4, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/rvlGolf_remixLED.zlib", -1
         0x2B 0x25, 6
-        0xB3 4, 0
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/rvlGolf_remix1.zlib", -1
         0x2B 0x25, 3
-        0xB3 4, 0
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/rvlGolf_remix09.zlib", -1
         0x2B 0x25, 0x10
-        0xB3 4, 0
         break
     endswitch
     game_cellanim 0x25, 5
@@ -3206,15 +3240,15 @@ if 1
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
-        0xB3 4, 0
+        0x2B 0xB, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/agbSpaceDance_arrange.zlib", -1
-        0xB3 4, 1
+        0x2B 0xB, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/agbSpaceDance_zong.zlib", -1
-        0xB3 4, 0
+        0x2B 0xB, 0
         break
     endswitch
     game_cellanim 0xB, 4
@@ -3225,15 +3259,15 @@ else
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
-        0xB3 4, 0
+        0x2B 0xB, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/agbSpaceDance_arrange.zlib", -1
-        0xB3 4, 1
+        0x2B 0xB, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/agbSpaceDance_zong.zlib", -1
-        0xB3 4, 0
+        0x2B 0xB, 0
         break
     endswitch
     game_cellanim 0xB, 5

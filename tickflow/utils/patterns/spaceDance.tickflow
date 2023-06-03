@@ -1,4 +1,4 @@
-// Has 2 variants, use 0xB2 4 to determine which one.
+// Has 2 variants, use 0x2B<1> to determine which one.
 // 0 is Space Dance, 
 // 1 is Cosmic Dance.
 // You can also make use of subs beatSpaceDanceDependant,
@@ -51,7 +51,7 @@ stop
 
 andPoseDependantW:
 async_sub 0x59
-0xB2 4
+0x2B<1> 0xB
 if 1
     0x10C
     rest 0x30
@@ -62,7 +62,7 @@ stop
 letsSitDownDependantW:
 async_sub 0x5C
 rest 0x30
-0xB2 4
+0x2B<1> 0xB
 if 1
     0x10D
     rest 0x30
@@ -72,14 +72,14 @@ stop
 
 punchDependantW:
 async_sub 0x56
-0xB2 4
+0x2B<1> 0xB
 if 1
     async_sub 0x5F
 endif
 stop
 
 beatSpaceDanceDependant: //Modified in case of cosmic dance
-0xB2 4
+0x2B<1> 0xB
 if 1
     0x108
 endif

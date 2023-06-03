@@ -336,13 +336,13 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_NTR_FROG"
     set_cellanim 4, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
-    0xB3 4, 1
+    0x2B 0x14, 1
     game_cellanim 0x14, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_FROG"
     set_cellanim 5, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
-    0xB3 4, 1
+    0x2B 0x14, 1
     game_cellanim 0x14, 5
     0xB3 1, 1
 endif
@@ -660,13 +660,13 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_AGB_MARCH"
     set_cellanim 4, u"rom:/cellanim/agbMarcher_v0.zlib", -1
-    0xB3 4, 0
+    0x2B 0x5, 0
     game_cellanim 0x5, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_MARCH"
     set_cellanim 5, u"rom:/cellanim/agbMarcher_v0.zlib", -1
-    0xB3 4, 0
+    0x2B 0x5, 0
     game_cellanim 0x5, 5
     0xB3 1, 1
 endif
@@ -994,7 +994,7 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_IAI_NEW"
     set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_arrange.zlib", -1
-    0xB3 4, 1
+    0x2B 0x37, 1
     set_effect 4, u"rom:/effect/ctrDotSamurai.zlib", -1
     game_cellanim 0x37, 4
     game_effect 0x37, 4
@@ -1002,7 +1002,7 @@ if 1
 else
     set_sfx 5, u"GROUP_IAI_NEW"
     set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_arrange.zlib", -1
-    0xB3 4, 1
+    0x2B 0x37, 1
     set_effect 5, u"rom:/effect/ctrDotSamurai.zlib", -1
     game_cellanim 0x37, 5
     game_effect 0x37, 5
@@ -1199,7 +1199,7 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_KARATE"
     set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
-    0xB3 4, 1
+    0x2B 0x28, 1
     set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
     game_effect 0x28, 4
     game_cellanim 0x28, 4
@@ -1207,7 +1207,7 @@ if 1
 else
     set_sfx 5, u"GROUP_KARATE"
     set_cellanim 5, u"rom:/cellanim/rvlKarate_2.zlib", -1
-    0xB3 4, 1
+    0x2B 0x28, 1
     set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
     game_effect 0x28, 5
     game_cellanim 0x28, 5
@@ -1274,14 +1274,12 @@ if 1
     set_sfx 4, u"GROUP_GOLF"
     set_cellanim 4, u"rom:/cellanim/rvlGolf_long.zlib", -1
     0x2B 0x25, 3
-    0xB3 4, 0
     game_cellanim 0x25, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_GOLF"
     set_cellanim 5, u"rom:/cellanim/rvlGolf_long.zlib", -1
     0x2B 0x25, 3
-    0xB3 4, 0
     game_cellanim 0x25, 5
     0xB3 1, 1
 endif
@@ -1523,13 +1521,13 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_AGB_SPACE"
     set_cellanim 4, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
-    0xB3 4, 0
+    0x2B 0xB, 0
     game_cellanim 0xB, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_SPACE"
     set_cellanim 5, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
-    0xB3 4, 0
+    0x2B 0xB, 0
     game_cellanim 0xB, 5
     0xB3 1, 1
 endif

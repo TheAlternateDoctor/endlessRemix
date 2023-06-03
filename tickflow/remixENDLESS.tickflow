@@ -239,6 +239,7 @@ input 0
 0xB3 3,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 10,debugMode //Enables Debug mode
 0xB3 5,2 //Slot 7 has SFX
+0xB3 14,2 //Slot 7 has SFX
 
 
 0x67<5> 2
@@ -439,9 +440,13 @@ set_sfx 4, u"GROUP_BASKET"
 rest 0x18	// 0.5 beats
 set_sfx 5, u"GROUP_SHIWAKE"
 rest 0x18	// 0.5 beats
-set_sfx 6, u"GROUP_BASKET_EN"
+set_sfx 6, u"GROUP_SHIWAKE"
 rest 0x18	// 0.5 beats
-set_sfx 7, u"GROUP_BASKET_JP"
+set_sfx 7, u"GROUP_SHIWAKE"
+rest 0x18	// 0.5 beats
+set_sfx 0xB, u"GROUP_BASKET_EN"
+rest 0x18	// 0.5 beats
+set_sfx 0xC, u"GROUP_BASKET_JP"
 rest 0x18	// 0.5 beats
 call loadSong
 sub 3

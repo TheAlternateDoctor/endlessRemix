@@ -133,7 +133,7 @@ frogHopOnlyYahooSfx:
 // rest 0x30	// 1.0 beats
 async_sub 0x62
 rest 0x18	// 0.5 beats
-0xB2 4
+0x2B<1> 0x14
 if 1
 async_sub 0x64
 else

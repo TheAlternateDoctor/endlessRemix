@@ -1,4 +1,4 @@
-// Has variants, use 0xB2 4 to get the variant.
+// Has variants, use 0x2B<1> to get the variant.
 // 0 doesn't have the eagle, 
 // 1 has it.
 // Please reserve the eagle section to a cellanim

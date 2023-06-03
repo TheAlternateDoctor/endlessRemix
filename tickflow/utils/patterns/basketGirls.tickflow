@@ -3,8 +3,8 @@
 // as it interrupts the hoop anim.
 
 presequenceBasketGirls:
+    async_call loadBasketGirlsLate2
     rest 0x60
-    async_call loadBasketGirlsLate
     label 0x5005
     play_sfx 0x10011A5
     rest 0x30

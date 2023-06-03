@@ -1,6 +1,6 @@
 // Kicks may look off in certain cellanims.
 // Lightbulbs may *also* look weird with certain cellanims.
-// Has multiple variants, use 0xB2 4 to know.
+// Has multiple variants, use 0x2B<1> to know.
 // 0 has an alternating background (like Returns!)
 // 1 has a gradient background (like Kicks!)
 // 2 has a flower background (like in Honeybee)
@@ -93,7 +93,7 @@ rest 0x60
 goto karate1beatAnims
 
 karateBGbeat:
-0xB2 4
+0x2B<1> 0x28
 switch
 case 0
     label 0xBEA7
