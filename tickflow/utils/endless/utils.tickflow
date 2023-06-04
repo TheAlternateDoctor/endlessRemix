@@ -1099,6 +1099,40 @@ playNextGame:
     endif
 stop
 
+playNextGameGate:
+    set_cat 0
+    label 0x1009
+    0xB2 2
+    if_neq 0
+        0xB3 12, 0
+        0xB3 13, 1
+        get_async 0, 0
+        rest 0x18
+        0x201
+        if_geq 0x103
+            get_async 1, 0
+        endif
+        rest 0x18
+        async_call loadNextGame,0x60
+        rest 0x30*7
+        rest 0x30*3
+        get_async 3, 0x18
+        rest 0x30*5 - 0x18
+        get_async 2, 0
+        rest 0xC
+        async_call updateScoreGate
+        rest 0xC
+        0xB2 2
+        if_neq 0
+            0xB2 0
+            if_leq 10
+                fade 1,1,1
+                goto 0x1009
+            endif
+        endif
+    endif
+stop
+
 lifeScoreCounter:
     set_cat 0
     rest 0x18
@@ -1130,6 +1164,57 @@ if 0
     label 0xE2D
     call score
 endif
+stop
+
+updateScoreGate:
+0xB2 12
+if 0
+    0xB2 13
+    set_countdown_condvar
+    label 0x5C02
+    get_countdown
+    if_gt 0
+        0xB4 0, 1
+    else
+        goto 0xE2D
+    endif
+    dec_countdown
+    goto 0x5C02
+    label 0xE2D
+    call score
+    0xB2 0
+    if_gt 10
+        async_call winGame
+    endif
+endif
+stop
+
+winGame:
+    input 0
+    // fade 1, 1, 0x18
+    set_cat 0
+    async_call substopper
+    0x57 0x30
+    rest 0x30
+    speed 0x100
+    // 0x76 1, 1	// Which screen to affect
+    // 0x77 1, 0xFF	// Immediate opacity level
+    // 0x78 1, 0,0,0	// Color, RGB
+    // 0x79 1, 0	// Depth of the screen.
+    // engine 0x41
+    0xAF<6> 1
+    rest 0xC
+    0xAF<6> 0
+    rest 0x60	// 2.0 beats
+    fade<1> 1, 1, 1
+    0xAF<2> 2, 0, ""
+    play_sfx 0x100017F
+    0xAF
+    0x2D 0
+    rest 0xC0	// 4.0 beats
+    rest 0xC0	// 4.0 beats
+    rest 0x60	// 2.0 beats
+    0x28<2> 
 stop
 
 nop:
