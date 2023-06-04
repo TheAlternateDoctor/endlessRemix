@@ -219,15 +219,23 @@ async_call unloadSpeAudio
 rest 0xC
 0xB2 1
 if 1
-    set_sfx 5, u"GROUP_BASKET"
     set_sfx 6, u"GROUP_BASKET_EN"
     set_sfx 7, u"GROUP_BASKET_JP"
+    0xB3 5,2
+else
+    set_sfx 0xB, u"GROUP_BASKET_EN"
+    set_sfx 0xC, u"GROUP_BASKET_JP"
+    0xB3 14,2
+endif
+stop
+
+loadBasketGirlsLate2:
+0xB2 1
+if 1
+    set_sfx 5, u"GROUP_BASKET"
 else
     set_sfx 4, u"GROUP_BASKET"
-    set_sfx 6, u"GROUP_BASKET_EN"
-    set_sfx 7, u"GROUP_BASKET_JP"
 endif
-0xB3 5,2
 stop
 
 loadForkLifter:
