@@ -1067,10 +1067,6 @@ loadNextGame:
             goto loadNextGame
         break
     endswitch
-    0xB2 10
-    if 1
-        call score
-    endif
 stop
 
 playNextGame:
