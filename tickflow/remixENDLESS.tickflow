@@ -240,6 +240,7 @@ input 0
 0xB3 10,debugMode //Enables Debug mode
 0xB3 5,2 //Slot 7 has SFX
 0xB3 14,2 //Slot 7 has SFX
+0xB3 13, 5 //Starting score
 
 
 0x67<5> 2

@@ -42,6 +42,7 @@ sequenceMunchyMonk:
         random 1
         switch
         case 0
+            0xB3 13, 11
             async_call munchyMonkOne1
         endswitch
         break
@@ -49,6 +50,7 @@ sequenceMunchyMonk:
         random 1
         switch
         case 0
+            0xB3 13, 13
             async_call munchyMonkTwo1
         endswitch
         break
@@ -56,6 +58,7 @@ sequenceMunchyMonk:
         random 1
         switch
         case 0
+            0xB3 13, 12
             async_call munchyMonkThree1
         endswitch
         break

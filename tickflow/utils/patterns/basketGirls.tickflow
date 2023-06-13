@@ -25,6 +25,7 @@ sequenceBasketGirls:
     random 1
     switch
     case 0
+        0xB3 13, 4
         async_call basketGirls1
     endswitch
 stop

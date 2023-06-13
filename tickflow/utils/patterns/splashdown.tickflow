@@ -14,6 +14,7 @@ sequenceSplashdown:
     random 1 // Hax needs to be STOPPED
     switch
     case 0
+        0xB3 13, 4
         async_call splashdown1
     endswitch
     rest 0x8

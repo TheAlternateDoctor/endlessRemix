@@ -126,7 +126,7 @@ loadNextGame:
                 async_call loadNightWalk
                 set_func 3, nop
                 set_func 2, nop
-                set_func 1, checkA2
+                set_func 1, checkNightWalk
             endif
         break
         case 0x7 //Kahoot
@@ -1074,8 +1074,6 @@ playNextGame:
     label 0x1009
     0xB2 2
     if_neq 0
-        0xB3 12, 0
-        0xB3 13, 1
         get_async 0, 0
         rest 0x18
         0x201
@@ -1104,7 +1102,6 @@ playNextGameGate:
     label 0x1009
     0xB2 2
     if_neq 0
-        0xB3 12, 0
         0xB3 13, 1
         get_async 0, 0
         rest 0x18
@@ -1164,6 +1161,7 @@ if 0
     label 0xE2D
     call score
 endif
+0xB3 12, 0
 stop
 
 updateScoreGate:

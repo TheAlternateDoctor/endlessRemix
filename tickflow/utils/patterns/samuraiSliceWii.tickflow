@@ -16,6 +16,7 @@ sequenceSSWii:
     random 1
     switch
     case 0
+        0xB3 13, 6
         async_call ssWii1
         async_call ssWiiCheck1
     endswitch

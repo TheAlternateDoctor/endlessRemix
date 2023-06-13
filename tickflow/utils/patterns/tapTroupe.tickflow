@@ -27,6 +27,7 @@ sequenceTapTroupe:
     random 1
     switch
     case 0
+        0xB3 13, 20
         async_call tapTroupe1
     endswitch
     zoom 3, 0x168, 0x168

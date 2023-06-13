@@ -18,13 +18,14 @@ sequenceBunnyHop:
 	engine 0x8
 	sub 4
 	0x29<2> 
-    rest 0x8
     input 1
+    rest 0x8
     0x102
     0x104 0
     random 1
     switch
     case 0
+        0xB3 13, 13
         async_call bunnyHop1
         async_call bunnyHopCheck1
         break

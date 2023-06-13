@@ -13,6 +13,7 @@ sequenceClappyTrio:
     random 1
     switch
     case 0
+        0xB3 13, 3
         async_call clappyTrio1
     endswitch
     0xB2 7

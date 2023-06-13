@@ -21,9 +21,11 @@ sequenceKarate:
     random 2
     switch
     case 0
+        0xB3 13, 6
         async_call karate1
         break
     case 1
+        0xB3 13, 9
         async_call karate2
         break
     endswitch

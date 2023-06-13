@@ -20,6 +20,7 @@ sequenceSneakySpirits:
     random 1
     switch
     case 0
+        0xB3 13, 2
         async_call sneakySpirits1
     endswitch
 stop

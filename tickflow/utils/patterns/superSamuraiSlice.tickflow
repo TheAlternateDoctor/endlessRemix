@@ -18,6 +18,7 @@ sequenceSuperSamuraiSlice:
     random 1
     switch
     case 0
+        0xB3 13, 8
         async_call superSamuraiSlice1
     endswitch
     async_call superSamuraiSliceBeatAnims

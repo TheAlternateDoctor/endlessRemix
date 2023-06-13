@@ -18,6 +18,7 @@ sequenceAirboarders:
     random 1
     switch
     case 0
+        0xB3 13, 4
         async_call airboarders1
     endswitch
     async_call airboarderBeatAnims

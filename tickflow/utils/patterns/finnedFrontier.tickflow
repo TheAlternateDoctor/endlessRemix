@@ -24,6 +24,7 @@ sequenceFinned:
     random 1
     switch
     case 0
+        0xB3 13, 16
         async_call finnedFrontier1
     endswitch
     input 1

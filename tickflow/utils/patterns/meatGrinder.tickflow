@@ -15,6 +15,7 @@ sequenceMeatGrinder:
     random 1
     switch
     case 0
+        0xB3 13, 5
         async_call meatGrinder1
     endswitch
 stop

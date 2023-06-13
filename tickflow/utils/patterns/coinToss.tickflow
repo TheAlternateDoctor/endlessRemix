@@ -19,6 +19,7 @@ sequenceCoinToss:
     input 0
     0x103 0
     fade<1> 1, 1, 1
+    0xB3 13, 2
     rest 0xC0	// 4.0 beats
     0x10A<6> 
     rest 0xC0	// 4.0 beats

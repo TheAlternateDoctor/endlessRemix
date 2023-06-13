@@ -13,6 +13,16 @@ checkA2:
     endif
 goto 0xA2CE
 
+checkNightWalk:
+    label 0xA2CE
+    rest 1
+    0x105
+    if 1
+        async_call failInput
+        stop
+    endif
+goto 0xA2CE
+
 checkOnion:
     rest 0xC0
     rest 0xC0
@@ -124,6 +134,7 @@ substopper:
 stop
 
 waitAfterFail:
+set_cat 0
 0xB3 11, 1
 rest 0x60
 0xB3 11, 0

@@ -6,6 +6,7 @@ sequenceTongueLashing:
     random 1 // I HATE delayed audio
     switch
     case 0
+        0xB3 13, 5
         async_call tongueLashing1
     endswitch
     rest 0x8

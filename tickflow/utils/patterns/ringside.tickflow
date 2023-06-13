@@ -16,6 +16,7 @@ sequenceRingSide:
     random 1
     switch
     case 0
+        0xB3 13, 5
         async_call ringside1
     endswitch
     async_call ringsideBeatAnims

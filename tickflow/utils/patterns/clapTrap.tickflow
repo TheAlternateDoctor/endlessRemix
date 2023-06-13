@@ -15,6 +15,7 @@ sequenceClapTrap:
     random 1
     switch
     case 0
+        0xB3 13, 4
         async_call clapTrap1
     endswitch
 stop

@@ -9,6 +9,7 @@ sequenceCheerReaders:
     random 1 //Earlier to accomodate the starting time
     switch
     case 0
+        0xB3 13, 5
         async_call cheerReaders1
     endswitch
     rest 0x8

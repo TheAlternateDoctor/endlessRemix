@@ -18,6 +18,7 @@ sequenceGleeClub:
     random 1
     switch
     case 0
+        0xB3 13, 3
         async_call gleeClub1
     endswitch
     0x104 0, 0, 0x1000DAF, 0, -7

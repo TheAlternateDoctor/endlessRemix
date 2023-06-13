@@ -31,6 +31,7 @@ sequenceFlipperFlop:
     random 1
     switch
     case 0
+        0xB3 13, 17
         async_call flipperFlop1
     endswitch
     rest 0x8

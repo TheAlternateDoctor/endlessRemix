@@ -30,6 +30,7 @@ sequenceSumoBros:
         random 1
         switch
         case 0
+            0xB3 13, 12
             async_call sumoBrosSlap1
             break
         endswitch
@@ -37,6 +38,7 @@ sequenceSumoBros:
         random 1
         switch
         case 0
+            0xB3 13, 12
             async_call sumoBrosStomp1
             break
         endswitch

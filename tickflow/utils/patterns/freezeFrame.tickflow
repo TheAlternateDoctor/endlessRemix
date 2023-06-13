@@ -14,6 +14,7 @@ sequenceFreezeFrame:
     random 1
     switch
     case 0
+        0xB3 13, 5
         async_call freezeFrame1
     endswitch
     async_call freezeFrameBeat

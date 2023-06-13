@@ -15,6 +15,7 @@ sequenceSeeSaw:
     random 1
     switch
     case 0
+        0xB3 13, 5
         async_call seesaw1
     endswitch
 stop

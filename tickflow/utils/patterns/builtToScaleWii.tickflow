@@ -2,12 +2,14 @@
 
 preSequenceBtSWii:
 async_call loadBtSWiiLate
-rest 0x60
+rest 0x30
 play_sfx 0x1000599
 rest 0x30
 play_sfx 0x100059A
 rest 0x30
 play_sfx 0x1000597
+rest 0x30
+play_sfx 0x1000598
 rest 0x30
 stop
 
@@ -24,6 +26,7 @@ sequenceBtSWii:
     random 1
     switch
     case 0
+        0xB3 13, 6
         async_call btSWii1
     endswitch
     rest 0x18

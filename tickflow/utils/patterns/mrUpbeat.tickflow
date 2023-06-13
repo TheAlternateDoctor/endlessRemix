@@ -11,6 +11,7 @@ sequenceUpbeat:
     zoom 3, 0xC8, 0xC8
     pan 3, 0, -0x20
     rest 0x10
+    0xB3 13, 10
     async_call upbeatCountinNew, 0x18
 	0xB3 9, 0x3C
     fade<1> 1,1,1
@@ -23,6 +24,7 @@ sequenceUpbeat:
     kill_loc cycle
     rest 0x18
     kill_loc metronome
+    rest 0x18
     play_sfx 0x1000B0F
 stop
 

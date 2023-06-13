@@ -31,12 +31,14 @@ sequenceFrogHop:
         random 1
         switch
         case 0
+            0xB3 13, 17
             async_call frogHopShake1
         endswitch
     else
         random 1
         switch
         case 0
+            0xB3 13, 6
             async_call frogHop1
         endswitch
     endif

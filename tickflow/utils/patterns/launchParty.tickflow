@@ -24,6 +24,7 @@ sequenceLaunchParty:
     random 1
     switch
     case 0
+        0xB3 13, 5
         async_call launchParty1
     endswitch
     rest 0x60
