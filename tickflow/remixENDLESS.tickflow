@@ -391,7 +391,7 @@ rest 1	// 0.020833334 beats
 goto 0x4D2
 label 0x10E1
 
-set_cellanim 2, u"rom:/cellanim/ctrChicken_v0.zlib", -1
+set_cellanim 2, u"rom:/cellanim/rvlSword_v0.zlib", -1
 label 0x4D3
 cellanim_busy 2
 if 0
@@ -400,16 +400,6 @@ endif
 rest 1	// 0.020833334 beats
 goto 0x4D3
 label 0x10E2
-
-set_effect 2, u"rom:/effect/ctrChicken.zlib", -1
-label 0x4D4
-effect_busy 2
-if 0
-	goto 0x10E3
-endif 
-rest 1	// 0.020833334 beats
-goto 0x4D4
-label 0x10E3
 
 set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
 label 0x4D5
@@ -453,8 +443,6 @@ call loadSong
 sub 3
 0x83 0
 
-game_cellanim 0x43, 2
-game_effect 0x43, 2
 game_cellanim 0x3C, 4
 game_effect 0x3C, 4
 
