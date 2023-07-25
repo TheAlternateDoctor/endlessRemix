@@ -4,7 +4,7 @@
 #include config/gate3.tickflow
 #include config/debug.tickflow
 
-#include base/remixEndlessgate.tickflow
+#include base/remixENDLESSGate.tickflow
 
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
