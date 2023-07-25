@@ -162,6 +162,7 @@ engine 0x3C
 sub 4
 0x29<2> 
 
+fade<1> 1,1,1
 0x53 0x1000251
 0x23 0x1000251
 speed 0x100
@@ -182,14 +183,12 @@ rest 0xC
 0x65<1> 2, "gate_startT"
 play_sfx 0x10002DD
 rest 0xC0
-rest 0xC0
 0x65<2>
 
 call tempoAndMusic
 set_cat 0
 async_call startingGame
 rest 0x30
-fade<1> 1,1,1
 0x201
 if_geq 0x103
 	0x67<1> 2,"lifeCounter_3"
@@ -211,6 +210,7 @@ label 0x54D
 
 0xB3 0,0
 
+remove_sfx 3
 async_call basketGirlsStart
 async_call checkA2
 rest 0x30
@@ -288,7 +288,7 @@ set_sfx 1, u"GROUP_ENDLESS"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
-// set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
+set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
 set_sfx 4, u"GROUP_BASKET"
 rest 0x18	// 0.5 beats
