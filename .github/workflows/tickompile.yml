@@ -71,7 +71,7 @@ jobs:
         run: |
           wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
           mkdir -p out
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10F/' tickflow/remixENDLESS.tickflow
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
           
       - name: Build C00.bin
         run: |
@@ -125,7 +125,7 @@ jobs:
           unzip Deckompiler-linux.zip 
           chmod u+x deckompiler
           mkdir -p out
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10F/' tickflow/remixENDLESS.tickflow
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
           
       - name: Build release btk
         run: |

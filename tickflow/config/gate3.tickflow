@@ -1,0 +1,4 @@
+//Settings for gate 1.
+startSpeed=0x150
+maxSpeed=0x200
+maxTurns=20
