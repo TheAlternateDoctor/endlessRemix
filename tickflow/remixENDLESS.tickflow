@@ -3,6 +3,9 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
+#include config/debug.tickflow
+#include config/endless.tickflow
+
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
@@ -91,8 +94,6 @@
 #include utils/games/lumbearjack.tickflow
 
 #include utils/utils.tickflow
-
-#include config/debug.tickflow
 
 // #index 0x5E
 #index 0x1A
@@ -311,74 +312,6 @@ stop
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
 
-speedup:
-set_cat 0
-rest 0x30*16
-rest 0x30*16
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-// 0xB3 6, 0x104
-0xB3 6, 0x184
-rest 0x30*16
-label 0x59EE
-	0xB2 6
-		if_leq 0x10C
-			speed_relative 0x102, 0x100, 0x200
-			0xB4 6, 2
-		else
-			speed_relative 0x101, 0x100, 0x200
-			0xB4 6, 1
-		endif
-	endif
-
-rest 0x30*16
-
-	0xB2 6
-	if_leq 0x130
-		speed_relative 0x102, 0x100, 0x200
-		0xB4 6, 2
-	else
-		speed_relative 0x101, 0x100, 0x200
-		0xB4 6, 1
-	endif
-
-rest 0x30*16
-
-	0xB2 6
-	if_leq 0x120
-		speed_relative 0x102, 0x100, 0x200
-		0xB4 6, 2
-	else
-		speed_relative 0x101, 0x100, 0x200
-		0xB4 6, 1
-	endif
-
-rest 0x30*16
-
-	0xB2 6
-	if_leq 0x148
-		speed_relative 0x102, 0x100, 0x200
-		0xB4 6, 2
-	else
-		speed_relative 0x101, 0x100, 0x200
-		0xB4 6, 1
-	endif
-
-// Will up the leniency if it goes too fast
-	0xB2 6
-	if_geq 0x150
-		0x6C<1> 0x140
-		0x6C 1
-	endif
-rest 0x30*16
-goto 0x59EE
-
 
 loadInitialGames:
 set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
@@ -464,6 +397,7 @@ if 1
 endif 
 0x55 1
 0x58 0x120, 1
+speed startSpeed
 return 
 
 //-----------------------------------------------------------------------------------------------------------------------------------

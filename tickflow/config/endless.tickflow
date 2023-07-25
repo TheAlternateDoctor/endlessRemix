@@ -1,0 +1,4 @@
+//Settings for the endless game.
+startSpeed = 0x100
+maxSpeed = 0x200
+maxTurns = 0

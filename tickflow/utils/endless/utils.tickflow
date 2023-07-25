@@ -1215,6 +1215,74 @@ winGame:
     0x28<2> 
 stop
 
+
+speedup:
+    set_cat 0
+    rest 0x30*16
+    rest 0x30*16
+    rest 0x30*16
+    speed_relative 0x101, startSpeed, maxSpeed
+    rest 0x30*16
+    speed_relative 0x101, startSpeed, maxSpeed
+    rest 0x30*16
+    speed_relative 0x101, startSpeed, maxSpeed
+    rest 0x30*16
+    speed_relative 0x101, startSpeed, maxSpeed
+    0xB3 6, 0x104
+    rest 0x30*16
+    label 0x59EE
+        0xB2 6
+            if_leq 0x10C
+                speed_relative 0x102, startSpeed, maxSpeed
+                0xB4 6, 2
+            else
+                speed_relative 0x101, startSpeed, maxSpeed
+                0xB4 6, 1
+            endif
+        endif
+
+    rest 0x30*16
+
+        0xB2 6
+        if_leq 0x130
+            speed_relative 0x102, startSpeed, maxSpeed
+            0xB4 6, 2
+        else
+            speed_relative 0x101, startSpeed, maxSpeed
+            0xB4 6, 1
+        endif
+
+    rest 0x30*16
+
+        0xB2 6
+        if_leq 0x120
+            speed_relative 0x102, startSpeed, maxSpeed
+            0xB4 6, 2
+        else
+            speed_relative 0x101, startSpeed, maxSpeed
+            0xB4 6, 1
+        endif
+
+    rest 0x30*16
+
+        0xB2 6
+        if_leq 0x148
+            speed_relative 0x102, startSpeed, maxSpeed
+            0xB4 6, 2
+        else
+            speed_relative 0x101, startSpeed, maxSpeed
+            0xB4 6, 1
+        endif
+
+    // Will up the leniency if it goes too fast
+        0xB2 6
+        if_geq 0x150
+            0x6C<1> 0x140
+            0x6C 1
+        endif
+    rest 0x30*16
+goto 0x59EE
+
 nop:
 stop
 

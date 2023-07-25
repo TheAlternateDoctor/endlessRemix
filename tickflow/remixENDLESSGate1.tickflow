@@ -3,6 +3,9 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
+#include config/debug.tickflow
+#include config/gate1.tickflow
+
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
@@ -91,8 +94,6 @@
 #include utils/games/lumbearjack.tickflow
 
 #include utils/utils.tickflow
-
-#include config/debug.tickflow
 
 // #index 0x5E
 #index 0x108
@@ -310,73 +311,6 @@ stop
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
 
-speedup:
-set_cat 0
-rest 0x30*16
-rest 0x30*16
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-rest 0x30*16
-speed_relative 0x101, 0x100, 0x200
-// 0xB3 6, 0x104
-0xB3 6, 0x184
-rest 0x30*16
-label 0x59EE
-	0xB2 6
-		if_leq 0x10C
-			speed_relative 0x102, 0x100, 0x200
-			0xB4 6, 2
-		else
-			speed_relative 0x101, 0x100, 0x200
-			0xB4 6, 1
-		endif
-	endif
-
-rest 0x30*16
-
-	0xB2 6
-	if_leq 0x130
-		speed_relative 0x102, 0x100, 0x200
-		0xB4 6, 2
-	else
-		speed_relative 0x101, 0x100, 0x200
-		0xB4 6, 1
-	endif
-
-rest 0x30*16
-
-	0xB2 6
-	if_leq 0x120
-		speed_relative 0x102, 0x100, 0x200
-		0xB4 6, 2
-	else
-		speed_relative 0x101, 0x100, 0x200
-		0xB4 6, 1
-	endif
-
-rest 0x30*16
-
-	0xB2 6
-	if_leq 0x148
-		speed_relative 0x102, 0x100, 0x200
-		0xB4 6, 2
-	else
-		speed_relative 0x101, 0x100, 0x200
-		0xB4 6, 1
-	endif
-
-// Will up the leniency if it goes too fast
-	0xB2 6
-	if_geq 0x150
-		0x6C<1> 0x140
-		0x6C 1
-	endif
-rest 0x30*16
-goto 0x59EE
 
 
 loadInitialGames:
@@ -390,7 +324,7 @@ rest 1	// 0.020833334 beats
 goto 0x4D2
 label 0x10E1
 
-set_cellanim 2, u"rom:/cellanim/ctrChicken_v0.zlib", -1
+set_cellanim 2, u"rom:/cellanim/rvlSword_v0.zlib", -1
 label 0x4D3
 cellanim_busy 2
 if 0
@@ -399,16 +333,6 @@ endif
 rest 1	// 0.020833334 beats
 goto 0x4D3
 label 0x10E2
-
-set_effect 2, u"rom:/effect/ctrChicken.zlib", -1
-label 0x4D4
-effect_busy 2
-if 0
-	goto 0x10E3
-endif 
-rest 1	// 0.020833334 beats
-goto 0x4D4
-label 0x10E3
 
 set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
 label 0x4D5
@@ -452,8 +376,7 @@ call loadSong
 sub 3
 0x83 0
 
-game_cellanim 0x43, 2
-game_effect 0x43, 2
+game_cellanim 0x42, 2
 game_cellanim 0x3C, 4
 game_effect 0x3C, 4
 
@@ -475,6 +398,7 @@ if 1
 endif 
 0x55 1
 0x58 0x120, 1
+speed startSpeed
 return 
 
 //-----------------------------------------------------------------------------------------------------------------------------------
