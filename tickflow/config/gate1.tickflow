@@ -2,3 +2,6 @@
 startSpeed=0x100
 maxSpeed=0x100
 maxTurns=10
+showExplainMessage:
+    0x65 0, "gate1_explain_score_endless"
+stop
