@@ -1122,7 +1122,7 @@ playNextGameGate:
         0xB2 2
         if_neq 0
             0xB2 0
-            if_leq 10
+            if_leq maxTurns
                 fade 1,1,1
                 goto 0x1009
             endif
@@ -1181,7 +1181,7 @@ if 0
     label 0xE2D
     call score
     0xB2 0
-    if_gt 10
+    if_gt maxTurns
         async_call winGame
     endif
 endif
