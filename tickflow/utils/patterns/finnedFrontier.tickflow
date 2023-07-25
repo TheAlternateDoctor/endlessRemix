@@ -20,7 +20,7 @@ sequenceFinned:
 	sub 4
 	0x29<2> 
     rest 0x8
-    async_call finnedSetup
+    call finnedSetup
     random 1
     switch
     case 0

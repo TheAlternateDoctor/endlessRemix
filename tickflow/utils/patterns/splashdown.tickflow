@@ -10,7 +10,7 @@ sequenceSplashdown:
 	sub 4
 	0x29<2> 
     rest 0x8
-    async_call splashdownSetup
+    call splashdownSetup
     random 1 // Hax needs to be STOPPED
     switch
     case 0

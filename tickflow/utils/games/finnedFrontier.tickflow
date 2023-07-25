@@ -10,7 +10,7 @@ finnedSetup:
 	0x102<2>
 	0x102<4> 3
 	0x102<4> 4
-stop
+return
 
 checker:
 label 0x202
