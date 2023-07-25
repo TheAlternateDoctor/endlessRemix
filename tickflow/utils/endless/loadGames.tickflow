@@ -2983,7 +2983,7 @@ rest 0xC
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_BACKBEAT"
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
@@ -3000,12 +3000,15 @@ if 1
     case 4
         set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v2.zlib", -1
         break
+    case 5
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_sandcanyon.zlib", -1
+        break
     endswitch
     game_cellanim 0xF, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_BACKBEAT"
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
@@ -3021,6 +3024,9 @@ else
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ntrBackbeat_v2.zlib", -1
+        break
+    case 4
+        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_sandcanyon.zlib", -1
         break
     endswitch
     game_cellanim 0xF, 5
