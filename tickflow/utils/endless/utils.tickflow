@@ -1206,11 +1206,17 @@ winGame:
     rest 0x60	// 2.0 beats
     fade<1> 1, 1, 1
     0xAF<2> 2, 0, ""
+    0x65<4> 0x12C, 0x3C
+    0x65<3> 0, -0x55
+    0x65<5> 2
+    0x65<7> 0
     play_sfx 0x100017F
+    0x65<1> 2, "gate_clearT"
     0xAF
     0x2D 0
     rest 0xC0	// 4.0 beats
     rest 0xC0	// 4.0 beats
+    0x65<2>
     rest 0x60	// 2.0 beats
     0x28<2> 
 stop
