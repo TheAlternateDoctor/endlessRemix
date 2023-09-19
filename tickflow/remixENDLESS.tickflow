@@ -301,10 +301,10 @@ endif
 0xA2
 
 //main loop
-async_call updateScore
+call updateScore
 async_call speedup
 async_call lifeScoreCounter
-async_call playNextGame
+call playNextGame
 stop 
 
 

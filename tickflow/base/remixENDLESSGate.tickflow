@@ -230,10 +230,10 @@ endif
 0xA2
 
 //main loop
-async_call updateScore
-// async_call speedup
+call updateScore
+async_call speedup
 async_call lifeScoreCounter
-async_call playNextGameGate
+call playNextGameGate
 stop 
 
 

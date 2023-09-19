@@ -6,7 +6,7 @@ loadTutorial:
     set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
     set_cellanim 9, u"rom:/cellanim/common.zlib", -1
     set_layout 0xB, u"rom:/layout/lesson.zlib", -1
-stop
+return
 
 loadSickBeats:
 0xB2 1
@@ -28,7 +28,7 @@ else
     game_cellanim 0x40, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadCoinToss:
 0xB2 1
@@ -50,7 +50,7 @@ else
     game_cellanim 0x41, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadClapTrap:
 0xB2 1
@@ -72,7 +72,7 @@ else
     game_cellanim 0x42, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBoardMeeting:
 0xB2 1
@@ -94,7 +94,7 @@ else
     game_cellanim 0x2F, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadRingSide:
 0xB2 1
@@ -116,7 +116,7 @@ else
     game_cellanim 0x27, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadCatchOfTheDay:
 0xB2 1
@@ -138,7 +138,7 @@ else
     game_cellanim 0x22, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadFlipperFlop:
 0xB2 1
@@ -160,7 +160,7 @@ else
     game_cellanim 0x26, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadClappyTrio:
 0xB2 1
@@ -188,7 +188,7 @@ else
     game_layout 1, 7
     0xB3 1, 1
 endif
-stop
+return
 
 loadBasketGirls:
 0xB2 1
@@ -212,7 +212,7 @@ else
     game_effect 0x3C, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBasketGirlsLate:
 async_call unloadSpeAudio
@@ -258,7 +258,7 @@ else
     game_cellanim 0x24, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadSpaceball:
 0xB2 1
@@ -280,7 +280,7 @@ else
     game_cellanim 0, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadLaunchParty:
 0xB2 1
@@ -304,7 +304,7 @@ else
     game_cellanim 0x2E, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadFreezeFrame:
 0xB2 1
@@ -330,7 +330,7 @@ else
     game_effect 0x12, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadFrogHop:
 0xB2 1
@@ -354,7 +354,7 @@ else
     game_cellanim 0x14, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadDoubleDate:
 0xB2 1
@@ -376,7 +376,7 @@ else
     game_cellanim 0x21, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadSoumen:
 0xB2 1
@@ -396,7 +396,7 @@ else
     game_cellanim 0x1B, 5
     0xB3 1, 1
 endif
-stop
+return
 
 
 loadSoumenLate:
@@ -438,7 +438,7 @@ else
     game_effect 0x3C, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadUpbeatLate:
 rest 0xC
@@ -481,7 +481,7 @@ else
     game_layout 0xC, 7
     0xB3 1, 1
 endif
-stop
+return
 
 loadTapTroupeLate:
 rest 0xC
@@ -518,7 +518,7 @@ else
     game_cellanim 0x13, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadLoveLab:
 0xB2 1
@@ -545,7 +545,7 @@ else
     0xB3 1, 1
 endif
     0x2B 0x15, 0x10
-stop
+return
 
 loadKitties:
 0xB2 1
@@ -565,7 +565,7 @@ else
     game_cellanim 0x3E, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadKittiesLate:
 0xB2 1
@@ -602,7 +602,7 @@ else
     game_effect 0x19, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBunnyHop:
 0xB2 1
@@ -628,7 +628,7 @@ else
     game_effect 0x8, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadDogNinja:
 0xB2 1
@@ -654,7 +654,7 @@ else
     game_layout 0x16, 7
     0xB3 1, 1
 endif
-stop
+return
 
 loadMarcher:
 0xB2 1
@@ -678,7 +678,7 @@ else
     game_cellanim 0x5, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadMarcherLate:
 stop
@@ -707,7 +707,7 @@ else
     game_effect 0x1E, 5
     0xB3 1, 1
 endif
-stop
+return
 
 
 loadFruitBasket:
@@ -736,7 +736,7 @@ else
     game_effect 0x38, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadAnimalAcrobat:
 0xB2 1
@@ -764,7 +764,7 @@ else
     game_effect 0x35, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadCatchyTune:
 0xB2 1
@@ -788,7 +788,7 @@ else
     game_cellanim 0x3B, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadGleeClub:
 0xB2 1
@@ -812,7 +812,7 @@ else
     game_cellanim 0x13, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadCheerReaders:
 0xB2 1
@@ -834,7 +834,7 @@ else
     game_cellanim 0x20, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadSeeSaw:
 0xB2 1
@@ -856,7 +856,7 @@ else
     game_cellanim 0x31, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadFinned:
 0xB2 1
@@ -882,7 +882,7 @@ else
     game_effect 0x23, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadFinnedLate:
     async_call unloadSpeAudio
@@ -929,7 +929,7 @@ else
     game_effect 0x3D, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadQuiz:
 0xB2 1
@@ -955,7 +955,7 @@ else
     game_effect 0x7, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadMicroRow:
 0xB2 1
@@ -979,7 +979,7 @@ else
     game_effect 0x23, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadMicroRowLate:
 0xB2 1
@@ -1016,7 +1016,7 @@ else
     game_effect 0x37, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadSumoBros:
 0xB2 1
@@ -1040,7 +1040,7 @@ else
     game_effect 0x3C, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadSumoLate:
 0xB2 1
@@ -1071,7 +1071,7 @@ else
     game_cellanim 0x2, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadFillbots:
 0xB2 1
@@ -1101,7 +1101,7 @@ else
     game_effect 0x18, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadTongueLashing:
 0xB2 1
@@ -1127,7 +1127,7 @@ else
     game_effect 0x36, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadRatRace:
 0xB2 1
@@ -1149,7 +1149,7 @@ else
     game_cellanim 0x9, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadMunchyMonk:
 0xB2 1
@@ -1171,7 +1171,7 @@ else
     game_cellanim 0x1B, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadPajama:
 0xB2 1
@@ -1193,7 +1193,7 @@ else
     game_cellanim 0x3A, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadKarate:
 0xB2 1
@@ -1221,7 +1221,7 @@ else
     game_cellanim 0x28, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadTweezers:
 0xB2 1
@@ -1245,7 +1245,7 @@ else
     game_cellanim 0x3, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadNightWalk:
 0xB2 1
@@ -1267,7 +1267,7 @@ else
     game_cellanim 0x6, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadGolf:
 0xB2 1
@@ -1291,7 +1291,7 @@ else
     game_cellanim 0x25, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBtSWii:
 0xB2 1
@@ -1311,7 +1311,7 @@ else
     game_cellanim 0x1C, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBtSWiiLate:
 0xB2 1
@@ -1342,7 +1342,7 @@ else
     game_cellanim 0x4, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadNinjaBodyguard:
 0xB2 1
@@ -1364,7 +1364,7 @@ else
     game_cellanim 0xD, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadAirboarders:
 0xB2 1
@@ -1390,7 +1390,7 @@ else
     game_effect 0xE, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadLockstep:
 0xB2 1
@@ -1412,7 +1412,7 @@ else
     game_cellanim 0xF, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBlueBirds:
 0xB2 1
@@ -1438,7 +1438,7 @@ else
     game_layout 0x10, 7
     0xB3 1, 1
 endif
-stop
+return
 
 loadDazzles:
 0xB2 1
@@ -1462,7 +1462,7 @@ else
     game_effect 0x11, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadDazzlesLate:
 0xB2 1
@@ -1493,7 +1493,7 @@ else
     game_cellanim 0x30, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadPowerCalligraphy:
 0xB2 1
@@ -1515,7 +1515,7 @@ else
     game_cellanim 0xA, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadSpaceDance:
 0xB2 1
@@ -1539,7 +1539,7 @@ else
     game_cellanim 0xB, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBtSDS:
 0xB2 1
@@ -1559,7 +1559,7 @@ else
     game_cellanim 0x1C, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadBtSDSlate:
 0xB2 1
@@ -1590,7 +1590,7 @@ else
     game_cellanim 0x1A, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadTap:
 0xB2 1
@@ -1620,7 +1620,7 @@ else
     game_layout 0xC, 7
     0xB3 1, 1
 endif
-stop
+return
 
 loadLumbearjack:
 0xB2 1
@@ -1646,7 +1646,7 @@ else
     game_effect 0x3F, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadPackingPests:
 0xB2 1
@@ -1668,7 +1668,7 @@ else
     game_cellanim 0x32, 5
     0xB3 1, 1
 endif
-stop
+return
 
 loadManzai:
 0xB2 1
@@ -1692,12 +1692,12 @@ else
     game_effect 0x3C, 5
     0xB3 1, 1
 endif
-stop
+return
 
 unloadManzai: //Actually we REALLY need this
 remove_sfx 6
 0xB3 5, 0
-stop
+return
 
 loadMeatGrinder:
 0xB2 1
@@ -1723,4 +1723,4 @@ else
     game_effect 0x3C, 5
     0xB3 1, 1
 endif
-stop
+return
