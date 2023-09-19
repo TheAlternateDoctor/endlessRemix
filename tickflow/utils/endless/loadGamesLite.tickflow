@@ -868,14 +868,12 @@ endif
 rest 0xC
 0xB2 1
 if 1
-    rest 0xC	// 0.25 beats
     set_cellanim 4, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
     game_effect 0x23, 4
     0xB3 1, 0
 else
-    rest 0xC	// 0.25 beats
     set_cellanim 5, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
