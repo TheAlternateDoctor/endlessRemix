@@ -1067,7 +1067,7 @@ loadNextGame:
             goto loadNextGame
         break
     endswitch
-stop
+return
 
 playNextGame:
     set_cat 0
@@ -1081,8 +1081,9 @@ playNextGame:
             get_async 1, 0
         endif
         rest 0x18
-        async_call loadNextGame,0x60
-        rest 0x30*7
+        rest 0x30*2
+        call loadNextGame
+        rest 0x30*5
         rest 0x30*3
         get_async 3, 0x18
         rest 0x30*5 - 0x18
@@ -1110,8 +1111,9 @@ playNextGameGate:
             get_async 1, 0
         endif
         rest 0x18
-        async_call loadNextGame,0x60
-        rest 0x30*7
+        rest 0x30*2
+        call loadNextGame
+        rest 0x30*5
         rest 0x30*3
         get_async 3, 0x18
         rest 0x30*5 - 0x18
