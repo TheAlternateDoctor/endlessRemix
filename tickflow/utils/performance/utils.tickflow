@@ -120,6 +120,9 @@ exit:
 	rest 0xC0	// 4.0 beats
     0x65<2>
     fade 1,1,1
+    async_call loadClapTrap
+    rest 0x18
+    sub 3
     0xB2 9
     if_neq 0x42
         game_cellanim 0x42, 2

@@ -215,7 +215,7 @@ async_call basketGirlsStart
 async_call checkA2
 rest 0x30
 input 1
-async_call loadNextGame
+call loadNextGame
 rest 0x30 *8
 rest 0x30 *8
 get_async 3, 0x60
