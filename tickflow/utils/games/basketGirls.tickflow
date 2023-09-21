@@ -12,7 +12,7 @@ basketThrow:
     0x100 0, 0x30
     rest 0x30-9
     0x101 0
-    rest 0x12
+    rest 0x12 - 3
     0xA2<2>
     if_neq 0
         play_sfx 0x10010CC
