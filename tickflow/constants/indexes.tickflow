@@ -33,8 +33,8 @@ INDEX_ntrShugyo = 0x1B
 
 // Indexes - Fever
 INDEX_rvlAssemble = 0x1C
-INDEX_rvlBadminton = 0x1D //todo
-INDEX_rvlBatting = 0x1E //todo
+INDEX_rvlBadminton = 0x1D 
+INDEX_rvlBatting = 0x1E 
 INDEX_rvlBird = 0x1F
 INDEX_rvlBook = 0x20
 INDEX_rvlDate = 0x21
@@ -46,23 +46,23 @@ INDEX_rvlGoma = 0x26
 INDEX_rvlInterview = 0x27
 INDEX_rvlKarate = 0x28
 INDEX_rvlManju = 0x29
-INDEX_rvlMuscle = 0x2A //todo
-INDEX_rvlRap = 0x2B //todo
-INDEX_rvlRecieve = 0x2C //todo
-INDEX_rvlRobot = 0x2D //todo
+INDEX_rvlMuscle = 0x2A 
+INDEX_rvlRap = 0x2B 
+INDEX_rvlRecieve = 0x2C 
+INDEX_rvlRobot = 0x2D 
 INDEX_rvlRocket = 0x2E
 INDEX_rvlRotation = 0x2F
 INDEX_rvlSamurai = 0x30
 INDEX_rvlSeesaw = 0x31
-INDEX_rvlSort = 0x32 //todo
+INDEX_rvlSort = 0x32 
 
 // Indexes - Megamix
-INDEX_ctrBear = 0x34 //todo
+INDEX_ctrBear = 0x34 
 INDEX_ctrBlanco = 0x35
 INDEX_ctrChameleon = 0x36
 INDEX_ctrDotSamurai = 0x37
 INDEX_ctrFruitBasket = 0x38
-INDEX_ctrInterpreter = 0x39 //todo
+INDEX_ctrInterpreter = 0x39 
 INDEX_ctrPillow = 0x3A
 INDEX_ctrStep = 0x3B
 INDEX_ctrSumou = 0x3C
