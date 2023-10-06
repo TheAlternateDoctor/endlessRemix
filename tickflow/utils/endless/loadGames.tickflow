@@ -12,6 +12,7 @@ endif
 return
 
 loadTutorial:
+    rest 0xC
     set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
     set_cellanim 9, u"rom:/cellanim/common.zlib", -1
     set_layout 0xB, u"rom:/layout/lesson.zlib", -1
