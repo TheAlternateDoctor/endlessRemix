@@ -384,6 +384,25 @@ loadNextGame:
                 set_func 1, checkA2
             endif
         break
+        case 0x17 //Rhythm Rally
+            0xB2 9
+            if 0x17 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x17
+                    set_func 0, sequenceRhythmRally
+                    call loadRhythmRally
+                    set_func 3, nop
+                    set_func 2, nop
+                    set_func 1, checkA2
+                else
+                    goto loadNextGame
+                endif
+            endif
+        break
         case 0x19 //Duck Hunt
             0xB2 9
             if 0x19 //Stop games from being played next to each other
@@ -399,6 +418,25 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
+            endif
+        break
+        case 0x1A //Big Rock Finish
+            0xB2 9
+            if 0x1A //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x1A
+                    set_func 0, sequenceBigRockFinish
+                    call loadBigRockFinish
+                    set_func 3, nop
+                    set_func 2, nop
+                    set_func 1, checkA2
+                else
+                    goto loadNextGame
+                endif
             endif
         break
         case 0x1B //Hat in Time
@@ -433,6 +471,25 @@ loadNextGame:
                 set_func 3, preSequenceBtSWii
                 set_func 2, nop
                 set_func 1, checkA2
+            endif
+        break
+        case 0x1F //Flockstep
+            0xB2 9
+            if 0x1F //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x1F
+                    set_func 0, sequenceFlockstep
+                    call loadFlockstep
+                    set_func 3, nop
+                    set_func 2, nop
+                    set_func 1, checkA2
+                else
+                    goto loadNextGame
+                endif
             endif
         break
         case 0x20 //Duke Nukem
@@ -586,6 +643,25 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
+            endif
+        break
+        case 0x29 //Working Dough
+            0xB2 9
+            if 0x29 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 3, 1337
+                    0xB3 0, 0x29
+                    set_func 0, sequenceWorkingDough
+                    call loadWorkingDough
+                    set_func 3, nop
+                    set_func 2, nop
+                    set_func 1, checkA2
+                else
+                    goto loadNextGame
+                endif
             endif
         break
         case 0x2E //Mission Failed (MGS)

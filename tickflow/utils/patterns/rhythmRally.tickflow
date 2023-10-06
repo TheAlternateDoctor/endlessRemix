@@ -1,0 +1,25 @@
+// Nothing to report yet.
+
+sequenceRhythmRally:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x17
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x17
+    fade<1> 1,1,1
+    random 1
+    switch
+    case 0
+        0xB3 13, 3
+        async_call rhythmRally1
+        break
+    endswitch
+    rest 0x30
+    input 1
+stop
+
+rhythmRally1:
+stop

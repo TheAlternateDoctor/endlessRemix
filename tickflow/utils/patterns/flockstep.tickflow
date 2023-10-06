@@ -1,0 +1,25 @@
+// Nothing to report yet.
+
+sequenceFlockstep:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x1F
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x1F
+    fade<1> 1,1,1
+    random 1
+    switch
+    case 0
+        0xB3 13, 3
+        async_call flockstep1
+        break
+    endswitch
+    rest 0x30
+    input 1
+stop
+
+flockstep1:
+stop

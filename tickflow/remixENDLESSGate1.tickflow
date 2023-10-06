@@ -77,6 +77,10 @@
 #include utils/performance/bunnyHop.tickflow
 #include utils/performance/samuraiSliceWii.tickflow
 #include utils/performance/dazzles.tickflow
+#include utils/patterns/rhythmRally.tickflow
+#include utils/patterns/bigRockFinish.tickflow
+#include utils/patterns/flockstep.tickflow
+#include utils/patterns/workingDough.tickflow
 
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow
