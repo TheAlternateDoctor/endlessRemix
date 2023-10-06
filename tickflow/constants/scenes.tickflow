@@ -1,0 +1,108 @@
+// constants.tickflow - Version 0.1.0
+//   Some useful constants for Tickflow editing
+
+//
+//   SCENES
+//
+
+// Scenes - Tengoku
+SCENE_agbBatter = 0
+SCENE_agbClap = 1
+SCENE_agbGhost = 2
+SCENE_agbHair = 3
+SCENE_agbHopping = 4
+SCENE_agbMarcher = 5
+SCENE_agbNightWalk = 6
+SCENE_agbQuiz = 7
+SCENE_agbRabbit = 8
+SCENE_agbRat = 9
+SCENE_agbShuji = 0xA
+SCENE_agbSpaceDance = 0xB
+SCENE_agbTap = 0xC
+SCENE_agbTono = 0xD
+
+// Scenes - DS / Gold
+SCENE_ntrAirBoard = 0xE
+SCENE_ntrBackbeat = 0xF
+SCENE_ntrBlueBirds = 0x10
+SCENE_ntrBoxShow = 0x11
+SCENE_ntrCameraMan = 0x12
+SCENE_ntrChorus = 0x13
+SCENE_ntrFrog = 0x14
+SCENE_ntrIdol = 0x15
+SCENE_ntrNinja = 0x16
+SCENE_ntrPingpong = 0x17
+SCENE_ntrRobot = 0x18
+SCENE_ntrShooting = 0x19
+SCENE_ntrShortLive = 0x1A
+SCENE_ntrShugyo = 0x1B
+
+// Scenes - Fever
+SCENE_rvlAssemble = 0x1C
+SCENE_rvlBadminton = 0x1D //todo
+SCENE_rvlBatting = 0x1E //todo
+SCENE_rvlBird = 0x1F
+SCENE_rvlBook = 0x20
+SCENE_rvlDate = 0x21
+SCENE_rvlFishing = 0x22
+SCENE_rvlFlea = 0x23
+SCENE_rvlFork = 0x24
+SCENE_rvlGolf = 0x25
+SCENE_rvlGoma = 0x26
+SCENE_rvlInterview = 0x27
+SCENE_rvlKarate = 0x28
+SCENE_rvlManju = 0x29
+SCENE_rvlMuscle = 0x2A //todo
+SCENE_rvlRap = 0x2B //todo
+SCENE_rvlRecieve = 0x2C //todo
+SCENE_rvlRobot = 0x2D //todo
+SCENE_rvlRocket = 0x2E
+SCENE_rvlRotation = 0x2F
+SCENE_rvlSamurai = 0x30
+SCENE_rvlSeesaw = 0x31
+SCENE_rvlSort = 0x32 //todo
+
+// Scenes - Megamix
+SCENE_ctrBear = 0x34 //todo
+SCENE_ctrBlanco = 0x35
+SCENE_ctrChameleon = 0x36
+SCENE_ctrDotSamurai = 0x37
+SCENE_ctrFruitBasket = 0x38
+SCENE_ctrInterpreter = 0x39 //todo
+SCENE_ctrPillow = 0x3A
+SCENE_ctrStep = 0x3B
+SCENE_ctrSumou = 0x3C
+SCENE_ctrTango = 0x3D
+SCENE_ctrTeppan = 0x3E
+SCENE_ctrWoodcat = 0x3F
+
+// Scenes - Endless
+SCENE_agbVirus = 0x40
+SCENE_ntrCoinToss = 0x41
+SCENE_rvlSword = 0x42
+
+// Scenes - Other
+SCENE_tutorial = 0x4F
+
+// Scenes for recreations - be very careful since they're still their original scenes, so
+//   stuff like game_cellanim might cause conflicts!!
+SCENE_REC_ntrAssembly = SCENE_rvlAssemble
+SCENE_REC_ntrDjSchool = SCENE_ntrBoxShow
+SCENE_REC_rvlTambourine = SCENE_ctrSumou
+SCENE_REC_agbBon = SCENE_ctrSumou
+SCENE_REC_agbOdori = SCENE_REC_agbBon
+SCENE_CUSTOM_tpaFrontier = SCENE_rvlFlea
+SCENE_CUSTOM_skiMeat = SCENE_ctrSumou
+SCENE_REC_7bgDoctor = SCENE_ctrSumou
+SCENE_REC_agbRap = SCENE_ctrSumou
+SCENE_REC_swfSoumen = SCENE_ntrShugyo
+SCENE_REC_rvlComedians = SCENE_ctrSumou
+SCENE_REC_agbMetro = SCENE_ctrSumou
+SCENE_REC_ntrMoai = SCENE_ntrChorus
+SCENE_REC_rvlShrimp = SCENE_rvlGoma
+SCENE_REC_rvlTap = SCENE_agbTap
+SCENE_REC_ntrSynchro = SCENE_ntrChorus
+SCENE_REC_ntrRocker = SCENE_ntrShortLive
+SCENE_REC_rvlDonk = SCENE_rvlGolf
+SCENE_REC_rvlDonk_old = SCENE_ntrBackbeat
+SCENE_REC_rvlBasket = SCENE_ctrSumou

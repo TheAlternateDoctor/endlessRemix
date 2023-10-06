@@ -4,6 +4,9 @@
 #include config/gate1.tickflow
 #include config/debug.tickflow
 
+#include constants/scenes.tickflow
+#include constants/indexes.tickflow
+
 #include base/remixENDLESSGate.tickflow
 
 #include utils/endless/loadGames.tickflow

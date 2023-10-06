@@ -1,0 +1,90 @@
+
+// Indexes - Tengoku
+INDEX_agbBatter = 0
+INDEX_agbClap = 1
+INDEX_agbGhost = 2
+INDEX_agbHair = 3
+INDEX_agbHopping = 4
+INDEX_agbMarcher = 5
+INDEX_agbNightWalk = 6
+INDEX_agbQuiz = 7
+INDEX_agbRabbit = 8
+INDEX_agbRat = 9
+INDEX_agbShuji = 0xA
+INDEX_agbSpaceDance = 0xB
+INDEX_agbTap = 0xC
+INDEX_agbTono = 0xD
+
+// Indexes - DS / Gold
+INDEX_ntrAirBoard = 0xE
+INDEX_ntrBackbeat = 0xF
+INDEX_ntrBlueBirds = 0x10
+INDEX_ntrBoxShow = 0x11
+INDEX_ntrCameraMan = 0x12
+INDEX_ntrChorus = 0x13
+INDEX_ntrFrog = 0x14
+INDEX_ntrIdol = 0x15
+INDEX_ntrNinja = 0x16
+INDEX_ntrPingpong = 0x17
+INDEX_ntrRobot = 0x18
+INDEX_ntrShooting = 0x19
+INDEX_ntrShortLive = 0x1A
+INDEX_ntrShugyo = 0x1B
+
+// Indexes - Fever
+INDEX_rvlAssemble = 0x1C
+INDEX_rvlBadminton = 0x1D //todo
+INDEX_rvlBatting = 0x1E //todo
+INDEX_rvlBird = 0x1F
+INDEX_rvlBook = 0x20
+INDEX_rvlDate = 0x21
+INDEX_rvlFishing = 0x22
+INDEX_rvlFlea = 0x23
+INDEX_rvlFork = 0x24
+INDEX_rvlGolf = 0x25
+INDEX_rvlGoma = 0x26
+INDEX_rvlInterview = 0x27
+INDEX_rvlKarate = 0x28
+INDEX_rvlManju = 0x29
+INDEX_rvlMuscle = 0x2A //todo
+INDEX_rvlRap = 0x2B //todo
+INDEX_rvlRecieve = 0x2C //todo
+INDEX_rvlRobot = 0x2D //todo
+INDEX_rvlRocket = 0x2E
+INDEX_rvlRotation = 0x2F
+INDEX_rvlSamurai = 0x30
+INDEX_rvlSeesaw = 0x31
+INDEX_rvlSort = 0x32 //todo
+
+// Indexes - Megamix
+INDEX_ctrBear = 0x34 //todo
+INDEX_ctrBlanco = 0x35
+INDEX_ctrChameleon = 0x36
+INDEX_ctrDotSamurai = 0x37
+INDEX_ctrFruitBasket = 0x38
+INDEX_ctrInterpreter = 0x39 //todo
+INDEX_ctrPillow = 0x3A
+INDEX_ctrStep = 0x3B
+INDEX_ctrSumou = 0x3C
+INDEX_ctrTango = 0x3D
+INDEX_ctrTeppan = 0x3E
+INDEX_ctrWoodcat = 0x3F
+
+// Indexes - Endless
+INDEX_agbVirus = 0x40
+INDEX_ntrCoinToss = 0x41
+INDEX_rvlSword = 0x42
+
+// Indexes - Other
+INDEX_tutorial = 0x43
+
+// Indexes - Recreations
+INDEX_rvlBasket = 0x44
+INDEX_ntrAssembly = 0x45
+INDEX_rvlComedians = 0x46
+INDEX_tpaFrontier = 0x47
+INDEX_skiMeat = 0x48
+INDEX_swfSoumen = 0x49
+INDEX_agbMetro = 0x4A
+INDEX_rvlTap = 0x4B
+INDEX_ntrSynchro = 0x4C

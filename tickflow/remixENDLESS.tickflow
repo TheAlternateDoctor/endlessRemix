@@ -6,6 +6,9 @@
 #include config/debug.tickflow
 #include config/endless.tickflow
 
+#include constants/scenes.tickflow
+#include constants/indexes.tickflow
+
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
