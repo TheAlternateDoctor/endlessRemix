@@ -20,7 +20,7 @@ sequenceSneakySpirits:
     random 1
     switch
     case 0
-        0xB3 13, 2
+        0xB3 score_add, 2
         async_call sneakySpirits1
     endswitch
 stop

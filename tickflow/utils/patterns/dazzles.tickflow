@@ -8,7 +8,7 @@ sequenceDazzles:
     random 1 //Earlier to accomodate the starting time
     switch
     case 0
-        0xB3 13, 4
+        0xB3 score_add, 4
         async_call dazzles1
         async_call dazzlesCheck1
     endswitch

@@ -14,7 +14,7 @@ sequenceNightWalk:
     random 1
     switch
     case 0
-        0xB3 13, 12
+        0xB3 score_add, 12
         async_call nightWalk1
     endswitch
     0x102

@@ -25,7 +25,7 @@ sequencePackingPests:
     random 1
     switch
     case 0
-        0xB3 13, 9
+        0xB3 score_add, 9
         async_call packingPests1
     endswitch
 stop

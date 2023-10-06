@@ -1,0 +1,14 @@
+score = 0
+score_add = 13
+cellanim_slot = 1
+lives = 2
+sfx_plus = 5
+sfx_plus_2 = 14
+speed = 6
+game_state = 7
+engine_loaded = 9
+perf_lock = 11
+perf_miss = 12
+debug_start = 3
+debug_current_index = 0
+is_debug = 10

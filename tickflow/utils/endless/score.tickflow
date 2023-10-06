@@ -1,5 +1,5 @@
 score:
-0xB2 0
+0xB2 score
 switch
     case 0
     0x67<1> 2,"scoreCounter_0"
@@ -6009,7 +6009,7 @@ endswitch
 return
 
 life:
-    0xB2 2
+    0xB2 lives
     switch
         case 0
         0x67<1> 2,"lifeCounter_0"

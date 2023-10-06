@@ -6,7 +6,7 @@ sequenceKitties:
     random 1
     switch
     case 0
-        0xB3 13, 4
+        0xB3 score_add, 4
         async_call kitties1
     endswitch
     rest 0x8

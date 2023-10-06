@@ -11,7 +11,7 @@ sequenceUpbeat:
     zoom 3, 0xC8, 0xC8
     pan 3, 0, -0x20
     rest 0x10
-    0xB3 13, 10
+    0xB3 score_add, 10
     async_call upbeatCountinNew, 0x18
 	0xB3 9, 0x3C
     fade<1> 1,1,1

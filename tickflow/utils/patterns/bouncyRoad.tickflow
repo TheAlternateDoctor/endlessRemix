@@ -13,7 +13,7 @@ sequenceHopping:
     random 1
     switch
     case 0
-        0xB3 13, 3
+        0xB3 score_add, 3
         async_call hopping1
     endswitch
     rest 0x30

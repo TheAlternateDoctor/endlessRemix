@@ -140,14 +140,14 @@ input 0
 0x68<3> -0x30, -0x67
 // 0x68<3> -0x30, -0x90, 0x3C
 
-0xB3 0,0 //Score
-0xB3 1,0 //Celanim
-0xB3 2,3 //Lives
-0xB3 3,cyclingMode //Selects the shorts cycling mode(Debug mode only)
-0xB3 10,debugMode //Enables Debug mode
-0xB3 6,startSpeed //Speed at which the remix starts
-0xB3 5,2 //Slot 7 has SFX
-0xB3 14,2 //Slot 7 has SFX
+0xB3 score,0 //Score
+0xB3 cellanim_slot,0 //Celanim
+0xB3 lives,3 //Lives
+0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
+0xB3 is_debug,debugMode //Enables Debug mode
+0xB3 speed,startSpeed //Speed at which the remix starts
+0xB3 sfx_plus,2 //Slot 7 has SFX
+0xB3 sfx_plus_2,2 //Slot 7 has SFX
 
 
 0x67<5> 2
@@ -208,7 +208,7 @@ label 0x54D
 0xA1
 
 
-0xB3 0,0
+0xB3 score,0
 
 remove_sfx 3
 async_call basketGirlsStart
@@ -222,7 +222,7 @@ get_async 3, 0x60
 rest 0x30 * 6
 	get_async 2, 0
 rest 0x18
-0xB2 2
+0xB2 lives
 if_neq 0
     fade 1,1,1
 endif
@@ -310,7 +310,7 @@ game_cellanim 0x42, 2
 game_cellanim 0x3C, 4
 game_effect 0x3C, 4
 
-0xB3 1, 0
+0xB3 cellanim_slot, 0
 
 return 
 

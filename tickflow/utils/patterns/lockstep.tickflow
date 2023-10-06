@@ -10,7 +10,7 @@ if 1
     play_sfx 0x1000E0F
     rest 0x30
     play_sfx 0x1000E0C
-    0xB3 7, 1
+    0xB3 game_state, 1
 else
     rest 0x30
     play_sfx 0x1000E0C
@@ -20,7 +20,7 @@ else
     play_sfx 0x1000E0C
     rest 0x30	// 1.0 beats
     play_sfx 0x1000E0D
-    0xB3 7, 0
+    0xB3 game_state, 0
 endif
 stop
 
@@ -33,14 +33,14 @@ sequenceLockstep:
 	0x29<2> 
     rest 0x8
     input 1
-    0xB2 7
+    0xB2 game_state
     if 1
         0x103 1
         0x105 0
         random 1
         switch
         case 0
-            0xB3 13, 16
+            0xB3 score_add, 16
             async_call lockstepOnbeat1
         endswitch
     else
@@ -49,7 +49,7 @@ sequenceLockstep:
         random 1
         switch
         case 0
-            0xB3 13, 15
+            0xB3 score_add, 15
             async_call lockstepOffbeat1
         endswitch
     endif

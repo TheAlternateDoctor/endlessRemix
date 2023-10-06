@@ -15,7 +15,7 @@ sequenceSickBeats:
     random 1
     switch
     case 0
-		0xB3 13, 14
+		0xB3 score_add, 14
         async_call sickBeats1
     endswitch
     async_call sickBeatsBeatAnims

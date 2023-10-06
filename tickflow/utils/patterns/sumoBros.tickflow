@@ -7,11 +7,11 @@ random 2
 if 1
     rest 0x18
     play_sfx 0x10011A5
-    0xB3 7, 1
+    0xB3 game_state, 1
 else
     rest 0x18
     play_sfx 0x10011A6
-    0xB3 7, 0
+    0xB3 game_state, 0
 endif
 stop
 
@@ -25,12 +25,12 @@ sequenceSumoBros:
     rest 0x8
     0x108 0
     input 1
-    0xB2 7
+    0xB2 game_state
     if 1
         random 1
         switch
         case 0
-            0xB3 13, 12
+            0xB3 score_add, 12
             async_call sumoBrosSlap1
             break
         endswitch
@@ -38,7 +38,7 @@ sequenceSumoBros:
         random 1
         switch
         case 0
-            0xB3 13, 12
+            0xB3 score_add, 12
             async_call sumoBrosStomp1
             break
         endswitch

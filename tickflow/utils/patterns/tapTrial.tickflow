@@ -15,7 +15,7 @@ sequenceTap:
     random 1
     switch
     case 0
-        0xB3 13, 6
+        0xB3 score_add, 6
         async_call tapTrial1
     endswitch
 stop

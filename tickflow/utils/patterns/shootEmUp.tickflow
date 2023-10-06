@@ -14,7 +14,7 @@ sequenceShootEmUp:
     random 1
     switch
     case 0
-        0xB3 13, 7
+        0xB3 score_add, 7
         async_call shootEmUp1
     endswitch
 stop
