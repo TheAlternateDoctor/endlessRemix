@@ -34,6 +34,7 @@ async_sub 0x58
 stop
 
 fruitBasketBeatAnims:
+label 0xBA57
 0x102
 rest 0x30
-goto fruitBasketBeatAnims
+goto 0xBA57

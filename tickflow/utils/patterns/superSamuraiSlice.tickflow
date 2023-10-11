@@ -38,6 +38,7 @@ superSamuraiSlice1:
 stop
 
 superSamuraiSliceBeatAnims:
+label 0x1A15
 0x101
 rest 0x30
-goto superSamuraiSliceBeatAnims
+goto 0x1A15

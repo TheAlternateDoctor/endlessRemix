@@ -37,7 +37,8 @@ catchyTune1:
 stop
 
 catchyTuneBeatAnims:
+label 0x7053
 0x102 0
 0x102 1
 rest 0x30
-goto catchyTuneBeatAnims
+goto 0x7053

@@ -36,6 +36,7 @@ rest 0xC0
 stop
 
 ringsideBeatAnims:
+label 0x7EA4
 0x106
 rest 0x30
-goto ringsideBeatAnims
+goto 0x7EA4

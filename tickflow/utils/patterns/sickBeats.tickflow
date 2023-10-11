@@ -80,6 +80,7 @@ label 0x6F
 stop 
 
 sickBeatsBeatAnims:
+label 0x51C6
 0x107
 rest 0x30
-goto sickBeatsBeatAnims
+goto 0x51C6

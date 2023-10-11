@@ -39,6 +39,7 @@ boardMeeting1:
 stop
 
 boardMeetingBeatAnimsAssistant:
+label 0xB0A2
 0x105
 rest 0x30
-goto boardMeetingBeatAnimsAssistant
+goto 0xB0A2

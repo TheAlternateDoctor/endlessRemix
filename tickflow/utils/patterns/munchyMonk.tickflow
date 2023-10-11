@@ -111,9 +111,10 @@ async_sub 0x57
 stop
 
 munchyMonkBeat:
+label 0x3056
 0x101
 rest 0x30
-goto munchyMonkBeat
+goto 0x3056
 
 munchyMonkOneDumpling:
     set_cat 0

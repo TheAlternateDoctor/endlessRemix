@@ -42,6 +42,7 @@ ssWii1:
 stop
 
 ssWiiBeatAnims:
+label 0x1A13
 0x101
 rest 0x30
-goto ssWiiBeatAnims
+goto 0x1A13

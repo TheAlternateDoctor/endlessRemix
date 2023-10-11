@@ -1,9 +1,10 @@
 lumbearjackBeatAnims:
+label 0xBEA7
 0x101
 0x102
 0x103
 rest 0x30
-goto lumbearjackBeatAnims
+goto 0xBEA7
 
 smallLogRight: //Should be called 0x18 before the cue
 	0x102<1> 0

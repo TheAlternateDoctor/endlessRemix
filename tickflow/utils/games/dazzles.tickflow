@@ -8,7 +8,8 @@ play_sfx 0x1001010
 stop
 
 dazzlesBeatAnim:
+label 0xDA77
 0x101 1
 0x102
 rest 0x30
-goto dazzlesBeatAnim
+goto 0xDA77

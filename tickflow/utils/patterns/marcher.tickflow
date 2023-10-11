@@ -117,12 +117,13 @@ rest 0x48
 stop
 
 marchEndless:
+label 0x3A2C
 0x100 0x30, 0
 rest 0x30
 0x104<1>
 0x104<2>
 0x104<3>
-goto marchEndless
+goto 0x3A2C
 
 //To be used instead of 0x102.
 //Stops the Marcher from doing the beat anim with the point anim, which looks weird

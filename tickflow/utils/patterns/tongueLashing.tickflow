@@ -91,6 +91,7 @@ tongueLashingYellow:
 stop
 
 tongueLashingBeat:
+label 0xC4A3
 0x104
 rest 0x30
-goto tongueLashingBeat
+goto 0xC4A3

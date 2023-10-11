@@ -128,6 +128,7 @@ sumoBrosEarly2Stomp:
 stop 
 
 SumoBrosInuBeatAnims:
+label 0x5330
 0x106
 rest 0x30
-goto SumoBrosInuBeatAnims
+goto 0x5330
