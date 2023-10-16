@@ -1076,8 +1076,8 @@ playNextGame:
     if_neq 0
         get_async 0, 0
         rest 0x18
-        0x201
-        if_geq 0x103
+        0xB2 4
+        if 1
             get_async 1, 0
         endif
         rest 0x18
@@ -1138,8 +1138,8 @@ lifeScoreCounter:
     label 0x115C
     call score
     rest 0xC0
-    0x201
-    if_geq 0x103
+    0xB2 4
+    if 1
         call life
     endif
     rest 0xC0
@@ -1285,3 +1285,24 @@ stop
 
 nopR:
 return
+
+bonusStuff:
+set_cat 0
+0xB2 10
+if 0
+    0x200 9
+    if 1 // Debug mode active
+        play_sfx 0x100031E
+        0xB3 10,1 //Enables Debug mode
+    endif
+endif
+0xB2 4
+if 1
+    0x200 11
+    if 1
+        play_sfx 0x10002C1
+        0xB3 4, 0
+    endif
+endif
+rest 2
+goto bonusStuff
