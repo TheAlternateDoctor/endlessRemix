@@ -1213,7 +1213,7 @@ lifeScoreCounter:
     set_cat 0
     rest 0x18
     label 0x115C
-    call score
+    call showScore
     rest 0xC0
     0xB2 4
     if 1
@@ -1237,7 +1237,7 @@ if 0
     dec_countdown
     goto 0x5C02
     label 0xE2D
-    call score
+    call showScore
 endif
 0xB3 perf_miss, 0
 return
@@ -1246,7 +1246,7 @@ updateScoreGate:
 0xB2 perf_miss
 if 0
     0xB4 score, 1
-    call score
+    call showScore
     0xB2 score
     if_gt maxTurns
         async_call winGame
