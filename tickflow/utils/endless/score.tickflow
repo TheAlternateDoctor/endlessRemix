@@ -1,4 +1,4 @@
-score:
+showScore:
 0xB2 score
 switch
     case 0
