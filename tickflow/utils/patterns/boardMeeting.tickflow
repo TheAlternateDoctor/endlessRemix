@@ -15,7 +15,7 @@ sequenceBoardMeeting:
     random 1
     switch
     case 0
-        0xB3 13, 2
+        0xB3 score_add, 2
         async_call boardMeeting1
     endswitch
     async_call boardMeetingBeatAnimsAssistant
@@ -39,6 +39,7 @@ boardMeeting1:
 stop
 
 boardMeetingBeatAnimsAssistant:
+label 0xB0A2
 0x105
 rest 0x30
-goto boardMeetingBeatAnimsAssistant
+goto 0xB0A2

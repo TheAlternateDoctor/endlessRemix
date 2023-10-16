@@ -18,7 +18,7 @@ sequenceSuperSamuraiSlice:
     random 1
     switch
     case 0
-        0xB3 13, 8
+        0xB3 score_add, 8
         async_call superSamuraiSlice1
     endswitch
     async_call superSamuraiSliceBeatAnims
@@ -38,6 +38,7 @@ superSamuraiSlice1:
 stop
 
 superSamuraiSliceBeatAnims:
+label 0x1A15
 0x101
 rest 0x30
-goto superSamuraiSliceBeatAnims
+goto 0x1A15

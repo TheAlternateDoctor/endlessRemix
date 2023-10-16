@@ -15,7 +15,7 @@ sequenceNinjaBodyguard:
     random 1
     switch
     case 0
-        0xB3 13, 3
+        0xB3 score_add, 3
         async_call ninjaBodyguard1
     endswitch
     input 0

@@ -16,7 +16,7 @@ sequenceRingSide:
     random 1
     switch
     case 0
-        0xB3 13, 5
+        0xB3 score_add, 5
         async_call ringside1
     endswitch
     async_call ringsideBeatAnims
@@ -36,6 +36,7 @@ rest 0xC0
 stop
 
 ringsideBeatAnims:
+label 0x7EA4
 0x106
 rest 0x30
-goto ringsideBeatAnims
+goto 0x7EA4

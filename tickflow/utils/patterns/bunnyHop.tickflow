@@ -25,7 +25,7 @@ sequenceBunnyHop:
     random 1
     switch
     case 0
-        0xB3 13, 13
+        0xB3 score_add, 13
         async_call bunnyHop1
         async_call bunnyHopCheck1
         break

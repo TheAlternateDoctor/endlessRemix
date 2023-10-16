@@ -10,11 +10,16 @@ sequencePowerCalligraphy:
     rest 0x10
 	0xB3 9, 0xA
     fade<1> 1,1,1
-    random 1
+    random 2
     switch
     case 0
-        0xB3 13, 2
+        0xB3 score_add, 2
         async_call powerCalligraphy1
+		break
+	case 1
+		0xB3 13, 1
+		async_call powerCalligraphy2
+		break
     endswitch
     rest 0x48
     input 1
@@ -29,3 +34,9 @@ powerCalligraphy1:
     sub 0x5A
     sub 0x5B
 stop
+
+powerCalligraphy2:
+0x103 0
+0x106<1> 1
+sub 0x63
+stop 

@@ -15,7 +15,7 @@ sequenceGolf:
     random 1
     switch
     case 0
-        0xB3 13, 5
+        0xB3 score_add, 5
         async_call golf1
     endswitch
     async_call golfBeatAnims
@@ -35,11 +35,12 @@ async_sub 0x56
 stop
 
 golfBeatAnims:
+label 0x601F
 0x102<1>
 0x103<4>
 0x104<2>
 rest 0x30
-goto golfBeatAnims
+goto 0x601F
 
 golfSceneSetup:
 0x2B<1> 0x25

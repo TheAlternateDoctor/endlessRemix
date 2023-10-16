@@ -8,15 +8,15 @@ random 3
 switch
 case 0
     async_call munchyMonkOneDumpling
-    0xB3 7, 0
+    0xB3 game_state, 0
     break
 case 1
     async_call munchyMonkTwoDumplings
-    0xB3 7, 1
+    0xB3 game_state, 1
     break
 case 2
     async_call munchyMonkThreeDumplings
-    0xB3 7, 2
+    0xB3 game_state, 2
     break
 endswitch
 stop
@@ -36,13 +36,13 @@ sequenceMunchyMonk:
     async_call munchyMonkBeat
 	0xB3 9, 0x1B
     fade<1> 1,1,1
-    0xB2 7
+    0xB2 game_state
     switch
     case 0
         random 1
         switch
         case 0
-            0xB3 13, 11
+            0xB3 score_add, 11
             async_call munchyMonkOne1
         endswitch
         break
@@ -50,7 +50,7 @@ sequenceMunchyMonk:
         random 1
         switch
         case 0
-            0xB3 13, 13
+            0xB3 score_add, 13
             async_call munchyMonkTwo1
         endswitch
         break
@@ -58,7 +58,7 @@ sequenceMunchyMonk:
         random 1
         switch
         case 0
-            0xB3 13, 12
+            0xB3 score_add, 12
             async_call munchyMonkThree1
         endswitch
         break
@@ -111,9 +111,10 @@ async_sub 0x57
 stop
 
 munchyMonkBeat:
+label 0x3056
 0x101
 rest 0x30
-goto munchyMonkBeat
+goto 0x3056
 
 munchyMonkOneDumpling:
     set_cat 0

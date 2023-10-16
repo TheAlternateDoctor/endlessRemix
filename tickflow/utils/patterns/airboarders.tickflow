@@ -18,7 +18,7 @@ sequenceAirboarders:
     random 1
     switch
     case 0
-        0xB3 13, 4
+        0xB3 score_add, 4
         async_call airboarders1
     endswitch
     async_call airboarderBeatAnims
@@ -42,11 +42,12 @@ async_call airboarderJump
 stop
 
 airboarderBeatAnims:
+label 0xA12
 0x105 0
 0x105 1
 0x105 2
 rest 0x30
-goto airboarderBeatAnims
+goto 0xA12
 
 airboarderCrouch:
 play_sfx 0x1000FCF

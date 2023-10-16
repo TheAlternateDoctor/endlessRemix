@@ -1,29 +1,25 @@
-// Nothing to report.
+// Nothing to report yet.
 
-sequenceHopping:
+sequenceFlockstep:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x4
+	engine 0x1F
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x4
+	0xB3 9, 0x1F
     fade<1> 1,1,1
     random 1
     switch
     case 0
         0xB3 score_add, 3
-        async_call hopping1
+        async_call flockstep1
+        break
     endswitch
     rest 0x30
     input 1
 stop
 
-hopping1:
-async_sub 0x56
-async_sub 0x58
-rest 0xC0
-rest 0xC0
-async_sub 0x56
+flockstep1:
 stop

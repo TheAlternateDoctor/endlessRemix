@@ -14,7 +14,7 @@ sequenceTutorial:
     random 1
     switch
     case 0
-		0xB3 13, 5
+		0xB3 score_add, 5
         async_call drumPractice1
         async_call drumPracticeCheck1
     endswitch

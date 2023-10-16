@@ -1,7 +1,7 @@
 
 fade:
 	rest 0x60
-	0xB2 7
+	0xB2 game_state
 	if_neq 0x28
 		fade 1, 1, 0x20
 	endif
@@ -32,57 +32,7 @@ deadSub:
 	rest 0xC0	// 4.0 beats
 	rest 0xC0	// 4.0 beats
 	0x28<2> 
-stop 
-
-lifeCheck:
-	0xB2 9
-	switch
-	case 0x3 //Rhythm Tweezers
-		0x106 0
-		if_neq 1
-    		get_sync 4
-		endif
-		break
-	case 0x6 //Night Walk
-		0x105
-		if 1
-    		get_sync 4
-		endif
-		break
-	case 0x12 //Freeze Frame
-		0x104<2>
-		if_neq 0
-    		get_sync 4
-		endif
-		break
-	case 0x41 //Coin Toss
-	case 0x40 //Sick Beats
-		0xB2 7
-		if 10
-    		get_sync 4
-		endif
-		break
-	case 0x4F //Tutorial
-		0xB2 7
-		if 0
-    		get_sync 4
-		endif
-		break
-	default //Everything else
-		0xA2<2>
-		if 1
-    		get_sync 4
-		endif
-	break
-	endswitch
-	0x9F 1
-	0xA2
-	0x21 120
-	0xB2 10
-	if 0
-		0xB4 0,1
-	endif
-return
+stop
 
 beatLoop:
 	label 0xBEA7
@@ -153,9 +103,9 @@ stop
 
 //Unloads Special case audio
 unloadSpeAudio:
-0xB2 1
+0xB2 cellanim_slot
 if 1
-	0xB2 5
+	0xB2 sfx_plus
 	if_geq 1
 		remove_sfx 6
 	endif
@@ -163,7 +113,7 @@ if 1
 		remove_sfx 7
 	endif
 else
-	0xB2 6
+	0xB2 sfx_plus_2
 	if_geq 1
 		remove_sfx 0xB
 	endif

@@ -16,7 +16,7 @@ sequenceSSWii:
     random 1
     switch
     case 0
-        0xB3 13, 6
+        0xB3 score_add, 6
         async_call ssWii1
         async_call ssWiiCheck1
     endswitch
@@ -42,6 +42,7 @@ ssWii1:
 stop
 
 ssWiiBeatAnims:
+label 0x1A13
 0x101
 rest 0x30
-goto ssWiiBeatAnims
+goto 0x1A13

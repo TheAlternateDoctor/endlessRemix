@@ -32,11 +32,13 @@ play_sfx 0x1000B0B
 stop
 
 metronome://This should get killed at the end!
+label 0x5E72
 0x106
 rest 0x60
-goto metronome
+goto 0x5E72
 
 cycle://This should *also* get killed at the end. 4 beats
+label 0xC1C1
 play_sfx 0x10011A5
 rest 0x18	// 0.5 beats
 0x100 0, 0x18
@@ -48,4 +50,4 @@ rest 0x18	// 0.5 beats
 0x101 0
 rest 0x18	// HIT
 play_sfx 0x1000B0B
-goto cycle
+goto 0xC1C1

@@ -1,4 +1,4 @@
-// Has two variants, use 0xB2 7 to know.
+// Has two variants, use 0xB2 game_state to know.
 // 0 starts in space,
 // 1 starts on the ground.
 // Warning! 1 is also used by cellanims
@@ -16,7 +16,7 @@ sequenceLaunchParty:
 	0xB3 9, 0x2E
     fade<1> 1,1,1
     0x106 1
-    0xB2 7
+    0xB2 game_state
     if 0
         0x105<1>
     endif
@@ -24,7 +24,7 @@ sequenceLaunchParty:
     random 1
     switch
     case 0
-        0xB3 13, 5
+        0xB3 score_add, 5
         async_call launchParty1
     endswitch
     rest 0x60

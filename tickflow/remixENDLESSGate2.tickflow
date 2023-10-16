@@ -4,6 +4,10 @@
 #include config/gate2.tickflow
 #include config/debug.tickflow
 
+#include constants/scenes.tickflow
+#include constants/indexes.tickflow
+#include constants/variables.tickflow
+
 #include base/remixENDLESSGate.tickflow
 
 #include utils/endless/loadGames.tickflow
@@ -71,6 +75,10 @@
 #include utils/patterns/ninjaBodyguard.tickflow
 #include utils/patterns/lockstep.tickflow
 #include utils/patterns/blueBirds.tickflow
+#include utils/patterns/rhythmRally.tickflow
+#include utils/patterns/bigRockFinish.tickflow
+#include utils/patterns/flockstep.tickflow
+#include utils/patterns/workingDough.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow

@@ -4,6 +4,10 @@
 #include config/gate1.tickflow
 #include config/debug.tickflow
 
+#include constants/scenes.tickflow
+#include constants/indexes.tickflow
+#include constants/variables.tickflow
+
 #include base/remixENDLESSGate.tickflow
 
 #include utils/endless/loadGames.tickflow
@@ -77,6 +81,10 @@
 #include utils/performance/bunnyHop.tickflow
 #include utils/performance/samuraiSliceWii.tickflow
 #include utils/performance/dazzles.tickflow
+#include utils/patterns/rhythmRally.tickflow
+#include utils/patterns/bigRockFinish.tickflow
+#include utils/patterns/flockstep.tickflow
+#include utils/patterns/workingDough.tickflow
 
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow

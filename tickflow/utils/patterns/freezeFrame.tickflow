@@ -14,7 +14,7 @@ sequenceFreezeFrame:
     random 1
     switch
     case 0
-        0xB3 13, 5
+        0xB3 score_add, 5
         async_call freezeFrame1
     endswitch
     async_call freezeFrameBeat
@@ -61,8 +61,9 @@ rest 0x30	// 1.0 beats
 stop 
 
 freezeFrameBeat:
+label 0xCA2
 0x101 1
 rest 0x30
 0x101 0
 rest 0x30
-goto freezeFrameBeat
+goto 0xCA2

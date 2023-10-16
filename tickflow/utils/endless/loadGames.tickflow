@@ -19,14 +19,14 @@ loadTutorial:
 return
 
 loadSickBeats:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_VIRUS"
     random 2
@@ -39,7 +39,7 @@ if 1
         break
     endswitch
     game_cellanim 0x40, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_VIRUS"
     random 2
@@ -52,85 +52,85 @@ else
         break
     endswitch
     game_cellanim 0x40, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadCoinToss:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_COIN_TOSS_REMIX"
     set_cellanim 4, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_COIN_TOSS_REMIX"
     set_cellanim 5, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadClapTrap:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_SIRAHA"
     set_cellanim 4, u"rom:/cellanim/rvlSword_v0.zlib", -1
     game_cellanim 0x42, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_SIRAHA"
     set_cellanim 5, u"rom:/cellanim/rvlSword_v0.zlib", -1
     game_cellanim 0x42, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBoardMeeting:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_KURU_SHOW"
     set_cellanim 4, u"rom:/cellanim/rvlRotation_long.zlib", -1
     game_cellanim 0x2F, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_KURU_SHOW"
     set_cellanim 5, u"rom:/cellanim/rvlRotation_long.zlib", -1
     game_cellanim 0x2F, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadRingSide:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_WRESTLER"
     // random 7
@@ -158,7 +158,7 @@ if 1
     //     break
     // endswitch
     game_cellanim 0x27, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_WRESTLER"
     // random 2
@@ -186,19 +186,19 @@ else
     //     break
     // endswitch
     game_cellanim 0x27, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadCatchOfTheDay:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_FISHING"
     random 4
@@ -217,7 +217,7 @@ if 1
         break
     endswitch
     game_cellanim 0x22, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_FISHING"
     random 4
@@ -236,19 +236,19 @@ else
         break
     endswitch
     game_cellanim 0x22, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadFlipperFlop:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_GOMA"
     random 3
@@ -264,7 +264,7 @@ if 1
         break
     endswitch
     game_cellanim 0x26, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_GOMA"
     random 3
@@ -280,19 +280,19 @@ else
         break
     endswitch
     game_cellanim 0x26, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadClappyTrio:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_PATI"
     random 8
@@ -300,47 +300,47 @@ if 1
     case 0
         set_cellanim 4, u"rom:/cellanim/agbClap_short.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_short.zlib", -1
-        0xB3 7, 0
+        0xB3 game_state, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/agbClap_long.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 game_state, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/agbClap_arrange.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_arrange.zlib", -1
-        0xB3 7, 2
+        0xB3 game_state, 2
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/agbClap_remix02.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_remix.zlib", -1
-        0xB3 7, 3
+        0xB3 game_state, 3
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/agbClap_BW.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/agbClap_mario.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     case 6
         set_cellanim 4, u"rom:/cellanim/agbClap_party.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     case 7
         set_cellanim 4, u"rom:/cellanim/agbClap_tempo.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     endswitch
     game_cellanim 1, 4
     game_layout 1, 6
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_PATI"
     random 8
@@ -348,91 +348,91 @@ else
     case 0
         set_cellanim 5, u"rom:/cellanim/agbClap_short.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_short.zlib", -1
-        0xB3 7, 0
+        0xB3 game_state, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/agbClap_long.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 1
+        0xB3 game_state, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/agbClap_arrange.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_arrange.zlib", -1
-        0xB3 7, 2
+        0xB3 game_state, 2
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/agbClap_remix02.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_remix.zlib", -1
-        0xB3 7, 3
+        0xB3 game_state, 3
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/agbClap_BW.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/agbClap_mario.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/agbClap_party.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     case 7
         set_cellanim 5, u"rom:/cellanim/agbClap_tempo.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 7, 4
+        0xB3 game_state, 4
         break
     endswitch
     game_cellanim 1, 5
     game_layout 1, 7
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBasketGirls:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/rvlBasket_v0.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBasketGirlsLate:
 async_call unloadSpeAudio
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 6, u"GROUP_BASKET_EN"
     set_sfx 7, u"GROUP_BASKET_JP"
-    0xB3 5,2
+    0xB3 sfx_plus,2
 else
     set_sfx 0xB, u"GROUP_BASKET_EN"
     set_sfx 0xC, u"GROUP_BASKET_JP"
-    0xB3 14,2
+    0xB3 sfx_plus_2,2
 endif
 stop
 
 loadBasketGirlsLate2:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_BASKET"
 else
@@ -441,14 +441,14 @@ endif
 stop
 
 loadForkLifter:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_KUSI"
     random 6
@@ -473,7 +473,7 @@ if 1
         break
     endswitch
     game_cellanim 0x24, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_KUSI"
     random 6
@@ -498,19 +498,19 @@ else
         break
     endswitch
     game_cellanim 0x24, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadSpaceball:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_BATTER"
     random 4
@@ -529,7 +529,7 @@ if 1
         break
     endswitch
     game_cellanim 0, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_BATTER"
     random 4
@@ -548,69 +548,69 @@ else
         break
     endswitch
     game_cellanim 0, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadLaunchParty:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_ROCKET"
     random 3
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlRocket_v0.zlib", -1
-        0xB3 7, 0
+        0xB3 game_state, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/rvlRocket_remix06.zlib", -1
-        0xB3 7, 1
+        0xB3 game_state, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/rvlRocket_remix08.zlib", -1
-        0xB3 7, 0
+        0xB3 game_state, 0
         break
     endswitch
     game_cellanim 0x2E, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_ROCKET"
     random 3
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlRocket_v0.zlib", -1
-        0xB3 7, 0
+        0xB3 game_state, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/rvlRocket_remix06.zlib", -1
-        0xB3 7, 1
+        0xB3 game_state, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/rvlRocket_remix08.zlib", -1
-        0xB3 7, 0
+        0xB3 game_state, 0
         break
     endswitch
     game_cellanim 0x2E, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadFreezeFrame:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_CAMERA_MAN"
     random 4
@@ -631,7 +631,7 @@ if 1
     set_effect 4, u"rom:/effect/ntrCameraMan.zlib", -1
     game_cellanim 0x12, 4
     game_effect 0x12, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_CAMERA_MAN"
     random 4
@@ -652,65 +652,65 @@ else
     set_effect 5, u"rom:/effect/ntrCameraMan.zlib", -1
     game_cellanim 0x12, 5
     game_effect 0x12, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadFrogHop:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_FROG"
     set_cellanim 4, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
     0x2B 0x14, 1
     game_cellanim 0x14, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_FROG"
     set_cellanim 5, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
     0x2B 0x14, 1
     game_cellanim 0x14, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadDoubleDate:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_W_DATE"
     set_cellanim 4, u"rom:/cellanim/rvlDate_v0.zlib", -1
     game_cellanim 0x21, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_W_DATE"
     set_cellanim 5, u"rom:/cellanim/rvlDate_v0.zlib", -1
     game_cellanim 0x21, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadSoumen:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 2
     switch
@@ -722,7 +722,7 @@ if 1
         break
     endswitch
     game_cellanim 0x1B, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 2
     switch
@@ -734,7 +734,7 @@ else
         break
     endswitch
     game_cellanim 0x1B, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
@@ -742,41 +742,41 @@ return
 loadSoumenLate:
 async_call unloadSpeAudio
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_SOUMEN"
     set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
     set_sfx 7, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 5,2
+    0xB3 sfx_plus,2
 else
     set_sfx 4, u"GROUP_SOUMEN"
     set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
     set_sfx 0xC, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 14,2
+    0xB3 sfx_plus_2,2
 endif
 stop
 
 loadUpbeat:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_cellanim 4, u"rom:/cellanim/agbMetro_v0.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/agbMetro_v0.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
@@ -784,27 +784,27 @@ loadUpbeatLate:
 rest 0xC
 async_call unloadSpeAudio
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_METRO"
     set_sfx 6, u"GROUP_METRO_HELP"
-    0xB3 5,2
+    0xB3 sfx_plus,2
 else
     set_sfx 4, u"GROUP_METRO"
     set_sfx 0xB, u"GROUP_METRO_HELP"
-    0xB3 14,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
 loadTapTroupe:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 2
     switch
@@ -820,7 +820,7 @@ if 1
     game_cellanim 0xC, 4
     game_effect 0xC, 4
     game_layout 0xC, 6
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 2
     switch
@@ -836,7 +836,7 @@ else
     game_cellanim 0xC, 5
     game_effect 0xC, 5
     game_layout 0xC, 7
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
@@ -844,27 +844,27 @@ loadTapTroupeLate:
 rest 0xC
 async_call unloadSpeAudio
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_RVL_TAP"
     set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
-    0xB3 5,1
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_RVL_TAP"
     set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
-    0xB3 14,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
 loadSplashdown:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_SPLASH"
     random 4
@@ -883,7 +883,7 @@ if 1
         break
     endswitch
     game_cellanim 0x13, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_SPLASH"
     random 4
@@ -902,46 +902,46 @@ else
         break
     endswitch
     game_cellanim 0x13, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadLoveLab:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_JIKKEN"
     set_cellanim 4, u"rom:/cellanim/ntrLoveLab_long.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x15, 4
     game_effect 0x15, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_JIKKEN"
     set_cellanim 5, u"rom:/cellanim/ntrLoveLab_long.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x15, 5
     game_effect 0x15, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
     0x2B 0x15, 0x10
 return
 
 loadKitties:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 3
     switch
@@ -956,7 +956,7 @@ if 1
         break
     endswitch
     game_cellanim 0x3E, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 3
     switch
@@ -971,12 +971,12 @@ else
         break
     endswitch
     game_cellanim 0x3E, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadKittiesLate:
-0xB2 1
+0xB2 cellanim_slot
 if 0
     set_sfx 4, u"GROUP_PANPAN"
 else
@@ -985,14 +985,14 @@ endif
 stop
 
 loadShootEmUp:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_SHOOTING"
     random 7
@@ -1029,7 +1029,7 @@ if 1
     set_effect 4, u"rom:/effect/ntrShooting.zlib", -1
     game_cellanim 0x19, 4
     game_effect 0x19, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_SHOOTING"
     random 7
@@ -1066,19 +1066,19 @@ else
     set_effect 5, u"rom:/effect/ntrShooting.zlib", -1
     game_cellanim 0x19, 5
     game_effect 0x19, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBunnyHop:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_RABBIT"
     random 2
@@ -1093,7 +1093,7 @@ if 1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x8, 4
     game_effect 0x8, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_RABBIT"
     random 2
@@ -1108,19 +1108,19 @@ else
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x8, 5
     game_effect 0x8, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadDogNinja:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_NINJA"
     random 6
@@ -1147,7 +1147,7 @@ if 1
     set_layout 6, u"rom:/layout/ntrNinja.zlib", -1
     game_cellanim 0x16, 4
     game_layout 0x16, 6
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_NINJA"
     random 6
@@ -1174,19 +1174,19 @@ else
     set_layout 7, u"rom:/layout/ntrNinja.zlib", -1
     game_cellanim 0x16, 5
     game_layout 0x16, 7
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadMarcher:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 4 // For the pointing cellanim
     if 0 //Pointing (1/4 chances)
@@ -1244,7 +1244,7 @@ if 1
         endswitch
     endif
     game_cellanim 0x5, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 4 // For the pointing cellanim
     if 0 //Pointing (1/4 chances)
@@ -1302,7 +1302,7 @@ else
         endswitch
     endif
     game_cellanim 0x5, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
@@ -1312,16 +1312,16 @@ loadMarcherLate:
     0x2B<1> 0x5
     if 1
         async_call loadMarcherLateSlot
-        0xB3 5,1
+        0xB3 sfx_plus,1
     endif
     if 3
         async_call loadMarcherLateSlot
-        0xB3 14,1
+        0xB3 sfx_plus_2,1
     endif
 stop
 
 loadMarcherLateSlot: //Help me I am in pain
-    0xB2 1
+    0xB2 cellanim_slot
     if 1
         set_sfx 6, u"GROUP_AGB_MARCH_AR_JP"
     else
@@ -1331,14 +1331,14 @@ stop
 
 
 loadExhibitionMatch:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_BATTING"
     random 3
@@ -1356,7 +1356,7 @@ if 1
     set_effect 4, u"rom:/effect/rvlBatting.zlib", -1
     game_cellanim 0x1E, 4
     game_effect 0x1E, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_BATTING"
     random 3
@@ -1374,20 +1374,20 @@ else
     set_effect 5, u"rom:/effect/rvlBatting.zlib", -1
     game_cellanim 0x1E, 5
     game_effect 0x1E, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 
 loadFruitBasket:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_FRUITSBASKET"
     random 6
@@ -1420,7 +1420,7 @@ if 1
     set_effect 4, u"rom:/effect/ctrFruitbasket.zlib", -1
     game_cellanim 0x38, 4
     game_effect 0x38, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_FRUITSBASKET"
     random 6
@@ -1453,19 +1453,19 @@ else
     set_effect 5, u"rom:/effect/ctrFruitbasket.zlib", -1
     game_cellanim 0x38, 5
     game_effect 0x38, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadAnimalAcrobat:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_BLANCO"
     random 3
@@ -1486,7 +1486,7 @@ if 1
     set_effect 4, u"rom:/effect/ctrBlanco.zlib", -1
     game_cellanim 0x35, 4
     game_effect 0x35, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_BLANCO"
     random 3
@@ -1507,19 +1507,19 @@ else
     set_effect 5, u"rom:/effect/ctrBlanco.zlib", -1
     game_cellanim 0x35, 5
     game_effect 0x35, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadCatchyTune:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_STEP"
     random 6
@@ -1544,7 +1544,7 @@ if 1
         break
     endswitch
     game_cellanim 0x3B, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_STEP"
     random 6
@@ -1569,19 +1569,19 @@ else
         break
     endswitch
     game_cellanim 0x3B, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadGleeClub:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_CHORUS"
     random 8
@@ -1620,7 +1620,7 @@ if 1
         break
     endswitch
     game_cellanim 0x13, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_CHORUS"
     random 8
@@ -1659,19 +1659,19 @@ else
         break
     endswitch
     game_cellanim 0x13, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadCheerReaders:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_BOOKS"
     random 7
@@ -1699,7 +1699,7 @@ if 1
         break
     endswitch
     game_cellanim 0x20, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_BOOKS"
     random 7
@@ -1727,19 +1727,19 @@ else
         break
     endswitch
     game_cellanim 0x20, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadSeeSaw:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_SEE_SAW"
     random 2
@@ -1752,7 +1752,7 @@ if 1
         break
     endswitch
     game_cellanim 0x31, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_SEE_SAW"
     random 2
@@ -1765,52 +1765,51 @@ else
         break
     endswitch
     game_cellanim 0x31, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadFinned:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_cellanim 4, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
     game_effect 0x23, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
     game_effect 0x23, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadFinnedLate:
     async_call unloadSpeAudio
     rest 0xC
-    0xB3 5, 1
-    0xB2 1
+    0xB2 cellanim_slot
     if 0
         set_sfx 4, u"GROUP_FRONTIER"
         set_sfx 0xB, u"GROUP_FRONTIER2"
-        0xB3 14,1
+        0xB3 sfx_plus_2,1
     else
         set_sfx 5, u"GROUP_FRONTIER"
         set_sfx 6, u"GROUP_FRONTIER2"
-        0xB3 5,1
+        0xB3 sfx_plus,1
     endif
 stop
 
 loadTangotronic:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
@@ -1819,7 +1818,7 @@ endif
 rest 0xC
 set_model 4, u"rom:/__test/DefaultFragmentLight.bcenv", 1
 set_model 5, u"rom:/__test/DefaultSceneEnvironmentSetting.bcenv", 1
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_TANGO"
     set_model 0, u"rom:/model/ctrTango_long.zlib", 1
@@ -1851,7 +1850,7 @@ if 1
     game_cellanim 0x3D, 4
     game_model 0x3D, 0
     game_effect 0x3D, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_TANGO"
     set_model 1, u"rom:/model/ctrTango_long.zlib", 1
@@ -1883,19 +1882,19 @@ else
     game_cellanim 0x3D, 5
     game_model 0x3D, 1
     game_effect 0x3D, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadQuiz:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_QUIZ"
     random 3
@@ -1913,7 +1912,7 @@ if 1
     set_effect 4, u"rom:/effect/agbQuiz.zlib", -1
     game_cellanim 0x7, 4
     game_effect 0x7, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_QUIZ"
     random 3
@@ -1931,19 +1930,19 @@ else
     set_effect 5, u"rom:/effect/agbQuiz.zlib", -1
     game_cellanim 0x7, 5
     game_effect 0x7, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadMicroRow:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 3
     switch
@@ -1960,7 +1959,7 @@ if 1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
     game_effect 0x23, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 3
     switch
@@ -1977,12 +1976,12 @@ else
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
     game_effect 0x23, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadMicroRowLate:
-0xB2 1
+0xB2 cellanim_slot
 if 0
     set_sfx 4, u"GROUP_MIJINKO"
 else
@@ -1991,14 +1990,14 @@ endif
 stop
 
 loadSuperSamuraiSlice:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_IAI_NEW"
     random 5 //VARIANTS: 0 is long 1 is arrange (for the eagle)
@@ -2027,7 +2026,7 @@ if 1
     set_effect 4, u"rom:/effect/ctrDotSamurai.zlib", -1
     game_cellanim 0x37, 4
     game_effect 0x37, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_IAI_NEW"
     random 5 //VARIANTS: 0 is long 1 is arrange (for the eagle)
@@ -2056,19 +2055,19 @@ else
     set_effect 5, u"rom:/effect/ctrDotSamurai.zlib", -1
     game_cellanim 0x37, 5
     game_effect 0x37, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadSumoBros:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 3
     switch
@@ -2085,7 +2084,7 @@ if 1
     set_effect 4, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 3
     switch
@@ -2102,12 +2101,12 @@ else
     set_effect 5, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadSumoLate:
-0xB2 1
+0xB2 cellanim_slot
 if 0
     set_sfx 4, u"GROUP_SUMOU"
 else
@@ -2116,14 +2115,14 @@ endif
 stop
 
 loadSneakySpirits:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_AIM"
     random 4
@@ -2142,7 +2141,7 @@ if 1
         break
     endswitch
     game_cellanim 0x2, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_AIM"
     random 4
@@ -2161,19 +2160,19 @@ else
         break
     endswitch
     game_cellanim 0x2, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadFillbots:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_ROBOT"
     random 6
@@ -2202,7 +2201,7 @@ if 1
     game_cellanim 0x18, 4
     game_layout 0x18, 6
     game_effect 0x18, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_ROBOT"
     random 6
@@ -2231,45 +2230,45 @@ else
     game_cellanim 0x18, 5
     game_layout 0x18, 7
     game_effect 0x18, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadTongueLashing:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_CTR_CHAMELEON"
     set_cellanim 4, u"rom:/cellanim/ctrChameleon_long.zlib", -1
     set_effect 4, u"rom:/effect/ctrChameleon.zlib", -1
     game_cellanim 0x36, 4
     game_effect 0x36, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_CTR_CHAMELEON"
     set_cellanim 5, u"rom:/cellanim/ctrChameleon_long.zlib", -1
     set_effect 5, u"rom:/effect/ctrChameleon.zlib", -1
     game_cellanim 0x36, 5
     game_effect 0x36, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBunnyHop:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_RABBIT"
     random 2
@@ -2284,7 +2283,7 @@ if 1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x8, 4
     game_effect 0x8, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_RABBIT"
     random 2
@@ -2299,19 +2298,19 @@ else
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x8, 5
     game_effect 0x8, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadRatRace:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_RAT"
     random 2
@@ -2324,7 +2323,7 @@ if 1
         break
     endswitch
     game_cellanim 0x9, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_RAT"
     random 2
@@ -2337,19 +2336,19 @@ else
         break
     endswitch
     game_cellanim 0x9, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadMunchyMonk:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_SHUGYO"
     random 6
@@ -2374,7 +2373,7 @@ if 1
         break
     endswitch
     game_cellanim 0x1B, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_SHUGYO"
     random 6
@@ -2399,19 +2398,19 @@ else
         break
     endswitch
     game_cellanim 0x1B, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadPajama:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_PAJAMAS"
     random 2
@@ -2424,7 +2423,7 @@ if 1
         break
     endswitch
     game_cellanim 0x3A, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_PAJAMAS"
     random 2
@@ -2437,19 +2436,19 @@ else
         break
     endswitch
     game_cellanim 0x3A, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadKarate:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_KARATE"
     random 17
@@ -2526,7 +2525,7 @@ if 1
     set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
     game_effect 0x28, 4
     game_cellanim 0x28, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_KARATE"
     random 17
@@ -2603,19 +2602,19 @@ else
     set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
     game_effect 0x28, 5
     game_cellanim 0x28, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadTweezers:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_HAIR"
     random 7
@@ -2651,7 +2650,7 @@ if 1
         break
     endswitch
     game_cellanim 0x3, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_HAIR"
     random 7
@@ -2686,19 +2685,19 @@ else
         break
     endswitch
     game_cellanim 0x3, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadNightWalk:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_NIGHT_WALK"
     random 2
@@ -2711,7 +2710,7 @@ if 1
         break
     endswitch
     game_cellanim 0x6, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_NIGHT_WALK"
     random 2
@@ -2724,19 +2723,19 @@ else
         break
     endswitch
     game_cellanim 0x6, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadGolf:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_GOLF"
     random 5
@@ -2763,7 +2762,7 @@ if 1
         break
     endswitch
     game_cellanim 0x25, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_GOLF"
     random 5
@@ -2790,19 +2789,19 @@ else
         break
     endswitch
     game_cellanim 0x25, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBtSWii:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 2
     switch
@@ -2814,7 +2813,7 @@ if 1
         break
     endswitch
     game_cellanim 0x1C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 2
     switch
@@ -2826,12 +2825,12 @@ else
         break
     endswitch
     game_cellanim 0x1C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBtSWiiLate:
-0xB2 1
+0xB2 cellanim_slot
 if 0
     set_sfx 4, u"GROUP_OTTOSEI"
 else
@@ -2840,14 +2839,14 @@ endif
 stop
 
 loadHopping:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_HOPPING"
     random 6
@@ -2872,7 +2871,7 @@ if 1
         break
     endswitch
     game_cellanim 0x4, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_HOPPING"
     random 6
@@ -2897,19 +2896,19 @@ else
         break
     endswitch
     game_cellanim 0x4, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadNinjaBodyguard:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_TONO"
     random 3
@@ -2925,7 +2924,7 @@ if 1
         break
     endswitch
     game_cellanim 0xD, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_TONO"
     random 3
@@ -2941,45 +2940,45 @@ else
         break
     endswitch
     game_cellanim 0xD, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadAirboarders:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_AIR_BOARD"
     set_model 0, u"rom:/model/ntrAirBoard_long.zlib", 1
     set_effect 4, u"rom:/effect/ntrAirBoard.zlib", -1
     game_model 0xE, 0
     game_effect 0xE, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_AIR_BOARD"
     set_model 1, u"rom:/model/ntrAirBoard_long.zlib", 1
     set_effect 5, u"rom:/effect/ntrAirBoard.zlib", -1
     game_model 0xE, 1
     game_effect 0xE, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadLockstep:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BACKBEAT"
     random 6
@@ -3004,7 +3003,7 @@ if 1
         break
     endswitch
     game_cellanim 0xF, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_BACKBEAT"
     random 6
@@ -3029,19 +3028,19 @@ else
         break
     endswitch
     game_cellanim 0xF, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBlueBirds:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BLUE_BIRDS"
     random 3
@@ -3059,7 +3058,7 @@ if 1
     set_layout 6, u"rom:/layout/ntrBlueBirds.zlib", -1
     game_cellanim 0x10, 4
     game_layout 0x10, 6
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_BLUE_BIRDS"
     random 3
@@ -3077,19 +3076,19 @@ else
     set_layout 7, u"rom:/layout/ntrBlueBirds.zlib", -1
     game_cellanim 0x10, 5
     game_layout 0x10, 7
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadDazzles:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     random 6
     switch
@@ -3115,7 +3114,7 @@ if 1
     set_effect 4, u"rom:/effect/ntrBoxShow.zlib", -1
     game_cellanim 0x11, 4
     game_effect 0x11, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     random 6
     switch
@@ -3141,12 +3140,12 @@ else
     set_effect 5, u"rom:/effect/ntrBoxShow.zlib", -1
     game_cellanim 0x11, 5
     game_effect 0x11, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadDazzlesLate:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_NTR_BOX_SHOW"
 else
@@ -3155,14 +3154,14 @@ endif
 stop
 
 loadSSWii:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_IAI"
     random 2
@@ -3175,7 +3174,7 @@ if 1
         break
     endswitch
     game_cellanim 0x30, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_IAI"
     random 2
@@ -3188,19 +3187,19 @@ else
         break
     endswitch
     game_cellanim 0x30, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadPowerCalligraphy:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_SHUJI"
     random 2
@@ -3213,7 +3212,7 @@ if 1
         break
     endswitch
     game_cellanim 0xA, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_SHUJI"
     random 2
@@ -3226,19 +3225,19 @@ else
         break
     endswitch
     game_cellanim 0xA, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadSpaceDance:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_SPACE"
     random 3 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
@@ -3257,7 +3256,7 @@ if 1
         break
     endswitch
     game_cellanim 0xB, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_SPACE"
     random 3 //VARIANTS: 0 is Space Dance, 1 is Cosmo Dance (Gramps/Lady, Background)
@@ -3276,32 +3275,32 @@ else
         break
     endswitch
     game_cellanim 0xB, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBtSDS:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_cellanim 4, u"rom:/cellanim/ntrAssemble_v0.zlib", -1
     game_cellanim 0x1C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/ntrAssemble_v0.zlib", -1
     game_cellanim 0x1C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadBtSDSlate:
-0xB2 1
+0xB2 cellanim_slot
 if 0
     set_sfx 4, u"GROUP_NTR_ASSEMBLE"
 else
@@ -3309,37 +3308,15 @@ else
 endif
 stop
 
-loadBRF:
-0xB2 1
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0xC
-0xB2 1
-if 1
-    set_sfx 4, u"GROUP_NTR_SHORT_LIVE"
-    set_cellanim 4, u"rom:/cellanim/ntrShortLive_v0.zlib", -1
-    game_cellanim 0x1A, 4
-    0xB3 1, 0
-else
-    set_sfx 5, u"GROUP_NTR_SHORT_LIVE"
-    set_cellanim 5, u"rom:/cellanim/ntrShortLive_v0.zlib", -1
-    game_cellanim 0x1A, 5
-    0xB3 1, 1
-endif
-return
-
 loadTap:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_AGB_TAP"
     random 10
@@ -3380,7 +3357,7 @@ if 1
     game_cellanim 0xC, 4
     game_effect 0xC, 4
     game_layout 0xC, 6
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_AGB_TAP"
     random 10
@@ -3421,19 +3398,19 @@ else
     game_cellanim 0xC, 5
     game_effect 0xC, 5
     game_layout 0xC, 7
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadLumbearjack:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_WOOD_CAT"
     random 4
@@ -3454,7 +3431,7 @@ if 1
     set_effect 4, u"rom:/effect/ctrWoodCat.zlib", -1
     game_cellanim 0x3F, 4
     game_effect 0x3F, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_WOOD_CAT"
     random 4
@@ -3475,19 +3452,19 @@ else
     set_effect 5, u"rom:/effect/ctrWoodCat.zlib", -1
     game_cellanim 0x3F, 5
     game_effect 0x3F, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadPackingPests:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_SHIWAKE"
     random 7
@@ -3515,7 +3492,7 @@ if 1
         break
     endswitch
     game_cellanim 0x32, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_SHIWAKE"
     random 7
@@ -3543,48 +3520,48 @@ else
         break
     endswitch
     game_cellanim 0x32, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 loadManzai:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_cellanim 4, u"rom:/cellanim/rvlComedians_long.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/rvlComedians_long.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
 endif
 return
 
 unloadManzai: //Actually we REALLY need this
 remove_sfx 6
-0xB3 5, 0
+0xB3 sfx_plus, 0
 return
 
 loadMeatGrinder:
-0xB2 1
+0xB2 cellanim_slot
 if 1
     async_call unloadGameSlot4
 else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB2 1
+0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_MEAT"
     random 3
@@ -3602,7 +3579,7 @@ if 1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
-    0xB3 1, 0
+    0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_MEAT"
     random 3
@@ -3620,6 +3597,213 @@ else
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5
-    0xB3 1, 1
+    0xB3 cellanim_slot, 1
+endif
+return
+
+//NEW
+
+loadRhythmRally:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_PINPON"
+    random 4
+    switch
+    case 0
+        set_model 0, u"rom:/model/ntrPingpong_short.zlib", 1
+        break
+    case 1
+        set_model 0, u"rom:/model/ntrPingpong_long.zlib", 1
+        break
+    case 2
+        set_model 0, u"rom:/model/ntrPingpong_arrange.zlib", 1
+        break
+    case 3
+        set_model 0, u"rom:/model/ntrPingpong_remix04.zlib", 1
+        break
+    endswitch
+    game_model 0x17, 0
+    0xB3 cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_PINPON"
+    random 4
+    switch
+    case 0
+        set_model 1, u"rom:/model/ntrPingpong_short.zlib", 1
+        break
+    case 1
+        set_model 1, u"rom:/model/ntrPingpong_long.zlib", 1
+        break
+    case 2
+        set_model 1, u"rom:/model/ntrPingpong_arrange.zlib", 1
+        break
+    case 3
+        set_model 1, u"rom:/model/ntrPingpong_remix04.zlib", 1
+        break
+    endswitch
+    game_model 0x17, 1
+    0xB3 cellanim_slot, 1
+endif
+return
+
+loadBigRockFinish:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_NTR_SHORT_LIVE"
+    random 3
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/ntrShortLive_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/ntrShortLive_remix9.zlib", -1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/ntrShortLive_remix5.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x1A, 4
+    0xB3 cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_NTR_SHORT_LIVE"
+    random 3
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/ntrShortLive_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/ntrShortLive_remix9.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/ntrShortLive_remix5.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x1A, 5
+    0xB3 cellanim_slot, 1
+endif
+return
+
+loadFlockstep:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_MANY_BIRD"
+    random 3
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/rvlBird_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/rvlBird_remix09.zlib", -1
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/rvlBird_remix05.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x1F, 4
+    0xB3 cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_MANY_BIRD"
+    random 3
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/rvlBird_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/rvlBird_remix09.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/rvlBird_remix05.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x1F, 5
+    0xB3 cellanim_slot, 1
+endif
+return
+
+loadWorkingDough:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_MANJU"
+    random 5
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/rvlManju_long.zlib", -1
+        break
+    case 1
+        random 2 //Korean is minimal so it gets dumped there
+        if 1
+            set_cellanim 4, u"rom:/cellanim/rvlManju_arrange.zlib", -1
+        else
+            set_cellanim 4, u"rom:/cellanim/rvlManju_arrange_kor.zlib", -1
+        endif
+        break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/rvlManju_remix03.zlib", -1
+        break
+    case 3
+        set_cellanim 4, u"rom:/cellanim/rvlManju_remix3.zlib", -1
+        break
+    case 4
+        set_cellanim 4, u"rom:/cellanim/rvlManju_remix8.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x29, 4
+    0xB3 cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_MANJU"
+    random 5
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/rvlManju_long.zlib", -1
+        break
+    case 1
+        random 2 //Korean is minimal so it gets dumped there
+        if 1
+            set_cellanim 5, u"rom:/cellanim/rvlManju_arrange.zlib", -1
+        else
+            set_cellanim 5, u"rom:/cellanim/rvlManju_arrange_kor.zlib", -1
+        endif
+        break
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/rvlManju_remix03.zlib", -1
+        break
+    case 3
+        set_cellanim 5, u"rom:/cellanim/rvlManju_remix3.zlib", -1
+        break
+    case 4
+        set_cellanim 5, u"rom:/cellanim/rvlManju_remix8.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x29, 5
+    0xB3 cellanim_slot, 1
 endif
 return

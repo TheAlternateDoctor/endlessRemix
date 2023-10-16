@@ -6,6 +6,10 @@
 #include config/debug.tickflow
 #include config/endless.tickflow
 
+#include constants/scenes.tickflow
+#include constants/indexes.tickflow
+#include constants/variables.tickflow
+
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
@@ -71,6 +75,10 @@
 #include utils/patterns/ninjaBodyguard.tickflow
 #include utils/patterns/lockstep.tickflow
 #include utils/patterns/blueBirds.tickflow
+#include utils/patterns/rhythmRally.tickflow
+#include utils/patterns/bigRockFinish.tickflow
+#include utils/patterns/flockstep.tickflow
+#include utils/patterns/workingDough.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -242,13 +250,14 @@ input 0
 0x68<3> -0x30, -0x67
 // 0x68<3> -0x30, -0x90, 0x3C
 
-0xB3 0,0 //Score
-0xB3 1,0 //Cellanim
-0xB3 2,3 //Lives
-0xB3 3,cyclingMode //Selects the shorts cycling mode(Debug mode only)
-0xB3 5,2 //Slot 7 has SFX
-0xB3 14,2 //Slot 7 has SFX
-0xB3 13, 5 //Starting score
+0xB3 score,0 //Score
+0xB3 cellanim_slot,0 //Celanim
+0xB3 lives,3 //Lives
+0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
+0xB3 is_debug,debugMode //Enables Debug mode
+0xB3 sfx_plus,2 //Slot 7 has SFX
+0xB3 sfx_plus_2,2 //Slot 7 has SFX
+0xB3 score_add, 5 //Starting score
 
 
 0x67<5> 2
@@ -288,7 +297,7 @@ label 0x54D
 0xA1
 
 
-0xB3 0,0
+0xB3 score,0
 
 async_call basketGirlsStart
 async_call checkA2
@@ -301,7 +310,7 @@ get_async 3, 0x60
 rest 0x30 * 6
 	get_async 2, 0
 rest 0x18
-0xB2 2
+0xB2 lives
 if_neq 0
     fade 1,1,1
 endif
@@ -379,7 +388,7 @@ sub 3
 game_cellanim 0x3C, 4
 game_effect 0x3C, 4
 
-0xB3 1, 0
+0xB3 cellanim_slot, 0
 
 return 
 

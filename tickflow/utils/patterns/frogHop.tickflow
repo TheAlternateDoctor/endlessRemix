@@ -10,9 +10,9 @@ if 1
     play_sfx 0x1000E3D
     rest 0x30
     play_sfx 0x1000E3E
-    0xB3 7,1
+    0xB3 game_state,1
 else
-    0xB3 7, 0
+    0xB3 game_state, 0
 endif
 stop
 
@@ -26,19 +26,19 @@ sequenceFrogHop:
     rest 0x8
     input 1
     0x101<1>
-    0xB2 7
+    0xB2 game_state
     if 1
         random 1
         switch
         case 0
-            0xB3 13, 17
+            0xB3 score_add, 17
             async_call frogHopShake1
         endswitch
     else
         random 1
         switch
         case 0
-            0xB3 13, 6
+            0xB3 score_add, 6
             async_call frogHop1
         endswitch
     endif
