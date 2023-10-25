@@ -8,6 +8,7 @@ rest 0x78
 play_sfx 0x10002E1
 rest 0x30
 play_sfx 0x10002E7
+play_sfx 0x10010BE
 stop
 
 sequenceAnimalAcrobat:
