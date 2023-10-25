@@ -6,11 +6,14 @@
 
 sequenceCheerReaders:
 	set_cat 0
-    random 1 //Earlier to accomodate the starting time
+    random 2 //Earlier to accomodate the starting time
     switch
     case 0
         0xB3 score_add, 5
         async_call cheerReaders1
+    default
+        0xB3 score_add, 6
+        async_call cheerReaders2
     endswitch
     rest 0x8
 	call changeEngine

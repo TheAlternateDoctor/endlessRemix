@@ -12,11 +12,14 @@ sequenceTap:
 	0xB3 9, 0xC
     fade<1> 1,1,1
     input 1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 6
         async_call tapTrial1
+    default
+        0xB3 score_add, 6
+        async_call tapTrial2
     endswitch
 stop
 
@@ -31,4 +34,19 @@ tapTrial1:
     sub 0x56
     sub 0x56
     sub 0x5B
+stop
+
+tapTrial2:
+    0x101
+    rest 0x30
+    0x101
+    rest 0x30
+    sub 0x56
+    sub 0x56
+    sub 0x57
+    sub 0x56
+    sub 0x5B
+    rest 0x30
+    sub 0x58
+    sub 0x5A
 stop
