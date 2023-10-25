@@ -18,9 +18,6 @@ sequenceAnimalAcrobat:
 	engine 0x35
 	sub 4
 	0x29<2> 
-    rest 0x10
-	0xB3 9, 0x35
-    fade<1> 1,1,1
     random 4
     switch
     case 0
@@ -36,9 +33,12 @@ sequenceAnimalAcrobat:
         0xB3 score_add, 3
         0x102<1> animalAcrobat4, 5        // Load pattern
     endswitch
-    0x102 0                        // Start executing pattern (in 1 beat)0x100059B
+    0x102 0x10                        // Start executing pattern (in 1 beat)0x100059B
     input 1                            // Enable input
-    0x101<1> 0                    // Jump now, grab in .25 beat
+    0x101<1> 0x10                   // Jump now, grab in .25 beat
+    rest 0x10
+	0xB3 9, 0x35
+    fade<1> 1,1,1
 stop
 
 animalAcrobat1:
