@@ -40,3 +40,20 @@ async_call oneTwoThreeGirlsUp
 rest 0x60
 async_call oneTwoThreeSoloDown
 stop
+
+cheerReaders2:
+set_cat 0
+async_call oneTwoThreeSoloDown
+rest 0x18
+set_cat 0x7D0
+rest 0x48
+async_call letsGoReadABunchaBooksGirlsUp
+rest 0x60
+async_call rahRahSisBoomBaBoomSoloDown
+rest 0xC0
+async_call itsUpToYouSoloUp
+rest 0x60
+async_call itsUpToYouGirlsDown
+rest 0x60
+async_call okItsOnUp
+stop
