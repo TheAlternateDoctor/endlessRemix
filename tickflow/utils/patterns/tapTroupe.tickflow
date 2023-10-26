@@ -29,9 +29,11 @@ sequenceTapTroupe:
     case 0
         0xB3 score_add, 20
         async_call tapTroupe1
+        break
     default
         0xB3 score_add, 16
         async_call tapTroupe2
+        break
     endswitch
     zoom 3, 0x168, 0x168
     pan 3, 8, 0

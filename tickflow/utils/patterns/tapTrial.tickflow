@@ -17,9 +17,11 @@ sequenceTap:
     case 0
         0xB3 score_add, 6
         async_call tapTrial1
+        break
     default
         0xB3 score_add, 6
         async_call tapTrial2
+        break
     endswitch
 stop
 

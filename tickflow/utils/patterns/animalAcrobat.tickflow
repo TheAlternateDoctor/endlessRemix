@@ -23,20 +23,24 @@ sequenceAnimalAcrobat:
     case 0
         0xB3 score_add, 3
         0x102<1> animalAcrobat1, 5 
+        break
     case 1
         0xB3 score_add, 3
         0x102<1> animalAcrobat2, 5 
+        break
     case 2
         0xB3 score_add, 2
         0x102<1> animalAcrobat3, 5 
+        break
     default
         0xB3 score_add, 3
-        0x102<1> animalAcrobat4, 5        // Load pattern
+        0x102<1> animalAcrobat4, 5
+        break
     endswitch
     0x102 0x10                        // Start executing pattern (in 1 beat)0x100059B
-    input 1                            // Enable input
     0x101<1> 0x10                   // Jump now, grab in .25 beat
     rest 0x10
+    input 1                            // Enable input
 	0xB3 9, 0x35
     fade<1> 1,1,1
 stop
