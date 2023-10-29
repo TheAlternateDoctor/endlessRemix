@@ -48,7 +48,7 @@ stop
 
 cheerReaders2:
 set_cat 0
-async_call oneTwoThreeSoloDown
+async_call oneTwoThreeDown
 rest 0x18
 set_cat 0x7D0
 rest 0x48

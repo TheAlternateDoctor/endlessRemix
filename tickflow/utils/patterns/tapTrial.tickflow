@@ -48,7 +48,5 @@ tapTrial2:
     sub 0x57
     sub 0x56
     sub 0x5B
-    rest 0x30
-    sub 0x58
     sub 0x5A
 stop

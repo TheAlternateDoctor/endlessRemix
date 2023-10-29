@@ -31,6 +31,7 @@
 #include utils/patterns/freezeFrame.tickflow
 #include utils/patterns/gleeClub.tickflow
 #include utils/patterns/frogHop.tickflow
+#include utils/patterns/fanCLub.tickflow
 #include utils/patterns/dogNinja.tickflow
 #include utils/patterns/shootEmUp.tickflow
 #include utils/patterns/munchyMonk.tickflow
@@ -92,6 +93,7 @@
 #include utils/games/manzai.tickflow
 #include utils/games/meatGrinderSubs.tickflow
 #include utils/games/frogHop.tickflow
+#include utils/games/fanClub.tickflow
 #include utils/games/soumen.tickflow
 #include utils/games/mrUpbeat.tickflow
 #include utils/games/tapTroupe.tickflow

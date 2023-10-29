@@ -1,0 +1,187 @@
+sequenceFanClub:
+	set_cat 0
+    0xB3 0x98, 0
+    0xB3 0x99, 0
+    random 2
+    switch
+    case 0
+        play_sfx 0x1000EE5
+        0xB3 0x99, 1
+        break
+    endswitch
+    rest 0x8
+	call changeEngine
+	engine 0x15
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0xB3 0x98, 0
+	0xB3 9, 0x15
+    0x2B game_state
+    if 2
+        0xB3 0x98, 1
+    endif
+    0xB2<1> 0x15
+    if 3
+        random 3
+        switch 
+        case 0
+            async_call fanLightsBeat
+            break
+        case 1
+            0x114 1
+            break
+        endswitch
+    else
+        random 2
+        switch 
+        case 0
+            async_call fan2LightsBeat
+            break
+        endswitch
+    endif
+    fade<1> 1,1,1
+    0xB2 0x99
+    if 1
+        random 2
+        switch
+        case 0
+            async_call club1
+            break
+        case 1
+            async_call club3
+            break
+        endswitch
+    else
+        random 2
+        switch
+        case 0
+            async_call club2
+            break
+        case 1
+            async_call club4
+            break
+        endswitch
+    endif
+    async_call fanBeat
+    rest 0x30
+    input 1
+stop
+
+club1:
+    async_call firstYaYaYa
+    async_call singerYa
+    rest 0x30
+    async_call singerYa
+    rest 0x30
+    async_call singerYa
+    rest 0x60
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_sub 0x5D
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    async_call iSuppose
+    rest 0x30
+    async_call singerISuppose
+    rest 0x60
+    async_call singerSquat
+    rest 0x60
+    async_call singerSquat
+stop
+
+club2:
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    async_call iSuppose
+    rest 0x30
+    async_call singerISuppose
+    rest 0x60
+    async_call singerSquat
+    rest 0x60
+    async_call singerSquat
+    rest 0x60
+    async_sub 0x5D
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    rest 0x30
+    async_sub 0x5D
+    async_call singerWink
+    rest 0x60
+    async_call singerSquat
+    rest 0x60
+    async_call singerSquat
+stop
+
+club3:
+    async_call firstYaYaYa
+    async_call singerYa
+    rest 0x30
+    async_call singerYa
+    rest 0x30
+    async_call singerYa
+    rest 0x60
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    async_call yaYaYa
+    rest 0x30
+    async_call singerYa
+    rest 0x30
+    async_call singerYa
+    rest 0x30
+    async_call singerYa
+    rest 0x60
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+    rest 0x30
+    async_call singerClap
+stop
+
+club4:
+    async_sub 0x5D
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    async_call iSuppose
+    rest 0x30
+    async_call singerISuppose
+    rest 0x60
+    async_call singerSquat
+    rest 0x60
+    async_call singerSquat
+    rest 0x60
+    async_sub 0x5D
+    async_call singerBeat
+    rest 0x30
+    async_call singerBeat
+    async_call iSuppose
+    rest 0x30
+    async_call singerISuppose
+    rest 0x60
+    async_call singerJump
+    rest 0x30
+    async_call singerLand
+    rest 0x60
+stop
+

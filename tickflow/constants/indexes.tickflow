@@ -34,7 +34,7 @@ INDEX_ntrShugyo = 0x1B
 // Indexes - Fever
 INDEX_rvlAssemble = 0x1C
 INDEX_rvlBadminton = 0x1D 
-INDEX_rvlBatting = 0x1E 
+INDEX_rvlBatting = 0x1E
 INDEX_rvlBird = 0x1F
 INDEX_rvlBook = 0x20
 INDEX_rvlDate = 0x21

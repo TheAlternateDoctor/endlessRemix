@@ -10,11 +10,16 @@ sequenceClappyTrio:
     rest 0x10
 	0xB3 9, 0x1
     fade<1> 1,1,1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 3
         async_call clappyTrio1
+        break
+    case 1
+        0xB3 score_add, 3
+        async_call clappyTrio2
+        break
     endswitch
     0xB2 game_state
     switch
@@ -50,4 +55,26 @@ clappyTrio1:
     rest 0xC0
     rest 0x60
     0x101
+stop
+
+clappyTrio2:
+async_sub 0x57
+rest 0x90
+0x101 0
+rest 0x30
+async_sub 0x57
+rest 0x90
+0x102 0
+rest 0x30
+async_sub 0x58
+rest 0x48
+0x102 0
+rest 0x18
+async_sub 0x58
+rest 0x48
+0x102 0
+rest 0x18
+async_sub 0x57
+rest 0x90
+0x101 0
 stop

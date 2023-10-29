@@ -4,11 +4,10 @@
 
 preSequenceAnimalAcrobat:
 rest 0x30
-rest 0x78
+rest 0x60
 play_sfx 0x10002E1
 rest 0x30
 play_sfx 0x10002E7
-play_sfx 0x10010BE
 stop
 
 sequenceAnimalAcrobat:
@@ -18,45 +17,64 @@ sequenceAnimalAcrobat:
 	engine 0x35
 	sub 4
 	0x29<2> 
+    rest 0x10
+    0xB3 9, 0x35
+    0xB2 game_state
+    if 0
+        0x103 1
+        0x109
+        0x105 0
+    else 
+        0xB2 game_state
+        if 1
+            0x103 0
+        else
+            0x103 0
+        endif
+    endif
+    fade<1> 1,1,1
     random 4
     switch
     case 0
         0xB3 score_add, 3
-        0x102<1> animalAcrobat1, 5 
+        0x102<1> animalAcrobat1, 5
         break
     case 1
         0xB3 score_add, 3
-        0x102<1> animalAcrobat2, 5 
+        0x102<1> animalAcrobat2, 4
         break
     case 2
         0xB3 score_add, 2
-        0x102<1> animalAcrobat3, 5 
+        0x102<1> animalAcrobat3, 5
         break
     default
         0xB3 score_add, 3
-        0x102<1> animalAcrobat4, 5
+        0x102<1> animalAcrobat4, 4
         break
     endswitch
-    0x102 0x10                        // Start executing pattern (in 1 beat)0x100059B
-    0x101<1> 0x10                   // Jump now, grab in .25 beat
-    rest 0x10
+    0x102 0xC0                        // Start executing pattern 0x100059B
+    0x101
+    rest 0x30
     input 1                            // Enable input
-	0xB3 9, 0x35
-    fade<1> 1,1,1
+    0x101
+    rest 0x30
+    0x101
+    rest 0x30
+    0x101<1> 0x30                    // Jump now, grab in .25 beat
 stop
 
 animalAcrobat1:
-bytes 2, 0, 3, 6, 5
+bytes 2, 0, 1, 6, 5
 return
 
 animalAcrobat2:
-bytes 1, 1, 3, 6, 5
+bytes 1, 3, 6, 5
 return
 
 animalAcrobat3:
-bytes 3, 3, 6, 5
+bytes 1, 2, 0, 6, 5
 return
 
 animalAcrobat4:
-bytes 3, 2, 0, 6, 5
+bytes 3, 1, 6, 5
 return

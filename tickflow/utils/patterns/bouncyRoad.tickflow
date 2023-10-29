@@ -10,11 +10,20 @@ sequenceHopping:
     rest 0x10
 	0xB3 9, 0x4
     fade<1> 1,1,1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 3
         async_call hopping1
+        break
+    case 1
+        0xB3 score_add, 3
+        async_call hopping2
+        break
+    case 2
+        0xB3 score_add, 3
+        async_call hopping3
+        break
     endswitch
     rest 0x30
     input 1
@@ -25,5 +34,21 @@ async_sub 0x56
 async_sub 0x58
 rest 0xC0
 rest 0xC0
+async_sub 0x56
+stop
+
+hopping2:
+async_sub 0x56
+async_sub 0x58
+rest 0x60
+async_sub 0x56
+rest 0x60
+async_sub 0x56
+stop
+
+hopping3:
+rest 0x18	// 0.5 beats
+async_sub 0x58
+rest 0xA8
 async_sub 0x56
 stop

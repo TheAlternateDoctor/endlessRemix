@@ -368,6 +368,23 @@ loadNextGame:
                 set_func 1, checkA2
             endif
         break
+        case INDEX_ntrIdol
+            0xB2 engine_loaded
+            if SCENE_ntrIdol //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_ntrIdol
+                endif
+                set_func 0, sequenceFanClub
+                call loadFanClub
+                set_func 3, loadFanClubLateSlot
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
         case INDEX_ntrNinja
             0xB2 engine_loaded
             if SCENE_ntrNinja //Stop games from being played next to each other
@@ -762,7 +779,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceAnimalAcrobat
                 call loadAnimalAcrobat
-                set_func 3, preSequenceAnimalAcrobat
+                set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
             endif
@@ -1144,6 +1161,11 @@ loadNextGame:
             goto 0x7AD
         break
     endswitch
+
+    0xB2 debugMode
+    if 1
+        call showScore
+    endif
 return
 
 playNextGame:
@@ -1230,7 +1252,7 @@ if 0
     label 0x5C02
     get_countdown
     if_gt 0
-        0xB4 score, 1
+        //0xB4 score, 1
     else
         goto 0xE2D
     endif

@@ -26,6 +26,12 @@ sequenceFrogHop:
     rest 0x8
     input 1
     0x101<1>
+    0x2B<1> 0x14
+    if 5
+        zoom 3, 0xBD, 0xBD
+        0x104
+        0x104<3>
+    endif
     0xB2 game_state
     if 1
         random 1
