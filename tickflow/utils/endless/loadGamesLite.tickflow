@@ -166,6 +166,9 @@ else
 endif
 return
 
+loadFanClubLateSlot:
+return
+
 loadRingSide:
 0xB2 cellanim_slot
 if 1
