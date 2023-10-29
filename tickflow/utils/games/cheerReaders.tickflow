@@ -207,7 +207,7 @@ itsUpToYouGirlsDown:
     play_sfx 0x1000519
 stop
 
-itsUpToYouSolosUp:
+itsUpToYouSoloUp:
     async_sub 0x63, 0x18
     async_sub 0x5A, 0x18
     async_sub 0x71, 0x18

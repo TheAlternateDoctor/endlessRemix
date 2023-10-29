@@ -9,13 +9,24 @@ sequenceDoubleDate:
 	0x29<2> 
     rest 0x10
 	0xB3 9, 0x21
+    0x2B<1> 0x21
+    if 2
+        0x10A<0>
+    else
+        0x10A<1>
+    endif
     fade<1> 1,1,1
     input 1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 5
         async_call doubleDate1
+    break
+    default
+        0xB3 score_add, 7
+        async_call doubleDate2
+    break
     endswitch
     async_call doubleDateBeat
 stop
@@ -33,6 +44,14 @@ rest 0x60
 async_sub 0x5B
 stop
 
+doubleDate2:
+rest 0x30
+label 0x6778
+async_call randBall
+rest 0x60
+goto 0x6778
+stop
+
 doubleDateBeat:
 label 0xDA7E
 0x102
@@ -40,3 +59,15 @@ label 0xDA7E
 0x104
 rest 0x30
 goto 0xDA7E
+
+randBall:
+random 2
+switch
+case 0
+    async_sub 0x56
+break
+default
+    async_sub 0x58
+break
+endswitch
+stop

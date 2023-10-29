@@ -29,6 +29,7 @@ else
     game_cellanim 0x40, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x40, 0x10
 return
 
 loadCoinToss:
@@ -51,6 +52,7 @@ else
     game_cellanim 0x41, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x41, 0x10
 return
 
 loadClapTrap:
@@ -73,6 +75,7 @@ else
     game_cellanim 0x42, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x42, 0x10
 return
 
 loadBoardMeeting:
@@ -95,6 +98,75 @@ else
     game_cellanim 0x2F, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x2F, 3
+return
+
+loadFanClub:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_NTR_IDOL"
+    random 2
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/ntrIdol_long.zlib", -1
+        0xB3 game_state, 0
+        0x2B 0x15, 3
+        break
+    default
+        set_cellanim 4, u"rom:/cellanim/ntrIdol_arrange.zlib", -1
+        random 2
+        switch
+        case 0
+            0xB3 game_state, 1
+            0x2B 0x15, 5
+            break
+        default
+            0xB3 game_state, 2
+            0x2B 0x15, 0x10
+            break
+        endswitch
+    endswitch
+    set_effect 4, u"rom:/effect/ntrIdol.zlib", -1
+    game_cellanim 0x15, 4
+	game_effect 0x15, 4
+    0xB3 cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_NTR_IDOL"
+    random 2
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/ntrIdol_long.zlib", -1
+        0xB3 game_state, 0
+        0x2B 0x15, 3
+        break
+    default
+        set_cellanim 5, u"rom:/cellanim/ntrIdol_arrange.zlib", -1
+        case 0
+            0xB3 game_state, 1
+            0x2B 0x15, 5
+            break
+        default
+            0xB3 game_state, 2
+            0x2B 0x15, 0x10
+            break
+        endswitch
+        break
+    endswitch
+    set_effect 5, u"rom:/effect/ntrIdol.zlib", -1
+    game_cellanim 0x15, 5
+	game_effect 0x15, 5
+    0xB3 cellanim_slot, 1
+endif
+return
+
+loadFanClubLateSlot:
 return
 
 loadRingSide:
@@ -117,6 +189,7 @@ else
     game_cellanim 0x27, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x27, 3
 return
 
 loadCatchOfTheDay:
@@ -139,6 +212,7 @@ else
     game_cellanim 0x22, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x22, 3
 return
 
 loadFlipperFlop:
@@ -161,6 +235,7 @@ else
     game_cellanim 0x26, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x26, 3
 return
 
 loadClappyTrio:
@@ -189,6 +264,7 @@ else
     game_layout 1, 7
     0xB3 cellanim_slot, 1
 endif
+0x2B 1, 0xE
 return
 
 loadBasketGirls:
@@ -213,6 +289,7 @@ else
     game_effect 0x3C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3C, 3
 return
 
 loadBasketGirlsLate:
@@ -259,6 +336,7 @@ else
     game_cellanim 0x24, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x24, 3
 return
 
 loadSpaceball:
@@ -281,6 +359,7 @@ else
     game_cellanim 0, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0, 3
 return
 
 loadLaunchParty:
@@ -305,6 +384,7 @@ else
     game_cellanim 0x2E, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x2E, 3
 return
 
 loadFreezeFrame:
@@ -331,6 +411,7 @@ else
     game_effect 0x12, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x12, 3
 return
 
 loadFrogHop:
@@ -355,6 +436,7 @@ else
     game_cellanim 0x14, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x14, 0x10
 return
 
 loadDoubleDate:
@@ -377,6 +459,7 @@ else
     game_cellanim 0x21, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x21, 3
 return
 
 loadSoumen:
@@ -397,6 +480,7 @@ else
     game_cellanim 0x1B, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1B, 3
 return
 
 
@@ -440,6 +524,7 @@ else
     game_effect 0x3C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3C, 3
 return
 
 loadUpbeatLate:
@@ -484,6 +569,7 @@ else
     game_layout 0xC, 7
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xC, 3
 return
 
 loadTapTroupeLate:
@@ -522,6 +608,7 @@ else
     game_cellanim 0x13, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x13, 3
 return
 
 loadLoveLab:
@@ -569,6 +656,7 @@ else
     game_cellanim 0x3E, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3E, 3
 return
 
 loadKittiesLate:
@@ -606,6 +694,7 @@ else
     game_effect 0x19, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x19, 3
 return
 
 loadBunnyHop:
@@ -632,6 +721,7 @@ else
     game_effect 0x8, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x8, 0x10
 return
 
 loadDogNinja:
@@ -658,6 +748,7 @@ else
     game_layout 0x16, 7
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x16, 3
 return
 
 loadMarcher:
@@ -682,6 +773,7 @@ else
     game_cellanim 0x5, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x5, 0x10
 return
 
 loadMarcherLate:
@@ -711,6 +803,7 @@ else
     game_effect 0x1E, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1E, 3
 return
 
 
@@ -740,6 +833,7 @@ else
     game_effect 0x38, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x38, 3
 return
 
 loadAnimalAcrobat:
@@ -759,6 +853,7 @@ if 1
     game_cellanim 0x35, 4
     game_effect 0x35, 4
     0xB3 cellanim_slot, 0
+    0xB3 game_state, 1
 else
     set_sfx 5, u"GROUP_BLANCO"
     set_cellanim 5, u"rom:/cellanim/ctrBlanco_arrange.zlib", -1
@@ -767,7 +862,9 @@ else
     game_cellanim 0x35, 5
     game_effect 0x35, 5
     0xB3 cellanim_slot, 1
+    0xB3 game_state, 1
 endif
+0x2B 0x3E, 0x10
 return
 
 loadCatchyTune:
@@ -792,6 +889,7 @@ else
     game_cellanim 0x3B, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3B, 3
 return
 
 loadGleeClub:
@@ -816,6 +914,7 @@ else
     game_cellanim 0x13, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x13, 3
 return
 
 loadCheerReaders:
@@ -838,6 +937,7 @@ else
     game_cellanim 0x20, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x20, 0xE
 return
 
 loadSeeSaw:
@@ -860,6 +960,7 @@ else
     game_cellanim 0x31, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x31, 0x10
 return
 
 loadFinned:
@@ -884,6 +985,7 @@ else
     game_effect 0x23, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x23, 0x10
 return
 
 loadFinnedLate:
@@ -959,6 +1061,7 @@ else
     game_effect 0x7, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x7, 3
 return
 
 loadMicroRow:
@@ -983,6 +1086,7 @@ else
     game_effect 0x23, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x23, 0x10
 return
 
 loadMicroRowLate:
@@ -1044,6 +1148,7 @@ else
     game_effect 0x3C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3C, 3
 return
 
 loadSumoLate:
@@ -1075,6 +1180,7 @@ else
     game_cellanim 0x2, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x2, 3
 return
 
 loadFillbots:
@@ -1105,6 +1211,7 @@ else
     game_effect 0x18, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x18, 3
 return
 
 loadTongueLashing:
@@ -1131,6 +1238,7 @@ else
     game_effect 0x36, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x36, 3
 return
 
 loadRatRace:
@@ -1153,6 +1261,7 @@ else
     game_cellanim 0x9, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x9, 0x10
 return
 
 loadMunchyMonk:
@@ -1175,6 +1284,7 @@ else
     game_cellanim 0x1B, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1B, 0x10
 return
 
 loadPajama:
@@ -1197,6 +1307,7 @@ else
     game_cellanim 0x3A, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3A, 3
 return
 
 loadKarate:
@@ -1271,6 +1382,7 @@ else
     game_cellanim 0x6, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x6, 3
 return
 
 loadGolf:
@@ -1315,6 +1427,7 @@ else
     game_cellanim 0x1C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1C, 3
 return
 
 loadBtSWiiLate:
@@ -1346,6 +1459,7 @@ else
     game_cellanim 0x4, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x4, 3
 return
 
 loadNinjaBodyguard:
@@ -1368,6 +1482,7 @@ else
     game_cellanim 0xD, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xD, 0x10
 return
 
 loadAirboarders:
@@ -1394,6 +1509,7 @@ else
     game_effect 0xE, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xE, 0x10
 return
 
 loadLockstep:
@@ -1416,6 +1532,7 @@ else
     game_cellanim 0xF, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xF, 0xE
 return
 
 loadBlueBirds:
@@ -1442,6 +1559,7 @@ else
     game_layout 0x10, 7
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x10, 0xE
 return
 
 loadDazzles:
@@ -1466,6 +1584,7 @@ else
     game_effect 0x11, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x11, 3
 return
 
 loadDazzlesLate:
@@ -1497,6 +1616,7 @@ else
     game_cellanim 0x30, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x30, 3
 return
 
 loadPowerCalligraphy:
@@ -1519,6 +1639,7 @@ else
     game_cellanim 0xA, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xA, 0xE
 return
 
 loadSpaceDance:
@@ -1543,6 +1664,7 @@ else
     game_cellanim 0xB, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xB, 0x10
 return
 
 loadBtSDS:
@@ -1563,6 +1685,7 @@ else
     game_cellanim 0x1C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1C, 3
 return
 
 loadBtSDSlate:
@@ -1602,6 +1725,7 @@ else
     game_layout 0xC, 7
     0xB3 cellanim_slot, 1
 endif
+0x2B 0xC, 3
 return
 
 loadLumbearjack:
@@ -1628,6 +1752,7 @@ else
     game_effect 0x3F, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3F, 0x10
 return
 
 loadPackingPests:
@@ -1650,6 +1775,7 @@ else
     game_cellanim 0x32, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x32, 3
 return
 
 loadManzai:
@@ -1674,6 +1800,7 @@ else
     game_effect 0x3C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3C, 3
 return
 
 unloadManzai: //Actually we REALLY need this
@@ -1705,6 +1832,7 @@ else
     game_effect 0x3C, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x3C, 3
 return
 
 //NEW
@@ -1729,6 +1857,7 @@ else
     game_model 0x17, 1
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x17, 3
 return
 
 loadFlockstep:
@@ -1751,6 +1880,7 @@ else
     game_cellanim 0x1F, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1F, 0x10
 return
 
 loadWorkingDough:
@@ -1773,6 +1903,7 @@ else
     game_cellanim 0x29, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x29, 3
 return
 
 loadBigRockFinish:
@@ -1795,4 +1926,5 @@ else
     game_cellanim 0x1A, 5
     0xB3 cellanim_slot, 1
 endif
+0x2B 0x1A, 3
 return

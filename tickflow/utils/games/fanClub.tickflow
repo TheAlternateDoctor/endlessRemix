@@ -1,0 +1,100 @@
+yaYaYa:
+    set_cat 0x7D0
+    rest 0x18
+    play_sfx 0x1000EE5
+    rest 0xA8
+    async_sub 0x57
+stop
+
+firstYaYaYa:
+    set_cat 0x7D0
+    rest 0x90
+    async_sub 0x57
+stop
+
+iSuppose:
+    set_cat 0x7D0
+    rest 0x18
+    play_sfx 0x1000EE6
+    rest 0x48
+    async_sub 0x58
+stop
+
+fanBeat:
+    set_cat 0x7D0
+    label 4545
+    0x101<1>
+    rest 0x30
+    goto 4545
+stop
+
+fanLightsBeat:
+    set_cat 0x7D0
+    label 4546
+    0x112
+    0x114 0
+    rest 0x30
+    goto 4546
+stop
+
+fan2LightsBeat:
+    set_cat 0x7D0
+    0x114 1
+    rest 0x60
+    0x112<1> 1
+    label 4547
+    0x112<2> 
+    rest 0x30	// 1.0 beats
+    0x112<3> 
+    rest 0x30	// 1.0 beats
+    goto 4547
+stop
+
+singerYa:
+    0x108 0
+    0x108 1
+    0x108 2
+stop
+
+singerClap:
+    0x10A 0
+    0x10A 1
+    0x10A 2
+stop
+
+singerSquat:
+    0x10B 0
+    0x10B 1
+    0x10B 2
+stop
+
+singerJump:
+    0x10C 0
+    0x10C 1
+    0x10C 2
+stop
+
+singerLand:
+    0x10D 0
+    0x10D 1
+    0x10D 2
+stop
+
+singerWink:
+    0x109 1, 0
+    0x107 1
+    0x107 2
+    rest 0x30
+    0x107 1
+    0x107 2
+stop
+
+singerISuppose:
+    0x10E 0
+stop
+
+singerBeat:
+    0x107 0
+    0x107 1
+    0x107 2
+stop

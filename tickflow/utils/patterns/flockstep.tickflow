@@ -8,18 +8,137 @@ sequenceFlockstep:
 	sub 4
 	0x29<2> 
     rest 0x10
+    0x102<4>
+    random 2
+    switch
+    case 0
+        0x107 1
+        0x102<5> 30
+        break
+    default
+        0x107 0
+        0x102<5> 30
+        break
+    endswitch
 	0xB3 9, 0x1F
     fade<1> 1,1,1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 3
         async_call flockstep1
         break
+    default
+        0xB3 score_add, 3
+        async_call flockstep2
+        break
     endswitch
+    async_call initialBeats
     rest 0x30
     input 1
+    rest 0x90
+    random 2
+    switch
+    case 0
+        async_call addBirdsBeat
+        break
+    case 1
+        break
+    endswitch
+stop
+
+initialBeats:
+0x104 0
+0x40<1> 0x1000291, 0x100
+rest 0x30	// 1.0 beats
+0x104 0
+0x40<1> 0x1000291, 0x100
+rest 0x30	// 1.0 beats
+0x104 0
+0x40<1> 0x1000291, 0x100
+rest 0x24	// 0.75 beats
+0x100 4, 0xC
+rest 0xC	// 0.25 beats
+0x102 0, 1
+0x6B 1
+0x6B<1> 6
+0x40<1> 0x1000291, 0x100
+rest 0x18	// 0.5 beats
+0x6B 0
+stop
+
+addBirdsBeat:
+label 0x6901
+random 4
+switch
+case 0
+    0x102<5> 3
+    break
+case 1
+    0x102<5> 5
+    break
+case 2
+    0x102<5> 8
+    break
+default
+    break
+endswitch
+rest 0x60
+goto 0x6901
 stop
 
 flockstep1:
+rest 0x60
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5F
+rest 0x30
+async_sub 0x60
+rest 0x30
+async_sub 0x5F
+rest 0x30
+async_sub 0x60
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+stop
+
+flockstep2:
+rest 0x60
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5E
+rest 0x30
+async_sub 0x5F
+rest 0x30
+async_sub 0x60
+rest 0x30
+async_sub 0x5F
+rest 0x30
+async_sub 0x60
+rest 0x30
 stop

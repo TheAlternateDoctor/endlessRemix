@@ -32,11 +32,40 @@ async_call dazzlesCrouch
 rest 0x18
 set_cat 0x7D0
 rest 0x90
-async_sub 0x5B
+async_call randomCue
 rest 0xC0
 rest 0x18
-0x105 1
 async_call dazzlesCrouch
 rest 0xA8
-async_sub 0x60
+async_call randomCue
+stop
+
+randomCue:
+0x105 0
+random 5
+switch
+case 0
+    async_sub 0x5B
+    async_call checkArelease, 0x60
+    break
+case 1
+    async_sub 0x5D
+    async_call checkArelease, 0x78
+    0x105 1
+    break
+case 2
+    async_call dazzles5E
+    async_call checkArelease, 0x90
+    break
+case 3
+    async_sub 0x5F
+    async_call checkArelease, 0xA8
+    0x105 1
+    break
+default
+    async_sub 0x60
+    async_call checkArelease, 0x60
+    0x105 1
+    break
+endswitch
 stop

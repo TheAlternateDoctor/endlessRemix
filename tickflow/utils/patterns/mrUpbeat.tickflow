@@ -20,7 +20,7 @@ sequenceUpbeat:
     async_call metronome, 0x18
     async_call cycle
     rest 0xC0*2
-    rest 0x48
+    rest 0x78
     kill_loc cycle
     rest 0x18
     kill_loc metronome

@@ -29,9 +29,17 @@ sequenceMunchyMonk:
 	sub 4
 	0x29<2> 
     rest 0x8
-    0x106<1>
-    0x104<1>
-    0x107 1, 0xC0
+    0x2B<1> 0x1B
+    if 5
+        async_call elephantBeat
+        0x107 0, 0
+        0x106<1>
+        0x104<1>
+    else
+        0x106<1>
+        0x104<1>
+        0x107 1, 0xC0
+    endif
     rest 0x8
     async_call munchyMonkBeat
 	0xB3 9, 0x1B
@@ -115,6 +123,14 @@ label 0x3056
 0x101
 rest 0x30
 goto 0x3056
+
+elephantBeat:
+label 669
+0x108<1> 0, 0, 0, 0, 1
+0x108<2> 
+rest 0x30
+goto 669
+stop
 
 munchyMonkOneDumpling:
     set_cat 0

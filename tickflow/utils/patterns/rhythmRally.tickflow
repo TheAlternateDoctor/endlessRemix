@@ -8,18 +8,64 @@ sequenceRhythmRally:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x17
+	0xB3 9, 0x17  
+    0x109
+    0x108<1> 0
+    0x101 1, 0, 0
+    0x109<1>
     fade<1> 1,1,1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 3
         async_call rhythmRally1
         break
+    case 1
+        0xB3 score_add, 3
+        async_call rhythmRally2
+        break
     endswitch
+    async_call pingpongbeat
     rest 0x30
     input 1
 stop
 
+pingpongbeat:
+label 0x5E5F
+0x104 0
+0x104 1
+rest 0x30
+goto 0x5E5F
+stop
+
 rhythmRally1:
+    0x108<3> 3, 0x300
+    async_sub 0x57
+    rest 0xC0	// 4.0 beats
+    rest 0xC0	// 4.0 beats
+    async_sub 0x56
+    async_sub 0x5A
+    rest 0xC0	// 4.0 beats
+    async_sub 0x59
+    rest 0x90	// 3.0 beats
+    0x107 0
+    0x107 1
+    rest 0x30	// 1.0 beats
+stop
+
+rhythmRally2:
+    0x108<3> 2, 0x300
+    async_sub 0x56
+    rest 0xC0	// 4.0 beats
+    async_sub 0x56
+    async_sub 0x5B
+    rest 0xC0	// 4.0 beats
+    async_sub 0x58
+    rest 0x60	// 2.0 beats
+    async_sub 0x58
+    rest 0x60	// 2.0 beats
+    async_sub 0x58
+    rest 0x60	// 2.0 beats
+    async_sub 0x58
+    rest 0x60	// 2.0 beats
 stop

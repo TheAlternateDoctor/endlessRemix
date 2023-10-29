@@ -34,7 +34,9 @@ stop
 metronome://This should get killed at the end!
 label 0x5E72
 0x106
-rest 0x60
+rest 0x30
+0x106<1>
+rest 0x30
 goto 0x5E72
 
 cycle://This should *also* get killed at the end. 4 beats

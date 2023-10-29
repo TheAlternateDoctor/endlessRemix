@@ -22,11 +22,24 @@ sequencePackingPests:
 	0xB3 9, 0x32
     fade<1> 1,1,1
     input 1
-    random 1
+    random 4
     switch
     case 0
         0xB3 score_add, 9
         async_call packingPests1
+        break
+    case 1
+        0xB3 score_add, 9
+        async_call packingPests2
+        break
+    case 2
+        0xB3 score_add, 9
+        async_call packingPests3
+        break
+    case 3
+        0xB3 score_add, 9
+        async_call packingPests4
+        break
     endswitch
 stop
 
@@ -40,4 +53,49 @@ async_sub 0x5C
 async_sub 0x60
 rest 0xC0
 async_sub 0x5D
+stop
+
+packingPests2:
+0x101<3> 0x300
+async_sub 0x5B
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xC0	// 4.0 beats
+async_sub 0x5E
+rest 0xC0	// 4.0 beats
+stop
+
+packingPests3:
+0x101<3> 0x300
+async_sub 0x5B
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xA8	// 3.5 beats
+0x102<4> 0x48
+rest 0x18	// 0.5 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xC0	// 4.0 beats
+stop
+
+packingPests4:
+0x101<3> 0x300
+async_sub 0x5B
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xC0	// 4.0 beats
+async_sub 0x5B
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+async_sub 0x5F
+rest 0xC0	// 4.0 beats
 stop

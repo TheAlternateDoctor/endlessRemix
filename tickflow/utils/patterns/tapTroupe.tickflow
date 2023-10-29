@@ -2,7 +2,7 @@
 // as it uses Tap Trial as a base.
 
 preSequenceTapTroupe:
-rest 0x48
+rest 0x18
 play_sfx 0x10002DF
 rest 0x30
 play_sfx 0x10002E0
@@ -22,22 +22,42 @@ sequenceTapTroupe:
     0x105 1
     rest 0x10
 	0xB3 9, 0xC
+    0x2B<1> 0xC
+    if 2
+        async_call colorcycle
+    endif
     fade<1> 1,1,1
     input 1
-    random 1
+    random 4
     switch
     case 0
         0xB3 score_add, 20
         async_call tapTroupe1
+        break
+    case 1
+        0xB3 score_add, 20
+        async_call tapTroupe3
+        break
+    case 2
+        0xB3 score_add, 20
+        async_call tapTroupe4
+        break
+    default
+        0xB3 score_add, 16
+        async_call tapTroupe2
+        break
     endswitch
     zoom 3, 0x168, 0x168
     pan 3, 8, 0
     0x102 0
     0x103 0
+    0x40<1> 0x1000B21, 0x160
+    rest 0x30
+    0x40<1> 0x1000B1B, 0x124
 stop
 
 tapTroupe1:
-async_call fourbeatstepinitialprep
+async_call fourbeatstepprep
 rest 0xC0
 async_call zerobom
 rest 0x60
@@ -47,3 +67,79 @@ async_call threebom
 rest 0xC0
 async_call fourbeatstepreturn
 stop
+
+tapTroupe2:
+async_call fourbeatstep
+rest 0xC0
+async_call fourbeatstep
+rest 0xC0
+async_call fourbeatstep
+rest 0xC0
+async_call fourbeatstep
+rest 0xC0
+stop
+
+tapTroupe3:
+async_call twobeatstepprep
+rest 0x60
+async_call eightbom
+rest 0xC0
+rest 0xC0
+async_call twobeatstepprepreturn
+rest 0x60
+async_call zerobom
+rest 0x60
+async_call fourbeatstepreturn
+stop
+
+tapTroupe4:
+async_call fourbeatstepprep
+rest 0xC0
+async_call fivebomnostar
+rest 0xC0
+rest 0x60
+async_call twobeatstepprepreturn
+rest 0x60
+async_call zerobom
+rest 0x60
+async_call fourbeatstepreturn
+stop
+
+colorcycle:
+label 0x5678
+0x78 1, 0xFF, 0x45, 0
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0xA5, 0
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0xAE, 0x42
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0xD0, 0
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0xFF, 0
+rest 0x30	// 1.0 beats
+0x78 1, 0xAD, 0xFF, 0x2F
+rest 0x30	// 1.0 beats
+0x78 1, 0, 0xFF, 0
+rest 0x30	// 1.0 beats
+0x78 1, 0xC, 0xBA, 0xA6
+rest 0x30	// 1.0 beats
+0x78 1, 0, 0xCB, 0xFE
+rest 0x30	// 1.0 beats
+0x78 1, 0x41, 0x69, 0xE1
+rest 0x30	// 1.0 beats
+0x78 1, 0, 0, 0xFF
+rest 0x30	// 1.0 beats
+0x78 1, 0x46, 0x34, 0xA7
+rest 0x30	// 1.0 beats
+0x78 1, 0x85, 0, 0xBE
+rest 0x30	// 1.0 beats
+0x78 1, 0xCC, 0, 0xCC
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0, 0xFF
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0x2C, 0x38
+rest 0x30	// 1.0 beats
+0x78 1, 0xFF, 0, 0
+rest 0x30	// 1.0 beats
+goto 0x5678
+stop 
