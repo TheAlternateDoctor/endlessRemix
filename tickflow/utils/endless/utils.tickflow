@@ -194,7 +194,7 @@ loadNextGame:
                 set_func 0, sequencePowerCalligraphy
                 call loadPowerCalligraphy
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadPowerCalligraphyLate
                 set_func 1, checkA2
             endif
         break
@@ -228,7 +228,7 @@ loadNextGame:
                 set_func 0, sequenceTap
                 call loadTap
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadTapLate
                 set_func 1, checkA2
             endif
         break
@@ -380,7 +380,7 @@ loadNextGame:
                 endif
                 set_func 0, sequenceFanClub
                 call loadFanClub
-                set_func 3, loadFanClubLateSlot
+                set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
             endif
@@ -1157,7 +1157,7 @@ loadNextGame:
                 set_func 0, sequenceSplashdown
                 call loadSplashdown
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadSplashdownLate
                 set_func 1, checkA2
             endif
         break

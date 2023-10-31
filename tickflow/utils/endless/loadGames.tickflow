@@ -733,7 +733,12 @@ if 1
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/ntrIdol_bomb.zlib", -1
-        set_sfx 4, u"GROUP_NTR_IDOL_RUSH"
+        0x202
+        if 0 //Japanese
+            set_sfx 4, u"GROUP_NTR_IDOL_RUSHJP"
+        else
+            set_sfx 4, u"GROUP_NTR_IDOL_RUSH"
+        endif
         0xB3 game_state, 3
         0x2B 0x15, 5
         break
@@ -791,7 +796,12 @@ else
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/ntrIdol_bomb.zlib", -1
-        set_sfx 5, u"GROUP_NTR_IDOL_RUSH"
+        0x202
+        if 0 //Japanese
+            set_sfx 5, u"GROUP_NTR_IDOL_RUSHJP"
+        else
+            set_sfx 5, u"GROUP_NTR_IDOL_RUSH"
+        endif
         0xB3 game_state, 3
         0x2B 0x15, 5
         break
@@ -816,20 +826,6 @@ else
     0xB3 cellanim_slot, 1
 endif
 return
-
-loadFanClubLateSlot: //Help me I am in pain
-    0xB2 game_state
-    if 3
-        async_call unloadSpeAudio
-        rest 0xC
-        0xB2 cellanim_slot
-        if 1
-            set_sfx 6, u"GROUP_NTR_IDOL_RUSHJP"
-        else
-            set_sfx 0xB, u"GROUP_NTR_IDOL_RUSHJP"
-        endif
-    endif
-stop
 
 loadFreezeFrame:
 0xB2 cellanim_slot
@@ -1234,7 +1230,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_SPLASH"
     random 4
     switch
     case 0
@@ -1253,7 +1248,6 @@ if 1
     game_cellanim 0x13, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_SPLASH"
     random 4
     switch
     case 0
@@ -1274,6 +1268,15 @@ else
 endif
 0x2B 0x13, 3
 return
+
+loadSplashdownLate:
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_SPLASH"
+else
+    set_sfx 5, u"GROUP_SPLASH"
+endif
+stop
 
 loadLoveLab:
 0xB2 cellanim_slot
@@ -3798,7 +3801,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_AGB_SHUJI"
     random 4
     switch
     case 0
@@ -3817,7 +3819,6 @@ if 1
     game_cellanim 0xA, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_AGB_SHUJI"
     random 4
     switch
     case 0
@@ -3838,6 +3839,16 @@ else
 endif
 0x2B 0xA, 3
 return
+
+loadPowerCalligraphyLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_AGB_SHUJI"
+else
+    set_sfx 4, u"GROUP_AGB_SHUJI"
+endif
+stop
+
 
 loadSpaceDance:
 0xB2 cellanim_slot
@@ -3929,7 +3940,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_AGB_TAP"
     random 10
     switch
     case 0
@@ -3980,7 +3990,6 @@ if 1
     game_layout 0xC, 6
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_AGB_TAP"
     random 10
     switch
     case 0
@@ -4032,6 +4041,15 @@ else
     0xB3 cellanim_slot, 1
 endif
 return
+
+loadTapLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_AGB_TAP"
+else
+    set_sfx 4, u"GROUP_AGB_TAP"
+endif
+stop
 
 loadLumbearjack:
 0xB2 cellanim_slot

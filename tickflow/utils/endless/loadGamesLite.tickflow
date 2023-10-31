@@ -623,18 +623,25 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_SPLASH"
     set_cellanim 4, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
     game_cellanim 0x13, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_SPLASH"
     set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
     game_cellanim 0x13, 5
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x13, 3
 return
+
+loadSplashdownLate:
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_SPLASH"
+else
+    set_sfx 5, u"GROUP_SPLASH"
+endif
+stop
 
 loadLoveLab:
 0xB2 cellanim_slot
@@ -1654,18 +1661,25 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_AGB_SHUJI"
     set_cellanim 4, u"rom:/cellanim/agbShuji_v0.zlib", -1
     game_cellanim 0xA, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_AGB_SHUJI"
     set_cellanim 5, u"rom:/cellanim/agbShuji_v0.zlib", -1
     game_cellanim 0xA, 5
     0xB3 cellanim_slot, 1
 endif
 0x2B 0xA, 0xE
 return
+
+loadPowerCalligraphyLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_AGB_SHUJI"
+else
+    set_sfx 4, u"GROUP_AGB_SHUJI"
+endif
+stop
 
 loadSpaceDance:
 0xB2 cellanim_slot
@@ -1732,7 +1746,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_AGB_TAP"
     set_cellanim 4, u"rom:/cellanim/agbTap_long.zlib", -1
     set_effect 4, u"rom:/effect/agbTap.zlib", -1
     set_layout 6, u"rom:/layout/agbTap.zlib", -1
@@ -1741,7 +1754,6 @@ if 1
     game_layout 0xC, 6
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_AGB_TAP"
     set_cellanim 5, u"rom:/cellanim/agbTap_long.zlib", -1
     set_effect 5, u"rom:/effect/agbTap.zlib", -1
     set_layout 7, u"rom:/layout/agbTap.zlib", -1
@@ -1752,6 +1764,15 @@ else
 endif
 0x2B 0xC, 3
 return
+
+loadTapLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_AGB_TAP"
+else
+    set_sfx 4, u"GROUP_AGB_TAP"
+endif
+stop
 
 loadLumbearjack:
 0xB2 cellanim_slot
