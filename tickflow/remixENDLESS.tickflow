@@ -300,7 +300,10 @@ label 0x54D
 0xB3 score,0
 
 async_call basketGirlsStart
-async_call checkA2
+0xB2 lives_enabled
+if 1
+	async_call checkA2
+endif
 rest 0x30
 input 1
 call loadNextGame
