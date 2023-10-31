@@ -719,19 +719,19 @@ if 1
         set_cellanim 4, u"rom:/cellanim/ntrIdol_r1ds.zlib", -1
         set_sfx 4, u"GROUP_NTR_IDOL"
         0xB3 game_state, 0
-        0x2B 0x15, 3
+        0x2B 0x15, 1
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/ntrIdol_remix07.zlib", -1
         set_sfx 4, u"GROUP_NTR_IDOL"
         0xB3 game_state, 0
-        0x2B 0x15, 3
+        0x2B 0x15, 1
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/ntrIdol_remix03.zlib", -1
         set_sfx 4, u"GROUP_NTR_IDOL"
         0xB3 game_state, 0
-        0x2B 0x15, 3
+        0x2B 0x15, 0xA
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/ntrIdol_bomb.zlib", -1
@@ -782,19 +782,19 @@ else
         set_cellanim 5, u"rom:/cellanim/ntrIdol_r1ds.zlib", -1
         set_sfx 5, u"GROUP_NTR_IDOL"
         0xB3 game_state, 0
-        0x2B 0x15, 3
+        0x2B 0x15, 1
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/ntrIdol_remix07.zlib", -1
         set_sfx 5, u"GROUP_NTR_IDOL"
         0xB3 game_state, 0
-        0x2B 0x15, 3
+        0x2B 0x15, 1
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ntrIdol_remix03.zlib", -1
         set_sfx 5, u"GROUP_NTR_IDOL"
         0xB3 game_state, 0
-        0x2B 0x15, 3
+        0x2B 0x15, 0xA
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/ntrIdol_bomb.zlib", -1
@@ -1161,7 +1161,7 @@ if 1
         set_cellanim 4, u"rom:/cellanim/rvlTap_remix07.zlib", -1
         break
     case 2
-        0x2B 0xC, 2
+        0x2B 0xC, 0x10
         set_cellanim 4, u"rom:/cellanim/rvlTap_SIR.zlib", -1
         break
     endswitch
@@ -1183,7 +1183,7 @@ else
         set_cellanim 5, u"rom:/cellanim/rvlTap_remix07.zlib", -1
         break
     case 2
-        0x2B 0xC, 2
+        0x2B 0xC, 0x10
         set_cellanim 5, u"rom:/cellanim/rvlTap_SIR.zlib", -1
         break
     endswitch
@@ -3597,6 +3597,7 @@ else
     async_call unloadGameSlot5
 endif
 rest 0xC
+0xB3 game_state, 0
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BLUE_BIRDS"
@@ -3616,6 +3617,7 @@ if 1
         break
     default
         set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_SIR.zlib", -1
+        0xB3 game_state, 1
         break
     endswitch
     set_layout 6, u"rom:/layout/ntrBlueBirds.zlib", -1
@@ -3640,6 +3642,7 @@ else
         break
     default
         set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_SIR.zlib", -1
+        0xB3 game_state, 1
         break
     endswitch
     set_layout 7, u"rom:/layout/ntrBlueBirds.zlib", -1

@@ -32,17 +32,38 @@ sequenceLaunchParty:
 stop
 
 launchParty1:
-    0x102<0> 1
-    0x103
-    0x102<1> 2
-    0x100 1
+    async_call launchPartyRandRocket
     rest 0xC0
-    0x102<1> 1
-    0x100 2
+    async_call launchPartyRandRocket
     rest 0xC0
-    0x102<1> 0
-    0x100 1
+    async_call launchPartyRandRocket
     rest 0xC0
-    0x102<1> 5
-    0x100 0
+    async_call launchPartyRandRocket
 stop
+
+launchPartyRandRocket:
+random 4
+switch
+case 0
+    0x102<0> 0
+    0x100 0
+    0x103
+    break
+case 1
+    0x102<0> 1
+    0x100 1
+    0x103
+    break
+case 2
+    0x102<0> 2
+    0x100 2
+    0x103
+    break
+case 3
+    0x102<0> 3
+    0x100 3
+    0x103
+    break
+endswitch
+stop
+

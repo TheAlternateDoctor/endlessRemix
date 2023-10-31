@@ -13,12 +13,33 @@ sequenceSSWii:
     fade<1> 1,1,1
     0x10F
     input 1
-    random 1
+    random 6
     switch
     case 0
         0xB3 score_add, 6
         async_call ssWii1
         async_call ssWiiCheck1
+        break
+    case 1
+        0xB3 score_add, 6
+        async_call ssWii2
+        break
+    case 2
+        0xB3 score_add, 6
+        async_call ssWii3
+        break
+    case 3
+        0xB3 score_add, 6
+        async_call ssWii4
+        break
+    case 4
+        0xB3 score_add, 6
+        async_call ssWii5
+        break
+    case 5
+        0xB3 score_add, 6
+        async_call ssWii6
+        break
     endswitch
     async_call ssWiiBeatAnims
 stop
@@ -39,6 +60,101 @@ ssWii1:
     async_sub 0x56
     rest 0x30
     async_sub 0x57
+stop
+
+ssWii2:
+0x109<2>
+async_sub 0x56
+rest 0x30	// 1.0 beats
+async_sub 0x57
+rest 0x60	// 2.0 beats
+async_sub 0x56
+rest 0x30	// 1.0 beats
+async_sub 0x57
+rest 0xC0	// 4.0 beats
+async_sub 0x58
+rest 0x90	// 3.0 beats
+0x109<3>
+async_sub 0x56
+rest 0x30	// 1.0 beats
+async_sub 0x57
+rest 0xC0	// 4.0 beats
+stop
+
+ssWii3:
+0x109<0>
+async_sub 0x56
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+rest 0xC0	// 4.0 beats
+async_sub 0x56
+rest 0x30	// 1.0 beats
+async_sub 0x57
+rest 0x90	// 3.0 beats
+0x109<2>
+async_sub 0x56
+rest 0xC0	// 4.0 beats
+stop
+
+ssWii4:
+async_sub 0x56
+0x109<3>
+rest 0x30
+async_sub 0x57
+0x109<3>
+rest 0x60
+async_sub 0x56
+0x109<3>
+rest 0x30
+async_sub 0x57
+0x109<3>
+rest 0x60
+async_sub 0x56
+0x109<3>
+rest 0x30
+0x107<1>
+async_sub 0x57
+0x109<3>
+rest 0x90
+async_sub 0x56
+0x109<3>
+rest 0x30
+stop
+
+ssWii5:
+async_sub 0x56
+0x109<0>
+rest 0x30
+async_sub 0x57
+0x109<0>
+rest 0xC0
+async_sub 0x58
+rest 0xC0
+rest 0x60
+async_sub 0x56
+0x109<2>
+rest 0x30
+async_sub 0x57
+0x109<2>
+stop
+
+ssWii6:
+async_sub 0x56
+0x109<0>
+rest 0x30
+async_sub 0x57
+0x109<0>
+rest 0xC0
+async_sub 0x58
+rest 0xC0
+async_sub 0x56
+0x109<4>
+rest 0x30
+async_sub 0x57
+0x109<4>
+rest 0x90
+async_sub 0x56
+0x109<3>
 stop
 
 ssWiiBeatAnims:

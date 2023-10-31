@@ -15,30 +15,33 @@ sequenceFanClub:
 	sub 4
 	0x29<2> 
     rest 0x10
-    0xB3 0x98, 0
 	0xB3 9, 0x15
-    0x2B game_state
-    if 2
-        0xB3 0x98, 1
-    endif
     0xB2<1> 0x15
     if 3
-        random 3
-        switch 
+        random 2
+        switch
         case 0
-            async_call fanLightsBeat
-            break
-        case 1
             0x114 1
             break
         endswitch
     else
-        random 2
-        switch 
-        case 0
-            async_call fan2LightsBeat
-            break
-        endswitch
+        if 5
+            random 2
+            switch 
+            case 0
+                async_call fan2LightsBeat
+                break
+            endswitch
+        else
+            if 0x10
+                random 2
+                switch 
+                case 0
+                    async_call fan2LightsBeat
+                    break
+                endswitch
+            endif
+        endif
     endif
     fade<1> 1,1,1
     0xB2 0x99

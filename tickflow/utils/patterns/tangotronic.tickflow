@@ -12,11 +12,20 @@ sequenceTangotronic:
 	0xB3 9, 0x3D
     fade<1> 1,1,1
     input 1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 4
         async_call tangotronic1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call tangotronic2
+        break
+    default
+        0xB3 score_add, 4
+        async_call tangotronic3
+        break
     endswitch
     0x10E 1
     0x10D<1>
@@ -37,6 +46,42 @@ tangotronic1:
     0x101
     rest 0x78
     async_call tango1sub59
+stop
+
+tangotronic2:
+0x101
+rest 0x30
+0x103<1> 3
+async_sub 0x67
+rest 0xC0
+async_sub 0x65
+rest 0x18
+0x103 3
+rest 0x60
+0x103 3
+async_sub 0x68
+rest 0xC0
+0x103<1> 3
+0x107<3>
+async_call tango1sub59
+stop
+
+tangotronic3:
+0x103 3
+rest 0x18
+async_sub 0x68
+rest 0x18	
+rest 0x78
+rest 0x30
+0x103<1> 6
+async_sub 0x68
+rest 0x90
+rest 0x18
+0x103 3
+async_sub 0x5C
+rest 0x60
+rest 0x78
+async_call tango1sub59
 stop
 
 tango1sub59:

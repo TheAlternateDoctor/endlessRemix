@@ -49,42 +49,54 @@ stop
 bigRockFinishPitchSetting: //hehe hopefully this works...
 0xB2 speed
 if_geq 0
-	0x102<1> -1
-endif
-if_geq 0x115
-	0x102<1> -2
-endif
-if_geq 0x12A
-	0x102<1> -3
-endif
-if_geq 0x13F
-	0x102<1> -4
-endif
-if_geq 0x154
-	0x102<1> 0
-endif
-if_geq 0x16A
-	0x102<1> 1
-endif
-if_geq 0x17F
-	0x102<1> 2
-endif
-if_geq 0x194
-	0x102<1> 3
-endif
-if_geq 0x1A9
-	0x102<1> 4
-endif
-if_geq 0x1BE
-	0x102<1> 5
-endif
-if_geq 0x1D3
-	0x102<1> 6
-endif
-if_geq 0x1E9
-	0x102<1> 7
-endif
-if_geq 0x200
-	0x102<1> -1
+    if_geq 0x115
+        if_geq 0x12A
+            if_geq 0x13F
+                if_geq 0x154
+                    if_geq 0x16A
+                        if_geq 0x17F
+                            if_geq 0x194
+                                if_geq 0x1A9
+                                    if_geq 0x1BE
+                                        if_geq 0x1D3
+                                            if_geq 0x1E9
+                                                if_geq 0x200
+	                                                0x102<1> -1
+                                                else
+	                                                0x102<1> -2
+                                                endif
+                                            else
+	                                            0x102<1> -3
+                                            endif
+                                        else
+	                                        0x102<1> -4
+                                        endif
+                                    else
+	                                    0x102<1> 7
+                                    endif
+                                else
+	                                0x102<1> 6
+                                endif
+                            else
+	                            0x102<1> 5
+                            endif
+                        else
+	                        0x102<1> 4
+                        endif
+                    else
+	                    0x102<1> 3
+                    endif
+                else
+	                0x102<1> 2
+                endif
+            else
+	            0x102<1> 1
+            endif
+        else
+	        0x102<1> 0
+        endif
+    else
+	    0x102<1> -1
+    endif
 endif
 stop

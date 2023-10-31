@@ -10,11 +10,16 @@ sequenceLumbearjack:
 	0x29<2> 
     rest 0x8
     input 1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 6
         async_call lumbearjack1
+        break
+    default
+        0xB3 score_add, 6
+        async_call lumbearjack2
+        break
     endswitch
     rest 0x8
 	0xB3 9, 0x3F
@@ -32,4 +37,15 @@ lumbearjack1:
     async_call smallLogRight
     rest 0x90
     async_call mediumLogLeft
+stop
+
+lumbearjack2:
+    async_call startLogRight
+    rest 0x8
+    rest 0xA8
+    async_call mediumLogLeft
+    rest 0xC0
+    async_call smallLogRight
+    rest 0x60
+    async_call bigLogLeft
 stop

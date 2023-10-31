@@ -12,11 +12,24 @@ sequenceCatchOfTheDay:
     setrest 3, 0xB
 	0xB3 9, 0x22
     fade<1> 1,1,1
-    random 1
+    random 4
     switch
     case 0
         0xB3 score_add, 4
         async_call catchOfTheDay1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call catchOfTheDay2
+        break
+    case 2
+        0xB3 score_add, 4
+        async_call catchOfTheDay3
+        break
+    case 3
+        0xB3 score_add, 4
+        async_call catchOfTheDay4
+        break
     endswitch
     rest 0x48
     input 1
@@ -39,5 +52,48 @@ rest 0x78
 0x101 0
 rest 0x18
 async_sub 0x56
+stop
 
+catchOfTheDay2:
+0x102 0
+async_sub 0x56
+rest 0xC0
+0x102 -1
+async_sub 0x57
+rest 0xC0
+0x102 2
+async_sub 0x56
+rest 0x60
+rest 4
+0x102 -1
+0x103 2
+async_sub 0x58
+stop
+
+catchOfTheDay3:
+0x102 -1
+async_sub 0x56
+rest 0x90
+rest 0x18
+0x102 0
+async_sub 0x57
+rest 0xC0
+
+rest 0x60
+rest 0x18
+0x102 -1
+async_sub 0x58
+stop
+
+catchOfTheDay4:
+0x102 2
+async_sub 0x57
+rest 0xC0
+0x102 -1
+async_sub 0x57
+rest 0xC0
+
+rest 0x60
+0x102 1
+async_sub 0x58
 stop

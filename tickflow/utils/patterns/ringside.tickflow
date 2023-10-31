@@ -13,11 +13,16 @@ sequenceRingSide:
     0x109 1
 	0xB3 9, 0x27
     fade<1> 1,1,1
-    random 1
+    random 2
     switch
     case 0
         0xB3 score_add, 5
         async_call ringside1
+        break
+    case 1
+        0xB3 score_add, 5
+        async_call ringside2
+        break
     endswitch
     async_call ringsideBeatAnims
     rest 0x60
@@ -33,6 +38,18 @@ async_sub 0x56
 rest 0x90
 async_sub 0x59
 rest 0xC0
+stop
+
+ringside2:
+async_sub 0x56
+rest 0xC0
+rest 0x18
+async_sub 0x56
+rest 0x78
+async_sub 0x57
+rest 0x30
+rest 0xC0
+async_sub 0x56
 stop
 
 ringsideBeatAnims:

@@ -10,13 +10,24 @@ sequenceRatRace:
     rest 0x10
 	0xB3 9, 0x9
     fade<1> 1,1,1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 4
         async_call ratRace1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call ratRace2
+        break
+    case 2
+        0xB3 score_add, 4
+        async_call ratRace3
+        break
     endswitch
+    0x102 1
     0x105 2
+    0x101 1
     rest 0x60
     input 1
 stop
@@ -30,5 +41,36 @@ rest 0xC0
 0x106 0xC0, 0
 async_sub 0x56
 rest 0x60
+async_sub 0x57
+stop
+
+ratRace2:
+unrest 0x60
+0x106 0xC0, 0
+async_sub 0x56
+rest 0xC0
+rest 0x30
+rest 0x30
+async_sub 0x57
+rest 0x60
+0x106 0xC0, 0
+async_sub 0x56
+0x104 0
+0x104 1
+rest 0xC0
+rest 0x30
+async_sub 0x57
+stop
+
+ratRace3:
+unrest 0x60
+0x106 0xC0, 0
+async_sub 0x56
+rest 0xC0
+rest 0x30
+rest 0x90
+0x106 0xC0, 0
+rest 0xC0
+rest 0x30
 async_sub 0x57
 stop
