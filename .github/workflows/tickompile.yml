@@ -71,6 +71,7 @@ jobs:
         run: |
           wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
           mkdir -p out
+          cp code.ips out
           sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
           
       - name: Build C00.bin
@@ -80,24 +81,12 @@ jobs:
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
           
-      - name: Build C00.bin (debug)
-        run: |
-          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
-          java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/C00-debug.bin
-          
       - name: Build C00.bin lite
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00-lite.bin
-
-      - name: Build C00.bin lite (debug)
-        run: |
-          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
-          java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ base.bin out/C00-debug-lite.bin
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
