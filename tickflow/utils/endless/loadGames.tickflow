@@ -70,11 +70,13 @@ if 1
     set_sfx 4, u"GROUP_NTR_COIN_TOSS_REMIX"
     set_cellanim 4, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 4
+    game_cellanim 0x25, 4
     0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_COIN_TOSS_REMIX"
     set_cellanim 5, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 5
+    game_cellanim 0x25, 5
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x41, 0x10

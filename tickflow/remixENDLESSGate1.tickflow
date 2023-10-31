@@ -102,5 +102,6 @@
 #include utils/games/dazzles.tickflow
 #include utils/games/cheerReaders.tickflow
 #include utils/games/lumbearjack.tickflow
+#include utils/games/coinToss.tickflow
 
 #include utils/utils.tickflow

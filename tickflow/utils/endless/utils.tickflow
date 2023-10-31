@@ -1396,8 +1396,8 @@ label 0x1007
 if 0
     0x200 9
     if 1 // Debug mode active
-        play_sfx 0x100031E
-        0xB3 10,1 //Enables Debug mode
+        play_sfx 0x10002C1
+        0xB3 is_debug,1 //Enables Debug mode
         0xB3 lives_enabled, 0
     endif
 endif

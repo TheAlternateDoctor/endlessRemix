@@ -76,16 +76,19 @@ rest 1
 goto 0x51C3
 
 failInput:
-    0xB3 perf_miss, 1
-    0xB4 lives, -1
-    call life
-    async_call waitAfterFail
-    0xB2 lives
-    0x40<1> 0x10002C2, 0x300
-    if 0
-        set_cat 0
-        kill_loc playNextGame
-        call gamekiller
+    0xB2 lives_enabled
+    if 1
+        0xB3 perf_miss, 1
+        0xB4 lives, -1
+        call life
+        async_call waitAfterFail
+        0xB2 lives
+        0x40<1> 0x10002C2, 0x300
+        if 0
+            set_cat 0
+            kill_loc playNextGame
+            call gamekiller
+        endif
     endif
 stop
 

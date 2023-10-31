@@ -1,6 +1,29 @@
-// Due to the simplicity of the game, no other patterns are allowed.
 
 sequenceCoinToss:
+	set_cat 0
+    random 2
+    switch
+    case 0
+        play_sfx 0x100029E
+        async_call coinTossFinalRemix
+        break
+    case 1
+        call coinTossLoadRecEngine
+        0xB3 score_add, 2
+        async_call coinToss1
+        break
+        endswitch
+    endswitch
+stop
+
+coinToss1:
+    async_call launchCoinCowbell
+    rest 0xC0
+    rest 0xC0
+    async_call launchCoin
+stop
+
+coinTossFinalRemix:
 	set_cat 0
     rest 0x8
 	call changeEngine
@@ -10,6 +33,7 @@ sequenceCoinToss:
     rest 0x10
 	0xB3 9, 0x41
     fade<1> 1,1,1
+	set_cat 0x7D0
     input 1
     0xAF<6> 0
     0x102 1
@@ -34,3 +58,22 @@ sequenceCoinToss:
     rest 0xC0	// 4.0 beats
     rest 0x60	// 2.0 beats
 stop
+
+coinTossLoadRecEngine:
+        play_sfx 0x100029F
+        rest 0x8
+        call changeEngine
+        engine 0x25
+        sub 4
+        0x29<2> 
+        input 1
+        rest 0x8
+        0x8B 0, 0
+        0x101<1> 2
+        0xB3 0x102, 5
+        0x106 "bg", 0, 1, 2, 2, 0, 0, 0x100, 0, 0, 0x100
+        async_call coinAnimLoop
+        async_call checkEmptyCatch
+        rest 0x8
+        fade<1> 1,1,1
+return
