@@ -411,11 +411,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrPingpong
-                    set_func 0, sequenceRhythmRally
-                    call loadRhythmRally
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceRhythmRally
+                call loadRhythmRally
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -447,11 +448,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShortLive
-                    set_func 0, sequenceBigRockFinish
-                    call loadBigRockFinish
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceBigRockFinish
+                call loadBigRockFinish
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -500,11 +502,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBird
-                    set_func 0, sequenceFlockstep
-                    call loadFlockstep
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceFlockstep
+                call loadFlockstep
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -672,11 +675,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlManju
-                    set_func 0, sequenceWorkingDough
-                    call loadWorkingDough
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceWorkingDough
+                call loadWorkingDough
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -1387,12 +1391,14 @@ return
 
 bonusStuff:
 set_cat 0
+label 0x1007
 0xB2 10
 if 0
     0x200 9
     if 1 // Debug mode active
         play_sfx 0x100031E
         0xB3 10,1 //Enables Debug mode
+        0xB3 4, 0
     endif
 endif
 0xB2 4
@@ -1404,4 +1410,4 @@ if 1
     endif
 endif
 rest 2
-goto bonusStuff
+goto 0x1007

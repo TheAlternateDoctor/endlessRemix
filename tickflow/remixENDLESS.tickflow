@@ -106,7 +106,7 @@
 #include utils/utils.tickflow
 
 // #index 0x5E
-#index 0x59
+#index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -120,17 +120,16 @@ play_sfx 0x100029E
 0xA4<2> 1
 0xB3 4, 1
 
-0x201
-if_lt 0x103
-    0xB3 4, 0
-endif
+// 0x201
+// if_lt 0x103
+//     0xB3 4, 0
+// endif
 
 0x75<1> 
 if 0
 	0xA5 1
 	0xA4<2> 1
 	async_call prologue
-	async_call bonusStuff
 else 
 	0xA6<1> 0
 	0x75 0
@@ -156,7 +155,6 @@ rest 0xC	// 0.25 beats
 0xA8<4> 0x5E
 
 sub 9
-kill_loc bonusStuff
 sub 6
 0x81 
 if 1
@@ -279,13 +277,13 @@ set_cat 0
 async_call startingGame
 rest 0x30
 fade<1> 1,1,1
+kill_loc bonusStuff
 0xB2 4
-// if 1
-// 	0x67<1> 2,"lifeCounter_3"
-// else
-//     0x67<1> 2,"scoreCounter_0"
-// endif
-call textCondvar
+if 1
+	0x67<1> 2,"lifeCounter_3"
+else
+    0x67<1> 2,"scoreCounter_0"
+endif
 rest 0x30
 label 0x54D
 0x9C<2>
@@ -519,6 +517,8 @@ if 0
 	endif 
 endif 
 0x102 
+0xB3 4, 1
+async_call bonusStuff
 label 0xC7
 0xA7 
 if 1
