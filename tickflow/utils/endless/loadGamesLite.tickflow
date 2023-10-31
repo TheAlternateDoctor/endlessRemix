@@ -297,13 +297,21 @@ async_call unloadSpeAudio
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 6, u"GROUP_BASKET_EN"
-    set_sfx 7, u"GROUP_BASKET_JP"
-    0xB3 sfx_plus,2
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_BASKET_JP"
+    else
+        set_sfx 6, u"GROUP_BASKET_EN"
+    endif
+    0xB3 sfx_plus,1
 else
-    set_sfx 0xB, u"GROUP_BASKET_EN"
-    set_sfx 0xC, u"GROUP_BASKET_JP"
-    0xB3 sfx_plus_2,2
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_BASKET_JP"
+    else
+        set_sfx 0xB, u"GROUP_BASKET_EN"
+    endif
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -485,20 +493,27 @@ return
 
 
 loadSoumenLate:
-rest 0xC
 async_call unloadSpeAudio
 rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_SOUMEN"
-    set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 7, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 sfx_plus,2
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_SOUMEN_INPUT_JP"
+    else
+        set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
+    endif
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_SOUMEN"
-    set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 0xC, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 sfx_plus_2,2
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_SOUMEN_INPUT_JP"
+    else
+        set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
+    endif
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -579,11 +594,21 @@ rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_RVL_TAP"
-    set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_RVL_TAP_VOICE_JP"
+    else
+        set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+    endif
     0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_RVL_TAP"
-    set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_JP"
+    else
+        set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+    endif
     0xB3 sfx_plus_2,1
 endif
 stop
