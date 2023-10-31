@@ -28,11 +28,20 @@ sequenceFlipperFlop:
     0x65<5> 2
     0x105<4>
     input 1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 17
         async_call flipperFlop1
+        break
+    case 1
+        0xB3 score_add, 17
+        async_call flipperFlop2
+        break
+    default
+        0xB3 score_add, 17
+        async_call flipperFlop3
+        break
     endswitch
     rest 0x8
 	0xB3 9, 0x26
@@ -64,6 +73,55 @@ async_sub 0x63
 rest 0x30
 async_sub 0x63
 
+stop
+
+flipperFlop2:
+0x100 0x8, 0
+rest 0x8
+0x103
+0x105<1>
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+async_call flipperFlopTriple
+async_sub 0x69 
+rest 0xC0
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+async_sub 0x6B
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+stop
+
+flipperFlop3:
+0x100 0x8, 0
+rest 0x8
+0x103
+0x105<1> 
+async_call flipperFlopFlip
+async_sub 0x70
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopFlip
+rest 0xC0
+rest 0x30
+async_call flipperFlopFlip
+rest 0x30
+async_call flipperFlopTriple
+async_call flipperFlopFlip
+async_sub 0x70
 stop
 
 flipperFlopFlip:

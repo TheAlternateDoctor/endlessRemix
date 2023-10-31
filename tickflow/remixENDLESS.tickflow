@@ -254,7 +254,7 @@ input 0
 
 0xB3 score,0 //Score
 0xB3 cellanim_slot,0 //Celanim
-0xB3 lives,3 //Lives
+0xB3 lives,99 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 is_debug,debugMode //Enables Debug mode
 0xB3 sfx_plus,2 //Slot 7 has SFX

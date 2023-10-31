@@ -23,11 +23,20 @@ sequenceBtSWii:
     rest 0x10
 	0xB3 9, 0x1C
     fade<1> 1,1,1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 6
         async_call btSWii1
+        break
+    case 1
+        0xB3 score_add, 9
+        async_call btSWii2
+        break
+    default
+        0xB3 score_add, 3
+        async_call btSWii3
+        break
     endswitch
     rest 0x18
     input 1
@@ -45,6 +54,62 @@ async_sub 0x58
 rest 0xC0
 async_sub 0x5F
 stop
+
+btSWii2:
+0x102 -1, 3, 0, 0, 0
+async_sub 0x81
+async_call btSWii3to1
+rest 0x90
+async_sub 0x5F
+rest 0x30
+async_sub 0x82, 0x30
+rest 0x90
+0x101 -1, 0
+0x102 -1, 0, 0, 0
+rest 0x30
+0x101<1>
+async_sub 0x5F
+async_sub 0x83
+rest 0x30
+rest 0x30
+rest 0x60
+0x101 -1, 0
+0x102 -1, 0, 0, 0
+rest 0x30
+0x101<1>
+async_sub 0x75
+stop
+
+btSWii3:
+0x101 -1, 0
+0x102 -1, 0, 0, 0, 0
+async_sub 0x59
+rest 0xC0	// 4.0 beats
+0x101<1> 
+rest 0x30	// 1.0 beats
+0x101 1, 0
+0x102 1, 0, 0, 0, 0
+rest 0x30	// 1.0 beats
+0x101 0, 1
+0x102 0, 1, 0, 0, 0
+rest 0x30	// 1.0 beats
+async_sub 0x81
+0x101 1, 2
+0x102 1, 2, 0, 0, 0
+rest 0x30	// 1.0 beats
+0x101 2, 3
+0x102 2, 3, 0, 0, 0
+rest 0x30	// 1.0 beats
+0x101 3, 2
+0x102 3, 2, 0, 0, 0
+rest 0x30	// 1.0 beats
+0x101<1> 
+async_sub 0x60
+rest 0xC0	// 4.0 beats
+async_sub 0x6C
+rest 0x30	// 1.0 beats
+stop
+
 
 btSWii3to1:
 0x101 3, 2

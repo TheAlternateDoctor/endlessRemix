@@ -11,11 +11,20 @@ sequencePajama:
     rest 0x10
 	0xB3 9, 0x3A
     fade<1> 1,1,1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 4
         async_call pajamaParty1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call pajamaParty2
+        break
+    case 2
+        0xB3 score_add, 4
+        async_call pajamaParty3
+        break
     endswitch
     rest 0x30
     input 1
@@ -31,3 +40,27 @@ async_sub 0x56
 rest 0xC0
 async_sub 0x5A
 stop
+
+pajamaParty2:
+async_sub 0x56
+rest 0xC0
+async_sub 0x57
+rest 0xC0
+async_sub 0x58
+stop
+
+pajamaParty3:
+async_sub 0x56
+rest 0x60
+async_sub 0x57
+rest 0x60
+async_sub 0x57
+rest 0xC0
+0x104
+async_sub 0x56
+rest 0x90
+async_sub 0x56
+rest 0x30
+async_sub 0x5A
+stop
+

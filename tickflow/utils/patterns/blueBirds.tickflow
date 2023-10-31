@@ -8,13 +8,34 @@ sequenceBlueBirds:
 	sub 4
 	0x29<2> 
     rest 0x10
+    0xB2 game_state
+    if 1
+        random 2
+        switch
+        case 0
+            0x10A<0>
+            break
+        case 1
+            0x10A<1>
+            break
+        endswitch
+    endif
 	0xB3 9, 0x10
     fade<1> 1,1,1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 4
         async_call blueBirds1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call blueBirds2
+        break
+    case 2
+        0xB3 score_add, 4
+        async_call blueBirds3
+        break
     endswitch
     rest 0x48
     input 1
@@ -28,4 +49,24 @@ blueBirds1:
     async_sub 0x5B, 0x18
     rest 0xF0
     async_sub 0x61
+stop
+
+blueBirds2:
+async_sub 0x57
+rest 0x90
+async_sub 0x57
+rest 0xC0
+rest 0x30
+async_sub 0x57
+rest 0x30
+async_sub 0x5B
+stop
+
+blueBirds3:
+async_sub 0x57
+rest 0xC0
+async_sub 0x57
+rest 0xC0
+rest 0x30
+async_sub 0x5B
 stop

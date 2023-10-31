@@ -67,68 +67,80 @@ stop
 gleeClubPitchSetting: //hehe hopefully this works...
 0xB2 speed
 if_geq 0
-	0x104 0, 0, 0x1000DAF, 0x3C, -7
-    0x104 1, 0, 0x1000DAF, 0x3C, -5
-    0x104 2, 0, 0x1000DAF, 0x3C, 0
-endif
-if_geq 0x115
-	0x104 0, 0, 0x1000DAF, 0x3C, -6
-    0x104 1, 0, 0x1000DAF, 0x3C, -4
-    0x104 2, 0, 0x1000DAF, 0x3C, 1
-endif
-if_geq 0x12A
-	0x104 0, 0, 0x1000DAF, 0x3C, -5
-    0x104 1, 0, 0x1000DAF, 0x3C, -3
-    0x104 2, 0, 0x1000DAF, 0x3C, 2
-endif
-if_geq 0x13F
-	0x104 0, 0, 0x1000DAF, 0x3C, -4
-    0x104 1, 0, 0x1000DAF, 0x3C, -2
-    0x104 2, 0, 0x1000DAF, 0x3C, 3
-endif
-if_geq 0x154
-	0x104 0, 0, 0x1000DAF, 0x3C, -3
-    0x104 1, 0, 0x1000DAF, 0x3C, -1
-    0x104 2, 0, 0x1000DAF, 0x3C, 4
-endif
-if_geq 0x16A
-	0x104 0, 0, 0x1000DAF, 0x3C, -2
-    0x104 1, 0, 0x1000DAF, 0x3C, 0
-    0x104 2, 0, 0x1000DAF, 0x3C, 5
-endif
-if_geq 0x17F
-	0x104 0, 0, 0x1000DAF, 0x3C, -1
-    0x104 1, 0, 0x1000DAF, 0x3C, 1
-    0x104 2, 0, 0x1000DAF, 0x3C, 6
-endif
-if_geq 0x194
-	0x104 0, 0, 0x1000DAF, 0x3C, 0
-    0x104 1, 0, 0x1000DAF, 0x3C, 2
-    0x104 2, 0, 0x1000DAF, 0x3C, 7
-endif
-if_geq 0x1A9
-	0x104 0, 0, 0x1000DAF, 0x3C, 1
-    0x104 1, 0, 0x1000DAF, 0x3C, 3
-    0x104 2, 0, 0x1000DAF, 0x3C, 8
-endif
-if_geq 0x1BE
-	0x104 0, 0, 0x1000DAF, 0x3C, 2
-    0x104 1, 0, 0x1000DAF, 0x3C, 4
-    0x104 2, 0, 0x1000DAF, 0x3C, 9
-endif
-if_geq 0x1D3
-	0x104 0, 0, 0x1000DAF, 0x3C, 3
-    0x104 1, 0, 0x1000DAF, 0x3C, 5
-    0x104 2, 0, 0x1000DAF, 0x3C, 0xA
-endif
-if_geq 0x1E9
-	0x104 0, 0, 0x1000DAF, 0x3C, -8
-    0x104 1, 0, 0x1000DAF, 0x3C, -6
-    0x104 2, 0, 0x1000DAF, 0x3C, -1
-endif
-if_geq 0x200
-	0x104 0, 0, 0x1000DAF, 0x3C, -7
-    0x104 1, 0, 0x1000DAF, 0x3C, -5
-    0x104 2, 0, 0x1000DAF, 0x3C, 0
+    if_geq 0x115
+        if_geq 0x12A
+            if_geq 0x13F
+                if_geq 0x154
+                    if_geq 0x16A
+                        if_geq 0x17F
+                            if_geq 0x194
+                                if_geq 0x1A9
+                                    if_geq 0x1BE
+                                        if_geq 0x1D3
+                                            if_geq 0x1E9
+                                                if_geq 0x200
+                                                    0x104 0, 0, 0x1000DAF, 0x3C, -7
+                                                    0x104 1, 0, 0x1000DAF, 0x3C, -3
+                                                    0x104 2, 0, 0x1000DAF, 0x3C, 0
+                                                else
+                                                    0x104 0, 0, 0x1000DAF, 0x3C, -8
+                                                    0x104 1, 0, 0x1000DAF, 0x3C, -4
+                                                    0x104 2, 0, 0x1000DAF, 0x3C, -1
+                                                endif
+                                            else
+                                                0x104 0, 0, 0x1000DAF, 0x3C, 3
+                                                0x104 1, 0, 0x1000DAF, 0x3C, 7
+                                                0x104 2, 0, 0x1000DAF, 0x3C, 0xA
+                                            endif
+                                        else
+                                            0x104 0, 0, 0x1000DAF, 0x3C, 2
+                                            0x104 1, 0, 0x1000DAF, 0x3C, 6
+                                            0x104 2, 0, 0x1000DAF, 0x3C, 9
+                                        endif
+                                    else
+                                        0x104 0, 0, 0x1000DAF, 0x3C, 1
+                                        0x104 1, 0, 0x1000DAF, 0x3C, 5
+                                        0x104 2, 0, 0x1000DAF, 0x3C, 8
+                                    endif
+                                else
+                                    0x104 0, 0, 0x1000DAF, 0x3C, 0
+                                    0x104 1, 0, 0x1000DAF, 0x3C, 4
+                                    0x104 2, 0, 0x1000DAF, 0x3C, 7
+                                endif
+                            else
+                                0x104 0, 0, 0x1000DAF, 0x3C, -1
+                                0x104 1, 0, 0x1000DAF, 0x3C, 3
+                                0x104 2, 0, 0x1000DAF, 0x3C, 6
+                            endif
+                        else
+                            0x104 0, 0, 0x1000DAF, 0x3C, -2
+                            0x104 1, 0, 0x1000DAF, 0x3C, 2
+                            0x104 2, 0, 0x1000DAF, 0x3C, 5
+                        endif
+                    else
+                        0x104 0, 0, 0x1000DAF, 0x3C, -3
+                        0x104 1, 0, 0x1000DAF, 0x3C, 1
+                        0x104 2, 0, 0x1000DAF, 0x3C, 4
+                    endif
+                else
+                    0x104 0, 0, 0x1000DAF, 0x3C, -4
+                    0x104 1, 0, 0x1000DAF, 0x3C, 0
+                    0x104 2, 0, 0x1000DAF, 0x3C, 3
+                endif
+            else
+                0x104 0, 0, 0x1000DAF, 0x3C, -5
+                0x104 1, 0, 0x1000DAF, 0x3C, -1
+                0x104 2, 0, 0x1000DAF, 0x3C, 2
+            endif
+        else
+            0x104 0, 0, 0x1000DAF, 0x3C, -6
+            0x104 1, 0, 0x1000DAF, 0x3C, -2
+            0x104 2, 0, 0x1000DAF, 0x3C, 1
+        endif
+    else
+        0x104 0, 0, 0x1000DAF, 0x3C, -7
+        0x104 1, 0, 0x1000DAF, 0x3C, -3
+        0x104 2, 0, 0x1000DAF, 0x3C, 0
+    endif
 endif
 stop

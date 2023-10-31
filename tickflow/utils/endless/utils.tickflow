@@ -380,8 +380,8 @@ loadNextGame:
                 endif
                 set_func 0, sequenceFanClub
                 call loadFanClub
-                set_func 3, loadFanClubLateSlot
-                set_func 2, nop
+                set_func 3, nop
+                set_func 2, loadFanClubLateSlot
                 set_func 1, checkA2
             endif
         break
@@ -1252,7 +1252,7 @@ if 0
     label 0x5C02
     get_countdown
     if_gt 0
-        //0xB4 score, 1
+        0xB4 score, 1
     else
         goto 0xE2D
     endif
