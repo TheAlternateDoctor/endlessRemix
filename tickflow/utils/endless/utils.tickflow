@@ -194,7 +194,7 @@ loadNextGame:
                 set_func 0, sequencePowerCalligraphy
                 call loadPowerCalligraphy
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadPowerCalligraphyLate
                 set_func 1, checkA2
             endif
         break
@@ -228,7 +228,7 @@ loadNextGame:
                 set_func 0, sequenceTap
                 call loadTap
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadTapLate
                 set_func 1, checkA2
             endif
         break
@@ -381,7 +381,7 @@ loadNextGame:
                 set_func 0, sequenceFanClub
                 call loadFanClub
                 set_func 3, nop
-                set_func 2, loadFanClubLateSlot
+                set_func 2, nop
                 set_func 1, checkA2
             endif
         break
@@ -411,11 +411,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrPingpong
-                    set_func 0, sequenceRhythmRally
-                    call loadRhythmRally
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceRhythmRally
+                call loadRhythmRally
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -447,11 +448,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShortLive
-                    set_func 0, sequenceBigRockFinish
-                    call loadBigRockFinish
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceBigRockFinish
+                call loadBigRockFinish
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -500,11 +502,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBird
-                    set_func 0, sequenceFlockstep
-                    call loadFlockstep
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceFlockstep
+                call loadFlockstep
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -672,11 +675,12 @@ loadNextGame:
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlManju
-                    set_func 0, sequenceWorkingDough
-                    call loadWorkingDough
-                    set_func 3, nop
-                    set_func 2, nop
-                    set_func 1, checkA2
+                endif
+                set_func 0, sequenceWorkingDough
+                call loadWorkingDough
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
                 else
                     goto 0x7AD
                 endif
@@ -1153,7 +1157,7 @@ loadNextGame:
                 set_func 0, sequenceSplashdown
                 call loadSplashdown
                 set_func 3, nop
-                set_func 2, nop
+                set_func 2, loadSplashdownLate
                 set_func 1, checkA2
             endif
         break
@@ -1175,7 +1179,7 @@ playNextGame:
     if_neq 0
         get_async 0, 0
         rest 0x18
-        0xB2 4
+        0xB2 lives_enabled
         if 1
             get_async 1, 0
         endif
@@ -1237,7 +1241,7 @@ lifeScoreCounter:
     label 0x115C
     call showScore
     rest 0xC0
-    0xB2 4
+    0xB2 lives_enabled
     if 1
         call life
     endif
@@ -1252,7 +1256,7 @@ if 0
     label 0x5C02
     get_countdown
     if_gt 0
-        0xB4 score, 1
+        //0xB4 score, 1
     else
         goto 0xE2D
     endif
@@ -1387,21 +1391,23 @@ return
 
 bonusStuff:
 set_cat 0
+label 0x1007
 0xB2 10
 if 0
     0x200 9
     if 1 // Debug mode active
-        play_sfx 0x100031E
-        0xB3 10,1 //Enables Debug mode
+        play_sfx 0x10002C1
+        0xB3 is_debug,1 //Enables Debug mode
+        0xB3 lives_enabled, 0
     endif
 endif
-0xB2 4
+0xB2 lives_enabled
 if 1
     0x200 11
     if 1
         play_sfx 0x10002C1
-        0xB3 4, 0
+        0xB3 lives_enabled, 0
     endif
 endif
 rest 2
-goto bonusStuff
+goto 0x1007

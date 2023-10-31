@@ -45,11 +45,13 @@ if 1
     set_sfx 4, u"GROUP_NTR_COIN_TOSS_REMIX"
     set_cellanim 4, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 4
+    game_cellanim 0x25, 4
     0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_COIN_TOSS_REMIX"
     set_cellanim 5, u"rom:/cellanim/ntrCoinToss_remixTED.zlib", -1
     game_cellanim 0x41, 5
+    game_cellanim 0x25, 5
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x41, 0x10
@@ -297,13 +299,21 @@ async_call unloadSpeAudio
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 6, u"GROUP_BASKET_EN"
-    set_sfx 7, u"GROUP_BASKET_JP"
-    0xB3 sfx_plus,2
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_BASKET_JP"
+    else
+        set_sfx 6, u"GROUP_BASKET_EN"
+    endif
+    0xB3 sfx_plus,1
 else
-    set_sfx 0xB, u"GROUP_BASKET_EN"
-    set_sfx 0xC, u"GROUP_BASKET_JP"
-    0xB3 sfx_plus_2,2
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_BASKET_JP"
+    else
+        set_sfx 0xB, u"GROUP_BASKET_EN"
+    endif
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -485,20 +495,27 @@ return
 
 
 loadSoumenLate:
-rest 0xC
 async_call unloadSpeAudio
 rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_SOUMEN"
-    set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 7, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 sfx_plus,2
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_SOUMEN_INPUT_JP"
+    else
+        set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
+    endif
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_SOUMEN"
-    set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 0xC, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 sfx_plus_2,2
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_SOUMEN_INPUT_JP"
+    else
+        set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
+    endif
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -579,11 +596,21 @@ rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_RVL_TAP"
-    set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_RVL_TAP_VOICE_JP"
+    else
+        set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+    endif
     0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_RVL_TAP"
-    set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_JP"
+    else
+        set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+    endif
     0xB3 sfx_plus_2,1
 endif
 stop
@@ -598,18 +625,25 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_SPLASH"
     set_cellanim 4, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
     game_cellanim 0x13, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_SPLASH"
     set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
     game_cellanim 0x13, 5
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x13, 3
 return
+
+loadSplashdownLate:
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_SPLASH"
+else
+    set_sfx 5, u"GROUP_SPLASH"
+endif
+stop
 
 loadLoveLab:
 0xB2 cellanim_slot
@@ -1629,18 +1663,25 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_AGB_SHUJI"
     set_cellanim 4, u"rom:/cellanim/agbShuji_v0.zlib", -1
     game_cellanim 0xA, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_AGB_SHUJI"
     set_cellanim 5, u"rom:/cellanim/agbShuji_v0.zlib", -1
     game_cellanim 0xA, 5
     0xB3 cellanim_slot, 1
 endif
 0x2B 0xA, 0xE
 return
+
+loadPowerCalligraphyLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_AGB_SHUJI"
+else
+    set_sfx 4, u"GROUP_AGB_SHUJI"
+endif
+stop
 
 loadSpaceDance:
 0xB2 cellanim_slot
@@ -1707,7 +1748,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_AGB_TAP"
     set_cellanim 4, u"rom:/cellanim/agbTap_long.zlib", -1
     set_effect 4, u"rom:/effect/agbTap.zlib", -1
     set_layout 6, u"rom:/layout/agbTap.zlib", -1
@@ -1716,7 +1756,6 @@ if 1
     game_layout 0xC, 6
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_AGB_TAP"
     set_cellanim 5, u"rom:/cellanim/agbTap_long.zlib", -1
     set_effect 5, u"rom:/effect/agbTap.zlib", -1
     set_layout 7, u"rom:/layout/agbTap.zlib", -1
@@ -1727,6 +1766,15 @@ else
 endif
 0x2B 0xC, 3
 return
+
+loadTapLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_AGB_TAP"
+else
+    set_sfx 4, u"GROUP_AGB_TAP"
+endif
+stop
 
 loadLumbearjack:
 0xB2 cellanim_slot

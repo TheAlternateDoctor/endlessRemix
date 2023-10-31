@@ -4,7 +4,6 @@
 // 2+ has a pointing cellanim.
 
 preSequenceMarcher:
-async_call loadMarcherLate
 0x2B<1> 0x5
 if_gt 1
     0xB3 game_state, 0
