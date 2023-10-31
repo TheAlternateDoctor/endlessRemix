@@ -12,3 +12,4 @@ perf_miss = 12
 debug_start = 3
 debug_current_index = 0
 is_debug = 10
+lives_enabled = 4

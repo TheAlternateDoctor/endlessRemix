@@ -491,13 +491,21 @@ async_call unloadSpeAudio
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 6, u"GROUP_BASKET_EN"
-    set_sfx 7, u"GROUP_BASKET_JP"
-    0xB3 sfx_plus,2
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_BASKET_JP"
+    else
+        set_sfx 6, u"GROUP_BASKET_EN"
+    endif
+    0xB3 sfx_plus,1
 else
-    set_sfx 0xB, u"GROUP_BASKET_EN"
-    set_sfx 0xC, u"GROUP_BASKET_JP"
-    0xB3 sfx_plus_2,2
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_BASKET_JP"
+    else
+        set_sfx 0xB, u"GROUP_BASKET_EN"
+    endif
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -1074,14 +1082,22 @@ rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_SOUMEN"
-    set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 7, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 sfx_plus,2
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_SOUMEN_INPUT_JP"
+    else
+        set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
+    endif
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_SOUMEN"
-    set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
-    set_sfx 0xC, u"GROUP_SOUMEN_INPUT_JP"
-    0xB3 sfx_plus_2,2
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_SOUMEN_INPUT_JP"
+    else
+        set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
+    endif
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -1189,11 +1205,21 @@ rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 5, u"GROUP_RVL_TAP"
-    set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_RVL_TAP_VOICE_JP"
+    else
+        set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
+    endif
     0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_RVL_TAP"
-    set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_JP"
+    else
+        set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
+    endif
     0xB3 sfx_plus_2,1
 endif
 stop
@@ -1570,17 +1596,32 @@ if 1
             0x2B 0x5, 2
             break
         case 1
-            set_sfx 4, u"GROUP_AGB_MARCH_TEMPO"
+            0x202
+            if 0 //Japanese
+                set_sfx 4, u"GROUP_AGB_MARCH_TEMPOJP"
+            else
+                set_sfx 4, u"GROUP_AGB_MARCH_TEMPO"
+            endif
             set_cellanim 4, u"rom:/cellanim/agbMarcher_tempoP.zlib", -1
             0x2B 0x5, 6
             break
         case 2
-            set_sfx 4, u"GROUP_AGB_MARCH_BUNNY_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 4, u"GROUP_AGB_MARCH_BUNNY_JP"
+            else
+                set_sfx 4, u"GROUP_AGB_MARCH_BUNNY_EN"
+            endif
             set_cellanim 4, u"rom:/cellanim/agbMarcher_remix7P.zlib", -1
             0x2B 0x5, 7
             break
         case 3
-            set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 4, u"GROUP_AGB_MARCH_AR_JP"
+            else
+                set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
+            endif
             set_cellanim 4, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
             0x2B 0x5, 3
             break
@@ -1594,17 +1635,32 @@ if 1
             0x2B 0x5, 0
             break
         case 1
-            set_sfx 4, u"GROUP_AGB_MARCH_BUNNY_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 4, u"GROUP_AGB_MARCH_BUNNY_JP"
+            else
+                set_sfx 4, u"GROUP_AGB_MARCH_BUNNY_EN"
+            endif
             set_cellanim 4, u"rom:/cellanim/agbMarcher_remix7.zlib", -1
             0x2B 0x5, 4
             break
         case 2
-            set_sfx 4, u"GROUP_AGB_MARCH_TEMPO"
+            0x202
+            if 0 //Japanese
+                set_sfx 4, u"GROUP_AGB_MARCH_TEMPOJP"
+            else
+                set_sfx 4, u"GROUP_AGB_MARCH_TEMPO"
+            endif
             set_cellanim 4, u"rom:/cellanim/agbMarcher_tempo.zlib", -1
             0x2B 0x5, 5
             break
         case 3
-            set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 4, u"GROUP_AGB_MARCH_AR_JP"
+            else
+                set_sfx 4, u"GROUP_AGB_MARCH_AR_EN"
+            endif
             set_cellanim 4, u"rom:/cellanim/agbMarcher_v1.zlib", -1
             0x2B 0x5, 1
             break
@@ -1628,17 +1684,32 @@ else
             0x2B 0x5, 2
             break
         case 1
-            set_sfx 5, u"GROUP_AGB_MARCH_TEMPO"
+            0x202
+            if 0 //Japanese
+                set_sfx 5, u"GROUP_AGB_MARCH_TEMPOJP"
+            else
+                set_sfx 5, u"GROUP_AGB_MARCH_TEMPO"
+            endif
             set_cellanim 5, u"rom:/cellanim/agbMarcher_tempoP.zlib", -1
             0x2B 0x5, 6
             break
         case 2
-            set_sfx 5, u"GROUP_AGB_MARCH_BUNNY_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 5, u"GROUP_AGB_MARCH_BUNNY_JP"
+            else
+                set_sfx 5, u"GROUP_AGB_MARCH_BUNNY_EN"
+            endif
             set_cellanim 5, u"rom:/cellanim/agbMarcher_remix7P.zlib", -1
             0x2B 0x5, 7
             break
         case 3
-            set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 5, u"GROUP_AGB_MARCH_AR_JP"
+            else
+                set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
+            endif
             set_cellanim 5, u"rom:/cellanim/agbMarcher_v1P.zlib", -1
             0x2B 0x5, 3
             break
@@ -1652,17 +1723,32 @@ else
             0x2B 0x5, 0
             break
         case 1
-            set_sfx 5, u"GROUP_AGB_MARCH_BUNNY_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 5, u"GROUP_AGB_MARCH_BUNNY_JP"
+            else
+                set_sfx 5, u"GROUP_AGB_MARCH_BUNNY_EN"
+            endif
             set_cellanim 5, u"rom:/cellanim/agbMarcher_remix7.zlib", -1
             0x2B 0x5, 5
             break
         case 2
-            set_sfx 5, u"GROUP_AGB_MARCH_TEMPO"
+            0x202
+            if 0 //Japanese
+                set_sfx 5, u"GROUP_AGB_MARCH_TEMPOJP"
+            else
+                set_sfx 5, u"GROUP_AGB_MARCH_TEMPO"
+            endif
             set_cellanim 5, u"rom:/cellanim/agbMarcher_tempo.zlib", -1
             0x2B 0x5, 4
             break
         case 3
-            set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
+            0x202
+            if 0 //Japanese
+                set_sfx 5, u"GROUP_AGB_MARCH_AR_JP"
+            else
+                set_sfx 5, u"GROUP_AGB_MARCH_AR_EN"
+            endif
             set_cellanim 5, u"rom:/cellanim/agbMarcher_v1.zlib", -1
             0x2B 0x5, 1
             break
@@ -1677,63 +1763,6 @@ else
     0xB3 cellanim_slot, 1
 endif
 return
-
-loadMarcherLate:
-    async_call unloadSpeAudio
-    rest 0xC
-    0x2B<1> 0x5
-    if 1
-        async_call loadMarcherLateSlot
-        0xB3 sfx_plus,1
-    endif
-    if 3
-        async_call loadMarcherLateSlot
-        0xB3 sfx_plus_2,1
-    endif
-    if 4
-        async_call loadMarcherLateSlot_T
-        0xB3 sfx_plus,1
-    endif
-    if 6
-        async_call loadMarcherLateSlot_T
-        0xB3 sfx_plus_2,1
-    endif
-    if 5
-        async_call loadMarcherLateSlot_B
-        0xB3 sfx_plus,1
-    endif
-    if 7
-        async_call loadMarcherLateSlot_B
-        0xB3 sfx_plus_2,1
-    endif
-stop
-
-loadMarcherLateSlot: //Help me I am in pain
-    0xB2 cellanim_slot
-    if 1
-        set_sfx 6, u"GROUP_AGB_MARCH_AR_JP"
-    else
-        set_sfx 0xB, u"GROUP_AGB_MARCH_AR_JP"
-    endif
-stop
-
-loadMarcherLateSlot_T: //Help me I am in pain
-    0xB2 cellanim_slot
-    if 1
-        set_sfx 6, u"GROUP_AGB_MARCH_TEMPOJP"
-    else
-        set_sfx 0xB, u"GROUP_AGB_MARCH_TEMPOJP"
-    endif
-stop
-
-loadMarcherLateSlot_B: //Help me I am in pain
-    0xB2 cellanim_slot
-    if 1
-        set_sfx 6, u"GROUP_AGB_MARCH_BUNNY_JP"
-    else
-        set_sfx 0xB, u"GROUP_AGB_MARCH_BUNNY_JP"
-    endif
-stop
 
 
 loadExhibitionMatch:

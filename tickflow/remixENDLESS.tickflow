@@ -118,12 +118,12 @@ play_sfx 0x100029E
 0xA4 0x5F
 0xA5 1
 0xA4<2> 1
-0xB3 4, 1
+0xB3 lives_enabled, 1
 
-// 0x201
-// if_lt 0x103
-//     0xB3 4, 0
-// endif
+0x201
+if_lt 0x103
+    0xB3 lives_enabled, 0
+endif
 
 0x75<1> 
 if 0
@@ -278,7 +278,7 @@ async_call startingGame
 rest 0x30
 fade<1> 1,1,1
 kill_loc bonusStuff
-0xB2 4
+0xB2 lives_enabled
 if 1
 	0x67<1> 2,"lifeCounter_3"
 else
@@ -318,7 +318,7 @@ endif
 0xA2
 
 //main loop
-0xB2 4
+0xB2 lives_enabled
 call textCondvar
 call updateScore
 async_call speedup
@@ -517,7 +517,7 @@ if 0
 	endif 
 endif 
 0x102 
-0xB3 4, 1
+0xB3 lives_enabled, 1
 async_call bonusStuff
 label 0xC7
 0xA7 
