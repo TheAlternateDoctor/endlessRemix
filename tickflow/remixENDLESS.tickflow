@@ -258,6 +258,7 @@ input 0
 0xB3 sfx_plus,2 //Slot 7 has SFX
 0xB3 sfx_plus_2,2 //Slot 7 has SFX
 0xB3 score_add, 5 //Starting score
+0xB3 speed, startSpeed //Starting speed
 
 
 0x67<5> 2
