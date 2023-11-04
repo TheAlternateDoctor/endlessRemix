@@ -1,0 +1,81 @@
+sequenceLoveRap:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x2B
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x2B
+    0x2B<1> 0x2B
+    if 2
+        0x10E
+        0x107<1> 0
+    else
+        0x107<1> 1
+        if 3
+            random 2
+            switch
+            case 0
+                0x107 1
+                0x108 0xA
+                break
+            endswitch
+        endif
+    endif
+    fade<1> 1,1,1
+    input 1
+    random 3
+    switch
+    case 0
+        0xB3 score_add, 5
+        async_call loveRap1
+        break
+    case 1
+        0xB3 score_add, 5
+        async_call loveRap2
+        break
+    case 2
+        0xB3 score_add, 5
+        async_call loveRap3
+        break
+    endswitch
+    async_call loveRapBeatAnims
+stop
+
+loveRap1:
+    sub 0x70
+    rest 0x60
+    sub 0x70
+    rest 0x60
+    sub 0x78
+    rest 0x60
+    sub 0x70
+stop
+
+loveRap2:
+    sub 0x70
+    sub 0x70
+    sub 0x78
+    rest 0x60
+    sub 0x70
+    sub 0x70
+stop
+
+loveRap3:
+    sub 0x70
+    sub 0x70
+    sub 0x78
+    sub 0x78
+    sub 0x70
+    sub 0x70
+stop
+
+loveRapBeatAnims:
+label 547
+0x102<1>
+0x102<2>
+0x102<3>
+rest 0x60
+goto 547
+stop

@@ -34,10 +34,13 @@ stop
 launchParty1:
     async_call launchPartyRandRocket
     rest 0xC0
+    0x104
     async_call launchPartyRandRocket
     rest 0xC0
+    0x104
     async_call launchPartyRandRocket
     rest 0xC0
+    0x104
     async_call launchPartyRandRocket
 stop
 
@@ -47,23 +50,58 @@ switch
 case 0
     0x102<0> 0
     0x100 0
-    0x103
     break
 case 1
     0x102<0> 1
     0x100 1
-    0x103
     break
 case 2
     0x102<0> 2
     0x100 2
-    0x103
     break
 case 3
     0x102<0> 3
     0x100 3
-    0x103
     break
 endswitch
+0x103
+stop
+
+launchPartyRandRocketLoad:
+random 4
+switch
+case 0
+    0x102<1> 0
+    async_call launchPartyBowlingPin, 0xC0
+    break
+case 1
+    0x102<1> 1
+    async_call launchPartyFamily, 0xC0
+    break
+case 2
+    0x102<1> 2
+    async_call launchPartyCracker, 0xC0
+    break
+case 3
+    0x102<1> 3
+    async_call launchPartyBell, 0xC0
+    break
+endswitch
+stop
+
+launchPartyBowlingPin:
+0x100 0
+stop
+
+launchPartyFamily:
+0x100 1
+stop
+
+launchPartyCracker:
+0x100 2
+stop
+
+launchPartyBell:
+0x100 3
 stop
 

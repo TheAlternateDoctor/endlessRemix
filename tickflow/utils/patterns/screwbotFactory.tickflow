@@ -1,0 +1,195 @@
+// Nothing to report atm...
+
+sequenceScrewBotFactory:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x2D
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x2D
+    fade<1> 1,1,1
+    random 2
+    switch
+    case 0
+        0xB3 score_add, 3
+        async_call screwBotFactory1
+		break
+	case 1
+		0xB3 score_add, 2
+		async_call screwBotFactory2
+		break
+	case 2
+		0xB3 score_add, 2
+		async_call screwBotFactory3
+		break
+	case 3
+		0xB3 score_add, 3
+		async_call screwBotFactory4
+		break
+	case 4
+		0xB3 score_add, 4
+		async_call screwBotFactory5
+		break
+	case 5
+		0xB3 score_add, 6
+		async_call screwBotFactory6
+		break
+    endswitch
+    async_call screwBotBeatAnims
+    0x2B<1> 0x2D
+    if 5
+        async_call screwBotCloudBeatAnims
+    endif
+    rest 0x48
+    input 1
+stop
+
+screwBotFactory1:
+async_sub 0x56
+rest 0xC0
+rest 0x30	// 1.0 beats
+async_sub 0x57
+rest 0xC0
+rest 0x30	// 1.0 beats
+async_sub 0x59
+stop
+
+screwBotFactory2:
+async_sub 0x58
+rest 0x180
+async_sub 0x58
+stop
+
+screwBotFactory3:
+rest 0xC0
+async_sub 0x58
+rest 0x120
+async_sub 0x57
+stop
+
+screwBotFactory4:
+async_sub 0x57
+rest 0x120
+async_sub 0x57
+rest 0xC0
+async_sub 0x56
+stop
+
+screwBotFactory5:
+async_sub 0x58
+rest 0xC0
+async_sub 0x56
+rest 0x90
+async_sub 0x57
+rest 0x60
+async_sub 0x59
+stop
+
+screwBotFactory6:
+rest 0x30	// 1.0 beats
+async_sub 0x57
+rest 0x60
+async_sub 0x57
+rest 0x60
+async_sub 0x57
+rest 0x60
+async_sub 0x57
+rest 0x60
+async_sub 0x57
+rest 0x60
+async_sub 0x57
+stop
+
+screwBotCloudBeatAnims:
+label 0x934
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+0x106 0
+rest 2
+0x106 1
+rest 2
+0x106 2
+rest 3
+0x106 3
+rest 4
+0x106 4
+rest 37
+goto 0x934
+stop
+
+screwBotBeatAnims:
+label 0x5E5E
+async_sub 0x5A
+rest 0x180
+goto 0x5E5E
+stop

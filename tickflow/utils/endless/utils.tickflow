@@ -720,6 +720,57 @@ loadNextGame:
                 set_func 1, checkA2
             endif
         break
+        case INDEX_rvlRecieve
+            0xB2 engine_loaded
+            if SCENE_rvlRecieve //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlRecieve
+                endif
+                set_func 0, sequenceBossaNova
+                call loadBossaNova
+                set_func 3, presequenceBossaNova
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_rvlBadminton
+            0xB2 engine_loaded
+            if SCENE_rvlBadminton //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlBadminton
+                endif
+                set_func 0, sequenceAirRally
+                call loadAirRally
+                set_func 3, presequenceAirRally
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_rvlMuscle
+            0xB2 engine_loaded
+            if SCENE_rvlMuscle //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlMuscle
+                endif
+                set_func 0, sequenceFigureFighter
+                call loadFigureFighter
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
         case INDEX_rvlSamurai //Iai Giri
             0xB2 engine_loaded
             if SCENE_rvlSamurai //Stop games from being played next to each other
@@ -767,6 +818,23 @@ loadNextGame:
                 set_func 0, sequencePackingPests
                 call loadPackingPests
                 set_func 3, presequencePackingPests
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_ctrBear
+            0xB2 engine_loaded
+            if SCENE_ctrBear //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_ctrBear
+                endif
+                set_func 0, sequenceBlueBear
+                call loadBlueBear
+                set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
             endif
@@ -1004,6 +1072,91 @@ loadNextGame:
                 endif
                 set_func 0, sequenceTutorial
                 call loadTutorial
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_rvlMonkeyWatch
+            0xB2 engine_loaded
+            if SCENE_rvlMonkeyWatch //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlMonkeyWatch
+                endif
+                set_func 0, sequenceMonkeyWatch
+                call loadMonkeyWatch
+                set_func 3, preSequenceMonkeyWatch
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_rvlRap
+            0xB2 engine_loaded
+            if SCENE_rvlRap //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlRap
+                endif
+                set_func 0, sequenceLoveRap
+                call loadLoveRap
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_ntrRobot
+            0xB2 engine_loaded
+            if SCENE_ntrRobot //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_ntrRobot
+                endif
+                set_func 0, sequenceFillbots
+                call loadFillbots
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_rvlBatting
+            0xB2 engine_loaded
+            if SCENE_rvlBatting //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlBatting
+                endif
+                set_func 0, sequenceExhibitionMatch
+                call loadExhibitionMatch
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
+            endif
+        break
+        case INDEX_rvlRobot
+            0xB2 engine_loaded
+            if SCENE_rvlRobot //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlRobot
+                endif
+                set_func 0, sequenceScrewBotFactory
+                call loadScrewbotFactory
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
@@ -1249,6 +1402,7 @@ lifeScoreCounter:
     endif
     rest 0xC0
 goto 0x115C
+stop
 
 updateScore:
 0xB2 perf_miss
@@ -1317,7 +1471,6 @@ winGame:
     0x28<2> 
 stop
 
-
 speedup:
     set_cat 0
     rest 0x30*16
@@ -1384,6 +1537,7 @@ speedup:
         endif
     rest 0x30*16
 goto 0x59EE
+stop
 
 nop:
 stop

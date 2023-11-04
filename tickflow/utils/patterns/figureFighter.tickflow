@@ -1,0 +1,86 @@
+// Nothing quite interesting to report here ;P
+
+sequenceFigureFighter:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x2A
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x2A
+    0x102<1>
+    0x10B 1
+    0x10A 1 
+    fade<1> 1,1,1
+    input 1
+    random 3
+    switch
+    case 0
+        0xB3 score_add, 5
+        async_call figureFighter1
+    break
+    case 1
+        0xB3 score_add, 5
+        async_call figureFighter2
+    break
+    default
+        0xB3 score_add, 7
+        async_call figureFighter3
+    break
+    endswitch
+    async_call figureFighterBeat
+stop
+
+figureFighter1:
+rest 0x30	// 1.0 beats
+async_sub 0x5C
+rest 0x60
+async_sub 0x60
+rest 0xC0
+async_sub 0x62
+rest 0xC0
+rest 0x18
+async_sub 0x64
+rest 0x18
+async_sub 0x5E
+stop
+
+figureFighter2:
+rest 0x30	// 1.0 beats
+async_sub 0x5C
+rest 0x48
+async_sub 0x5C
+rest 0x48
+async_sub 0x5E
+rest 0x60
+async_sub 0x5E
+rest 0x60
+async_sub 0x5C
+rest 0x48
+async_sub 0x5C
+rest 0x48
+async_sub 0x62
+stop
+
+figureFighter3:
+rest 0x30	// 1.0 beats
+async_sub 0x5C
+rest 0x60
+async_sub 0x60
+rest 0xC0
+async_sub 0x5C
+rest 0x48
+async_sub 0x64
+rest 0x18
+async_sub 0x5E
+rest 0x60
+async_sub 0x62
+stop
+
+figureFighterBeat:
+label 45
+0x10B<1> 1
+rest 0x30
+goto 45
+stop

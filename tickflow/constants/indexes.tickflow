@@ -54,7 +54,8 @@ INDEX_rvlRocket = 0x2E
 INDEX_rvlRotation = 0x2F
 INDEX_rvlSamurai = 0x30
 INDEX_rvlSeesaw = 0x31
-INDEX_rvlSort = 0x32 
+INDEX_rvlSort = 0x32
+INDEX_rvlMonkeyWatch = 0x33
 
 // Indexes - Megamix
 INDEX_ctrBear = 0x34 

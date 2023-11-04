@@ -1,0 +1,60 @@
+aRBadmintonDistance:
+set_cat 0x7D0
+random 4
+	switch
+		case 0
+		0x101<1> 2, 0
+		break
+		case 1
+		0x101<1> 3, 0
+		break
+		case 2
+		0x101<1> 4, 0
+		break
+		case 3
+		0x101<1> 5, 0
+		break
+	endswitch
+stop 
+
+aRNormal:
+set_cat 0x7D0
+async_sub 0x58
+rest 0x30	// 1.0 beats
+rest 0x10	// 0.333 beats
+rest 0x20	// 0.667 beats
+rest 0x30	// 1.0 beats
+rest 0x10	// 0.333 beats
+rest 0x20	// 0.667 beats
+stop 
+
+aRNormalToSlow:
+set_cat 0x7D0
+async_sub 0x5F
+rest 0x30	// 1.0 beats
+rest 0x10	// 0.333 beats
+rest 0x20	// 0.667 beats
+rest 0x30	// 1.0 beats
+rest 0x10	// 0.333 beats
+rest 0x20	// 0.667 beats
+stop
+
+aRSlow:
+set_cat 0x7D0
+async_sub 0x59
+rest 0x30	// 1.0 beats
+stop
+
+aRSlowToSlow:
+set_cat 0x7D0
+async_sub 0x60
+rest 0x90	// 3.0 beats
+rest 0x30	// 1.0 beats
+stop
+
+aRSlowtoNormal:
+set_cat 0x7D0
+async_sub 0x61
+rest 0x90	// 3.0 beats
+rest 0x30	// 1.0 beats
+stop

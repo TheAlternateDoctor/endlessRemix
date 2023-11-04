@@ -1,0 +1,62 @@
+bossaNovaStartPattern:
+0x100 0x18, 0
+rest 0x18
+0x100 0x30, 1
+rest 0x18	// 0.5 beats
+0x100 0x30, 0
+rest 0x18	// 0.5 beats
+0x100 0x30, 0
+rest 0x18	// 0.5 beats
+0x100 0x30, 1
+rest 0x18	// 0.5 beats
+rest 0x18	// 0.5 beats
+0x100 0x30, 0
+rest 0x18	// 0.5 beats
+stop 
+
+bossaNovaStartTurn:
+0x100 0x18, 0
+rest 0x18
+0x100 0x30, 1
+rest 0x18	// 0.5 beats
+0x100 0x30, 0
+rest 0x18	// 0.5 beats
+0x104 
+0x100 0x30, 0
+rest 0x18	// 0.5 beats
+0x104 
+0x100 0x30, 1
+rest 0x18	// 0.5 beats
+0x101
+rest 0x18	// 0.5 beats
+rest 0x18	// 0.5 beats
+0x101<1>
+stop
+
+bossaNovaStartMan:
+async_call bossaNovaStartPattern
+rest 0x18	// 1.0 beats
+async_sub 0x5A
+rest 0x18	// 0.5 beats
+stop
+
+bossaNovaStartManTurn:
+async_call bossaNovaStartTurn
+rest 0x18	// 1.0 beats
+async_sub 0x5B
+rest 0x18	// 0.5 beats
+stop
+
+bossaNovaStartWoman:
+async_call bossaNovaStartPattern
+rest 0x18	// 1.0 beats
+async_sub 0x5C
+rest 0x18	// 0.5 beats
+stop
+
+bossaNovaStartWomanTurn:
+async_call bossaNovaStartTurn
+rest 0x18	// 1.0 beats
+async_sub 0x5D
+rest 0x18	// 0.5 beats
+stop

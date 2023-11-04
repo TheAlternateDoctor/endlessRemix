@@ -9,6 +9,7 @@ fade:
 return
 
 deadSub:
+	set_cat 0
 	0x21 120
 	input 0
 	set_cat 0
@@ -32,7 +33,7 @@ deadSub:
 	rest 0xC0	// 4.0 beats
 	rest 0xC0	// 4.0 beats
 	0x28<2> 
-stop
+return
 
 beatLoop:
 	label 0xBEA7

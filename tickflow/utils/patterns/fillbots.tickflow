@@ -1,0 +1,66 @@
+sequenceFillbots:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x18
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x18
+    fade<1> 1,1,1
+    input 1
+    random 4
+    switch
+    case 0
+        0xB3 score_add, 5
+        async_call fillbots1:
+        break
+    case 1
+        0xB3 score_add, 5
+        async_call fillbots2
+        break
+    case 2
+        0xB3 score_add, 5
+        async_call fillbots3
+        break
+    case 3
+        0xB3 score_add, 5
+        async_call fillbots4
+        break
+    endswitch
+    async_sub 0x63
+stop
+
+fillbots1:
+    async_call Sfirst
+    rest 0x90   // 4.0 beats
+    rest 0x18
+    rest 0xC0   // 4.0 beats
+    async_call M
+stop
+
+fillbots2:
+    async_call Lfirst
+    rest 0x90   // 4.0 beats
+    rest 0x18
+    rest 0xC0   // 4.0 beats
+    rest 0x60  // 2.0 beats
+    async_call S
+stop
+
+fillbots3:
+    async_call Sfirst
+    rest 0x90   // 4.0 beats
+    rest 0x18
+    async_call S
+    rest 0xC0   // 4.0 beats
+    async_call S
+stop
+
+fillbots4:
+    async_call Mfirst
+    rest 0x90   // 4.0 beats
+    rest 0x18
+    rest 0xC0   // 4.0 beats
+    async_call M
+stop
