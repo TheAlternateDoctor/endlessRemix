@@ -1,0 +1,89 @@
+// You really left her hanging this morning you know...
+
+sequenceBlueBear:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x34
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x34
+    fade<1> 1,1,1
+    input 1
+    random 3
+    switch
+    case 0
+        0xB3 score_add, 5
+        async_call blueBear1
+        break
+    case 1
+        0xB3 score_add, 5
+        async_call blueBear2
+        break
+    case 2
+        0xB3 score_add, 7
+        async_call blueBear3
+        break
+    endswitch
+stop
+
+blueBear1:
+async_call donut
+rest 0xC0
+async_call donut
+rest 0xC0
+async_call donut
+rest 0x30
+async_call donut
+rest 0x90
+async_call cake
+stop
+
+blueBear2:
+async_call donut
+rest 0x30
+async_call donut
+rest 0x90
+async_call cake
+rest 0x30
+async_call donut
+rest 0x90
+async_call donut
+rest 0x30
+async_call donut
+rest 0x60
+async_call cake
+rest 0x30
+async_call cake
+stop
+
+blueBear3:
+async_call donut
+rest 0x60
+async_call donut
+rest 0x60
+async_call cake
+rest 0xC0
+async_call donut
+rest 0x60
+async_call donut
+rest 0x60
+async_call donutandcake
+stop
+
+donut:
+0x100 0, 0
+0x101<1>
+stop
+
+cake:
+0x100 1, 0
+0x101
+stop
+
+donutandcake:
+0x100 0, 0
+0x100 1, 0
+0x101<2>
+stop

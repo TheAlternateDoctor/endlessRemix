@@ -60,20 +60,20 @@ coinTossFinalRemix:
 stop
 
 coinTossLoadRecEngine:
-        play_sfx 0x100029F
-        rest 0x8
-        call changeEngine
-        engine 0x25
-        sub 4
-        0x29<2> 
-        input 1
-        rest 0x8
-        0x8B 0, 0
-        0x101<1> 2
-        0xB3 0x102, 5
-        0x106 "bg", 0, 1, 2, 2, 0, 0, 0x100, 0, 0, 0x100
-        async_call coinAnimLoop
-        async_call checkEmptyCatch
-        rest 0x8
-        fade<1> 1,1,1
+    play_sfx 0x100029F
+    rest 0x8
+    call changeEngine
+    engine 0x25
+    sub 4
+    0x29<2> 
+    input 1
+    rest 0x8
+    0x8B 0, 0
+    0x101<1> 2
+    0xB3 0x102, 5
+    0x106 "bg", 0, 1, 2, 2, 0, 0, 0x100, 0, 0, 0x100
+    async_call coinAnimLoop
+    async_call checkEmptyCatch
+    rest 0x8
+    fade<1> 1,1,1
 return

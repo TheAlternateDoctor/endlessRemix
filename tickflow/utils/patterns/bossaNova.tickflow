@@ -1,0 +1,118 @@
+// lol hehe
+
+presequenceBossaNova:
+random 8
+if 1
+    0xB3 game_state, 0
+    rest 0x30
+    play_sfx 0x10005ED
+    rest 0x60
+    play_sfx 0x10005FE
+    rest 0x30
+    play_sfx 0x10005FF
+else
+    0xB3 game_state, 1
+    rest 0x30
+    play_sfx 0x10005EC
+    rest 0x30
+endif
+stop
+
+sequenceBossaNova:
+	set_cat 0
+	call changeEngine
+	engine 0x2C
+	sub 4
+	0x29<2> 
+    0xB2 game_state
+    if 1
+        random 2
+        switch
+        case 0
+            0xB3 score_add, 12
+            async_call bossaNova1
+            break
+        case 1
+            0xB3 score_add, 14
+            async_call bossaNova2
+            break
+        endswitch
+    else
+        random 2
+        switch
+        case 0
+            0xB3 score_add, 10
+            async_call bossaNova3
+            break
+        case 1
+            0xB3 score_add, 8
+            async_call bossaNova4
+            break
+        endswitch
+    endif
+    rest 0x10
+    input 1
+	0xB3 9, 0x2C
+    rest 0x8
+    fade<1> 1,1,1
+stop
+
+bossaNova1:
+0x102<0>
+async_call bossaNovaStartMan
+rest 0x18
+rest 0x90
+async_sub 0x63
+0x103<2> 1
+rest 0xC0
+async_sub 0x65
+0x103<1> 1
+rest 0xC0
+async_sub 0x63
+0x103<2> 1
+stop
+
+bossaNova2:
+0x102<0>
+async_call bossaNovaStartMan
+rest 0x18
+rest 0x90
+async_sub 0x62
+0x103<2> 1
+rest 0xC0
+async_sub 0x62
+0x103<2> 1
+rest 0xC0
+async_sub 0x63
+0x103<1> 1
+stop
+
+bossaNova3:
+0x102<1>
+async_call bossaNovaStartWomanTurn
+rest 0x18
+rest 0x90
+async_sub 0x63
+0x103<2> 1
+rest 0xC0
+async_sub 0x65
+0x103<1> 1
+rest 0xC0
+async_sub 0x63
+0x103<2> 1
+stop
+
+bossaNova4:
+0x102<1>
+async_call bossaNovaStartWoman
+rest 0x18
+rest 0x90
+async_sub 0x64
+0x103<1> 1
+rest 0xC0
+async_sub 0x64
+0x103<1> 1
+rest 0xC0
+async_sub 0x64
+0x103<1> 1
+stop

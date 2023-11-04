@@ -80,6 +80,15 @@
 #include utils/patterns/bigRockFinish.tickflow
 #include utils/patterns/flockstep.tickflow
 #include utils/patterns/workingDough.tickflow
+#include utils/patterns/monkeyWatch.tickflow
+#include utils/patterns/loveRap.tickflow
+#include utils/patterns/fillbots.tickflow
+#include utils/patterns/screwBotFactory.tickflow
+#include utils/patterns/exhibitionMatch.tickflow
+#include utils/patterns/bossaNova.tickflow
+#include utils/patterns/figureFighter.tickflow
+#include utils/patterns/airRally.tickflow
+#include utils/patterns/blueBear.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -103,6 +112,9 @@
 #include utils/games/cheerReaders.tickflow
 #include utils/games/lumbearjack.tickflow
 #include utils/games/coinToss.tickflow
+#include utils/games/fillbots.tickflow
+#include utils/games/bossaNova.tickflow
+#include utils/games/airRally.tickflow
 
 #include utils/utils.tickflow
 
