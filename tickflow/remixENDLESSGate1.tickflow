@@ -89,7 +89,7 @@
 #include utils/patterns/monkeyWatch.tickflow
 #include utils/patterns/loveRap.tickflow
 #include utils/patterns/fillbots.tickflow
-#include utils/patterns/screwBotFactory.tickflow
+#include utils/patterns/screwbotFactory.tickflow
 #include utils/patterns/exhibitionMatch.tickflow
 #include utils/patterns/bossaNova.tickflow
 #include utils/patterns/figureFighter.tickflow
