@@ -2158,6 +2158,52 @@ remove_sfx 6
 0xB3 sfx_plus, 0
 return
 
+loadDonk:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_DONKDONK"
+    set_cellanim 4, u"rom:/cellanim/rvlDonkDonk_v0.zlib", -1
+    game_cellanim 0x25, 4
+    0xB3 cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_DONKDONK"
+    set_cellanim 5, u"rom:/cellanim/rvlDonkDonk_v0.zlib", -1
+    game_cellanim 0x25, 5
+    0xB3 cellanim_slot, 1
+endif
+0x2B 0x25, 3
+return
+
+loadDonkLate:
+async_call unloadSpeAudio
+rest 0xC
+0xB2 cellanim_slot
+if 1
+	0x202
+	if 0 //Japanese
+        set_sfx 6, u"GROUP_DONKDONK_VOICE_JP"
+    else
+        set_sfx 6, u"GROUP_DONKDONK_VOICE_EN"
+    endif
+    0xB3 sfx_plus,1
+else
+	0x202
+	if 0 //Japanese
+        set_sfx 0xB, u"GROUP_DONKDONK_VOICE_JP"
+    else
+        set_sfx 0xB, u"GROUP_DONKDONK_VOICE_EN"
+    endif
+    0xB3 sfx_plus_2,1
+endif
+stop
+
 loadMeatGrinder:
 0xB2 cellanim_slot
 if 1
