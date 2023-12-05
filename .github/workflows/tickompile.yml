@@ -94,57 +94,57 @@ jobs:
           name: Latest C00.bins
           path: out/
           
-  saltwater:
-    runs-on: ubuntu-latest
+  # saltwater:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+  #   steps:
+  #     - uses: actions/checkout@v3
       
-      - name: Setup Java
-        uses: actions/setup-java@v3.9.0
-        with:
-          java-version: 8
-          distribution: adopt
-          java-package: jre
+  #     - name: Setup Java
+  #       uses: actions/setup-java@v3.9.0
+  #       with:
+  #         java-version: 8
+  #         distribution: adopt
+  #         java-package: jre
           
-      - name: Set up structure
-        run: |
-          wget https://github.com/patataofcourse/Deckompiler/releases/download/v0.2.1/Deckompiler-linux.zip
-          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
-          unzip Deckompiler-linux.zip 
-          chmod u+x deckompiler
-          mkdir -p out
-          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
+  #     - name: Set up structure
+  #       run: |
+  #         wget https://github.com/patataofcourse/Deckompiler/releases/download/v0.2.1/Deckompiler-linux.zip
+  #         wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+  #         unzip Deckompiler-linux.zip 
+  #         chmod u+x deckompiler
+  #         mkdir -p out
+  #         sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
           
-      - name: Build release btk
-        run: |
-          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
-          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
-          java -jar tickompiler.jar c tickflow/ bin/
-          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS.btk bin/remixENDLESS.tempo
+  #     - name: Build release btk
+  #       run: |
+  #         sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+  #         sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
+  #         java -jar tickompiler.jar c tickflow/ bin/
+  #         ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS.btk bin/remixENDLESS.tempo
           
-      - name: Build release btk (debug)
-        run: |
-          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
-          java -jar tickompiler.jar c tickflow/ bin/
-          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-debug.btk bin/remixENDLESS.tempo
+  #     - name: Build release btk (debug)
+  #       run: |
+  #         sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+  #         java -jar tickompiler.jar c tickflow/ bin/
+  #         ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-debug.btk bin/remixENDLESS.tempo
           
-      - name: Build release btk lite
-        run: |
-          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
-          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
-          java -jar tickompiler.jar c tickflow/ bin/
-          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-lite.btk bin/remixENDLESS.tempo
+  #     - name: Build release btk lite
+  #       run: |
+  #         sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+  #         sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+  #         java -jar tickompiler.jar c tickflow/ bin/
+  #         ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-lite.btk bin/remixENDLESS.tempo
 
-      - name: Build release btk lite (debug)
-        run: |
-          sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
-          java -jar tickompiler.jar c tickflow/ bin/
-          ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-debug-lite.btk bin/remixENDLESS.tempo
+  #     - name: Build release btk lite (debug)
+  #       run: |
+  #         sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
+  #         java -jar tickompiler.jar c tickflow/ bin/
+  #         ./deckompiler btks bin/remixENDLESS.bin out/remixENDLESS-debug-lite.btk bin/remixENDLESS.tempo
 
 
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: Latest Saltwater btks
-          path: out/
+  #     - name: Upload a Build Artifact
+  #       uses: actions/upload-artifact@v3.1.1
+  #       with:
+  #         name: Latest Saltwater btks
+  #         path: out/
