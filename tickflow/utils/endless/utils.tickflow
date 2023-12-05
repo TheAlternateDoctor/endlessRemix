@@ -1472,26 +1472,34 @@ winGame:
 stop
 
 speedup:
+    async_call setupManzai
     set_cat 0
     rest 0x30*16
     rest 0x30*16
     rest 0x30*16
     speed_relative 0x101, startSpeed, maxSpeed
+    async_call manzaiSpeedup
     rest 0x30*16
     speed_relative 0x101, startSpeed, maxSpeed
+    async_call manzaiSpeedup
     rest 0x30*16
     speed_relative 0x101, startSpeed, maxSpeed
+    async_call manzaiSpeedup
     rest 0x30*16
     speed_relative 0x101, startSpeed, maxSpeed
+    async_call manzaiSpeedup
     0xB3 speed, 0x104
     rest 0x30*16
     label 0x59EE
         0xB2 speed
             if_leq 0x10C
                 speed_relative 0x102, startSpeed, maxSpeed
+                async_call manzaiSpeedup
+                async_call manzaiSpeedup, 3
                 0xB4 speed, 2
             else
                 speed_relative 0x101, startSpeed, maxSpeed
+                async_call manzaiSpeedup
                 0xB4 speed, 1
             endif
         endif
@@ -1501,9 +1509,12 @@ speedup:
         0xB2 speed
         if_leq 0x130
             speed_relative 0x102, startSpeed, maxSpeed
+            async_call manzaiSpeedup
+            async_call manzaiSpeedup, 3
             0xB4 speed, 2
         else
             speed_relative 0x101, startSpeed, maxSpeed
+            async_call manzaiSpeedup
             0xB4 speed, 1
         endif
 
@@ -1512,9 +1523,12 @@ speedup:
         0xB2 speed
         if_leq 0x120
             speed_relative 0x102, startSpeed, maxSpeed
+            async_call manzaiSpeedup
+            async_call manzaiSpeedup, 3
             0xB4 speed, 2
         else
             speed_relative 0x101, startSpeed, maxSpeed
+            async_call manzaiSpeedup
             0xB4 speed, 1
         endif
 
@@ -1523,9 +1537,12 @@ speedup:
         0xB2 speed
         if_leq 0x148
             speed_relative 0x102, startSpeed, maxSpeed
+            async_call manzaiSpeedup
+            async_call manzaiSpeedup, 3
             0xB4 speed, 2
         else
             speed_relative 0x101, startSpeed, maxSpeed
+            async_call manzaiSpeedup
             0xB4 speed, 1
         endif
 
@@ -1594,4 +1611,88 @@ if_geq 0x140
         endif
     endif
 endif
+stop
+
+setupManzai:
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x1000546
+    rest 1
+    play_sfx 0x100054D
+stop
+
+speedupManzai:
+	play_sfx 0x100054D	
+	rest 1
+	0xB2 manzai_step
+	switch
+		case 12
+		case 16
+		case 21
+		case 25
+		case 30
+		case 34
+		case 39
+		case 43
+		case 47
+		case 52
+		case 56
+		case 61
+		case 65
+		case 70
+		case 74
+		case 79
+		case 83
+		case 88
+		case 92
+		case 96
+		case 101
+		case 105
+		case 110
+		case 114
+		case 119
+		case 123
+		case 128
+		case 132
+		case 137
+		case 141
+		case 145
+		case 150
+		case 154
+		case 159
+		case 163
+		case 168
+		case 172
+		case 177
+		case 181
+		case 186
+		case 190
+		case 194
+		case 199
+		case 203
+		case 208
+		case 212
+		case 217
+		case 221
+		case 226
+		case 230
+		case 235
+		case 239
+		case 243
+		case 248
+		case 252
+			play_sfx 0x100054D
+			break
+	endswitch
+	0xB4 manzai_step, 1
 stop
