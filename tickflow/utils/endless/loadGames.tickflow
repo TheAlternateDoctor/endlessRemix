@@ -580,13 +580,19 @@ if 1
     set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
-    game_effect 0x3C, 4
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 4
+    endif
     0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/rvlBasket_v0.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
-    game_effect 0x3C, 5
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 5
+    endif
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x3C, 3
@@ -1216,13 +1222,19 @@ if 1
     set_cellanim 4, u"rom:/cellanim/agbMetro_v0.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
-    game_effect 0x3C, 4
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 4
+    endif
     0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/agbMetro_v0.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
-    game_effect 0x3C, 5
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 5
+    endif
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x3C, 3
@@ -2209,7 +2221,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_NTR_CHORUS"
     random 8
     switch
     case 0
@@ -2248,7 +2259,6 @@ if 1
     game_cellanim 0x13, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_NTR_CHORUS"
     random 8
     switch
     case 0
@@ -2288,6 +2298,15 @@ else
     0xB3 cellanim_slot, 1
 endif
 return
+
+loadGleeClubLate:
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_NTR_CHORUS"
+else
+    set_sfx 5, u"GROUP_NTR_CHORUS"
+endif
+stop
 
 loadCheerReaders:
 0xB2 cellanim_slot
@@ -2416,13 +2435,19 @@ if 1
     set_cellanim 4, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
-    game_effect 0x23, 4
+    0xB2 engine_loaded
+    if_neq SCENE_rvlFlea
+        game_effect 0x23, 4
+    endif
     0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
-    game_effect 0x23, 5
+    0xB2 engine_loaded
+    if_neq SCENE_rvlFlea
+        game_effect 0x23, 5
+    endif
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x23, 3
@@ -2612,7 +2637,10 @@ if 1
     endswitch
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
-    game_effect 0x23, 4
+    0xB2 engine_loaded
+    if_neq SCENE_rvlFlea
+        game_effect 0x23, 4
+    endif
     0xB3 cellanim_slot, 0
 else
     random 5
@@ -2635,7 +2663,10 @@ else
     endswitch
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
-    game_effect 0x23, 5
+    0xB2 engine_loaded
+    if_neq SCENE_rvlFlea
+        game_effect 0x23, 5
+    endif
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x23, 0x10
@@ -2998,7 +3029,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_NTR_SHUGYO"
     random 8
     switch
     case 0
@@ -3037,7 +3067,6 @@ if 1
     game_cellanim 0x1B, 4
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_NTR_SHUGYO"
     random 8
     switch
     case 0
@@ -3077,6 +3106,15 @@ else
     0xB3 cellanim_slot, 1
 endif
 return
+
+loadMunchyMonkLate:
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_NTR_SHUGYO"
+else
+    set_sfx 5, u"GROUP_NTR_SHUGYO"
+endif
+stop
 
 loadPajama:
 0xB2 cellanim_slot
@@ -4852,17 +4890,39 @@ if 1
     set_cellanim 4, u"rom:/cellanim/rvlComedians_long.zlib", -1
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
-    game_effect 0x3C, 4
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 4
+    endif
     0xB3 cellanim_slot, 0
 else
     set_cellanim 5, u"rom:/cellanim/rvlComedians_long.zlib", -1
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
-    game_effect 0x3C, 5
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 5
+    endif
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x3C, 3
 return
+
+loadManzaiLate:
+async_call unloadSpeAudio
+rest 0xC
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_COMEDIANS_VOICE"
+    set_sfx 6, u"GROUP_COMEDIANS"
+    0xB3 sfx_plus,1
+else
+    set_sfx 5, u"GROUP_COMEDIANS_VOICE"
+    set_sfx 0xB, u"GROUP_COMEDIANS_VOICE"
+    0xB3 sfx_plus_2,1
+endif
+stop
+
 
 unloadManzai: //Actually we REALLY need this
 remove_sfx 6
@@ -4879,7 +4939,6 @@ endif
 rest 0xC
 0xB2 cellanim_slot
 if 1
-    set_sfx 4, u"GROUP_MEAT"
     random 3
     switch
     case 0
@@ -4894,10 +4953,12 @@ if 1
     endswitch
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
-    game_effect 0x3C, 4
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 4
+    endif
     0xB3 cellanim_slot, 0
 else
-    set_sfx 5, u"GROUP_MEAT"
     random 3
     switch
     case 0
@@ -4912,11 +4973,24 @@ else
     endswitch
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
-    game_effect 0x3C, 5
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 5
+    endif
     0xB3 cellanim_slot, 1
 endif
 0x2B 0x32, 3
 return
+
+loadMeatGrinderLate:
+0xB2 cellanim_slot
+if 0
+    set_sfx 4, u"GROUP_MEAT"
+else
+    set_sfx 5, u"GROUP_MEAT"
+endif
+stop
+
 
 //NEW
 

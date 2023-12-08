@@ -76,6 +76,7 @@
 #include utils/patterns/ninjaBodyguard.tickflow
 #include utils/patterns/lockstep.tickflow
 #include utils/patterns/blueBirds.tickflow
+#include utils/patterns/manzai.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow

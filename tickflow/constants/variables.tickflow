@@ -14,3 +14,4 @@ debug_current_index = 0
 is_debug = 10
 lives_enabled = 4
 manzai_step = 15
+index = 16

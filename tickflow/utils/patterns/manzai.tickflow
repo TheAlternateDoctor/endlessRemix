@@ -1,0 +1,51 @@
+// MANZAI FOR REALS
+
+sequenceManzai:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+	0xB3 9, 0x3C
+    zoom_gradual 3, 4, 4, 0x1, 0x150, 0x150
+    pan 3, 0, 0
+    0x108 0
+    0x106<3> 1
+    0x101 2
+    input 1
+    rest 0x10
+    unrest 0x30
+    random 2
+    switch
+    case 0
+        0xB3 score_add, 7
+        async_call manzai1
+        break
+    default
+        0xB3 score_add, 6
+        async_call manzai2
+        break
+    endswitch
+    fade<1> 1,1,1
+stop
+
+manzai1:
+async_call randomphrase
+rest 0xC0
+async_call randomphrase
+rest 0xC0
+async_call randomboing
+rest 0xC0
+async_call randomphrase
+stop
+
+manzai2:
+async_call randomphrase
+rest 0xC0
+async_call randomboing
+rest 0xC0
+async_call randomphrase
+rest 0xC0
+async_call randomboing
+stop

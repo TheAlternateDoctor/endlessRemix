@@ -89,6 +89,7 @@
 #include utils/patterns/figureFighter.tickflow
 #include utils/patterns/airRally.tickflow
 #include utils/patterns/blueBear.tickflow
+#include utils/patterns/manzai.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
