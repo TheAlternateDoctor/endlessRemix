@@ -1,6 +1,6 @@
 bunnyHopCheck1:
-    async_call earlyCheckApress
-    rest 0x8
+    async_call earlyCheckApress, 4
+    rest 0xC
     async_call checkApress
     rest 0x30
     async_call checkApress

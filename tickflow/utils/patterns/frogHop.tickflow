@@ -18,12 +18,11 @@ stop
 
 sequenceFrogHop:
 	set_cat 0
-    rest 0x8
 	call changeEngine
 	engine 0x14
 	sub 4
 	0x29<2> 
-    rest 0x8
+    rest 0xC
     input 1
     0x101<1>
     0x2B<1> 0x14
@@ -34,6 +33,9 @@ sequenceFrogHop:
     endif
     0xB2 game_state
     if 1
+        0x101<1> 
+        0x103<8> 0, 1
+        0x100 0, 0xC
         random 1
         switch
         case 0
@@ -48,17 +50,14 @@ sequenceFrogHop:
             async_call frogHop1
         endswitch
     endif
-    rest 0x8
+    rest 0xC
 	0xB3 9, 0x14
     fade<1> 1,1,1
     input 1
 stop
 
 frogHopShake1:
-    0x101<1> 
-    0x103<8> 0, 1
-    0x100 0, 0x8
-    rest 0x8
+    rest 0xC
     sub 0x57
     sub 0x58
     sub 0x60
@@ -76,7 +75,7 @@ frogHopShake1:
 stop
 
 frogHop1:
-rest 0x8
+rest 0xC
 async_call frogHopBeatAnim
 async_call yahooNo
 rest 0xF0

@@ -17,16 +17,16 @@ stop
 
 sequenceFlipperFlop:
 	set_cat 0
-    rest 0x8
 	call changeEngine
 	engine 0x26
 	sub 4
 	0x29<2> 
-    rest 0x8
+    rest 0xC
     0x65<4> 0x12C, 0x3C
     0x65<3> 0, 0x50
     0x65<5> 2
     0x105<4>
+    0x100 0xC, 0
     input 1
     random 3
     switch
@@ -43,14 +43,13 @@ sequenceFlipperFlop:
         async_call flipperFlop3
         break
     endswitch
-    rest 0x8
+    rest 0xC
 	0xB3 9, 0x26
     fade<1> 1,1,1
 stop
 
 flipperFlop1:
-0x100 0x8, 0
-rest 0x8
+rest 0xC
 0x103
 0x105<1> 
 async_call flipperFlopFlip
@@ -76,8 +75,7 @@ async_sub 0x63
 stop
 
 flipperFlop2:
-0x100 0x8, 0
-rest 0x8
+rest 0xC
 0x103
 0x105<1>
 async_call flipperFlopFlip
@@ -105,8 +103,7 @@ async_call flipperFlopFlip
 stop
 
 flipperFlop3:
-0x100 0x8, 0
-rest 0x8
+rest 0xC
 0x103
 0x105<1> 
 async_call flipperFlopFlip

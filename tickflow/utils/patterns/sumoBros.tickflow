@@ -17,16 +17,16 @@ stop
 
 sequenceSumoBros:
 	set_cat 0
-    rest 0x8
 	call changeEngine
 	engine 0x3C
 	sub 4
 	0x29<2> 
-    rest 0x8
+    rest 0xC
     0x108 0
     input 1
     0xB2 game_state
     if 1
+        0x100 0, 0xC
         random 1
         switch
         case 0
@@ -35,6 +35,8 @@ sequenceSumoBros:
             break
         endswitch
     else
+        0x100 1, 0xC
+        0x101<1> 0
         random 1
         switch
         case 0
@@ -43,7 +45,7 @@ sequenceSumoBros:
             break
         endswitch
     endif
-    rest 0x8
+    rest 0xC
 	0xB3 9, 0x3C
     fade<1> 1,1,1
 stop
@@ -52,7 +54,7 @@ sumoBrosSlap1:
     0x102 0
     0x102 1
     async_call sumoBrosEarly4Slaps
-    rest 0x8
+    rest 0xC
     0x106
     rest 0x30
     0x106
@@ -80,7 +82,7 @@ stop
 
 sumoBrosStomp1:
     async_call sumoBrosEarly2Stomp
-    rest 0x8
+    rest 0xC
     0x106<2>
     rest 0x60
     0x106<2>
@@ -98,8 +100,7 @@ sumoBrosStomp1:
 stop
 
 sumoBrosEarly4Slaps:
-    0x100 0, 0x8
-    rest 0x8
+    rest 0xC
     0x101 0
     rest 0x18	// 1.0 beats
     0x100 0, 0x18
@@ -113,9 +114,7 @@ sumoBrosEarly4Slaps:
 stop
 
 sumoBrosEarly2Stomp:
-    0x100 1, 0x8
-    0x101<1> 0
-    rest 0x8	// 0.5 beats
+    rest 0xC	// 0.5 beats
     0x104<1> 1
     rest 0x30	// 1.0 beats
     0x100 1, 0x30

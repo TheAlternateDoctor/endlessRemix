@@ -26,17 +26,17 @@ stop
 
 sequenceLockstep:
 	set_cat 0
-    rest 0x8
 	call changeEngine
 	engine 0xF
 	sub 4
 	0x29<2> 
-    rest 0x8
+    rest 0xC
     input 1
     0xB2 game_state
     if 1
         0x103 1
         0x105 0
+        0x100 1, 0xC
         random 1
         switch
         case 0
@@ -53,15 +53,14 @@ sequenceLockstep:
             async_call lockstepOffbeat1
         endswitch
     endif
-    rest 0x8
+    rest 0xC
 	0xB3 9, 0xF
     fade<1> 1,1,1
     input 1
 stop
 
 lockstepOnbeat1:
-0x100 1, 0x8
-rest 0x8
+rest 0xC
 0x102
 async_call lockstepOnStep
 rest 0x30
@@ -84,8 +83,8 @@ async_sub 0x62
 stop
 
 lockstepOffbeat1:
-0x100 0, 0x20
-rest 0x8
+rest 0xC
+0x100 0, 0x18
 async_call lockstepHoHoHo
 rest 0x18
 0x102

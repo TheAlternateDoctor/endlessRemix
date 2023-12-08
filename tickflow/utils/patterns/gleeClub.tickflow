@@ -11,7 +11,7 @@ sequenceGleeClub:
 	engine 0x13
 	sub 4
 	0x29<2> 
-    async_call gleeClubPitchSetting
+    call gleeClubPitchSetting
     rest 0x10
     0x10D
 	0xB3 9, 0x13
@@ -143,4 +143,4 @@ if_geq 0
         0x104 2, 0, 0x1000DAF, 0x3C, 0
     endif
 endif
-stop
+return
