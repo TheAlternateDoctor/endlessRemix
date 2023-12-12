@@ -276,6 +276,8 @@ goto 0x4D5
 label 0x10E7
 
 set_layout 0x1E, u"rom:/layout/gate.zlib", -1
+set_model 4, u"rom:/__test/DefaultFragmentLight.bcenv", 1
+set_model 5, u"rom:/__test/DefaultSceneEnvironmentSetting.bcenv", 1
 
 0x83<1> 
 0xBB 

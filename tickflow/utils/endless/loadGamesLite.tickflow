@@ -1315,8 +1315,6 @@ else
     async_call unloadGameSlot5
 endif
 rest 0xC
-set_model 4, u"rom:/__test/DefaultFragmentLight.bcenv", 1
-set_model 5, u"rom:/__test/DefaultSceneEnvironmentSetting.bcenv", 1
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_TANGO"
