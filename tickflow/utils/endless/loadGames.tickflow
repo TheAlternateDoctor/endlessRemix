@@ -4916,16 +4916,14 @@ if 0
     0xB3 sfx_plus,1
 else
     set_sfx 5, u"GROUP_COMEDIANS_VOICE"
-    set_sfx 0xB, u"GROUP_COMEDIANS_VOICE"
+    set_sfx 0xB, u"GROUP_COMEDIANS"
     0xB3 sfx_plus_2,1
 endif
+sub 3
+call setupManzai
+rest 1
+async_call manzaiSpeedup
 stop
-
-
-unloadManzai: //Actually we REALLY need this
-remove_sfx 6
-0xB3 sfx_plus, 0
-return
 
 loadMeatGrinder:
 0xB2 cellanim_slot
