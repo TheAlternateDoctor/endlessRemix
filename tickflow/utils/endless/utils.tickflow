@@ -1691,7 +1691,7 @@ endif
 stop
 
 manzaiSpeedup:
-	play_sfx 0x100054D	
+	play_sfx 0x100011C7
 	rest 1
 	0xB2 manzai_step
 	switch
@@ -1750,8 +1750,8 @@ manzaiSpeedup:
 		case 243
 		case 248
 		case 252
-			play_sfx 0x100054D
-			break
+ 			play_sfx 0x10011C7
+ 			break
 	endswitch
 	0xB4 manzai_step, 1
 stop
