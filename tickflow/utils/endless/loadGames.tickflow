@@ -4919,10 +4919,6 @@ else
     set_sfx 0xB, u"GROUP_COMEDIANS"
     0xB3 sfx_plus_2,1
 endif
-sub 3
-call setupManzai
-rest 1
-async_call manzaiSpeedup
 stop
 
 loadMeatGrinder:
