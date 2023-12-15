@@ -1750,7 +1750,7 @@ manzaiSpeedup:
 		case 243
 		case 248
 		case 252
- 			play_sfx 0x10011C7
+ 			play_sfx 0x10011C7
  			break
 	endswitch
 	0xB4 manzai_step, 1
