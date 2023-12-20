@@ -91,3 +91,5 @@ INDEX_rvlTap = 0x4B
 INDEX_ntrSynchro = 0x4C
 INDEX_rvlDonk = 0x4D
 INDEX_rvlTambourine = 0x4E
+INDEX_agbFireworks = 0x4F
+INDEX_bnbTweet = 0x50

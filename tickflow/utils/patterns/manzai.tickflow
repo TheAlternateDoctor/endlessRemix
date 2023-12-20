@@ -1,12 +1,5 @@
 // MANZAI FOR REALS
 
-manzaiSetting:
-async_call loadManzaiLate
-async_call loadManzaiLate2
-rest 0x30
-async_call voicespeedup
-stop
-
 sequenceManzai:
 	set_cat 0
     rest 0x8
