@@ -1,0 +1,71 @@
+// Donky Donky
+
+presequenceDonk:
+async_call loadDonkLate
+rest 0x30
+async_call donkdonkSFX
+rest 0x60
+async_call donkdonkSFX
+stop
+
+sequenceDonk:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x25
+	sub 4
+	0x29<2> 
+	0xB3 9, 0x25
+    async_call donksetup
+    input 1
+    rest 0x10
+    unrest 0x30
+    random 2
+    switch
+    case 0
+        0xB3 score_add, 7
+        async_call donkDonk1
+        break
+    default
+        0xB3 score_add, 6
+        async_call donkDonk2
+        break
+    endswitch
+    fade<1> 1,1,1
+stop
+
+donkDonk1:
+async_call donkdonk
+rest 0x60
+async_call donkdonk
+rest 0x60
+async_call donkdonk
+rest 0x60
+async_call donkdwonk
+rest 0x60
+async_call deetdeetduh
+rest 0x60
+async_call deetdeetduh
+rest 0x60
+async_call deetdeetduh
+rest 0x60
+async_call deetdeetdoo
+stop
+
+donkDonk2:
+async_call donkdonk
+rest 0x60
+async_call donkdwonk
+rest 0x60
+async_call deetdeetduh
+rest 0x60
+async_call deetdeetdoo
+rest 0x60
+async_call donkdonk
+rest 0x60
+async_call donkdwonk
+rest 0x60
+async_call deetdeetduh
+rest 0x60
+async_call blastoff
+stop

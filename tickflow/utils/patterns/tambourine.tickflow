@@ -1,0 +1,94 @@
+// Oh hi there how are ya?
+
+sequenceTambourine:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 9, 0x3C
+    fade<1> 1,1,1
+    input 1
+    random 3
+    switch
+    case 0
+        0xB3 score_add, 9
+        async_call tambourine1
+        break
+    case 1
+        0xB3 score_add, 7
+        async_call tambourine2
+        break
+    case 2
+        0xB3 score_add, 9
+        async_call tambourine3
+        break
+    endswitch
+stop
+
+tambourine1:
+async_call tambourineCheck
+async_call tambourineShake
+rest 0x18
+async_call tambourineShake
+rest 0x18
+async_call tambourineTap
+rest 0x24
+async_call tambourineShake
+rest 0x18
+async_call tambourineShake
+rest 0xC
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineSwitch
+stop
+
+tambourine2:
+async_call tambourineCheck
+async_call tambourineShake
+rest 0x30
+async_call tambourineShake
+rest 0x30
+async_call tambourineShake
+rest 0x30
+async_call tambourineShake
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineSwitch
+stop
+
+tambourine3:
+async_call tambourineCheck
+async_call tambourineShake
+rest 0x30
+async_call tambourineShake
+rest 0x18
+async_call tambourineShake
+rest 0x18
+async_call tambourineShake
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x18
+async_call tambourineTap
+rest 0x18
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineSwitch
+stop

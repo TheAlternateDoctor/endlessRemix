@@ -8,7 +8,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x4D
+        random 0x52
     endif
     switch
         case INDEX_agbBatter
@@ -1273,6 +1273,27 @@ loadNextGame:
                     set_func 3, loadManzaiLate
                     set_func 2, nop
                     0xB3 index, INDEX_rvlComedians
+                endif
+            endif
+        break
+        case INDEX_agbFireworks
+            0xB2 index
+            if INDEX_agbFireworks //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                if INDEX_rvlGolf
+                    goto 0x7AD
+                else
+                    0xB2 is_debug
+                    if 1
+                        0xB3 debug_start, 1337
+                        0xB3 debug_current_index, INDEX_agbFireworks
+                    endif
+                    set_func 0, sequenceFireworks
+                    call loadFireworks //help
+                    set_func 3, nop
+                    set_func 2, nop
+                    0xB3 index, INDEX_agbFireworks
                 endif
             endif
         break

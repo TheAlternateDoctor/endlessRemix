@@ -1,0 +1,46 @@
+sequenceFireworks:
+	set_cat 0
+	call changeEngine
+	engine 0x25
+	sub 4
+	0x29<2> 
+    rest 0xC
+	0xB3 9, 0x25
+    setrest 0, 0x18
+    setrest 1, 0x30
+    input 1
+    random 2
+    switch
+    case 0
+        0xB3 score_add, 17
+        async_call fireworks1
+        break
+    default
+        0xB3 score_add, 17
+        async_call fireworks2
+        break
+    endswitch
+    rest 0xC
+    fade<1> 1,1,1
+stop
+
+fireworks1:
+    rest 0x90
+    async_call SpecialFireworkStar
+    rest 0x30
+    async_call fireworksBomb
+    rest 0x90
+    async_call SpecialFireworkSmile
+stop
+
+fireworks2:
+    rest 0x30
+    async_call SpiritSparklerL
+    rest 0x60
+    async_call SpiritSparklerR
+    rest 0x60
+    async_call RhythmRocketR
+    async_call fireworksBomb
+    rest 0x60
+    async_call SpiritSparklerL
+stop

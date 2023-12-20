@@ -89,7 +89,10 @@
 #include utils/patterns/figureFighter.tickflow
 #include utils/patterns/airRally.tickflow
 #include utils/patterns/blueBear.tickflow
+#include utils/patterns/donkDonk.tickflow
 #include utils/patterns/manzai.tickflow
+#include utils/patterns/tambourine.tickflow
+#include utils/patterns/fireworks.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -116,6 +119,10 @@
 #include utils/games/fillbots.tickflow
 #include utils/games/bossaNova.tickflow
 #include utils/games/airRally.tickflow
+#include utils/games/donkDonk.tickflow
+#include utils/games/manzai.tickflow
+#include utils/games/tambourine.tickflow
+#include utils/games/fireworks.tickflow
 
 #include utils/utils.tickflow
 
@@ -350,7 +357,7 @@ stop
 
 initManzai:
 	set_cat 0
-	set_sfx 0xF, u"GROUP_COMEDIANS_VOICE"
+	set_sfx 3, u"GROUP_COMEDIANS_VOICE"
 	sub 3
     play_sfx 0x1000546
     rest 1
@@ -368,7 +375,7 @@ initManzai:
     rest 1
     play_sfx 0x100054D
 	rest 0xC
-	remove_sfx 0xF
+	remove_sfx 3
 stop
 
 loadInitialGames:

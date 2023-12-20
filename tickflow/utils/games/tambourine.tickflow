@@ -1,0 +1,199 @@
+// Subs for Kievit's Tambourine recreation.
+// Special thanks to TheAlternateDoctor for their help in creating these subs.
+// Feel free to ask us for any help in using these subs on Discord.
+
+// USAGE EXAMPLE at the bottom of this document.
+
+tambourineShake:
+	0x101<1> 1
+    0x104 1
+    play_sfx 0x10011A5
+    rest 0x30*7
+    rest 0x24
+	0x8F 0
+    0x100 0, 0xC
+	0xB2 1
+	if 1
+		0x101 1
+	else 
+		0x101 0
+	endif
+stop
+
+tambourineTap:
+    0x101<1> 2
+    0x104 1
+    play_sfx 0x10011AA
+    rest 0x30*7
+    rest 0x24
+	0x8F 1
+    0x100 2, 0xC
+	0x102 0
+	0xB2 1
+	if 1
+		0x101<2> 1
+	else
+		0x101<2> 0
+	endif
+stop
+
+tambourineTapLong:
+    0x101<2> 0
+	0x105<1>
+    play_sfx 0x10011AA
+    rest 0x30*7
+    rest 0x24
+	0x8F 1
+    0x100 2, 0xC
+	0x102 0
+	0xB2 1
+	if 1
+		0x101<2> 1
+	else
+		0x101<2> 0
+	endif
+stop
+
+// --- Used during Skill Star inputs, doesn't set the rating comment.
+// --- Depending on the situations these may need to be used instead of the regular versions in remixes !!!
+
+tambourineShakeStar:
+	0x101<1> 1
+    0x104 1
+    play_sfx 0x10011A5
+    rest 0x30*7
+    rest 0x24
+    0x100 0, 0xC
+	0xB2 1
+	if 1
+		0x101 1
+	else 
+		0x101 0
+	endif
+stop
+
+tambourineTapStar:
+    0x101<1> 2
+    0x104 1
+    play_sfx 0x10011AA
+    rest 0x30*7
+    rest 0x24
+    0x100 2, 0xC
+	0x102 0
+	0xB2 1
+	if 1
+		0x101<2> 1
+	else
+		0x101<2> 0
+	endif
+stop
+
+tambourineTapLongStar:
+    0x101<2> 0
+	0x105<1>
+    play_sfx 0x10011AA
+    rest 0x30*7
+    rest 0x24
+    0x100 2, 0xC
+	0x102 0
+	0xB2 1
+	if 1
+		0x101<2> 1
+	else
+		0x101<2> 0
+	endif
+stop
+
+// ---
+
+tambourineSwitch:
+    play_sfx 0x10011A6
+	0x101<1> 1
+    0x102 1
+	input 1
+	0xB2 1
+	if 1
+		0x106<3> 0
+		rest 0x30
+	endif
+	0xB3 1, 0
+stop
+
+tambourineCheck: // Call at the start of an 8 beat pattern. Will react after 16 beats.
+	input 0
+    0xA2
+	0xB2 1
+	if 1
+		0x106<3> 0
+		0x106<2>
+		rest 0x30
+		0xB3 1, 0
+		rest 0x30*6
+	else
+		0xB3 1, 0
+		rest 0x30*7
+	endif
+
+	0xB2 1
+	if_neq 1
+		async_call tambourineFailCheck	
+	endif
+	rest 0x30*8
+    0xA2<2>
+    if_neq 1
+        play_sfx 0x10011A6
+		0x101<1> 1
+		0x104<1> 1
+    endif
+stop
+
+tambourineFailCheck: // Called automatically by tambourineCheck.
+	label 0x62AD
+	0xA2<2>
+	if 1
+		0xB3 1, 1
+		0x106<3> 1
+		play_sfx 0x10011A7
+		stop
+	endif
+	rest 1
+	goto 0x62AD	
+stop
+
+// USAGE EXAMPLE
+
+// async_call tambourineCheck
+// async_call tambourineShake
+// rest 0x30
+// async_call tambourineShake
+// rest 0x30 + 0x18
+// async_call tambourineShake
+// rest 0x18
+// async_call tambourineShake
+// rest 0x30 + 0x18
+// async_call tambourineShake
+// rest 0x30
+// async_call tambourineShake
+// rest 0x30
+// async_call tambourineShake
+// rest 0x18
+// async_call tambourineSwitch
+// rest 0x30*9
+
+// async_call tambourineCheck
+// async_call tambourineShake
+// rest 0x30
+// async_call tambourineShake
+// rest 0x30 + 0x18
+// async_call tambourineShake
+// rest 0x18
+// async_call tambourineShake
+// rest 0x30
+// async_call tambourineTap
+// rest 0x30
+// async_call tambourineTap
+// rest 0x30
+// async_call tambourineTapLong
+// rest 0x30
+// async_call tambourineSwitch
+// rest 0x30*9
