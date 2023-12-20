@@ -1256,6 +1256,40 @@ else
 endif
 stop
 
+loadTambourine:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_cellanim 4, u"rom:/cellanim/rvlTambourine_long.zlib", -1
+    set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
+    game_cellanim 0x3C, 4
+    game_effect 0x3C, 4
+    0xB3 cellanim_slot, 0
+else
+    set_cellanim 5, u"rom:/cellanim/rvlTambourine_long.zlib", -1
+    set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
+    game_cellanim 0x3C, 5
+    game_effect 0x3C, 5
+    0xB3 cellanim_slot, 1
+endif
+0x2B 0x3C, 6
+return
+
+loadTambourineLate:
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_TAMBOURINE"
+else
+    set_sfx 4, u"GROUP_TAMBOURINE"
+endif
+stop
+
 loadTapTroupe:
 0xB2 cellanim_slot
 if 1

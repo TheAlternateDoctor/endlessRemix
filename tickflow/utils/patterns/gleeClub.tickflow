@@ -16,11 +16,20 @@ sequenceGleeClub:
     0x10D
 	0xB3 9, 0x13
     fade<1> 1,1,1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 3
         async_call gleeClub1
+        break
+    case 1
+        0xB3 score_add, 3
+        async_call gleeClub2
+        break
+    case 2
+        0xB3 score_add, 3
+        async_call gleeClub3
+        break
     endswitch
     rest 0x60
     input 1
@@ -64,6 +73,65 @@ gleeClub1:
     0x106
 stop
 
+gleeClub2:
+    0x104<1> 0,0,0
+    0x104<1> 1,0,0
+    0x104<1> 2,0,0
+    rest 0xC0
+    0x105<1>
+    0x100 2
+    rest 0x30
+    0x105<2>
+    0x104<1> 0,2,0
+    0x104<1> 1,2,0
+    rest 0x30
+    0x105<0>
+    rest 0x60
+    play_sfx 0x1000DB2
+    rest 0x30
+    0x100 1
+    rest 0x20
+    0x10A 1
+    0x100 1
+    rest 0x10
+    0x104<1> 0,1,0
+    0x104<1> 1,1,0
+    0x100 2
+    rest 0x30
+    0x104<1> 0,2,0
+    0x104<1> 1,2,0
+    rest 0x30
+    0x104<1> 0,0,0
+    rest 0x30
+    0x104<1> 1,0,0
+    0x100 0
+stop
+
+gleeClub3:
+    0x104<1> 0,0,0
+    0x104<1> 1,0,0
+    0x104<1> 2,0,0
+    rest 0x30
+    0x104<1> 0,2,0
+    rest 0x30
+    0x104<1> 1,2,0
+    0x100 2
+    rest 0x60
+    0x104<1> 0,0,0
+    rest 0x30
+    0x104<1> 0,2,0
+    0x104<1> 1,0,0
+    0x100 0
+    rest 0x30
+    0x104<1> 1,2,0
+    0x100 2
+    rest 0x60
+    0x104<1> 0,0,0
+    rest 0x30
+    0x104<1> 1,0,0
+    0x100 0
+stop
+
 gleeClubPitchSetting: //hehe hopefully this works...
 0xB2 speed
 if_geq 0
@@ -82,65 +150,104 @@ if_geq 0
                                                     0x104 0, 0, 0x1000DAF, 0x3C, -7
                                                     0x104 1, 0, 0x1000DAF, 0x3C, -3
                                                     0x104 2, 0, 0x1000DAF, 0x3C, 0
+                                                    0x104 0, 1, 0x1000DAF, 0x3C, -7
+                                                    0x104 1, 1, 0x1000DAF, 0x3C, -3
+                                                    0x104 2, 1, 0x1000DAF, 0x3C, 0
                                                 else
                                                     0x104 0, 0, 0x1000DAF, 0x3C, -8
                                                     0x104 1, 0, 0x1000DAF, 0x3C, -4
                                                     0x104 2, 0, 0x1000DAF, 0x3C, -1
+                                                    0x104 0, 1, 0x1000DAF, 0x3C, -8
+                                                    0x104 1, 1, 0x1000DAF, 0x3C, -4
+                                                    0x104 2, 1, 0x1000DAF, 0x3C, -1
                                                 endif
                                             else
                                                 0x104 0, 0, 0x1000DAF, 0x3C, 3
                                                 0x104 1, 0, 0x1000DAF, 0x3C, 7
                                                 0x104 2, 0, 0x1000DAF, 0x3C, 0xA
+                                                0x104 0, 1, 0x1000DAF, 0x3C, 3
+                                                0x104 1, 1, 0x1000DAF, 0x3C, 7
+                                                0x104 2, 1, 0x1000DAF, 0x3C, 0xA
                                             endif
                                         else
                                             0x104 0, 0, 0x1000DAF, 0x3C, 2
                                             0x104 1, 0, 0x1000DAF, 0x3C, 6
                                             0x104 2, 0, 0x1000DAF, 0x3C, 9
+                                            0x104 0, 1, 0x1000DAF, 0x3C, 2
+                                            0x104 1, 1, 0x1000DAF, 0x3C, 6
+                                            0x104 2, 1, 0x1000DAF, 0x3C, 9
                                         endif
                                     else
                                         0x104 0, 0, 0x1000DAF, 0x3C, 1
                                         0x104 1, 0, 0x1000DAF, 0x3C, 5
                                         0x104 2, 0, 0x1000DAF, 0x3C, 8
+                                        0x104 0, 1, 0x1000DAF, 0x3C, 1
+                                        0x104 1, 1, 0x1000DAF, 0x3C, 5
+                                        0x104 2, 1, 0x1000DAF, 0x3C, 8
                                     endif
                                 else
                                     0x104 0, 0, 0x1000DAF, 0x3C, 0
                                     0x104 1, 0, 0x1000DAF, 0x3C, 4
                                     0x104 2, 0, 0x1000DAF, 0x3C, 7
+                                    0x104 0, 1, 0x1000DAF, 0x3C, 0
+                                    0x104 1, 1, 0x1000DAF, 0x3C, 4
+                                    0x104 2, 1, 0x1000DAF, 0x3C, 7
                                 endif
                             else
                                 0x104 0, 0, 0x1000DAF, 0x3C, -1
                                 0x104 1, 0, 0x1000DAF, 0x3C, 3
                                 0x104 2, 0, 0x1000DAF, 0x3C, 6
+                                0x104 0, 1, 0x1000DAF, 0x3C, -1
+                                0x104 1, 1, 0x1000DAF, 0x3C, 3
+                                0x104 2, 1, 0x1000DAF, 0x3C, 6
                             endif
                         else
                             0x104 0, 0, 0x1000DAF, 0x3C, -2
                             0x104 1, 0, 0x1000DAF, 0x3C, 2
                             0x104 2, 0, 0x1000DAF, 0x3C, 5
+                            0x104 0, 1, 0x1000DAF, 0x3C, -2
+                            0x104 1, 1, 0x1000DAF, 0x3C, 2
+                            0x104 2, 1, 0x1000DAF, 0x3C, 5
                         endif
                     else
                         0x104 0, 0, 0x1000DAF, 0x3C, -3
                         0x104 1, 0, 0x1000DAF, 0x3C, 1
                         0x104 2, 0, 0x1000DAF, 0x3C, 4
+                        0x104 0, 1, 0x1000DAF, 0x3C, -3
+                        0x104 1, 1, 0x1000DAF, 0x3C, 1
+                        0x104 2, 1, 0x1000DAF, 0x3C, 4
                     endif
                 else
                     0x104 0, 0, 0x1000DAF, 0x3C, -4
                     0x104 1, 0, 0x1000DAF, 0x3C, 0
                     0x104 2, 0, 0x1000DAF, 0x3C, 3
+                    0x104 0, 1, 0x1000DAF, 0x3C, -4
+                    0x104 1, 1, 0x1000DAF, 0x3C, 0
+                    0x104 2, 1, 0x1000DAF, 0x3C, 3
                 endif
             else
                 0x104 0, 0, 0x1000DAF, 0x3C, -5
                 0x104 1, 0, 0x1000DAF, 0x3C, -1
                 0x104 2, 0, 0x1000DAF, 0x3C, 2
+                0x104 0, 1, 0x1000DAF, 0x3C, -5
+                0x104 1, 1, 0x1000DAF, 0x3C, -1
+                0x104 2, 1, 0x1000DAF, 0x3C, 2
             endif
         else
             0x104 0, 0, 0x1000DAF, 0x3C, -6
             0x104 1, 0, 0x1000DAF, 0x3C, -2
             0x104 2, 0, 0x1000DAF, 0x3C, 1
+            0x104 0, 1, 0x1000DAF, 0x3C, -6
+            0x104 1, 1, 0x1000DAF, 0x3C, -2
+            0x104 2, 1, 0x1000DAF, 0x3C, 1
         endif
     else
         0x104 0, 0, 0x1000DAF, 0x3C, -7
         0x104 1, 0, 0x1000DAF, 0x3C, -3
         0x104 2, 0, 0x1000DAF, 0x3C, 0
+        0x104 0, 1, 0x1000DAF, 0x3C, -7
+        0x104 1, 1, 0x1000DAF, 0x3C, -3
+        0x104 2, 1, 0x1000DAF, 0x3C, 0
     endif
 endif
 return

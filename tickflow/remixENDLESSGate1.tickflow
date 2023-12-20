@@ -98,7 +98,9 @@
 #include utils/patterns/blueBear.tickflow
 #include utils/patterns/manzai.tickflow
 #include utils/patterns/donkDonk.tickflow
+#include utils/patterns/tambourine.tickflow
 
+#include utils/games/tambourine.tickflow
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow
 #include utils/games/djschool.tickflow
