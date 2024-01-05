@@ -2144,11 +2144,11 @@ rest 0xC
 0xB2 cellanim_slot
 if 0
     set_sfx 4, u"GROUP_COMEDIANS_VOICE"
-    set_sfx 6, u"GROUP_COMEDIANS"
+    set_sfx 0xB, u"GROUP_COMEDIANS"
     0xB3 sfx_plus,1
 else
     set_sfx 5, u"GROUP_COMEDIANS_VOICE"
-    set_sfx 0xB, u"GROUP_COMEDIANS"
+    set_sfx 6, u"GROUP_COMEDIANS"
     0xB3 sfx_plus_2,1
 endif
 stop
