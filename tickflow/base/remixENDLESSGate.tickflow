@@ -38,7 +38,6 @@ endif
 rest 0x18	// 0.5 beats
 sub 5
 
-async_call initManzai
 call loadInitialGames
 rest 0xC	// 0.25 beats
 
@@ -242,29 +241,6 @@ stop
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
-
-initManzai:
-	set_cat 0
-	set_sfx 0xF, u"GROUP_COMEDIANS_VOICE"
-	sub 3
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x1000546
-    rest 1
-    play_sfx 0x100054D
-	rest 0xC
-	remove_sfx 0xF
-stop
 
 loadInitialGames:
 set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
