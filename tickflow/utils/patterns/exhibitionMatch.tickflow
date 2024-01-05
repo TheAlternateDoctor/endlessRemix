@@ -30,48 +30,296 @@ sequenceExhibitionMatch:
     input 1
 stop
 
+exhibitionMatchRandomZoomoutSimple: //Doesn't have the far zoomout
+	random 11
+	switch
+	case 0
+		async_call exhibitionMatchSub5E
+		break
+	case 1
+		async_call exhibitionMatchSub5F
+		break
+	case 2
+		async_call exhibitionMatchSub60
+		break
+	case 3
+		async_call exhibitionMatchSub61
+		break
+	case 4
+		async_call exhibitionMatchSub62
+		break
+	case 5
+		async_call exhibitionMatchSub64
+		break
+	case 6
+		async_call exhibitionMatchSub65
+		break
+	case 7
+		async_call exhibitionMatchSub66
+		break
+	case 8
+		async_call exhibitionMatchSub67
+		break
+	case 9
+		async_call exhibitionMatchSub68
+		break
+	case 10
+		break
+	endswitch
+stop
+
+exhibitionMatchRandomZoomout: // Has the far zoomout
+	random 12
+	switch
+	case 0
+		async_call exhibitionMatchSub5E
+		break
+	case 1
+		async_call exhibitionMatchSub5F
+		break
+	case 2
+		async_call exhibitionMatchSub60
+		break
+	case 3
+		async_call exhibitionMatchSub61
+		break
+	case 4
+		async_call exhibitionMatchSub62
+		break
+	case 5
+		async_call exhibitionMatchSub64
+		break
+	case 6
+		async_call exhibitionMatchSub65
+		break
+	case 7
+		async_call exhibitionMatchSub66
+		break
+	case 8
+		async_call exhibitionMatchSub67
+		break
+	case 9
+		async_call exhibitionMatchSub68
+		break
+	case 10
+		async_call exhibitionMatchSub63
+		break
+	case 11
+		break
+	endswitch
+stop
+
 exhibitionready:
-0x101 
-0x102<1> 
-0x103 
-rest 0x30	// 1.0 beats
-0x101 
-rest 0x20	// 0.6666667 beats
-0x102<2> 
-rest 0x10	// 0.33333334 beats
+	0x101 
+	0x102<1> 
+	0x103 
+	rest 0x30	// 1.0 beats
+	0x101 
+	rest 0x20	// 0.6666667 beats
+	0x102<2> 
+	rest 0x10	// 0.33333334 beats
 stop 
 
 exhibitionMatch1:
-async_call exhibitionready
-rest 0x60	// 2.0 beats
-async_sub 0x58
-rest 0x60	// 2.0 beats
-rest 0xC0	// 4.0 beats
-async_call exhibitionready
-rest 0x60	// 2.0 beats
-async_sub 0x58
+	async_call exhibitionready
+	rest 0x60	// 2.0 beats
+	async_sub 0x58
+	async_call exhibitionMatchRandomZoomoutSimple
+	rest 0x60	// 2.0 beats
+	rest 0xC0	// 4.0 beats
+	async_call exhibitionready
+	rest 0x60	// 2.0 beats
+	async_sub 0x58
+	async_call exhibitionMatchRandomZoomout
 stop
 
 exhibitionMatch2:
-async_sub 0x56
-rest 0xC0	// 4.0 beats
-async_sub 0x57
-rest 0xC0	// 4.0 beats
-async_sub 0x58
-rest 0xC0	// 4.0 beats
-rest 0x90	// 3.0 beats
-0x101
-0x102
-0x103
+	async_sub 0x56
+	rest 0xC0	// 4.0 beats
+	async_sub 0x57
+	rest 0xC0	// 4.0 beats
+	async_sub 0x58
+	async_call exhibitionMatchRandomZoomout
+	rest 0xC0	// 4.0 beats
+	rest 0x90	// 3.0 beats
+	0x101
+	0x102
+	0x103
 stop
 
 exhibitionMatch3:
-async_sub 0x56
-rest 0xC0	// 4.0 beats
-async_call exhibitionready
-rest 0x60	// 2.0 beats
-async_sub 0x59
-rest 0x60	// 2.0 beats
-rest 0xC0	// 4.0 beats
-async_sub 0x56
+	async_sub 0x56
+	rest 0xC0	// 4.0 beats
+	async_call exhibitionready
+	rest 0x60	// 2.0 beats
+	async_sub 0x59
+	async_call exhibitionMatchRandomZoomout
+	rest 0x60	// 2.0 beats
+	rest 0xC0	// 4.0 beats
+	async_sub 0x56
 stop
+
+exhibitionMatchSub5E:
+	0x108<1> 0xF4, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0xF4, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0xF4, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0xF4, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub5F:
+	0x108<1> 0xF4, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0xF4, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0xE4, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub60:
+	0x108<1> 0xD8, 0xC0
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub61:
+	0x108<1> 0xE4, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108<1> 0xE4, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub62:
+	0x108<1> 0xF0, 6
+	rest 0x30	// 1.0 beats
+	rest 0x40	// 1.3333334 beats
+	0x108<1> 0xF0, 0x60
+	rest 0x30	// 1.0 beats
+	rest 0x20	// 0.6666667 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub63:
+	0x108<1> 0x1400, 0x60
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x10B 
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+stop 
+
+exhibitionMatchSub64:
+	0x108<1> 0x10C, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0x10C, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0x10C, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0x10C, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub65:
+	0x108<1> 0x10C, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0x10C, 6
+	rest 0x30	// 1.0 beats
+	0x108<1> 0x11C, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub66:
+	0x108<1> 0x128, 0xC0
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub67:
+	0x108<1> 0x11C, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108<1> 0x11C, 6
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
+
+exhibitionMatchSub68:
+	0x108<1> 0x110, 6
+	rest 0x30	// 1.0 beats
+	rest 0x40	// 1.3333334 beats
+	0x108<1> 0x110, 0x60
+	rest 0x30	// 1.0 beats
+	rest 0x20	// 0.6666667 beats
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x108 -0x64, 0x18
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+stop 
