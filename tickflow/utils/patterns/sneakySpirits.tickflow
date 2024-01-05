@@ -23,11 +23,11 @@ sequenceSneakySpirits:
 stop
 
 sneakySpiritsRandom:
-    call sneakySpiritsRandom
-    call sneakySpiritsRandom
+    call sneakySpiritsRandomSub
+    call sneakySpiritsRandomSub
 stop
 
-sneakySpiritsRandom:
+sneakySpiritsRandomSub:
     random 9
     switch
     case 0
