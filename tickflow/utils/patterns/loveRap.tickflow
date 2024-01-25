@@ -40,42 +40,55 @@ sequenceLoveRap:
         async_call loveRap3
         break
     endswitch
-    async_call loveRapBeatAnims
 stop
 
 loveRap1:
     sub 0x70
-    rest 0x60
+    async_call loveRapBeatAnim
+    rest 0x30
+    async_call loveRapBeatAnim
+    0x103 0
+    rest 0x30
     sub 0x70
-    rest 0x60
+    async_call loveRapBeatAnim
+    rest 0x30
+    async_call loveRapBeatAnim
+    0x103 1
+    rest 0x30
     sub 0x78
-    rest 0x60
+    async_call loveRapBeatAnim
+    rest 0x30
+    async_call loveRapBeatAnim
+    0x103 0
+    rest 0x30
     sub 0x70
 stop
 
 loveRap2:
     sub 0x70
-    sub 0x70
+    sub 0x71
     sub 0x78
-    rest 0x60
+    async_call loveRapBeatAnim
+    rest 0x30
+    async_call loveRapBeatAnim
+    0x103 0
+    rest 0x30
     sub 0x70
     sub 0x70
 stop
 
 loveRap3:
     sub 0x70
-    sub 0x70
+    sub 0x71
     sub 0x78
-    sub 0x78
+    sub 0x79
     sub 0x70
     sub 0x70
 stop
 
-loveRapBeatAnims:
-label 547
+loveRapBeatAnim:
+0x102
 0x102<1>
 0x102<2>
 0x102<3>
-rest 0x60
-goto 547
 stop
