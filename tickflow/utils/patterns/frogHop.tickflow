@@ -24,6 +24,7 @@ sequenceFrogHop:
 	0x29<2> 
     rest 0xC
     input 1
+    0x8B 0, 0
     0x101<1>
     0x2B<1> 0x14
     if 5

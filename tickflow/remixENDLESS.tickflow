@@ -3,12 +3,13 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include config/debug.tickflow
-#include config/endless.tickflow
 
 #include constants/scenes.tickflow
 #include constants/indexes.tickflow
 #include constants/variables.tickflow
+
+#include config/debug.tickflow
+#include config/endless.tickflow
 
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow

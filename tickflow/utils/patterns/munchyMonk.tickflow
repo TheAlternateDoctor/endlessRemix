@@ -3,7 +3,9 @@
 // Place your subs accordingly.
 
 preSequenceMunchyMonk:
-rest 0xC0
+rest 0x60
+async_call loadMunchyMonkLate
+rest 0x60
 random 3
 switch
 case 0

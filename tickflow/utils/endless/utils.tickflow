@@ -492,7 +492,7 @@ loadNextGame:
                 set_func 0, sequenceMunchyMonk
                 call loadMunchyMonk
                 set_func 3, preSequenceMunchyMonk
-                set_func 2, loadMunchyMonkLate
+                set_func 2, nop
                 set_func 1, checkA2
                 0xB3 index, INDEX_ntrShugyo
             endif

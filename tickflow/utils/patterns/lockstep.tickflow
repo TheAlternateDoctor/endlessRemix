@@ -31,6 +31,7 @@ sequenceLockstep:
 	sub 4
 	0x29<2> 
     rest 0xC
+    0x8B 0, 0
     input 1
     0xB2 game_state
     if 1

@@ -1,12 +1,13 @@
 
 #index 0x10A
 
-#include config/gate3.tickflow
-#include config/debug.tickflow
 
 #include constants/scenes.tickflow
 #include constants/indexes.tickflow
 #include constants/variables.tickflow
+
+#include config/gate3.tickflow
+#include config/debug.tickflow
 
 #include base/remixENDLESSGate.tickflow
 
