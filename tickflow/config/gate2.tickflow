@@ -5,3 +5,14 @@ maxTurns=15
 showExplainMessage:
     0x65<1> 0, "gate2_explain_score_endless"
 return
+manzaiSetup:
+    set_countdown 0x20
+    label 0x7009
+	play_sfx 0x10011C7
+    dec_countdown
+    rest 1
+    get_countdown
+    if_neq 0
+        goto 0x7009
+    endif
+stop

@@ -5,3 +5,5 @@ maxTurns=10
 showExplainMessage:
     0x65<1> 0, "gate1_explain_score_endless"
 return
+manzaiSetup:
+stop

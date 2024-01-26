@@ -11,7 +11,7 @@ play_sfx 0x100029E
 0x8C 1
 
 0xA6 0
-0xA4 0x5F
+0xA4<1> 0xB
 0xA5 1
 0xA4<2> 1
 
@@ -148,6 +148,7 @@ input 0
 0xB3 speed,startSpeed //Speed at which the remix starts
 0xB3 sfx_plus,2 //Slot 7 has SFX
 0xB3 sfx_plus_2,2 //Slot 7 has SFX
+0xB3 lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on
 
 
 0x67<5> 2
@@ -211,13 +212,13 @@ label 0x54D
 
 0xB3 score,0
 
-remove_sfx 3
 async_call basketGirlsStart
 async_call checkA2
+async_call manzaiSetup
 rest 0x30
 input 1
 call loadNextGame
-rest 0x30 *8
+rest 0x30 *8-0xC
 rest 0x30 *8
 get_async 3, 0x60
 rest 0x30 * 6
