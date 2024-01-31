@@ -232,7 +232,7 @@ endif
 0xA2
 
 //main loop
-call updateScore
+call updateScoreGate
 async_call speedup
 async_call lifeScoreCounter
 call playNextGameGate
@@ -435,9 +435,6 @@ endif
 fade<1> 7, 1, 0
 0x76 7, 0
 0x100 
-// 0x67<3> 0x64
-// 0x67<4> 0x64
-// 0x65<1> 0, "multi_game"
 rest 0x18	// 0.5 beats
 0x88 
 if 0

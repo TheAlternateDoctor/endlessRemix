@@ -4096,7 +4096,7 @@ rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BACKBEAT"
-    random 8
+    random 7
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
@@ -4119,15 +4119,12 @@ if 1
     case 6
         set_cellanim 4, u"rom:/cellanim/ntrBackbeat_candymountain.zlib", -1
         break
-    case 7
-        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_wackyworkbench.zlib", -1
-        break
     endswitch
     game_cellanim 0xF, 4
     0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_BACKBEAT"
-    random 8
+    random 7
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
@@ -4149,9 +4146,6 @@ else
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/ntrBackbeat_candymountain.zlib", -1
-        break
-    case 7
-        set_cellanim 5, u"rom:/cellanim/ntrBackbeat_wackyworkbench.zlib", -1
         break
     endswitch
     game_cellanim 0xF, 5
