@@ -1,0 +1,65 @@
+// Now this game goes *over* the 0xB2 variable limit
+// Let's hope it doesn't break!
+
+sequenceMeetAndTweet:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x25
+	sub 4
+	0x29<2> 
+    rest 0x8
+    async_call tweetSetupRemix
+    rest 0x8
+	0xB3 9, 0x25
+    fade<1> 1,1,1
+    random 3
+    switch
+    case 0
+        0xB3 score_add, 4
+        async_call meetAndTweet1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call meetAndTweet2
+        break
+    case 2
+        0xB3 score_add, 4
+        async_call meetAndTweet3
+        break
+    endswitch
+    rest 0x18
+    input 1
+    async_call tweetInputDetect
+    async_call tweetBeat16
+stop
+
+meetAndTweet1:
+    async_call tweetShort
+    rest 0xC0
+    async_call tweetLong
+    rest 0xC0
+    async_call tweetShort
+    rest 0x78
+    async_call tweetShort
+stop
+
+meetAndTweet2:
+    async_call tweetLong
+    rest 0xC0
+    async_call tweetShort
+    rest 0xC0
+    async_call tweetLong
+    rest 0xC0
+    async_call tweetShort
+stop
+
+meetAndTweet3:
+    async_call tweetShort
+    rest 0x78
+    async_call tweetShort
+    rest 0xF0+0x18
+    async_call tweetLong
+    rest 0xC0
+    async_call tweetShort
+stop

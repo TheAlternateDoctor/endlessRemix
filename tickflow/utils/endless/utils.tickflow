@@ -8,7 +8,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x100
+        random 0x4E
     endif
     switch
         case INDEX_agbBatter
@@ -1392,26 +1392,30 @@ loadNextGame:
                 0xB3 index, INDEX_ntrSynchro
             endif
         break
-        default //Restart until we get something damnit
+        case INDEX_bnbTweet //Meet and Tweet
             0xB2 index
-            if INDEX_rvlComedians //Stop games from being played next to each other
+            if INDEX_bnbTweet //Stop games from being played next to each other
                 goto 0x70AD
             else
-                if INDEX_ctrSumou
-                    goto 0x70AD
-                else
-                    0xB2 is_debug
-                    if 1
-                        0xB3 debug_start, 1337
-                        0xB3 debug_current_index, INDEX_rvlComedians
-                    endif
-                    set_func 0, sequenceManzai
-                    call loadManzai //help
-                    set_func 3, loadManzaiLate
-                    set_func 2, nop
-                    0xB3 index, INDEX_rvlComedians
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_bnbTweet
                 endif
+                set_func 0, sequenceMeetAndTweet
+                call loadMeetAndTweet
+                set_func 3, nop
+                set_func 2, nop
+                set_func 1, checkA2
+                0xB3 index, INDEX_bnbTweet
             endif
+        break
+        default //Restart until we get something damnit
+            0xB2 is_debug
+            if 1
+                0xB3 debug_start, 1337
+            endif
+            goto 0x70AD
         break
     endswitch
 

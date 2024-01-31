@@ -1,0 +1,946 @@
+// ===========================================================================================================
+// Welcome to the Meet and Tweet subs! Here, you can see that I don't know what I'm doing. Have fun! ~MiiK
+// Minor edits from prerelease to fix a bug with remix transitions
+// ===========================================================================================================
+inputType = 17 //Over the variable limit!
+didInput = 18  //May break!
+
+storyType = 2
+storyProgress = 3
+storyProgressSaved = 4
+bubbleIdle = 5
+bubbleShake = 6
+bubbleAnim = 7
+bubbleAnimWren = 8
+
+// ===========================================================================================================
+// Here's the basics for using this in a remix or whatever else.
+// ===========================================================================================================
+
+tweetSetupRemix:	// Gets everything setup, obviously. This'll give you a camera centered on the birds.
+0x8B 0, 0
+0xB3 inputType, 1
+0x101<1> 2
+pan 3, -0xA0, 0x2D
+zoom 3, 0xC2, 0xC2
+stop
+
+tweetSetupRemixBubble:	// Same as the above, but with the camera set so you can see the bubbles if you wanna do that.
+0x8B 0, 0
+0xB3 inputType, 1
+0x101<1> 2
+pan 3, -0xA0, 0x48
+zoom 3, 0xC2, 0xC2
+stop
+
+tweetShort:	// Tweet tweet TWEET
+play_sfx 0x1000808
+0x104<4> "gorilla_ready_02", 1
+rest 0x30
+play_sfx 0x1000808
+0x104<4> "gorilla_ready_02", 1
+0x100 0
+async_call tweetInputType
+stop
+
+tweetLong:	// Tweet tweet tweet --- TWEET
+play_sfx 0x1000808
+0x104<4> "gorilla_ready_02", 1
+rest 0x18
+play_sfx 0x10007DE
+0x104<4> "gorilla_ready_02", 1
+rest 0x18
+play_sfx 0x1000808
+0x104<4> "gorilla_ready_02", 1
+rest 0x30
+0x100 0
+async_call tweetInputType
+stop
+
+tweetBeat16:	// Does Canary and Wren's beat anims 16 times. Feel free to make an infinite version of this, I just prefer doing it manually.
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+rest 0x30
+0x102<1>
+0x104<2>
+stop
+
+tweetInputDetect:	// Call this alongside "input 1". This handles 0x200 input detection
+
+label 0x9022	// This bit is here to fix a bug with remix transitions. It's the same as something below.
+0x200<2> 0
+if 1
+	rest 1
+	goto 0x9022
+endif
+
+0xB3 inputType, 1
+
+label 0x9001	// where this entire thing loops back around to
+
+0xB2 inputType	// Disables the sub. Set inputType to 69 if you ever need to do that for whatever reason
+// you could probably just killsub, huh? i may be stupid. don't feel like removing this though
+if 69
+	goto 0x9069
+endif
+
+0x200<2> 0
+if 1
+	0xB2 inputType	// sets the condvar to the current "input type"
+	0xB3 didInput, 1	// makes wren not do the angry anim for not inputting
+endif
+
+switch	// do things based on what the current "input type" is
+	case 1	// miss
+		play_sfx 0x10007F8
+		0x104<4> "gorilla_beat_1", 1
+		0xB3 storyProgressSaved, 0
+		0xB3 bubbleShake, 0
+		
+		0xB2 storyType
+		if_geq 1
+			0xB3 bubbleAnim, 30
+			async_call tweetBubbleShake
+		else
+			0xB3 bubbleAnim, 0
+		endif
+	break
+
+	case 2	// doink
+		play_sfx 0x10007F3
+		0x104<4> "gorilla_ready_01", 1
+		async_call tweetSaveStoryProgress
+		async_call tweetBubbleShake
+	break
+										
+	case 3	// hit
+		play_sfx 0x10007DE
+		
+		0xB2 storyProgress
+		if_leq 3
+			0x104<4> "gorilla_beat_2", 1
+		else
+			0xB2 storyType
+			if_neq 5
+				0x104<4> "gorilla_ready_00", 1
+			endif
+		endif
+		
+	
+		0x106 "canary_normal", 0, 0xC, 4, 1, 2, -3, 0x100, 2, -3, 0x100
+		async_call tweetSaveStoryProgress
+		
+		0xB2 bubbleAnim
+		if_geq 1
+			0xB3 bubbleAnim, 8
+			play_sfx 0x10007F6
+		endif
+	break
+										
+	case 4	// perfect hit
+		play_sfx 0x10007DE
+		
+		0xB2 storyProgress
+		if_leq 3
+			0x104<4> "gorilla_beat_2", 1
+		else
+			0xB2 storyType
+			if_neq 5
+				0x104<4> "gorilla_ready_00", 1
+			endif
+		endif
+		
+		0x106 "canary_perfect", 0, 0xC, 4, 1, 2, -3, 0x100, 2, -3, 0x100
+		async_call tweetSaveStoryProgress
+		
+		0xB2 bubbleAnim
+		if_geq 1
+			0xB3 bubbleAnim, 8
+			play_sfx 0x10007F6
+		endif
+	break
+endswitch
+										
+// prevents held inputs from breaking things
+label 0x9002
+0x200<2> 0
+if 1
+	rest 1
+	goto 0x9002
+endif
+rest 1
+goto 0x9001	// loops back around
+
+label 0x9069
+stop
+
+tweetInputType:	// You shouldn't ever need to call this, but I'm putting it here since it's used by the cue subs.
+				// This handles what animations will play for an input. It's imperfect, but close enough.
+rest 0x20
+	//miss
+	0xB3 didInput, 0
+rest 8
+	//doink
+	0xB3 inputType, 2
+rest 2
+	// hit 1
+	0xB3 inputType, 3
+rest 3
+	// hit 2
+rest 2
+	// perfect
+	0xB3 inputType, 4
+rest 2
+	// hit 2
+	0xB3 inputType, 3	
+rest 2
+	// hit 1
+rest 3
+	//doink
+	0xB3 inputType, 2
+rest 2
+	// miss
+	0xB3 inputType, 1
+rest 0xA
+	// play wren angry anim if you didn't input
+	0xB2 didInput
+	if 0
+		0x104<4> "gorilla_beat_1", 1
+	endif
+stop
+
+tweetHappy:		// If you wanna make Canary and Wren play their happy animations... there ya go.
+0x102<6>
+0x104<4> "gorilla_beat_2", 1
+stop
+
+// ===========================================================================================================
+// Here's all the stuff for the story/bubbles, in case you wanna use them.
+// ===========================================================================================================
+
+tweetBubbleHandler:	// Just runs all the story/bubble stuff every tick.
+label 0x9003
+async_call tweetStoryWren
+async_call tweetStoryCanary
+async_call tweetBubbleWren
+async_call tweetBubbleCanary
+rest 1
+goto 0x9003
+stop
+
+tweetBubbleIdleHandler:	// Separate thing that changes which "idle animation" is being played for the bubbles. 
+label 0x9004
+0xB3 bubbleIdle, 0
+rest 13
+0xB3 bubbleIdle, 1
+rest 13
+0xB3 bubbleIdle, 2
+rest 13
+goto 0x9004
+stop
+
+tweetResetStory:		// Removes the bubble and story stuff.
+0xB3 storyType, 0
+0xB3 storyProgress, 0
+0xB3 storyProgressSaved, 0
+0xB3 bubbleAnimWren, 69
+0xB2 bubbleAnim
+if_geq 1
+	if_leq 25
+		0xB3 bubbleAnim, 69
+	endif
+endif
+
+0x40<1> 0x10007F7, 0xBB
+
+stop
+
+tweetResetStoryAlt:		// Same as the above, but without the sound effect.
+0xB3 storyType, 0
+0xB3 storyProgress, 0
+0xB3 storyProgressSaved, 0
+0xB3 bubbleAnimWren, 69
+0xB2 bubbleAnim
+if_geq 1
+	if_leq 25
+		0xB3 bubbleAnim, 69
+	endif
+endif
+stop
+
+tweetSaveStoryProgress:	// Saves what the story progress was when the player last input, so it can be displayed properly.
+0xB2 storyProgress
+switch
+	case 0
+		0xB3 storyProgressSaved, 0
+	break
+	
+	case 1
+		0xB3 storyProgressSaved, 1
+	break
+	
+	case 2
+		0xB3 storyProgressSaved, 2
+	break
+	
+	case 3
+		0xB3 storyProgressSaved, 3
+	break
+	
+	case 4
+		0xB3 storyProgressSaved, 4
+	break
+	
+	case 5
+		0xB3 storyProgressSaved, 5
+	break
+endswitch
+stop
+
+
+tweetWrenBubbleUpdate:	// Makes Wren's bubble do the "update" anim. Couldn't figure out how to make this automatic. To-do for the future, I guess.
+0xB3 bubbleAnimWren, 8
+play_sfx 0x10007F5
+stop
+
+tweetStoryWren:	// Does about what you'd expect.
+0xB2 storyType
+switch
+		case 1	// exercise
+		0xB2 storyProgress
+		switch
+			case 1
+				0x106 "wren_story_exercise", 0, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 2
+				0x106 "wren_story_exercise", 1, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "wren_story_exercise", 2, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "wren_story_exercise", 3, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "wren_story_exercise", 4, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+		endswitch
+		break
+		
+		case 2	// family
+		0xB2 storyProgress
+		switch
+			case 1
+				0x106 "wren_story_family", 0, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 2
+				0x106 "wren_story_family", 1, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "wren_story_family", 2, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "wren_story_family", 3, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "wren_story_family", 4, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break		
+		endswitch
+		break
+		
+		case 3	// food
+		0xB2 storyProgress
+		switch
+			case 1
+				0x106 "wren_story_food", 0, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 2
+				0x106 "wren_story_food", 1, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "wren_story_food", 2, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "wren_story_food", 3, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "wren_story_food", 4, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break		
+		endswitch
+		break
+		
+		case 4	// singing
+		0xB2 storyProgress
+		switch
+			case 1
+				0x106 "wren_story_singing", 0, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 2
+				0x106 "wren_story_singing", 1, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "wren_story_singing", 2, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "wren_story_singing", 3, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break		
+		endswitch
+		break
+		
+		case 5	// talking
+		0xB2 storyProgress
+		switch
+			case 1
+				0x106 "wren_story_talking", 0, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 2
+				0x106 "wren_story_talking", 1, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "wren_story_talking", 2, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "wren_story_talking", 3, 1, 0xE, 1, -0x7A, -0x75, 0x100, -0x7A, -0x75, 0x100
+			break	
+		endswitch
+		break
+endswitch
+stop
+
+tweetStoryCanary:	// Also does what you'd expect.
+0xB2 storyProgressSaved
+switch
+	case 1	// progress 1
+		0xB2 storyType
+		switch
+			case 1
+				0x106 "canary_story_exercise", 0, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100			
+			break
+			
+			case 2
+				0x106 "canary_story_family", 0, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "canary_story_food", 0, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "canary_story_singing", 0, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "canary_story_talking", 0, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+		endswitch
+	break
+	
+	case 2	// progress 2
+		0xB2 storyType
+		switch
+			case 1
+				0x106 "canary_story_exercise", 1, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100			
+			break
+			
+			case 2
+				0x106 "canary_story_family", 1, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "canary_story_food", 1, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "canary_story_singing", 1, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "canary_story_talking", 1, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break	
+		endswitch
+	break
+	
+	case 3	// progress 3
+		0xB2 storyType
+		switch
+			case 1
+				0x106 "canary_story_exercise", 2, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100			
+			break
+			
+			case 2
+				0x106 "canary_story_family", 2, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "canary_story_food", 2, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "canary_story_singing", 2, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "canary_story_talking", 2, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+		endswitch
+	break
+	
+	case 4	// progress 4
+		0xB2 storyType
+		switch
+			case 1
+				0x106 "canary_story_exercise", 3, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100			
+			break
+			
+			case 2
+				0x106 "canary_story_family", 3, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "canary_story_food", 3, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 4
+				0x106 "canary_story_singing", 3, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 5
+				0x106 "canary_story_talking", 3, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break	
+		endswitch
+	break
+	
+	case 5	// progress 4 alt
+		0xB2 storyType
+		switch
+			case 1
+				0x106 "canary_story_exercise", 4, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100			
+			break
+			
+			case 2
+				0x106 "canary_story_family", 4, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 3
+				0x106 "canary_story_food", 4, 1, 0xE, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+		endswitch
+	break
+endswitch
+stop
+
+tweetBubbleWren:	// Still doin' what you'd expect.
+0xB2 bubbleAnimWren
+if 0
+// none, checks if there should be one
+	0xB2 storyType
+	if_geq 1
+		0xB3 bubbleAnimWren, 2
+	endif
+	0xB2 bubbleAnimWren
+endif
+
+if 1
+// idle
+0xB2 bubbleIdle
+switch
+	case 0
+		0x106 "wren_bubble", 0, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+	break
+	
+	case 1
+		0x106 "wren_bubble", 1, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+	break
+	
+	case 2
+		0x106 "wren_bubble", 2, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+	break
+endswitch
+0xB2 bubbleAnimWren
+endif
+
+if_geq 2
+// popin
+	if_leq 19
+		if_leq 13
+			if_leq 7
+				0x106 "wren_bubbleappear", 0, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+				0xB4 bubbleAnimWren, 1
+			else
+				0x106 "wren_bubbleappear", 1, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+				0xB4 bubbleAnimWren, 1
+			endif
+		else
+			if 19
+				0x106 "wren_bubbleappear", 2, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+				0xB3 bubbleAnimWren, 1
+			else
+				0x106 "wren_bubbleappear", 2, 1, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+				0xB4 bubbleAnimWren, 1
+			endif
+		endif
+	endif
+endif
+
+if_geq 69
+// vanish
+		0x106 "wren_bubblevanish", 0, 6, 0x12, 1, -0x77, -0x76, 0x100, -0x77, -0x76, 0x100
+		0xB3 bubbleAnimWren, 0
+endif
+stop
+
+tweetBubbleCanary:	// More of what you'd expect! Also my least favorite thing ever.
+0xB2 bubbleAnim
+
+// no anim - checks if it should play pop-in
+if 0
+	0xB2 storyProgressSaved
+	if_geq 1
+		0xB3 bubbleAnim, 2
+		0x40<1> 0x10007F4, 0x80
+	endif
+	0xB2 bubbleAnim
+endif
+
+
+// idle anim
+if 1
+0xB2 bubbleIdle
+switch
+	case 0
+		0xB2 bubbleShake
+		switch
+			case 0
+				0x106 "canary_bubble", 0, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 1
+				0x106 "canary_bubble", 0, 1, 0x12, 1, 0x7C, -0x75, 0x100, 0x7C, -0x75, 0x100
+			break
+		
+			case 2
+				0x106 "canary_bubble", 0, 1, 0x12, 1, 0x76, -0x75, 0x100, 0x76, -0x75, 0x100
+			break
+		endswitch
+	break
+	
+	case 1
+		0xB2 bubbleShake
+		switch
+			case 0
+				0x106 "canary_bubble", 1, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 1
+				0x106 "canary_bubble", 1, 1, 0x12, 1, 0x7C, -0x75, 0x100, 0x7C, -0x75, 0x100
+			break
+		
+			case 2
+				0x106 "canary_bubble", 1, 1, 0x12, 1, 0x76, -0x75, 0x100, 0x76, -0x75, 0x100
+			break
+		endswitch
+	break
+	
+	case 2
+		0xB2 bubbleShake
+		switch
+			case 0
+				0x106 "canary_bubble", 2, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 1
+				0x106 "canary_bubble", 2, 1, 0x12, 1, 0x7C, -0x75, 0x100, 0x7C, -0x75, 0x100
+			break
+		
+			case 2
+				0x106 "canary_bubble", 2, 1, 0x12, 1, 0x76, -0x75, 0x100, 0x76, -0x75, 0x100
+			break
+		endswitch
+	break
+endswitch
+0xB2 bubbleAnim
+endif
+
+
+// pop-in anim
+if_geq 2
+	if_leq 19
+		if_leq 13
+			if_leq 7
+				0x106 "canary_bubbleappear", 0, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+				0xB4 bubbleAnim, 1
+			else
+				0x106 "canary_bubbleappear", 1, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+				0xB4 bubbleAnim, 1
+			endif
+		else
+			if 19
+				0x106 "canary_bubbleappear", 2, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+				0xB3 bubbleAnim, 1
+			else
+				0x106 "canary_bubbleappear", 2, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+				0xB4 bubbleAnim, 1
+			endif
+		endif
+	endif
+endif
+
+// miss anim
+
+if_geq 30
+	if_leq 57
+		0xB2 bubbleShake
+		switch
+			case 0
+				0x106 "canary_bubble_miss", 1, 1, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+			break
+			
+			case 1
+				0x106 "canary_bubble_miss", 1, 1, 0x12, 1, 0x7C, -0x75, 0x100, 0x7C, -0x75, 0x100
+			break
+		
+			case 2
+				0x106 "canary_bubble_miss", 1, 1, 0x12, 1, 0x76, -0x75, 0x100, 0x76, -0x75, 0x100
+			break
+		endswitch
+		0xB4 bubbleAnim, 1
+	endif
+	if 58
+		0x106 "canary_bubble_miss", -1, 0x12, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+		0xB3 bubbleAnim, 0
+	endif
+
+endif
+
+// poof anim
+if_geq 69
+		0x106 "canary_bubblevanish", 0, 6, 0x12, 1, 0x79, -0x75, 0x100, 0x79, -0x75, 0x100
+		0xB3 bubbleAnim, 0
+endif
+stop
+
+tweetBubbleShake:	//Makes the bubble shake if the player gets a doink. Hiding this underneath all the other bubble stuff because what the hell was I cooking here.
+0xB3 bubbleShake, 1
+rest 2
+0xB3 bubbleShake, 2
+rest 2
+0xB3 bubbleShake, 0
+rest 2
+0xB3 bubbleShake, 1
+rest 2
+0xB3 bubbleShake, 2
+rest 2
+0xB3 bubbleShake, 0
+rest 2
+0xB3 bubbleShake, 1
+rest 2
+0xB3 bubbleShake, 2
+rest 2
+0xB3 bubbleShake, 0
+rest 2
+0xB3 bubbleShake, 1
+rest 2
+0xB3 bubbleShake, 2
+rest 2
+0xB3 bubbleShake, 0
+rest 2
+0xB3 bubbleShake, 1
+rest 2
+0xB3 bubbleShake, 2
+rest 2
+0xB3 bubbleShake, 0
+rest 2
+0xB3 bubbleShake, 1
+rest 2
+0xB3 bubbleShake, 2
+rest 2
+0xB3 bubbleShake, 0
+stop
+
+// ===========================================================================================================
+// OK, this is stuff for specifically the maingame. You're almost definitely not using this.
+// ===========================================================================================================
+
+tweetForceUpdate:	// Tries to set storyType and storyProgress to 3 and 1 respectively. A lot. For reasons.
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+0xB3 storyType, 3
+0xB3 storyProgress, 1 
+rest 1
+
+
+
+stop
+
+tweetSetupMainGame:	// More setup junk.
+0x8B 0, 0
+0xB3 inputType, 1
+0x101<1> 2
+pan 3, -0xA0, 0x12
+zoom 3, 0xC2, 0xC2
+async_call tweetBlinds
+stop
+
+tweetSetupPractice:	// Blindsn't.
+0x8B 0, 0
+0xB3 inputType, 1
+0x101<1> 2
+pan 3, -0xA0, 0x12
+zoom 3, 0xC2, 0xC2
+stop
+
+tweetPanUp:	// Honestly, not sure why I even made this sub.
+pan_gradual 3, 3, 2, 0x58, -0xA0, 0x48
+stop
+
+tweetBlinds:	// The blinds and the shadow from the beginning of the maingame.
+0x106 "bg_blinds", 0, 0x1E0, 0, 1, -0x78, -0x44, 0x100, -0x78, -0x44, 0x100
+0x106 "bg_blindshadow", 1, 0x1E0, 1, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30 * 10	// 10.0 beats
+play_sfx 0x10007FD
+0x106 "bg_blinds", -1, 0x48, 0, 1, -0x78, -0x44, 0x100, -0x78, -0x44, 0x100
+0x106 "bg_blindshadow", -1, 0x48, 1, 1, 0, 0, 0x100, 0, 0, 0x100
+stop
+
+tweetFullText:	// Does the text stuff for the game intro.
+0x106 "text_short", 0, 0x168, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x18	// 0.5 beats
+async_call tweetBopShort
+rest 0x30 * 4	// 4.0 beats
+async_call tweetBopShort
+rest 0x30 * 3	// 3.0 beats
+async_call tweetBopLong
+0x106 "text_long", 0, 0xC0, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30 * 4	// 4.0 beats
+async_call tweetBopShort
+0x106 "text_short", 0, 0xD8, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+stop
+
+tweetBopShort:	// Makes Bop's head do its thing for the short cue. It's all separate anims, to make sure it syncs properly. Text goes separately.
+0x106 "bop_short1", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x18	// 0.5 beats
+0x106 "bop_short2", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30	// 1.0 beats
+0x106 "bop_short3", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30	// 1.0 beats
+0x106 "bop_short4", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+stop
+
+tweetBopLong:	// Same as the above, but with the long cue.
+0x106 "bop_long1", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x18	// 0.5 beats
+0x106 "bop_long2", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x18	// 0.5 beats
+0x106 "bop_long3", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x18	// 0.5 beats
+0x106 "bop_long4", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30	// 1.0 beats
+0x106 "bop_long5", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30	// 1.0 beats
+0x106 "bop_long6", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+stop
+
+// https://archives.bulbagarden.net/media/upload/e/ee/PidgeyFlashfire75.jpg
