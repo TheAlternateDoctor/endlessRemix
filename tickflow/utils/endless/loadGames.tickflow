@@ -5265,7 +5265,7 @@ if 1
         set_cellanim 4, u"rom:/cellanim/rvlBadminton_short.zlib", -1
         break
     case 2
-        set_cellanim 4, u"rom:/cellanim/rvlBadminton_remix03night.zlib", -1
+        set_cellanim 4, u"rom:/cellanim/rvlBadminton_remix00.zlib", -1
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/rvlBadminton_remix03.zlib", -1
@@ -5293,7 +5293,7 @@ else
         set_cellanim 5, u"rom:/cellanim/rvlBadminton_short.zlib", -1
         break
     case 2
-        set_cellanim 5, u"rom:/cellanim/rvlBadminton_remix03night.zlib", -1
+        set_cellanim 5, u"rom:/cellanim/rvlBadminton_remix00.zlib", -1
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/rvlBadminton_remix03.zlib", -1
