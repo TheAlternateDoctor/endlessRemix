@@ -17,6 +17,7 @@ sequenceBigRockFinish:
         async_call bigRockFinish1
         break
     endswitch
+    async_call bigRockFinishDrums
     rest 0x30
     async_call bigRockFinishPitchSetting
     input 1
@@ -44,6 +45,25 @@ bigRockFinish1:
     
     rest 0xC0
     rest 0xC0
+stop
+
+bigRockFinishDrums:
+    async_call bigRockFinishHiHatLoop
+    rest 0xC0
+    rest 0x90
+    kill_loc bigRockFinishHiHatLoop
+stop
+bigRockFinishHiHatLoop:
+    0x106<2>
+    0x106<3>
+    rest 0x24
+    label 0x55A2
+    0x106<2>
+    rest 0xC
+    0x106<2>
+    0x106<3>
+    rest 0x24
+    goto 0x55A2
 stop
 
 bigRockFinishPitchSetting: //hehe hopefully this works...
