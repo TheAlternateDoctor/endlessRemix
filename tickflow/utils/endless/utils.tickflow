@@ -1482,7 +1482,7 @@ playNextGameGate:
         0xB2 lives
         if_neq 0
             0xB2 score
-            if_leq maxTurns
+            if_lt maxTurns
                 fade 1,1,1
                 goto 0x1009
             endif
@@ -1661,13 +1661,18 @@ return
 bonusStuff:
 set_cat 0
 label 0x1007
-0xB2 10
+0xB2 is_debug
 if 0
     0x200 9
-    if 1 // Debug mode active
+    if 1 // Debug mode active, invincible mode
         play_sfx 0x10002C1
         0xB3 is_debug,1 //Enables Debug mode
         0xB3 lives_enabled, 0
+    endif
+    0x200 8
+    if 1 // Debug mode active
+        play_sfx 0x10002C1
+        0xB3 is_debug,1 //Enables Debug mode
     endif
 endif
 0xB2 lives_enabled

@@ -12,7 +12,6 @@ manzaiSetup:
     dec_countdown
     rest 1
     get_countdown
-    call textCondvar
     if_neq 0
         goto 0x7009
     endif
