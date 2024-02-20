@@ -175,10 +175,8 @@ rest 0x60	// 2.0 beats
 sub 2
 0x55 1
 call showExplainMessage
-play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
-rest 0xC0	// 4.0 beats
-rest 0x46-0xC	// 1.4583334 beats
+rest 0x90	// 4.0 beats
 0x65<2>
 rest 0xC
 0x65<1> 2, "gate_startT"
@@ -323,7 +321,6 @@ set_sfx 3, u"GROUP_COMEDIANS_SPEED"
 stop
 
 tempoAndMusic:
-rest 0x30	// 1.0 beats
 0x53 0x10001B8
 0x23 0x10001B8
 speed 0x100
