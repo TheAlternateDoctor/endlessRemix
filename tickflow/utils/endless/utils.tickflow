@@ -1410,6 +1410,24 @@ loadNextGame:
                 0xB3 index, INDEX_bnbTweet
             endif
         break
+        case INDEX_7bgDoctor //Meet and Tweet
+            0xB2 index
+            if INDEX_7bgDoctor //Stop games from being played next to each other
+                goto 0x70AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_7bgDoctor
+                endif
+                set_func 0, sequenceRhythmDoctor
+                call loadRhythmDoctor
+                set_func 3, presequenceRhythmDoctor
+                set_func 2, loadRhythmDoctorLate
+                set_func 1, checkA2
+                0xB3 index, INDEX_7bgDoctor
+            endif
+        break
         default //Restart until we get something damnit
             0xB2 is_debug
             if 1

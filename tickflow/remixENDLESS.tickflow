@@ -92,6 +92,7 @@
 #include utils/patterns/blueBear.tickflow
 #include utils/patterns/manzai.tickflow
 #include utils/patterns/meetAndTweet.tickflow
+#include utils/patterns/rhythmDoctor.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -119,6 +120,9 @@
 #include utils/games/bossaNova.tickflow
 #include utils/games/airRally.tickflow
 #include utils/games/meetAndTweet.tickflow
+#include utils/games/ianVoices.tickflow
+#include utils/games/nurseVoices.tickflow
+#include utils/games/rhythmDoctor.tickflow
 
 #include utils/utils.tickflow
 
@@ -258,7 +262,7 @@ engine<4> 1
 fade 2, 1, 0
 
 0xAD 1
-0x8C 0
+0x8C 1
 0x8E 0
 0x8F 3
 input 0
@@ -272,7 +276,7 @@ input 0
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 sfx_plus,2 //Slot 7 has SFX
-0xB3 sfx_plus_2,2 //Slot 7 has SFX
+0xB3 sfx_plus_2,0 //Slot 7 has SFX
 0xB3 score_add, 5 //Starting score
 0xB3 speed, startSpeed //Starting speed
 
@@ -392,10 +396,6 @@ rest 0x18	// 0.5 beats
 set_sfx 4, u"GROUP_BASKET"
 rest 0x18	// 0.5 beats
 set_sfx 5, u"GROUP_SHIWAKE"
-rest 0x18	// 0.5 beats
-set_sfx 6, u"GROUP_SHIWAKE"
-rest 0x18	// 0.5 beats
-set_sfx 7, u"GROUP_SHIWAKE"
 rest 0x18	// 0.5 beats
 set_sfx 0xB, u"GROUP_BASKET_EN"
 rest 0x18	// 0.5 beats

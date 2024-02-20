@@ -92,6 +92,7 @@
 #include utils/patterns/blueBear.tickflow
 #include utils/patterns/manzai.tickflow
 #include utils/patterns/meetAndTweet.tickflow
+#include utils/patterns/rhythmDoctor.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -119,5 +120,8 @@
 #include utils/games/bossaNova.tickflow
 #include utils/games/airRally.tickflow
 #include utils/games/meetAndTweet.tickflow
+#include utils/games/ianVoices.tickflow
+#include utils/games/nurseVoices.tickflow
+#include utils/games/rhythmDoctor.tickflow
 
 #include utils/utils.tickflow

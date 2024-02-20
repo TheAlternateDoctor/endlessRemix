@@ -5748,3 +5748,68 @@ else
 endif
 0x2B 0x29, 0x10
 return
+
+loadRhythmDoctor:
+0xB2 cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    random 1
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/RDPomeranian.zlib", -1
+        break
+    endswitch
+    set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
+    game_cellanim 0x3C, 4
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 4
+    endif
+    0xB3 cellanim_slot, 0
+else
+    random 1
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/RDPomeranian.zlib", -1
+        break
+    endswitch
+    set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
+    game_cellanim 0x3C, 5
+    0xB2 engine_loaded
+    if_neq SCENE_ctrSumou
+        game_effect 0x3C, 5
+    endif
+    0xB3 cellanim_slot, 1
+endif
+0x2B 0x29, 0x10
+return
+
+loadRhythmDoctorVoices:
+async_call unloadSpeAudio
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 6, u"GROUP_RDVOICES"
+    set_sfx 7, u"GROUP_RDVOICES2"
+    0xB3 sfx_plus, 2
+else
+    set_sfx 0xB, u"GROUP_RDVOICES"
+    set_sfx 0xC, u"GROUP_RDVOICES2"
+    0xB3 sfx_plus, 2
+endif
+stop
+loadRhythmDoctorLate:
+rest 0xC
+0xB2 cellanim_slot
+if 1
+    set_sfx 5, u"GROUP_POMERANIAN"
+else
+    set_sfx 4, u"GROUP_POMERANIAN"
+endif
+stop
