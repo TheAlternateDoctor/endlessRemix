@@ -46,7 +46,7 @@ rest 0x30
 rest 0x30
 stop
 
-ready:
+TapTroupeReady:
 0x40<1> 0x1000B1C, 0x158
 rest 0x30	// 1.0 beats
 0x40<1> 0x1000B13, 0x158
@@ -204,7 +204,7 @@ rest 0x2D	// >0.875 beats
 rest 0x2F	// 0.5 beats
 //0x103 1
 rest 1	// 0.5 beats
-async_call ready
+async_call TapTroupeReady
 0x102 4
 0x100
 rest 3	// <0.125 beats
@@ -261,7 +261,7 @@ rest 0x2D	// >0.875 beats
 rest 0x2F	// 0.5 beats
 //0x103 1
 rest 1	// 0.5 beats
-async_call ready
+async_call TapTroupeReady
 0x102 4
 0x100
 rest 3	// <0.125 beats
@@ -318,7 +318,7 @@ rest 0x2D	// >0.875 beats
 rest 0x2F	// 0.5 beats
 //0x103 1
 rest 1	// 0.5 beats
-async_call ready
+async_call TapTroupeReady
 0x102 4
 0x100
 rest 3	// <0.125 beats
@@ -450,7 +450,7 @@ rest 0x2F	// 0.5 beats
 0x8E 0
 //0x103 1
 rest 1	// 0.5 beats
-async_call ready
+async_call TapTroupeReady
 0x102 4
 0x100
 rest 3	// <0.125 beats
@@ -470,7 +470,7 @@ rest 0x2F	// 0.5 beats
 0x8E 0
 0x103 1
 rest 1	// 0.5 beats
-async_call ready
+async_call TapTroupeReady
 0x102 4
 0x100
 rest 3	// <0.125 beats
@@ -496,7 +496,7 @@ rest 3	// <0.125 beats
 //0x103 1
 rest 0x25	// <0.875 beats
 rest 8	// <0.167 beats
-async_call ready
+async_call TapTroupeReady
 0x102 5
 0x100
 rest 3	// <0.125 beats

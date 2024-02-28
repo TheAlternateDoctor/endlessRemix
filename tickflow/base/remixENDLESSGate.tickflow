@@ -144,10 +144,9 @@ input 0
 0xB3 cellanim_slot,0 //Celanim
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
-0xB3 is_debug,debugMode //Enables Debug mode
 0xB3 speed,startSpeed //Speed at which the remix starts
-0xB3 sfx_plus,2 //Slot 7 has SFX
-0xB3 sfx_plus_2,2 //Slot 7 has SFX
+0xB3 sfx_plus,1 //Slot 7 has SFX
+0xB3 sfx_plus_2,0 //Slot 7 has SFX
 0xB3 lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on
 
 
@@ -294,14 +293,12 @@ set_sfx 4, u"GROUP_BASKET"
 rest 0x18	// 0.5 beats
 set_sfx 5, u"GROUP_SHIWAKE"
 rest 0x18	// 0.5 beats
-set_sfx 6, u"GROUP_SHIWAKE"
-rest 0x18	// 0.5 beats
-set_sfx 7, u"GROUP_SHIWAKE"
-rest 0x18	// 0.5 beats
-set_sfx 0xB, u"GROUP_BASKET_EN"
-rest 0x18	// 0.5 beats
-set_sfx 0xC, u"GROUP_BASKET_JP"
-rest 0x18	// 0.5 beats
+0x202
+if 0 //Japanese
+	set_sfx 0xB, u"GROUP_BASKET_JP"
+else
+    set_sfx 0xB, u"GROUP_BASKET_EN"
+endif
 call loadSong
 sub 3
 0x83 0

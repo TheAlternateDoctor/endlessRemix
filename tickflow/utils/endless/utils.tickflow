@@ -1437,7 +1437,7 @@ loadNextGame:
         break
     endswitch
 
-    0xB2 debugMode
+    0xB2 is_debug
     if 1
         call showScore
     endif
@@ -1469,7 +1469,10 @@ playNextGame:
         if_neq 0
             fade 1,1,1
         endif
-        call updateScore
+        0xB2 is_debug
+        if 0
+            call updateScore
+        endif
         goto 0x1009
     endif
 stop
