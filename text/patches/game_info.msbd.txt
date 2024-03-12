@@ -1,0 +1,31 @@
+game_info
+game_info_endless
+
+~gate_rvlSword_title
+>Endless Remix
+
+~gate_rvlSword00_info
+>It's time to mix things up!
+>Try to stay alive for a bit
+>as we throw everything at you!
+
+~gate_rvlSword01_info
+>It's time to mix things up!
+>Try to stay alive for a while
+>as we throw everything at you!
+
+~gate_rvlSword02_info
+>It's time to mix things up!
+>Try to stay alive for long
+>as we throw everything at you!
+
+~gate_rvlSword00_info_museum
+>It's time to mix things up!
+>Try to stay alive as we throw
+>everything at you!
+
+~gate_rvlSwordEndless_info
+>It's time to mix things up!
+>Try to stay alive for as long
+>as possible as we throw everything
+>at you!

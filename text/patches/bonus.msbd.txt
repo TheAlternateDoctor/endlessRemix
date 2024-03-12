@@ -1,0 +1,33 @@
+bonus
+bonus_endless
+
+~music_rvlSwordL_name
+>Endless Remix theme
+
+~item_rvlSwordL_name
+>Ethereal MP3 player
+
+~item_rvlSwordL_title
+>Music in our heads
+
+~item_rvlSwordL_explain
+>I don't know who made this thing, but it's
+>weird! The moment it starts playing, it
+>broadcasts music to everyone's head, and
+>forces them to move to the rhythm! Only a
+>handful of people seem to not be affected,
+>and somehow all from the Rhythm League.
+
+~item_rvlSwordL_name_hi
+>Transition particles
+
+~item_rvlSwordL_title_hi
+>A weird black goop
+
+~item_rvlSwordL_explain_hi
+>This sort of black goop is like,
+>the essence of the world. It's said
+>that encountering it can lead you
+>anywhere! Last time, I was watching
+>a rap concert when I got sent to
+>a Sumo match, it was weird.

@@ -1,0 +1,3029 @@
+layout
+score_layout
+
++scoreCounter_64
+>Score: 64
+
++scoreCounter_153
+>Score: 153
+
++scoreCounter_302
+>Score: 302
+
++scoreCounter_465
+>Score: 465
+
++scoreCounter_509
+>Score: 509
+
++scoreCounter_570
+>Score: 570
+
++scoreCounter_614
+>Score: 614
+
++scoreCounter_777
+>Score: 777
+
++scoreCounter_882
+>Score: 882
+
++scoreCounter_926
+>Score: 926
+
++scoreCounter_65
+>Score: 65
+
++scoreCounter_154
+>Score: 154
+
++scoreCounter_303
+>Score: 303
+
++scoreCounter_466
+>Score: 466
+
++scoreCounter_571
+>Score: 571
+
++scoreCounter_615
+>Score: 615
+
++scoreCounter_720
+>Score: 720
+
++scoreCounter_778
+>Score: 778
+
++scoreCounter_883
+>Score: 883
+
++scoreCounter_927
+>Score: 927
+
++scoreCounter_66
+>Score: 66
+
++scoreCounter_155
+>Score: 155
+
++scoreCounter_260
+>Score: 260
+
++scoreCounter_304
+>Score: 304
+
++scoreCounter_467
+>Score: 467
+
++scoreCounter_572
+>Score: 572
+
++scoreCounter_616
+>Score: 616
+
++scoreCounter_721
+>Score: 721
+
++scoreCounter_779
+>Score: 779
+
++scoreCounter_884
+>Score: 884
+
++scoreCounter_928
+>Score: 928
+
++scoreCounter_67
+>Score: 67
+
++scoreCounter_156
+>Score: 156
+
++scoreCounter_261
+>Score: 261
+
++scoreCounter_305
+>Score: 305
+
++scoreCounter_410
+>Score: 410
+
++scoreCounter_468
+>Score: 468
+
++scoreCounter_573
+>Score: 573
+
++scoreCounter_617
+>Score: 617
+
++scoreCounter_722
+>Score: 722
+
++scoreCounter_885
+>Score: 885
+
++scoreCounter_929
+>Score: 929
+
++scoreCounter_990
+>Score: 990
+
++scoreCounter_10
+>Score: 10
+
++scoreCounter_68
+>Score: 68
+
++scoreCounter_157
+>Score: 157
+
++scoreCounter_262
+>Score: 262
+
++scoreCounter_306
+>Score: 306
+
++scoreCounter_411
+>Score: 411
+
++scoreCounter_469
+>Score: 469
+
++scoreCounter_574
+>Score: 574
+
++scoreCounter_618
+>Score: 618
+
++scoreCounter_723
+>Score: 723
+
++scoreCounter_886
+>Score: 886
+
++scoreCounter_991
+>Score: 991
+
++scoreCounter_11
+>Score: 11
+
++scoreCounter_69
+>Score: 69
+
++scoreCounter_100
+>Score: 100
+
++scoreCounter_158
+>Score: 158
+
++scoreCounter_263
+>Score: 263
+
++scoreCounter_307
+>Score: 307
+
++scoreCounter_412
+>Score: 412
+
++scoreCounter_575
+>Score: 575
+
++scoreCounter_619
+>Score: 619
+
++scoreCounter_680
+>Score: 680
+
++scoreCounter_724
+>Score: 724
+
++scoreCounter_887
+>Score: 887
+
++scoreCounter_992
+>Score: 992
+
++scoreCounter_12
+>Score: 12
+
++scoreCounter_101
+>Score: 101
+
++scoreCounter_159
+>Score: 159
+
++scoreCounter_264
+>Score: 264
+
++scoreCounter_308
+>Score: 308
+
++scoreCounter_413
+>Score: 413
+
++scoreCounter_576
+>Score: 576
+
++scoreCounter_681
+>Score: 681
+
++scoreCounter_725
+>Score: 725
+
++scoreCounter_830
+>Score: 830
+
++scoreCounter_888
+>Score: 888
+
++scoreCounter_993
+>Score: 993
+
++scoreCounter_13
+>Score: 13
+
++scoreCounter_102
+>Score: 102
+
++scoreCounter_265
+>Score: 265
+
++scoreCounter_309
+>Score: 309
+
++scoreCounter_370
+>Score: 370
+
++scoreCounter_414
+>Score: 414
+
++scoreCounter_577
+>Score: 577
+
++scoreCounter_682
+>Score: 682
+
++scoreCounter_726
+>Score: 726
+
++scoreCounter_831
+>Score: 831
+
++scoreCounter_889
+>Score: 889
+
++scoreCounter_994
+>Score: 994
+
++scoreCounter_14
+>Score: 14
+
++scoreCounter_103
+>Score: 103
+
++scoreCounter_266
+>Score: 266
+
++scoreCounter_371
+>Score: 371
+
++scoreCounter_415
+>Score: 415
+
++scoreCounter_520
+>Score: 520
+
++scoreCounter_578
+>Score: 578
+
++scoreCounter_683
+>Score: 683
+
++scoreCounter_727
+>Score: 727
+
++scoreCounter_832
+>Score: 832
+
++scoreCounter_995
+>Score: 995
+
++scoreCounter_15
+>Score: 15
+
++scoreCounter_104
+>Score: 104
+
++scoreCounter_267
+>Score: 267
+
++scoreCounter_372
+>Score: 372
+
++scoreCounter_416
+>Score: 416
+
++scoreCounter_521
+>Score: 521
+
++scoreCounter_579
+>Score: 579
+
++scoreCounter_684
+>Score: 684
+
++scoreCounter_728
+>Score: 728
+
++scoreCounter_833
+>Score: 833
+
++scoreCounter_996
+>Score: 996
+
++scoreCounter_16
+>Score: 16
+
++scoreCounter_105
+>Score: 105
+
++scoreCounter_210
+>Score: 210
+
++scoreCounter_268
+>Score: 268
+
++scoreCounter_373
+>Score: 373
+
++scoreCounter_417
+>Score: 417
+
++scoreCounter_522
+>Score: 522
+
++scoreCounter_685
+>Score: 685
+
++scoreCounter_729
+>Score: 729
+
++scoreCounter_790
+>Score: 790
+
++scoreCounter_834
+>Score: 834
+
++scoreCounter_997
+>Score: 997
+
++scoreCounter_17
+>Score: 17
+
++scoreCounter_106
+>Score: 106
+
++scoreCounter_211
+>Score: 211
+
++scoreCounter_269
+>Score: 269
+
++scoreCounter_374
+>Score: 374
+
++scoreCounter_418
+>Score: 418
+
++scoreCounter_523
+>Score: 523
+
++scoreCounter_686
+>Score: 686
+
++scoreCounter_791
+>Score: 791
+
++scoreCounter_835
+>Score: 835
+
++scoreCounter_940
+>Score: 940
+
++scoreCounter_998
+>Score: 998
+
++scoreCounter_18
+>Score: 18
+
++scoreCounter_107
+>Score: 107
+
++scoreCounter_212
+>Score: 212
+
++scoreCounter_375
+>Score: 375
+
++scoreCounter_419
+>Score: 419
+
++scoreCounter_480
+>Score: 480
+
++scoreCounter_524
+>Score: 524
+
++scoreCounter_687
+>Score: 687
+
++scoreCounter_792
+>Score: 792
+
++scoreCounter_836
+>Score: 836
+
++scoreCounter_941
+>Score: 941
+
++scoreCounter_999
+>Score: 999
+
++scoreCounter_19
+>Score: 19
+
++scoreCounter_80
+>Score: 80
+
++scoreCounter_108
+>Score: 108
+
++scoreCounter_213
+>Score: 213
+
++scoreCounter_376
+>Score: 376
+
++scoreCounter_481
+>Score: 481
+
++scoreCounter_525
+>Score: 525
+
++scoreCounter_630
+>Score: 630
+
++scoreCounter_688
+>Score: 688
+
++scoreCounter_793
+>Score: 793
+
++scoreCounter_837
+>Score: 837
+
++scoreCounter_942
+>Score: 942
+
++scoreCounter_81
+>Score: 81
+
++scoreCounter_109
+>Score: 109
+
++scoreCounter_170
+>Score: 170
+
++scoreCounter_214
+>Score: 214
+
++scoreCounter_377
+>Score: 377
+
++scoreCounter_482
+>Score: 482
+
++scoreCounter_526
+>Score: 526
+
++scoreCounter_631
+>Score: 631
+
++scoreCounter_689
+>Score: 689
+
++scoreCounter_794
+>Score: 794
+
++scoreCounter_838
+>Score: 838
+
++scoreCounter_943
+>Score: 943
+
++scoreCounter_82
+>Score: 82
+
++scoreCounter_171
+>Score: 171
+
++scoreCounter_215
+>Score: 215
+
++scoreCounter_320
+>Score: 320
+
++scoreCounter_378
+>Score: 378
+
++scoreCounter_483
+>Score: 483
+
++scoreCounter_527
+>Score: 527
+
++scoreCounter_632
+>Score: 632
+
++scoreCounter_795
+>Score: 795
+
++scoreCounter_839
+>Score: 839
+
++scoreCounter_944
+>Score: 944
+
++scoreCounter_83
+>Score: 83
+
++scoreCounter_172
+>Score: 172
+
++scoreCounter_216
+>Score: 216
+
++scoreCounter_321
+>Score: 321
+
++scoreCounter_379
+>Score: 379
+
++scoreCounter_484
+>Score: 484
+
++scoreCounter_528
+>Score: 528
+
++scoreCounter_633
+>Score: 633
+
++scoreCounter_796
+>Score: 796
+
++scoreCounter_945
+>Score: 945
+
++scoreCounter_84
+>Score: 84
+
++scoreCounter_173
+>Score: 173
+
++scoreCounter_217
+>Score: 217
+
++scoreCounter_322
+>Score: 322
+
++scoreCounter_485
+>Score: 485
+
++scoreCounter_529
+>Score: 529
+
++scoreCounter_590
+>Score: 590
+
++scoreCounter_634
+>Score: 634
+
++scoreCounter_797
+>Score: 797
+
++scoreCounter_946
+>Score: 946
+
++scoreCounter_85
+>Score: 85
+
++scoreCounter_174
+>Score: 174
+
++scoreCounter_218
+>Score: 218
+
++scoreCounter_323
+>Score: 323
+
++scoreCounter_486
+>Score: 486
+
++scoreCounter_591
+>Score: 591
+
++scoreCounter_635
+>Score: 635
+
++scoreCounter_740
+>Score: 740
+
++scoreCounter_798
+>Score: 798
+
++scoreCounter_947
+>Score: 947
+
++scoreCounter_86
+>Score: 86
+
++scoreCounter_175
+>Score: 175
+
++scoreCounter_219
+>Score: 219
+
++scoreCounter_280
+>Score: 280
+
++scoreCounter_324
+>Score: 324
+
++scoreCounter_487
+>Score: 487
+
++scoreCounter_592
+>Score: 592
+
++scoreCounter_636
+>Score: 636
+
++scoreCounter_741
+>Score: 741
+
++scoreCounter_799
+>Score: 799
+
++scoreCounter_948
+>Score: 948
+
++scoreCounter_87
+>Score: 87
+
++scoreCounter_176
+>Score: 176
+
++scoreCounter_281
+>Score: 281
+
++scoreCounter_325
+>Score: 325
+
++scoreCounter_430
+>Score: 430
+
++scoreCounter_488
+>Score: 488
+
++scoreCounter_593
+>Score: 593
+
++scoreCounter_637
+>Score: 637
+
++scoreCounter_742
+>Score: 742
+
++scoreCounter_949
+>Score: 949
+
++scoreCounter_30
+>Score: 30
+
++scoreCounter_88
+>Score: 88
+
++scoreCounter_177
+>Score: 177
+
++scoreCounter_282
+>Score: 282
+
++scoreCounter_326
+>Score: 326
+
++scoreCounter_431
+>Score: 431
+
++scoreCounter_489
+>Score: 489
+
++scoreCounter_594
+>Score: 594
+
++scoreCounter_638
+>Score: 638
+
++scoreCounter_743
+>Score: 743
+
++scoreCounter_31
+>Score: 31
+
++scoreCounter_89
+>Score: 89
+
++scoreCounter_120
+>Score: 120
+
++scoreCounter_178
+>Score: 178
+
++scoreCounter_283
+>Score: 283
+
++scoreCounter_327
+>Score: 327
+
++scoreCounter_432
+>Score: 432
+
++scoreCounter_595
+>Score: 595
+
++scoreCounter_639
+>Score: 639
+
++scoreCounter_744
+>Score: 744
+
++scoreCounter_32
+>Score: 32
+
++scoreCounter_121
+>Score: 121
+
++scoreCounter_179
+>Score: 179
+
++scoreCounter_284
+>Score: 284
+
++scoreCounter_328
+>Score: 328
+
++scoreCounter_433
+>Score: 433
+
++scoreCounter_596
+>Score: 596
+
++scoreCounter_745
+>Score: 745
+
++scoreCounter_850
+>Score: 850
+
++scoreCounter_33
+>Score: 33
+
++scoreCounter_122
+>Score: 122
+
++scoreCounter_285
+>Score: 285
+
++scoreCounter_329
+>Score: 329
+
++scoreCounter_390
+>Score: 390
+
++scoreCounter_434
+>Score: 434
+
++scoreCounter_597
+>Score: 597
+
++scoreCounter_746
+>Score: 746
+
++scoreCounter_851
+>Score: 851
+
++scoreCounter_34
+>Score: 34
+
++scoreCounter_123
+>Score: 123
+
++scoreCounter_286
+>Score: 286
+
++scoreCounter_391
+>Score: 391
+
++scoreCounter_435
+>Score: 435
+
++scoreCounter_540
+>Score: 540
+
++scoreCounter_598
+>Score: 598
+
++scoreCounter_747
+>Score: 747
+
++scoreCounter_852
+>Score: 852
+
++scoreCounter_35
+>Score: 35
+
++scoreCounter_124
+>Score: 124
+
++scoreCounter_287
+>Score: 287
+
++scoreCounter_392
+>Score: 392
+
++scoreCounter_436
+>Score: 436
+
++scoreCounter_541
+>Score: 541
+
++scoreCounter_599
+>Score: 599
+
++scoreCounter_748
+>Score: 748
+
++scoreCounter_853
+>Score: 853
+
++scoreCounter_36
+>Score: 36
+
++scoreCounter_125
+>Score: 125
+
++scoreCounter_230
+>Score: 230
+
++scoreCounter_288
+>Score: 288
+
++scoreCounter_393
+>Score: 393
+
++scoreCounter_437
+>Score: 437
+
++scoreCounter_542
+>Score: 542
+
++scoreCounter_749
+>Score: 749
+
++scoreCounter_854
+>Score: 854
+
++scoreCounter_37
+>Score: 37
+
++scoreCounter_126
+>Score: 126
+
++scoreCounter_231
+>Score: 231
+
++scoreCounter_289
+>Score: 289
+
++scoreCounter_394
+>Score: 394
+
++scoreCounter_438
+>Score: 438
+
++scoreCounter_543
+>Score: 543
+
++scoreCounter_855
+>Score: 855
+
++scoreCounter_960
+>Score: 960
+
++scoreCounter_38
+>Score: 38
+
++scoreCounter_127
+>Score: 127
+
++scoreCounter_232
+>Score: 232
+
++scoreCounter_395
+>Score: 395
+
++scoreCounter_439
+>Score: 439
+
++scoreCounter_544
+>Score: 544
+
++scoreCounter_856
+>Score: 856
+
++scoreCounter_961
+>Score: 961
+
++scoreCounter_39
+>Score: 39
+
++scoreCounter_128
+>Score: 128
+
++scoreCounter_233
+>Score: 233
+
++scoreCounter_396
+>Score: 396
+
++scoreCounter_545
+>Score: 545
+
++scoreCounter_650
+>Score: 650
+
++scoreCounter_857
+>Score: 857
+
++scoreCounter_962
+>Score: 962
+
++scoreCounter_129
+>Score: 129
+
++scoreCounter_190
+>Score: 190
+
++scoreCounter_234
+>Score: 234
+
++scoreCounter_397
+>Score: 397
+
++scoreCounter_546
+>Score: 546
+
++scoreCounter_651
+>Score: 651
+
++scoreCounter_800
+>Score: 800
+
++scoreCounter_858
+>Score: 858
+
++scoreCounter_963
+>Score: 963
+
++scoreCounter_191
+>Score: 191
+
++scoreCounter_235
+>Score: 235
+
++scoreCounter_340
+>Score: 340
+
++scoreCounter_398
+>Score: 398
+
++scoreCounter_547
+>Score: 547
+
++scoreCounter_652
+>Score: 652
+
++scoreCounter_801
+>Score: 801
+
++scoreCounter_859
+>Score: 859
+
++scoreCounter_964
+>Score: 964
+
++scoreCounter_192
+>Score: 192
+
++scoreCounter_236
+>Score: 236
+
++scoreCounter_341
+>Score: 341
+
++scoreCounter_399
+>Score: 399
+
++scoreCounter_548
+>Score: 548
+
++scoreCounter_653
+>Score: 653
+
++scoreCounter_802
+>Score: 802
+
++scoreCounter_965
+>Score: 965
+
++scoreCounter_193
+>Score: 193
+
++scoreCounter_237
+>Score: 237
+
++scoreCounter_342
+>Score: 342
+
++scoreCounter_549
+>Score: 549
+
++scoreCounter_654
+>Score: 654
+
++scoreCounter_803
+>Score: 803
+
++scoreCounter_966
+>Score: 966
+
++scoreCounter_194
+>Score: 194
+
++scoreCounter_238
+>Score: 238
+
++scoreCounter_343
+>Score: 343
+
++scoreCounter_655
+>Score: 655
+
++scoreCounter_760
+>Score: 760
+
++scoreCounter_804
+>Score: 804
+
++scoreCounter_967
+>Score: 967
+
++scoreCounter_195
+>Score: 195
+
++scoreCounter_239
+>Score: 239
+
++scoreCounter_344
+>Score: 344
+
++scoreCounter_656
+>Score: 656
+
++scoreCounter_761
+>Score: 761
+
++scoreCounter_805
+>Score: 805
+
++scoreCounter_910
+>Score: 910
+
++scoreCounter_968
+>Score: 968
+
++scoreCounter_196
+>Score: 196
+
++scoreCounter_345
+>Score: 345
+
++scoreCounter_450
+>Score: 450
+
++scoreCounter_657
+>Score: 657
+
++scoreCounter_762
+>Score: 762
+
++scoreCounter_806
+>Score: 806
+
++scoreCounter_911
+>Score: 911
+
++scoreCounter_969
+>Score: 969
+
++scoreCounter_50
+>Score: 50
+
++scoreCounter_197
+>Score: 197
+
++scoreCounter_346
+>Score: 346
+
++scoreCounter_451
+>Score: 451
+
++scoreCounter_600
+>Score: 600
+
++scoreCounter_658
+>Score: 658
+
++scoreCounter_763
+>Score: 763
+
++scoreCounter_807
+>Score: 807
+
++scoreCounter_912
+>Score: 912
+
++scoreCounter_51
+>Score: 51
+
++scoreCounter_140
+>Score: 140
+
++scoreCounter_198
+>Score: 198
+
++scoreCounter_347
+>Score: 347
+
++scoreCounter_452
+>Score: 452
+
++scoreCounter_601
+>Score: 601
+
++scoreCounter_659
+>Score: 659
+
++scoreCounter_764
+>Score: 764
+
++scoreCounter_808
+>Score: 808
+
++scoreCounter_913
+>Score: 913
+
++scoreCounter_52
+>Score: 52
+
++scoreCounter_141
+>Score: 141
+
++scoreCounter_199
+>Score: 199
+
++scoreCounter_348
+>Score: 348
+
++scoreCounter_453
+>Score: 453
+
++scoreCounter_602
+>Score: 602
+
++scoreCounter_765
+>Score: 765
+
++scoreCounter_809
+>Score: 809
+
++scoreCounter_870
+>Score: 870
+
++scoreCounter_914
+>Score: 914
+
++scoreCounter_53
+>Score: 53
+
++scoreCounter_142
+>Score: 142
+
++scoreCounter_349
+>Score: 349
+
++scoreCounter_454
+>Score: 454
+
++scoreCounter_603
+>Score: 603
+
++scoreCounter_766
+>Score: 766
+
++scoreCounter_871
+>Score: 871
+
++scoreCounter_915
+>Score: 915
+
++scoreCounter_54
+>Score: 54
+
++scoreCounter_143
+>Score: 143
+
++scoreCounter_455
+>Score: 455
+
++scoreCounter_560
+>Score: 560
+
++scoreCounter_604
+>Score: 604
+
++scoreCounter_767
+>Score: 767
+
++scoreCounter_872
+>Score: 872
+
++scoreCounter_916
+>Score: 916
+
++scoreCounter_55
+>Score: 55
+
++scoreCounter_144
+>Score: 144
+
++scoreCounter_456
+>Score: 456
+
++scoreCounter_561
+>Score: 561
+
++scoreCounter_605
+>Score: 605
+
++scoreCounter_710
+>Score: 710
+
++scoreCounter_768
+>Score: 768
+
++scoreCounter_873
+>Score: 873
+
++scoreCounter_917
+>Score: 917
+
++scoreCounter_56
+>Score: 56
+
++scoreCounter_145
+>Score: 145
+
++scoreCounter_250
+>Score: 250
+
++scoreCounter_457
+>Score: 457
+
++scoreCounter_562
+>Score: 562
+
++scoreCounter_606
+>Score: 606
+
++scoreCounter_711
+>Score: 711
+
++scoreCounter_769
+>Score: 769
+
++scoreCounter_874
+>Score: 874
+
++scoreCounter_918
+>Score: 918
+
++scoreCounter_57
+>Score: 57
+
++scoreCounter_146
+>Score: 146
+
++scoreCounter_251
+>Score: 251
+
++scoreCounter_400
+>Score: 400
+
++scoreCounter_458
+>Score: 458
+
++scoreCounter_563
+>Score: 563
+
++scoreCounter_607
+>Score: 607
+
++scoreCounter_712
+>Score: 712
+
++scoreCounter_875
+>Score: 875
+
++scoreCounter_919
+>Score: 919
+
++scoreCounter_980
+>Score: 980
+
++scoreCounter_58
+>Score: 58
+
++scoreCounter_147
+>Score: 147
+
++scoreCounter_252
+>Score: 252
+
++scoreCounter_401
+>Score: 401
+
++scoreCounter_459
+>Score: 459
+
++scoreCounter_564
+>Score: 564
+
++scoreCounter_608
+>Score: 608
+
++scoreCounter_713
+>Score: 713
+
++scoreCounter_876
+>Score: 876
+
++scoreCounter_981
+>Score: 981
+
++scoreCounter_59
+>Score: 59
+
++scoreCounter_148
+>Score: 148
+
++scoreCounter_253
+>Score: 253
+
++scoreCounter_402
+>Score: 402
+
++scoreCounter_565
+>Score: 565
+
++scoreCounter_609
+>Score: 609
+
++scoreCounter_670
+>Score: 670
+
++scoreCounter_714
+>Score: 714
+
++scoreCounter_877
+>Score: 877
+
++scoreCounter_982
+>Score: 982
+
++scoreCounter_149
+>Score: 149
+
++scoreCounter_254
+>Score: 254
+
++scoreCounter_403
+>Score: 403
+
++scoreCounter_566
+>Score: 566
+
++scoreCounter_671
+>Score: 671
+
++scoreCounter_715
+>Score: 715
+
++scoreCounter_820
+>Score: 820
+
++scoreCounter_878
+>Score: 878
+
++scoreCounter_983
+>Score: 983
+
++scoreCounter_255
+>Score: 255
+
++scoreCounter_360
+>Score: 360
+
++scoreCounter_404
+>Score: 404
+
++scoreCounter_567
+>Score: 567
+
++scoreCounter_672
+>Score: 672
+
++scoreCounter_716
+>Score: 716
+
++scoreCounter_821
+>Score: 821
+
++scoreCounter_879
+>Score: 879
+
++scoreCounter_984
+>Score: 984
+
++scoreCounter_256
+>Score: 256
+
++scoreCounter_361
+>Score: 361
+
++scoreCounter_405
+>Score: 405
+
++scoreCounter_510
+>Score: 510
+
++scoreCounter_568
+>Score: 568
+
++scoreCounter_673
+>Score: 673
+
++scoreCounter_717
+>Score: 717
+
++scoreCounter_822
+>Score: 822
+
++scoreCounter_985
+>Score: 985
+
++scoreCounter_257
+>Score: 257
+
++scoreCounter_362
+>Score: 362
+
++scoreCounter_406
+>Score: 406
+
++scoreCounter_511
+>Score: 511
+
++scoreCounter_569
+>Score: 569
+
++scoreCounter_674
+>Score: 674
+
++scoreCounter_718
+>Score: 718
+
++scoreCounter_823
+>Score: 823
+
++scoreCounter_986
+>Score: 986
+
++scoreCounter_200
+>Score: 200
+
++scoreCounter_258
+>Score: 258
+
++scoreCounter_363
+>Score: 363
+
++scoreCounter_407
+>Score: 407
+
++scoreCounter_512
+>Score: 512
+
++scoreCounter_675
+>Score: 675
+
++scoreCounter_719
+>Score: 719
+
++scoreCounter_780
+>Score: 780
+
++scoreCounter_824
+>Score: 824
+
++scoreCounter_987
+>Score: 987
+
++scoreCounter_201
+>Score: 201
+
++scoreCounter_259
+>Score: 259
+
++scoreCounter_364
+>Score: 364
+
++scoreCounter_408
+>Score: 408
+
++scoreCounter_513
+>Score: 513
+
++scoreCounter_676
+>Score: 676
+
++scoreCounter_781
+>Score: 781
+
++scoreCounter_825
+>Score: 825
+
++scoreCounter_930
+>Score: 930
+
++scoreCounter_988
+>Score: 988
+
++scoreCounter_202
+>Score: 202
+
++scoreCounter_365
+>Score: 365
+
++scoreCounter_409
+>Score: 409
+
++scoreCounter_470
+>Score: 470
+
++scoreCounter_514
+>Score: 514
+
++scoreCounter_677
+>Score: 677
+
++scoreCounter_782
+>Score: 782
+
++scoreCounter_826
+>Score: 826
+
++scoreCounter_931
+>Score: 931
+
++scoreCounter_989
+>Score: 989
+
++scoreCounter_70
+>Score: 70
+
++scoreCounter_203
+>Score: 203
+
++scoreCounter_366
+>Score: 366
+
++scoreCounter_471
+>Score: 471
+
++scoreCounter_515
+>Score: 515
+
++scoreCounter_620
+>Score: 620
+
++scoreCounter_678
+>Score: 678
+
++scoreCounter_783
+>Score: 783
+
++scoreCounter_827
+>Score: 827
+
++scoreCounter_932
+>Score: 932
+
++scoreCounter_71
+>Score: 71
+
++scoreCounter_160
+>Score: 160
+
++scoreCounter_204
+>Score: 204
+
++scoreCounter_367
+>Score: 367
+
++scoreCounter_472
+>Score: 472
+
++scoreCounter_516
+>Score: 516
+
++scoreCounter_621
+>Score: 621
+
++scoreCounter_679
+>Score: 679
+
++scoreCounter_784
+>Score: 784
+
++scoreCounter_828
+>Score: 828
+
++scoreCounter_933
+>Score: 933
+
++scoreCounter_72
+>Score: 72
+
++scoreCounter_161
+>Score: 161
+
++scoreCounter_205
+>Score: 205
+
++scoreCounter_310
+>Score: 310
+
++scoreCounter_368
+>Score: 368
+
++scoreCounter_473
+>Score: 473
+
++scoreCounter_517
+>Score: 517
+
++scoreCounter_622
+>Score: 622
+
++scoreCounter_785
+>Score: 785
+
++scoreCounter_829
+>Score: 829
+
++scoreCounter_890
+>Score: 890
+
++scoreCounter_934
+>Score: 934
+
++scoreCounter_73
+>Score: 73
+
++scoreCounter_162
+>Score: 162
+
++scoreCounter_206
+>Score: 206
+
++scoreCounter_311
+>Score: 311
+
++scoreCounter_369
+>Score: 369
+
++scoreCounter_474
+>Score: 474
+
++scoreCounter_518
+>Score: 518
+
++scoreCounter_623
+>Score: 623
+
++scoreCounter_786
+>Score: 786
+
++scoreCounter_891
+>Score: 891
+
++scoreCounter_935
+>Score: 935
+
++scoreCounter_74
+>Score: 74
+
++scoreCounter_163
+>Score: 163
+
++scoreCounter_207
+>Score: 207
+
++scoreCounter_312
+>Score: 312
+
++scoreCounter_475
+>Score: 475
+
++scoreCounter_519
+>Score: 519
+
++scoreCounter_580
+>Score: 580
+
++scoreCounter_624
+>Score: 624
+
++scoreCounter_787
+>Score: 787
+
++scoreCounter_892
+>Score: 892
+
++scoreCounter_936
+>Score: 936
+
++scoreCounter_75
+>Score: 75
+
++scoreCounter_164
+>Score: 164
+
++scoreCounter_208
+>Score: 208
+
++scoreCounter_313
+>Score: 313
+
++scoreCounter_476
+>Score: 476
+
++scoreCounter_581
+>Score: 581
+
++scoreCounter_625
+>Score: 625
+
++scoreCounter_730
+>Score: 730
+
++scoreCounter_788
+>Score: 788
+
++scoreCounter_893
+>Score: 893
+
++scoreCounter_937
+>Score: 937
+
++scoreCounter_76
+>Score: 76
+
++scoreCounter_165
+>Score: 165
+
++scoreCounter_209
+>Score: 209
+
++scoreCounter_270
+>Score: 270
+
++scoreCounter_314
+>Score: 314
+
++scoreCounter_477
+>Score: 477
+
++scoreCounter_582
+>Score: 582
+
++scoreCounter_626
+>Score: 626
+
++scoreCounter_731
+>Score: 731
+
++scoreCounter_789
+>Score: 789
+
++scoreCounter_894
+>Score: 894
+
++scoreCounter_938
+>Score: 938
+
++scoreCounter_77
+>Score: 77
+
++scoreCounter_166
+>Score: 166
+
++scoreCounter_271
+>Score: 271
+
++scoreCounter_315
+>Score: 315
+
++scoreCounter_420
+>Score: 420
+
++scoreCounter_478
+>Score: 478
+
++scoreCounter_583
+>Score: 583
+
++scoreCounter_627
+>Score: 627
+
++scoreCounter_732
+>Score: 732
+
++scoreCounter_895
+>Score: 895
+
++scoreCounter_939
+>Score: 939
+
++scoreCounter_20
+>Score: 20
+
++scoreCounter_78
+>Score: 78
+
++scoreCounter_167
+>Score: 167
+
++scoreCounter_272
+>Score: 272
+
++scoreCounter_316
+>Score: 316
+
++scoreCounter_421
+>Score: 421
+
++scoreCounter_479
+>Score: 479
+
++scoreCounter_584
+>Score: 584
+
++scoreCounter_628
+>Score: 628
+
++scoreCounter_733
+>Score: 733
+
++scoreCounter_896
+>Score: 896
+
++gate_gameoverT
+>Game Over.
+
++scoreCounter_21
+>Score: 21
+
++scoreCounter_79
+>Score: 79
+
++scoreCounter_110
+>Score: 110
+
++scoreCounter_168
+>Score: 168
+
++scoreCounter_273
+>Score: 273
+
++scoreCounter_317
+>Score: 317
+
++scoreCounter_422
+>Score: 422
+
++scoreCounter_585
+>Score: 585
+
++scoreCounter_629
+>Score: 629
+
++scoreCounter_690
+>Score: 690
+
++scoreCounter_734
+>Score: 734
+
++scoreCounter_897
+>Score: 897
+
++scoreCounter_22
+>Score: 22
+
++scoreCounter_111
+>Score: 111
+
++scoreCounter_169
+>Score: 169
+
++scoreCounter_274
+>Score: 274
+
++scoreCounter_318
+>Score: 318
+
++scoreCounter_423
+>Score: 423
+
++scoreCounter_586
+>Score: 586
+
++scoreCounter_691
+>Score: 691
+
++scoreCounter_735
+>Score: 735
+
++scoreCounter_840
+>Score: 840
+
++scoreCounter_898
+>Score: 898
+
++scoreCounter_0
+>Score: 0
+
++scoreCounter_23
+>Score: 23
+
++scoreCounter_112
+>Score: 112
+
++scoreCounter_275
+>Score: 275
+
++scoreCounter_319
+>Score: 319
+
++scoreCounter_380
+>Score: 380
+
++scoreCounter_424
+>Score: 424
+
++scoreCounter_587
+>Score: 587
+
++scoreCounter_692
+>Score: 692
+
++scoreCounter_736
+>Score: 736
+
++scoreCounter_841
+>Score: 841
+
++scoreCounter_899
+>Score: 899
+
++scoreCounter_1
+>Score: 1
+
++scoreCounter_24
+>Score: 24
+
++scoreCounter_113
+>Score: 113
+
++scoreCounter_276
+>Score: 276
+
++scoreCounter_381
+>Score: 381
+
++scoreCounter_425
+>Score: 425
+
++scoreCounter_530
+>Score: 530
+
++scoreCounter_588
+>Score: 588
+
++scoreCounter_693
+>Score: 693
+
++scoreCounter_737
+>Score: 737
+
++scoreCounter_842
+>Score: 842
+
++scoreCounter_2
+>Score: 2
+
++scoreCounter_25
+>Score: 25
+
++scoreCounter_114
+>Score: 114
+
++scoreCounter_277
+>Score: 277
+
++scoreCounter_382
+>Score: 382
+
++scoreCounter_426
+>Score: 426
+
++scoreCounter_531
+>Score: 531
+
++scoreCounter_589
+>Score: 589
+
++scoreCounter_694
+>Score: 694
+
++scoreCounter_738
+>Score: 738
+
++scoreCounter_843
+>Score: 843
+
++scoreCounter_3
+>Score: 3
+
++scoreCounter_26
+>Score: 26
+
++scoreCounter_115
+>Score: 115
+
++scoreCounter_220
+>Score: 220
+
++scoreCounter_278
+>Score: 278
+
++scoreCounter_383
+>Score: 383
+
++scoreCounter_427
+>Score: 427
+
++scoreCounter_532
+>Score: 532
+
++scoreCounter_695
+>Score: 695
+
++scoreCounter_739
+>Score: 739
+
++scoreCounter_844
+>Score: 844
+
++scoreCounter_4
+>Score: 4
+
++scoreCounter_27
+>Score: 27
+
++scoreCounter_116
+>Score: 116
+
++scoreCounter_221
+>Score: 221
+
++scoreCounter_279
+>Score: 279
+
++scoreCounter_384
+>Score: 384
+
++scoreCounter_428
+>Score: 428
+
++scoreCounter_533
+>Score: 533
+
++scoreCounter_696
+>Score: 696
+
++scoreCounter_845
+>Score: 845
+
++scoreCounter_950
+>Score: 950
+
++scoreCounter_5
+>Score: 5
+
++scoreCounter_28
+>Score: 28
+
++scoreCounter_117
+>Score: 117
+
++scoreCounter_222
+>Score: 222
+
++scoreCounter_385
+>Score: 385
+
++scoreCounter_429
+>Score: 429
+
++scoreCounter_490
+>Score: 490
+
++scoreCounter_534
+>Score: 534
+
++scoreCounter_697
+>Score: 697
+
++scoreCounter_846
+>Score: 846
+
++scoreCounter_951
+>Score: 951
+
++scoreCounter_6
+>Score: 6
+
++scoreCounter_29
+>Score: 29
+
++scoreCounter_90
+>Score: 90
+
++scoreCounter_118
+>Score: 118
+
++scoreCounter_223
+>Score: 223
+
++scoreCounter_386
+>Score: 386
+
++scoreCounter_491
+>Score: 491
+
++scoreCounter_535
+>Score: 535
+
++scoreCounter_640
+>Score: 640
+
++scoreCounter_698
+>Score: 698
+
++scoreCounter_847
+>Score: 847
+
++scoreCounter_952
+>Score: 952
+
++scoreCounter_7
+>Score: 7
+
++scoreCounter_91
+>Score: 91
+
++scoreCounter_119
+>Score: 119
+
++scoreCounter_180
+>Score: 180
+
++scoreCounter_224
+>Score: 224
+
++scoreCounter_387
+>Score: 387
+
++scoreCounter_492
+>Score: 492
+
++scoreCounter_536
+>Score: 536
+
++scoreCounter_641
+>Score: 641
+
++scoreCounter_699
+>Score: 699
+
++scoreCounter_848
+>Score: 848
+
++scoreCounter_953
+>Score: 953
+
++scoreCounter_8
+>Score: 8
+
++scoreCounter_92
+>Score: 92
+
++scoreCounter_181
+>Score: 181
+
++scoreCounter_225
+>Score: 225
+
++scoreCounter_330
+>Score: 330
+
++scoreCounter_388
+>Score: 388
+
++scoreCounter_493
+>Score: 493
+
++scoreCounter_537
+>Score: 537
+
++scoreCounter_642
+>Score: 642
+
++scoreCounter_849
+>Score: 849
+
++scoreCounter_954
+>Score: 954
+
++scoreCounter_9
+>Score: 9
+
++scoreCounter_93
+>Score: 93
+
++scoreCounter_182
+>Score: 182
+
++scoreCounter_226
+>Score: 226
+
++scoreCounter_331
+>Score: 331
+
++scoreCounter_389
+>Score: 389
+
++scoreCounter_494
+>Score: 494
+
++scoreCounter_538
+>Score: 538
+
++scoreCounter_643
+>Score: 643
+
++scoreCounter_955
+>Score: 955
+
++scoreCounter_94
+>Score: 94
+
++scoreCounter_183
+>Score: 183
+
++scoreCounter_227
+>Score: 227
+
++scoreCounter_332
+>Score: 332
+
++scoreCounter_495
+>Score: 495
+
++scoreCounter_539
+>Score: 539
+
++scoreCounter_644
+>Score: 644
+
++scoreCounter_956
+>Score: 956
+
++scoreCounter_95
+>Score: 95
+
++scoreCounter_184
+>Score: 184
+
++scoreCounter_228
+>Score: 228
+
++scoreCounter_333
+>Score: 333
+
++scoreCounter_496
+>Score: 496
+
++scoreCounter_645
+>Score: 645
+
++scoreCounter_750
+>Score: 750
+
++scoreCounter_957
+>Score: 957
+
++scoreCounter_96
+>Score: 96
+
++scoreCounter_185
+>Score: 185
+
++scoreCounter_229
+>Score: 229
+
++scoreCounter_290
+>Score: 290
+
++scoreCounter_334
+>Score: 334
+
++scoreCounter_497
+>Score: 497
+
++scoreCounter_646
+>Score: 646
+
++scoreCounter_751
+>Score: 751
+
++scoreCounter_900
+>Score: 900
+
++scoreCounter_958
+>Score: 958
+
++scoreCounter_97
+>Score: 97
+
++scoreCounter_186
+>Score: 186
+
++scoreCounter_291
+>Score: 291
+
++scoreCounter_335
+>Score: 335
+
++scoreCounter_440
+>Score: 440
+
++scoreCounter_498
+>Score: 498
+
++scoreCounter_647
+>Score: 647
+
++scoreCounter_752
+>Score: 752
+
++scoreCounter_901
+>Score: 901
+
++scoreCounter_959
+>Score: 959
+
++scoreCounter_40
+>Score: 40
+
++scoreCounter_98
+>Score: 98
+
++scoreCounter_187
+>Score: 187
+
++scoreCounter_292
+>Score: 292
+
++scoreCounter_336
+>Score: 336
+
++scoreCounter_441
+>Score: 441
+
++scoreCounter_499
+>Score: 499
+
++scoreCounter_648
+>Score: 648
+
++scoreCounter_753
+>Score: 753
+
++scoreCounter_902
+>Score: 902
+
++scoreCounter_41
+>Score: 41
+
++scoreCounter_99
+>Score: 99
+
++scoreCounter_130
+>Score: 130
+
++scoreCounter_188
+>Score: 188
+
++scoreCounter_293
+>Score: 293
+
++scoreCounter_337
+>Score: 337
+
++scoreCounter_442
+>Score: 442
+
++scoreCounter_649
+>Score: 649
+
++scoreCounter_754
+>Score: 754
+
++scoreCounter_903
+>Score: 903
+
++scoreCounter_42
+>Score: 42
+
++scoreCounter_131
+>Score: 131
+
++scoreCounter_189
+>Score: 189
+
++scoreCounter_294
+>Score: 294
+
++scoreCounter_338
+>Score: 338
+
++scoreCounter_443
+>Score: 443
+
++scoreCounter_755
+>Score: 755
+
++scoreCounter_860
+>Score: 860
+
++scoreCounter_904
+>Score: 904
+
++scoreCounter_43
+>Score: 43
+
++scoreCounter_132
+>Score: 132
+
++scoreCounter_295
+>Score: 295
+
++scoreCounter_339
+>Score: 339
+
++scoreCounter_444
+>Score: 444
+
++scoreCounter_756
+>Score: 756
+
++scoreCounter_861
+>Score: 861
+
++scoreCounter_905
+>Score: 905
+
++scoreCounter_44
+>Score: 44
+
++scoreCounter_133
+>Score: 133
+
++scoreCounter_296
+>Score: 296
+
++scoreCounter_445
+>Score: 445
+
++scoreCounter_550
+>Score: 550
+
++scoreCounter_757
+>Score: 757
+
++scoreCounter_862
+>Score: 862
+
++scoreCounter_906
+>Score: 906
+
++scoreCounter_45
+>Score: 45
+
++scoreCounter_134
+>Score: 134
+
++scoreCounter_297
+>Score: 297
+
++scoreCounter_446
+>Score: 446
+
++scoreCounter_551
+>Score: 551
+
++scoreCounter_700
+>Score: 700
+
++scoreCounter_758
+>Score: 758
+
++scoreCounter_863
+>Score: 863
+
++scoreCounter_907
+>Score: 907
+
++lifeCounter_0
+>Lives: 0
+
++scoreCounter_46
+>Score: 46
+
++scoreCounter_135
+>Score: 135
+
++scoreCounter_240
+>Score: 240
+
++scoreCounter_298
+>Score: 298
+
++scoreCounter_447
+>Score: 447
+
++scoreCounter_552
+>Score: 552
+
++scoreCounter_701
+>Score: 701
+
++scoreCounter_759
+>Score: 759
+
++scoreCounter_864
+>Score: 864
+
++scoreCounter_908
+>Score: 908
+
++lifeCounter_1
+>Lives: 1
+
++scoreCounter_47
+>Score: 47
+
++scoreCounter_136
+>Score: 136
+
++scoreCounter_241
+>Score: 241
+
++scoreCounter_299
+>Score: 299
+
++scoreCounter_448
+>Score: 448
+
++scoreCounter_553
+>Score: 553
+
++scoreCounter_702
+>Score: 702
+
++scoreCounter_865
+>Score: 865
+
++scoreCounter_909
+>Score: 909
+
++scoreCounter_970
+>Score: 970
+
++lifeCounter_2
+>Lives: 2
+
++scoreCounter_48
+>Score: 48
+
++scoreCounter_137
+>Score: 137
+
++scoreCounter_242
+>Score: 242
+
++scoreCounter_449
+>Score: 449
+
++scoreCounter_554
+>Score: 554
+
++scoreCounter_703
+>Score: 703
+
++scoreCounter_866
+>Score: 866
+
++scoreCounter_971
+>Score: 971
+
++lifeCounter_3
+>Lives: 3
+
++scoreCounter_49
+>Score: 49
+
++scoreCounter_138
+>Score: 138
+
++scoreCounter_243
+>Score: 243
+
++scoreCounter_555
+>Score: 555
+
++scoreCounter_660
+>Score: 660
+
++scoreCounter_704
+>Score: 704
+
++scoreCounter_867
+>Score: 867
+
++scoreCounter_972
+>Score: 972
+
++scoreCounter_139
+>Score: 139
+
++scoreCounter_244
+>Score: 244
+
++scoreCounter_556
+>Score: 556
+
++scoreCounter_661
+>Score: 661
+
++scoreCounter_705
+>Score: 705
+
++scoreCounter_810
+>Score: 810
+
++scoreCounter_868
+>Score: 868
+
++scoreCounter_973
+>Score: 973
+
++scoreCounter_245
+>Score: 245
+
++scoreCounter_350
+>Score: 350
+
++scoreCounter_557
+>Score: 557
+
++scoreCounter_662
+>Score: 662
+
++scoreCounter_706
+>Score: 706
+
++scoreCounter_811
+>Score: 811
+
++scoreCounter_869
+>Score: 869
+
++scoreCounter_974
+>Score: 974
+
++scoreCounter_246
+>Score: 246
+
++scoreCounter_351
+>Score: 351
+
++scoreCounter_500
+>Score: 500
+
++scoreCounter_558
+>Score: 558
+
++scoreCounter_663
+>Score: 663
+
++scoreCounter_707
+>Score: 707
+
++scoreCounter_812
+>Score: 812
+
++scoreCounter_975
+>Score: 975
+
++scoreCounter_247
+>Score: 247
+
++scoreCounter_352
+>Score: 352
+
++scoreCounter_501
+>Score: 501
+
++scoreCounter_559
+>Score: 559
+
++scoreCounter_664
+>Score: 664
+
++scoreCounter_708
+>Score: 708
+
++scoreCounter_813
+>Score: 813
+
++scoreCounter_976
+>Score: 976
+
++scoreCounter_248
+>Score: 248
+
++scoreCounter_353
+>Score: 353
+
++scoreCounter_502
+>Score: 502
+
++scoreCounter_665
+>Score: 665
+
++scoreCounter_709
+>Score: 709
+
++scoreCounter_770
+>Score: 770
+
++scoreCounter_814
+>Score: 814
+
++scoreCounter_977
+>Score: 977
+
++scoreCounter_249
+>Score: 249
+
++scoreCounter_354
+>Score: 354
+
++scoreCounter_503
+>Score: 503
+
++scoreCounter_666
+>Score: 666
+
++scoreCounter_771
+>Score: 771
+
++scoreCounter_815
+>Score: 815
+
++scoreCounter_920
+>Score: 920
+
++scoreCounter_978
+>Score: 978
+
++scoreCounter_355
+>Score: 355
+
++scoreCounter_460
+>Score: 460
+
++scoreCounter_504
+>Score: 504
+
++scoreCounter_667
+>Score: 667
+
++scoreCounter_772
+>Score: 772
+
++scoreCounter_816
+>Score: 816
+
++scoreCounter_921
+>Score: 921
+
++scoreCounter_979
+>Score: 979
+
++scoreCounter_60
+>Score: 60
+
++scoreCounter_356
+>Score: 356
+
++scoreCounter_461
+>Score: 461
+
++scoreCounter_505
+>Score: 505
+
++scoreCounter_610
+>Score: 610
+
++scoreCounter_668
+>Score: 668
+
++scoreCounter_773
+>Score: 773
+
++scoreCounter_817
+>Score: 817
+
++scoreCounter_922
+>Score: 922
+
++scoreCounter_61
+>Score: 61
+
++scoreCounter_150
+>Score: 150
+
++scoreCounter_357
+>Score: 357
+
++scoreCounter_462
+>Score: 462
+
++scoreCounter_506
+>Score: 506
+
++scoreCounter_611
+>Score: 611
+
++scoreCounter_669
+>Score: 669
+
++scoreCounter_774
+>Score: 774
+
++scoreCounter_818
+>Score: 818
+
++scoreCounter_923
+>Score: 923
+
++scoreCounter_62
+>Score: 62
+
++scoreCounter_151
+>Score: 151
+
++scoreCounter_300
+>Score: 300
+
++scoreCounter_358
+>Score: 358
+
++scoreCounter_463
+>Score: 463
+
++scoreCounter_507
+>Score: 507
+
++scoreCounter_612
+>Score: 612
+
++scoreCounter_775
+>Score: 775
+
++scoreCounter_819
+>Score: 819
+
++scoreCounter_880
+>Score: 880
+
++scoreCounter_924
+>Score: 924
+
++scoreCounter_63
+>Score: 63
+
++scoreCounter_152
+>Score: 152
+
++scoreCounter_301
+>Score: 301
+
++scoreCounter_359
+>Score: 359
+
++scoreCounter_464
+>Score: 464
+
++scoreCounter_508
+>Score: 508
+
++scoreCounter_613
+>Score: 613
+
++scoreCounter_776
+>Score: 776
+
++scoreCounter_881
+>Score: 881
+
++scoreCounter_925
+>Score: 925
+
++lifeCounter_3
+>Lives: 3
+
++lifeCounter_2
+>Lives: 2
+
++lifeCounter_1
+>Lives: 1
+
++lifeCounter_0
+>Lives: 0

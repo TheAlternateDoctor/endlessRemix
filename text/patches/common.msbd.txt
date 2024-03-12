@@ -1,0 +1,13 @@
+common
+common_endless
+ca30a3bf62b25a15fdfefcf962593849e006cb1d1acd1a4399d0728c7daf98d8
+
++gate2_explain_score_endless
+>Go through 15 sections!
+
++gate1_explain_score_endless
+>Go through 10 sections!
+
++gate3_explain_score_endless
+>Go through 20 sections!
+
