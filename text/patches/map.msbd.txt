@@ -1,0 +1,14 @@
+map
+map_endless_remix
+
+~map_gate_03_endless_04
+>If you go to Endless Remix
+>inside the [RawCmd 0.3 FF_5F_5F_FF]museum[RawCmd 0.3 00_00_00_FF]...
+
+~map_gate_03_endless_06
+>[RawCmd 2.3 08_00] YOU MAY NOW PLAY 
+>MIXED GAMES UNTIL THE END OF TIMES.
+
+~map_gate_03_endless_02
+>YOU ARE IMPRESSIVELY HARD TO
+>SURPRISE.
