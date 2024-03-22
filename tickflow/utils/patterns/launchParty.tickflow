@@ -15,10 +15,10 @@ sequenceLaunchParty:
     rest 0x10
 	0xB3 9, 0x2E
     fade<1> 1,1,1
-    0x106 1
-    0xB2 game_state
-    if 0
+    0x2B<1> 0x2E
+    if_neq 1
         0x105<1>
+        0x106 1
     endif
     input 1
     random 1

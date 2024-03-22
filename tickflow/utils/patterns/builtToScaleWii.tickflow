@@ -21,6 +21,7 @@ sequenceBtSWii:
 	0x29<2> 
     rest 0x10
 	0xB3 9, 0x1C
+    0x8B 0, 0
     fade<1> 1,1,1
     random 3
     switch

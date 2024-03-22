@@ -30,7 +30,7 @@ kitties1:
     rest 0x90
     0x102
     call kittiesRandomLocation
-    async_sub 0x5A
+    async_sub 0x56
     rest 0xC0
     0x102
     call kittiesRandomLocation

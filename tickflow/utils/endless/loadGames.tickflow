@@ -349,61 +349,51 @@ if 1
     case 0
         set_cellanim 4, u"rom:/cellanim/agbClap_short.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_short.zlib", -1
-        0xB3 game_state, 0
         0x2B 1, 1
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/agbClap_long.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/agbClap_arrange.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_arrange.zlib", -1
-        0xB3 game_state, 2
         0x2B 1, 5
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/agbClap_remix02.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_remix.zlib", -1
-        0xB3 game_state, 3
         0x2B 1, 9
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/agbClap_BW.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_BW.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/agbClap_mario.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_mario.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 6
         set_cellanim 4, u"rom:/cellanim/agbClap_party.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 7
         set_cellanim 4, u"rom:/cellanim/agbClap_bomb.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 8
         set_cellanim 4, u"rom:/cellanim/agbClap_wario.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     default
         set_cellanim 4, u"rom:/cellanim/agbClap_tempo.zlib", -1
         set_layout 6, u"rom:/layout/agbClap_tempo.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     endswitch
@@ -417,61 +407,51 @@ else
     case 0
         set_cellanim 5, u"rom:/cellanim/agbClap_short.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_short.zlib", -1
-        0xB3 game_state, 0
         0x2B 1, 1
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/agbClap_long.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/agbClap_arrange.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_arrange.zlib", -1
-        0xB3 game_state, 2
         0x2B 1, 5
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/agbClap_remix02.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_remix.zlib", -1
-        0xB3 game_state, 3
         0x2B 1, 9
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/agbClap_BW.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_BW.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/agbClap_mario.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_mario.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/agbClap_party.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 7
         set_cellanim 5, u"rom:/cellanim/agbClap_bomb.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     case 8
         set_cellanim 5, u"rom:/cellanim/agbClap_wario.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     default
         set_cellanim 5, u"rom:/cellanim/agbClap_tempo.zlib", -1
         set_layout 7, u"rom:/layout/agbClap_tempo.zlib", -1
-        0xB3 game_state, 1
         0x2B 1, 3
         break
     endswitch
@@ -497,43 +477,36 @@ if 1
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrRobot_short.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_short.zlib", -1
-        0xB3 game_state, 0
         0x2B 0x18, 0xD
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/ntrRobot_long.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 0x18, 0xD
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/ntrRobot_remix00.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 0x18, 7
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/ntrRobot_wario.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 2
         0x2B 0x18, 0xD
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/ntrRobot_arrange.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 3
         0x2B 0x18, 0xD
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/ntrRobot_r7ds.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 3
         0x2B 0x18, 0xD
         break
     case 6
         set_cellanim 4, u"rom:/cellanim/ntrRobot_wackyworkbench.zlib", -1
         set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 3
         0x2B 0x18, 0xD
         break
     endswitch
@@ -549,43 +522,36 @@ else
     case 0
         set_cellanim 5, u"rom:/cellanim/ntrRobot_short.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_short.zlib", -1
-        0xB3 game_state, 0
         0x2B 0x18, 0xD
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ntrRobot_long.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 0x18, 0xD
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/ntrRobot_remix00.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 1
         0x2B 0x18, 7
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/ntrRobot_wario.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 2
         0x2B 0x18, 0xD
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ntrRobot_arrange.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 3
         0x2B 0x18, 0xD
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/ntrRobot_r7ds.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 3
         0x2B 0x18, 0xD
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/ntrRobot_wackyworkbench.zlib", -1
         set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-        0xB3 game_state, 3
         0x2B 0x18, 0xD
         break
     endswitch
@@ -837,15 +803,15 @@ if 1
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlRocket_v0.zlib", -1
-        0xB3 game_state, 0
+        0x2B 0x2E, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/rvlRocket_remix06.zlib", -1
-        0xB3 game_state, 1
+        0x2B 0x2E, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/rvlRocket_remix08.zlib", -1
-        0xB3 game_state, 0
+        0x2B 0x2E, 0
         break
     endswitch
     game_cellanim 0x2E, 4
@@ -856,15 +822,15 @@ else
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlRocket_v0.zlib", -1
-        0xB3 game_state, 0
+        0x2B 0x2E, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/rvlRocket_remix06.zlib", -1
-        0xB3 game_state, 1
+        0x2B 0x2E, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/rvlRocket_remix08.zlib", -1
-        0xB3 game_state, 0
+        0x2B 0x2E, 0
         break
     endswitch
     game_cellanim 0x2E, 5
@@ -2233,22 +2199,18 @@ if 1
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrBlanco_long.zlib", -1
         0x2B 0x35, 3
-        0xB3 game_state, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/ctrBlanco_arrange.zlib", -1
         0x2B 0x35, 5
-        0xB3 game_state, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/ctrBlanco_remix03.zlib", -1
         0x2B 0x35, 0xA
-        0xB3 game_state, 2
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/ctrBlanco_space.zlib", -1
         0x2B 0x35, 3
-        0xB3 game_state, 0
         break
     endswitch
     set_effect 4, u"rom:/effect/ctrBlanco.zlib", -1
@@ -2262,22 +2224,18 @@ else
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrBlanco_long.zlib", -1
         0x2B 0x35, 3
-        0xB3 game_state, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ctrBlanco_arrange.zlib", -1
         0x2B 0x35, 5
-        0xB3 game_state, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/ctrBlanco_remix03.zlib", -1
         0x2B 0x35, 0xA
-        0xB3 game_state, 2
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/ctrBlanco_space.zlib", -1
         0x2B 0x35, 3
-        0xB3 game_state, 0
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrBlanco.zlib", -1
@@ -2302,23 +2260,18 @@ if 1
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrBear_long.zlib", -1
-        0xB3 game_state, 0
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/ctrBear_fortnite.zlib", -1
-        0xB3 game_state, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/ctrBear_klonoa.zlib", -1
-        0xB3 game_state, 1
         break
     case 3
         set_cellanim 4, u"rom:/cellanim/ctrBear_nightcall.zlib", -1
-        0xB3 game_state, 1
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/ctrBear_remix5.zlib", -1
-        0xB3 game_state, 1
         break
     endswitch
     set_effect 4, u"rom:/effect/ctrBear.zlib", -1
@@ -2331,23 +2284,18 @@ else
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrBear_long.zlib", -1
-        0xB3 game_state, 0
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ctrBear_fortnite.zlib", -1
-        0xB3 game_state, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/ctrBear_klonoa.zlib", -1
-        0xB3 game_state, 1
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/ctrBear_nightcall.zlib", -1
-        0xB3 game_state, 1
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/ctrBear_remix5.zlib", -1
-        0xB3 game_state, 1
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrBear.zlib", -1
@@ -3382,24 +3330,20 @@ if 1
     random 5
     switch
     case 0
-        0xB3 game_state, 0
+        0x2B 0x3A, 0
         set_cellanim 4, u"rom:/cellanim/ctrPillow_v0.zlib", -1
         break
     case 1
-        0xB3 game_state, 0
+        0x2B 0x3A, 0
         set_cellanim 4, u"rom:/cellanim/ctrPillow_klonoa.zlib", -1
         break
     case 2
-        0xB3 game_state, 1
+        0x2B 0x3A, 1
         set_cellanim 4, u"rom:/cellanim/ctrPillow_remixGhost.zlib", -1
         break
     case 3
-        0xB3 game_state, 0
+        0x2B 0x3A, 0
         set_cellanim 4, u"rom:/cellanim/ctrPillow_SIR.zlib", -1
-        break
-    case 4
-        0xB3 game_state, 0
-        set_cellanim 4, u"rom:/cellanim/ctrPillow_gameboy.zlib", -1
         break
     endswitch
     game_cellanim 0x3A, 4
@@ -3409,24 +3353,20 @@ else
     random 5
     switch
     case 0
-        0xB3 game_state, 0
+        0x2B 0x3A, 0
         set_cellanim 5, u"rom:/cellanim/ctrPillow_v0.zlib", -1
         break
     case 1
-        0xB3 game_state, 0
+        0x2B 0x3A, 0
         set_cellanim 5, u"rom:/cellanim/ctrPillow_klonoa.zlib", -1
         break
     case 2
-        0xB3 game_state, 1
+        0x2B 0x3A, 1
         set_cellanim 5, u"rom:/cellanim/ctrPillow_remixGhost.zlib", -1
         break
     case 3
-        0xB3 game_state, 0
+        0x2B 0x3A, 0
         set_cellanim 5, u"rom:/cellanim/ctrPillow_SIR.zlib", -1
-        break
-    case 4
-        0xB3 game_state, 0
-        set_cellanim 5, u"rom:/cellanim/ctrPillow_gameboy.zlib", -1
         break
     endswitch
     game_cellanim 0x3A, 5
@@ -4162,7 +4102,7 @@ else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB3 game_state, 0
+0x2B 0x10, 0
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BLUE_BIRDS"
@@ -4182,7 +4122,7 @@ if 1
         break
     default
         set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_SIR.zlib", -1
-        0xB3 game_state, 1
+        0x2B 0x10, 1
         break
     endswitch
     set_layout 6, u"rom:/layout/ntrBlueBirds.zlib", -1
@@ -4207,7 +4147,7 @@ else
         break
     default
         set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_SIR.zlib", -1
-        0xB3 game_state, 1
+        0x2B 0x10, 1
         break
     endswitch
     set_layout 7, u"rom:/layout/ntrBlueBirds.zlib", -1
@@ -4215,7 +4155,7 @@ else
     game_layout 0x10, 7
     0xB3 cellanim_slot, 1
 endif
-0x2B 0x10, 0xE
+// 0x2B 0x10, 0xE
 return
 
 loadLoveRap:
@@ -4226,7 +4166,7 @@ else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB3 game_state, 0
+0x2B 0x2B, 0
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_RAP"
@@ -4247,10 +4187,9 @@ if 1
     case 3
         0x2B 0x2B, 2
         set_cellanim 4, u"rom:/cellanim/rvlRap_remix06.zlib", -1
-        0xB3 game_state, 1
         break
     case 4
-        0x2B 0x2B, 2
+        0x2B 0x2B, 3
         set_cellanim 4, u"rom:/cellanim/rvlRap_plaza.zlib", -1
         break
     endswitch
@@ -4277,10 +4216,9 @@ else
     case 3
         0x2B 0x2B, 2
         set_cellanim 5, u"rom:/cellanim/rvlRap_remix06.zlib", -1
-        0xB3 game_state, 1
         break
     case 3
-        0x2B 0x2B, 2
+        0x2B 0x2B, 3
         set_cellanim 5, u"rom:/cellanim/rvlRap_plaza.zlib", -1
         break
     endswitch
@@ -4846,57 +4784,46 @@ if 1
     switch
     case 0
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_long.zlib", -1
         break
     case 1
         0x2B 0xC, 0x10
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_arrange.zlib", -1
         break
     case 2
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_remix05.zlib", -1
         break
     case 3
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_wario.zlib", -1
         break
     case 4
-        0x2B 0xC, 0xC
-        0xB3 game_state, 1
+        0x2B 0xC, 0xF
         set_cellanim 4, u"rom:/cellanim/agbTap_piggy.zlib", -1
         break
     case 5
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_ranch.zlib", -1
         break
     case 6
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_remix5.zlib", -1
         break
     case 7
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_remix7.zlib", -1
         break
     case 8
         0x2B 0xC, 0x10
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_strange.zlib", -1
         break
     case 9
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_kfad.zlib", -1
         break
     case 10
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 4, u"rom:/cellanim/agbTap_koopacape.zlib", -1
         break
     endswitch
@@ -4911,57 +4838,46 @@ else
     switch
     case 0
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_long.zlib", -1
         break
     case 1
         0x2B 0xC, 0x10
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_arrange.zlib", -1
         break
     case 2
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_remix05.zlib", -1
         break
     case 3
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_wario.zlib", -1
         break
     case 4
-        0x2B 0xC, 0xC
-        0xB3 game_state, 1
+        0x2B 0xC, 0xF
         set_cellanim 5, u"rom:/cellanim/agbTap_piggy.zlib", -1
         break
     case 5
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_ranch.zlib", -1
         break
     case 6
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_remix5.zlib", -1
         break
     case 7
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_remix7.zlib", -1
         break
     case 8
         0x2B 0xC, 0x10
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_strange.zlib", -1
         break
     case 9
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_kfad.zlib", -1
         break
     case 10
         0x2B 0xC, 0xC
-        0xB3 game_state, 0
         set_cellanim 5, u"rom:/cellanim/agbTap_koopacape.zlib", -1
         break
     endswitch
@@ -4977,15 +4893,15 @@ return
 loadTapLate:
 0xB2 cellanim_slot
 if 1
-    0xB2 game_state
-    if 1
+    0x2B<1> 0xC
+    if 0xF
         set_sfx 5, u"GROUP_AGB_TAP_PIG"
     else
         set_sfx 5, u"GROUP_AGB_TAP"
     endif
 else
-    0xB2 game_state
-    if 1
+    0x2B<1> 0xC
+    if 0xF
         set_sfx 4, u"GROUP_AGB_TAP_PIG"
     else
         set_sfx 4, u"GROUP_AGB_TAP"

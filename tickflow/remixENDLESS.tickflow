@@ -284,6 +284,8 @@ input 0
 0xB3 sfx_plus_2,0 //Slot 7 has SFX
 0xB3 score_add, 5 //Starting score
 0xB3 speed, startSpeed //Starting speed
+0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
+0xB3 index, INDEX_rvlBasket //Starting index
 
 
 0x67<5> 2

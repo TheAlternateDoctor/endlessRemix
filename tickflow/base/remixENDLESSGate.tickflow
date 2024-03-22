@@ -148,7 +148,8 @@ input 0
 0xB3 sfx_plus,1 //Slot 7 has SFX
 0xB3 sfx_plus_2,0 //Slot 7 has SFX
 0xB3 lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on
-
+0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
+0xB3 index, INDEX_rvlBasket //Starting index
 
 0x67<5> 2
 0x67<3> -0x6E

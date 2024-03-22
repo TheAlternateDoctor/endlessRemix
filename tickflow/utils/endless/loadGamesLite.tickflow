@@ -303,7 +303,6 @@ if 1
     set_sfx 4, u"GROUP_NTR_ROBOT"
     set_cellanim 4, u"rom:/cellanim/ntrRobot_long.zlib", -1
     set_layout 6, u"rom:/layout/ntrRobot_long.zlib", -1
-    0xB3 game_state, 1
     0x2B 0x18, 0xD
     set_effect 4, u"rom:/effect/ntrRobot.zlib", -1
     game_cellanim 0x18, 4
@@ -314,7 +313,6 @@ else
     set_sfx 5, u"GROUP_NTR_ROBOT"
     set_cellanim 5, u"rom:/cellanim/ntrRobot_long.zlib", -1
     set_layout 7, u"rom:/layout/ntrRobot_long.zlib", -1
-    0xB3 game_state, 1
     0x2B 0x18, 0xD
     set_effect 5, u"rom:/effect/ntrRobot.zlib", -1
     game_cellanim 0x18, 5
@@ -332,7 +330,6 @@ else
     async_call unloadGameSlot5
 endif
 rest 0xC
-0xB3 game_state, 0
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_RAP"
@@ -496,7 +493,6 @@ if 1
     set_sfx 4, u"GROUP_AGB_PATI"
     set_cellanim 4, u"rom:/cellanim/agbClap_long.zlib", -1
     set_layout 6, u"rom:/layout/agbClap_long.zlib", -1
-    0xB3 game_state, 1
     game_cellanim 1, 4
     game_layout 1, 6
     0xB3 cellanim_slot, 0
@@ -504,12 +500,11 @@ else
     set_sfx 5, u"GROUP_AGB_PATI"
     set_cellanim 5, u"rom:/cellanim/agbClap_long.zlib", -1
     set_layout 7, u"rom:/layout/agbClap_long.zlib", -1
-    0xB3 game_state, 1
     game_cellanim 1, 5
     game_layout 1, 7
     0xB3 cellanim_slot, 1
 endif
-0x2B 1, 0xE
+0x2B 1, 3
 return
 
 loadBasketGirls:
@@ -633,13 +628,11 @@ rest 0xC
 if 1
     set_sfx 4, u"GROUP_ROCKET"
     set_cellanim 4, u"rom:/cellanim/rvlRocket_v0.zlib", -1
-    0xB3 game_state, 0
     game_cellanim 0x2E, 4
     0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_ROCKET"
     set_cellanim 5, u"rom:/cellanim/rvlRocket_v0.zlib", -1
-    0xB3 game_state, 0
     game_cellanim 0x2E, 5
     0xB3 cellanim_slot, 1
 endif
@@ -1142,7 +1135,6 @@ if 1
     game_cellanim 0x35, 4
     game_effect 0x35, 4
     0xB3 cellanim_slot, 0
-    0xB3 game_state, 1
 else
     set_sfx 5, u"GROUP_BLANCO"
     set_cellanim 5, u"rom:/cellanim/ctrBlanco_arrange.zlib", -1
@@ -1151,9 +1143,8 @@ else
     game_cellanim 0x35, 5
     game_effect 0x35, 5
     0xB3 cellanim_slot, 1
-    0xB3 game_state, 1
 endif
-0x2B 0x3E, 0x10
+0x2B 0x35, 5
 return
 
 loadCatchyTune:

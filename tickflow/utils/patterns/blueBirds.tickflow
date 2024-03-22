@@ -8,7 +8,7 @@ sequenceBlueBirds:
 	sub 4
 	0x29<2> 
     rest 0x10
-    0xB2 game_state
+    0x2B<1> 0x10
     if 1
         random 2
         switch

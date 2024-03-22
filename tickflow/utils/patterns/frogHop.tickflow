@@ -78,6 +78,8 @@ stop
 frogHop1:
 rest 0xC
 async_call frogHopBeatAnim
+async_call frogHopBeatAnim, 0x30
+async_call frogHopBeatAnim, 0x60
 async_call yahooNo
 rest 0xF0
 async_call frogHopBeatAnim
@@ -85,6 +87,8 @@ rest 0x30
 async_call frogHopBeatAnim
 rest 0x30
 async_call frogHopBeatAnim
+async_call frogHopBeatAnim, 0x30
+async_call frogHopBeatAnim, 0x60
 async_call yeahYeahYeahNo
 rest 0xC0
 async_call spinItBoysNo

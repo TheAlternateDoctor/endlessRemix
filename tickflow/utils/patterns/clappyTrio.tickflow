@@ -21,7 +21,7 @@ sequenceClappyTrio:
         async_call clappyTrio2
         break
     endswitch
-    0xB2 game_state
+    0x2B<2> INDEX_agbClap
     switch
     case 0
         0x105<2> "Clap_ver_short.bflyt"
@@ -32,7 +32,7 @@ sequenceClappyTrio:
     case 2
         0x105<2> "Clap_ver_arrange.bflyt"
         break
-    case 3
+    case 4
         0x105<2> "Clap_ver_remix.bflyt"
         break
     endswitch
