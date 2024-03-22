@@ -10,6 +10,10 @@ sequenceMeetAndTweet:
 	0x29<2> 
     rest 0x8
     async_call tweetSetupRemix
+    0x2B<1> 0x25
+    if 0xF
+        async_call tweetSetupPop
+    endif
     rest 0x8
 	0xB3 9, 0x25
     fade<1> 1,1,1
@@ -28,10 +32,10 @@ sequenceMeetAndTweet:
         async_call meetAndTweet3
         break
     endswitch
+    async_call tweetBeat16
     rest 0x18
     input 1
     async_call tweetInputDetect
-    async_call tweetBeat16
 stop
 
 meetAndTweet1:

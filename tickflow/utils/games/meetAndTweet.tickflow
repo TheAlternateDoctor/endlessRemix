@@ -318,4 +318,80 @@ rest 0x30	// 1.0 beats
 0x106 "bop_long6", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
 stop
 
+tweetSetupPop:
+0x106 "shelf_lol", 0, 0x690, 0x18, 1, 0, 0, 0x100, 0, 0, 0x100
+// Checks for a button combo first - if it succeeds, guarantees that you'll see the rare Towel pop (though it won't look as fancy as the shiny odds one)
+0x200<0> 2
+if 1
+	goto 0x9292
+endif
+0x200<0> 3
+if 1
+	label 0x9292
+	0x200<0> 8
+	if 1
+		0x200<0> 9
+		if 1	// Towel (Code Ver)
+			0x106 "funny_funko", 15, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+			goto 0x9393
+		endif
+	endif
+endif
+
+random 4095
+if 0	// Towel (Shiny Ver)
+	0x106 "funny_funko_shiny", -1, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+else
+	random 14
+	switch
+		case 0	// Me!
+			0x106 "funny_funko", 0, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 1	// Mimi
+			0x106 "funny_funko", 1, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 2	// Hillel
+			0x106 "funny_funko", 2, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 3	// Dick
+			0x106 "funny_funko", 3, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 4	// Rasp
+			0x106 "funny_funko", 4, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 5	// Skweeb
+			0x106 "funny_funko", 5, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 6	// Pancham
+			0x106 "funny_funko", 6, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 7	// Doc
+			0x106 "funny_funko", 7, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 8	// Pat
+			0x106 "funny_funko", 8, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 9	// Marc
+			0x106 "funny_funko", 9, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 10	// Town
+			0x106 "funny_funko", 10, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 11	// Kris
+			0x106 "funny_funko", 11, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 12	// Madeline
+			0x106 "funny_funko", 12, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 13	// Susan
+			0x106 "funny_funko", 13, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		case 14	// Dan (RTGame)
+			0x106 "funny_funko", 14, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+	endswitch
+endif
+label 0x9393
+stop
+
 // https://archives.bulbagarden.net/media/upload/e/ee/PidgeyFlashfire75.jpg
