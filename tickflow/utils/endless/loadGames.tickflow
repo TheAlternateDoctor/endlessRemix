@@ -311,6 +311,7 @@ if 1
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/rvlGoma_pkmn.zlib", -1
+        0x2B 0x26, 0xF
         break
     endswitch
     game_cellanim 0x26, 4
@@ -334,6 +335,7 @@ else
         break
     case 4
         set_cellanim 5, u"rom:/cellanim/rvlGoma_pkmn.zlib", -1
+        0x2B 0x26, 0xF
         break
     endswitch
     game_cellanim 0x26, 5
@@ -3339,7 +3341,7 @@ rest 0xC
 0xB2 cellanim_slot
 if 1
     set_sfx 4, u"GROUP_PAJAMAS"
-    random 5
+    random 4
     switch
     case 0
         0x2B 0x3A, 0
@@ -3362,7 +3364,7 @@ if 1
     0xB3 cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_PAJAMAS"
-    random 5
+    random 4
     switch
     case 0
         0x2B 0x3A, 0
