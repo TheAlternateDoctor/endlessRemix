@@ -15,23 +15,38 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up structure
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+
+      - name: Set up RomFS structure
         run: |
           mkdir -p out/
           cd romfs
-          cp -r ./cellanim ../out/
-          cp -r ./sound ../out/
+          cp -r ./* ../out/
           cd ../romfs-lite
-          cp -r ./cellanim ../out/
-          cp -r ./USmessage ../out/
-          cp -r ./layout ../out/
-          cp -r ./sound ../out/
+          cp -r ./* ../out/
+
+      - name: Set up Tickflow structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          cp code.ips out
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
+
+      - name: Build standard C00.bin
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
-          name: RomFS
-          path: romfs/
+          name: Endless Remix
+          path: out/
 
   romfs-lite:
     runs-on: ubuntu-latest
@@ -39,19 +54,37 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up structure
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+
+      - name: Set up RomFS structure
         run: |
           mkdir -p out/
           cd romfs-lite
-          cp -r ./USmessage ../out/
-          cp -r ./cellanim ../out/
-          cp -r ./layout ../out/
-          cp -r ./sound ../out/
+          cp -r ./* ../out/
+
+      - name: Set up Tickflow structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          mkdir -p out
+          cp code.ips out
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
+
+      - name: Build C00.bin lite
+        run: |
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
-          name: RomFS-Lite
+          name: Endless Remix - Lite
           path: out/
 
   c00s:
