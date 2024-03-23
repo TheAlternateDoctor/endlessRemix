@@ -371,9 +371,6 @@ else
 		case 8	// Pat
 			0x106 "funny_funko", 8, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
 		break
-		case 9	// Marc
-			0x106 "funny_funko", 9, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
-		break
 		case 10	// Town
 			0x106 "funny_funko", 10, 0x690, 0x1B, 1, 0, 0, 0x100, 0, 0, 0x100
 		break
