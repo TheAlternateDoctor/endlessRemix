@@ -37,6 +37,7 @@ jobs:
           sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10B/' tickflow/remixENDLESS.tickflow
 
       - name: Build standard C00.bin
+        run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
