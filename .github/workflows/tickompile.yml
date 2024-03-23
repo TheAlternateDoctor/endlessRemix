@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  romfs:
+  full-mod:
     runs-on: ubuntu-latest
 
     steps:
@@ -49,7 +49,7 @@ jobs:
           name: Endless Remix
           path: out/
 
-  romfs-lite:
+  lite-mod:
     runs-on: ubuntu-latest
 
     steps:

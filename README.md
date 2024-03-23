@@ -8,16 +8,9 @@ Endless Remix comes in two flavours: Full, and Lite.
 The Lite version is the same as the Full version, save for the cellanim swaps and secret songs. It is the perfect choice if storage space is limited, or if you need to install Endless Remix through FTP over a limited connection.
 
 To install Endless Remix, do the following:
-- Download the Latest C00.bins,
+- Download Endless Remix or Endless Remix - Lite
 - Copy code.ips into sd:/luma/titles/000400000018A400
-- Copy the C00 of your choice into sd:/rhmm (make sure the folder is empty first!)
-- (For both versions) Download RomFS-Lite
-- Copy its content into sd:/rhmm
-- (For the full version) Download RomFS
-- Copy its content into sd:/rhmm.
-
-<p align="center">⚠️Warning!⚠️</p>
-<p align="center">You need to install *both* RomFS-Lite and RomFS for the full version to function!</p>
+- Copy the rest of the folder of your choice into sd:/rhmm (make sure the folder is empty first!)
 
 # How to contribute
 
