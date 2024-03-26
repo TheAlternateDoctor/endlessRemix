@@ -395,9 +395,6 @@ sub 7
 0xBD 
 0x8C<2> 5
 
-0x61 0, u"endless"
-rest 0xC	
-
 set_sfx 1, u"GROUP_ENDLESS"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_EPILOGUE_HI_LEVEL"
@@ -427,38 +424,21 @@ game_effect 0x3C, 4
 return 
 
 tempoAndMusic:
-	rest 0x30	
-	0x4F 0x10000C7
-	0x23 0x10000C7
-	speed 0x100
-	rest 0x30	
-	0xBA 
-	sub 1
-	0x88 
-	if 1
-		0x88<5> 
-	endif 
-	0x51 1
-	0x63 0x10000C7
-	speed startSpeed
+rest 0x30	// 1.0 beats
+0x53 0x10001B8
+0x23 0x10001B8
+speed 0x100
+rest 0x30	// 1.0 beats
+0xBA 
+sub 2
+0x88 
+if 1
+	0x88<5> 
+endif 
+0x55 1
+0x58 0x120, 1
+speed startSpeed
 return 
-
-// tempoAndMusic:
-// rest 0x30	// 1.0 beats
-// 0x53 0x10001B8
-// 0x23 0x10001B8
-// speed 0x100
-// rest 0x30	// 1.0 beats
-// 0xBA 
-// sub 2
-// 0x88 
-// if 1
-// 	0x88<5> 
-// endif 
-// 0x55 1
-// 0x58 0x120, 1
-// speed startSpeed
-// return 
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
