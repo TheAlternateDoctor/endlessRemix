@@ -77,14 +77,9 @@
 #include utils/patterns/ninjaBodyguard.tickflow
 #include utils/patterns/lockstep.tickflow
 #include utils/patterns/blueBirds.tickflow
-#include utils/patterns/manzai.tickflow
 #include utils/patterns/meetAndTweet.tickflow
-
-#include utils/performance/utils.tickflow
-#include utils/performance/drumPractice.tickflow
-#include utils/performance/bunnyHop.tickflow
-#include utils/performance/samuraiSliceWii.tickflow
-#include utils/performance/dazzles.tickflow
+#include utils/patterns/tambourine.tickflow
+#include utils/patterns/fireworks.tickflow
 #include utils/patterns/rhythmRally.tickflow
 #include utils/patterns/bigRockFinish.tickflow
 #include utils/patterns/flockstep.tickflow
@@ -99,7 +94,17 @@
 #include utils/patterns/airRally.tickflow
 #include utils/patterns/blueBear.tickflow
 #include utils/patterns/rhythmDoctor.tickflow
+#include utils/patterns/manzai.tickflow
+#include utils/patterns/donkDonk.tickflow
+#include utils/patterns/tambourine.tickflow
 
+#include utils/performance/utils.tickflow
+#include utils/performance/drumPractice.tickflow
+#include utils/performance/bunnyHop.tickflow
+#include utils/performance/samuraiSliceWii.tickflow
+#include utils/performance/dazzles.tickflow
+
+#include utils/games/tambourine.tickflow
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/finnedFrontier.tickflow
 #include utils/games/djschool.tickflow
@@ -123,5 +128,8 @@
 #include utils/games/ianVoices.tickflow
 #include utils/games/nurseVoices.tickflow
 #include utils/games/rhythmDoctor.tickflow
+#include utils/games/donkDonk.tickflow
+#include utils/games/tambourine.tickflow
+#include utils/games/fireworks.tickflow
 
 #include utils/utils.tickflow

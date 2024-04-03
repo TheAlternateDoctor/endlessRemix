@@ -1,0 +1,2274 @@
+detect = 1
+FireworkType = 2
+
+//--------------------------------------------------
+//ESSENTIALS:
+
+//These are the essential subs you will be using in a normal remix,
+//If you are not planning anything crazy, this is what you'll want to use!
+
+//REMEMBER:
+//Every sub in this section start on beat after being called, 
+//This is because the sounds effects need to be called earlier!
+
+//Also! because of how this works, three fireworks can't appear on the screen at the same time!
+//there is a work around, but it's a little hard to explain on text
+//Scroll to the Explosion sub for more information
+
+//--------------------------------------------------
+//RhythmRocketL (Left)
+//RhythmRocketC (Center)
+//RhythmRocketR (Right)
+
+//The Rhythm rocket, Like all the other cues, this one also starts one beat before the actual sound effect,
+//But this one is actually the only one that doesn't need it!
+//I made it like this so that it would be easier to line it up in with the other cues,
+//If needed, you can delete the rest.
+
+
+
+RhythmRocketL:
+	rest 0x30											// 1.0 beats
+	0x40<3> 0x100087D, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+		random 2										//Randomly decises the hight of the Firework
+		switch
+		case 0
+	call LowRhythmRocketL							//Calls the Low version of the firework
+		break
+		case 1
+	call HighRhythmRocketL						//Calls the High version of the firework
+		break
+		endswitch
+stop
+
+RhythmRocketC:
+	rest 0x30											// 1.0 beats
+	0x40<3> 0x100087D, 0xFF, 0xFF, 0					//Sound Effect Panned ...Center
+		random 2										//Randomly decises the hight of the Firework
+		switch
+		case 0
+	call LowRhythmRocketC							//Calls the Low version of the firework
+		break
+		case 1
+	call HighRhythmRocketC						//Calls the High version of the firework
+		break
+		endswitch
+stop
+
+RhythmRocketR:
+	rest 0x30											// 1.0 beats
+	0x40<3> 0x100087D, 0xFF, 0xFF, 0xA0					//Sound Effect Panned Right
+		random 2										//Randomly decises the hight of the Firework
+		switch
+		case 0
+	call LowRhythmRocketR							//Calls the Low version of the firework
+		break
+		case 1
+	call HighRhythmRocketR						//Calls the High version of the firework
+		break
+		endswitch
+stop
+
+
+
+//--------------------------------------------------
+//SpiritSparklerL (Left)
+//SpiritSparklerC (Center)
+//SpiritSparklerR (Right)
+
+//The Spirit Sparkler is very similar to the Rhythm rocket,
+//other then this one NEEDS to call the sfx 1 beat before.
+
+
+
+SpiritSparklerL:
+	async_call NueiSoundEffectL							//Calls the sfx sub panned left
+	rest 0x30											// 1.0 beats
+		random 2										//Randomly decises the hight of the Firework
+		switch
+		case 0
+	call LowSpiritSparklerL						//Calls the Low version of the firework
+		break
+		case 1
+	call HighSpiritSparklerL						//Calls the High version of the firework
+		break
+		endswitch
+stop
+
+SpiritSparklerC:
+	async_call NueiSoundEffectC							//Calls the sfx sub panned ...center
+	rest 0x30											// 1.0 beats
+		random 2										//Randomly decises the hight of the Firework
+		switch
+		case 0
+	call LowSpiritSparklerC						//Calls the Low version of the firework
+		break
+		case 1
+	call HighSpiritSparklerC						//Calls the High version of the firework
+		break
+		endswitch
+stop
+
+SpiritSparklerR:
+	async_call NueiSoundEffectR							//Calls the sfx sub panned right
+	rest 0x30											// 1.0 beats
+		random 2										//Randomly decises the hight of the Firework
+		switch
+		case 0
+	call LowSpiritSparklerR						//Calls the Low version of the firework
+		break
+		case 1
+	call HighSpiritSparklerR						//Calls the High version of the firework
+		break
+		endswitch
+stop
+
+
+
+//---------------------------------------------------
+//Bomb
+
+//The Taiko bomb uses a different system then the fireworks,
+//making it the only cue that can't appear with itself at the same time,
+//so make sure the bomb goes offscreen before calling a second one!
+
+//the bomb is actually only called 1 beat after the sound effect (two beats after the sub is called)
+//and disappears two subs later (After four beats since the sub started)
+//So, the soonest you can call a second bomb sub is two beats after the first one.
+//unlike other inconviniences, there is no fix for this (at the moment).
+
+//Important: If you plan to use this game in a really slow/fast custom remix,
+//the flash will actually also be slower/faster, making it look bad.
+//If you want to change this, it's as easy as changing the rest near the flash comand (You can also change the argument in 0x7B<1>)
+
+fireworksBomb:
+	async_call tamayaSoundEffect						//Calls the sfx sub
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x104 0												//Spawn the bomb, it will go offscreen in 2 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			play_sfx 0x10002AF								//Plays the "Fail" Sound effect
+			0x104 1											//Plays the Explosion animation	(Early)
+			stop
+        break
+
+        case 3              // hit
+			call Explosion
+			stop
+		break  
+
+		case 4              // doink 
+			play_sfx 0x10002AF								//Plays the "Fail" Sound effect
+			0x104 1											//Plays the Explosion animation	(Late)
+			stop			
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+//--------------------------------------------------
+//SPECIALS:
+//Here, other then seeing a level deeper into the firework sub, you'll also encounter the "Special fireworks" subs
+//these are, other then the flashing colors Spirit Rockets, also the mono color Spirit Sparkler.
+//If you want to make a custom special firework, you'll sadly will have to bread it, which is a big pain...
+//but in the bright side, I made a sub template if you ever do make a custom one!
+
+//---------------------------------------------------
+//HighRhythmRocketL (Left)		(High)
+//HighRhythmRocketC (Center)	(High)
+//HighRhythmRocketR (Right)		(High)
+//LowRhythmRocketL  (Left)		(Low)
+//LowRhythmRocketC  (Center)	(Low)	
+//LowRhythmRocketR  (Right)		(Low)
+
+//These are more specific subs, if for some reason you want to specifically use a low/high Rhythm rocket
+//Remember: If you do this, add the 1 beat rest and the sound effect before starting it! (you can take them from the subs before)
+
+
+HighRhythmRocketL:
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100 		// Spawn the firework
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomHighFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomHighFireL 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomHighFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+HighRhythmRocketC:
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0, 0x90, 0x100, 0, -0x60, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomHighFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomHighFireC 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomHighFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+HighRhythmRocketR:
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomHighFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomHighFireR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomHighFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+LowRhythmRocketL:
+0x106 "NormalShot", -1, 0xA8, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x48, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomLowFireL 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+LowRhythmRocketC:
+0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0, 0x90, 0x100, 0, -0x48, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomLowFireC 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+LowRhythmRocketR:
+0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x48, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomLowFireR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+//---------------------------------------------------
+//HighSpiritSparklerL (Left)		(High)
+//HighSpiritSparklerC (Center)		(High)
+//HighSpiritSparklerR (Right)		(High)
+//LowSpiritSparklerL  (Left)		(Low)
+//LowSpiritSparklerC  (Center)		(Low)	
+//LowSpiritSparklerR  (Right)		(Low)
+
+//Pretty much the same Rhythm Rockets
+
+
+
+HighSpiritSparklerL:
+0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x70, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomHighFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomHighFireL 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomHighFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+HighSpiritSparklerC:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0, 0x90, 0x100, 0, -0x70, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomHighFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomHighFireC 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomHighFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+HighSpiritSparklerR:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x70, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomHighFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomHighFireR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomHighFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+LowSpiritSparklerL:
+0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomLowFireL 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+LowSpiritSparklerC:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0, 0x90, 0x100, 0, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomLowFireC 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+LowSpiritSparklerR:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call RandomLowFireR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+//---------------------------------------------------
+//ColorSpiritSparklerL (Left)
+//ColorSpiritSparklerR (Right)
+
+//Those are monocolor Spirit Sparklers
+//they are used only two times in the real game, but maybe you'll have a better use for them
+
+
+
+ColorSpiritSparklerL:
+	async_call NueiSoundEffectL							//Calls the sfx sub panned left 
+	rest 0x30											// 1.0 beats
+		random 3
+		switch
+		case 0
+	call SpiritSparklerRedL						//Calls the Right Red firework sub
+		break
+		case 1
+	call SpiritSparklerGreenL						//Calls the Right Green firework sub
+		break
+		case 2
+	call SpiritSparklerBlueL						//Calls the Right Blue firework sub
+		break
+		endswitch
+stop
+
+ColorSpiritSparklerR:
+	async_call NueiSoundEffectR							//Calls the sfx sub panned right
+	rest 0x30											// 1.0 beats
+		random 3										//Randomly decides between the three colors
+		switch
+		case 0
+	call SpiritSparklerRedR						//Calls the Right Red firework sub
+		break
+		case 1
+	call SpiritSparklerGreenR						//Calls the Right Green firework sub
+		break
+		case 2
+	call SpiritSparklerBlueR						//Calls the Right Blue firework sub
+		break
+		endswitch
+stop
+
+
+
+//---------------------------------------------------
+//SpiritSparklerRedL 	(Left)
+//SpiritSparklerRedR	(Right)
+//SpiritSparklerGreenL 	(Left)
+//SpiritSparklerGreenR	(Right)
+//SpiritSparklerBlueL	(Left)
+//SpiritSparklerBlueR	(Right)
+
+//A more in depth sub of the colored SpiritSparkler, pretty much the same as the normal SpiritSparkler one, 
+//but calls a different explosion
+
+
+
+SpiritSparklerRedL:
+0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call LowFireRedL 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+
+SpiritSparklerRedR:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call LowFireRedR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+SpiritSparklerGreenL:
+0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call LowFireGreenL 
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+SpiritSparklerGreenR:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call LowFireGreenR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+SpiritSparklerBlueL:
+0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireLEarly
+			stop
+        break
+
+        case 3              // hit
+			call LowFireBlueL
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireLLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+
+SpiritSparklerBlueR:
+0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireREarly
+			stop
+        break
+
+        case 3              // hit
+			call LowFireBlueR
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireRLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+//---------------------------------------------------
+//SpecialFireworkStar 		(Center)
+//SpecialFireworkCircle 	(Center)
+//SpecialFireworkSpiral 	(Center)
+//SpecialFireworkSmile 		(Center)
+
+//Here are the Special fireworks! Be carefull using too many of them, as the explosion stays on screen
+//for a little less then 4 beats.
+//other than that, you guessed it, it's pretty much the same as the normal RhythmRocket, 
+//other then this sub contains the sfx with everything else.
+
+SpecialFireworkStar:
+	rest 0x30											// 1.0 beats
+	play_sfx 0x100087D
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0, 0x90, 0x100, 0, -0x48, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call SpecialFire1
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+SpecialFireworkCircle:
+	rest 0x30											// 1.0 beats
+	play_sfx 0x100087D
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0, 0x90, 0x100, 0, -0x48, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call SpecialFire2
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+
+SpecialFireworkSpiral:
+	rest 0x30											// 1.0 beats
+	play_sfx 0x100087D
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0, 0x90, 0x100, 0, -0x48, 0x100
+	rest 0x30	// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call SpecialFire3
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+
+SpecialFireworkSmile:
+	rest 0x30											// 1.0 beats
+	play_sfx 0x100087D
+	0x106 "NormalShot", -1, 0xA8, 0x1, 1, 0, 0x90, 0x100, 0, -0x48, 0x100
+	rest 0x30											// 1.0 beats
+	rest 0x30											// 1.0 beats
+	0x100 0												//Input in 1 beat
+	async_call inputType
+	rest 0x26											// 0.82 beats
+	0xB3 detect, 1
+    label 0x9001
+    0xB2 detect                 // if we are detecting input
+    if 1
+        0x200<0> 0              // if the player has inputted
+        if 1
+            0xB2 0              // what is the timing of the player input - set by inputType below
+        endif
+        switch
+        case 0              // if nothing is happening - no inputs have been cued
+			
+        break
+
+        case 1              // miss			
+            rest 4
+        break
+
+        case 2              // doink
+			call RandomLowFireCEarly
+			stop
+        break
+
+        case 3              // hit
+			call SpecialFire4
+			stop
+		break  
+
+		case 4              // doink
+			call RandomLowFireCLate
+			stop
+        break
+        endswitch
+		
+        label 0x9002
+        0x200<0> 0              // catch and loop here if the player holds the button
+        if 1
+            rest 1
+            goto 0x9002
+        endif
+		rest 1
+		goto 0x9001                 // loop the next tick
+    endif
+stop
+
+
+
+//--------------------------------------------------
+//EXPLOSIONS:
+//These are all the explosion subs, Not much to talk about other then good luck if you want to change stuff here
+//Well, not exactly, there is something Important to know!
+//0x106 call in animations, and the variables next to it describe their position, size and movement.
+//this has a limitation! You can only call up to 8 animations at the same time!
+//this means that 2 fireworks are the limit (remember that the rocket part of the explosion also counts in this limit, and the bomb doesn't)
+//If you ever want to use more then 2 fireworks in the span of two beats (the explosions disappear a little before 2 beats), then I'll advise you to
+//make your hown explosion sub, with a smaller explosion, containing 1 or 2 animations, this way it will fill the limit with less stuff.
+
+//---------------------------------------------------
+//RandomHighFireL 			(Left)		(High)
+//RandomHighFireLEarly		(Left)		(High)
+//RandomHighFireL 			(Left)		(High)
+//RandomHighFireC		 	(Center)	(High)
+//RandomHighFireCEarly		(Center)	(High)
+//RandomHighFireCLate		(Center)	(High)
+//RandomHighFireR 			(Right)		(High)
+//RandomHighFireREarly		(Right)		(High)
+//RandomHighFireRLate 		(Right)		(High)
+
+//RandomLowFireL 			(Left)		(Low)
+//RandomLowFireLEarly		(Left)		(Low)
+//RandomLowFireL 			(Left)		(Low)
+//RandomLowFireC		 	(Center)	(Low)
+//RandomLowFireCEarly		(Center)	(Low)
+//RandomLowFireCLate		(Center)	(Low)
+//RandomLowFireR 			(Right)		(Low)
+//RandomLowFireREarly		(Right)		(Low)
+//RandomLowFireRLate 		(Right)		(Low)
+
+
+
+RandomHighFireL:
+0x40<3> 0x1000882, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+	random 6
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork3B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	break
+	case 1
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork3R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	break
+	case 2
+	0x106 "FireWork2G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork3B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	break
+	case 3
+	0x106 "FireWork2G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork3R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	break
+	case 4
+	0x106 "FireWork3G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	break
+	case 5
+	0x106 "FireWork3G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomHighFireLEarly:
+0x40<3> 0x10002AF, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x3C, 0x100, -0x68, -0x3C, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x3C, 0x100, -0x68, -0x3C, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x3C, 0x100, -0x68, -0x3C, 0x100
+	break
+	endswitch
+	stop
+
+
+
+RandomHighFireLLate:
+0x40<3> 0x10002AF, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x43, 0x100, -0x68, -0x43, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x43, 0x100, -0x68, -0x43, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x43, 0x100, -0x68, -0x43, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomHighFireC:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0 			    //Sound Effect Panned Center
+random 6
+switch
+case 0
+0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+break
+case 1
+0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+break
+case 2
+0x106 "FireWork2G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+break
+case 3
+0x106 "FireWork2G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+break
+case 4
+0x106 "FireWork3G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+break
+case 5
+0x106 "FireWork3G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x40, 0x100
+break
+endswitch
+stop
+
+
+
+RandomHighFireCEarly:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0 			    //Sound Effect Panned Center
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x3C, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x3C, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x3C, 0x100
+	break
+	endswitch
+	stop
+
+
+
+RandomHighFireCLate:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0 			    //Sound Effect Panned Center
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x43, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x43, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x40, 0x100, -0x8, -0x43, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomHighFireR:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0xA0 			    //Sound Effect Panned Right
+random 6
+switch
+case 0
+0x106 "FireWork1G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+break
+case 1
+0x106 "FireWork1G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+break
+case 2
+0x106 "FireWork2G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+break
+case 3
+0x106 "FireWork2G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+break
+case 4
+0x106 "FireWork3G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+break
+case 5
+0x106 "FireWork3G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x40, 0x100
+break
+endswitch
+stop
+
+
+
+RandomHighFireREarly:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0xA0 			    //Sound Effect Panned Right
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x3C, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x3C, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x3C, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomHighFireRLate:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0xA0 			    //Sound Effect Panned Right
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x43, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x43, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, 0x58, -0x40, 0x100, 0x58, -0x43, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomLowFireL:
+0x40<3> 0x1000882, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+	random 6
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork2R", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork3B", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	break
+	case 1
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork3R", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork2B", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	break
+	case 2
+	0x106 "FireWork2G", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork3B", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	break
+	case 3
+	0x106 "FireWork2G", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork3R", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	break
+	case 4
+	0x106 "FireWork3G", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork2B", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	break
+	case 5
+	0x106 "FireWork3G", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork2R", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x28, 0x100, -0x68, -0x28, 0x100
+	break
+	endswitch
+stop
+
+
+
+
+RandomLowFireLEarly:
+0x40<3> 0x10002AF, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x25, 0x100, -0x68, -0x25, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x25, 0x100, -0x68, -0x25, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x25, 0x100, -0x68, -0x25, 0x100
+	break
+	endswitch
+	stop
+
+
+
+
+RandomLowFireLLate:
+0x40<3> 0x10002AF, 0xFF, 0xFF, -0xA0 			    //Sound Effect Panned Left
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x35, 0x100, -0x68, -0x35, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x35, 0x100, -0x68, -0x35, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x35, 0x100, -0x68, -0x35, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomLowFireC:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0 			    //Sound Effect Panned Center
+random 6
+switch
+case 0
+0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+break
+case 1
+0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+break
+case 2
+0x106 "FireWork2G", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+break
+case 3
+0x106 "FireWork2G", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+break
+case 4
+0x106 "FireWork3G", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+break
+case 5
+0x106 "FireWork3G", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+break
+endswitch
+stop
+
+
+
+RandomLowFireCEarly:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0 			    //Sound Effect Panned Center
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x25, 0x100, -0x8, -0x25, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x25, 0x100, -0x8, -0x25, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x25, 0x100, -0x8, -0x25, 0x100
+	break
+	endswitch
+	stop
+
+RandomLowFireCLate:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0 			    //Sound Effect Panned Center
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x8, -0x35, 0x100, -0x8, -0x35, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x8, -0x35, 0x100, -0x8, -0x35, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x8, -0x35, 0x100, -0x8, -0x35, 0x100
+	break
+	endswitch
+stop
+
+
+
+RandomLowFireR:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+random 6
+switch
+case 0
+0x106 "FireWork1G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+break
+case 1
+0x106 "FireWork1G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+break
+case 2
+0x106 "FireWork2G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork3B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+break
+case 3
+0x106 "FireWork2G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork3R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+break
+case 4
+0x106 "FireWork3G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork1R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+break
+case 5
+0x106 "FireWork3G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork1B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+break
+endswitch
+stop
+
+
+
+RandomLowFireREarly:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, 0x58, -0x25, 0x100, 0x58, -0x25, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, 0x58, -0x25, 0x100, 0x58, -0x25, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, 0x58, -0x25, 0x100, 0x58, -0x25, 0x100
+	break
+	endswitch
+stop
+
+RandomLowFireRLate:
+0x40<3> 0x10002AF, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+	random 3
+	switch
+	case 0
+	0x106 "FireWork1G", -1, 0x50, 0, 1, 0x58, -0x35, 0x100, 0x58, -0x35, 0x100
+	break
+	case 1
+	0x106 "FireWork1R", -1, 0x50, 0, 1, 0x58, -0x35, 0x100, 0x58, -0x35, 0x100
+	break
+	case 2
+	0x106 "FireWork1B", -1, 0x50, 0, 1, 0x58, -0x35, 0x100, 0x58, -0x35, 0x100
+	break
+	endswitch
+stop
+
+//---------------------------------------------------
+//LowFireRedR		(Right)		(Low)
+//LowFireRedL		(Left)		(Low)
+//LowFireGreenR		(Right)		(Low)
+//LowFireGreenL		(Left)		(Low)
+//LowFireBlueR		(Right)		(Low)
+//LowFireBlueL		(Left)		(Low)
+
+
+
+LowFireRedR:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+0x106 "FireWork1R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2R", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+stop
+
+LowFireRedL:
+0x40<3> 0x1000882, 0xFF, 0xFF, -0xA0  			//Sound Effect Panned Left
+	0x106 "FireWork1R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2R", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+stop
+
+LowFireGreenR:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+0x106 "FireWork1G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2G", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+stop
+
+LowFireGreenL:
+0x40<3> 0x1000882, 0xFF, 0xFF, -0xA0  			//Sound Effect Panned Left
+	0x106 "FireWork1G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2G", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+stop
+
+LowFireBlueR:
+0x40<3> 0x1000882, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+0x106 "FireWork1B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+0x106 "FireWork2B", -1, 0x50, 0, 1,  0x58, -0x28, 0x100,  0x58, -0x28, 0x100
+stop
+
+LowFireBlueL:
+0x40<3> 0x1000882, 0xFF, 0xFF, -0xA0  			//Sound Effect Panned Left
+	0x106 "FireWork1B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+	0x106 "FireWork2B", -1, 0x50, 0, 1, -0x68, -0x40, 0x100, -0x68, -0x40, 0x100
+stop
+
+
+
+
+//---------------------------------------------------
+//SpecialFire1		(Center)	(Low)
+//SpecialFire2		(Center)	(Low)
+//SpecialFire3		(Center)	(Low)
+//SpecialFire4		(Center)	(Low)
+
+
+
+
+SpecialFire1:									//Star
+play_sfx 0x1000882
+0x106 "FireWork1S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork2S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork3S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+stop
+
+SpecialFire2:									//Circle
+play_sfx 0x1000882
+0x106 "FireWork4S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork5S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+stop
+
+SpecialFire3:									//Spiral
+play_sfx 0x1000882
+0x106 "FireWork6S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork7S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+stop
+
+SpecialFire4:									//Smile
+play_sfx 0x1000882
+0x106 "FireWork8S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork9S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+0x106 "FireWork10S", -1, 0xB0, 0, 1, -0x8, -0x28, 0x100, -0x8, -0x28, 0x100
+stop
+
+
+
+
+//--------------------------------------------------
+
+
+Explosion:
+	play_sfx 0x100087F							//Plays the "Taiko" Sound effect
+	0x104 1										//Plays the Explosion animation
+	0x77 1, 0xFF								//Opacity of the color overlay (Flash)				
+	0x78 1, 0xC0, 0xC0, 0xC0					//Color of the overlay (Flash)	
+	0x79 1, 8									//Depth of the color overlay (Flash)
+	0x76 1, 1									//Start the color overlay with specified values (Flash)
+	rest 0xC									// 0.25 beats (Amount the flash stays on screen)
+	0x7B<1> 1, 0, 0xC							//Color overlay dissipates over 0.25 beats (Flash)
+stop
+
+
+
+
+
+
+
+//--------------------------------------------------
+//MISC:
+//All the other stuff that's hard to put in a cathegory
+
+//--------------------------------------------------
+//inputType
+
+//Don't touch this if you don't know what you are doing
+// Detects when the player inputted relative to the timing of the input
+// Needs to be async_called at the same time as 0x100 0
+
+inputType:
+    rest 0x28                   // 40 v 48, 8 from "perfect"
+    0xB3 0, 2                   // barely
+    rest 2                      // 43 v 48, 5 from "perfect"
+    0xB3 0, 3                   // hit
+    rest 0xC                    // 47 v 48, 1 from "perfect"
+    0xB3 0, 4                   // barely
+    rest 2                      // 56 v 48, 8 from "perfect"
+    0xB3 0, 1                   // miss
+	0xB3 detect, 0
+stop
+
+
+//--------------------------------------------------
+//NueiSoundEffectC
+//NueiSoundEffectL
+//NueiSoundEffectR
+//tamayaSoundEffect
+
+//You should not need to touch these, as you can directly change their rest with "setrest" at the start of the gameplay sub
+
+
+NueiSoundEffectC:
+getrest 0
+play_sfx 0x100087C
+stop
+
+NueiSoundEffectL:
+getrest 0
+0x40<3> 0x100087C, 0xFF, 0xFF, -0xA0  			//Sound Effect Panned Left
+stop
+
+NueiSoundEffectR:
+getrest 0
+0x40<3> 0x100087C, 0xFF, 0xFF, 0xA0  			//Sound Effect Panned Right
+stop
+
+tamayaSoundEffect:
+getrest 1
+play_sfx 0x100087E
+stop
+
+
+
+//--------------------------------------------------
+//CountTo4
+//FastCountTo4
+//CountReady
+//FastCountReady
+//CountTamaya
+//FastCountTamaya
+//FastCountAnnoyingPart (Ignore this one)
+
+//Counts, these are used in the practice, and some remixes
+//use the fast ones if you are using them for remixes, as it starts 1 beat after being called
+
+
+
+
+CountTo4:
+rest 0x30	// 1.0 beats
+rest 0x18	// 0.5 beats
+0x67<3> 0x64
+0x67<1> 7, "agbFire_tutorial_Countdown_a0"
+rest 0x18	// 0.5 beats
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a1"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a2"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a4"
+rest 0x30	// 1.0 beats
+0x67<2>
+stop
+
+CountReady:
+rest 0x30	// 1.0 beats
+rest 0x18	// 0.5 beats
+0x67<3> 0x64
+0x67<1> 7, "agbFire_tutorial_Countdown_b0"
+rest 0x18	// 0.5 beats
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b1"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b2"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b3"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b4"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b5"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b6"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b7"
+rest 0x30	// 1.0 beats
+0x67<2>
+stop
+
+CountTamaya:
+rest 0x30	// 1.0 beats
+rest 0x18	// 0.5 beats
+0x67<3> 0x64
+0x67<1> 7, "agbFire_tutorial_Countdown_c0"
+rest 0x18	// 0.5 beats
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c1"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c2"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c4"
+rest 0x30	// 1.0 beats
+0x67<2>
+stop
+
+FastCountTo4:
+rest 0x18	// 0.5 beats
+0x67<3> 0x64
+0x67<1> 7, "agbFire_tutorial_Countdown_a0"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a1"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a2"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a4"
+rest 0x18	// 0.5 beats
+//0x67<2>
+stop
+
+FastCountReady:
+rest 0x18	// 0.5 beats
+0x67<3> 0x64
+0x67<1> 7, "agbFire_tutorial_Countdown_b0"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b1"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b2"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b3"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b4"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b5"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b6"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b7"
+rest 0x18	// 0.5 beats
+//0x67<2>
+stop
+
+FastCountTamaya:
+rest 0x18	// 0.5 beats
+0x67<3> 0x64
+0x67<1> 7, "agbFire_tutorial_Countdown_c0"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c1"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c2"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c4"
+rest 0x18	// 0.5 beats
+//0x67<2>
+stop
+
+
+
+FastCountAnnoyingPart:								//(Ignore this one)
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a0"
+0x67<3> 0x64
+0x67
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a1"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a2"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b1"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b2"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b3"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b4"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b5"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b6"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a1"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a2"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b1"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b2"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b3"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b4"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b5"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b6"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a1"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a2"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_a3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_b1"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b2"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b3"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b4"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b5"
+rest 0x4
+0x67<1> 7, "agbFire_tutorial_Countdown_b6"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c1"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c2"
+rest 0x18	// 0.5 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c3"
+rest 0x30	// 1.0 beats
+0x67<1> 7, "agbFire_tutorial_Countdown_c4"
+rest 0x18	// 0.5 beats
+//0x67<2>
+stop
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------

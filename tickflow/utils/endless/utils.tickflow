@@ -1415,17 +1415,76 @@ loadNextGame:
             if INDEX_7bgDoctor //Stop games from being played next to each other
                 goto 0x70AD
             else
+                if INDEX_ctrSumou
+                    goto 0x7AD
+                else
+                    0xB2 is_debug
+                    if 1
+                        0xB3 debug_start, 1337
+                        0xB3 debug_current_index, INDEX_7bgDoctor
+                    endif
+                    set_func 0, sequenceRhythmDoctor
+                    call loadRhythmDoctor
+                    set_func 3, presequenceRhythmDoctor
+                    set_func 2, loadRhythmDoctorLate
+                    set_func 1, checkA2
+                    0xB3 index, INDEX_7bgDoctor
+                endif
+            endif
+        break
+        case INDEX_agbFireworks
+            0xB2 index
+            if INDEX_agbFireworks //Stop games from being played next to each other
+                goto 0x7AD
+            else
                 0xB2 is_debug
                 if 1
                     0xB3 debug_start, 1337
-                    0xB3 debug_current_index, INDEX_7bgDoctor
+                    0xB3 debug_current_index, INDEX_agbFireworks
                 endif
-                set_func 0, sequenceRhythmDoctor
-                call loadRhythmDoctor
-                set_func 3, presequenceRhythmDoctor
-                set_func 2, loadRhythmDoctorLate
-                set_func 1, checkA2
-                0xB3 index, INDEX_7bgDoctor
+                set_func 0, sequenceFireworks
+                call loadFireworks //help
+                set_func 3, nop
+                set_func 2, nop
+                0xB3 index, INDEX_agbFireworks
+            endif
+        break
+        case INDEX_rvlDonk
+            0xB2 index
+            if INDEX_rvlDonk //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                0xB2 is_debug
+                if 1
+                    0xB3 debug_start, 1337
+                    0xB3 debug_current_index, INDEX_rvlDonk
+                endif
+                set_func 0, sequenceDonk
+                call loadDonk
+                set_func 3, presequenceDonk
+                set_func 2, nop
+                0xB3 index, INDEX_rvlDonk
+            endif
+        break
+        case INDEX_rvlTambourine
+            0xB2 index
+            if INDEX_rvlTambourine //Stop games from being played next to each other
+                goto 0x7AD
+            else
+                if INDEX_ctrSumou
+                    goto 0x7AD
+                else
+                    0xB2 is_debug
+                    if 1
+                        0xB3 debug_start, 1337
+                        0xB3 debug_current_index, INDEX_rvlTambourine
+                    endif
+                    set_func 0, sequenceTambourine
+                    call loadTambourine
+                    set_func 3, nop
+                    set_func 2, loadTambourineLate
+                    0xB3 index, INDEX_rvlDonk
+                endif
             endif
         break
         default //Restart until we get something damnit

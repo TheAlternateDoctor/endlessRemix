@@ -1,12 +1,11 @@
 sequenceFanClub:
 	set_cat 0
-    0xB3 0x98, 0
-    0xB3 0x99, 0
+    0xB3 game_state, 0
     random 2
     switch
-    case 0
+    case 1
         play_sfx 0x1000EE5
-        0xB3 0x99, 1
+        0xB3 game_state, 1
         break
     endswitch
     rest 0x8
@@ -25,6 +24,7 @@ sequenceFanClub:
             break
         endswitch
     else
+        0xB2<1> 0x15
         if 5
             random 2
             switch 
@@ -33,7 +33,9 @@ sequenceFanClub:
                 break
             endswitch
         else
+            0xB2<1> 0x15
             if 0x10
+                0x114 1
                 random 2
                 switch 
                 case 0
@@ -44,7 +46,7 @@ sequenceFanClub:
         endif
     endif
     fade<1> 1,1,1
-    0xB2 0x99
+    0xB2 game_state
     if 1
         random 2
         switch

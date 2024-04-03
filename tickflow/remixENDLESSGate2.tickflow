@@ -92,6 +92,9 @@
 #include utils/patterns/manzai.tickflow
 #include utils/patterns/meetAndTweet.tickflow
 #include utils/patterns/rhythmDoctor.tickflow
+#include utils/patterns/tambourine.tickflow
+#include utils/patterns/donkDonk.tickflow
+#include utils/patterns/fireworks.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -122,5 +125,8 @@
 #include utils/games/ianVoices.tickflow
 #include utils/games/nurseVoices.tickflow
 #include utils/games/rhythmDoctor.tickflow
+#include utils/games/tambourine.tickflow
+#include utils/games/fireworks.tickflow
+#include utils/games/donkDonk.tickflow
 
 #include utils/utils.tickflow
