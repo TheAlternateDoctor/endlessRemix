@@ -303,7 +303,7 @@ sub 4
 call tempoAndMusic
 set_cat 0
 async_call startingGame
-rest 0x2A
+rest 0x30
 fade<1> 1,1,1
 kill_loc bonusStuff
 0xB2 lives_enabled
@@ -394,7 +394,6 @@ endif
 sub 7
 0xBD 
 0x8C<2> 5
-
 set_sfx 1, u"GROUP_ENDLESS"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_EPILOGUE_HI_LEVEL"
