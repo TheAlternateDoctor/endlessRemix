@@ -1,4 +1,6 @@
 
+coin_state = 10
+
 sequenceCoinToss:
 	set_cat 0
     random 2
