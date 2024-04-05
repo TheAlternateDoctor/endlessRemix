@@ -8,7 +8,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x4F
+        random 0x53
     endif
     switch
         case INDEX_agbBatter
