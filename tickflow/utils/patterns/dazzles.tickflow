@@ -19,7 +19,7 @@ sequenceDazzles:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x11
+	0xB3 engine_loaded, 0x11
     fade<1> 1,1,1
     async_call dazzlesBeatAnim
     rest 0x48

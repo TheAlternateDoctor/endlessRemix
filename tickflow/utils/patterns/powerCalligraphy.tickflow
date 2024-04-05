@@ -8,7 +8,7 @@ sequencePowerCalligraphy:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0xA
+	0xB3 engine_loaded, 0xA
     fade<1> 1,1,1
     random 2
     switch
@@ -17,7 +17,7 @@ sequencePowerCalligraphy:
         async_call powerCalligraphy1
 		break
 	case 1
-		0xB3 13, 1
+		0xB3 score_add, 1
 		async_call powerCalligraphy2
 		break
     endswitch

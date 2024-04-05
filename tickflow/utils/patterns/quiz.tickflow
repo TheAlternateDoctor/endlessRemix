@@ -12,7 +12,7 @@ sequenceQuiz:
     0x102<1>
     0x101<1>
     rest 0x8
-	0xB3 9, 0x7
+	0xB3 engine_loaded, 0x7
     fade<1> 1,1,1
     input 0
     random 1

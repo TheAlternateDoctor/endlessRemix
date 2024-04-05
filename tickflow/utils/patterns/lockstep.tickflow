@@ -55,7 +55,7 @@ sequenceLockstep:
         endswitch
     endif
     rest 0xC
-	0xB3 9, 0xF
+	0xB3 engine_loaded, 0xF
     fade<1> 1,1,1
     input 1
 stop

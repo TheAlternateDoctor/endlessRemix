@@ -2,8 +2,8 @@
 // Welcome to the Meet and Tweet subs! Here, you can see that I don't know what I'm doing. Have fun! ~MiiK
 // Minor edits from prerelease to fix a bug with remix transitions
 // ===========================================================================================================
-inputType = 17 //Over the variable limit!
-didInput = 18  //May break!
+inputType = 10
+didInput = 11
 
 storyType = 2
 storyProgress = 3

@@ -28,7 +28,7 @@ sequenceMicroRow:
     0x108 
     0x103 3
     0x102<2>
-	0xB3 9, 0x23
+	0xB3 engine_loaded, 0x23
     fade<1> 1,1,1
     random 1
     switch

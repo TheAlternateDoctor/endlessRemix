@@ -47,7 +47,7 @@ sequenceFlipperFlop:
         0x105<4>
     endif
     rest 0xC
-	0xB3 9, 0x26
+	0xB3 engine_loaded, 0x26
     fade<1> 1,1,1
 stop
 

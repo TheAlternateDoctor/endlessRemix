@@ -5,7 +5,7 @@ sequenceFireworks:
 	sub 4
 	0x29<2> 
     rest 0xC
-	0xB3 9, 0x25
+	0xB3 engine_loaded, 0x25
     setrest 0, 0x18
     setrest 1, 0x30
     input 1

@@ -29,7 +29,7 @@ sequenceFinned:
     endswitch
     input 1
     rest 0xC
-	0xB3 9, 0x23
+	0xB3 engine_loaded, 0x23
     fade<1> 1,1,1
 stop
 

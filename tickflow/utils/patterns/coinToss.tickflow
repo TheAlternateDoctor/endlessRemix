@@ -31,7 +31,7 @@ coinTossFinalRemix:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x41
+	0xB3 engine_loaded, 0x41
     fade<1> 1,1,1
 	set_cat 0x7D0
     input 1
@@ -70,7 +70,7 @@ coinTossLoadRecEngine:
     rest 0x8
     0x8B 0, 0
     0x101<1> 2
-    0xB3 0x102, 5
+    0xB3 coin_state, 5
     0x106 "bg", 0, 1, 2, 2, 0, 0, 0x100, 0, 0, 0x100
     async_call coinAnimLoop
     async_call checkEmptyCatch

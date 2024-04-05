@@ -15,7 +15,7 @@ sequenceMeetAndTweet:
         async_call tweetSetupPop
     endif
     rest 0x8
-	0xB3 9, 0x25
+	0xB3 engine_loaded, 0x25
     fade<1> 1,1,1
     random 3
     switch

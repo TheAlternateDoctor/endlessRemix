@@ -1,6 +1,6 @@
 loadNextGame:
     label 0x70AD
-    0xB2 is_debug
+    0xB2<1> is_debug
     if 1
         0xB2 debug_start
         if 1337
@@ -16,7 +16,7 @@ loadNextGame:
             if SCENE_agbBatter //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbBatter
@@ -26,7 +26,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbBatter
+                0xB3<1> index, INDEX_agbBatter
             endif
         break
         case INDEX_agbClap
@@ -34,7 +34,7 @@ loadNextGame:
             if SCENE_agbClap //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbClap
@@ -44,7 +44,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbClap
+                0xB3<1> index, INDEX_agbClap
             endif
         break
         case INDEX_agbGhost //Phantom Thief
@@ -52,7 +52,7 @@ loadNextGame:
             if SCENE_agbGhost //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbGhost
@@ -62,7 +62,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbGhost
+                0xB3<1> index, INDEX_agbGhost
             endif
         break
         case INDEX_agbHair
@@ -70,7 +70,7 @@ loadNextGame:
             if SCENE_agbHair //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbHair
@@ -80,7 +80,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkOnion
-                0xB3 index, INDEX_agbHair
+                0xB3<1> index, INDEX_agbHair
             endif
         break
         case INDEX_agbHopping
@@ -88,7 +88,7 @@ loadNextGame:
             if SCENE_agbHopping //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbHopping
@@ -98,7 +98,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbHopping
+                0xB3<1> index, INDEX_agbHopping
             endif
         break
         case INDEX_agbMarcher
@@ -106,7 +106,7 @@ loadNextGame:
             if SCENE_agbMarcher //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbMarcher
@@ -116,7 +116,7 @@ loadNextGame:
                 set_func 3, preSequenceMarcher
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbMarcher
+                0xB3<1> index, INDEX_agbMarcher
             endif
         break
         case INDEX_agbNightWalk
@@ -124,7 +124,7 @@ loadNextGame:
             if SCENE_agbNightWalk //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbNightWalk
@@ -134,7 +134,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkNightWalk
-                0xB3 index, INDEX_agbNightWalk
+                0xB3<1> index, INDEX_agbNightWalk
             endif
         break
         case INDEX_agbQuiz
@@ -142,7 +142,7 @@ loadNextGame:
             if SCENE_agbQuiz //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbQuiz
@@ -152,7 +152,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbQuiz
+                0xB3<1> index, INDEX_agbQuiz
             endif
         break
         case INDEX_agbRabbit
@@ -160,7 +160,7 @@ loadNextGame:
             if SCENE_agbRabbit //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbRabbit
@@ -170,7 +170,7 @@ loadNextGame:
                 set_func 3, preSequenceBunnyHop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbRabbit
+                0xB3<1> index, INDEX_agbRabbit
             endif
         break
         case INDEX_agbRat
@@ -178,7 +178,7 @@ loadNextGame:
             if SCENE_agbRat //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbRat
@@ -188,7 +188,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbRat
+                0xB3<1> index, INDEX_agbRat
             endif
         break
         case INDEX_agbShuji
@@ -196,7 +196,7 @@ loadNextGame:
             if SCENE_agbShuji //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbShuji
@@ -206,7 +206,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadPowerCalligraphyLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbShuji
+                0xB3<1> index, INDEX_agbShuji
             endif
         break
         case INDEX_agbSpaceDance
@@ -214,7 +214,7 @@ loadNextGame:
             if SCENE_agbSpaceDance //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbSpaceDance
@@ -224,7 +224,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbSpaceDance
+                0xB3<1> index, INDEX_agbSpaceDance
             endif
         break
         case INDEX_agbTap
@@ -232,7 +232,7 @@ loadNextGame:
             if SCENE_agbTap //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbTap
@@ -242,7 +242,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadTapLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbTap
+                0xB3<1> index, INDEX_agbTap
             endif
         break
         case INDEX_agbTono
@@ -250,7 +250,7 @@ loadNextGame:
             if SCENE_agbTono //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbTono
@@ -260,7 +260,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_agbTono
+                0xB3<1> index, INDEX_agbTono
             endif
         break
         case INDEX_ntrAirBoard
@@ -268,7 +268,7 @@ loadNextGame:
             if SCENE_ntrAirBoard //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrAirBoard
@@ -278,7 +278,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrAirBoard
+                0xB3<1> index, INDEX_ntrAirBoard
             endif
         break
         case INDEX_ntrBackbeat
@@ -286,7 +286,7 @@ loadNextGame:
             if SCENE_ntrBackbeat //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBackbeat
@@ -296,7 +296,7 @@ loadNextGame:
                 set_func 3, preSequenceLockstep
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrBackbeat
+                0xB3<1> index, INDEX_ntrBackbeat
             endif
         break
         case INDEX_ntrBlueBirds
@@ -304,7 +304,7 @@ loadNextGame:
             if SCENE_ntrBlueBirds //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBlueBirds
@@ -314,7 +314,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrBlueBirds
+                0xB3<1> index, INDEX_ntrBlueBirds
             endif
         break
         case INDEX_ntrBoxShow
@@ -322,7 +322,7 @@ loadNextGame:
             if SCENE_ntrBoxShow //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBoxShow
@@ -332,7 +332,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadDazzlesLate
                 set_func 1, nop
-                0xB3 index, INDEX_ntrBoxShow
+                0xB3<1> index, INDEX_ntrBoxShow
             endif
         break
         case INDEX_ntrCameraMan
@@ -340,7 +340,7 @@ loadNextGame:
             if SCENE_ntrCameraMan //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrCameraMan
@@ -350,15 +350,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkFreezeFrame
-                0xB3 index, INDEX_ntrCameraMan
+                0xB3<1> index, INDEX_ntrCameraMan
             endif
         break
         case INDEX_ntrChorus
-            0xB2 index
+            0xB2<1> index
             if INDEX_ntrChorus //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrChorus
@@ -368,7 +368,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadGleeClubLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrChorus
+                0xB3<1> index, INDEX_ntrChorus
             endif
         break
         case INDEX_ntrFrog
@@ -376,7 +376,7 @@ loadNextGame:
             if SCENE_ntrFrog //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrFrog
@@ -386,7 +386,7 @@ loadNextGame:
                 set_func 3, preSequenceFrogHop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrFrog
+                0xB3<1> index, INDEX_ntrFrog
             endif
         break
         case INDEX_ntrIdol
@@ -394,7 +394,7 @@ loadNextGame:
             if SCENE_ntrIdol //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrIdol
@@ -404,7 +404,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrIdol
+                0xB3<1> index, INDEX_ntrIdol
             endif
         break
         case INDEX_ntrNinja
@@ -412,7 +412,7 @@ loadNextGame:
             if SCENE_ntrNinja //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrNinja
@@ -422,7 +422,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrNinja
+                0xB3<1> index, INDEX_ntrNinja
             endif
         break
         case INDEX_ntrPingpong
@@ -430,7 +430,7 @@ loadNextGame:
             if SCENE_ntrPingpong //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrPingpong
@@ -440,7 +440,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrPingpong
+                0xB3<1> index, INDEX_ntrPingpong
             endif
         break
         case INDEX_ntrShooting
@@ -448,7 +448,7 @@ loadNextGame:
             if SCENE_ntrShooting //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShooting
@@ -458,7 +458,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrShooting
+                0xB3<1> index, INDEX_ntrShooting
             endif
         break
         case INDEX_ntrShortLive
@@ -466,7 +466,7 @@ loadNextGame:
             if SCENE_ntrShortLive //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShortLive
@@ -476,15 +476,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrShortLive
+                0xB3<1> index, INDEX_ntrShortLive
             endif
         break
         case INDEX_ntrShugyo
-            0xB2 index
+            0xB2<1> index
             if INDEX_ntrShugyo //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShugyo
@@ -494,7 +494,7 @@ loadNextGame:
                 set_func 3, preSequenceMunchyMonk
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrShugyo
+                0xB3<1> index, INDEX_ntrShugyo
             endif
         break
         case INDEX_rvlAssemble
@@ -502,7 +502,7 @@ loadNextGame:
             if SCENE_rvlAssemble //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlAssemble
@@ -512,7 +512,7 @@ loadNextGame:
                 set_func 3, preSequenceBtSWii
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlAssemble
+                0xB3<1> index, INDEX_rvlAssemble
             endif
         break
         case INDEX_rvlBird
@@ -520,7 +520,7 @@ loadNextGame:
             if SCENE_rvlBird //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBird
@@ -530,7 +530,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlBird
+                0xB3<1> index, INDEX_rvlBird
             endif
         break
         case INDEX_rvlBook
@@ -538,7 +538,7 @@ loadNextGame:
             if SCENE_rvlBook //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBook
@@ -548,7 +548,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlBook
+                0xB3<1> index, INDEX_rvlBook
             endif
         break
         case INDEX_rvlDate
@@ -556,7 +556,7 @@ loadNextGame:
             if SCENE_rvlDate //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlDate
@@ -566,7 +566,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlDate
+                0xB3<1> index, INDEX_rvlDate
             endif
         break
         case INDEX_rvlFishing
@@ -574,7 +574,7 @@ loadNextGame:
             if SCENE_rvlFishing //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFishing
@@ -584,15 +584,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlFishing
+                0xB3<1> index, INDEX_rvlFishing
             endif
         break
         case INDEX_rvlFlea
-            0xB2 index
+            0xB2<1> index
             if INDEX_rvlFlea //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFlea
@@ -602,7 +602,7 @@ loadNextGame:
                 set_func 3, preSequenceMicroRow
                 set_func 2, loadMicroRowLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlFlea
+                0xB3<1> index, INDEX_rvlFlea
             endif
         break
         case INDEX_rvlFork
@@ -610,7 +610,7 @@ loadNextGame:
             if SCENE_rvlFork //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFork
@@ -620,7 +620,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlFork
+                0xB3<1> index, INDEX_rvlFork
             endif
         break
         case INDEX_rvlGolf
@@ -628,7 +628,7 @@ loadNextGame:
             if SCENE_rvlGolf //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlGolf
@@ -638,7 +638,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlGolf
+                0xB3<1> index, INDEX_rvlGolf
             endif
         break
         case INDEX_rvlGoma
@@ -646,7 +646,7 @@ loadNextGame:
             if SCENE_rvlGoma //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlGoma
@@ -656,7 +656,7 @@ loadNextGame:
                 set_func 3, preSequenceFlipperFlop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlGoma
+                0xB3<1> index, INDEX_rvlGoma
             endif
         break
         case INDEX_rvlInterview
@@ -664,7 +664,7 @@ loadNextGame:
             if SCENE_rvlInterview //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlInterview
@@ -674,7 +674,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlInterview
+                0xB3<1> index, INDEX_rvlInterview
             endif
         break
         case INDEX_rvlKarate
@@ -682,7 +682,7 @@ loadNextGame:
             if SCENE_rvlKarate //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlKarate
@@ -692,7 +692,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlKarate
+                0xB3<1> index, INDEX_rvlKarate
             endif
         break
         case INDEX_rvlManju
@@ -700,7 +700,7 @@ loadNextGame:
             if SCENE_rvlManju //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlManju
@@ -710,7 +710,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlManju
+                0xB3<1> index, INDEX_rvlManju
             endif
         break
         case INDEX_rvlRocket
@@ -718,7 +718,7 @@ loadNextGame:
             if SCENE_rvlRocket //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRocket
@@ -728,7 +728,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlRocket
+                0xB3<1> index, INDEX_rvlRocket
             endif
         break
         case INDEX_rvlRotation
@@ -736,7 +736,7 @@ loadNextGame:
             if SCENE_rvlRotation //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRotation
@@ -746,7 +746,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlRotation
+                0xB3<1> index, INDEX_rvlRotation
             endif
         break
         case INDEX_rvlRecieve
@@ -754,7 +754,7 @@ loadNextGame:
             if SCENE_rvlRecieve //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRecieve
@@ -764,7 +764,7 @@ loadNextGame:
                 set_func 3, presequenceBossaNova
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlRecieve
+                0xB3<1> index, INDEX_rvlRecieve
             endif
         break
         case INDEX_rvlBadminton
@@ -772,7 +772,7 @@ loadNextGame:
             if SCENE_rvlBadminton //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBadminton
@@ -782,7 +782,7 @@ loadNextGame:
                 set_func 3, presequenceAirRally
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlBadminton
+                0xB3<1> index, INDEX_rvlBadminton
             endif
         break
         case INDEX_rvlMuscle
@@ -790,7 +790,7 @@ loadNextGame:
             if SCENE_rvlMuscle //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlMuscle
@@ -800,7 +800,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlMuscle
+                0xB3<1> index, INDEX_rvlMuscle
             endif
         break
         case INDEX_rvlSamurai //Iai Giri
@@ -808,7 +808,7 @@ loadNextGame:
             if SCENE_rvlSamurai //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSamurai
@@ -818,7 +818,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlSamurai
+                0xB3<1> index, INDEX_rvlSamurai
             endif
         break
         case INDEX_rvlSeesaw
@@ -826,7 +826,7 @@ loadNextGame:
             if SCENE_rvlSeesaw //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSeesaw
@@ -836,7 +836,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlSeesaw
+                0xB3<1> index, INDEX_rvlSeesaw
             endif
         break
         case INDEX_rvlSort
@@ -844,7 +844,7 @@ loadNextGame:
             if SCENE_rvlSort //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSort
@@ -854,7 +854,7 @@ loadNextGame:
                 set_func 3, presequencePackingPests
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlSort
+                0xB3<1> index, INDEX_rvlSort
             endif
         break
         case INDEX_ctrBear
@@ -862,7 +862,7 @@ loadNextGame:
             if SCENE_ctrBear //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrBear
@@ -872,7 +872,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrBear
+                0xB3<1> index, INDEX_ctrBear
             endif
         break
         case INDEX_ctrBlanco
@@ -880,7 +880,7 @@ loadNextGame:
             if SCENE_ctrBlanco //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrBlanco
@@ -890,7 +890,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrBlanco
+                0xB3<1> index, INDEX_ctrBlanco
             endif
         break
         case INDEX_ctrChameleon
@@ -898,7 +898,7 @@ loadNextGame:
             if SCENE_ctrChameleon //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrChameleon
@@ -908,7 +908,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrChameleon
+                0xB3<1> index, INDEX_ctrChameleon
             endif
         break
         case INDEX_ctrDotSamurai
@@ -916,7 +916,7 @@ loadNextGame:
             if SCENE_ctrDotSamurai //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrDotSamurai
@@ -926,7 +926,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrDotSamurai
+                0xB3<1> index, INDEX_ctrDotSamurai
             endif
         break
         case INDEX_ctrFruitBasket
@@ -934,7 +934,7 @@ loadNextGame:
             if SCENE_ctrFruitBasket //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrFruitBasket
@@ -944,7 +944,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrFruitBasket
+                0xB3<1> index, INDEX_ctrFruitBasket
             endif
         break
         case INDEX_ctrPillow
@@ -952,7 +952,7 @@ loadNextGame:
             if SCENE_ctrPillow //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrPillow
@@ -962,7 +962,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrPillow
+                0xB3<1> index, INDEX_ctrPillow
             endif
         break
         case INDEX_ctrStep
@@ -970,7 +970,7 @@ loadNextGame:
             if SCENE_ctrStep //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrStep
@@ -980,7 +980,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrStep
+                0xB3<1> index, INDEX_ctrStep
             endif
         break
         case INDEX_ctrSumou
@@ -988,7 +988,7 @@ loadNextGame:
             if SCENE_ctrSumou //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrSumou
@@ -998,7 +998,7 @@ loadNextGame:
                 set_func 3, preSequenceSumoBros
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrSumou
+                0xB3<1> index, INDEX_ctrSumou
             endif
         break
         case INDEX_ctrTango
@@ -1006,7 +1006,7 @@ loadNextGame:
             if SCENE_ctrTango //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrTango
@@ -1016,7 +1016,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrTango
+                0xB3<1> index, INDEX_ctrTango
             endif
         break
         case INDEX_ctrTeppan
@@ -1024,7 +1024,7 @@ loadNextGame:
             if SCENE_ctrTeppan //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrTeppan
@@ -1034,7 +1034,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadKittiesLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrTeppan
+                0xB3<1> index, INDEX_ctrTeppan
             endif
         break
         case INDEX_ctrWoodcat
@@ -1042,7 +1042,7 @@ loadNextGame:
             if SCENE_ctrWoodcat //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrWoodcat
@@ -1052,7 +1052,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ctrWoodcat
+                0xB3<1> index, INDEX_ctrWoodcat
             endif
         break
         case INDEX_agbVirus
@@ -1060,7 +1060,7 @@ loadNextGame:
             if SCENE_agbVirus //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbVirus
@@ -1070,15 +1070,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkSickBeats
-                0xB3 index, INDEX_agbVirus
+                0xB3<1> index, INDEX_agbVirus
             endif
         break
         case INDEX_ntrCoinToss
-            0xB2 index
+            0xB2<1> index
             if INDEX_ntrCoinToss //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrCoinToss
@@ -1088,7 +1088,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkCoinToss
-                0xB3 index, INDEX_ntrCoinToss
+                0xB3<1> index, INDEX_ntrCoinToss
             endif
         break
         case INDEX_rvlSword
@@ -1096,7 +1096,7 @@ loadNextGame:
             if SCENE_rvlSword //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSword
@@ -1106,7 +1106,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlSword
+                0xB3<1> index, INDEX_rvlSword
             endif
         break
         case INDEX_tutorial //Tutorial
@@ -1114,7 +1114,7 @@ loadNextGame:
             if SCENE_tutorial //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_tutorial
@@ -1124,7 +1124,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_tutorial
+                0xB3<1> index, INDEX_tutorial
             endif
         break
         case INDEX_rvlMonkeyWatch
@@ -1132,7 +1132,7 @@ loadNextGame:
             if SCENE_rvlMonkeyWatch //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlMonkeyWatch
@@ -1142,7 +1142,7 @@ loadNextGame:
                 set_func 3, preSequenceMonkeyWatch
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlMonkeyWatch
+                0xB3<1> index, INDEX_rvlMonkeyWatch
             endif
         break
         case INDEX_rvlRap
@@ -1150,7 +1150,7 @@ loadNextGame:
             if SCENE_rvlRap //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRap
@@ -1160,7 +1160,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlRap
+                0xB3<1> index, INDEX_rvlRap
             endif
         break
         case INDEX_ntrRobot
@@ -1168,7 +1168,7 @@ loadNextGame:
             if SCENE_ntrRobot //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrRobot
@@ -1178,7 +1178,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrRobot
+                0xB3<1> index, INDEX_ntrRobot
             endif
         break
         case INDEX_rvlBatting
@@ -1186,7 +1186,7 @@ loadNextGame:
             if SCENE_rvlBatting //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBatting
@@ -1196,7 +1196,7 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlBatting
+                0xB3<1> index, INDEX_rvlBatting
             endif
         break
         case INDEX_rvlRobot
@@ -1204,7 +1204,7 @@ loadNextGame:
             if SCENE_rvlRobot //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRobot
@@ -1214,18 +1214,18 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlRobot
+                0xB3<1> index, INDEX_rvlRobot
             endif
         break
         case INDEX_rvlBasket
-            0xB2 index
+            0xB2<1> index
             if INDEX_rvlBasket //Stop games from being played next to each other
                 goto 0x70AD
             else
                 if INDEX_ctrSumou
                     goto 0x70AD
                 else
-                    0xB2 is_debug
+                    0xB2<1> is_debug
                     if 1
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlBasket
@@ -1235,7 +1235,7 @@ loadNextGame:
                     set_func 3, presequenceBasketGirls
                     set_func 2, loadBasketGirlsLate
                     set_func 1, checkA2
-                    0xB3 index, INDEX_rvlBasket
+                    0xB3<1> index, INDEX_rvlBasket
                 endif
             endif
         break
@@ -1244,7 +1244,7 @@ loadNextGame:
         //     if SCENE_REC_ntrAssembly //Stop games from being played next to each other
         //         goto 0x70AD
         //     else
-        //         0xB2 is_debug
+        //         0xB2<1> is_debug
         //         if 1
         //             0xB3 debug_start, 1337
         //             0xB3 debug_current_index, INDEX_ntrAssembly
@@ -1256,14 +1256,14 @@ loadNextGame:
         //     endif
         // break
         case INDEX_rvlComedians
-            0xB2 index
+            0xB2<1> index
             if INDEX_rvlComedians //Stop games from being played next to each other
                 goto 0x70AD
             else
                 if INDEX_ctrSumou
                     goto 0x70AD
                 else
-                    0xB2 is_debug
+                    0xB2<1> is_debug
                     if 1
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlComedians
@@ -1272,16 +1272,16 @@ loadNextGame:
                     call loadManzai //help
                     set_func 3, loadManzaiLate
                     set_func 2, nop
-                    0xB3 index, INDEX_rvlComedians
+                    0xB3<1> index, INDEX_rvlComedians
                 endif
             endif
         break
         case INDEX_tpaFrontier //Accumula Town
-            0xB2 index
+            0xB2<1> index
             if INDEX_tpaFrontier //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_tpaFrontier
@@ -1291,18 +1291,18 @@ loadNextGame:
                 set_func 3, preSequenceFinned
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_tpaFrontier
+                0xB3<1> index, INDEX_tpaFrontier
             endif
         break
         case INDEX_skiMeat //Open Sesame Tofu!
-            0xB2 index
+            0xB2<1> index
             if INDEX_skiMeat //Stop games from being played next to each other
                 goto 0x70AD
             else
                 if INDEX_ctrSumou
                     goto 0x70AD
                 else
-                    0xB2 is_debug
+                    0xB2<1> is_debug
                     if 1
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_skiMeat
@@ -1312,16 +1312,16 @@ loadNextGame:
                     set_func 3, nop
                     set_func 2, loadMeatGrinderLate
                     set_func 1, checkA2
-                    0xB3 index, INDEX_skiMeat
+                    0xB3<1> index, INDEX_skiMeat
                 endif
             endif
         break
         case INDEX_swfSoumen //Ballance
-            0xB2 index
+            0xB2<1> index
             if INDEX_swfSoumen //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_swfSoumen
@@ -1331,18 +1331,18 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadSoumenLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_swfSoumen
+                0xB3<1> index, INDEX_swfSoumen
             endif
         break
         case INDEX_agbMetro //Battle Start Melodii
-            0xB2 index
+            0xB2<1> index
             if INDEX_agbMetro //Stop games from being played next to each other
                 goto 0x70AD
             else
                 if INDEX_ctrSumou
                     goto 0x70AD
                 else
-                    0xB2 is_debug
+                    0xB2<1> is_debug
                     if 1
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_agbMetro
@@ -1352,7 +1352,7 @@ loadNextGame:
                     set_func 3, nop
                     set_func 2, loadUpbeatLate
                     set_func 1, checkA2
-                    0xB3 index, INDEX_agbMetro
+                    0xB3<1> index, INDEX_agbMetro
                 endif
             endif
         break
@@ -1361,7 +1361,7 @@ loadNextGame:
             if SCENE_REC_rvlTap //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlTap
@@ -1371,15 +1371,15 @@ loadNextGame:
                 set_func 3, preSequenceTapTroupe
                 set_func 2, loadTapTroupeLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_rvlTap
+                0xB3<1> index, INDEX_rvlTap
             endif
         break
         case INDEX_ntrSynchro //Mole Cricket
-            0xB2 index
+            0xB2<1> index
             if INDEX_ntrSynchro //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrSynchro
@@ -1389,15 +1389,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, loadSplashdownLate
                 set_func 1, checkA2
-                0xB3 index, INDEX_ntrSynchro
+                0xB3<1> index, INDEX_ntrSynchro
             endif
         break
         case INDEX_bnbTweet //Meet and Tweet
-            0xB2 index
+            0xB2<1> index
             if INDEX_bnbTweet //Stop games from being played next to each other
                 goto 0x70AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_bnbTweet
@@ -1407,18 +1407,18 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nop
                 set_func 1, checkA2
-                0xB3 index, INDEX_bnbTweet
+                0xB3<1> index, INDEX_bnbTweet
             endif
         break
         case INDEX_7bgDoctor //Meet and Tweet
-            0xB2 index
+            0xB2<1> index
             if INDEX_7bgDoctor //Stop games from being played next to each other
                 goto 0x70AD
             else
                 if INDEX_ctrSumou
                     goto 0x7AD
                 else
-                    0xB2 is_debug
+                    0xB2<1> is_debug
                     if 1
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_7bgDoctor
@@ -1428,16 +1428,16 @@ loadNextGame:
                     set_func 3, presequenceRhythmDoctor
                     set_func 2, loadRhythmDoctorLate
                     set_func 1, checkA2
-                    0xB3 index, INDEX_7bgDoctor
+                    0xB3<1> index, INDEX_7bgDoctor
                 endif
             endif
         break
         case INDEX_agbFireworks
-            0xB2 index
+            0xB2<1> index
             if INDEX_agbFireworks //Stop games from being played next to each other
                 goto 0x7AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbFireworks
@@ -1446,15 +1446,15 @@ loadNextGame:
                 call loadFireworks //help
                 set_func 3, nop
                 set_func 2, nop
-                0xB3 index, INDEX_agbFireworks
+                0xB3<1> index, INDEX_agbFireworks
             endif
         break
         case INDEX_rvlDonk
-            0xB2 index
+            0xB2<1> index
             if INDEX_rvlDonk //Stop games from being played next to each other
                 goto 0x7AD
             else
-                0xB2 is_debug
+                0xB2<1> is_debug
                 if 1
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlDonk
@@ -1463,18 +1463,18 @@ loadNextGame:
                 call loadDonk
                 set_func 3, presequenceDonk
                 set_func 2, nop
-                0xB3 index, INDEX_rvlDonk
+                0xB3<1> index, INDEX_rvlDonk
             endif
         break
         case INDEX_rvlTambourine
-            0xB2 index
+            0xB2<1> index
             if INDEX_rvlTambourine //Stop games from being played next to each other
                 goto 0x7AD
             else
                 if INDEX_ctrSumou
                     goto 0x7AD
                 else
-                    0xB2 is_debug
+                    0xB2<1> is_debug
                     if 1
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlTambourine
@@ -1483,12 +1483,12 @@ loadNextGame:
                     call loadTambourine
                     set_func 3, nop
                     set_func 2, loadTambourineLate
-                    0xB3 index, INDEX_rvlDonk
+                    0xB3<1> index, INDEX_rvlDonk
                 endif
             endif
         break
         default //Restart until we get something damnit
-            0xB2 is_debug
+            0xB2<1> is_debug
             if 1
                 0xB3 debug_start, 1337
             endif
@@ -1496,7 +1496,7 @@ loadNextGame:
         break
     endswitch
 
-    0xB2 is_debug
+    0xB2<1> is_debug
     if 1
         call showScore
     endif
@@ -1510,7 +1510,7 @@ playNextGame:
         get_async 0, 0
         rest 0x18
         0x58 0x100, 0x30
-        0xB2 lives_enabled
+        0xB2<1> lives_enabled
         if 1
             get_async 1, 0
         endif
@@ -1528,7 +1528,7 @@ playNextGame:
         if_neq 0
             fade 1,1,1
         endif
-        0xB2 is_debug
+        0xB2<1> is_debug
         if 0
             call updateScore
         endif
@@ -1576,7 +1576,7 @@ lifeScoreCounter:
     label 0x115C
     call showScore
     rest 0xC0
-    0xB2 lives_enabled
+    0xB2<1> lives_enabled
     if 1
         call life
     endif
@@ -1741,26 +1741,26 @@ return
 bonusStuff:
 set_cat 0
 label 0x1007
-0xB2 is_debug
+0xB2<1> is_debug
 if 0
     0x200 9
     if 1 // Debug mode active, invincible mode
         play_sfx 0x10002C1
-        0xB3 is_debug,1 //Enables Debug mode
-        0xB3 lives_enabled, 0
+        0xB3<1> is_debug,1 //Enables Debug mode
+        0xB3<1> lives_enabled, 0
     endif
     0x200 8
     if 1 // Debug mode active
         play_sfx 0x10002C1
-        0xB3 is_debug,1 //Enables Debug mode
+        0xB3<1> is_debug,1 //Enables Debug mode
     endif
 endif
-0xB2 lives_enabled
+0xB2<1> lives_enabled
 if 1
     0x200 11
     if 1
         play_sfx 0x10002C1
-        0xB3 lives_enabled, 0
+        0xB3<1> lives_enabled, 0
     endif
 endif
 rest 2

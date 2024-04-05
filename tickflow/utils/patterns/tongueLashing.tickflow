@@ -15,7 +15,7 @@ sequenceTongueLashing:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x36
+	0xB3 engine_loaded, 0x36
     fade<1> 1,1,1
     input 1
     async_call tongueLashingBeat

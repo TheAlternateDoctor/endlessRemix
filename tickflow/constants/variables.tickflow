@@ -1,17 +1,20 @@
-score = 0
-score_add = 13
-cellanim_slot = 1
-lives = 2
-sfx_plus = 5
-sfx_plus_2 = 14
-speed = 6
-game_state = 7
-engine_loaded = 9
-perf_lock = 11
-perf_miss = 12
-debug_start = 3
-debug_current_index = 0
-is_debug = 10
-lives_enabled = 4
-manzai_step = 15
-index = 16
+// <0> vars
+score = 0 // The player's score
+score_add = 1 // How much to add to the player score at the end of a pattern
+lives = 2 // How many lives the player has
+speed = 3 // The speed the remix is currently going at
+game_state = 4 // The state of the pattern at the start, IE. are Marchers walking, Lockstep on/off, etc
+engine_loaded = 5 // Engine currently loaded. Used to stop overlaps in some cases
+perf_lock = 6 // Locks the perf check for 2 beats when a player misses
+perf_miss = 7 // Used when the player has missed in the pattern, for score calculation
+debug_start = 8 // Index to load at the start when Debug mode is on
+debug_current_index = 0 // Duplicate? Used to show the currently playing index
+manzai_step = 9 // Step Manzai is currently at. Unused?
+
+// <1> vars
+cellanim_slot = 0 // Slot to load next time. Used in the loader
+is_debug = 1 // Self explanatory.
+lives_enabled = 2 // Self explanatory.
+index = 3 // Index currently loaded.
+sfx_plus = 4 // How many more SFX are loaded for slot 1. Used in the loader.
+sfx_plus_2 = 5 // How many more SFX are loaded for slot 2. Used in the loader.

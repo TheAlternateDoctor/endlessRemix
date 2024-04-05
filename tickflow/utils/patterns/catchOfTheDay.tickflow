@@ -10,7 +10,7 @@ sequenceCatchOfTheDay:
     rest 0x10
     setrest 2, 0xD
     setrest 3, 0xB
-	0xB3 9, 0x22
+	0xB3 engine_loaded, 0x22
     fade<1> 1,1,1
     random 4
     switch

@@ -145,11 +145,11 @@ play_sfx 0x100029E
 0xA4<1> 0xB
 0xA5 1
 0xA4<2> 1
-0xB3 lives_enabled, 1
+0xB3<1> lives_enabled, 1
 
 0x201
 if_lt 0x103
-    0xB3 lives_enabled, 0
+    0xB3<1> lives_enabled, 0
 endif
 
 0x75<1> 
@@ -268,7 +268,7 @@ engine<4> 1
 fade 2, 1, 0
 
 0xAD 1
-0xB2 is_debug
+0xB2<1> is_debug
 if 1
 	0x8C 1
 else
@@ -283,15 +283,15 @@ input 0
 // 0x68<3> -0x30, -0x90, 0x3C
 
 0xB3 score,0 //Score
-0xB3 cellanim_slot,0 //Celanim
+0xB3<1> cellanim_slot,0 //Celanim
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
-0xB3 sfx_plus,1 //Slot 7 has SFX
-0xB3 sfx_plus_2,0 //Slot 7 has SFX
+0xB3<1> sfx_plus,1 //Slot 7 has SFX
+0xB3<1> sfx_plus_2,0 //Slot 7 has SFX
 0xB3 score_add, 5 //Starting score
 0xB3 speed, startSpeed //Starting speed
 0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
-0xB3 index, INDEX_rvlBasket //Starting index
+0xB3<1> index, INDEX_rvlBasket //Starting index
 
 
 0x67<5> 2
@@ -301,7 +301,7 @@ input 0
 
 call changeEngine
 engine 0x3C
-0xB3 9,0x3C
+0xB3 engine_loaded,0x3C
 // 0x109 1
 sub 4
 0x29<2> 
@@ -312,7 +312,7 @@ async_call startingGame
 rest 0x30
 fade<1> 1,1,1
 kill_loc bonusStuff
-0xB2 lives_enabled
+0xB2<1> lives_enabled
 if 1
 	0x67<1> 2,"lifeCounter_3"
 else
@@ -334,7 +334,7 @@ label 0x54D
 0xB3 score,0
 
 async_call basketGirlsStart
-0xB2 lives_enabled
+0xB2<1> lives_enabled
 if 1
 	async_call checkA2
 endif
@@ -355,7 +355,7 @@ endif
 0xA2
 
 //main loop
-0xB2 lives_enabled
+0xB2<1> lives_enabled
 call updateScore
 async_call speedup
 async_call lifeScoreCounter
@@ -424,7 +424,7 @@ sub 3
 game_cellanim 0x3C, 4
 game_effect 0x3C, 4
 
-0xB3 cellanim_slot, 0
+0xB3<1> cellanim_slot, 0
 
 return 
 
@@ -553,7 +553,7 @@ if 0
 	endif 
 endif 
 0x102 
-0xB3 lives_enabled, 1
+0xB3<1> lives_enabled, 1
 async_call bonusStuff
 label 0xC7
 0xA7 

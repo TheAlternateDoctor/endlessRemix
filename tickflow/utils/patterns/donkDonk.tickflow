@@ -15,7 +15,7 @@ sequenceDonk:
 	engine 0x25
 	sub 4
 	0x29<2> 
-	0xB3 9, 0x25
+	0xB3 engine_loaded, 0x25
     async_call donksetup
     input 1
     rest 0x10

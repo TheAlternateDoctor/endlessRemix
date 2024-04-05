@@ -29,7 +29,7 @@ sequenceCatchyTune:
         break
     endswitch
     rest 0x8
-	0xB3 9, 0x3B
+	0xB3 engine_loaded, 0x3B
     fade<1> 1,1,1
     input 1
     async_call catchyTuneBeatAnims

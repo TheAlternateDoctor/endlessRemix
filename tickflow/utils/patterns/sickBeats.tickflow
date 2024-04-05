@@ -8,7 +8,7 @@ sequenceSickBeats:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x40
+	0xB3 engine_loaded, 0x40
     fade<1> 1,1,1
     input 1
     0xAF<6> 0

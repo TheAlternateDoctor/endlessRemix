@@ -1,5 +1,6 @@
-detect = 1
-FireworkType = 2
+detect = 10
+FireworkType = 11
+input_timing = 12
 
 //--------------------------------------------------
 //ESSENTIALS:
@@ -155,7 +156,7 @@ fireworksBomb:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -228,7 +229,7 @@ HighRhythmRocketL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -280,7 +281,7 @@ HighRhythmRocketC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -332,7 +333,7 @@ HighRhythmRocketR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -384,7 +385,7 @@ LowRhythmRocketL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -436,7 +437,7 @@ LowRhythmRocketC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -488,7 +489,7 @@ LowRhythmRocketR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -550,7 +551,7 @@ HighSpiritSparklerL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -600,7 +601,7 @@ HighSpiritSparklerC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -649,7 +650,7 @@ HighSpiritSparklerR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -698,7 +699,7 @@ LowSpiritSparklerL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -748,7 +749,7 @@ LowSpiritSparklerC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -797,7 +798,7 @@ LowSpiritSparklerR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -904,7 +905,7 @@ SpiritSparklerRedL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -955,7 +956,7 @@ SpiritSparklerRedR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1005,7 +1006,7 @@ SpiritSparklerGreenL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1055,7 +1056,7 @@ SpiritSparklerGreenR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1105,7 +1106,7 @@ SpiritSparklerBlueL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1156,7 +1157,7 @@ SpiritSparklerBlueR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1220,7 +1221,7 @@ SpecialFireworkStar:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1274,7 +1275,7 @@ SpecialFireworkCircle:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1329,7 +1330,7 @@ SpecialFireworkSpiral:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1384,7 +1385,7 @@ SpecialFireworkSmile:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 0              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by inputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -2023,13 +2024,13 @@ stop
 
 inputType:
     rest 0x28                   // 40 v 48, 8 from "perfect"
-    0xB3 0, 2                   // barely
+    0xB3 input_timing, 2                   // barely
     rest 2                      // 43 v 48, 5 from "perfect"
-    0xB3 0, 3                   // hit
+    0xB3 input_timing, 3                   // hit
     rest 0xC                    // 47 v 48, 1 from "perfect"
-    0xB3 0, 4                   // barely
+    0xB3 input_timing, 4                   // barely
     rest 2                      // 56 v 48, 8 from "perfect"
-    0xB3 0, 1                   // miss
+    0xB3 input_timing, 1                   // miss
 	0xB3 detect, 0
 stop
 

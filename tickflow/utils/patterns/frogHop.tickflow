@@ -52,7 +52,7 @@ sequenceFrogHop:
         endswitch
     endif
     rest 0xC
-	0xB3 9, 0x14
+	0xB3 engine_loaded, 0x14
     fade<1> 1,1,1
     input 1
 stop

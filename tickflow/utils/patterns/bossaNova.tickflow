@@ -54,7 +54,7 @@ sequenceBossaNova:
     endif
     rest 0x10
     input 1
-	0xB3 9, 0x2C
+	0xB3 engine_loaded, 0x2C
     rest 0x8
     fade<1> 1,1,1
 stop

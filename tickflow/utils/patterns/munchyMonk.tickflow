@@ -44,7 +44,7 @@ sequenceMunchyMonk:
     endif
     rest 0x8
     async_call munchyMonkBeat
-	0xB3 9, 0x1B
+	0xB3 engine_loaded, 0x1B
     fade<1> 1,1,1
     0xB2 game_state
     switch

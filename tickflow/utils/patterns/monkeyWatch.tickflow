@@ -17,7 +17,7 @@ sequenceMonkeyWatch:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x33
+	0xB3 engine_loaded, 0x33
     0x103 0, 1
     fade<1> 1,1,1
     random 3

@@ -21,7 +21,7 @@ sequenceFlockstep:
         0x102<5> 30
         break
     endswitch
-	0xB3 9, 0x1F
+	0xB3 engine_loaded, 0x1F
     fade<1> 1,1,1
     random 2
     switch

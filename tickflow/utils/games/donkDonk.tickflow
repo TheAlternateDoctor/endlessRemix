@@ -1,3 +1,5 @@
+donkdonk_var = 10
+
 donkdonk:
 async_call donkdonkSFX, 0x30
 async_call SFXswap, 0x28
@@ -143,7 +145,7 @@ async_call glitchprevent, 0x18
 rest 0x2B	// <1.0 beats
 0x109
 if 1
-	0xB2 2
+	0xB2 donkdonk_var
 	if 2
 		goto 0x445
 	endif
@@ -215,10 +217,10 @@ glitchprevent:
 0x109
 switch
 	case 0
-		0xB3 2, 1
+		0xB3 donkdonk_var, 1
 	break
 	case 1
-		0xB3 2, 2
+		0xB3 donkdonk_var, 2
 	break
 endswitch
 stop

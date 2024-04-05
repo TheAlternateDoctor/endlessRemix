@@ -22,7 +22,7 @@ sequenceLumbearjack:
         break
     endswitch
     rest 0x8
-	0xB3 9, 0x3F
+	0xB3 engine_loaded, 0x3F
     fade<1> 1,1,1
     0x103<3>
     async_call lumbearjackBeatAnims

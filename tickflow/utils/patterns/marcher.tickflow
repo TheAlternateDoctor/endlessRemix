@@ -63,7 +63,7 @@ sequenceMarcher:
         input 1
     endif
     rest 0xC
-	0xB3 9, 0x5
+	0xB3 engine_loaded, 0x5
     fade<1> 1,1,1
 stop
 

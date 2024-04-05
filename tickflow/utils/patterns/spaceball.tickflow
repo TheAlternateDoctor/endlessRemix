@@ -8,7 +8,7 @@ sequenceSpaceball:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x0
+	0xB3 engine_loaded, 0x0
     fade<1> 1,1,1
     input 1
     random 2
@@ -18,7 +18,7 @@ sequenceSpaceball:
         call spaceball1
 		break
     case 1
-        0xB3 13, 6
+        0xB3 score_add, 6
         call spaceball2
 		break
     endswitch

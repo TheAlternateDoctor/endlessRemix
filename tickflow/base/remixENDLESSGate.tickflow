@@ -141,15 +141,15 @@ input 0
 // 0x68<3> -0x30, -0x90, 0x3C
 
 0xB3 score,0 //Score
-0xB3 cellanim_slot,0 //Celanim
+0xB3<1> cellanim_slot,0 //Celanim
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 speed,startSpeed //Speed at which the remix starts
-0xB3 sfx_plus,1 //Slot 7 has SFX
-0xB3 sfx_plus_2,0 //Slot 7 has SFX
-0xB3 lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on
+0xB3<1> sfx_plus,1 //Slot 7 has SFX
+0xB3<1> sfx_plus_2,0 //Slot 7 has SFX
+0xB3<1> lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on
 0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
-0xB3 index, INDEX_rvlBasket //Starting index
+0xB3<1> index, INDEX_rvlBasket //Starting index
 
 0x67<5> 2
 0x67<3> -0x6E
@@ -158,7 +158,7 @@ input 0
 
 call changeEngine
 engine 0x3C
-0xB3 9,0x3C
+0xB3 engine_loaded,0x3C
 // 0x109 1
 sub 4
 0x29<2> 
@@ -308,7 +308,7 @@ game_cellanim 0x42, 2
 game_cellanim 0x3C, 4
 game_effect 0x3C, 4
 
-0xB3 cellanim_slot, 0
+0xB3<1> cellanim_slot, 0
 
 return 
 

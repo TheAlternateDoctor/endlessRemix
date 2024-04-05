@@ -4,6 +4,8 @@
 
 // USAGE EXAMPLE at the bottom of this document.
 
+fail_check = 10
+
 tambourineShake:
 	0x101<1> 1
     0x104 1
@@ -12,7 +14,7 @@ tambourineShake:
     rest 0x24
 	0x8F 0
     0x100 0, 0xC
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x101 1
 	else 
@@ -29,7 +31,7 @@ tambourineTap:
 	0x8F 1
     0x100 2, 0xC
 	0x102 0
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x101<2> 1
 	else
@@ -46,7 +48,7 @@ tambourineTapLong:
 	0x8F 1
     0x100 2, 0xC
 	0x102 0
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x101<2> 1
 	else
@@ -64,7 +66,7 @@ tambourineShakeStar:
     rest 0x30*7
     rest 0x24
     0x100 0, 0xC
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x101 1
 	else 
@@ -80,7 +82,7 @@ tambourineTapStar:
     rest 0x24
     0x100 2, 0xC
 	0x102 0
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x101<2> 1
 	else
@@ -96,7 +98,7 @@ tambourineTapLongStar:
     rest 0x24
     0x100 2, 0xC
 	0x102 0
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x101<2> 1
 	else
@@ -111,30 +113,30 @@ tambourineSwitch:
 	0x101<1> 1
     0x102 1
 	input 1
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x106<3> 0
 		rest 0x30
 	endif
-	0xB3 1, 0
+	0xB3 fail_check, 0
 stop
 
 tambourineCheck: // Call at the start of an 8 beat pattern. Will react after 16 beats.
 	input 0
     0xA2
-	0xB2 1
+	0xB2 fail_check
 	if 1
 		0x106<3> 0
 		0x106<2>
 		rest 0x30
-		0xB3 1, 0
+		0xB3 fail_check, 0
 		rest 0x30*6
 	else
-		0xB3 1, 0
+		0xB3 fail_check, 0
 		rest 0x30*7
 	endif
 
-	0xB2 1
+	0xB2 fail_check
 	if_neq 1
 		async_call tambourineFailCheck	
 	endif
@@ -151,7 +153,7 @@ tambourineFailCheck: // Called automatically by tambourineCheck.
 	label 0x62AD
 	0xA2<2>
 	if 1
-		0xB3 1, 1
+		0xB3 fail_check, 1
 		0x106<3> 1
 		play_sfx 0x10011A7
 		stop

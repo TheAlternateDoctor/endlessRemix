@@ -8,7 +8,7 @@ sequenceFreezeFrame:
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 9, 0x12
+	0xB3 engine_loaded, 0x12
     random 2
     if 1
         0x106 1
