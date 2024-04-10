@@ -148,7 +148,7 @@ fireworksBomb:
 	rest 0x30											// 1.0 beats
 	0x104 0												//Spawn the bomb, it will go offscreen in 2 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -156,7 +156,7 @@ fireworksBomb:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -221,7 +221,7 @@ HighRhythmRocketL:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -229,7 +229,7 @@ HighRhythmRocketL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -273,7 +273,7 @@ HighRhythmRocketC:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -281,7 +281,7 @@ HighRhythmRocketC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -325,7 +325,7 @@ HighRhythmRocketR:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -333,7 +333,7 @@ HighRhythmRocketR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -377,7 +377,7 @@ LowRhythmRocketL:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -385,7 +385,7 @@ LowRhythmRocketL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -429,7 +429,7 @@ LowRhythmRocketC:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -437,7 +437,7 @@ LowRhythmRocketC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -481,7 +481,7 @@ LowRhythmRocketR:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -489,7 +489,7 @@ LowRhythmRocketR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -543,7 +543,7 @@ stop
 HighSpiritSparklerL:
 0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x70, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -551,7 +551,7 @@ HighSpiritSparklerL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -593,7 +593,7 @@ stop
 HighSpiritSparklerC:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0, 0x90, 0x100, 0, -0x70, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -601,7 +601,7 @@ HighSpiritSparklerC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -642,7 +642,7 @@ stop
 HighSpiritSparklerR:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x70, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -650,7 +650,7 @@ HighSpiritSparklerR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -691,7 +691,7 @@ stop
 LowSpiritSparklerL:
 0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -699,7 +699,7 @@ LowSpiritSparklerL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -741,7 +741,7 @@ stop
 LowSpiritSparklerC:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0, 0x90, 0x100, 0, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -749,7 +749,7 @@ LowSpiritSparklerC:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -790,7 +790,7 @@ stop
 LowSpiritSparklerR:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -798,7 +798,7 @@ LowSpiritSparklerR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -897,7 +897,7 @@ stop
 SpiritSparklerRedL:
 0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -905,7 +905,7 @@ SpiritSparklerRedL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -948,7 +948,7 @@ stop
 SpiritSparklerRedR:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -956,7 +956,7 @@ SpiritSparklerRedR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -998,7 +998,7 @@ stop
 SpiritSparklerGreenL:
 0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1006,7 +1006,7 @@ SpiritSparklerGreenL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1048,7 +1048,7 @@ stop
 SpiritSparklerGreenR:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1056,7 +1056,7 @@ SpiritSparklerGreenR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1098,7 +1098,7 @@ stop
 SpiritSparklerBlueL:
 0x106 "FastShot", -1, 0x48, 0x1, 1, -0x60, 0x90, 0x100, -0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1106,7 +1106,7 @@ SpiritSparklerBlueL:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1149,7 +1149,7 @@ stop
 SpiritSparklerBlueR:
 0x106 "FastShot", -1, 0x48, 0x1, 1, 0x60, 0x90, 0x100, 0x60, -0x60, 0x100
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1157,7 +1157,7 @@ SpiritSparklerBlueR:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1213,7 +1213,7 @@ SpecialFireworkStar:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1221,7 +1221,7 @@ SpecialFireworkStar:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1267,7 +1267,7 @@ SpecialFireworkCircle:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1275,7 +1275,7 @@ SpecialFireworkCircle:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1322,7 +1322,7 @@ SpecialFireworkSpiral:
 	rest 0x30	// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1330,7 +1330,7 @@ SpecialFireworkSpiral:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -1377,7 +1377,7 @@ SpecialFireworkSmile:
 	rest 0x30											// 1.0 beats
 	rest 0x30											// 1.0 beats
 	0x100 0												//Input in 1 beat
-	async_call inputType
+	async_call fireworksInputType
 	rest 0x26											// 0.82 beats
 	0xB3 detect, 1
     label 0x9001
@@ -1385,7 +1385,7 @@ SpecialFireworkSmile:
     if 1
         0x200<0> 0              // if the player has inputted
         if 1
-            0xB2 input_timing              // what is the timing of the player input - set by inputType below
+            0xB2 input_timing              // what is the timing of the player input - set by fireworksInputType below
         endif
         switch
         case 0              // if nothing is happening - no inputs have been cued
@@ -2016,13 +2016,13 @@ stop
 //All the other stuff that's hard to put in a cathegory
 
 //--------------------------------------------------
-//inputType
+//fireworksInputType
 
 //Don't touch this if you don't know what you are doing
 // Detects when the player inputted relative to the timing of the input
 // Needs to be async_called at the same time as 0x100 0
 
-inputType:
+fireworksInputType:
     rest 0x28                   // 40 v 48, 8 from "perfect"
     0xB3 input_timing, 2                   // barely
     rest 2                      // 43 v 48, 5 from "perfect"

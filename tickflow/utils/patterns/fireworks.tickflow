@@ -8,6 +8,9 @@ sequenceFireworks:
 	0xB3 engine_loaded, 0x25
     setrest 0, 0x18
     setrest 1, 0x30
+    0x101<1> 2
+    rest 0xC
+    fade<1> 1,1,1
     input 1
     random 2
     switch
@@ -20,8 +23,6 @@ sequenceFireworks:
         async_call fireworks2
         break
     endswitch
-    rest 0xC
-    fade<1> 1,1,1
 stop
 
 fireworks1:

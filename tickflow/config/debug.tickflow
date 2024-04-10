@@ -1,3 +1,3 @@
 //Debug config file.
 debugMode=0 //Enables debug mode.
-cyclingMode=INDEX_rvlGoma // Tells which game to play at the beginning, after Basketball Girls.
+cyclingMode=INDEX_agbFireworks // Tells which game to play at the beginning, after Basketball Girls.

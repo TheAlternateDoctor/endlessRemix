@@ -583,7 +583,15 @@ endif
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
+    random 2
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/rvlBasket_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/rvlBasket_r9wii.zlib", -1
+        break
+    endswitch
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
     0xB2 engine_loaded
@@ -592,7 +600,15 @@ if 1
     endif
     0xB3<1> cellanim_slot, 0
 else
-    set_cellanim 5, u"rom:/cellanim/rvlBasket_v0.zlib", -1
+    random 2
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/rvlBasket_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/rvlBasket_r9wii.zlib", -1
+        break
+    endswitch
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
     0xB2 engine_loaded
