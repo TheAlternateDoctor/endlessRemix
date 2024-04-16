@@ -21,11 +21,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbBatter
                 endif
-                set_func 0, sequenceSpaceball
+                set_func patternSub, sequenceSpaceball
                 call loadSpaceball
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbBatter
             endif
         break
@@ -39,11 +39,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbClap
                 endif
-                set_func 0, sequenceClappyTrio
+                set_func patternSub, sequenceClappyTrio
                 call loadClappyTrio
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbClap
             endif
         break
@@ -57,11 +57,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbGhost
                 endif
-                set_func 0, sequenceSneakySpirits
+                set_func patternSub, sequenceSneakySpirits
                 call loadSneakySpirits
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbGhost
             endif
         break
@@ -75,11 +75,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbHair
                 endif
-                set_func 0, sequenceTweezers
+                set_func patternSub, sequenceTweezers
                 call loadTweezers
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkOnion
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkOnion
                 0xB3<1> index, INDEX_agbHair
             endif
         break
@@ -93,11 +93,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbHopping
                 endif
-                set_func 0, sequenceHopping
+                set_func patternSub, sequenceHopping
                 call loadHopping
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbHopping
             endif
         break
@@ -111,11 +111,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbMarcher
                 endif
-                set_func 0, sequenceMarcher
+                set_func patternSub, sequenceMarcher
                 call loadMarcher
-                set_func 3, preSequenceMarcher
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceMarcher
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbMarcher
             endif
         break
@@ -129,11 +129,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbNightWalk
                 endif
-                set_func 0, sequenceNightWalk
+                set_func patternSub, sequenceNightWalk
                 call loadNightWalk
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkNightWalk
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkNightWalk
                 0xB3<1> index, INDEX_agbNightWalk
             endif
         break
@@ -147,11 +147,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbQuiz
                 endif
-                set_func 0, sequenceQuiz
+                set_func patternSub, sequenceQuiz
                 call loadQuiz
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbQuiz
             endif
         break
@@ -165,11 +165,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbRabbit
                 endif
-                set_func 0, sequenceBunnyHop
+                set_func patternSub, sequenceBunnyHop
                 call loadBunnyHop
-                set_func 3, preSequenceBunnyHop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceBunnyHop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbRabbit
             endif
         break
@@ -183,11 +183,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbRat
                 endif
-                set_func 0, sequenceRatRace
+                set_func patternSub, sequenceRatRace
                 call loadRatRace
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbRat
             endif
         break
@@ -201,11 +201,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbShuji
                 endif
-                set_func 0, sequencePowerCalligraphy
+                set_func patternSub, sequencePowerCalligraphy
                 call loadPowerCalligraphy
-                set_func 3, nop
-                set_func 2, loadPowerCalligraphyLate
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadPowerCalligraphyLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbShuji
             endif
         break
@@ -219,11 +219,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbSpaceDance
                 endif
-                set_func 0, sequenceSpaceDance
+                set_func patternSub, sequenceSpaceDance
                 call loadSpaceDance
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbSpaceDance
             endif
         break
@@ -237,11 +237,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbTap
                 endif
-                set_func 0, sequenceTap
+                set_func patternSub, sequenceTap
                 call loadTap
-                set_func 3, nop
-                set_func 2, loadTapLate
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadTapLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbTap
             endif
         break
@@ -255,11 +255,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbTono
                 endif
-                set_func 0, sequenceNinjaBodyguard
+                set_func patternSub, sequenceNinjaBodyguard
                 call loadNinjaBodyguard
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_agbTono
             endif
         break
@@ -273,11 +273,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrAirBoard
                 endif
-                set_func 0, sequenceAirboarders
+                set_func patternSub, sequenceAirboarders
                 call loadAirboarders
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrAirBoard
             endif
         break
@@ -291,11 +291,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBackbeat
                 endif
-                set_func 0, sequenceLockstep
+                set_func patternSub, sequenceLockstep
                 call loadLockstep
-                set_func 3, preSequenceLockstep
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceLockstep
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrBackbeat
             endif
         break
@@ -309,11 +309,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBlueBirds
                 endif
-                set_func 0, sequenceBlueBirds
+                set_func patternSub, sequenceBlueBirds
                 call loadBlueBirds
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrBlueBirds
             endif
         break
@@ -327,11 +327,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBoxShow
                 endif
-                set_func 0, sequenceDazzles
+                set_func patternSub, sequenceDazzles
                 call loadDazzles
-                set_func 3, nop
-                set_func 2, loadDazzlesLate
-                set_func 1, nop
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadDazzlesLate
+                set_func perfCheckSub, nop
                 0xB3<1> index, INDEX_ntrBoxShow
             endif
         break
@@ -345,11 +345,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrCameraMan
                 endif
-                set_func 0, sequenceFreezeFrame
+                set_func patternSub, sequenceFreezeFrame
                 call loadFreezeFrame
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkFreezeFrame
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkFreezeFrame
                 0xB3<1> index, INDEX_ntrCameraMan
             endif
         break
@@ -363,11 +363,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrChorus
                 endif
-                set_func 0, sequenceGleeClub
+                set_func patternSub, sequenceGleeClub
                 call loadGleeClub
-                set_func 3, nop
-                set_func 2, loadGleeClubLate
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadGleeClubLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrChorus
             endif
         break
@@ -381,11 +381,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrFrog
                 endif
-                set_func 0, sequenceFrogHop
+                set_func patternSub, sequenceFrogHop
                 call loadFrogHop
-                set_func 3, preSequenceFrogHop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceFrogHop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrFrog
             endif
         break
@@ -399,11 +399,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrIdol
                 endif
-                set_func 0, sequenceFanClub
+                set_func patternSub, sequenceFanClub
                 call loadFanClub
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrIdol
             endif
         break
@@ -417,11 +417,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrNinja
                 endif
-                set_func 0, sequenceDogNinja
+                set_func patternSub, sequenceDogNinja
                 call loadDogNinja
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrNinja
             endif
         break
@@ -435,11 +435,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrPingpong
                 endif
-                set_func 0, sequenceRhythmRally
+                set_func patternSub, sequenceRhythmRally
                 call loadRhythmRally
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrPingpong
             endif
         break
@@ -453,11 +453,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShooting
                 endif
-                set_func 0, sequenceShootEmUp
+                set_func patternSub, sequenceShootEmUp
                 call loadShootEmUp
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrShooting
             endif
         break
@@ -471,11 +471,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShortLive
                 endif
-                set_func 0, sequenceBigRockFinish
+                set_func patternSub, sequenceBigRockFinish
                 call loadBigRockFinish
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrShortLive
             endif
         break
@@ -489,11 +489,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShugyo
                 endif
-                set_func 0, sequenceMunchyMonk
+                set_func patternSub, sequenceMunchyMonk
                 call loadMunchyMonk
-                set_func 3, preSequenceMunchyMonk
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceMunchyMonk
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrShugyo
             endif
         break
@@ -507,11 +507,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlAssemble
                 endif
-                set_func 0, sequenceBtSWii
+                set_func patternSub, sequenceBtSWii
                 call loadBtSWii
-                set_func 3, preSequenceBtSWii
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceBtSWii
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlAssemble
             endif
         break
@@ -525,11 +525,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBird
                 endif
-                set_func 0, sequenceFlockstep
+                set_func patternSub, sequenceFlockstep
                 call loadFlockstep
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlBird
             endif
         break
@@ -543,11 +543,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBook
                 endif
-                set_func 0, sequenceCheerReaders
+                set_func patternSub, sequenceCheerReaders
                 call loadCheerReaders
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlBook
             endif
         break
@@ -561,11 +561,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlDate
                 endif
-                set_func 0, sequenceDoubleDate
+                set_func patternSub, sequenceDoubleDate
                 call loadDoubleDate
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlDate
             endif
         break
@@ -579,11 +579,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFishing
                 endif
-                set_func 0, sequenceCatchOfTheDay
+                set_func patternSub, sequenceCatchOfTheDay
                 call loadCatchOfTheDay
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlFishing
             endif
         break
@@ -597,11 +597,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFlea
                 endif
-                set_func 0, sequenceMicroRow
+                set_func patternSub, sequenceMicroRow
                 call loadMicroRow
-                set_func 3, preSequenceMicroRow
-                set_func 2, loadMicroRowLate
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceMicroRow
+                set_func lateLoaderSub, loadMicroRowLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlFlea
             endif
         break
@@ -615,11 +615,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFork
                 endif
-                set_func 0, sequenceForkLifter
+                set_func patternSub, sequenceForkLifter
                 call loadForkLifter
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlFork
             endif
         break
@@ -633,11 +633,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlGolf
                 endif
-                set_func 0, sequenceGolf
+                set_func patternSub, sequenceGolf
                 call loadGolf
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlGolf
             endif
         break
@@ -651,11 +651,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlGoma
                 endif
-                set_func 0, sequenceFlipperFlop
+                set_func patternSub, sequenceFlipperFlop
                 call loadFlipperFlop
-                set_func 3, preSequenceFlipperFlop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceFlipperFlop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlGoma
             endif
         break
@@ -669,11 +669,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlInterview
                 endif
-                set_func 0, sequenceRingSide
+                set_func patternSub, sequenceRingSide
                 call loadRingSide
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlInterview
             endif
         break
@@ -687,11 +687,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlKarate
                 endif
-                set_func 0, sequenceKarate
+                set_func patternSub, sequenceKarate
                 call loadKarate
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlKarate
             endif
         break
@@ -705,11 +705,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlManju
                 endif
-                set_func 0, sequenceWorkingDough
+                set_func patternSub, sequenceWorkingDough
                 call loadWorkingDough
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlManju
             endif
         break
@@ -723,11 +723,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRocket
                 endif
-                set_func 0, sequenceLaunchParty
+                set_func patternSub, sequenceLaunchParty
                 call loadLaunchParty
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlRocket
             endif
         break
@@ -741,11 +741,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRotation
                 endif
-                set_func 0, sequenceBoardMeeting
+                set_func patternSub, sequenceBoardMeeting
                 call loadBoardMeeting
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlRotation
             endif
         break
@@ -759,11 +759,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRecieve
                 endif
-                set_func 0, sequenceBossaNova
+                set_func patternSub, sequenceBossaNova
                 call loadBossaNova
-                set_func 3, presequenceBossaNova
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, presequenceBossaNova
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlRecieve
             endif
         break
@@ -777,11 +777,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBadminton
                 endif
-                set_func 0, sequenceAirRally
+                set_func patternSub, sequenceAirRally
                 call loadAirRally
-                set_func 3, presequenceAirRally
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, presequenceAirRally
+                set_func lateLoaderSub, loadAirRallyLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlBadminton
             endif
         break
@@ -795,11 +795,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlMuscle
                 endif
-                set_func 0, sequenceFigureFighter
+                set_func patternSub, sequenceFigureFighter
                 call loadFigureFighter
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlMuscle
             endif
         break
@@ -813,11 +813,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSamurai
                 endif
-                set_func 0, sequenceSSWii
+                set_func patternSub, sequenceSSWii
                 call loadSSWii
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlSamurai
             endif
         break
@@ -831,11 +831,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSeesaw
                 endif
-                set_func 0, sequenceSeeSaw
+                set_func patternSub, sequenceSeeSaw
                 call loadSeeSaw
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlSeesaw
             endif
         break
@@ -849,11 +849,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSort
                 endif
-                set_func 0, sequencePackingPests
+                set_func patternSub, sequencePackingPests
                 call loadPackingPests
-                set_func 3, presequencePackingPests
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, presequencePackingPests
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlSort
             endif
         break
@@ -867,11 +867,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrBear
                 endif
-                set_func 0, sequenceBlueBear
+                set_func patternSub, sequenceBlueBear
                 call loadBlueBear
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrBear
             endif
         break
@@ -885,11 +885,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrBlanco
                 endif
-                set_func 0, sequenceAnimalAcrobat
+                set_func patternSub, sequenceAnimalAcrobat
                 call loadAnimalAcrobat
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrBlanco
             endif
         break
@@ -903,11 +903,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrChameleon
                 endif
-                set_func 0, sequenceTongueLashing
+                set_func patternSub, sequenceTongueLashing
                 call loadTongueLashing
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrChameleon
             endif
         break
@@ -921,11 +921,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrDotSamurai
                 endif
-                set_func 0, sequenceSuperSamuraiSlice
+                set_func patternSub, sequenceSuperSamuraiSlice
                 call loadSuperSamuraiSlice
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrDotSamurai
             endif
         break
@@ -939,11 +939,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrFruitBasket
                 endif
-                set_func 0, sequenceFruitBasket
+                set_func patternSub, sequenceFruitBasket
                 call loadFruitBasket
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrFruitBasket
             endif
         break
@@ -957,11 +957,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrPillow
                 endif
-                set_func 0, sequencePajama
+                set_func patternSub, sequencePajama
                 call loadPajama
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrPillow
             endif
         break
@@ -975,11 +975,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrStep
                 endif
-                set_func 0, sequenceCatchyTune
+                set_func patternSub, sequenceCatchyTune
                 call loadCatchyTune
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrStep
             endif
         break
@@ -993,11 +993,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrSumou
                 endif
-                set_func 0, sequenceSumoBros
+                set_func patternSub, sequenceSumoBros
                 call loadSumoBros
-                set_func 3, preSequenceSumoBros
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceSumoBros
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrSumou
             endif
         break
@@ -1011,11 +1011,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrTango
                 endif
-                set_func 0, sequenceTangotronic
+                set_func patternSub, sequenceTangotronic
                 call loadTangotronic
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrTango
             endif
         break
@@ -1029,11 +1029,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrTeppan
                 endif
-                set_func 0, sequenceKitties
+                set_func patternSub, sequenceKitties
                 call loadKitties
-                set_func 3, nop
-                set_func 2, loadKittiesLate
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadKittiesLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrTeppan
             endif
         break
@@ -1047,11 +1047,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrWoodcat
                 endif
-                set_func 0, sequenceLumbearjack
+                set_func patternSub, sequenceLumbearjack
                 call loadLumbearjack
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ctrWoodcat
             endif
         break
@@ -1065,11 +1065,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbVirus
                 endif
-                set_func 0, sequenceSickBeats
+                set_func patternSub, sequenceSickBeats
                 call loadSickBeats
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkSickBeats
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkSickBeats
                 0xB3<1> index, INDEX_agbVirus
             endif
         break
@@ -1083,11 +1083,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrCoinToss
                 endif
-                set_func 0, sequenceCoinToss
+                set_func patternSub, sequenceCoinToss
                 call loadCoinToss
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkCoinToss
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkCoinToss
                 0xB3<1> index, INDEX_ntrCoinToss
             endif
         break
@@ -1101,11 +1101,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSword
                 endif
-                set_func 0, sequenceClapTrap
+                set_func patternSub, sequenceClapTrap
                 call loadClapTrap
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlSword
             endif
         break
@@ -1119,11 +1119,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_tutorial
                 endif
-                set_func 0, sequenceTutorial
+                set_func patternSub, sequenceTutorial
                 call loadTutorial
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_tutorial
             endif
         break
@@ -1137,11 +1137,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlMonkeyWatch
                 endif
-                set_func 0, sequenceMonkeyWatch
+                set_func patternSub, sequenceMonkeyWatch
                 call loadMonkeyWatch
-                set_func 3, preSequenceMonkeyWatch
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceMonkeyWatch
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlMonkeyWatch
             endif
         break
@@ -1155,11 +1155,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRap
                 endif
-                set_func 0, sequenceLoveRap
+                set_func patternSub, sequenceLoveRap
                 call loadLoveRap
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlRap
             endif
         break
@@ -1173,11 +1173,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrRobot
                 endif
-                set_func 0, sequenceFillbots
+                set_func patternSub, sequenceFillbots
                 call loadFillbots
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrRobot
             endif
         break
@@ -1191,11 +1191,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBatting
                 endif
-                set_func 0, sequenceExhibitionMatch
+                set_func patternSub, sequenceExhibitionMatch
                 call loadExhibitionMatch
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlBatting
             endif
         break
@@ -1209,11 +1209,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRobot
                 endif
-                set_func 0, sequenceScrewBotFactory
+                set_func patternSub, sequenceScrewBotFactory
                 call loadScrewbotFactory
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlRobot
             endif
         break
@@ -1230,11 +1230,11 @@ loadNextGame:
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlBasket
                     endif
-                    set_func 0, sequenceBasketGirls
+                    set_func patternSub, sequenceBasketGirls
                     call loadBasketGirls
-                    set_func 3, presequenceBasketGirls
-                    set_func 2, loadBasketGirlsLate
-                    set_func 1, checkA2
+                    set_func presequenceSub, presequenceBasketGirls
+                    set_func lateLoaderSub, loadBasketGirlsLate
+                    set_func perfCheckSub, checkA2
                     0xB3<1> index, INDEX_rvlBasket
                 endif
             endif
@@ -1249,10 +1249,10 @@ loadNextGame:
         //             0xB3 debug_start, 1337
         //             0xB3 debug_current_index, INDEX_ntrAssembly
         //         endif
-        //         set_func 0, sequenceBtSDS
+        //         set_func patternSub, sequenceBtSDS
         //         call loadBtSDS
-        //         set_func 3, nop
-        //         set_func 2, loadBtSDSlate
+        //         set_func presequenceSub, nop
+        //         set_func lateLoaderSub, loadBtSDSlate
         //     endif
         // break
         case INDEX_rvlComedians
@@ -1268,10 +1268,10 @@ loadNextGame:
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlComedians
                     endif
-                    set_func 0, sequenceManzai
+                    set_func patternSub, sequenceManzai
                     call loadManzai //help
-                    set_func 3, loadManzaiLate
-                    set_func 2, nop
+                    set_func presequenceSub, loadManzaiLate
+                    set_func lateLoaderSub, nop
                     0xB3<1> index, INDEX_rvlComedians
                 endif
             endif
@@ -1286,11 +1286,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_tpaFrontier
                 endif
-                set_func 0, sequenceFinned
+                set_func patternSub, sequenceFinned
                 call loadFinned
-                set_func 3, preSequenceFinned
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceFinned
+                set_func lateLoaderSub, nop
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_tpaFrontier
             endif
         break
@@ -1307,11 +1307,11 @@ loadNextGame:
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_skiMeat
                     endif
-                    set_func 0, sequenceMeatGrinder
+                    set_func patternSub, sequenceMeatGrinder
                     call loadMeatGrinder
-                    set_func 3, nop
-                    set_func 2, loadMeatGrinderLate
-                    set_func 1, checkA2
+                    set_func presequenceSub, nop
+                    set_func lateLoaderSub, loadMeatGrinderLate
+                    set_func perfCheckSub, checkA2
                     0xB3<1> index, INDEX_skiMeat
                 endif
             endif
@@ -1326,11 +1326,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_swfSoumen
                 endif
-                set_func 0, sequenceSoumen
+                set_func patternSub, sequenceSoumen
                 call loadSoumen
-                set_func 3, nop
-                set_func 2, loadSoumenLate
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadSoumenLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_swfSoumen
             endif
         break
@@ -1347,11 +1347,11 @@ loadNextGame:
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_agbMetro
                     endif
-                    set_func 0, sequenceUpbeat
+                    set_func patternSub, sequenceUpbeat
                     call loadUpbeat
-                    set_func 3, nop
-                    set_func 2, loadUpbeatLate
-                    set_func 1, checkA2
+                    set_func presequenceSub, nop
+                    set_func lateLoaderSub, loadUpbeatLate
+                    set_func perfCheckSub, checkA2
                     0xB3<1> index, INDEX_agbMetro
                 endif
             endif
@@ -1366,11 +1366,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlTap
                 endif
-                set_func 0, sequenceTapTroupe
+                set_func patternSub, sequenceTapTroupe
                 call loadTapTroupe
-                set_func 3, preSequenceTapTroupe
-                set_func 2, loadTapTroupeLate
-                set_func 1, checkA2
+                set_func presequenceSub, preSequenceTapTroupe
+                set_func lateLoaderSub, loadTapTroupeLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_rvlTap
             endif
         break
@@ -1384,11 +1384,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrSynchro
                 endif
-                set_func 0, sequenceSplashdown
+                set_func patternSub, sequenceSplashdown
                 call loadSplashdown
-                set_func 3, nop
-                set_func 2, loadSplashdownLate
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadSplashdownLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_ntrSynchro
             endif
         break
@@ -1402,11 +1402,11 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_bnbTweet
                 endif
-                set_func 0, sequenceMeetAndTweet
+                set_func patternSub, sequenceMeetAndTweet
                 call loadMeetAndTweet
-                set_func 3, nop
-                set_func 2, nop
-                set_func 1, checkA2
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, loadMeetAndTweetLate
+                set_func perfCheckSub, checkA2
                 0xB3<1> index, INDEX_bnbTweet
             endif
         break
@@ -1423,11 +1423,11 @@ loadNextGame:
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_7bgDoctor
                     endif
-                    set_func 0, sequenceRhythmDoctor
+                    set_func patternSub, sequenceRhythmDoctor
                     call loadRhythmDoctor
-                    set_func 3, presequenceRhythmDoctor
-                    set_func 2, loadRhythmDoctorLate
-                    set_func 1, checkA2
+                    set_func presequenceSub, presequenceRhythmDoctor
+                    set_func lateLoaderSub, loadRhythmDoctorLate
+                    set_func perfCheckSub, checkA2
                     0xB3<1> index, INDEX_7bgDoctor
                 endif
             endif
@@ -1442,10 +1442,10 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbFireworks
                 endif
-                set_func 0, sequenceFireworks
+                set_func patternSub, sequenceFireworks
                 call loadFireworks //help
-                set_func 3, nop
-                set_func 2, nop
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
                 0xB3<1> index, INDEX_agbFireworks
             endif
         break
@@ -1459,10 +1459,10 @@ loadNextGame:
                     0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlDonk
                 endif
-                set_func 0, sequenceDonk
+                set_func patternSub, sequenceDonk
                 call loadDonk
-                set_func 3, presequenceDonk
-                set_func 2, nop
+                set_func presequenceSub, presequenceDonk
+                set_func lateLoaderSub, nop
                 0xB3<1> index, INDEX_rvlDonk
             endif
         break
@@ -1479,10 +1479,10 @@ loadNextGame:
                         0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlTambourine
                     endif
-                    set_func 0, sequenceTambourine
+                    set_func patternSub, sequenceTambourine
                     call loadTambourine
-                    set_func 3, nop
-                    set_func 2, loadTambourineLate
+                    set_func presequenceSub, nop
+                    set_func lateLoaderSub, loadTambourineLate
                     0xB3<1> index, INDEX_rvlDonk
                 endif
             endif
@@ -1507,12 +1507,12 @@ playNextGame:
     label 0x1009
     0xB2 lives
     if_neq 0
-        get_async 0, 0
+        get_async patternSub, 0
         rest 0x18
         0x58 0x100, 0x30
         0xB2<1> lives_enabled
         if 1
-            get_async 1, 0
+            get_async perfCheckSub, 0
         endif
         rest 0x18
         async_call distract
@@ -1520,9 +1520,9 @@ playNextGame:
         call loadNextGame
         rest 0x30*5-0xC
         rest 0x30*3
-        get_async 3, 0x18
+        get_async presequenceSub, 0x18
         rest 0x30*5 - 0x18
-        get_async 2, 0
+        get_async lateLoaderSub, 0
         rest 0x18
         0xB2 lives
         if_neq 0
@@ -1542,20 +1542,20 @@ playNextGameGate:
     0xB2 lives
     if_neq 0
         0xB3 score_add, 1
-        get_async 0, 0
+        get_async patternSub, 0
         rest 0x18
         0x201
         if_geq 0x103
-            get_async 1, 0
+            get_async perfCheckSub, 0
         endif
         rest 0x18
         rest 0x30*2
         call loadNextGame
         rest 0x30*5-0xC
         rest 0x30*3
-        get_async 3, 0x18
+        get_async presequenceSub, 0x18
         rest 0x30*5 - 0x18
-        get_async 2, 0
+        get_async lateLoaderSub, 0
         rest 0xC
         call updateScoreGate
         rest 0xC

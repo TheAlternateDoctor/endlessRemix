@@ -18,3 +18,9 @@ lives_enabled = 2 // Self explanatory.
 index = 3 // Index currently loaded.
 sfx_plus = 4 // How many more SFX are loaded for slot 1. Used in the loader.
 sfx_plus_2 = 5 // How many more SFX are loaded for slot 2. Used in the loader.
+
+// func slots
+patternSub = 0
+perfCheckSub = 1
+lateLoaderSub = 2
+presequenceSub = 3

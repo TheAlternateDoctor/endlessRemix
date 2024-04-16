@@ -343,9 +343,9 @@ input 1
 call loadNextGame
 rest 0x30 *8-0xC
 rest 0x30 *8
-get_async 3, 0x60
+get_async presequenceSub, 0x60
 rest 0x30 * 6
-	get_async 2, 0
+	get_async lateLoaderSub, 0
 rest 0x18
 0xB2 lives
 if_neq 0
