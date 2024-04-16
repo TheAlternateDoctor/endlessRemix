@@ -40,6 +40,9 @@ jobs:
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESSGate1.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESSGate2.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESSGate3.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
@@ -79,6 +82,9 @@ jobs:
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESSGate1.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESSGate2.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESSGate3.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
@@ -112,6 +118,9 @@ jobs:
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESSGate1.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESSGate2.tickflow
+          sed -i s/loadGamesLite.tickflow/loadGames.tickflow/ tickflow/remixENDLESSGate3.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
           
@@ -119,6 +128,9 @@ jobs:
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESS.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESSGate1.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESSGate2.tickflow
+          sed -i s/loadGames.tickflow/loadGamesLite.tickflow/ tickflow/remixENDLESSGate3.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
           java -jar tickompiler.jar p bin/ base.bin out/C00-lite.bin
 
