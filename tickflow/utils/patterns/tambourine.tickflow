@@ -14,7 +14,7 @@ sequenceTambourine:
     random 3
     switch
     case 0
-        0xB3 score_add, 9
+        0xB3 score_add, 8
         async_call tambourine1
         break
     case 1
@@ -22,7 +22,7 @@ sequenceTambourine:
         async_call tambourine2
         break
     case 2
-        0xB3 score_add, 9
+        0xB3 score_add, 8
         async_call tambourine3
         break
     endswitch
@@ -31,16 +31,14 @@ stop
 tambourine1:
 async_call tambourineCheck
 async_call tambourineShake
+rest 0x30
+async_call tambourineShake
 rest 0x18
 async_call tambourineShake
 rest 0x18
 async_call tambourineTap
-rest 0x24
+rest 0x30
 async_call tambourineShake
-rest 0x18
-async_call tambourineShake
-rest 0xC
-async_call tambourineTap
 rest 0x30
 async_call tambourineTap
 rest 0x30
@@ -75,19 +73,17 @@ async_call tambourineCheck
 async_call tambourineShake
 rest 0x30
 async_call tambourineShake
-rest 0x18
+rest 0x30
+async_call tambourineTap
+rest 0x30
+async_call tambourineTap
+rest 0x30
 async_call tambourineShake
-rest 0x18
-async_call tambourineShake
-rest 0x30
-async_call tambourineTap
 rest 0x30
 async_call tambourineTap
 rest 0x18
 async_call tambourineTap
 rest 0x18
-async_call tambourineTap
-rest 0x30
 async_call tambourineTap
 rest 0x30
 async_call tambourineSwitch

@@ -12,26 +12,34 @@ sequenceFireworks:
     rest 0xC
     fade<1> 1,1,1
     input 1
-    random 2
+    random 3
     switch
     case 0
-        0xB3 score_add, 17
+        0xB3 score_add, 5
         async_call fireworks1
         break
-    default
-        0xB3 score_add, 17
+    case 1
+        0xB3 score_add, 5
         async_call fireworks2
+        break
+    case 2
+        0xB3 score_add, 5
+        async_call fireworks3
         break
     endswitch
 stop
 
 fireworks1:
+    async_call SpiritSparklerL
     rest 0x90
     async_call SpecialFireworkStar
     rest 0x30
     async_call fireworksBomb
     rest 0x90
     async_call SpecialFireworkSmile
+    rest 0xC0
+    rest 0x60
+    async_call SpiritSparklerR
 stop
 
 fireworks2:
@@ -42,6 +50,20 @@ fireworks2:
     rest 0x60
     async_call RhythmRocketR
     async_call fireworksBomb
-    rest 0x60
+    rest 0x30 * 5
     async_call SpiritSparklerL
+stop
+
+fireworks3:
+    async_call RhythmRocketC, -0x30
+    rest 0x90
+    async_call RhythmRocketL
+    rest 0x30
+    async_call SpiritSparklerL
+    rest 0x90
+    async_call RhythmRocketR
+    rest 0xC0
+    async_call RhythmRocketC
+    async_call fireworksBomb, 0x30
+    async_call SpiritSparklerR, 0x60
 stop
