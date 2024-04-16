@@ -1,0 +1,233 @@
+//Endless
+playMeetAndTweetPracticePattern:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceMeetAndTweetPractice
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadBasketGirls
+        rest 0x24C
+        async_call loadBasketGirlsLate
+        async_call loadBasketGirlsLate2
+        rest 0x18
+        0xB2 lives
+        if_neq 0
+            fade 1,1,1
+        endif
+        0xB2<1> is_debug
+        if 0
+            call updateScore
+        endif
+    endif
+return
+
+playBasketInterlude:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceBasketInterlude
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadRhythmDoctor
+        rest 0x24C
+        async_call loadRhythmDoctorLate
+        async_call loadRhythmDoctorVoices
+        async_call nurseregularvoice
+        rest 0x18
+        0xB2 lives
+        if_neq 0
+            fade 1,1,1
+        endif
+        0xB2<1> is_debug
+        if 0
+            call updateScore
+        endif
+    endif
+return
+
+playRhythmDoctorPracticePattern:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceRhythmDoctorPractice
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadUpbeat
+        rest 0x24C
+        async_call loadUpbeatLate
+        rest 0x18
+        0xB2 lives
+        if_neq 0
+            fade 1,1,1
+        endif
+        0xB2<1> is_debug
+        if 0
+            call updateScore
+        endif
+    endif
+return
+
+playMrUpbeat:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceUpbeat
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadNextGame
+        rest 0x30*5-0xC
+        rest 0x30*3
+        get_async presequenceSub, 0x18
+        rest 0x30*5 - 0x18
+        get_async lateLoaderSub, 0
+        rest 0x18
+        0xB2 lives
+        if_neq 0
+            fade 1,1,1
+        endif
+        0xB2<1> is_debug
+        if 0
+            call updateScore
+        endif
+    endif
+return
+
+//Gates
+playMeetAndTweetPracticePatternGate:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceMeetAndTweetPractice
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadBasketGirls
+        rest 0x24C
+        async_call loadBasketGirlsLate
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
+        0xB2 lives
+        if_neq 0
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
+        endif
+    endif
+return
+
+playBasketInterludeGate:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceBasketInterlude
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadRhythmDoctor
+        rest 0x24C
+        async_call loadRhythmDoctorLate
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
+        async_call nurseregularvoice, -0x18
+        0xB2 lives
+        if_neq 0
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
+        endif
+    endif
+return
+
+playRhythmDoctorPracticePatternGate:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        async_call sequenceRhythmDoctorPractice
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadUpbeat
+        async_call loadRhythmDoctorVoices
+        rest 0x24C
+        async_call loadUpbeatLate
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
+        0xB2 lives
+        if_neq 0
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
+        endif
+    endif
+return
+
+playMrUpbeatGate:
+    set_cat 0
+    0xB2 lives
+    if_neq 0
+        0xB3 score_add, 1
+        async_call sequenceUpbeat
+        rest 0x18
+        0x58 0x100, 0x30
+        0xB2<1> lives_enabled
+        if 1
+            async_call checkA2
+        endif
+        rest 0x78
+        call loadNextGame
+        rest 0x30*5-0xC
+        rest 0x30*3
+        get_async presequenceSub, 0x18
+        rest 0x30*5 - 0x18
+        get_async lateLoaderSub, 0
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
+        0xB2 lives
+        if_neq 0
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
+        endif
+    endif
+return

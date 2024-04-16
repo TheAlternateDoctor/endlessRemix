@@ -83,3 +83,35 @@ rhythmDoctor2:
     async_call regularsvtnicoleonly
     rest 0x60
 stop
+
+sequenceRhythmDoctorPractice:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine 0x3C
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, 0x3C  
+    input 1
+    fade<1> 1,1,1
+    async_call rdBeatAnim
+    rest 0x30
+    async_call rdBeatAnim
+    rest 0x30
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+	play_sfx 0x1000FF4 //nurse stop
+    async_call regularsvtnicoleonly
+    rest 0x60
+stop

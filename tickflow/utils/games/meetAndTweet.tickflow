@@ -304,6 +304,14 @@ rest 0x30	// 1.0 beats
 0x106 "bop_short4", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
 stop
 
+tweetBopShortRemix:
+0x106 "bop_short2", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30	// 1.0 beats
+0x106 "bop_short3", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+rest 0x30	// 1.0 beats
+0x106 "bop_short4", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+stop
+
 tweetBopLong:	// Same as the above, but with the long cue.
 0x106 "bop_long1", -1, 0x18, 0, 1, 0, 0, 0x100, 0, 0, 0x100
 rest 0x18	// 0.5 beats

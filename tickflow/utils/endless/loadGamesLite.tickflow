@@ -2395,6 +2395,7 @@ endif
 0x2B 0x1A, 3
 return
 
+loadMeetAndTweetVanilla:
 loadMeetAndTweet:
 0xB2<1> cellanim_slot
 if 1
@@ -2468,7 +2469,7 @@ if 1
 else
     set_sfx 0xB, u"GROUP_RDVOICES"
     set_sfx 0xC, u"GROUP_RDVOICES2"
-    0xB3<1> sfx_plus, 2
+    0xB3<1> sfx_plus_2, 2
 endif
 stop
 loadRhythmDoctorLate:

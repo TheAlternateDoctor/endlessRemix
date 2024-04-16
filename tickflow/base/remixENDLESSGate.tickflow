@@ -218,9 +218,8 @@ input 1
 call loadNextGame
 rest 0x30 *8-0xC
 rest 0x30 *8
-get_async presequenceSub, 0x60
 rest 0x30 * 6
-	get_async lateLoaderSub, 0
+async_call loadMeetAndTweetLate
 rest 0x18
 0xB2 lives
 if_neq 0
@@ -233,6 +232,10 @@ endif
 call updateScoreGate
 async_call speedup
 async_call lifeScoreCounter
+call playMeetAndTweetPracticePatternGate
+call playBasketInterludeGate
+call playRhythmDoctorPracticePatternGate
+call playMrUpbeatGate
 call playNextGameGate
 stop 
 

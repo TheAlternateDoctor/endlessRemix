@@ -131,6 +131,7 @@
 #include utils/games/fireworks.tickflow
 
 #include utils/utils.tickflow
+#include utils/extraLoops.tickflow
 
 // #index 0x5E
 #index 0x1A
@@ -340,12 +341,11 @@ if 1
 endif
 rest 0x30
 input 1
-call loadNextGame
+call loadMeetAndTweetVanilla
 rest 0x30 *8-0xC
 rest 0x30 *8
-get_async presequenceSub, 0x60
 rest 0x30 * 6
-	get_async lateLoaderSub, 0
+async_call loadMeetAndTweetLate
 rest 0x18
 0xB2 lives
 if_neq 0
@@ -359,6 +359,10 @@ endif
 call updateScore
 async_call speedup
 async_call lifeScoreCounter
+call playMeetAndTweetPracticePattern
+call playBasketInterlude
+call playRhythmDoctorPracticePattern
+call playMrUpbeat
 call playNextGame
 stop 
 
