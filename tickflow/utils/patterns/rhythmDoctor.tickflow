@@ -4,9 +4,10 @@ presequenceRhythmDoctor:
 async_call loadRhythmDoctorVoices
 rest 0x18
 random 2
+    set_condvar 1
 switch
 case 1
-    async_call ianlongvoice, -0x18
+    async_call ianlongvoiceremix
     0xB3 game_state, 1
     break
 default
@@ -69,7 +70,6 @@ rhythmDoctor2:
     async_call combinationsvtcole
     rest 0xC0
     async_call combinationsvtcole
-    rest 0xC0
     rest 0x30
 	play_sfx 0x1000FF9 //ian stop
     rest 0x90
