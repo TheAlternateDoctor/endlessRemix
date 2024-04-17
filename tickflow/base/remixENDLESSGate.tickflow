@@ -215,7 +215,7 @@ async_call checkA2
 async_call manzaiSetup
 rest 0x30
 input 1
-call loadNextGame
+call loadMeetAndTweetVanilla
 rest 0x30 *8-0xC
 rest 0x30 *8
 rest 0x30 * 6

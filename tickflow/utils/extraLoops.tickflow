@@ -129,6 +129,7 @@ playMeetAndTweetPracticePatternGate:
         call loadBasketGirls
         rest 0x24C
         async_call loadBasketGirlsLate
+        async_call loadBasketGirlsLate2
         rest 0xC
         call updateScoreGate
         rest 0xC
@@ -157,6 +158,8 @@ playBasketInterludeGate:
         call loadRhythmDoctor
         rest 0x24C
         async_call loadRhythmDoctorLate
+        async_call loadRhythmDoctorVoices
+        async_call nurseregularvoice
         rest 0xC
         call updateScoreGate
         rest 0xC
@@ -184,7 +187,6 @@ playRhythmDoctorPracticePatternGate:
         endif
         rest 0x78
         call loadUpbeat
-        async_call loadRhythmDoctorVoices
         rest 0x24C
         async_call loadUpbeatLate
         rest 0xC
