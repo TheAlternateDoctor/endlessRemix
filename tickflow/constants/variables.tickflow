@@ -9,7 +9,8 @@ perf_lock = 6 // Locks the perf check for 2 beats when a player misses
 perf_miss = 7 // Used when the player has missed in the pattern, for score calculation
 debug_start = 8 // Index to load at the start when Debug mode is on
 debug_current_index = 0 // Duplicate? Used to show the currently playing index
-manzai_step = 9 // Step Manzai is currently at. Unused?
+chosen_speed = 9 // Speed chosen by the user (0 base, 1 to 4 sped up w/ 4 max speed)
+
 
 // <1> vars
 cellanim_slot = 0 // Slot to load next time. Used in the loader

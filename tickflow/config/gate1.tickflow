@@ -2,8 +2,7 @@
 startSpeed=0x100
 maxSpeed=0x100
 maxTurns=10
+manzaiSpeed=0
 showExplainMessage:
     0x65<1> 0, "gate1_explain_score_endless"
 return
-manzaiSetup:
-stop

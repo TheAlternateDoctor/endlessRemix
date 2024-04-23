@@ -2,17 +2,7 @@
 startSpeed = 0x150
 maxSpeed = 0x200
 maxTurns = 20
+manzaiSpeed=0x50
 showExplainMessage:
     0x65<1> 0, "gate3_explain_score_endless"
 return
-manzaiSetup:
-    set_countdown 0x50
-    label 0x7009
-	play_sfx 0x10011C7
-    dec_countdown
-    rest 1
-    get_countdown
-    if_neq 0
-        goto 0x7009
-    endif
-stop

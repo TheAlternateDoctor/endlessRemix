@@ -1664,7 +1664,7 @@ speedup:
     rest 0x30*16
     speed_relative 0x101, startSpeed, maxSpeed
     async_call manzaiSpeedup
-    0xB3 speed, 0x104
+    0xB4 speed, 4
     rest 0x30*16
     label 0x59EE
         0xB2 speed
@@ -1761,6 +1761,29 @@ if 1
     if 1
         play_sfx 0x10002C1
         0xB3<1> lives_enabled, 0
+    endif
+endif
+0xB2<1> chosen_speed
+if 0
+    0x200 5
+    if 1
+        0x40<2> 0x1000291, 0xFF, 0x140
+        0xB3 chosen_speed, 1 //Slow speed
+    endif
+    0x200 7
+    if 1
+        0x40<2> 0x1000291, 0xFF, 0x180
+        0xB3 chosen_speed, 2 //2nd Slowest speed
+    endif
+    0x200 4
+    if 1
+        0x40<2> 0x1000291, 0xFF, 0x1C0
+        0xB3 chosen_speed, 3 //2nd fastest speed
+    endif
+    0x200 6
+    if 1
+        0x40<2> 0x1000291, 0xFF, 0x200
+        0xB3 chosen_speed, 4 //Fastest speed
     endif
 endif
 rest 2

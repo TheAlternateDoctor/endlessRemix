@@ -290,7 +290,6 @@ input 0
 0xB3<1> sfx_plus,0 //Slot 7 has SFX
 0xB3<1> sfx_plus_2,1 //Slot 7 has SFX
 0xB3 score_add, 5 //Starting score
-0xB3 speed, startSpeed //Starting speed
 0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
 0xB3<1> index, INDEX_rvlBasket //Starting index
 
@@ -365,6 +364,51 @@ call playRhythmDoctorPracticePattern
 call playMrUpbeat
 call playNextGame
 stop 
+
+setSpeed:
+    0xB2 chosen_speed
+    switch
+    case 0
+        speed startSpeed // Base speed
+        0xB3 speed startSpeed
+        break
+    case 1
+        0x40<2> 0x1000291, 0xFF, 0x140
+        speed 0x140 //Slow speed
+        0xB3 speed 0x140
+        set_countdown 0x140
+        break
+    case 2
+        0x40<2> 0x1000291, 0xFF, 0x180
+        speed 0x180 //2nd Slowest speed
+        0xB3 speed 0x180
+        set_countdown 0x180
+        break
+    case 3
+        0x40<2> 0x1000291, 0xFF, 0x1C0
+        speed 0x1C0 //2nd fastest speed
+        0xB3 speed 0x1C0
+        set_countdown 0x1C0
+        break
+    case 4
+        0x40<2> 0x1000291, 0xFF, 0x200
+        speed 0x200 //Fastest speed
+        0xB3 speed 0x200
+        set_countdown 0x200
+        break
+    endswitch
+	call manzaiSetupStart
+stop
+manzaiSetupStart:
+    label 0x7009
+	play_sfx 0x10011C7
+    dec_countdown
+    rest 1
+    get_countdown
+    if_neq 0
+        goto 0x7009
+    endif
+return
 
 
 
@@ -446,7 +490,7 @@ if 1
 endif 
 0x55 1
 0x58 0x120, 1
-speed startSpeed
+async_call setSpeed
 return 
 
 //-----------------------------------------------------------------------------------------------------------------------------------
