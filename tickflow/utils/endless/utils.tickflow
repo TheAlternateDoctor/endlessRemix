@@ -121,7 +121,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceMarcher
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                set_func winSequenceSub, winmarcher
+                set_func winSequenceSub, winMarcher
                 0xB3 index, INDEX_agbMarcher
             endif
         break
