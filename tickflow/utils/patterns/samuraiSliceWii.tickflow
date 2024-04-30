@@ -1,6 +1,10 @@
 // Samurai's beat anims starts automatically.
 // Starts without effects like the rain or petals.
 
+winSSWii:
+0x108<1> 0x30
+stop
+
 sequenceSSWii:
 	set_cat 0
     rest 0x8

@@ -1,6 +1,23 @@
 // Please keep the number your pattern is
 // in the byte patterns!
 
+winSeeSaw:
+    rest 0x18	// 0.5 beats
+    0x100<2> 0, 1
+    rest 0x30	// 1.0 beats
+    0x100<2> 0, 1
+    rest 0x30	// 1.0 beats
+    0x100<2> 0, 1
+    0x100<2> 1, 1
+    rest 0x30	// 1.0 beats
+    0x100<2> 0, 2
+    0x100<2> 1, 2
+    rest 0x90
+    0x105 0, 0xFF, 0x48
+    rest 0x30	// 1.0 beats
+    0x103 
+stop
+
 sequenceSeeSaw:
 	set_cat 0
     rest 0x8

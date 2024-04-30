@@ -1,5 +1,10 @@
 // Nothing to report.
 
+winForkLifter:
+0x103 4
+play_sfx 0x10006B8
+stop
+
 sequenceForkLifter:
 	set_cat 0
     rest 0x8

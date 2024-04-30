@@ -1,6 +1,10 @@
 // Automatic Beat anims.
 // Starts 1/4th of a beat early.
 
+winCatchyTune:
+0x103
+stop
+
 sequenceCatchyTune:
 	set_cat 0
     rest 0x8

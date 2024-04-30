@@ -7,6 +7,10 @@
 // No automatic beat anims.
 // Don't forget to add your own!
 
+winKarateMan:
+0x107 7, 0x190
+stop
+
 sequenceKarate:
 	set_cat 0
     rest 0x8

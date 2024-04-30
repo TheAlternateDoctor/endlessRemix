@@ -3,6 +3,10 @@
 // 0 is normal, 
 // 2+ has a pointing cellanim.
 
+winMarcher:
+0x109
+stop
+
 preSequenceMarcher:
 0x2B<1> 0x5
 if_gt 1

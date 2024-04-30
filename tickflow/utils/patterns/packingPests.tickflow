@@ -1,5 +1,10 @@
 // Has the ding sound. Feel free to use it!
 
+winPackingPests:
+0x104<4> 1
+0x104<3> 0x60
+stop
+
 presequencePackingPests:
 rest 0x30
 play_sfx 0x100048F

@@ -1,5 +1,13 @@
 // Nothing to report.
 
+winShootEmUp:
+    0x103 
+    rest 0x30	// 1.0 beats
+    0x104 
+    rest 0x30
+    0x104<3> 7
+stop
+
 sequenceShootEmUp:
 	set_cat 0
     rest 0x8

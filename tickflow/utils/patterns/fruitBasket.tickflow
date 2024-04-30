@@ -1,5 +1,9 @@
 // Automatically starts the beat anims of the background objects.
 
+winFruitBasket:
+0x103<1>
+stop
+
 sequenceFruitBasket:
 	set_cat 0
     rest 0x8

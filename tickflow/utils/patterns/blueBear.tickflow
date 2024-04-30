@@ -1,5 +1,9 @@
 // You really left her hanging this morning you know...
 
+winBlueBear:
+0x103 0, "never_ending_smile"
+stop
+
 sequenceBlueBear:
 	set_cat 0
     rest 0x8

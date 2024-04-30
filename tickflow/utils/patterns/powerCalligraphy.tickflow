@@ -1,5 +1,9 @@
 // Nothing to report.
 
+winPowerCalligraphy:
+0x106<1> 4
+stop
+
 sequencePowerCalligraphy:
 	set_cat 0
     rest 0x8

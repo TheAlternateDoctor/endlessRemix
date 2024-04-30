@@ -1,5 +1,10 @@
 // Nothing to report yet.
 
+winRhythmRally:
+0x107 0
+0x107 1
+stop
+
 sequenceRhythmRally:
 	set_cat 0
     rest 0x8

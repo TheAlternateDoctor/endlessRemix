@@ -1,5 +1,10 @@
 // Nothing to report.
 
+winCatchOfTheDay:
+0x102 -1
+0x101 5
+stop
+
 sequenceCatchOfTheDay:
 	set_cat 0
     rest 0x8

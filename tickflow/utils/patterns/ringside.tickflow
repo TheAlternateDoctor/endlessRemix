@@ -1,6 +1,19 @@
 // Beat anims starts automatically.
 // Starts zoomed properly.
 
+winRingside:
+    0x10B 0
+    0x10A 0
+    0x10A<2> 0x100, 0x100, 6
+    0x10A<3> 0xFF, 0xFF, 6
+    rest 0xC0	// 4.0 beats
+    0x10B 1
+    0x10B<1> 1
+    0x10A 1
+    rest 0x60	// 2.0 beats
+    0x10A<4> 
+stop
+
 sequenceRingSide:
 	set_cat 0
     rest 0x8

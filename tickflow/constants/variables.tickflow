@@ -25,3 +25,4 @@ patternSub = 0
 perfCheckSub = 1
 lateLoaderSub = 2
 presequenceSub = 3
+winSequenceSub = 4

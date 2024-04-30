@@ -1,6 +1,11 @@
 // Tap Troupe always starts one beat late,
 // as it uses Tap Trial as a base.
 
+winTapTroupe:
+0x106<1> 0
+0x101
+stop
+
 preSequenceTapTroupe:
 rest 0x18
 play_sfx 0x10002DF

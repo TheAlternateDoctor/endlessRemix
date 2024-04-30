@@ -1,5 +1,9 @@
 // May require early subs, like the 3 cars one included.
 
+winFreezeFrame:
+//Find a way to keep the pics on screen?
+stop
+
 sequenceFreezeFrame:
 	set_cat 0
     rest 0x8

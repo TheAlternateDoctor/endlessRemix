@@ -1,5 +1,9 @@
 // Automatically start the beat anims.
 
+winDoubleDate:
+0x106
+stop
+
 sequenceDoubleDate:
 	set_cat 0
     rest 0x8

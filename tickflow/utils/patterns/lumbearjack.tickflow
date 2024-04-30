@@ -1,6 +1,11 @@
 // Automatically spawns both cats,
 // and automatically start the beat anims.
 
+winLumbearjack:
+kill_loc lumbearjackBeatAnims
+0x101<2>
+stop
+
 sequenceLumbearjack:
 	set_cat 0
     rest 0x8

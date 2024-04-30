@@ -1,6 +1,12 @@
 // The camera is automatically setup
 // like the start of the minigame.
 
+winTangotronic:
+0x107<0>
+0x108<0>
+0x10F 1,1
+stop
+
 sequenceTangotronic:
 	set_cat 0
     rest 0x8

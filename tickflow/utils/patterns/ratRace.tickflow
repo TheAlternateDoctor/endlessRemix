@@ -1,5 +1,10 @@
 // Starts with quick speed.
 
+winRatRace:
+0x108
+0x106 1, 0xC0
+stop
+
 sequenceRatRace:
 	set_cat 0
     rest 0x8
