@@ -69,7 +69,7 @@ stop
 unloadSpeAudio:
 0xB2<1> cellanim_slot
 if 1
-	0xB2<1> sfx_plus
+	0xB2 sfx_plus
 	if_geq 1
 		remove_sfx 6
 	endif
@@ -77,7 +77,7 @@ if 1
 		remove_sfx 7
 	endif
 else
-	0xB2<1> sfx_plus_2
+	0xB2 sfx_plus_2
 	if_geq 1
 		remove_sfx 0xB
 	endif

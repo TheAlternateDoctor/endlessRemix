@@ -15,7 +15,7 @@ sequenceFanClub:
 	0x29<2> 
     rest 0x10
 	0xB3 engine_loaded, 0x15
-    0xB2<1> 0x15
+    0x2B<1> 0x15
     if 3
         random 2
         switch
@@ -24,7 +24,7 @@ sequenceFanClub:
             break
         endswitch
     else
-        0xB2<1> 0x15
+        0x2B<1> 0x15
         if 5
             random 2
             switch 
@@ -33,7 +33,7 @@ sequenceFanClub:
                 break
             endswitch
         else
-            0xB2<1> 0x15
+            0x2B<1> 0x15
             if 0x10
                 0x114 1
                 random 2

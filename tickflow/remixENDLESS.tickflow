@@ -287,11 +287,11 @@ input 0
 0xB3<1> cellanim_slot,0 //Celanim
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
-0xB3<1> sfx_plus,0 //Slot 7 has SFX
-0xB3<1> sfx_plus_2,1 //Slot 7 has SFX
+0xB3 sfx_plus,0 //Slot 7 has SFX
+0xB3 sfx_plus_2,1 //Slot 7 has SFX
 0xB3 score_add, 5 //Starting score
 0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
-0xB3<1> index, INDEX_rvlBasket //Starting index
+0xB3 index, INDEX_rvlBasket //Starting index
 
 
 0x67<5> 2

@@ -2,8 +2,8 @@
 // initCoin to init the scene
 // launchCoin to launch a coin.
 
-coin_state = 10
-hand_state = 11
+coin_state = 12
+hand_state = 13
 
 initCoin:
 0x8B 0, 0

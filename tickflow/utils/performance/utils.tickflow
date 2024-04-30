@@ -78,7 +78,7 @@ goto 0x51C3
 failInput:
     0xB2<1> lives_enabled
     if 1
-        0xB3 perf_miss, 1
+        0xB3<1> perf_miss, 1
         0xB4 lives, -1
         call life
         async_call waitAfterFail
@@ -147,9 +147,9 @@ stop
 
 waitAfterFail:
 set_cat 0
-0xB3 perf_lock, 1
+0xB3<1> perf_lock, 1
 rest 0x60
-0xB3 perf_lock, 0
+0xB3<1> perf_lock, 0
 stop
 
 checkApress:
@@ -159,7 +159,7 @@ checkApress:
         stop
     endif
     rest 0x28
-    0xB2 perf_lock
+    0xB2<1> perf_lock
     if_neq 1
         async_call waitApress
         0x200<2> 0
@@ -192,7 +192,7 @@ earlyCheckApress:
     if_lt 0x103
         stop
     endif
-    0xB2 perf_lock
+    0xB2<1> perf_lock
     if_neq 1
         async_call earlyWaitApress
         0x200<2> 0
@@ -226,7 +226,7 @@ checkAhold:
         stop
     endif
     rest 0x28
-    0xB2 perf_lock
+    0xB2<1> perf_lock
     if_neq 1
         async_call waitAhold
         0x200<2> 0
@@ -269,7 +269,7 @@ checkArelease:
         stop
     endif
     rest 0x28
-    0xB2 perf_lock
+    0xB2<1> perf_lock
     if_neq 1
         kill_loc checkAhold
         async_call waitArelease
@@ -304,7 +304,7 @@ checkBhold:
         stop
     endif
     rest 0x28
-    0xB2 perf_lock
+    0xB2<1> perf_lock
     if_neq 1
         async_call waitBhold
         0x200<2> 1
@@ -347,7 +347,7 @@ checkBrelease:
         stop
     endif
     rest 0x28
-    0xB2 perf_lock
+    0xB2<1> perf_lock
     if_neq 1
         kill_loc waitBhold
         async_call waitBrelease

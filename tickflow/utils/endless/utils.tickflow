@@ -26,7 +26,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbBatter
+                0xB3 index, INDEX_agbBatter
             endif
         break
         case INDEX_agbClap
@@ -44,7 +44,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbClap
+                0xB3 index, INDEX_agbClap
             endif
         break
         case INDEX_agbGhost //Phantom Thief
@@ -62,7 +62,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbGhost
+                0xB3 index, INDEX_agbGhost
             endif
         break
         case INDEX_agbHair
@@ -80,7 +80,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkOnion
-                0xB3<1> index, INDEX_agbHair
+                0xB3 index, INDEX_agbHair
             endif
         break
         case INDEX_agbHopping
@@ -98,7 +98,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbHopping
+                0xB3 index, INDEX_agbHopping
             endif
         break
         case INDEX_agbMarcher
@@ -116,7 +116,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceMarcher
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbMarcher
+                0xB3 index, INDEX_agbMarcher
             endif
         break
         case INDEX_agbNightWalk
@@ -134,7 +134,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkNightWalk
-                0xB3<1> index, INDEX_agbNightWalk
+                0xB3 index, INDEX_agbNightWalk
             endif
         break
         case INDEX_agbQuiz
@@ -152,7 +152,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbQuiz
+                0xB3 index, INDEX_agbQuiz
             endif
         break
         case INDEX_agbRabbit
@@ -170,7 +170,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceBunnyHop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbRabbit
+                0xB3 index, INDEX_agbRabbit
             endif
         break
         case INDEX_agbRat
@@ -188,7 +188,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbRat
+                0xB3 index, INDEX_agbRat
             endif
         break
         case INDEX_agbShuji
@@ -206,7 +206,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadPowerCalligraphyLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbShuji
+                0xB3 index, INDEX_agbShuji
             endif
         break
         case INDEX_agbSpaceDance
@@ -224,7 +224,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbSpaceDance
+                0xB3 index, INDEX_agbSpaceDance
             endif
         break
         case INDEX_agbTap
@@ -242,7 +242,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadTapLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbTap
+                0xB3 index, INDEX_agbTap
             endif
         break
         case INDEX_agbTono
@@ -260,7 +260,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_agbTono
+                0xB3 index, INDEX_agbTono
             endif
         break
         case INDEX_ntrAirBoard
@@ -278,7 +278,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrAirBoard
+                0xB3 index, INDEX_ntrAirBoard
             endif
         break
         case INDEX_ntrBackbeat
@@ -296,7 +296,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceLockstep
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrBackbeat
+                0xB3 index, INDEX_ntrBackbeat
             endif
         break
         case INDEX_ntrBlueBirds
@@ -314,7 +314,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrBlueBirds
+                0xB3 index, INDEX_ntrBlueBirds
             endif
         break
         case INDEX_ntrBoxShow
@@ -332,7 +332,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadDazzlesLate
                 set_func perfCheckSub, nop
-                0xB3<1> index, INDEX_ntrBoxShow
+                0xB3 index, INDEX_ntrBoxShow
             endif
         break
         case INDEX_ntrCameraMan
@@ -350,11 +350,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkFreezeFrame
-                0xB3<1> index, INDEX_ntrCameraMan
+                0xB3 index, INDEX_ntrCameraMan
             endif
         break
         case INDEX_ntrChorus
-            0xB2<1> index
+            0xB2 index
             if INDEX_ntrChorus //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -368,7 +368,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadGleeClubLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrChorus
+                0xB3 index, INDEX_ntrChorus
             endif
         break
         case INDEX_ntrFrog
@@ -386,7 +386,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceFrogHop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrFrog
+                0xB3 index, INDEX_ntrFrog
             endif
         break
         case INDEX_ntrIdol
@@ -404,7 +404,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrIdol
+                0xB3 index, INDEX_ntrIdol
             endif
         break
         case INDEX_ntrNinja
@@ -422,7 +422,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrNinja
+                0xB3 index, INDEX_ntrNinja
             endif
         break
         case INDEX_ntrPingpong
@@ -440,7 +440,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrPingpong
+                0xB3 index, INDEX_ntrPingpong
             endif
         break
         case INDEX_ntrShooting
@@ -458,7 +458,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrShooting
+                0xB3 index, INDEX_ntrShooting
             endif
         break
         case INDEX_ntrShortLive
@@ -476,11 +476,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrShortLive
+                0xB3 index, INDEX_ntrShortLive
             endif
         break
         case INDEX_ntrShugyo
-            0xB2<1> index
+            0xB2 index
             if INDEX_ntrShugyo //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -494,7 +494,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceMunchyMonk
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrShugyo
+                0xB3 index, INDEX_ntrShugyo
             endif
         break
         case INDEX_rvlAssemble
@@ -512,7 +512,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceBtSWii
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlAssemble
+                0xB3 index, INDEX_rvlAssemble
             endif
         break
         case INDEX_rvlBird
@@ -530,7 +530,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlBird
+                0xB3 index, INDEX_rvlBird
             endif
         break
         case INDEX_rvlBook
@@ -548,7 +548,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlBook
+                0xB3 index, INDEX_rvlBook
             endif
         break
         case INDEX_rvlDate
@@ -566,7 +566,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlDate
+                0xB3 index, INDEX_rvlDate
             endif
         break
         case INDEX_rvlFishing
@@ -584,11 +584,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlFishing
+                0xB3 index, INDEX_rvlFishing
             endif
         break
         case INDEX_rvlFlea
-            0xB2<1> index
+            0xB2 index
             if INDEX_rvlFlea //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -602,7 +602,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceMicroRow
                 set_func lateLoaderSub, loadMicroRowLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlFlea
+                0xB3 index, INDEX_rvlFlea
             endif
         break
         case INDEX_rvlFork
@@ -620,7 +620,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlFork
+                0xB3 index, INDEX_rvlFork
             endif
         break
         case INDEX_rvlGolf
@@ -638,7 +638,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlGolf
+                0xB3 index, INDEX_rvlGolf
             endif
         break
         case INDEX_rvlGoma
@@ -656,7 +656,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceFlipperFlop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlGoma
+                0xB3 index, INDEX_rvlGoma
             endif
         break
         case INDEX_rvlInterview
@@ -674,7 +674,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlInterview
+                0xB3 index, INDEX_rvlInterview
             endif
         break
         case INDEX_rvlKarate
@@ -692,7 +692,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlKarate
+                0xB3 index, INDEX_rvlKarate
             endif
         break
         case INDEX_rvlManju
@@ -710,7 +710,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlManju
+                0xB3 index, INDEX_rvlManju
             endif
         break
         case INDEX_rvlRocket
@@ -728,7 +728,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlRocket
+                0xB3 index, INDEX_rvlRocket
             endif
         break
         case INDEX_rvlRotation
@@ -746,7 +746,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlRotation
+                0xB3 index, INDEX_rvlRotation
             endif
         break
         case INDEX_rvlRecieve
@@ -764,7 +764,7 @@ loadNextGame:
                 set_func presequenceSub, presequenceBossaNova
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlRecieve
+                0xB3 index, INDEX_rvlRecieve
             endif
         break
         case INDEX_rvlBadminton
@@ -782,7 +782,7 @@ loadNextGame:
                 set_func presequenceSub, presequenceAirRally
                 set_func lateLoaderSub, loadAirRallyLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlBadminton
+                0xB3 index, INDEX_rvlBadminton
             endif
         break
         case INDEX_rvlMuscle
@@ -800,7 +800,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlMuscle
+                0xB3 index, INDEX_rvlMuscle
             endif
         break
         case INDEX_rvlSamurai //Iai Giri
@@ -818,7 +818,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlSamurai
+                0xB3 index, INDEX_rvlSamurai
             endif
         break
         case INDEX_rvlSeesaw
@@ -836,7 +836,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlSeesaw
+                0xB3 index, INDEX_rvlSeesaw
             endif
         break
         case INDEX_rvlSort
@@ -854,7 +854,7 @@ loadNextGame:
                 set_func presequenceSub, presequencePackingPests
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlSort
+                0xB3 index, INDEX_rvlSort
             endif
         break
         case INDEX_ctrBear
@@ -872,7 +872,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrBear
+                0xB3 index, INDEX_ctrBear
             endif
         break
         case INDEX_ctrBlanco
@@ -890,7 +890,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrBlanco
+                0xB3 index, INDEX_ctrBlanco
             endif
         break
         case INDEX_ctrChameleon
@@ -908,7 +908,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrChameleon
+                0xB3 index, INDEX_ctrChameleon
             endif
         break
         case INDEX_ctrDotSamurai
@@ -926,7 +926,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrDotSamurai
+                0xB3 index, INDEX_ctrDotSamurai
             endif
         break
         case INDEX_ctrFruitBasket
@@ -944,7 +944,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrFruitBasket
+                0xB3 index, INDEX_ctrFruitBasket
             endif
         break
         case INDEX_ctrPillow
@@ -962,7 +962,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrPillow
+                0xB3 index, INDEX_ctrPillow
             endif
         break
         case INDEX_ctrStep
@@ -980,7 +980,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrStep
+                0xB3 index, INDEX_ctrStep
             endif
         break
         case INDEX_ctrSumou
@@ -998,7 +998,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceSumoBros
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrSumou
+                0xB3 index, INDEX_ctrSumou
             endif
         break
         case INDEX_ctrTango
@@ -1016,7 +1016,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrTango
+                0xB3 index, INDEX_ctrTango
             endif
         break
         case INDEX_ctrTeppan
@@ -1034,7 +1034,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadKittiesLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrTeppan
+                0xB3 index, INDEX_ctrTeppan
             endif
         break
         case INDEX_ctrWoodcat
@@ -1052,7 +1052,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ctrWoodcat
+                0xB3 index, INDEX_ctrWoodcat
             endif
         break
         case INDEX_agbVirus
@@ -1070,11 +1070,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkSickBeats
-                0xB3<1> index, INDEX_agbVirus
+                0xB3 index, INDEX_agbVirus
             endif
         break
         case INDEX_ntrCoinToss
-            0xB2<1> index
+            0xB2 index
             if INDEX_ntrCoinToss //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1088,7 +1088,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkCoinToss
-                0xB3<1> index, INDEX_ntrCoinToss
+                0xB3 index, INDEX_ntrCoinToss
             endif
         break
         case INDEX_rvlSword
@@ -1106,7 +1106,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlSword
+                0xB3 index, INDEX_rvlSword
             endif
         break
         case INDEX_tutorial //Tutorial
@@ -1124,7 +1124,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_tutorial
+                0xB3 index, INDEX_tutorial
             endif
         break
         case INDEX_rvlMonkeyWatch
@@ -1142,7 +1142,7 @@ loadNextGame:
                 set_func presequenceSub, preSequenceMonkeyWatch
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlMonkeyWatch
+                0xB3 index, INDEX_rvlMonkeyWatch
             endif
         break
         case INDEX_rvlRap
@@ -1160,7 +1160,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlRap
+                0xB3 index, INDEX_rvlRap
             endif
         break
         case INDEX_ntrRobot
@@ -1178,7 +1178,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrRobot
+                0xB3 index, INDEX_ntrRobot
             endif
         break
         case INDEX_rvlBatting
@@ -1196,7 +1196,7 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlBatting
+                0xB3 index, INDEX_rvlBatting
             endif
         break
         case INDEX_rvlRobot
@@ -1214,11 +1214,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlRobot
+                0xB3 index, INDEX_rvlRobot
             endif
         break
         case INDEX_rvlBasket
-            0xB2<1> index
+            0xB2 index
             if INDEX_rvlBasket //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1235,7 +1235,7 @@ loadNextGame:
                     set_func presequenceSub, presequenceBasketGirls
                     set_func lateLoaderSub, loadBasketGirlsLate
                     set_func perfCheckSub, checkA2
-                    0xB3<1> index, INDEX_rvlBasket
+                    0xB3 index, INDEX_rvlBasket
                 endif
             endif
         break
@@ -1256,7 +1256,7 @@ loadNextGame:
         //     endif
         // break
         case INDEX_rvlComedians
-            0xB2<1> index
+            0xB2 index
             if INDEX_rvlComedians //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1272,12 +1272,12 @@ loadNextGame:
                     call loadManzai //help
                     set_func presequenceSub, loadManzaiLate
                     set_func lateLoaderSub, nop
-                    0xB3<1> index, INDEX_rvlComedians
+                    0xB3 index, INDEX_rvlComedians
                 endif
             endif
         break
         case INDEX_tpaFrontier //Accumula Town
-            0xB2<1> index
+            0xB2 index
             if INDEX_tpaFrontier //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1291,11 +1291,11 @@ loadNextGame:
                 set_func presequenceSub, preSequenceFinned
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_tpaFrontier
+                0xB3 index, INDEX_tpaFrontier
             endif
         break
         case INDEX_skiMeat //Open Sesame Tofu!
-            0xB2<1> index
+            0xB2 index
             if INDEX_skiMeat //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1312,12 +1312,12 @@ loadNextGame:
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadMeatGrinderLate
                     set_func perfCheckSub, checkA2
-                    0xB3<1> index, INDEX_skiMeat
+                    0xB3 index, INDEX_skiMeat
                 endif
             endif
         break
         case INDEX_swfSoumen //Ballance
-            0xB2<1> index
+            0xB2 index
             if INDEX_swfSoumen //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1331,11 +1331,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadSoumenLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_swfSoumen
+                0xB3 index, INDEX_swfSoumen
             endif
         break
         case INDEX_agbMetro //Battle Start Melodii
-            0xB2<1> index
+            0xB2 index
             if INDEX_agbMetro //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1352,7 +1352,7 @@ loadNextGame:
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadUpbeatLate
                     set_func perfCheckSub, checkA2
-                    0xB3<1> index, INDEX_agbMetro
+                    0xB3 index, INDEX_agbMetro
                 endif
             endif
         break
@@ -1371,11 +1371,11 @@ loadNextGame:
                 set_func presequenceSub, preSequenceTapTroupe
                 set_func lateLoaderSub, loadTapTroupeLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_rvlTap
+                0xB3 index, INDEX_rvlTap
             endif
         break
         case INDEX_ntrSynchro //Mole Cricket
-            0xB2<1> index
+            0xB2 index
             if INDEX_ntrSynchro //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1389,11 +1389,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadSplashdownLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_ntrSynchro
+                0xB3 index, INDEX_ntrSynchro
             endif
         break
         case INDEX_bnbTweet //Meet and Tweet
-            0xB2<1> index
+            0xB2 index
             if INDEX_bnbTweet //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1407,11 +1407,11 @@ loadNextGame:
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, loadMeetAndTweetLate
                 set_func perfCheckSub, checkA2
-                0xB3<1> index, INDEX_bnbTweet
+                0xB3 index, INDEX_bnbTweet
             endif
         break
         case INDEX_7bgDoctor //Meet and Tweet
-            0xB2<1> index
+            0xB2 index
             if INDEX_7bgDoctor //Stop games from being played next to each other
                 goto 0x70AD
             else
@@ -1428,12 +1428,12 @@ loadNextGame:
                     set_func presequenceSub, presequenceRhythmDoctor
                     set_func lateLoaderSub, loadRhythmDoctorLate
                     set_func perfCheckSub, checkA2
-                    0xB3<1> index, INDEX_7bgDoctor
+                    0xB3 index, INDEX_7bgDoctor
                 endif
             endif
         break
         case INDEX_agbFireworks
-            0xB2<1> index
+            0xB2 index
             if INDEX_agbFireworks //Stop games from being played next to each other
                 goto 0x7AD
             else
@@ -1446,11 +1446,11 @@ loadNextGame:
                 call loadFireworks //help
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
-                0xB3<1> index, INDEX_agbFireworks
+                0xB3 index, INDEX_agbFireworks
             endif
         break
         case INDEX_rvlDonk
-            0xB2<1> index
+            0xB2 index
             if INDEX_rvlDonk //Stop games from being played next to each other
                 goto 0x7AD
             else
@@ -1463,11 +1463,11 @@ loadNextGame:
                 call loadDonk
                 set_func presequenceSub, presequenceDonk
                 set_func lateLoaderSub, nop
-                0xB3<1> index, INDEX_rvlDonk
+                0xB3 index, INDEX_rvlDonk
             endif
         break
         case INDEX_rvlTambourine
-            0xB2<1> index
+            0xB2 index
             if INDEX_rvlTambourine //Stop games from being played next to each other
                 goto 0x7AD
             else
@@ -1483,7 +1483,7 @@ loadNextGame:
                     call loadTambourine
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadTambourineLate
-                    0xB3<1> index, INDEX_rvlDonk
+                    0xB3 index, INDEX_rvlDonk
                 endif
             endif
         break
@@ -1585,7 +1585,7 @@ goto 0x115C
 stop
 
 updateScore:
-0xB2 perf_miss
+0xB2<1> perf_miss
 if 0
     0xB2 score_add
     set_countdown_condvar
@@ -1601,11 +1601,11 @@ if 0
     label 0xE2D
     call showScore
 endif
-0xB3 perf_miss, 0
+0xB3<1> perf_miss, 0
 return
 
 updateScoreGate:
-0xB2 perf_miss
+0xB2<1> perf_miss
 if 0
     0xB4 score, 1
     call showScore
@@ -1614,7 +1614,7 @@ if 0
         async_call winGame
     endif
 endif
-0xB3 perf_miss, 0
+0xB3<1> perf_miss, 0
 return
 
 winGame:
@@ -1763,7 +1763,7 @@ if 1
         0xB3<1> lives_enabled, 0
     endif
 endif
-0xB2<1> chosen_speed
+0xB2 chosen_speed
 if 0
     0x200 5
     if 1

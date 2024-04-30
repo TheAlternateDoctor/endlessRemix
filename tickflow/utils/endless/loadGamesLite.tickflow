@@ -556,7 +556,7 @@ if 1
     else
         set_sfx 6, u"GROUP_BASKET_EN"
     endif
-    0xB3<1> sfx_plus,1
+    0xB3 sfx_plus,1
 else
 	0x202
 	if 0 //Japanese
@@ -564,7 +564,7 @@ else
     else
         set_sfx 0xB, u"GROUP_BASKET_EN"
     endif
-    0xB3<1> sfx_plus_2,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -755,7 +755,7 @@ if 1
     else
         set_sfx 6, u"GROUP_SOUMEN_INPUT_EN"
     endif
-    0xB3<1> sfx_plus,1
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_SOUMEN"
 	0x202
@@ -764,7 +764,7 @@ else
     else
         set_sfx 0xB, u"GROUP_SOUMEN_INPUT_EN"
     endif
-    0xB3<1> sfx_plus_2,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -807,11 +807,11 @@ rest 0xC
 if 1
     set_sfx 5, u"GROUP_METRO"
     set_sfx 6, u"GROUP_METRO_HELP"
-    0xB3<1> sfx_plus,1
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_METRO"
     set_sfx 0xB, u"GROUP_METRO_HELP"
-    0xB3<1> sfx_plus_2,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -857,7 +857,7 @@ if 1
     else
         set_sfx 6, u"GROUP_RVL_TAP_VOICE_EN"
     endif
-    0xB3<1> sfx_plus,1
+    0xB3 sfx_plus,1
 else
     set_sfx 4, u"GROUP_RVL_TAP"
 	0x202
@@ -866,7 +866,7 @@ else
     else
         set_sfx 0xB, u"GROUP_RVL_TAP_VOICE_EN"
     endif
-    0xB3<1> sfx_plus_2,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -1297,11 +1297,11 @@ loadFinnedLate:
     if 0
         set_sfx 4, u"GROUP_FRONTIER"
         set_sfx 0xB, u"GROUP_FRONTIER2"
-        0xB3<1> sfx_plus_2, 1
+        0xB3 sfx_plus_2, 1
     else
         set_sfx 5, u"GROUP_FRONTIER"
         set_sfx 6, u"GROUP_FRONTIER2"
-        0xB3<1> sfx_plus, 1
+        0xB3 sfx_plus, 1
     endif
 stop
 
@@ -2143,17 +2143,17 @@ rest 0xC
 if 0
     set_sfx 4, u"GROUP_COMEDIANS_VOICE"
     set_sfx 0xB, u"GROUP_COMEDIANS"
-    0xB3<1> sfx_plus,1
+    0xB3 sfx_plus,1
 else
     set_sfx 5, u"GROUP_COMEDIANS_VOICE"
     set_sfx 6, u"GROUP_COMEDIANS"
-    0xB3<1> sfx_plus_2,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
 unloadManzai: //Actually we REALLY need this
 remove_sfx 6
-0xB3<1> sfx_plus, 0
+0xB3 sfx_plus, 0
 return
 
 loadTambourine:
@@ -2224,7 +2224,7 @@ if 1
     else
         set_sfx 6, u"GROUP_DONKDONK_VOICE_EN"
     endif
-    0xB3<1> sfx_plus,1
+    0xB3 sfx_plus,1
 else
 	0x202
 	if 0 //Japanese
@@ -2232,7 +2232,7 @@ else
     else
         set_sfx 0xB, u"GROUP_DONKDONK_VOICE_EN"
     endif
-    0xB3<1> sfx_plus_2,1
+    0xB3 sfx_plus_2,1
 endif
 stop
 
@@ -2465,11 +2465,11 @@ rest 0xC
 if 1
     set_sfx 6, u"GROUP_RDVOICES"
     set_sfx 7, u"GROUP_RDVOICES2"
-    0xB3<1> sfx_plus, 2
+    0xB3 sfx_plus, 2
 else
     set_sfx 0xB, u"GROUP_RDVOICES"
     set_sfx 0xC, u"GROUP_RDVOICES2"
-    0xB3<1> sfx_plus_2, 2
+    0xB3 sfx_plus_2, 2
 endif
 stop
 loadRhythmDoctorLate:

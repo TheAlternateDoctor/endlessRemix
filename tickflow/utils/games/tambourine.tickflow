@@ -4,7 +4,7 @@
 
 // USAGE EXAMPLE at the bottom of this document.
 
-fail_check = 10
+fail_check = 12
 
 tambourineShake:
 	0x101<1> 1

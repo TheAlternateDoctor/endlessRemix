@@ -1,6 +1,6 @@
-detect = 10
-FireworkType = 11
-input_timing = 12
+detect = 12
+FireworkType = 13
+input_timing = 14
 
 //--------------------------------------------------
 //ESSENTIALS:

@@ -1,4 +1,4 @@
-donkdonk_var = 10
+donkdonk_var = 12
 
 donkdonk:
 async_call donkdonkSFX, 0x30
