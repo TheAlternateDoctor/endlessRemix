@@ -22,11 +22,12 @@ sequenceRhythmDoctor:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x3C
+	engine SCENE_REC_7bgDoctor
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x3C  
+	0xB3 engine_loaded, SCENE_REC_7bgDoctor
+	0xB3 index, INDEX_7bgDoctor
     0x109
     0x108<1> 0
     0x101 1, 0, 0

@@ -5,7 +5,7 @@ sequenceMeetAndTweet:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x25
+	engine SCENE_REC_bnbTweet
 	sub 4
 	0x29<2> 
     rest 0x8
@@ -15,7 +15,8 @@ sequenceMeetAndTweet:
         async_call tweetSetupPop
     endif
     rest 0x8
-	0xB3 engine_loaded, 0x25
+	0xB3 engine_loaded, SCENE_REC_bnbTweet
+	0xB3 index, INDEX_bnbTweet
     fade<1> 1,1,1
     random 3
     switch

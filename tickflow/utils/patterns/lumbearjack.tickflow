@@ -10,7 +10,7 @@ sequenceLumbearjack:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x3F
+	engine SCENE_ctrWoodcat
 	sub 4
 	0x29<2> 
     rest 0x8
@@ -27,7 +27,8 @@ sequenceLumbearjack:
         break
     endswitch
     rest 0x8
-	0xB3 engine_loaded, 0x3F
+	0xB3 engine_loaded, SCENE_ctrWoodcat
+	0xB3 index, INDEX_ctrWoodcat
     fade<1> 1,1,1
     0x103<3>
     async_call lumbearjackBeatAnims

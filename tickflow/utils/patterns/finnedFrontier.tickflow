@@ -15,7 +15,7 @@ stop
 sequenceFinned:
 	set_cat 0
 	call changeEngine
-	engine 0x23
+	engine SCENE_CUSTOM_tpaFrontier
 	sub 4
 	0x29<2> 
     rest 0xC
@@ -29,7 +29,8 @@ sequenceFinned:
     endswitch
     input 1
     rest 0xC
-	0xB3 engine_loaded, 0x23
+	0xB3 engine_loaded, SCENE_CUSTOM_tpaFrontier
+	0xB3 index, INDEX_tpaFrontier
     fade<1> 1,1,1
 stop
 

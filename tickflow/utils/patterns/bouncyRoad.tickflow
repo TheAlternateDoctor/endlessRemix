@@ -4,11 +4,12 @@ sequenceHopping:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x4
+	engine SCENE_agbHopping
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x4
+	0xB3 engine_loaded, SCENE_agbHopping
+	0xB3 index, INDEX_agbHopping
     fade<1> 1,1,1
     random 3
     switch

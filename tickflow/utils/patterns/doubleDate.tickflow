@@ -8,12 +8,13 @@ sequenceDoubleDate:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x21
+	engine SCENE_rvlDate
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x21
-    0x2B<1> 0x21
+	0xB3 engine_loaded, SCENE_rvlDate
+	0xB3 index, INDEX_rvlDate
+    0x2B<1> SCENE_rvlDate
     if 2
         0x10A<0>
     else

@@ -27,7 +27,7 @@ sequenceMunchyMonk:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x1B
+	engine SCENE_ntrShugyo
 	sub 4
 	0x29<2> 
     rest 0x8
@@ -44,7 +44,8 @@ sequenceMunchyMonk:
     endif
     rest 0x8
     async_call munchyMonkBeat
-	0xB3 engine_loaded, 0x1B
+	0xB3 engine_loaded, SCENE_ntrShugyo
+	0xB3 index, INDEX_ntrShugyo
     fade<1> 1,1,1
     0xB2 game_state
     switch

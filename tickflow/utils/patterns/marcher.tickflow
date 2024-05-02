@@ -29,7 +29,7 @@ stop
 sequenceMarcher:
 	set_cat 0
 	call changeEngine
-	engine 0x5
+	engine SCENE_agbMarcher
 	sub 4
 	0x29<2> 
     rest 0xC
@@ -67,7 +67,8 @@ sequenceMarcher:
         input 1
     endif
     rest 0xC
-	0xB3 engine_loaded, 0x5
+	0xB3 engine_loaded, SCENE_agbMarcher
+	0xB3 index, INDEX_agbMarcher
     fade<1> 1,1,1
 stop
 

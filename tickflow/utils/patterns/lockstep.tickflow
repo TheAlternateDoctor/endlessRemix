@@ -27,7 +27,7 @@ stop
 sequenceLockstep:
 	set_cat 0
 	call changeEngine
-	engine 0xF
+	engine SCENE_ntrBackbeat
 	sub 4
 	0x29<2> 
     rest 0xC
@@ -55,7 +55,8 @@ sequenceLockstep:
         endswitch
     endif
     rest 0xC
-	0xB3 engine_loaded, 0xF
+	0xB3 engine_loaded, SCENE_ntrBackbeat
+	0xB3 index, INDEX_ntrBackbeat
     fade<1> 1,1,1
     input 1
 stop

@@ -15,11 +15,12 @@ sequenceDazzles:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x11
+	engine SCENE_ntrBoxShow
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x11
+	0xB3 engine_loaded, SCENE_ntrBoxShow
+	0xB3 index, INDEX_ntrBoxShow
     fade<1> 1,1,1
     async_call dazzlesBeatAnim
     rest 0x48

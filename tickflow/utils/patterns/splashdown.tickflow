@@ -6,7 +6,7 @@ sequenceSplashdown:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x13
+	engine SCENE_REC_ntrSynchro
 	sub 4
 	0x29<2> 
     rest 0x8
@@ -18,7 +18,8 @@ sequenceSplashdown:
         async_call splashdown1
     endswitch
     rest 0x8
-	0xB3 engine_loaded, 0x13
+	0xB3 engine_loaded, SCENE_REC_ntrSynchro
+	0xB3 index, INDEX_ntrSynchro
     fade<1> 1,1,1
     rest 0x30
     input 1

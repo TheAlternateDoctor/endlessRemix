@@ -4,11 +4,12 @@ sequenceFigureFighter:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x2A
+	engine SCENE_rvlMuscle
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x2A
+	0xB3 engine_loaded, SCENE_rvlMuscle
+	0xB3 index, INDEX_rvlMuscle
     0x102<1>
     0x10B 1
     0x10A 1 

@@ -5,14 +5,15 @@ sequenceQuiz:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x7
+	engine SCENE_agbQuiz
 	sub 4
 	0x29<2> 
     rest 0x8
     0x102<1>
     0x101<1>
     rest 0x8
-	0xB3 engine_loaded, 0x7
+	0xB3 engine_loaded, SCENE_agbQuiz
+	0xB3 index, INDEX_agbQuiz
     fade<1> 1,1,1
     input 0
     random 1

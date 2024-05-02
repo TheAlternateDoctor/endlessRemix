@@ -4,11 +4,12 @@ sequenceSickBeats:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x40
+	engine SCENE_agbVirus
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x40
+	0xB3 engine_loaded, SCENE_agbVirus
+	0xB3 index, INDEX_agbVirus
     fade<1> 1,1,1
     input 1
     0xAF<6> 0

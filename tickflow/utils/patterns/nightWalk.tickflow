@@ -5,11 +5,12 @@ sequenceNightWalk:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x6
+	engine SCENE_agbNightWalk
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x6
+	0xB3 engine_loaded, SCENE_agbNightWalk
+	0xB3 index, INDEX_agbNightWalk
     fade<1> 1,1,1
     random 1
     switch

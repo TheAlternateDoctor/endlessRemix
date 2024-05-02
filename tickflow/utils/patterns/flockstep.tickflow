@@ -4,7 +4,7 @@ sequenceFlockstep:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x1F
+	engine SCENE_rvlBird
 	sub 4
 	0x29<2> 
     rest 0x10
@@ -21,7 +21,8 @@ sequenceFlockstep:
         0x102<5> 30
         break
     endswitch
-	0xB3 engine_loaded, 0x1F
+	0xB3 engine_loaded, SCENE_rvlBird
+	0xB3 index, INDEX_rvlBird
     fade<1> 1,1,1
     random 2
     switch

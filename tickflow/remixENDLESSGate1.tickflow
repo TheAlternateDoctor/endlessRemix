@@ -14,6 +14,7 @@
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
+#include utils/endless/utilsGate.tickflow
 
 #include utils/patterns/basketGirls.tickflow
 #include utils/patterns/spaceball.tickflow
@@ -133,4 +134,4 @@
 #include utils/games/fireworks.tickflow
 
 #include utils/utils.tickflow
-#include utils/extraLoops.tickflow
+#include utils/extraLoopsGate.tickflow

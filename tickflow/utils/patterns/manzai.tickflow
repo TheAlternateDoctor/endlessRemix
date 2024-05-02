@@ -4,10 +4,11 @@ sequenceManzai:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x3C
+	engine SCENE_REC_rvlComedians
 	sub 4
 	0x29<2> 
-	0xB3 engine_loaded, 0x3C
+	0xB3 engine_loaded, SCENE_REC_rvlComedians
+	0xB3 index, INDEX_rvlComedians
     zoom_gradual 3, 4, 4, 0x1, 0x150, 0x150
     pan 3, 0, 0
     0x108 0

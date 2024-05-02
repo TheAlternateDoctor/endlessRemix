@@ -21,7 +21,7 @@ stop
 sequenceBossaNova:
 	set_cat 0
 	call changeEngine
-	engine 0x2C
+	engine SCENE_rvlRecieve
 	sub 4
 	0x29<2> 
     0x103<1> 1
@@ -54,7 +54,8 @@ sequenceBossaNova:
     endif
     rest 0x10
     input 1
-	0xB3 engine_loaded, 0x2C
+	0xB3 engine_loaded, SCENE_rvlRecieve
+	0xB3 index, INDEX_rvlRecieve
     rest 0x8
     fade<1> 1,1,1
 stop

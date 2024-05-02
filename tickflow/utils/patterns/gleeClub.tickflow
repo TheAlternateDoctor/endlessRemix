@@ -8,13 +8,14 @@ sequenceGleeClub:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x13
+	engine SCENE_ntrChorus
 	sub 4
 	0x29<2> 
     call gleeClubPitchSetting
     rest 0x10
     0x10D
-	0xB3 engine_loaded, 0x13
+	0xB3 engine_loaded, SCENE_ntrChorus
+	0xB3 index, INDEX_ntrChorus
     fade<1> 1,1,1
     random 3
     switch

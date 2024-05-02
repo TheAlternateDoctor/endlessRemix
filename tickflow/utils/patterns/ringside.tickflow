@@ -18,13 +18,14 @@ sequenceRingSide:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x27
+	engine SCENE_rvlInterview
 	sub 4
 	0x29<2> 
     rest 0x10
     0x101 0
     0x109 1
-	0xB3 engine_loaded, 0x27
+	0xB3 engine_loaded, SCENE_rvlInterview
+	0xB3 index, INDEX_rvlInterview
     fade<1> 1,1,1
     random 2
     switch

@@ -19,7 +19,7 @@ stop
 sequenceFrogHop:
 	set_cat 0
 	call changeEngine
-	engine 0x14
+	engine SCENE_ntrFrog
 	sub 4
 	0x29<2> 
     rest 0xC
@@ -52,7 +52,8 @@ sequenceFrogHop:
         endswitch
     endif
     rest 0xC
-	0xB3 engine_loaded, 0x14
+	0xB3 engine_loaded, SCENE_ntrFrog
+	0xB3 index, INDEX_ntrFrog
     fade<1> 1,1,1
     input 1
 stop

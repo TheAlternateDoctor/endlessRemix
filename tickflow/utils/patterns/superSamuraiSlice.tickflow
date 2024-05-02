@@ -8,11 +8,12 @@ sequenceSuperSamuraiSlice:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x37
+	engine SCENE_ctrDotSamurai
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x37
+	0xB3 engine_loaded, SCENE_ctrDotSamurai
+	0xB3 index, INDEX_ctrDotSamurai
     fade<1> 1,1,1
     input 1
     random 5

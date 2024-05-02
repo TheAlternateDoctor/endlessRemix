@@ -1,5 +1,5 @@
-//Endless
-playMeetAndTweetPracticePattern:
+//Gates
+playMeetAndTweetPracticePatternGate:
     set_cat 0
     0xB2 lives
     if_neq 0
@@ -15,19 +15,20 @@ playMeetAndTweetPracticePattern:
         rest 0x24C
         async_call loadBasketGirlsLate
         async_call loadBasketGirlsLate2
-        rest 0x18
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
         0xB2 lives
         if_neq 0
-            fade 1,1,1
-        endif
-        0xB2<1> is_debug
-        if 0
-            call updateScore
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
         endif
     endif
 return
 
-playBasketInterlude:
+playBasketInterludeGate:
     set_cat 0
     0xB2 lives
     if_neq 0
@@ -44,19 +45,21 @@ playBasketInterlude:
         async_call loadRhythmDoctorLate
         async_call loadRhythmDoctorVoices
         async_call nurseregularvoice
-        rest 0x18
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
+        async_call nurseregularvoice, -0x18
         0xB2 lives
         if_neq 0
-            fade 1,1,1
-        endif
-        0xB2<1> is_debug
-        if 0
-            call updateScore
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
         endif
     endif
 return
 
-playRhythmDoctorPracticePattern:
+playRhythmDoctorPracticePatternGate:
     set_cat 0
     0xB2 lives
     if_neq 0
@@ -71,22 +74,24 @@ playRhythmDoctorPracticePattern:
         call loadUpbeat
         rest 0x24C
         async_call loadUpbeatLate
-        rest 0x18
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
         0xB2 lives
         if_neq 0
-            fade 1,1,1
-        endif
-        0xB2<1> is_debug
-        if 0
-            call updateScore
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
         endif
     endif
 return
 
-playMrUpbeat:
+playMrUpbeatGate:
     set_cat 0
     0xB2 lives
     if_neq 0
+        0xB3 score_add, 1
         async_call sequenceUpbeat
         rest 0x18
         0x58 0x100, 0x30
@@ -101,14 +106,15 @@ playMrUpbeat:
         get_async presequenceSub, 0x18
         rest 0x30*5 - 0x18
         get_async lateLoaderSub, 0
-        rest 0x18
+        rest 0xC
+        call updateScoreGate
+        rest 0xC
         0xB2 lives
         if_neq 0
-            fade 1,1,1
-        endif
-        0xB2<1> is_debug
-        if 0
-            call updateScore
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+            endif
         endif
     endif
 return

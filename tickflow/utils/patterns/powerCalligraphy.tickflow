@@ -8,11 +8,12 @@ sequencePowerCalligraphy:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0xA
+	engine SCENE_agbShuji
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0xA
+	0xB3 engine_loaded, SCENE_agbShuji
+	0xB3 index, INDEX_agbShuji
     fade<1> 1,1,1
     random 2
     switch

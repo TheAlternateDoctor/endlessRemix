@@ -12,10 +12,11 @@ sequenceDonk:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x25
+	engine SCENE_REC_rvlDonk
 	sub 4
 	0x29<2> 
-	0xB3 engine_loaded, 0x25
+	0xB3 engine_loaded, SCENE_REC_rvlDonk
+	0xB3 index, INDEX_rvlDonk
     async_call donksetup
     input 1
     rest 0x10

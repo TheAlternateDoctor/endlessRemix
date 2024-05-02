@@ -4,11 +4,12 @@ sequenceTutorial:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x4F
+	engine SCENE_tutorial
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x4F
+	0xB3 engine_loaded, SCENE_tutorial
+	0xB3 index, INDEX_tutorial
     fade<1> 1,1,1
     input 1
     random 1

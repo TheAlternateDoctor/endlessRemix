@@ -29,11 +29,12 @@ coinTossFinalRemix:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x41
+	engine SCENE_ntrCoinToss
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x41
+	0xB3 engine_loaded, SCENE_ntrCoinToss
+	0xB3 index, INDEX_ntrCoinToss
     fade<1> 1,1,1
 	set_cat 0x7D0
     input 1
@@ -65,7 +66,9 @@ coinTossLoadRecEngine:
     play_sfx 0x100029F
     rest 0x8
     call changeEngine
-    engine 0x25
+    engine SCENE_REC_ntrCoinToss
+	0xB3 engine_loaded, SCENE_REC_ntrCoinToss
+	0xB3 index, INDEX_ntrCoinToss
     sub 4
     0x29<2> 
     input 1

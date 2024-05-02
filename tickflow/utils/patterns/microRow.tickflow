@@ -17,7 +17,7 @@ sequenceMicroRow:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x23
+	engine SCENE_rvlFlea
 	sub 4
 	0x29<2> 
     rest 0x10
@@ -28,7 +28,8 @@ sequenceMicroRow:
     0x108 
     0x103 3
     0x102<2>
-	0xB3 engine_loaded, 0x23
+	0xB3 engine_loaded, SCENE_rvlFlea
+	0xB3 index, INDEX_rvlFlea
     fade<1> 1,1,1
     random 1
     switch

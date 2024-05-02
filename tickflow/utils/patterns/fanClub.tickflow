@@ -14,12 +14,13 @@ sequenceFanClub:
     endswitch
     rest 0x8
 	call changeEngine
-	engine 0x15
+	engine SCENE_ntrIdol
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x15
-    0x2B<1> 0x15
+	0xB3 engine_loaded, SCENE_ntrIdol
+	0xB3 index, INDEX_ntrIdol
+    0x2B<1> SCENE_ntrIdol
     if 3
         random 2
         switch

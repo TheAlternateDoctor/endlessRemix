@@ -1,5 +1,17 @@
 // Nothing quite interesting to report here ;P
 
+winAirRally:
+    0x10C<0> 0
+    0x10C<1> 0
+    rest 0x60
+    0x114
+    0x101 3, 0
+    0x101<1> 3, 0
+    0x107<6> 
+    0x108 7
+    0x7C 7, 1
+stop
+
 presequenceAirRally:
 rest 0x48
 play_sfx 0x10007C9
@@ -13,11 +25,12 @@ sequenceAirRally:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x1D
+	engine SCENE_rvlBadminton
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x1D
+	0xB3 engine_loaded, SCENE_rvlBadminton
+	0xB3 index, INDEX_rvlBadminton
     0x101<0> 1, 1
     0x101<1> 2, 1
     0x102

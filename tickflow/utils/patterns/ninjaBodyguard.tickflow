@@ -4,11 +4,12 @@ sequenceNinjaBodyguard:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0xD
+	engine SCENE_agbTono
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0xD
+	0xB3 engine_loaded, SCENE_agbTono
+	0xB3 index, INDEX_agbTono
     fade<1> 1,1,1
     0x101
     0x103 1

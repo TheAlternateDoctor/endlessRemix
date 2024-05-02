@@ -8,11 +8,12 @@ sequenceSneakySpirits:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x2
+	engine SCENE_agbGhost
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x2
+	0xB3 engine_loaded, SCENE_agbGhost
+	0xB3 index, INDEX_agbGhost
     fade<1> 1,1,1
     input 1
     0x101<1> 0xFA, 0

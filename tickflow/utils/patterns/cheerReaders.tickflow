@@ -19,11 +19,12 @@ sequenceCheerReaders:
     endswitch
     rest 0x8
 	call changeEngine
-	engine 0x20
+	engine SCENE_rvlBook
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x20
+	0xB3 engine_loaded, SCENE_rvlBook
+	0xB3 index, INDEX_rvlBook
     fade<1> 1,1,1
     0x8B 0,0
     rest 0x48

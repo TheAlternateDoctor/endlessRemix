@@ -8,11 +8,12 @@ sequenceFruitBasket:
 	set_cat 0
     rest 0x8
 	call changeEngine
-	engine 0x38
+	engine SCENE_ctrFruitBasket
 	sub 4
 	0x29<2> 
     rest 0x10
-	0xB3 engine_loaded, 0x38
+	0xB3 engine_loaded, SCENE_ctrFruitBasket
+	0xB3 index, INDEX_ctrFruitBasket
     fade<1> 1,1,1
     input 1
     random 4

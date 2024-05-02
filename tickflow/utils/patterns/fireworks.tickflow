@@ -1,11 +1,12 @@
 sequenceFireworks:
 	set_cat 0
 	call changeEngine
-	engine 0x25
+	engine SCENE_REC_agbFireworks
 	sub 4
 	0x29<2> 
     rest 0xC
-	0xB3 engine_loaded, 0x25
+	0xB3 engine_loaded, SCENE_REC_agbFireworks
+	0xB3 index, INDEX_agbFireworks
     setrest 0, 0x18
     setrest 1, 0x30
     0x101<1> 2
