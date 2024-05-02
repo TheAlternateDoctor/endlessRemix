@@ -79,6 +79,7 @@ sequenceMeetAndTweetPractice:
     rest 0x8
     async_call tweetSetupRemix
     rest 0x8
+    pan 3, -0xA0, 0x1D
 	0xB3 engine_loaded, 0x25
     fade<1> 1,1,1
     0xB3 score_add, 4

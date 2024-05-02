@@ -2,6 +2,8 @@
 // in the byte patterns!
 
 winSeeSaw:
+stop //To revise later actually
+    set_cat 0
     rest 0x18	// 0.5 beats
     0x100<2> 0, 1
     rest 0x30	// 1.0 beats

@@ -1,4 +1,5 @@
 winLoveRap:
+    set_cat 0
     0x109 1
     zoom_gradual 3, 4, 2, 0x60, 0x31, 0x31
     0x8B 0, 0

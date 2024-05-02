@@ -1,6 +1,7 @@
 // Nothing quite interesting to report here ;P
 
 winAirRally:
+    set_cat 0
     0x10C<0> 0
     0x10C<1> 0
     rest 0x60
@@ -9,7 +10,6 @@ winAirRally:
     0x101<1> 3, 0
     0x107<6> 
     0x108 7
-    0x7C 7, 1
 stop
 
 presequenceAirRally:
@@ -59,6 +59,9 @@ sequenceAirRally:
         async_call airRally5
         break
     endswitch
+    rest 0x30*16
+    0x104
+    0x105
 stop
 
 airRally1:

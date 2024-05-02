@@ -170,7 +170,7 @@ if 1
     random 7
     switch
     case 0
-        set_cellanim 4, u"rom:/cellanim/rvlInterview_remix06.zlib", -1
+        set_cellanim 4, u"rom:/cellanim/rvlInterview_long.zlib", -1
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/rvlInterview_remix05.zlib", -1
@@ -198,7 +198,7 @@ else
     random 7
     switch
     case 0
-        set_cellanim 5, u"rom:/cellanim/rvlInterview_remix06.zlib", -1
+        set_cellanim 5, u"rom:/cellanim/rvlInterview_long.zlib", -1
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/rvlInterview_remix05.zlib", -1

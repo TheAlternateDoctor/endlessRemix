@@ -1,5 +1,23 @@
 winFanClub:
-async_sub 0x61
+    set_cat 0
+    async_call fanClubWin1
+    0x10D 0
+    rest 0x20	// 0.6666667 beats
+    async_call fanClubWin2
+    rest 0xC	// 0.25 beats
+    async_call fanClubWin3
+    async_call fanClubWin4
+    rest 0xC	// 0.25 beats
+    async_call fanClubWin5
+    async_call fanClubWin6
+    rest 0x10	// 0.33333334 beats
+    async_call fanClubWin7
+    async_call fanClubWin8
+    rest 0x10	// 0.33333334 beats
+    async_call fanClubWin9
+    async_call fanClubWin10
+    rest 0x18	// 0.5 beats
+    async_call fanClubWin11
 stop
 
 sequenceFanClub:
@@ -195,3 +213,102 @@ club4:
     rest 0x60
 stop
 
+fanClubWin1:
+set_cat 0
+label 0xDE
+0x103 2
+rest 0xC	// 0.25 beats
+0x104 2
+rest 0xC	// 0.25 beats
+goto 0xDE
+stop 
+fanClubWin2:
+set_cat 0
+label 0x6F
+0x103 1
+rest 0xC	// 0.25 beats
+0x104 1
+rest 0xC	// 0.25 beats
+goto 0x6F
+stop 
+fanClubWin3:
+set_cat 0
+label 0x309
+0x103 7
+rest 0xC	// 0.25 beats
+0x104 7
+rest 0xC	// 0.25 beats
+goto 0x309
+stop 
+fanClubWin4:
+set_cat 0
+label 0x3E7
+0x103 9
+rest 0xC	// 0.25 beats
+0x104 9
+rest 0xC	// 0.25 beats
+goto 0x3E7
+stop 
+fanClubWin5:
+set_cat 0
+label 0x378
+0x103 8
+rest 0xC	// 0.25 beats
+0x104 8
+rest 0xC	// 0.25 beats
+goto 0x378
+stop 
+fanClubWin6:
+set_cat 0
+label 0x22B
+0x103 5
+rest 0xC	// 0.25 beats
+0x104 5
+rest 0xC	// 0.25 beats
+goto 0x22B
+stop 
+fanClubWin7:
+set_cat 0
+label 0x1BC
+0x103 4
+rest 0xC	// 0.25 beats
+0x104 4
+rest 0xC	// 0.25 beats
+goto 0x1BC
+stop 
+fanClubWin8:
+set_cat 0
+label 0x4BC
+0x103 0xC
+rest 0xC	// 0.25 beats
+0x104 0xC
+rest 0xC	// 0.25 beats
+goto 0x4BC
+stop 
+fanClubWin9:
+set_cat 0
+label 0x29A
+0x103 6
+rest 0xC	// 0.25 beats
+0x104 6
+rest 0xC	// 0.25 beats
+goto 0x29A
+stop 
+fanClubWin10:
+set_cat 0
+label 0x14D
+0x103 3
+rest 0xC	// 0.25 beats
+0x104 3
+rest 0xC	// 0.25 beats
+goto 0x14D
+stop 
+fanClubWin11:
+set_cat 0
+label 0x3F2
+0x103 0xA
+rest 0xC	// 0.25 beats
+0x104 0xA
+rest 0xC	// 0.25 beats
+goto 0x3F2
+stop 

@@ -145,7 +145,6 @@ input 0
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 speed,startSpeed //Speed at which the remix starts
-0xB3<1> is_debug,1 //Selects the shorts cycling mode(Debug mode only)
 0xB3 sfx_plus,0 //Slot 7 has SFX
 0xB3 sfx_plus_2,1 //Slot 7 has SFX
 0xB3<1> lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on

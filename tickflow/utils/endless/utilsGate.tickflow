@@ -46,7 +46,6 @@ endif
 return
 
 winGame:
-    input 0
     // fade 1, 1, 0x18
     set_cat 0
     async_call substopper
@@ -66,6 +65,7 @@ winGame:
     0x65<5> 2
     0x65<7> 0
     play_sfx 0x100017F
+    input 0
     async_call winSequence
     0x65<1> 2, "gate_clearT"
     0xAF 0

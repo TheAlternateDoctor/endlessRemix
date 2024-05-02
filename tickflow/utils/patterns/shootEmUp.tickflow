@@ -1,6 +1,7 @@
 // Nothing to report.
 
 winShootEmUp:
+    set_cat 0 // Move the textbox
     0x103 
     rest 0x30	// 1.0 beats
     0x104 
