@@ -5068,7 +5068,7 @@ rest 0xC
 0xB2<1> cellanim_slot
 if 1
     set_sfx 4, u"GROUP_WOOD_CAT"
-    random 7
+    random 8
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
@@ -5091,6 +5091,9 @@ if 1
     case 6
         set_cellanim 4, u"rom:/cellanim/ctrWoodCat_space.zlib", -1
         break
+    case 7
+        set_cellanim 4, u"rom:/cellanim/ctrWoodCat_yon_circus.zlib", -1
+        break
     endswitch
     set_effect 4, u"rom:/effect/ctrWoodCat.zlib", -1
     game_cellanim 0x3F, 4
@@ -5098,7 +5101,7 @@ if 1
     0xB3<1> cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_WOOD_CAT"
-    random 7
+    random 8
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
@@ -5120,6 +5123,9 @@ else
         break
     case 6
         set_cellanim 5, u"rom:/cellanim/ctrWoodCat_space.zlib", -1
+        break
+    case 7
+        set_cellanim 5, u"rom:/cellanim/ctrWoodCat_yon_circus.zlib", -1
         break
     endswitch
     set_effect 5, u"rom:/effect/ctrWoodCat.zlib", -1
