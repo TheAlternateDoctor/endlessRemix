@@ -1,151 +1,327 @@
-splashdownSetup:
-0x8B 0, 0
-0x5A 0xE8, 0, 0
-rotate 3, -8
-pan 3, -30, 90
-zoom 3, 0x130, 0x130
-0x104<1> 0, 0, 0x78
-0x104<1> 1, 0, 0x78
-0x104<1> 2, 0, 0x78
-0x104 0, 0, 0x1000B20, 0, 1
-0x104 1, 0, 0x1000B20, 0, 1
-0x104 2, 0, 0x1000B1B, 0, 1
-0x104 0, 1, 0x1000B21, 0, 1
-0x104 1, 1, 0x1000B21, 0, 1
-0x104 2, 1, 0x1000B1A, 0, 1
-0x104 0, 2, 0x1000B20, 0, 1
-0x104 1, 2, 0x1000B20, 0, 1
-0x104 2, 2, 0x1000B19, 0, 1
-return
-
-down50:
-0x104<1> 0, 2, 0x28
-rest 6
-0x100 2
-rest 0xC	// 0.25 beats
-rest 6
-0x104<1> 1, 2, 0x28
-rest 0x18	// 0.5 beats
+assetsSplashPractice:
+	0x8B<1> 0, 87, 107, 28
+	rotate 3, -8
+	pan 3, -30, 90
+	zoom 3, 0x130, 0x130
+	
+	0x104<1> 0, 0, 0
+	0x104<1> 1, 0, 0
+	0x104<1> 2, 0, 0
+	0x104<1> 0, 0, 0x78
+	0x104<1> 1, 0, 0x78
+	0x104<1> 2, 0, 0x78
+	
+	//Singing
+	0x104 0, 0, 0x10007FA, 0, 1
+	0x104 1, 0, 0x10007FA, 0, 1
+	0x104 2, 0, 0x10007FB, 0, 1
+	
+	//Wailing
+	0x104 0, 1, 0x10007FE, 0, 1
+	0x104 1, 1, 0x10007FE, 0, 1
+	0x104 2, 1, 0x10007FE, 0, 1
+	
+	//Stop
+	0x104 0, 2, 0x10007DE, 0, 1
+	0x104 1, 2, 0x10007DE, 0, 1
+	0x104 2, 2, 0x10007F3, 0, 1
 stop
 
+assetsSplash:
+	0x8B<1> 0, 87, 107, 28
+	rotate 3, -8
+	pan 3, -30, 90
+	zoom 3, 0x130, 0x130
 
-down75:
-0x104<1> 0, 2, 0x28
-rest 0x18	// 0.5 beats
-rest 6
-0x100 2
-rest 6
-0x104<1> 1, 2, 0x28
-rest 0x24	// 0.75 beats
+	if 0
+		0x104<1> 2, 0, 0
+	endif 
+
+	0x104<1> 0, 0, 0x78
+	0x104<1> 1, 0, 0x78
+	0x104<1> 2, 0, 0x78
+	
+	//Singing
+	0x104 0, 0, 0x10007FA, 0, 1
+	0x104 1, 0, 0x10007FA, 0, 1
+	0x104 2, 0, 0x10007FB, 0, 1
+	
+	//Wailing
+	0x104 0, 1, 0x10007FE, 0, 1
+	0x104 1, 1, 0x10007FE, 0, 1
+	0x104 2, 1, 0x10007FE, 0, 1
+	
+	//Stop
+	0x104 0, 2, 0x10007DE, 0, 1
+	0x104 1, 2, 0x10007DE, 0, 1
+	0x104 2, 2, 0x10007F3, 0, 1
+	
+	0x102 0
+	
+	//Disables all chorus kids for the "beat" animation at the start of the game
+	0x107 0, 0
+	0x107 1, 0
+	0x107 2, 0
 stop
 
-up50:
-0x104<1> 0, 0, 0x28
-rest 6
-0x100 0
-rest 0xC	// 0.25 beats
-rest 6
-0x104<1> 1, 0, 0x28
-rest 0x18	// 0.5 beats
+down18:
+	0x104<1> 0, 2, 0x28
+	0x100 2
+	rest 0xC	// 0.25 beats
+	rest 0xC
+	0x104<1> 1, 2, 0x28
+	rest 0x18	// 0.5 beats
 stop
 
-up75:
-0x104<1> 0, 0, 0x28
-rest 0x18	// 0.5 beats
-rest 6
-0x100 0
-rest 6
-0x104<1> 1, 0, 0x28
-rest 0x24	// 0.75 beats
+up18:
+	call normalScene
+	0x104<1> 0, 0, 0x28
+	0x100 0
+	rest 0xC	// 0.25 beats
+	rest 0xC
+	0x104<1> 1, 0, 0x28
+	rest 0x18	// 0.5 beats
 stop
 
-down100:
-0x104<1> 0, 2, 0x28
-rest 0x18	// 0.5 beats
-rest 0x18	// 0.5 beats
-0x104<1> 1, 2, 0x28
-rest 6
-0x100 2
-rest 6
-rest 0x18	// 0.5 beats
+down24:
+	0x104<1> 0, 2, 0x28
+	rest 0x18	// 0.5 beats
+	0x100 2
+	rest 0xC
+	0x104<1> 1, 2, 0x28
+	rest 0x24	// 0.75 beats
 stop
 
-up100:
-0x104<1> 0, 0, 0x28
-rest 0x18	// 0.5 beats
-rest 0x18	// 0.5 beats
-0x104<1> 1, 0, 0x28
-rest 6
-0x100 0
-rest 6
-rest 0x18	// 0.5 beats
+up24:
+	call normalScene
+	0x104<1> 0, 0, 0x28
+	rest 0x18	// 0.5 beats
+	0x100 0
+	rest 0xC
+	0x104<1> 1, 0, 0x28
+	rest 0x24	// 0.75 beats
+stop
+
+up24SpecialOne:
+	call specialUpOneScene
+	0x104<1> 0, 0, 0x28
+	rest 0x18	// 0.5 beats
+	0x100 0
+	rest 0xC
+	0x104<1> 1, 0, 0x28
+	rest 0x24	// 0.75 beats
+stop
+
+up24SpecialTwo:
+	call specialUpTwoScene
+	0x104<1> 0, 0, 0x28
+	rest 0x18	// 0.5 beats
+	0x100 0
+	rest 0xC
+	0x104<1> 1, 0, 0x28
+	rest 0x24	// 0.75 beats
+stop
+
+down30:
+	0x104<1> 0, 2, 0x28
+	rest 0x30	// 1.0 beats
+	0x104<1> 1, 2, 0x28
+	0x100 2
+	rest 0x30 	// 1.0 beats
+stop
+
+up30:
+	call normalScene
+	0x104<1> 0, 0, 0x28
+	rest 0x30	// 1.0 beats
+	0x104<1> 1, 0, 0x28
+	0x100 0
+	rest 0x30 	// 1.0 beats
 stop 
 
-jump200:
-rest 0x3	// 0.0625 beats
-0x104<1> 0, 1, 0x28
-play_sfx 0x1000B1C
-rest 0x30	// 1.0 beats
-rest 0x30	// 1.0 beats
-0x104<1> 1, 1, 0x28
-play_sfx 0x1000B1C
-0x10A 1
-rest 0x30
-0x100 1
-rest 0x30
-play_sfx 0x1000B1C
-rest 0x30
-0x10A 0
+up30SpecialOne:
+	call specialUpOneScene
+	0x104<1> 0, 0, 0x28
+	rest 0x30	// 1.0 beats
+	0x104<1> 1, 0, 0x28
+	0x100 0
+	rest 0x30 	// 1.0 beats
+stop 
+
+up30SpecialTwo:
+	call specialUpTwoScene
+	0x104<1> 0, 0, 0x28
+	rest 0x30	// 1.0 beats
+	0x104<1> 1, 0, 0x28
+	0x100 0
+	rest 0x30 	// 1.0 beats
+stop 
+
+down60:
+	0x104<1> 0, 2, 0x28
+	rest 0x60	// 1.0 beats
+	0x104<1> 1, 2, 0x28
+	rest 0x30 	// 1.0 beats
+	0x100 2
+	rest 0x30
 stop
 
-jump100:
-rest 0x3	// 0.0625 beats
-0x104<1> 0, 1, 0x28
-play_sfx 0x1000B1C
-rest 0x18	// 0.5 beats
+up60:
+	call normalScene
+	0x104<1> 0, 0, 0x28
+	rest 0x60	// 1.0 beats
+	0x104<1> 1, 0, 0x28
+	rest 0x30 	// 1.0 beats
+	0x100 0
+	rest 0x30
+stop 
 
-rest 0x18	// 0.5 beats
-0x104<1> 1, 1, 0x28
-play_sfx 0x1000B1C
-0x10A 1
-0x100 1
-rest 0x18	// 0.5 beats
-
-rest 0x18	// 0.5 beats
-play_sfx 0x1000B1C
-rest 0x18	// 0.5 beats
-0x10A 0
+dolphintime:
+	call dolphinScene
+	async_call dolphinJumpTogether
+	rest 0x30	// 1.0 beats
+	0x100 1
+	0x10A 1
+	rest 0x30	// 1.0 beats
+	0x104<1> 0, 1, 0x28
+	0x104<1> 1, 1, 0x28
+	rest 0x30	// 1.0 beats
+	0x10A 0
 stop
 
-jumpAll:
-rest 0x3	// 0.0625 beats
-play_sfx 0x1000B1F
-rest 0x30	// 1.0 beats
-0x100 1
-0x10A 1
-rest 0x30	// 1.0 beats
-0x104<1> 0, 1, 0x28
-0x104<1> 1, 1, 0x28
-rest 0x30	// 1.0 beats
-0x10A 0
+dolphintimealleyoop:
+	call alleyoopScene
+	async_call alleyoopJumpTogether
+	rest 0x30	// 1.0 beats
+
+	0x10A 1
+	0x100 1
+	rest 0x30	// 1.0 beats
+
+	0x104<1> 0, 1, 0x28
+	0x104<1> 1, 1, 0x28
+	rest 0x30	// 1.0 beats
+	0x10A 0
 stop
 
-jumpAllAlleyoop:
-play_sfx 0x1000B1F
-rest 0x30	// 1.0 beats
-
-0x10A 1
-rest 6
-0x100 1
-rest 0x24	// 0.75 beats
-rest 6
-
-0x104<1> 0, 1, 0x28
-0x104<1> 1, 1, 0x28
-rest 0x18	// 0.5 beats
-play_sfx 0x1000B1E
-rest 0xC	// 0.25 beats
-
-rest 0xC	// 0.25 beats
-0x10A 0
+dolphinseparate2beat:
+	call dolphinScene
+	0x104<1> 0, 1, 0x28
+	async_call dolphinCPUSound
+	rest 0x30	// 1.0 beats
+	rest 0x30	// 1.0 beats
+	0x104<1> 1, 1, 0x28
+	async_call dolphinCPUSound
+	0x10A 1
+	rest 0x30
+	0x100 1
+	rest 0x30
+	async_call dolphinPlayerSound
+	rest 0x30
+	0x10A 0
 stop
+
+dolphinseparate75beat:
+	call dolphinScene
+	0x104<1> 0, 1, 0x28
+	async_call dolphinCPUSound
+	rest 0x18	// 0.5 beats
+	0x10A 1
+	0x100 1
+	rest 0xC	// 0.5 beats
+	0x104<1> 1, 1, 0x28
+	async_call dolphinCPUSound
+	rest 0x18	// 0.5 beats
+	rest 0xC	// 0.5 beats
+	async_call dolphinPlayerSound
+	rest 0x18	// 0.5 beats
+	0x10A 0
+stop
+
+dolphinseparate1beat:
+	call dolphinScene
+	0x104<1> 0, 1, 0x28
+	async_call dolphinCPUSound
+	rest 0x18	// 0.5 beats
+	rest 0x18	// 0.5 beats
+	0x104<1> 1, 1, 0x28
+	async_call dolphinCPUSound
+	0x10A 1
+	0x100 1
+	rest 0x18	// 0.5 beats
+	rest 0x18	// 0.5 beats
+	async_call dolphinPlayerSound
+	rest 0x18	// 0.5 beats
+	0x10A 0
+stop
+
+dolphinCPUSound:
+	play_sfx 0x10007F8		//CPU Jump Sound
+	play_sfx 0x10007FC		//Yeah!!
+	rest 0x30
+	play_sfx 0x10007F5		//CPU Spin Sound
+	rest 0x24
+	play_sfx 0x10007F7		//CPU Splash Sound
+stop
+
+dolphinPlayerSound:
+	play_sfx 0x10007FD		//Player Jump Sound
+	play_sfx 0x10007FC		//Yeah!!
+	rest 0x30
+	play_sfx 0x10007F6		//Player Spin Sound
+	rest 0x24
+	play_sfx 0x10007F9		//Player Splash Sound
+stop
+
+dolphinJumpTogether:
+	play_sfx 0x1000802		//Normal Ohhh SFX
+	rest 0x60
+	play_sfx 0x10007F8		//CPU Jump Sound
+	play_sfx 0x10007FD		//Player Jump Sound
+	rest 0x30
+	play_sfx 0x10007F5		//CPU Spin Sound
+	play_sfx 0x10007F6		//Player Spin Sound
+	rest 0x24
+	play_sfx 0x10007F7		//CPU Splash Sound
+	play_sfx 0x10007F9		//Player Splash Sound
+stop
+
+alleyoopJumpTogether:
+	play_sfx 0x1000802		//Normal Ohhh SFX
+	rest 0x60
+	play_sfx 0x10007F8		//CPU Jump Sound
+	play_sfx 0x10007FD		//Player Jump Sound
+	rest 0x18
+	play_sfx 0x1000808		//alleyoop
+	rest 0x18
+	play_sfx 0x10007F5		//CPU Spin Sound
+	play_sfx 0x10007F6		//Player Spin Sound
+	rest 0x24
+	play_sfx 0x10007F7		//CPU Splash Sound
+	play_sfx 0x10007F9		//Player Splash Sound
+stop
+
+normalScene:
+	zoom 3, 0x130, 0x130
+	pan 3, -30, 90
+return
+
+dolphinScene:
+	zoom 3, 0x130, 0x130
+	pan 3, -0x280, 90
+return
+
+alleyoopScene:
+	zoom 3, 0x130, 0x130
+	pan 3, -0x64F, 90
+return
+
+specialUpOneScene:
+	zoom 3, 0x130, 0x130
+	pan 3, 0x2F4, 90
+return
+
+specialUpTwoScene:
+	zoom 3, 0x130, 0x130
+	pan 3, 0x604, 90
+return

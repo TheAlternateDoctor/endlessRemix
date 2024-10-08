@@ -880,15 +880,15 @@ endif
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    set_cellanim 4, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/ntrSyncro_long.zlib", -1
     game_cellanim 0x13, 4
     0xB3<1> cellanim_slot, 0
 else
-    set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/ntrSyncro_long.zlib", -1
     game_cellanim 0x13, 5
     0xB3<1> cellanim_slot, 1
 endif
-0x2B 0x13, 3
+0x2B 0x13, 0
 return
 
 loadSplashdownLate:

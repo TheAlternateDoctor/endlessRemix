@@ -2,15 +2,27 @@
 // It is weirdly offbeat and I cannot for the life of me know how to fix it.
 
 sequenceSplashdown:
-    0x2B 0x13, 8
 	set_cat 0
     rest 0x8
+    0x2B<1> 0x13
+    if 1
+        0xB3 game_state, 1
+    else
+        0xB3 game_state, 0
+    endif
+    //After setting the right asset pack, set the scene back to Machine
+    0x2B 0x13, 8
 	call changeEngine
 	engine SCENE_REC_ntrSynchro
 	sub 4
 	0x29<2> 
     rest 0x8
-    call splashdownSetup
+    0xB2 game_state
+    if 0
+        call assetsSplash
+    else
+        call assetsSplashPractice
+    endif
     random 1 // Hax needs to be STOPPED
     switch
     case 0
@@ -27,12 +39,12 @@ stop
 
 splashdown1:
 rest 0x2
-async_call down100
+async_call down30
 rest 0xC0
 rest 0x30
-async_call up50
+async_call up18
 rest 0x90
-async_call down100
+async_call down30
 rest 0xC0
-async_call jumpAll
+async_call dolphintime
 stop
