@@ -19,9 +19,9 @@ sequenceSplashdown:
     rest 0x8
     0xB2 game_state
     if 0
-        call assetsSplash
+        async_call assetsSplash
     else
-        call assetsSplashPractice
+        async_call assetsSplashPractice
     endif
     random 1 // Hax needs to be STOPPED
     switch
