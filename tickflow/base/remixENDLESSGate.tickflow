@@ -332,7 +332,7 @@ return
 swapGroups:
 remove_sfx 3
 rest 0xC
-set_sfx 3, u"GROUP_COMEDIANS_SPEED"
+//set_sfx 3, u"GROUP_COMEDIANS_SPEED"
 stop
 
 tempoAndMusic:

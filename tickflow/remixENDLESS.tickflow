@@ -452,7 +452,7 @@ set_sfx 1, u"GROUP_ENDLESS"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
-set_sfx 3, u"GROUP_COMEDIANS_SPEED"
+//set_sfx 3, u"GROUP_COMEDIANS_SPEED"
 rest 0x18	// 0.5 beats
 set_sfx 4, u"GROUP_BASKET"
 rest 0x18	// 0.5 beats
