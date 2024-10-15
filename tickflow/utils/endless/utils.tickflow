@@ -1188,44 +1188,6 @@ loadNextGame:
         //         set_func lateLoaderSub, loadBtSDSlate
         //     endif
         // break
-        case INDEX_rvlComedians
-            0xB2 index
-            if INDEX_rvlComedians //Stop games from being played next to each other
-                goto 0x70AD
-            else
-                if INDEX_ctrSumou
-                    goto 0x70AD
-                else
-                    0xB2<1> is_debug
-                    if 1
-                        0xB3 debug_start, 1337
-                        0xB3 debug_current_index, INDEX_rvlComedians
-                    endif
-                    set_func patternSub, sequenceManzai
-                    call loadManzai //help
-                    set_func presequenceSub, loadManzaiLate
-                    set_func lateLoaderSub, nop
-                    0xB3 index, INDEX_rvlComedians
-                endif
-            endif
-        break
-        case INDEX_tpaFrontier //Accumula Town
-            0xB2 index
-            if INDEX_tpaFrontier //Stop games from being played next to each other
-                goto 0x70AD
-            else
-                0xB2<1> is_debug
-                if 1
-                    0xB3 debug_start, 1337
-                    0xB3 debug_current_index, INDEX_tpaFrontier
-                endif
-                set_func patternSub, sequenceFinned
-                call loadFinned
-                set_func presequenceSub, preSequenceFinned
-                set_func lateLoaderSub, nop
-                set_func perfCheckSub, checkA2
-            endif
-        break
         case INDEX_skiMeat //Open Sesame Tofu!
             0xB2 index
             if INDEX_skiMeat //Stop games from being played next to each other

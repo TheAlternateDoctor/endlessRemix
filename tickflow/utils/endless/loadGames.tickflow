@@ -294,7 +294,7 @@ rest 0xC
 0xB2<1> cellanim_slot
 if 1
     set_sfx 4, u"GROUP_GOMA"
-    random 5
+    random 4
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/rvlGoma_short.zlib", -1
@@ -309,16 +309,12 @@ if 1
         set_cellanim 4, u"rom:/cellanim/rvlGoma_klonoa.zlib", -1
         0x2B 0x26, 0xF
         break
-    case 4
-        set_cellanim 4, u"rom:/cellanim/rvlGoma_pkmn.zlib", -1
-        0x2B 0x26, 0xF
-        break
     endswitch
     game_cellanim 0x26, 4
     0xB3<1> cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_GOMA"
-    random 5
+    random 4
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/rvlGoma_short.zlib", -1
@@ -331,10 +327,6 @@ else
         break
     case 3
         set_cellanim 5, u"rom:/cellanim/rvlGoma_klonoa.zlib", -1
-        0x2B 0x26, 0xF
-        break
-    case 4
-        set_cellanim 5, u"rom:/cellanim/rvlGoma_pkmn.zlib", -1
         0x2B 0x26, 0xF
         break
     endswitch
@@ -1199,7 +1191,7 @@ rest 0xC
 0xB2<1> cellanim_slot
 if 1
     set_sfx 4, u"GROUP_W_DATE"
-    random 7
+    random 6
     switch
     case 0
         0x2B 0x21, 3
@@ -1222,10 +1214,6 @@ if 1
         set_cellanim 4, u"rom:/cellanim/rvlDate_nightcall.zlib", -1
         break
     case 5
-        0x2B 0x21, 3
-        set_cellanim 4, u"rom:/cellanim/rvlDate_pkmn.zlib", -1
-        break
-    case 6
         0x2B 0x21, 2
         set_cellanim 4, u"rom:/cellanim/rvlDate_klonoa.zlib", -1
         break
@@ -1234,7 +1222,7 @@ if 1
     0xB3<1> cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_W_DATE"
-    random 7
+    random 6
     switch
     case 0
         0x2B 0x21, 3
@@ -1257,10 +1245,6 @@ else
         set_cellanim 5, u"rom:/cellanim/rvlDate_nightcall.zlib", -1
         break
     case 5
-        0x2B 0x21, 3
-        set_cellanim 5, u"rom:/cellanim/rvlDate_pkmn.zlib", -1
-        break
-    case 6
         0x2B 0x21, 2
         set_cellanim 5, u"rom:/cellanim/rvlDate_klonoa.zlib", -1
         break
@@ -2718,52 +2702,6 @@ else
 endif
 0x2B 0x31, 0xE
 return
-
-loadFinned:
-0xB2<1> cellanim_slot
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0xC
-0xB2<1> cellanim_slot
-if 1
-    set_cellanim 4, u"rom:/cellanim/tpaFrontier_long.zlib", -1
-    set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
-    game_cellanim 0x23, 4
-    0xB2 engine_loaded
-    if_neq SCENE_rvlFlea
-        game_effect 0x23, 4
-    endif
-    0xB3<1> cellanim_slot, 0
-else
-    set_cellanim 5, u"rom:/cellanim/tpaFrontier_long.zlib", -1
-    set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
-    game_cellanim 0x23, 5
-    0xB2 engine_loaded
-    if_neq SCENE_rvlFlea
-        game_effect 0x23, 5
-    endif
-    0xB3<1> cellanim_slot, 1
-endif
-0x2B 0x23, 3
-return
-
-loadFinnedLate:
-    async_call unloadSpeAudio
-    rest 0xC
-    0xB2<1> cellanim_slot
-    if 0
-        set_sfx 4, u"GROUP_FRONTIER"
-        set_sfx 0xB, u"GROUP_FRONTIER2"
-        0xB3 sfx_plus_2,1
-    else
-        set_sfx 5, u"GROUP_FRONTIER"
-        set_sfx 6, u"GROUP_FRONTIER2"
-        0xB3 sfx_plus,1
-    endif
-stop
 
 loadTangotronic:
 0xB2<1> cellanim_slot
@@ -4249,7 +4187,7 @@ rest 0xC
 0xB2<1> cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BLUE_BIRDS"
-    random 6
+    random 5
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_v0.zlib", -1
@@ -4264,9 +4202,6 @@ if 1
         set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_bomb.zlib", -1
         break
     case 4
-        set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_pkmn.zlib", -1
-        break
-    case 5
         set_cellanim 4, u"rom:/cellanim/ntrBlueBirds_SIR.zlib", -1
         0x2B 0x10, 1
         break
@@ -4277,7 +4212,7 @@ if 1
     0xB3<1> cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_NTR_BLUE_BIRDS"
-    random 6
+    random 5
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_v0.zlib", -1
@@ -4292,9 +4227,6 @@ else
         set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_bomb.zlib", -1
         break
     case 4
-        set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_pkmn.zlib", -1
-        break
-    case 5
         set_cellanim 5, u"rom:/cellanim/ntrBlueBirds_SIR.zlib", -1
         0x2B 0x10, 1
         break
@@ -5399,52 +5331,6 @@ if 0
     set_sfx 4, u"GROUP_BADMINTON"
 else
     set_sfx 5, u"GROUP_BADMINTON"
-endif
-stop
-
-loadManzai:
-0xB2<1> cellanim_slot
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0xC
-0xB2<1> cellanim_slot
-if 1
-    set_cellanim 4, u"rom:/cellanim/rvlComedians_long.zlib", -1
-    set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
-    game_cellanim 0x3C, 4
-    0xB2 engine_loaded
-    if_neq SCENE_ctrSumou
-        game_effect 0x3C, 4
-    endif
-    0xB3<1> cellanim_slot, 0
-else
-    set_cellanim 5, u"rom:/cellanim/rvlComedians_long.zlib", -1
-    set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
-    game_cellanim 0x3C, 5
-    0xB2 engine_loaded
-    if_neq SCENE_ctrSumou
-        game_effect 0x3C, 5
-    endif
-    0xB3<1> cellanim_slot, 1
-endif
-0x2B 0x3C, 3
-return
-
-loadManzaiLate:
-async_call unloadSpeAudio
-rest 0xC
-0xB2<1> cellanim_slot
-if 0
-    set_sfx 4, u"GROUP_COMEDIANS_VOICE"
-    set_sfx 0xB, u"GROUP_COMEDIANS"
-    0xB3 sfx_plus,1
-else
-    set_sfx 5, u"GROUP_COMEDIANS_VOICE"
-    set_sfx 6, u"GROUP_COMEDIANS"
-    0xB3 sfx_plus_2,1
 endif
 stop
 

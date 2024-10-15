@@ -66,7 +66,6 @@
 #include utils/patterns/clapTrap.tickflow
 #include utils/patterns/drumPractice.tickflow
 #include utils/patterns/builtToScaleDS.tickflow
-#include utils/patterns/finnedFrontier.tickflow
 #include utils/patterns/meatGrinder.tickflow
 #include utils/patterns/soumen.tickflow
 #include utils/patterns/mrUpbeat.tickflow
@@ -90,7 +89,6 @@
 #include utils/patterns/figureFighter.tickflow
 #include utils/patterns/airRally.tickflow
 #include utils/patterns/blueBear.tickflow
-#include utils/patterns/manzai.tickflow
 #include utils/patterns/meetAndTweet.tickflow
 #include utils/patterns/rhythmDoctor.tickflow
 #include utils/patterns/tambourine.tickflow
@@ -104,9 +102,7 @@
 #include utils/performance/dazzles.tickflow
 
 #include utils/games/builtToScaleDS.tickflow
-#include utils/games/finnedFrontier.tickflow
 #include utils/games/djschool.tickflow
-#include utils/games/manzai.tickflow
 #include utils/games/meatGrinderSubs.tickflow
 #include utils/games/frogHop.tickflow
 #include utils/games/fanClub.tickflow
