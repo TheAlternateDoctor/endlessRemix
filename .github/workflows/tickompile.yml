@@ -47,7 +47,7 @@ jobs:
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: Endless Remix (RHMPatch)
           path: out/
@@ -89,7 +89,7 @@ jobs:
           java -jar tickompiler.jar p bin/ base.bin out/C00.bin
 
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: Endless Remix - Lite
           path: out/
@@ -135,7 +135,7 @@ jobs:
           java -jar tickompiler.jar p bin/ base.bin out/C00-lite.bin
 
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: Latest C00.bins
           path: out/
@@ -187,7 +187,7 @@ jobs:
           ./deckompiler btks bin/remixENDLESSGate3.bin out/remixENDLESSGate3-lite.btk bin/remixENDLESS.tempo
 
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: Latest Saltwater btks
           path: out/
@@ -234,7 +234,7 @@ jobs:
           ./deckompiler btks bin/remixENDLESSGate3.bin out/remixENDLESSGate3.btk bin/remixENDLESS.tempo
           
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: Endless Remix (Saltwater)
           path: out/
@@ -280,7 +280,7 @@ jobs:
           ./deckompiler btks bin/remixENDLESSGate3.bin out/remixENDLESSGate3.btk bin/remixENDLESS.tempo
           
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4.4.3
         with:
-          name: Endless Remix (Saltwater)
+          name: Endless Remix - Lite (Saltwater)
           path: out/
