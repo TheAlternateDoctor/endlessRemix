@@ -5,18 +5,16 @@ bonus_endless
 >Endless Remix theme
 
 ~item_rvlSwordL_name
->Ethereal MP3 player
+>Tickflow code
 
 ~item_rvlSwordL_title
->Music in our heads
+>Living in a simulation?
 
 ~item_rvlSwordL_explain
->I don't know who made this thing, but it's
->weird! The moment it starts playing, it
->broadcasts music to everyone's head, and
->forces them to move to the rhythm! Only a
->handful of people seem to not be affected,
->and somehow all from the Rhythm League.
+>There's been... Rumours, on the Internet.
+>Rumours that we're living in a simulation!
+>People say the Rhythm League is in on this,
+>But that seems too big to be true.
 
 ~item_rvlSwordL_name_hi
 >Transition particles

@@ -215,11 +215,10 @@ async_call checkA2
 async_call manzaiSetupGate
 rest 0x30
 input 1
-call loadMeetAndTweetVanilla
+call loadPataponVanilla
 rest 0x30 *8-0xC
 rest 0x30 *8
 rest 0x30 * 6
-async_call loadMeetAndTweetLate
 rest 0x18
 0xB2 lives
 if_neq 0
@@ -232,7 +231,7 @@ endif
 call updateScoreGate
 async_call speedup
 async_call lifeScoreCounter
-call playMeetAndTweetPracticePatternGate
+call playPataponPracticePatternGate
 call playBasketInterludeGate
 call playRhythmDoctorPracticePatternGate
 call playMrUpbeatGate
@@ -242,9 +241,16 @@ stop
 
 manzaiSetupGate:
     set_countdown manzaiSpeed
+	0xB3 chosen_speed, 0
     label 0x7009
-	play_sfx 0x10011C7
-    dec_countdown
+	0xB2 chosen_speed
+	if_lt 2 //We skip this one
+		play_sfx 0x10011C7
+		0xB4 chosen_speed, 1
+    else
+		0xB3 chosen_speed, 0
+	endif
+	dec_countdown
     rest 1
     get_countdown
     if_neq 0
@@ -332,7 +338,7 @@ return
 swapGroups:
 remove_sfx 3
 rest 0xC
-//set_sfx 3, u"GROUP_COMEDIANS_SPEED"
+set_sfx 3, u"GROUP_COMEDIANS_SPEED"
 stop
 
 tempoAndMusic:

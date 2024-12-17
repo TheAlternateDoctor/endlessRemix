@@ -15,6 +15,32 @@
 #include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
 
+#include utils/games/builtToScaleDS.tickflow
+#include utils/games/djschool.tickflow
+#include utils/games/meatGrinderSubs.tickflow
+#include utils/games/frogHop.tickflow
+#include utils/games/fanClub.tickflow
+#include utils/games/soumen.tickflow
+#include utils/games/mrUpbeat.tickflow
+#include utils/games/tapTroupe.tickflow
+#include utils/games/splashdown.tickflow
+#include utils/games/basketGirls.tickflow
+#include utils/games/dazzles.tickflow
+#include utils/games/cheerReaders.tickflow
+#include utils/games/lumbearjack.tickflow
+#include utils/games/coinToss.tickflow
+#include utils/games/fillbots.tickflow
+#include utils/games/bossaNova.tickflow
+#include utils/games/airRally.tickflow
+#include utils/games/meetAndTweet.tickflow
+#include utils/games/ianVoices.tickflow
+#include utils/games/nurseVoices.tickflow
+#include utils/games/rhythmDoctor.tickflow
+#include utils/games/donkDonk.tickflow
+#include utils/games/tambourine.tickflow
+#include utils/games/fireworks.tickflow
+#include utils/games/patapon.tickflow
+
 #include utils/patterns/basketGirls.tickflow
 #include utils/patterns/spaceball.tickflow
 #include utils/patterns/clappyTrio.tickflow
@@ -94,37 +120,13 @@
 #include utils/patterns/rhythmDoctor.tickflow
 #include utils/patterns/tambourine.tickflow
 #include utils/patterns/fireworks.tickflow
+#include utils/patterns/patapon.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
 #include utils/performance/bunnyHop.tickflow
 #include utils/performance/samuraiSliceWii.tickflow
 #include utils/performance/dazzles.tickflow
-
-#include utils/games/builtToScaleDS.tickflow
-#include utils/games/djschool.tickflow
-#include utils/games/meatGrinderSubs.tickflow
-#include utils/games/frogHop.tickflow
-#include utils/games/fanClub.tickflow
-#include utils/games/soumen.tickflow
-#include utils/games/mrUpbeat.tickflow
-#include utils/games/tapTroupe.tickflow
-#include utils/games/splashdown.tickflow
-#include utils/games/basketGirls.tickflow
-#include utils/games/dazzles.tickflow
-#include utils/games/cheerReaders.tickflow
-#include utils/games/lumbearjack.tickflow
-#include utils/games/coinToss.tickflow
-#include utils/games/fillbots.tickflow
-#include utils/games/bossaNova.tickflow
-#include utils/games/airRally.tickflow
-#include utils/games/meetAndTweet.tickflow
-#include utils/games/ianVoices.tickflow
-#include utils/games/nurseVoices.tickflow
-#include utils/games/rhythmDoctor.tickflow
-#include utils/games/donkDonk.tickflow
-#include utils/games/tambourine.tickflow
-#include utils/games/fireworks.tickflow
 
 #include utils/utils.tickflow
 #include utils/extraLoops.tickflow
@@ -336,11 +338,10 @@ if 1
 endif
 rest 0x30
 input 1
-call loadMeetAndTweetVanilla
+call loadPataponVanilla
 rest 0x30 *8-0xC
 rest 0x30 *8
 rest 0x30 * 6
-async_call loadMeetAndTweetLate
 rest 0x18
 0xB2 lives
 if_neq 0
@@ -354,7 +355,7 @@ endif
 call updateScore
 async_call speedup
 async_call lifeScoreCounter
-call playMeetAndTweetPracticePattern
+call playPataponPracticePattern
 call playBasketInterlude
 call playRhythmDoctorPracticePattern
 call playMrUpbeat
@@ -366,38 +367,48 @@ setSpeed:
     switch
     case 0
         speed startSpeed // Base speed
-        0xB3 speed startSpeed
+        0xB3 speed, startSpeed
         break
     case 1
-        0x40<2> 0x1000291, 0xFF, 0x140
-        speed 0x140 //Slow speed
-        0xB3 speed 0x140
-        set_countdown 0x140
+        0x40<2> 0x1000291, 0xFF, speedOne
+        speed speedOne //Slow speed
+        0xB3 speed, speedOne
+        set_countdown speedOne-0x100
+		call manzaiSetupStart
         break
     case 2
-        0x40<2> 0x1000291, 0xFF, 0x180
-        speed 0x180 //2nd Slowest speed
-        0xB3 speed 0x180
-        set_countdown 0x180
+        0x40<2> 0x1000291, 0xFF, speedTwo
+        speed speedTwo //2nd Slowest speed
+        0xB3 speed, speedTwo
+        set_countdown speedTwo-0x100
+		call manzaiSetupStart
         break
     case 3
-        0x40<2> 0x1000291, 0xFF, 0x1C0
-        speed 0x1C0 //2nd fastest speed
-        0xB3 speed 0x1C0
-        set_countdown 0x1C0
+        0x40<2> 0x1000291, 0xFF, speedThree
+        speed speedThree //2nd fastest speed
+        0xB3 speed, speedThree
+        set_countdown speedThree-0x100
+		call manzaiSetupStart
         break
     case 4
         0x40<2> 0x1000291, 0xFF, 0x200
         speed 0x200 //Fastest speed
-        0xB3 speed 0x200
-        set_countdown 0x200
+        0xB3 speed, 0x200
+        set_countdown 0x200-0x100
+		call manzaiSetupStart
         break
     endswitch
-	call manzaiSetupStart
 stop
 manzaiSetupStart:
+	0xB3 chosen_speed, 0
     label 0x7009
-	play_sfx 0x10011C7
+	0xB2 chosen_speed
+	if_lt 1 //We skip this one
+		play_sfx 0x10011C7
+		0xB4 chosen_speed, 1
+    else
+		0xB3 chosen_speed, 0
+	endif
     dec_countdown
     rest 1
     get_countdown
@@ -448,7 +459,7 @@ set_sfx 1, u"GROUP_ENDLESS"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
-//set_sfx 3, u"GROUP_COMEDIANS_SPEED"
+set_sfx 3, u"GROUP_COMEDIANS_SPEED"
 rest 0x18	// 0.5 beats
 set_sfx 4, u"GROUP_BASKET"
 rest 0x18	// 0.5 beats

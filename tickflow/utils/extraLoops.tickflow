@@ -1,15 +1,11 @@
 //Endless
-playMeetAndTweetPracticePattern:
+playPataponPracticePattern:
     set_cat 0
     0xB2 lives
     if_neq 0
-        async_call sequenceMeetAndTweetPractice
+        async_call sequencePataponPractice
         rest 0x18
         0x58 0x100, 0x30
-        0xB2<1> lives_enabled
-        if 1
-            async_call checkA2
-        endif
         rest 0x78
         call loadBasketGirls
         rest 0x24C

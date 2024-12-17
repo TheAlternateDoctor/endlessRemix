@@ -8,7 +8,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x53
+        random 0x54
     endif
     switch
         case INDEX_agbBatter
@@ -18,7 +18,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbBatter
                 endif
                 set_func patternSub, sequenceSpaceball
@@ -35,7 +34,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbClap
                 endif
                 set_func patternSub, sequenceClappyTrio
@@ -52,7 +50,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbGhost
                 endif
                 set_func patternSub, sequenceSneakySpirits
@@ -69,7 +66,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbHair
                 endif
                 set_func patternSub, sequenceTweezers
@@ -86,7 +82,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbHopping
                 endif
                 set_func patternSub, sequenceHopping
@@ -103,7 +98,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbMarcher
                 endif
                 set_func patternSub, sequenceMarcher
@@ -120,7 +114,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbNightWalk
                 endif
                 set_func patternSub, sequenceNightWalk
@@ -137,7 +130,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbQuiz
                 endif
                 set_func patternSub, sequenceQuiz
@@ -154,7 +146,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbRabbit
                 endif
                 set_func patternSub, sequenceBunnyHop
@@ -171,7 +162,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbRat
                 endif
                 set_func patternSub, sequenceRatRace
@@ -188,7 +178,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbShuji
                 endif
                 set_func patternSub, sequencePowerCalligraphy
@@ -205,7 +194,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbSpaceDance
                 endif
                 set_func patternSub, sequenceSpaceDance
@@ -222,7 +210,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbTap
                 endif
                 set_func patternSub, sequenceTap
@@ -239,7 +226,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbTono
                 endif
                 set_func patternSub, sequenceNinjaBodyguard
@@ -256,7 +242,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrAirBoard
                 endif
                 set_func patternSub, sequenceAirboarders
@@ -273,7 +258,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBackbeat
                 endif
                 set_func patternSub, sequenceLockstep
@@ -290,7 +274,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBlueBirds
                 endif
                 set_func patternSub, sequenceBlueBirds
@@ -307,7 +290,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrBoxShow
                 endif
                 set_func patternSub, sequenceDazzles
@@ -324,7 +306,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrCameraMan
                 endif
                 set_func patternSub, sequenceFreezeFrame
@@ -341,7 +322,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrChorus
                 endif
                 set_func patternSub, sequenceGleeClub
@@ -358,7 +338,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrFrog
                 endif
                 set_func patternSub, sequenceFrogHop
@@ -375,7 +354,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrIdol
                 endif
                 set_func patternSub, sequenceFanClub
@@ -392,7 +370,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrNinja
                 endif
                 set_func patternSub, sequenceDogNinja
@@ -409,7 +386,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrPingpong
                 endif
                 set_func patternSub, sequenceRhythmRally
@@ -426,7 +402,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShooting
                 endif
                 set_func patternSub, sequenceShootEmUp
@@ -443,7 +418,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShortLive
                 endif
                 set_func patternSub, sequenceBigRockFinish
@@ -460,7 +434,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrShugyo
                 endif
                 set_func patternSub, sequenceMunchyMonk
@@ -477,7 +450,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlAssemble
                 endif
                 set_func patternSub, sequenceBtSWii
@@ -494,7 +466,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBird
                 endif
                 set_func patternSub, sequenceFlockstep
@@ -511,7 +482,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBook
                 endif
                 set_func patternSub, sequenceCheerReaders
@@ -528,7 +498,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlDate
                 endif
                 set_func patternSub, sequenceDoubleDate
@@ -545,7 +514,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFishing
                 endif
                 set_func patternSub, sequenceCatchOfTheDay
@@ -562,7 +530,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFlea
                 endif
                 set_func patternSub, sequenceMicroRow
@@ -579,7 +546,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlFork
                 endif
                 set_func patternSub, sequenceForkLifter
@@ -596,7 +562,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlGolf
                 endif
                 set_func patternSub, sequenceGolf
@@ -613,7 +578,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlGoma
                 endif
                 set_func patternSub, sequenceFlipperFlop
@@ -630,7 +594,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlInterview
                 endif
                 set_func patternSub, sequenceRingSide
@@ -647,7 +610,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlKarate
                 endif
                 set_func patternSub, sequenceKarate
@@ -664,7 +626,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlManju
                 endif
                 set_func patternSub, sequenceWorkingDough
@@ -681,7 +642,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRocket
                 endif
                 set_func patternSub, sequenceLaunchParty
@@ -698,7 +658,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRotation
                 endif
                 set_func patternSub, sequenceBoardMeeting
@@ -715,7 +674,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRecieve
                 endif
                 set_func patternSub, sequenceBossaNova
@@ -732,7 +690,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBadminton
                 endif
                 set_func patternSub, sequenceAirRally
@@ -749,7 +706,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlMuscle
                 endif
                 set_func patternSub, sequenceFigureFighter
@@ -766,7 +722,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSamurai
                 endif
                 set_func patternSub, sequenceSSWii
@@ -783,7 +738,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSeesaw
                 endif
                 set_func patternSub, sequenceSeeSaw
@@ -800,7 +754,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSort
                 endif
                 set_func patternSub, sequencePackingPests
@@ -817,7 +770,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrBear
                 endif
                 set_func patternSub, sequenceBlueBear
@@ -834,7 +786,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrBlanco
                 endif
                 set_func patternSub, sequenceAnimalAcrobat
@@ -851,7 +802,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrChameleon
                 endif
                 set_func patternSub, sequenceTongueLashing
@@ -868,7 +818,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrDotSamurai
                 endif
                 set_func patternSub, sequenceSuperSamuraiSlice
@@ -885,7 +834,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrFruitBasket
                 endif
                 set_func patternSub, sequenceFruitBasket
@@ -902,7 +850,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrPillow
                 endif
                 set_func patternSub, sequencePajama
@@ -919,7 +866,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrStep
                 endif
                 set_func patternSub, sequenceCatchyTune
@@ -936,7 +882,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrSumou
                 endif
                 set_func patternSub, sequenceSumoBros
@@ -953,7 +898,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrTango
                 endif
                 set_func patternSub, sequenceTangotronic
@@ -970,7 +914,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrTeppan
                 endif
                 set_func patternSub, sequenceKitties
@@ -987,7 +930,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ctrWoodcat
                 endif
                 set_func patternSub, sequenceLumbearjack
@@ -1004,7 +946,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbVirus
                 endif
                 set_func patternSub, sequenceSickBeats
@@ -1021,7 +962,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrCoinToss
                 endif
                 set_func patternSub, sequenceCoinToss
@@ -1038,7 +978,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlSword
                 endif
                 set_func patternSub, sequenceClapTrap
@@ -1055,7 +994,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_tutorial
                 endif
                 set_func patternSub, sequenceTutorial
@@ -1072,7 +1010,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlMonkeyWatch
                 endif
                 set_func patternSub, sequenceMonkeyWatch
@@ -1089,7 +1026,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRap
                 endif
                 set_func patternSub, sequenceLoveRap
@@ -1106,7 +1042,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrRobot
                 endif
                 set_func patternSub, sequenceFillbots
@@ -1123,7 +1058,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlBatting
                 endif
                 set_func patternSub, sequenceExhibitionMatch
@@ -1140,7 +1074,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlRobot
                 endif
                 set_func patternSub, sequenceScrewBotFactory
@@ -1160,7 +1093,6 @@ loadNextGame:
                 else
                     0xB2<1> is_debug
                     if 1
-                        0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_rvlBasket
                     endif
                     set_func patternSub, sequenceBasketGirls
@@ -1198,7 +1130,6 @@ loadNextGame:
                 else
                     0xB2<1> is_debug
                     if 1
-                        0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_skiMeat
                     endif
                     set_func patternSub, sequenceMeatGrinder
@@ -1217,7 +1148,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_swfSoumen
                 endif
                 set_func patternSub, sequenceSoumen
@@ -1237,7 +1167,6 @@ loadNextGame:
                 else
                     0xB2<1> is_debug
                     if 1
-                        0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_agbMetro
                     endif
                     set_func patternSub, sequenceUpbeat
@@ -1256,7 +1185,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_rvlTap
                 endif
                 set_func patternSub, sequenceTapTroupe
@@ -1273,7 +1201,6 @@ loadNextGame:
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_ntrSynchro
                 endif
                 set_func patternSub, sequenceSplashdown
@@ -1283,34 +1210,16 @@ loadNextGame:
                 set_func perfCheckSub, checkA2
             endif
         break
-        case INDEX_bnbTweet //Meet and Tweet
-            0xB2 index
-            if INDEX_bnbTweet //Stop games from being played next to each other
-                goto 0x70AD
-            else
-                0xB2<1> is_debug
-                if 1
-                    0xB3 debug_start, 1337
-                    0xB3 debug_current_index, INDEX_bnbTweet
-                endif
-                set_func patternSub, sequenceMeetAndTweet
-                call loadMeetAndTweet
-                set_func presequenceSub, nop
-                set_func lateLoaderSub, loadMeetAndTweetLate
-                set_func perfCheckSub, checkA2
-            endif
-        break
-        case INDEX_7bgDoctor //Meet and Tweet
+        case INDEX_7bgDoctor //Rhythm Doctor
             0xB2 index
             if INDEX_7bgDoctor //Stop games from being played next to each other
                 goto 0x70AD
             else
                 if INDEX_ctrSumou
-                    goto 0x7AD
+                    goto 0x70AD
                 else
                     0xB2<1> is_debug
                     if 1
-                        0xB3 debug_start, 1337
                         0xB3 debug_current_index, INDEX_7bgDoctor
                     endif
                     set_func patternSub, sequenceRhythmDoctor
@@ -1325,11 +1234,10 @@ loadNextGame:
         case INDEX_agbFireworks
             0xB2 index
             if INDEX_agbFireworks //Stop games from being played next to each other
-                goto 0x7AD
+                goto 0x70AD
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
                     0xB3 debug_current_index, INDEX_agbFireworks
                 endif
                 set_func patternSub, sequenceFireworks
@@ -1341,11 +1249,14 @@ loadNextGame:
         case INDEX_rvlDonk
             0xB2 index
             if INDEX_rvlDonk //Stop games from being played next to each other
-                goto 0x7AD
+                goto 0x70AD
             else
                 0xB2<1> is_debug
                 if 1
-                    0xB3 debug_start, 1337
+                    0xB2 debug_current_index
+                    if INDEX_rvlDonk
+                        goto 0xD0C6
+                    endif
                     0xB3 debug_current_index, INDEX_rvlDonk
                 endif
                 set_func patternSub, sequenceDonk
@@ -1357,14 +1268,17 @@ loadNextGame:
         case INDEX_rvlTambourine
             0xB2 index
             if INDEX_rvlTambourine //Stop games from being played next to each other
-                goto 0x7AD
+                goto 0x70AD
             else
                 if INDEX_ctrSumou
-                    goto 0x7AD
+                    goto 0x70AD
                 else
                     0xB2<1> is_debug
                     if 1
-                        0xB3 debug_start, 1337
+                        0xB2 debug_current_index
+                        if INDEX_rvlTambourine
+                            goto 0xD0C6
+                        endif
                         0xB3 debug_current_index, INDEX_rvlTambourine
                     endif
                     set_func patternSub, sequenceTambourine
@@ -1375,12 +1289,27 @@ loadNextGame:
                 endif
             endif
         break
-        default //Restart until we get something damnit
-            0xB2<1> is_debug
-            if 1
-                0xB3 debug_start, 1337
+        case INDEX_pspPatapon
+            0xB2 index
+            if INDEX_pspPatapon //Stop games from being played next to each other
+                0xB2<1> is_debug
+                if 1
+                    goto 0xD0C6
+                endif
+                goto 0x70AD
+            else
+                0xB2<1> is_debug
+                if 1
+                    0xB3 debug_current_index, INDEX_pspPatapon
+                endif
+                set_func patternSub, sequencePatapon
+                call loadPatapon
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
             endif
-            goto 0x70AD
+        break
+        default //Restart until we get something damnit
+            goto 0xD0C6
         break
     endswitch
 
@@ -1480,8 +1409,7 @@ speedup:
         0xB2 speed
             if_leq 0x10C
                 speed_relative 0x102, startSpeed, maxSpeed
-                async_call manzaiSpeedup
-                async_call manzaiSpeedup, 3
+    	        play_sfx 0x10011C7
                 0xB4 speed, 2
             else
                 speed_relative 0x101, startSpeed, maxSpeed
@@ -1495,12 +1423,11 @@ speedup:
         0xB2 speed
         if_leq 0x130
             speed_relative 0x102, startSpeed, maxSpeed
-            async_call manzaiSpeedup
-            async_call manzaiSpeedup, 3
+    	    play_sfx 0x10011C7
             0xB4 speed, 2
         else
             speed_relative 0x101, startSpeed, maxSpeed
-            async_call manzaiSpeedup
+            play_sfx 0x10011C7
             0xB4 speed, 1
         endif
 
@@ -1509,12 +1436,11 @@ speedup:
         0xB2 speed
         if_leq 0x120
             speed_relative 0x102, startSpeed, maxSpeed
-            async_call manzaiSpeedup
-            async_call manzaiSpeedup, 3
+    	    play_sfx 0x10011C7
             0xB4 speed, 2
         else
             speed_relative 0x101, startSpeed, maxSpeed
-            async_call manzaiSpeedup
+    	    play_sfx 0x10011C7
             0xB4 speed, 1
         endif
 
@@ -1523,12 +1449,11 @@ speedup:
         0xB2 speed
         if_leq 0x148
             speed_relative 0x102, startSpeed, maxSpeed
-            async_call manzaiSpeedup
-            async_call manzaiSpeedup, 3
+    	    play_sfx 0x10011C7
             0xB4 speed, 2
         else
             speed_relative 0x101, startSpeed, maxSpeed
-            async_call manzaiSpeedup
+    	    play_sfx 0x10011C7
             0xB4 speed, 1
         endif
 
@@ -1629,5 +1554,11 @@ stop
 
 //Cannot be bothered to make it better so heeeeeere it staysssss
 manzaiSpeedup:
-	play_sfx 0x10011C7
+    0xB2<1> speed_setup
+    if 1
+	    play_sfx 0x10011C7
+        0xB3<1> speed_setup, 0
+    else
+        0xB3<1> speed_setup, 1
+    endif
 stop

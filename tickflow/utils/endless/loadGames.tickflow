@@ -5684,81 +5684,6 @@ else
 endif
 return
 
-loadMeetAndTweet:
-0xB2<1> cellanim_slot
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0xC
-0x2B 0x29, 0x10
-0xB2<1> cellanim_slot
-if 1
-    random 2
-    switch
-    case 0
-        set_cellanim 4, u"rom:/cellanim/bnbTweet.zlib", -1
-        break
-    case 1
-        set_cellanim 4, u"rom:/cellanim/bnbTweet_practice.zlib", -1
-        break
-    case 2
-        set_cellanim 4, u"rom:/cellanim/bnbTweet_pkmn.zlib", -1
-        0x2B 0x29, 0xF
-        break
-    endswitch
-    game_cellanim 0x25, 4
-    0xB3<1> cellanim_slot, 0
-else
-    random 2
-    switch
-    case 0
-        set_cellanim 5, u"rom:/cellanim/bnbTweet.zlib", -1
-        break
-    case 1
-        set_cellanim 5, u"rom:/cellanim/bnbTweet_practice.zlib", -1
-        break
-    case 2
-        set_cellanim 5, u"rom:/cellanim/bnbTweet_pkmn.zlib", -1
-        0x2B 0x29, 0xF
-        break
-    endswitch
-    game_cellanim 0x25, 5
-    0xB3<1> cellanim_slot, 1
-endif
-return
-loadMeetAndTweetVanilla:
-0xB2<1> cellanim_slot
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0xC
-0xB2<1> cellanim_slot
-if 1
-    set_cellanim 4, u"rom:/cellanim/bnbTweet.zlib", -1
-    game_cellanim 0x25, 4
-    0xB3<1> cellanim_slot, 0
-else
-    set_cellanim 5, u"rom:/cellanim/bnbTweet.zlib", -1
-    game_cellanim 0x25, 5
-    0xB3<1> cellanim_slot, 1
-endif
-0x2B 0x25, 0x10
-return
-
-loadMeetAndTweetLate:
-rest 0xC
-0xB2<1> cellanim_slot
-if 1
-    set_sfx 5, u"GROUP_MEETANDTWEET_SFX"
-else
-    set_sfx 4, u"GROUP_MEETANDTWEET_SFX"
-endif
-stop
-
 loadRhythmDoctor:
 0xB2<1> cellanim_slot
 if 1
@@ -5823,3 +5748,59 @@ else
     set_sfx 4, u"GROUP_POMERANIAN"
 endif
 stop
+
+loadPatapon:
+0xB2<1> cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2<1> cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_PATAPON"
+    random 1
+    switch
+    case 0
+        set_cellanim 4, u"rom:/cellanim/pspPatapon_long.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x25, 4
+    0xB3<1> cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_PATAPON"
+    random 1
+    switch
+    case 0
+        set_cellanim 5, u"rom:/cellanim/pspPatapon_long.zlib", -1
+        break
+    endswitch
+    game_cellanim 0x25, 5
+    0xB3<1> cellanim_slot, 1
+endif
+0x2B 0x25, 0x2
+return
+
+loadPataponVanilla:
+0xB2<1> cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2<1> cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_PATAPON"
+    set_cellanim 4, u"rom:/cellanim/pspPatapon_practice.zlib", -1
+    game_cellanim 0x25, 4
+    0xB3<1> cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_PATAPON"
+    set_cellanim 5, u"rom:/cellanim/pspPatapon_practice.zlib", -1
+    game_cellanim 0x25, 5
+    0xB3<1> cellanim_slot, 1
+endif
+0x2B 0x25, 0x10
+return

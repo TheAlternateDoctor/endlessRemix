@@ -2,3 +2,6 @@
 startSpeed = 0x100
 maxSpeed = 0x200
 maxTurns = 0
+speedOne = 0x120
+speedTwo = 0x150
+speedThree = 0x180

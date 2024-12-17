@@ -15,6 +15,32 @@
 #include utils/endless/utils.tickflow
 #include utils/endless/utilsGate.tickflow
 
+#include utils/games/builtToScaleDS.tickflow
+#include utils/games/djschool.tickflow
+#include utils/games/meatGrinderSubs.tickflow
+#include utils/games/frogHop.tickflow
+#include utils/games/fanClub.tickflow
+#include utils/games/soumen.tickflow
+#include utils/games/mrUpbeat.tickflow
+#include utils/games/tapTroupe.tickflow
+#include utils/games/splashdown.tickflow
+#include utils/games/basketGirls.tickflow
+#include utils/games/dazzles.tickflow
+#include utils/games/cheerReaders.tickflow
+#include utils/games/lumbearjack.tickflow
+#include utils/games/coinToss.tickflow
+#include utils/games/fillbots.tickflow
+#include utils/games/bossaNova.tickflow
+#include utils/games/airRally.tickflow
+#include utils/games/meetAndTweet.tickflow
+#include utils/games/ianVoices.tickflow
+#include utils/games/nurseVoices.tickflow
+#include utils/games/rhythmDoctor.tickflow
+#include utils/games/tambourine.tickflow
+#include utils/games/fireworks.tickflow
+#include utils/games/donkDonk.tickflow
+#include utils/games/patapon.tickflow
+
 #include utils/patterns/basketGirls.tickflow
 #include utils/patterns/spaceball.tickflow
 #include utils/patterns/clappyTrio.tickflow
@@ -94,37 +120,13 @@
 #include utils/patterns/tambourine.tickflow
 #include utils/patterns/donkDonk.tickflow
 #include utils/patterns/fireworks.tickflow
+#include utils/patterns/patapon.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
 #include utils/performance/bunnyHop.tickflow
 #include utils/performance/samuraiSliceWii.tickflow
 #include utils/performance/dazzles.tickflow
-
-#include utils/games/builtToScaleDS.tickflow
-#include utils/games/djschool.tickflow
-#include utils/games/meatGrinderSubs.tickflow
-#include utils/games/frogHop.tickflow
-#include utils/games/fanClub.tickflow
-#include utils/games/soumen.tickflow
-#include utils/games/mrUpbeat.tickflow
-#include utils/games/tapTroupe.tickflow
-#include utils/games/splashdown.tickflow
-#include utils/games/basketGirls.tickflow
-#include utils/games/dazzles.tickflow
-#include utils/games/cheerReaders.tickflow
-#include utils/games/lumbearjack.tickflow
-#include utils/games/coinToss.tickflow
-#include utils/games/fillbots.tickflow
-#include utils/games/bossaNova.tickflow
-#include utils/games/airRally.tickflow
-#include utils/games/meetAndTweet.tickflow
-#include utils/games/ianVoices.tickflow
-#include utils/games/nurseVoices.tickflow
-#include utils/games/rhythmDoctor.tickflow
-#include utils/games/tambourine.tickflow
-#include utils/games/fireworks.tickflow
-#include utils/games/donkDonk.tickflow
 
 #include utils/utils.tickflow
 #include utils/extraLoopsGate.tickflow

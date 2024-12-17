@@ -1,0 +1,943 @@
+
+//0xB3 vars
+readyToInput=12
+inputEffect=13
+expectedButton=14
+
+//0xB3<1> vars
+pressingA=11
+pressingB=6
+pressingX=7
+pressingY=8
+missedPattern=9
+isIdleInput=10
+isPractice=12
+
+
+mobilityMarch:
+    async_call mobilityMarchPatapons
+    async_call fourBeatHatepon
+    play_sfx 0x10003C5
+    rest 0xA8
+    0xB3<1> missedPattern, 0
+    async_call fourBeatPatapon
+    async_call mobilityMarchCue
+stop
+
+mobilityMarchPatapons:
+    //Pata
+    async_call showCuePata
+    rest 0x30
+    //Pata
+    async_call showCuePata
+    rest 0x30
+    //Pata
+    async_call showCuePata
+    rest 0x30
+    //Pon
+    async_call showCuePon
+stop
+
+mobilityMarchCue:
+0xB3<1> isIdleInput, 0
+async_call cuePata
+rest 0x30
+async_call cuePata
+rest 0x30
+async_call cuePata
+rest 0x30
+async_call cuePon
+rest 0x30
+0xB3<1> isIdleInput, 1
+stop
+
+attackAria:
+async_call attackAriaPatapons
+async_call fourBeatHatepon
+play_sfx 0x10003C6
+rest 0xA8
+0xB3<1> missedPattern, 0
+async_call fourBeatPatapon
+async_call attackAriaCue
+stop
+
+attackAriaPatapons:
+    //Pon
+    async_call showCuePon
+    rest 0x30
+    //Pon
+    async_call showCuePon
+    rest 0x30
+    //Pata
+    async_call showCuePata
+    rest 0x30
+    //Pon
+    async_call showCuePon
+stop
+
+attackAriaCue:
+0xB3<1> isIdleInput, 0
+async_call cuePon
+rest 0x30
+async_call cuePon
+rest 0x30
+async_call cuePata
+rest 0x30
+async_call cuePon
+rest 0x30
+0xB3<1> isIdleInput, 1
+stop
+
+defenceLament:
+async_call defenceLamentPatapons
+async_call fourBeatHatepon
+play_sfx 0x10003C7
+rest 0xA8
+0xB3<1> missedPattern, 0
+async_call fourBeatPatapon
+async_call defenceLamentCue
+stop
+
+defenceLamentPatapons:
+    //Chaka
+    async_call showCueChaka
+    rest 0x30
+    //Chaka
+    async_call showCueChaka
+    rest 0x30
+    //Pata
+    async_call showCuePata
+    rest 0x30
+    //Pon
+    async_call showCuePon
+stop
+
+defenceLamentCue:
+0xB3<1> isIdleInput, 0
+async_call cueChaka
+rest 0x30
+async_call cueChaka
+rest 0x30
+async_call cuePata
+rest 0x30
+async_call cuePon
+rest 0x30
+0xB3<1> isIdleInput, 1
+stop
+
+retreatRequiem:
+async_call retreatRequiemPatapons
+async_call fourBeatHatepon
+play_sfx 0x10003C8
+rest 0xA8
+0xB3<1> missedPattern, 0
+async_call fourBeatPatapon
+async_call retreatRequiemCue
+stop
+
+retreatRequiemPatapons:
+    //Pon
+    async_call showCuePon
+    rest 0x30
+    //Pata
+    async_call showCuePata
+    rest 0x30
+    //Pon
+    async_call showCuePon
+    rest 0x30
+    //Pata
+    async_call showCuePata
+stop
+
+retreatRequiemCue:
+0xB3<1> isIdleInput, 0
+async_call cuePon
+rest 0x30
+async_call cuePata
+rest 0x30
+async_call cuePon
+rest 0x30
+async_call cuePata
+rest 0x30
+0xB3<1> isIdleInput, 1
+stop
+
+holdTightHoeDown:
+async_call holdTightHoeDownPatapons
+async_call fourBeatHatepon
+play_sfx 0x10003C9
+rest 0xA8
+0xB3<1> missedPattern, 0
+async_call fourBeatPatapon
+async_call holdTightHoeDownCue
+stop
+
+holdTightHoeDownPatapons:
+    //Pon
+    async_call showCuePon
+    rest 0x30
+    //Pon
+    async_call showCuePon
+    rest 0x30
+    //Chaka
+    async_call showCueChaka
+    rest 0x30
+    //Chaka
+    async_call showCueChaka
+stop
+
+holdTightHoeDownCue:
+0xB3<1> isIdleInput, 0
+async_call cuePon
+rest 0x30
+async_call cuePon
+rest 0x30
+async_call cueChaka
+rest 0x30
+async_call cueChaka
+rest 0x30
+0xB3<1> isIdleInput, 1
+stop
+
+fourBeatHatepon:
+    0xB2<1> missedPattern
+    if 0
+        0x104<4> "hatepon_beat", 1
+        rest 0x30
+        0x104<4> "hatepon_beat", 1
+        rest 0x30
+        0x104<4> "hatepon_beat", 1
+        rest 0x30
+        0x104<4> "hatepon_beat", 1
+    else
+        0x104<4> "hatepon_beat_sad", 1
+        rest 0x30
+        0x104<4> "hatepon_beat_sad", 1
+        rest 0x30
+        0x104<4> "hatepon_beat_sad", 1
+        rest 0x30
+        0x104<4> "hatepon_beat_sad", 1
+    endif
+stop
+
+fourBeatPatapon:
+    rest 0x18
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_beat", 1
+    else
+        0x103<5> "patapon_beat_bad", 1
+    endif
+    rest 0x30
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_beat", 1
+    else
+        0x103<5> "patapon_beat_bad", 1
+    endif
+    rest 0x30
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_beat", 1
+    else
+        0x103<5> "patapon_beat_bad", 1
+    endif
+    rest 0x30
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_beat", 1
+    else
+        0x103<5> "patapon_beat_bad", 1
+    endif
+stop
+
+//Half a beat early
+cuePata:
+    rest 0xF
+    0xB3 readyToInput, 0
+    0xB3 expectedButton, 1
+    async_call waitForUnpressPata
+    set_countdown 16
+    rest 1
+    async_call setInputEffect
+    label 0x7009
+    0xB2 readyToInput
+    if 1
+        0x200<2> 11
+        if 1 //Pata!
+            async_call showInputStar
+            goto 0xD05E
+        endif
+    endif
+    rest 1
+    dec_countdown
+    get_countdown
+    if_neq 0
+        goto 0x7009
+    endif
+    //Failed input
+    async_call failInput
+    play_sfx 0x10003CA
+    0xB3<1> missedPattern, 1
+    label 0xD05E
+    rest 3
+    0xB3 expectedButton, 0
+    stop
+stop
+
+
+waitForUnpressPata:
+    label 0xC4EC
+    rest 1
+    0xB2<1> pressingY
+    if 1
+        goto 0xC4EC
+    endif
+    0xB3 readyToInput, 1
+stop
+
+//Half a beat early
+cuePon:
+    rest 0x10
+    0xB3 readyToInput, 0
+    0xB3 expectedButton, 2
+    async_call waitForUnpressPon
+    set_countdown 16
+    rest 1
+    async_call setInputEffect
+    label 0x7009
+    0xB2 readyToInput
+    if 1
+        0x200<2> 0
+        if 1 //Pata!
+            async_call showInputStar
+            goto 0xD05E
+        endif
+    endif
+    rest 1
+    dec_countdown
+    get_countdown
+    if_neq 0
+        goto 0x7009
+    endif
+    //Failed input
+    async_call failInput
+    play_sfx 0x10003CA
+    0xB3<1> missedPattern, 1
+    label 0xD05E
+    rest 3
+    0xB3 expectedButton, 0
+stop
+
+
+waitForUnpressPon:
+    label 0xC4EC
+    rest 1
+    0xB2<1> pressingA
+    if 1
+        goto 0xC4EC
+    endif
+    0xB3 readyToInput, 1
+stop
+
+//Half a beat early
+cueChaka:
+    rest 0x10
+    0xB3 readyToInput, 0
+    0xB3 expectedButton, 3
+    async_call waitForUnpressChaka
+    set_countdown 16
+    rest 1
+    async_call setInputEffect
+    label 0x7009
+    0xB2 readyToInput
+    if 1
+        0x200<2> 10
+        if 1 //Pata!
+            async_call showInputStar
+            goto 0xD05E
+        endif
+    endif
+    rest 1
+    dec_countdown
+    get_countdown
+    if_neq 0
+        goto 0x7009
+    endif
+    //Failed input
+    async_call failInput
+    play_sfx 0x10003CA
+    0xB3<1> missedPattern, 1
+    label 0xD05E
+    rest 3
+    0xB3 expectedButton, 0
+stop
+
+
+waitForUnpressChaka:
+    label 0xC4EC
+    rest 1
+    0xB2<1> pressingX
+    if 1
+        goto 0xC4EC
+    endif
+    0xB3 readyToInput, 1
+stop
+
+playPata:
+play_sfx 0x10003D6
+rest 0x18
+play_sfx 0x10003D7
+stop
+
+playChaka:
+play_sfx 0x10003D8
+rest 0x18
+play_sfx 0x10003D9
+stop
+
+playPon:
+play_sfx 0x10003D5
+stop
+
+playDon:
+play_sfx 0x10003D4
+stop
+
+playPataQuiet:
+0x40<1> 0x10003D6, 0x40
+rest 0x18
+0x40<1> 0x10003D7, 0x40
+stop
+
+playChakaQuiet:
+0x40<1> 0x10003D8, 0x40
+rest 0x18
+0x40<1> 0x10003D9, 0x40
+stop
+
+playPonQuiet:
+0x40<1> 0x10003D5, 0x40
+stop
+
+playDonQuiet:
+0x40<1> 0x10003D4, 0x40
+stop
+
+setInputEffect: //Imagine this as a replacement for the 0x100 command for the shake up input
+0xB3 inputEffect, 1
+rest 2
+0xB3 inputEffect, 2
+rest 3
+0xB3 inputEffect, 3
+rest 2
+0xB3 inputEffect, 4
+rest 3
+0xB3 inputEffect, 5
+rest 4
+0xB3 inputEffect, 0	
+stop	
+
+showInputStar:
+0xB2 inputEffect
+switch
+	case 1
+		0x3B 2, 1, "cmn_ok01", -0x50, 0, 0x100, 0x18
+	break
+	case 2
+		0x3B 2, 1, "cmn_ok00", -0x26, 0, 0x100, 0x18
+	break
+	case 3
+		0x3B 2, 1, "cmn_just00", 0, 0, 0x100, 0x18
+	break
+	case 4
+		0x3B 2, 1, "cmn_ok00", 0x26, 0, 0x100, 0x18
+	break
+	case 5
+		0x3B 2, 1, "cmn_ok01", 0x50, 0, 0x100, 0x18
+	break	
+endswitch
+stop	
+
+showPata:
+    // Randomizes animation
+    random 3
+    switch
+    case 0
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_pata_1", -1, 0x30, 1, 1, -0x90, -0x20, 0x80, -0x90, -0x20, 0x80
+            break
+        case 1
+            0x106 "drum_pata_1", -1, 0x30, 1, 1, -0x80, 0, 0x80, -0x80, 0, 0x80
+            break
+        case 2
+            0x106 "drum_pata_1", -1, 0x30, 1, 1, -0x85, -0x30, 0x80, -0x85, -0x30, 0x80
+            break
+        endswitch
+        break
+    case 1
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_pata_2", -1, 0x30, 1, 1, -0x90, -0x20, 0x80, -0x90, -0x20, 0x80
+            break
+        case 1
+            0x106 "drum_pata_2", -1, 0x30, 1, 1, -0x80, 0, 0x80, -0x80, 0, 0x80
+            break
+        case 2
+            0x106 "drum_pata_2", -1, 0x30, 1, 1, -0x85, -0x30, 0x80, -0x85, -0x30, 0x80
+            break
+        endswitch
+        break
+    case 2
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_pata_3", -1, 0x30, 1, 1, -0x90, -0x20, 0x80, -0x90, -0x20, 0x80
+            break
+        case 1
+            0x106 "drum_pata_3", -1, 0x30, 1, 1, -0x80, 0, 0x80, -0x80, 0, 0x80
+            break
+        case 2
+            0x106 "drum_pata_3", -1, 0x30, 1, 1, -0x85, -0x30, 0x80, -0x85, -0x30, 0x80
+            break
+        endswitch
+        break
+    endswitch
+stop
+
+showPataFree:
+    //Randomizes position
+    random 3
+    switch
+    case 0
+        0x106 "drum_pata_free", -1, 0x30, 1, 1, -0x90, -0x20, 0x80, -0x90, -0x20, 0x80
+        break
+    case 1
+        0x106 "drum_pata_free", -1, 0x30, 1, 1, -0x80, 0, 0x80, -0x80, 0, 0x80
+        break
+    case 2
+        0x106 "drum_pata_free", -1, 0x30, 1, 1, -0x85, -0x30, 0x80, -0x85, -0x30, 0x80
+        break
+    endswitch
+stop
+
+showPon:
+    // Randomizes animation
+    random 3
+    switch
+    case 0
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_pon_1", -1, 0x30, 1, 1, 0x80, -0x20, 0x80, 0x80, -0x20, 0x80
+            break
+        case 1
+            0x106 "drum_pon_1", -1, 0x30, 1, 1, 0x80, 0, 0x80, 0x80, 0, 0x80
+            break
+        case 2
+            0x106 "drum_pon_1", -1, 0x30, 1, 1, 0x75, -0x30, 0x80, 0x75, -0x30, 0x80
+            break
+        endswitch
+        break
+    case 1
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_pon_2", -1, 0x30, 1, 1, 0x80, -0x20, 0x80, 0x80, -0x20, 0x80
+            break
+        case 1
+            0x106 "drum_pon_2", -1, 0x30, 1, 1, 0x80, 0, 0x80, 0x80, 0, 0x80
+            break
+        case 2
+            0x106 "drum_pon_2", -1, 0x30, 1, 1, 0x75, -0x30, 0x80, 0x75, -0x30, 0x80
+            break
+        endswitch
+        break
+    case 2
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_pon_3", -1, 0x30, 1, 1, 0x80, -0x20, 0x80, 0x80, -0x20, 0x80
+            break
+        case 1
+            0x106 "drum_pon_3", -1, 0x30, 1, 1, 0x80, 0, 0x80, 0x80, 0, 0x80
+            break
+        case 2
+            0x106 "drum_pon_3", -1, 0x30, 1, 1, 0x75, -0x30, 0x80, 0x75, -0x30, 0x80
+            break
+        endswitch
+        break
+    endswitch
+stop
+
+showPonFree:
+    //Randomizes position
+    random 3
+    switch
+    case 0
+        0x106 "drum_pon_free", -1, 0x30, 1, 1, 0x80, -0x20, 0x80, 0x80, -0x20, 0x80
+        break
+    case 1
+        0x106 "drum_pon_free", -1, 0x30, 1, 1, 0x80, 0, 0x80, 0x80, 0, 0x80
+        break
+    case 2
+        0x106 "drum_pon_free", -1, 0x30, 1, 1, 0x75, -0x30, 0x80, 0x75, -0x30, 0x80
+        break
+    endswitch
+stop
+
+showChaka:
+    // Randomizes animation
+    random 3
+    switch
+    case 0
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_chaka_1", -1, 0x30, 1, 1, 0, -0x40, 0x80, 0, -0x40, 0x80
+            break
+        case 1
+            0x106 "drum_chaka_1", -1, 0x30, 1, 1, 0x20, -0x45, 0x80, 0x20, -0x45, 0x80
+            break
+        case 2
+            0x106 "drum_chaka_1", -1, 0x30, 1, 1, -0x20, -0x50, 0x80, -0x20, -0x50, 0x80
+            break
+        endswitch
+        break
+    case 1
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_chaka_2", -1, 0x30, 1, 1, 0, -0x40, 0x80, 0, -0x40, 0x80
+            break
+        case 1
+            0x106 "drum_chaka_2", -1, 0x30, 1, 1, 0x20, -0x45, 0x80, 0x20, -0x45, 0x80
+            break
+        case 2
+            0x106 "drum_chaka_2", -1, 0x30, 1, 1, -0x20, -0x50, 0x80, -0x20, -0x50, 0x80
+            break
+        endswitch
+        break
+    case 2
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_chaka_3", -1, 0x30, 1, 1, 0, -0x40, 0x80, 0, -0x40, 0x80
+            break
+        case 1
+            0x106 "drum_chaka_3", -1, 0x30, 1, 1, 0x20, -0x45, 0x80, 0x20, -0x45, 0x80
+            break
+        case 2
+            0x106 "drum_chaka_3", -1, 0x30, 1, 1, -0x20, -0x50, 0x80, -0x20, -0x50, 0x80
+            break
+        endswitch
+        break
+    endswitch
+stop
+
+showChakaFree:
+    //Randomizes position
+    random 3
+    switch
+    case 0
+        0x106 "drum_chaka_free", -1, 0x30, 1, 1, 0, -0x40, 0x80, 0, -0x40, 0x80
+        break
+    case 1
+        0x106 "drum_chaka_free", -1, 0x30, 1, 1, 0x20, -0x45, 0x80, 0x20, -0x45, 0x80
+        break
+    case 2
+        0x106 "drum_chaka_free", -1, 0x30, 1, 1, -0x20, -0x50, 0x80, -0x20, -0x50, 0x80
+        break
+    endswitch
+stop
+
+showDon:
+    // Randomizes animation
+    random 3
+    switch
+    case 0
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_don_1", -1, 0x30, 1, 1, 0, 0x40, 0x80, 0, 0x40, 0x80
+            break
+        case 1
+            0x106 "drum_don_1", -1, 0x30, 1, 1, 0x20, 0x45, 0x80, 0x20, 0x45, 0x80
+            break
+        case 2
+            0x106 "drum_don_1", -1, 0x30, 1, 1, -0x20, 0x50, 0x80, -0x20, 0x50, 0x80
+            break
+        endswitch
+        break
+    case 1
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_don_2", -1, 0x30, 1, 1, 0, 0x40, 0x80, 0, 0x40, 0x80
+            break
+        case 1
+            0x106 "drum_don_2", -1, 0x30, 1, 1, 0x20, 0x45, 0x80, 0x20, 0x45, 0x80
+            break
+        case 2
+            0x106 "drum_don_2", -1, 0x30, 1, 1, -0x20, 0x50, 0x80, -0x20, 0x50, 0x80
+            break
+        endswitch
+        break
+    case 2
+        //Randomizes position
+        random 3
+        switch
+        case 0
+            0x106 "drum_don_3", -1, 0x30, 1, 1, 0, 0x40, 0x80, 0, 0x40, 0x80
+            break
+        case 1
+            0x106 "drum_don_3", -1, 0x30, 1, 1, 0x20, 0x45, 0x80, 0x20, 0x45, 0x80
+            break
+        case 2
+            0x106 "drum_don_3", -1, 0x30, 1, 1, -0x20, 0x50, 0x80, -0x20, 0x50, 0x80
+            break
+        endswitch
+        break
+    endswitch
+stop
+
+showDonFree:
+    //Randomizes position
+    random 3
+    switch
+    case 0
+        0x106 "drum_don_free", -1, 0x30, 1, 1, 0, 0x40, 0x80, 0, 0x40, 0x80
+        break
+    case 1
+        0x106 "drum_don_free", -1, 0x30, 1, 1, 0x20, 0x45, 0x80, 0x20, 0x45, 0x80
+        break
+    case 2
+        0x106 "drum_don_free", -1, 0x30, 1, 1, -0x20, 0x50, 0x80, -0x20, 0x50, 0x80
+        break
+    endswitch
+stop
+
+showCuePata:
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_pata", 1
+    else
+        0x103<5> "patapon_pata_bad", 1
+    endif
+    0xB2<1> isPractice
+    if 1
+        async_call showCuePataPractice
+    endif
+stop
+
+showCuePataPractice:
+    random 3
+    switch
+    case 0
+        0x106 "drum_pata_1", -1, 0x30, 1, 1, -0x20, -0x30, 0x40, -0x20, -0x30, 0x40
+        break
+    case 1
+        0x106 "drum_pata_2", -1, 0x30, 1, 1, -0x20, -0x30, 0x40, -0x20, -0x30, 0x40
+        break
+    case 2
+        0x106 "drum_pata_3", -1, 0x30, 1, 1, -0x20, -0x30, 0x40, -0x20, -0x30, 0x40
+        break
+    endswitch
+stop
+
+showCuePon:
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_pon", 1
+    else
+        0x103<5> "patapon_pon_bad", 1
+    endif
+    0xB2<1> isPractice
+    if 1
+        async_call showCuePonPractice
+    endif
+stop
+
+showCuePonPractice:
+    random 3
+    switch
+    case 0
+        0x106 "drum_pon_1", -1, 0x30, 1, 1, 0x20, -0x30, 0x40, 0x20, -0x30, 0x40
+        break
+    case 1
+        0x106 "drum_pon_2", -1, 0x30, 1, 1, 0x20, -0x30, 0x40, 0x20, -0x30, 0x40
+        break
+    case 2
+        0x106 "drum_pon_3", -1, 0x30, 1, 1, 0x20, -0x30, 0x40, 0x20, -0x30, 0x40
+        break
+    endswitch
+stop
+
+showCueChaka:
+    0xB2<1> missedPattern
+    if 0
+        0x103<5> "patapon_chaka", 1
+    else
+        0x103<5> "patapon_chaka_bad", 1
+    endif
+    0xB2<1> isPractice
+    if 1
+        async_call showCueChakaPractice
+    endif
+stop
+
+showCueChakaPractice:
+    random 3
+    switch
+    case 0
+        0x106 "drum_chaka_1", -1, 0x30, 1, 1, 0, -0x50, 0x40, 0, -0x50, 0x40
+        break
+    case 1
+        0x106 "drum_chaka_2", -1, 0x30, 1, 1, 0, -0x50, 0x40, 0, -0x50, 0x40
+        break
+    case 2
+        0x106 "drum_chaka_3", -1, 0x30, 1, 1, 0, -0x50, 0x40, 0, -0x50, 0x40
+        break
+    endswitch
+stop
+
+pataponSetup:
+    0x8B<1> 0, 3, 70, -5
+    0xB3<1> isIdleInput, 1
+    0x101<1> 2
+    label 0x1592
+    //Pata!
+    0x200<2> 11
+    if 1
+        0xB2<1> pressingA
+        if 0
+            0xB3<1> pressingA, 1
+            0xB2<1> missedPattern
+            if 0
+                0x104<4> "hatepon_pata", 1
+            else
+                0x104<4> "hatepon_pata_sad", 1
+            endif
+            0xB2<1> isIdleInput
+            if 1
+                async_call showPataFree
+                async_call playPataQuiet
+            else
+                async_call showPata
+                async_call playPata
+                0xB2 expectedButton
+                if_neq 1
+                    //Also fails
+                    play_sfx 0x10003CA
+                    0xB3<1> missedPattern, 1
+                endif
+            endif
+        endif
+    else
+        0xB3<1> pressingA, 0
+    endif
+    //Pon!
+    0x200<2> 0
+    if 1
+        0xB2<1> pressingY
+        if 0
+            0xB3<1> pressingY, 1
+            0xB2<1> missedPattern
+            if 0
+                0x104<4> "hatepon_pon", 1
+            else
+                0x104<4> "hatepon_pon_sad", 1
+            endif
+            0xB2<1> isIdleInput
+            if 1
+                async_call showPonFree
+                async_call playPonQuiet
+            else
+                async_call showPon
+                async_call playPon
+                0xB2 expectedButton
+                if_neq 2
+                    //Also fails
+                    play_sfx 0x10003CA
+                    0xB3<1> missedPattern, 1
+                endif
+            endif
+        endif
+    else
+        0xB3<1> pressingY, 0
+    endif
+    //Chaka!
+    0x200<2> 10
+    if 1
+        0xB2<1> pressingX
+        if 0
+            0xB3<1> pressingX, 1
+            0xB2<1> missedPattern
+            if 0
+                0x104<4> "hatepon_chaka", 1
+            else
+                0x104<4> "hatepon_chaka_sad", 1
+            endif
+            0xB2<1> isIdleInput
+            if 1
+                async_call showChakaFree
+                async_call playChakaQuiet
+            else
+                async_call showChaka
+                async_call playChaka
+                0xB2 expectedButton
+                if_neq 3
+                    //Also fails
+                    play_sfx 0x10003CA
+                    0xB3<1> missedPattern, 1
+                endif
+            endif
+        endif
+    else
+        0xB3<1> pressingX, 0
+    endif
+    //Don! (Unused in patterns)
+    0x200<2> 1
+    if 1
+        0xB2<1> pressingB
+        if 0
+            0xB3<1> pressingB, 1
+            0xB2<1> missedPattern
+            if 0
+                0x104<4> "hatepon_don", 1
+            else
+                0x104<4> "hatepon_don_sad", 1
+            endif
+            0xB2<1> isIdleInput
+            if 1
+                async_call showDonFree
+                async_call playDonQuiet
+            else
+                async_call showDon
+                async_call playDon
+                //Also fails
+                play_sfx 0x10003CA
+                0xB3<1> missedPattern, 1
+            endif
+        endif
+    else
+        0xB3<1> pressingB, 0
+    endif
+
+    rest 1
+    goto 0x1592
+stop

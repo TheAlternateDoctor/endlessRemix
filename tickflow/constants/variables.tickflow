@@ -19,6 +19,7 @@ is_debug = 1 // Self explanatory.
 lives_enabled = 2 // Self explanatory.
 perf_lock = 3 // Locks the perf check for 2 beats when a player misses
 perf_miss = 4 // Used when the player has missed in the pattern, for score calculation
+speed_setup = 5 //Used for speed variants. Allow adding 1 for each 2 speedups
 
 // func slots
 patternSub = 0
