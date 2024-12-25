@@ -12,6 +12,7 @@ sequencePatapon:
 	0xB3 engine_loaded, SCENE_REC_pspPatapon
 	0xB3 index, INDEX_pspPatapon
     0xB3<1> isPractice, 0
+    // 0xB3<1> missedPattern, 0
     fade<1> 1,1,1
     random 1
     switch
@@ -64,6 +65,7 @@ sequencePataponPractice:
     rest 0x8
 	0xB3 engine_loaded, SCENE_REC_pspPatapon
     0xB3<1> isPractice, 1
+    0xB3<1> missedPattern, 0
     fade<1> 1,1,1
     0xB3 score_add, 8
     async_call pataponPractice
