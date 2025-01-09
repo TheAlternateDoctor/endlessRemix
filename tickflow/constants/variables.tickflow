@@ -8,6 +8,7 @@ engine_loaded = 5 // Engine currently loaded. Used to stop overlaps in some case
 debug_start = 6 // Index to load at the start when Debug mode is on
 debug_current_index = 15 // Duplicate? Used to show the currently playing index
 chosen_speed = 8 // Speed chosen by the user (0 base, 1 to 4 sped up w/ 4 max speed)
+practice_part = 8 // Practice section. Sharing with speed as they have no chance of interfering
 index = 9 // Index currently loaded.
 sfx_plus = 10 // How many more SFX are loaded for slot 1. Used in the loader.
 sfx_plus_2 = 11 // How many more SFX are loaded for slot 2. Used in the loader.

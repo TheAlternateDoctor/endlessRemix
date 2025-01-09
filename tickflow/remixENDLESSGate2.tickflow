@@ -9,6 +9,7 @@
 #include config/debug.tickflow
 
 #include base/remixENDLESSGate.tickflow
+#include base/practice.tickflow
 
 #include utils/endless/loadGames.tickflow
 #include utils/endless/score.tickflow
@@ -121,6 +122,8 @@
 #include utils/patterns/donkDonk.tickflow
 #include utils/patterns/fireworks.tickflow
 #include utils/patterns/patapon.tickflow
+
+#include utils/patterns/practicePatterns.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow

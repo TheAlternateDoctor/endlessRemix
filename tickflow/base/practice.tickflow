@@ -1,0 +1,927 @@
+tutorial:
+    0x89
+    0x21 120
+
+0x65<4> 0x12C, 0x3C
+0x65<3> 0, -0x50
+0x65<5> 2
+
+    0xB3 practice_part, 0
+    fade<1> 7, 0, 0x60
+    rest 0x30 * 2
+
+    0x66 7, "agbBatter_tutorial_a"
+    call textboxes
+
+    0xB3 practice_part, 1
+    call baseWheel
+    fade 7, 0, 0x60
+    rest 0x60
+    async_call roulette
+    fade<1> 7, 0, 0x60
+    rest 0xC0*2
+
+    0x66 7, "agbBatter_tutorial_b"
+    call textboxes
+
+    0xB3 practice_part, 2
+
+    rest 0xC0*2
+    0x66 7, "agbBatter_tutorial_a"
+    call textboxes
+
+    0xB3 practice_part, 3
+
+    rest 0xC0*2
+    0x66 7, "agbBatter_tutorial_a"
+    call textboxes
+
+    rest 0xC0*2
+    kill_loc roulette
+    fade 7, 0, 0x60
+    rest 0xC0
+
+    fade<1> 7, 0, 0x60
+    rest 0x60
+    0x66 7, "agbBatter_tutorial_a"
+    call textboxes
+    rest 0x60
+    fade 7, 0, 0x60
+    rest 0x60
+    call loadBasketGirls
+    async_call loadBasketGirlsLate
+    async_call loadBasketGirlsLate2
+    rest 0x60
+return
+
+textboxes:
+    0x66<1> 
+    label 0x7B
+    rest 0x30	// 1.0 beats
+    0x6D 1, 0x10002BA, 0x10002BB
+    sub 0
+    0x65<2> 
+    rest 0x30	// 1.0 beats
+    0x66<3> 
+    if 0
+        0x66<2> 
+        goto 0x7B
+    endif 
+return
+
+roulette:
+    set_cat 0
+    label 0x1009
+    get_async patternSub, 0
+    rest 0x30*2
+    rest 0x30-0xC
+    rest 0x30*2
+    0xB2 practice_part
+    switch
+    case 1
+        call baseWheel
+        break
+    case 2
+        call recWheel
+        break
+    case 3
+        call otherWheel
+        break
+    endswitch
+    rest 0x30
+    get_async lateLoaderSub, 0
+    //i don't wanna be bothered so idc
+    async_call tapTroupeColorCycleShutOffInstant
+    goto 0x1009
+stop
+
+baseWheel:
+    label 0x70AE
+    random 0x54
+    switch
+        case INDEX_agbBatter
+            0xB2 engine_loaded
+            if SCENE_agbBatter //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySpaceball
+                call loadSpaceball
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbClap
+            0xB2 engine_loaded
+            if SCENE_agbClap //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyClappyTrio
+                call loadClappyTrio
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbGhost //Phantom Thief
+            0xB2 engine_loaded
+            if SCENE_agbGhost //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySneakySpirits
+                call loadSneakySpirits
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbHair
+            0xB2 engine_loaded
+            if SCENE_agbHair //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyTweezers
+                call loadTweezers
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbHopping
+            0xB2 engine_loaded
+            if SCENE_agbHopping //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyHopping
+                call loadHopping
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbMarcher
+            0xB2 engine_loaded
+            if SCENE_agbMarcher //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyMarcher
+                call loadMarcher
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbNightWalk
+            0xB2 engine_loaded
+            if SCENE_agbNightWalk //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyNightWalk
+                call loadNightWalk
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbQuiz
+            0xB2 engine_loaded
+            if SCENE_agbQuiz //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyQuiz
+                call loadQuiz
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbRabbit
+            0xB2 engine_loaded
+            if SCENE_agbRabbit //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBunnyHop
+                call loadBunnyHop
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbRat
+            0xB2 engine_loaded
+            if SCENE_agbRat //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyRatRace
+                call loadRatRace
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbShuji
+            0xB2 engine_loaded
+            if SCENE_agbShuji //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyPowerCalligraphy
+                call loadPowerCalligraphy
+                set_func lateLoaderSub, loadPowerCalligraphyLate
+            endif
+        break
+        case INDEX_agbSpaceDance
+            0xB2 engine_loaded
+            if SCENE_agbSpaceDance //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySpaceDance
+                call loadSpaceDance
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbTap
+            0xB2 engine_loaded
+            if SCENE_agbTap //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyTap
+                call loadTap
+                set_func lateLoaderSub, loadTapLate
+            endif
+        break
+        case INDEX_agbTono
+            0xB2 engine_loaded
+            if SCENE_agbTono //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyNinjaBodyguard
+                call loadNinjaBodyguard
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrAirBoard
+            0xB2 engine_loaded
+            if SCENE_ntrAirBoard //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyAirboarders
+                call loadAirboarders
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrBackbeat
+            0xB2 engine_loaded
+            if SCENE_ntrBackbeat //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyLockstep
+                call loadLockstep
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrBlueBirds
+            0xB2 engine_loaded
+            if SCENE_ntrBlueBirds //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBlueBirds
+                call loadBlueBirds
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrBoxShow
+            0xB2 engine_loaded
+            if SCENE_ntrBoxShow //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyDazzles
+                call loadDazzles
+                set_func lateLoaderSub, loadDazzlesLate
+            endif
+        break
+        case INDEX_ntrCameraMan
+            0xB2 engine_loaded
+            if SCENE_ntrCameraMan //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFreezeFrame
+                call loadFreezeFrame
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrChorus
+            0xB2 index
+            if INDEX_ntrChorus //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyGleeClub
+                call loadGleeClub
+                set_func lateLoaderSub, loadGleeClubLate
+            endif
+        break
+        case INDEX_ntrFrog
+            0xB2 engine_loaded
+            if SCENE_ntrFrog //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFrogHop
+                call loadFrogHop
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrIdol
+            0xB2 engine_loaded
+            if SCENE_ntrIdol //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFanClub
+                call loadFanClub
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrNinja
+            0xB2 engine_loaded
+            if SCENE_ntrNinja //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyDogNinja
+                call loadDogNinja
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrPingpong
+            0xB2 engine_loaded
+            if SCENE_ntrPingpong //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyRhythmRally
+                call loadRhythmRally
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrShooting
+            0xB2 engine_loaded
+            if SCENE_ntrShooting //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyShootEmUp
+                call loadShootEmUp
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrShortLive
+            0xB2 engine_loaded
+            if SCENE_ntrShortLive //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBigRockFinish
+                call loadBigRockFinish
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrShugyo
+            0xB2 index
+            if INDEX_ntrShugyo //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyMunchyMonk
+                call loadMunchyMonk
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlAssemble
+            0xB2 engine_loaded
+            if SCENE_rvlAssemble //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBtSWii
+                call loadBtSWii
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlBird
+            0xB2 engine_loaded
+            if SCENE_rvlBird //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFlockstep
+                call loadFlockstep
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlBook
+            0xB2 engine_loaded
+            if SCENE_rvlBook //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyCheerReaders
+                call loadCheerReaders
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlDate
+            0xB2 engine_loaded
+            if SCENE_rvlDate //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyDoubleDate
+                call loadDoubleDate
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlFishing
+            0xB2 engine_loaded
+            if SCENE_rvlFishing //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyCatchOfTheDay
+                call loadCatchOfTheDay
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlFlea
+            0xB2 index
+            if INDEX_rvlFlea //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyMicroRow
+                call loadMicroRow
+                set_func lateLoaderSub, loadMicroRowLate
+            endif
+        break
+        case INDEX_rvlFork
+            0xB2 engine_loaded
+            if SCENE_rvlFork //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyForkLifter
+                call loadForkLifter
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlGolf
+            0xB2 engine_loaded
+            if SCENE_rvlGolf //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyGolf
+                call loadGolf
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlGoma
+            0xB2 engine_loaded
+            if SCENE_rvlGoma //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFlipperFlop
+                call loadFlipperFlop
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlInterview
+            0xB2 engine_loaded
+            if SCENE_rvlInterview //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyRingSide
+                call loadRingSide
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlKarate
+            0xB2 engine_loaded
+            if SCENE_rvlKarate //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyKarate
+                call loadKarate
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlManju
+            0xB2 engine_loaded
+            if SCENE_rvlManju //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyWorkingDough
+                call loadWorkingDough
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlRocket
+            0xB2 engine_loaded
+            if SCENE_rvlRocket //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyLaunchParty
+                call loadLaunchParty
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlRotation
+            0xB2 engine_loaded
+            if SCENE_rvlRotation //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBoardMeeting
+                call loadBoardMeeting
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlRecieve
+            0xB2 engine_loaded
+            if SCENE_rvlRecieve //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBossaNova
+                call loadBossaNova
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlBadminton
+            0xB2 engine_loaded
+            if SCENE_rvlBadminton //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyAirRally
+                call loadAirRally
+                set_func lateLoaderSub, loadAirRallyLate
+            endif
+        break
+        case INDEX_rvlMuscle
+            0xB2 engine_loaded
+            if SCENE_rvlMuscle //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFigureFighter
+                call loadFigureFighter
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlSamurai //Iai Giri
+            0xB2 engine_loaded
+            if SCENE_rvlSamurai //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySSWii
+                call loadSSWii
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlSeesaw
+            0xB2 engine_loaded
+            if SCENE_rvlSeesaw //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySeeSaw
+                call loadSeeSaw
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlSort
+            0xB2 engine_loaded
+            if SCENE_rvlSort //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyPackingPests
+                call loadPackingPests
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrBear
+            0xB2 engine_loaded
+            if SCENE_ctrBear //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyBlueBear
+                call loadBlueBear
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrBlanco
+            0xB2 engine_loaded
+            if SCENE_ctrBlanco //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyAnimalAcrobat
+                call loadAnimalAcrobat
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrChameleon
+            0xB2 engine_loaded
+            if SCENE_ctrChameleon //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyTongueLashing
+                call loadTongueLashing
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrDotSamurai
+            0xB2 engine_loaded
+            if SCENE_ctrDotSamurai //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySuperSamuraiSlice
+                call loadSuperSamuraiSlice
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrFruitBasket
+            0xB2 engine_loaded
+            if SCENE_ctrFruitBasket //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFruitBasket
+                call loadFruitBasket
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrPillow
+            0xB2 engine_loaded
+            if SCENE_ctrPillow //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyPajama
+                call loadPajama
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrStep
+            0xB2 engine_loaded
+            if SCENE_ctrStep //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyCatchyTune
+                call loadCatchyTune
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrSumou
+            0xB2 engine_loaded
+            if SCENE_ctrSumou //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySumoBros
+                call loadSumoBros
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrTango
+            0xB2 engine_loaded
+            if SCENE_ctrTango //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyTangotronic
+                call loadTangotronic
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ctrTeppan
+            0xB2 engine_loaded
+            if SCENE_ctrTeppan //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyKitties
+                call loadKitties
+                set_func lateLoaderSub, loadKittiesLate
+            endif
+        break
+        case INDEX_ctrWoodcat
+            0xB2 engine_loaded
+            if SCENE_ctrWoodcat //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyLumbearjack
+                call loadLumbearjack
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_agbVirus
+            0xB2 engine_loaded
+            if SCENE_agbVirus //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptySickBeats
+                call loadSickBeats
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrCoinToss
+            0xB2 index
+            if INDEX_ntrCoinToss //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyCoinToss
+                call loadCoinToss
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlSword
+            0xB2 engine_loaded
+            if SCENE_rvlSword //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyClapTrap
+                call loadClapTrap
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_tutorial //Tutorial
+            0xB2 engine_loaded
+            if SCENE_tutorial //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyTutorial
+                call loadTutorial
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlMonkeyWatch
+            0xB2 engine_loaded
+            if SCENE_rvlMonkeyWatch //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyMonkeyWatch
+                call loadMonkeyWatch
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlRap
+            0xB2 engine_loaded
+            if SCENE_rvlRap //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyLoveRap
+                call loadLoveRap
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrRobot
+            0xB2 engine_loaded
+            if SCENE_ntrRobot //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyFillbots
+                call loadFillbots
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlBatting
+            0xB2 engine_loaded
+            if SCENE_rvlBatting //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyExhibitionMatch
+                call loadExhibitionMatch
+                set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_rvlRobot
+            0xB2 engine_loaded
+            if SCENE_rvlRobot //Stop games from being played next to each other
+                goto 0x70AE
+            else
+                set_func patternSub, sequenceEmptyScrewBotFactory
+                call loadScrewbotFactory
+                set_func lateLoaderSub, nop
+            endif
+        break
+        default //Restart until we get something damnit
+            rest 1
+            goto 0x70AE
+        break
+    endswitch
+return
+
+recWheel:
+    label 0x70AF
+    random 0x54
+    switch
+    case INDEX_rvlBasket
+        0xB2 index
+        if INDEX_rvlBasket //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            if INDEX_ctrSumou
+                goto 0x70AF
+            else
+                set_func patternSub, sequenceEmptyBasketGirls
+                call loadBasketGirls
+                set_func lateLoaderSub, loadBasketGirlsLate
+            endif
+        endif
+    break
+    case INDEX_agbMetro //Battle Start Melodii
+        0xB2 index
+        if INDEX_agbMetro //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            if INDEX_ctrSumou
+                goto 0x70AF
+            else
+                set_func patternSub, sequenceEmptyUpbeat
+                call loadUpbeat
+                set_func lateLoaderSub, loadUpbeatLate
+            endif
+        endif
+    break
+    case INDEX_rvlTap //Groove Rush #1
+        0xB2 engine_loaded
+        if SCENE_REC_rvlTap //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            set_func patternSub, sequenceEmptyTapTroupe
+            call loadTapTroupe
+            set_func lateLoaderSub, loadTapTroupeLate
+        endif
+    break
+    case INDEX_ntrSynchro //Mole Cricket
+        0xB2 index
+        if INDEX_ntrSynchro //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            set_func patternSub, sequenceEmptySplashdown
+            call loadSplashdown
+            set_func lateLoaderSub, loadSplashdownLate
+        endif
+    break
+    case INDEX_agbFireworks
+        0xB2 index
+        if INDEX_agbFireworks //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            set_func patternSub, sequenceEmptyFireworks
+            call loadFireworks //help
+            set_func lateLoaderSub, nop
+        endif
+    break
+    case INDEX_rvlDonk
+        0xB2 index
+        if INDEX_rvlDonk //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            set_func patternSub, sequenceEmptyDonk
+            call loadDonk
+            set_func lateLoaderSub, nop
+        endif
+    break
+    case INDEX_rvlTambourine
+        0xB2 index
+        if INDEX_rvlTambourine //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            if INDEX_ctrSumou
+                goto 0x70AF
+            else
+                set_func patternSub, sequenceEmptyTambourine
+                call loadTambourine
+                set_func lateLoaderSub, loadTambourineLate
+            endif
+        endif
+    break
+    default //Restart until we get something damnit
+        goto 0x70AF
+    break
+    endswitch
+return
+
+otherWheel:
+    label 0x70B0
+    random 0x54
+    switch
+    case INDEX_skiMeat //Open Sesame Tofu!
+        0xB2 index
+        if INDEX_skiMeat //Stop games from being played next to each other
+            goto 0x70B0
+        else
+            if INDEX_ctrSumou
+                goto 0x70B0
+            else
+                set_func patternSub, sequenceEmptyMeatGrinder
+                call loadMeatGrinder
+                set_func lateLoaderSub, loadMeatGrinderLate
+            endif
+        endif
+    break
+    case INDEX_swfSoumen //Ballance
+        0xB2 index
+        if INDEX_swfSoumen //Stop games from being played next to each other
+            goto 0x70B0
+        else
+            set_func patternSub, sequenceEmptySoumen
+            call loadSoumen
+            set_func lateLoaderSub, loadSoumenLate
+        endif
+    break
+    case INDEX_7bgDoctor //Rhythm Doctor
+        0xB2 index
+        if INDEX_7bgDoctor //Stop games from being played next to each other
+            goto 0x70B0
+        else
+            if INDEX_ctrSumou
+                goto 0x70B0
+            else
+                set_func patternSub, sequenceEmptyRhythmDoctor
+                call loadRhythmDoctor
+                set_func lateLoaderSub, loadRhythmDoctorLate
+            endif
+        endif
+    break
+    case INDEX_pspPatapon
+        0xB2 index
+        if INDEX_pspPatapon //Stop games from being played next to each other
+            goto 0x70B0
+        else
+            set_func patternSub, sequenceEmptyPatapon
+            call loadPatapon
+            set_func lateLoaderSub, nop
+        endif
+    break
+    default //Restart until we get something damnit
+        goto 0x70B0
+    break
+    endswitch
+return

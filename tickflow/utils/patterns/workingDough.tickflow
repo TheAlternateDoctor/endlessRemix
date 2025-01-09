@@ -10,7 +10,6 @@ sequenceWorkingDough:
     rest 0x10
 	0xB3 engine_loaded, SCENE_rvlManju
 	0xB3 index, INDEX_rvlManju
-    async_sub 0x56
     0x103 1
     0x103<2>
 	0x101 0, 0, 1, 0

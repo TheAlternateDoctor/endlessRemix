@@ -163,6 +163,7 @@ rest 0xC0
 rest 0xC0
 rest 0xC0
 rest 0x30
+tapTroupeColorCycleShutOffInstant:
 kill_loc tapTroupeColorCycle
 rest 0x30
 0x79 1, 0

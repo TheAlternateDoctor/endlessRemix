@@ -1,6 +1,4 @@
 
-coin_state = 10
-
 sequenceCoinToss:
 	set_cat 0
     random 2
@@ -82,3 +80,4 @@ coinTossLoadRecEngine:
     rest 0x8
     fade<1> 1,1,1
 return
+

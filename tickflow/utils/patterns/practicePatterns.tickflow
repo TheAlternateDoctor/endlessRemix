@@ -1,0 +1,1279 @@
+
+sequenceEmptyAirboarders:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrAirBoard
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x102<2> 0, -0x1E, 8, -8
+    0x102<3> 0, 0, 8, -8
+    0x102<4> 0, 0x5A
+	0xB3 engine_loaded, SCENE_ntrAirBoard
+	0xB3 index, INDEX_ntrAirBoard
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyAirRally:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlBadminton
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlBadminton
+	0xB3 index, INDEX_rvlBadminton
+    0x101<0> 1, 1
+    0x101<1> 2, 1
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyAnimalAcrobat:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrBlanco
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0xB3 engine_loaded, INDEX_ctrBlanco
+    0xB3 index, INDEX_ctrBlanco
+    0x2B<1> SCENE_ctrBlanco
+    if 3
+        0x103 1
+        0x109
+        0x105 0
+    else 
+        0x2B<1> 0x35
+        if 5
+            0x103 0
+        else
+            0x103 0
+        endif
+    endif
+    fade<1> 1,1,1
+stop
+sequenceEmptyBasketGirls:
+	set_cat 0
+	async_call loadBasketGirlsLate2
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_rvlBasket
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_rvlBasket
+	0xB3 index, INDEX_rvlBasket
+    fade<1> 1,1,1
+    label 0xBEA7
+	set_cat 0x7D0
+    async_call basketBeat
+    rest 0x30
+    goto 0xBEA7
+stop
+sequenceEmptyBigRockFinish:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrShortLive
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrShortLive
+	0xB3 index, INDEX_ntrShortLive
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyBlueBear:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrBear
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrBear
+	0xB3 index, INDEX_ctrBear
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyBlueBirds:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrBlueBirds
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x2B<1> SCENE_ntrBlueBirds
+    if 1
+        random 2
+        switch
+        case 0
+            0x10A<0>
+            break
+        case 1
+            0x10A<1>
+            break
+        endswitch
+    endif
+	0xB3 engine_loaded, SCENE_ntrBlueBirds
+	0xB3 index, INDEX_ntrBlueBirds
+    fade<1> 1,1,1
+stop
+sequenceEmptyBoardMeeting:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlRotation
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlRotation
+	0xB3 index, INDEX_rvlRotation
+    fade<1> 1,1,1
+stop
+sequenceEmptyBossaNova:
+	set_cat 0
+	call changeEngine
+	engine SCENE_rvlRecieve
+	sub 4
+	0x29<2> 
+    0x103<1> 1
+    0x103<2> 1
+    rest 0x10
+    input 0
+	0xB3 engine_loaded, SCENE_rvlRecieve
+	0xB3 index, INDEX_rvlRecieve
+    rest 0x8
+    fade<1> 1,1,1
+stop
+sequenceEmptyHopping:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbHopping
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbHopping
+	0xB3 index, INDEX_agbHopping
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyBtSWii:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlAssemble
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlAssemble
+	0xB3 index, INDEX_rvlAssemble
+    0x8B 0, 0
+    fade<1> 1,1,1
+stop
+
+
+sequenceEmptyBunnyHop:
+	set_cat 0
+	call changeEngine
+	engine SCENE_agbRabbit
+	sub 4
+	0x29<2> 
+    rest 0x18
+    0x102
+    0x104 0xF
+	0x101
+    0x103 0
+    0x103<1>
+	0xB3 engine_loaded, SCENE_agbRabbit
+	0xB3 index, INDEX_agbRabbit
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyCatchOfTheDay:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlFishing
+	sub 4
+	0x29<2> 
+    rest 0x10
+    setrest 2, 0xD
+    setrest 3, 0xB
+	0xB3 engine_loaded, SCENE_rvlFishing
+	0xB3 index, INDEX_rvlFishing
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyCatchyTune:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrStep
+	sub 4
+	0x29<2> 
+    rest 0x8
+    rest 0x8
+	0xB3 engine_loaded, SCENE_ctrStep
+	0xB3 index, INDEX_ctrStep
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyCheerReaders:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlBook
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlBook
+	0xB3 index, INDEX_rvlBook
+    fade<1> 1,1,1
+    0x8B 0,0
+stop
+
+sequenceEmptyClappyTrio:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbClap
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbClap
+	0xB3 index, INDEX_agbClap
+    fade<1> 1,1,1
+    0x2B<2> INDEX_agbClap
+    switch
+    case 0
+        0x105<2> "Clap_ver_short.bflyt"
+        break
+    case 1
+        0x105<2> "Clap_ver_long.bflyt"
+        break
+    case 2
+        0x105<2> "Clap_ver_arrange.bflyt"
+        break
+    case 4
+        0x105<2> "Clap_ver_remix.bflyt"
+        break
+    endswitch
+stop
+
+
+sequenceEmptyClapTrap:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlSword
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlSword
+	0xB3 index, INDEX_rvlSword
+    fade<1> 1,1,1
+    0xAF<6> 0
+stop
+
+sequenceEmptyCoinToss:
+    play_sfx 0x100029F
+    rest 0x8
+    call changeEngine
+    engine SCENE_REC_ntrCoinToss
+	0xB3 engine_loaded, SCENE_REC_ntrCoinToss
+	0xB3 index, INDEX_ntrCoinToss
+    sub 4
+    0x29<2> 
+    rest 0x8
+    0x8B 0, 0
+    0x101<1> 2
+    0xB3 coin_state, 5
+    0x106 "bg", 0, 1, 2, 2, 0, 0, 0x100, 0, 0, 0x100
+    0x106 "readyCoin", 0, 2, 2, 0xC0*2, 0x1F, 0x4F, 0xD5, 0x1F, 0x4F, 0xD5
+    rest 0x8
+    fade<1> 1,1,1
+return
+
+
+sequenceEmptyDazzles:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrBoxShow
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrBoxShow
+	0xB3 index, INDEX_ntrBoxShow
+    fade<1> 1,1,1
+    rest 0x48
+stop
+sequenceEmptyDogNinja:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrNinja
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrNinja
+	0xB3 index, INDEX_ntrNinja
+    fade<1> 1,1,1
+stop
+sequenceEmptyDonk:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_rvlDonk
+	sub 4
+	0x29<2> 
+	0xB3 engine_loaded, SCENE_REC_rvlDonk
+	0xB3 index, INDEX_rvlDonk
+    async_call donksetup
+    rest 0x10
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyDoubleDate:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlDate
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlDate
+	0xB3 index, INDEX_rvlDate
+    0x2B<1> SCENE_rvlDate
+    if 2
+        0x10A<0>
+    else
+        0x10A<1>
+    endif
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyTutorial:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_tutorial
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_tutorial
+	0xB3 index, INDEX_tutorial
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyExhibitionMatch:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlBatting
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlBatting
+	0xB3 index, INDEX_rvlBatting
+    0x10C<1>
+    0x10D<1>
+    0x10A 0x18
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFanClub:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrIdol
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrIdol
+	0xB3 index, INDEX_ntrIdol
+    fade<1> 1,1,1
+stop
+sequenceEmptyFigureFighter:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlMuscle
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlMuscle
+	0xB3 index, INDEX_rvlMuscle
+    0x102<1>
+    0x10B 1
+    0x10A 1 
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFillbots:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrRobot
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrRobot
+	0xB3 index, INDEX_ntrRobot
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFireworks:
+	set_cat 0
+	call changeEngine
+	engine SCENE_REC_agbFireworks
+	sub 4
+	0x29<2> 
+    rest 0xC
+	0xB3 engine_loaded, SCENE_REC_agbFireworks
+	0xB3 index, INDEX_agbFireworks
+    setrest 0, 0x18
+    setrest 1, 0x30
+    0x101<1> 2
+    rest 0xC
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFlipperFlop:
+	set_cat 0
+	call changeEngine
+	engine SCENE_rvlGoma
+	sub 4
+	0x29<2> 
+    rest 0xC
+    0x2B<1> 0x26
+    if_neq 0xF
+        0x105<4>
+    endif
+    rest 0xC
+	0xB3 engine_loaded, SCENE_rvlGoma
+	0xB3 index, INDEX_rvlGoma
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFlockstep:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlBird
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x102<4>
+    0x8B 0, 0
+    0x102<5> 30
+	0xB3 engine_loaded, SCENE_rvlBird
+	0xB3 index, INDEX_rvlBird
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyForkLifter:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlFork
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlFork
+	0xB3 index, INDEX_rvlFork
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFreezeFrame:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrCameraMan
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrCameraMan
+	0xB3 index, INDEX_ntrCameraMan
+    fade<1> 1,1,1
+    async_call freezeFrameBeat
+stop
+
+sequenceEmptyFrogHop:
+	set_cat 0
+	call changeEngine
+	engine SCENE_ntrFrog
+	sub 4
+	0x29<2> 
+    rest 0xC
+    0x8B 0, 0
+    0x101<1>
+    0x2B<1> 0x14
+    if 5
+        zoom 3, 0xBD, 0xBD
+        0x104
+        0x104<3>
+    endif
+    rest 0xC
+	0xB3 engine_loaded, SCENE_ntrFrog
+	0xB3 index, INDEX_ntrFrog
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyFruitBasket:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrFruitBasket
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrFruitBasket
+	0xB3 index, INDEX_ctrFruitBasket
+    fade<1> 1,1,1
+    async_call fruitBasketBeatAnims
+    async_sub 0x67
+stop
+
+sequenceEmptyGleeClub:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrChorus
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x10D
+	0xB3 engine_loaded, SCENE_ntrChorus
+	0xB3 index, INDEX_ntrChorus
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyGolf:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlGolf
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x101<1> 2
+	0xB3 engine_loaded, SCENE_rvlGolf
+	0xB3 index, INDEX_rvlGolf
+    fade<1> 1,1,1
+    async_call golfSceneSetup
+stop
+
+sequenceEmptyKarate:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlKarate
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlKarate
+	0xB3 index, INDEX_rvlKarate
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyKitties:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrTeppan
+	sub 4
+	0x29<2> 
+    call kittiesRandomLocation
+    0x102<1> 0, 0
+    0x102<1> 1, 0
+    0x102<1> 2, 0
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrTeppan
+	0xB3 index, INDEX_ctrTeppan
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyLaunchParty:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlRocket
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlRocket
+	0xB3 index, INDEX_rvlRocket
+    fade<1> 1,1,1
+    0x2B<1> 0x2E
+    if_neq 1
+        0x105<1>
+        0x106 1
+    endif
+stop
+
+sequenceEmptyLockstep:
+	set_cat 0
+	call changeEngine
+	engine SCENE_ntrBackbeat
+	sub 4
+	0x29<2> 
+    rest 0xC
+    0x8B 0, 0
+    rest 0xC
+	0xB3 engine_loaded, SCENE_ntrBackbeat
+	0xB3 index, INDEX_ntrBackbeat
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyLoveRap:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlRap
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlRap
+	0xB3 index, INDEX_rvlRap
+    0x2B<1> 0x2B
+    if 2
+        0x10E
+        0x107<1> 0
+    else
+        0x107<1> 1
+        if 3
+            random 2
+            switch
+            case 0
+                0x107 1
+                0x108 0xA
+                break
+            endswitch
+        endif
+    endif
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyLumbearjack:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrWoodcat
+	sub 4
+	0x29<2> 
+    rest 0x8
+    rest 0x8
+	0xB3 engine_loaded, SCENE_ctrWoodcat
+	0xB3 index, INDEX_ctrWoodcat
+    fade<1> 1,1,1
+    0x103<3>
+stop
+
+sequenceEmptyMarcher:
+	set_cat 0
+	call changeEngine
+	engine SCENE_agbMarcher
+	sub 4
+	0x29<2> 
+    rest 0xC
+    rest 0xC
+	0xB3 engine_loaded, SCENE_agbMarcher
+	0xB3 index, INDEX_agbMarcher
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyMeatGrinder:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_CUSTOM_skiMeat
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_CUSTOM_skiMeat
+	0xB3 index, INDEX_skiMeat
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyMicroRow:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlFlea
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x10B 1
+    0x10A 1
+    0x101 0x52FC2C, 6, 0
+    0x102 0x52FC5C, 3
+    0x108 
+    0x103 3
+    0x102<2>
+	0xB3 engine_loaded, SCENE_rvlFlea
+	0xB3 index, INDEX_rvlFlea
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyMonkeyWatch:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlMonkeyWatch
+	sub 4
+	0x29<2> 
+    rest 0x8
+    0x103 0, 1
+    0x103 1, 1
+    0x103 2, 1
+    0x103 3, 1
+    rest 0x8
+	0xB3 engine_loaded, SCENE_rvlMonkeyWatch
+	0xB3 index, INDEX_rvlMonkeyWatch
+    fade<1> 1,1,1
+	set_cat 0x7D0
+    label 0x7009
+    0x101<3> 0x18, 0x180
+    rest 0x30
+    0x101
+    rest 0x30
+    goto 0x7009
+stop
+
+sequenceEmptyUpbeat:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_agbMetro
+	sub 4
+	0x29<2> 
+    zoom 3, 0xC8, 0xC8
+    pan 3, 0, -0x20
+    rest 0x10
+    0xB3 score_add, 10
+	0xB3 engine_loaded, SCENE_REC_agbMetro
+	0xB3 index, INDEX_agbMetro
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyMunchyMonk:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrShugyo
+	sub 4
+	0x29<2> 
+    rest 0x8
+    0x2B<1> 0x1B
+    if 5
+        0x108<1> 0, 0, 0, 0, 1
+        0x107 0, 0
+        0x106<1>
+        0x104<1>
+    else
+        0x106<1>
+        0x104<1>
+        0x107 1, 0xC0
+    endif
+    rest 0x8
+	0xB3 engine_loaded, SCENE_ntrShugyo
+	0xB3 index, INDEX_ntrShugyo
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyNightWalk:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbNightWalk
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbNightWalk
+	0xB3 index, INDEX_agbNightWalk
+    fade<1> 1,1,1
+	set_cat 0x7D0
+    0x102
+    0x100 0x30 * 0, 0
+    0x100 0x30 * 1, 1
+    0x100 0x30 * 2, 0
+    0x100 0x30 * 3, 1
+    0x100 0x30 * 4, 0
+    label 0x9007
+    0x100 0x30 * 5, 1
+    0x100 0x30 * 6, 3
+    0x100 0x30 * 7, 2
+    0x100 0x30 * 8, 2
+    rest 0xC0
+    goto 0x9007
+stop
+
+sequenceEmptyNinjaBodyguard:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbTono
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbTono
+	0xB3 index, INDEX_agbTono
+    fade<1> 1,1,1
+    0x101<2>
+stop
+
+sequenceEmptyPackingPests:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlSort
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlSort
+	0xB3 index, INDEX_rvlSort
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyPajama:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrPillow
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrPillow
+	0xB3 index, INDEX_ctrPillow
+    0x2B 0x3A
+    if 1
+	    0x104
+    endif
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyPatapon:
+	set_cat 0
+    play_sfx 0x100029D
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_pspPatapon
+	sub 4
+	0x29<2> 
+    rest 0x8
+    0x8B<1> 0, 3, 70, -5
+    0x101<1> 2
+    rest 0x8
+	0xB3 engine_loaded, SCENE_REC_pspPatapon
+	0xB3 index, INDEX_pspPatapon
+    0xB3<1> isPractice, 0
+    // 0xB3<1> missedPattern, 0
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyPowerCalligraphy:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbShuji
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbShuji
+	0xB3 index, INDEX_agbShuji
+    fade<1> 1,1,1
+stop
+sequenceEmptyQuiz:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbQuiz
+	sub 4
+	0x29<2> 
+    rest 0x8
+    0x102<1>
+    0x101
+    rest 0x8
+	0xB3 engine_loaded, SCENE_agbQuiz
+	0xB3 index, INDEX_agbQuiz
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyRatRace:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbRat
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbRat
+	0xB3 index, INDEX_agbRat
+    fade<1> 1,1,1
+    0x102 1
+    0x105 2
+    0x101 1
+stop
+
+sequenceEmptyRhythmDoctor:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_7bgDoctor
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_7bgDoctor
+	0xB3 index, INDEX_7bgDoctor
+    0x109
+    0x108<1> 0
+    0x101 1, 0, 0
+    0x109<1>
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyRhythmRally:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrPingpong
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrPingpong  
+	0xB3 index, INDEX_ntrPingpong  
+    0x109
+    0x108<1> 0
+    0x101 1, 0, 0
+    0x109<1>
+    fade<1> 1,1,1
+    async_call pingpongbeat
+    rest 0x30
+stop
+
+sequenceEmptyRingSide:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlInterview
+	sub 4
+	0x29<2> 
+    rest 0x10
+    0x101 0
+    0x109 1
+	0xB3 engine_loaded, SCENE_rvlInterview
+	0xB3 index, INDEX_rvlInterview
+    fade<1> 1,1,1
+stop
+
+sequenceEmptySSWii:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlSamurai
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlSamurai
+	0xB3 index, INDEX_rvlSamurai
+    fade<1> 1,1,1
+    0x10F
+stop
+
+sequenceEmptyScrewBotFactory:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlRobot
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlRobot
+	0xB3 index, INDEX_rvlRobot
+    fade<1> 1,1,1
+stop
+
+sequenceEmptySeeSaw:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlSeesaw
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlSeesaw
+	0xB3 index, INDEX_rvlSeesaw
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyShootEmUp:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ntrShooting
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ntrShooting
+	0xB3 index, INDEX_ntrShooting
+    fade<1> 1,1,1
+stop
+
+sequenceEmptySickBeats:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbVirus
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbVirus
+	0xB3 index, INDEX_agbVirus
+    fade<1> 1,1,1
+    0xAF<6> 0
+    0x10A 2
+	0x109 2
+	0x10C 
+stop
+
+sequenceEmptySneakySpirits:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbGhost
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbGhost
+	0xB3 index, INDEX_agbGhost
+    fade<1> 1,1,1
+    0x101<1> 0xFA, 0
+    0x107<1> 0
+    0x104<1> 0
+stop
+
+sequenceEmptySoumen:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_swfSoumen
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_swfSoumen
+	0xB3 index, INDEX_swfSoumen
+    fade<1> 1,1,1
+    0x106<1>
+    0x104<1>
+    zoom 3, -0xAE, 0xAE
+    pan 3, -0x35, 0x8
+stop
+
+sequenceEmptySpaceball:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbBatter
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbBatter
+	0xB3 index, INDEX_agbBatter
+    fade<1> 1,1,1
+    0x103
+stop
+
+sequenceEmptySpaceDance:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbSpaceDance
+	sub 4
+	0x29<2> 
+    rest 0x10
+    setrest 0, 0x18
+    setrest 1, 0x18
+	0xB3 engine_loaded, SCENE_agbSpaceDance
+	0xB3 index, INDEX_agbSpaceDance
+    fade<1> 1,1,1
+stop
+
+sequenceEmptySplashdown:
+	set_cat 0
+    rest 0x8
+    0x2B<1> 0x13
+    if 1
+        0xB3 game_state, 1
+    else
+        0xB3 game_state, 0
+    endif
+    //After setting the right asset pack, set the scene back to Machine
+    0x2B 0x13, 8
+	call changeEngine
+	engine SCENE_REC_ntrSynchro
+	sub 4
+	0x29<2> 
+    rest 0x8
+    0xB2 game_state
+    if 0
+        async_call assetsSplash
+    else
+        async_call assetsSplashPractice
+    endif
+    rest 0x8
+	0xB3 engine_loaded, SCENE_REC_ntrSynchro
+	0xB3 index, INDEX_ntrSynchro
+    fade<1> 1,1,1
+stop
+
+sequenceEmptySumoBros:
+	set_cat 0
+	call changeEngine
+	engine SCENE_ctrSumou
+	sub 4
+	0x29<2> 
+    rest 0xC
+    0x108 1
+    rest 0xC
+	0xB3 engine_loaded, SCENE_ctrSumou
+	0xB3 index, INDEX_ctrSumou
+    fade<1> 1,1,1
+stop
+
+sequenceEmptySuperSamuraiSlice:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrDotSamurai
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrDotSamurai
+	0xB3 index, INDEX_ctrDotSamurai
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyTambourine:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_rvlTambourine
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_rvlTambourine
+	0xB3 index, INDEX_rvlTambourine
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyTangotronic:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrTango
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrTango
+	0xB3 index, INDEX_ctrTango
+    fade<1> 1,1,1
+    0x10E 1
+    0x10D<1>
+    0x10C 0, -0x12C, 0x3E8
+    0x10C 0, -0x320, 0x5DC
+stop
+
+sequenceEmptyTap:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbTap
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbTap
+	0xB3 index, INDEX_agbTap
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyTapTroupe:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_rvlTap
+	sub 4
+	0x29<2> 
+    0x105 1
+    0x2B<1> SCENE_REC_rvlTap
+    if 0x10
+        0x76 1, 1
+        0x78 1, 0xFF, 0xFF, 0xFF
+        0x79 1, 0x20
+        0x7B<1> 1, 0xFF, 0
+    endif
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_rvlTap
+	0xB3 index, INDEX_rvlTap
+    fade<1> 1,1,1
+    zoom 3, 0x168, 0x168
+    pan 3, 8, 0
+    0x101
+    rest 0x30
+    0x2B<1> 0xC
+    if 0x10
+        async_call tapTroupeColorCycle
+        async_call tapTroupeColorCycleShutOff
+    endif
+stop
+
+sequenceEmptyTongueLashing:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrChameleon
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0x107 0
+	0xB3 engine_loaded, SCENE_ctrChameleon
+	0xB3 index, INDEX_ctrChameleon
+    fade<1> 1,1,1
+    async_call tongueLashingBeat
+stop
+
+sequenceEmptyTweezers:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_agbHair
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_agbHair
+	0xB3 index, INDEX_agbHair
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyWorkingDough:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_rvlManju
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_rvlManju
+	0xB3 index, INDEX_rvlManju
+    0x103 1
+    0x103<2>
+	0x101 0, 0, 1, 0
+	0x101 1, 1, 1, 0
+    fade<1> 1,1,1
+stop
