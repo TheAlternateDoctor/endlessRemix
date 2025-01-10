@@ -91,7 +91,6 @@ INDEX_rvlTap = 0x4B
 INDEX_ntrSynchro = 0x4C
 INDEX_7bgDoctor = 0x4E
 INDEX_agbFireworks = 0x4F
-INDEX_bnbTweet = 0x50
 INDEX_rvlDonk = 0x51
 INDEX_rvlTambourine = 0x52
 INDEX_pspPatapon = 0x53

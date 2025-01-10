@@ -70,8 +70,6 @@ agbTono_rainbowroad.zlib - deni_iguess
 agbVirus_gameboy.zlib - deni_iguess
 agbVirus_magma.zlib - Alm
 agbVirus_remix03.zlib - leonvic
-bnbTweet_pkmn.zlib - Miik
-bnbTweet_practice.zlib - Tempo Lab Games
 ctrBear_fortnite.zlib - Sofuto
 ctrBear_klonoa.zlib - Sofuto
 ctrBear_nightcall.zlib - TheAlternateDoctor
@@ -119,7 +117,6 @@ ntrBackbeat_v1.zlib - ???
 ntrBackbeat_v2.zlib - ???
 ntrBlueBirds_2.zlib - ???
 ntrBlueBirds_bomb.zlib - Alm
-ntrBlueBirds_pkmn.zlib - Miik
 ntrBlueBirds_rmx2.zlib - ???
 ntrBlueBirds_SIR.zlib - EpicHaxGuy
 ntrBoxShow4head.zlib - ???
@@ -217,7 +214,6 @@ rvlBook_remix09.zlib - Nintendo
 rvlBook_v1.zlib - Nintendo
 rvlDate_klonoa.zlib - deni_iguess
 rvlDate_nightcall.zlib - TheAlternateDoctor
-rvlDate_pkmn.zlib - Miik
 rvlDate_remix08.zlib - Nintendo
 rvlDate_remix1.zlib - Nintendo
 rvlDate_remix8.zlib - Nintendo
@@ -244,7 +240,6 @@ rvlGolf_remix09.zlib - Nintendo
 rvlGolf_remix1.zlib - Nintendo
 rvlGolf_repainted.zlib - ???
 rvlGoma_klonoa.zlib - Sofuto
-rvlGoma_pkmn.zlib - Miik
 rvlInterview_remix04.zlib - Nintendo
 rvlInterview_remix05.zlib - Nintendo
 rvlInterview_remix07.zlib - ???
