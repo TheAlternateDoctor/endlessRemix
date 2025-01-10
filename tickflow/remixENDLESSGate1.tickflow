@@ -35,7 +35,6 @@
 #include utils/games/fillbots.tickflow
 #include utils/games/bossaNova.tickflow
 #include utils/games/airRally.tickflow
-#include utils/games/meetAndTweet.tickflow
 #include utils/games/ianVoices.tickflow
 #include utils/games/nurseVoices.tickflow
 #include utils/games/rhythmDoctor.tickflow
@@ -105,7 +104,6 @@
 #include utils/patterns/ninjaBodyguard.tickflow
 #include utils/patterns/lockstep.tickflow
 #include utils/patterns/blueBirds.tickflow
-#include utils/patterns/meetAndTweet.tickflow
 #include utils/patterns/tambourine.tickflow
 #include utils/patterns/fireworks.tickflow
 #include utils/patterns/rhythmRally.tickflow
