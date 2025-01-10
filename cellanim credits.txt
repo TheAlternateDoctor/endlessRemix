@@ -70,8 +70,6 @@ agbTono_rainbowroad.zlib - deni_iguess
 agbVirus_gameboy.zlib - deni_iguess
 agbVirus_magma.zlib - Alm
 agbVirus_remix03.zlib - leonvic
-bnbTweet_pkmn.zlib - Miik
-bnbTweet_practice.zlib - Tempo Lab Games
 ctrBear_fortnite.zlib - Sofuto
 ctrBear_klonoa.zlib - Sofuto
 ctrBear_nightcall.zlib - TheAlternateDoctor
