@@ -1121,12 +1121,7 @@ sequenceEmptySplashdown:
 	sub 4
 	0x29<2> 
     rest 0x8
-    0xB2 game_state
-    if 0
-        async_call assetsSplash
-    else
-        async_call assetsSplashPractice
-    endif
+    async_call assetsSplashPractice
     rest 0x8
 	0xB3 engine_loaded, SCENE_REC_ntrSynchro
 	0xB3 index, INDEX_ntrSynchro
