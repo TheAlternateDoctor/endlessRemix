@@ -136,6 +136,9 @@ fade 2, 1, 0
 0x8F 3
 input 0
 
+0xB3<1> cellanim_slot,0 //Cellanim
+0xB3 sfx_plus,0 //Slot 7 has SFX
+0xB3 sfx_plus_2,1 //Slot 7 has SFX
 
 // Practice setup
 0xA7<2> 
@@ -160,12 +163,9 @@ label 0x5D0C
 // 0x68<3> -0x30, -0x90, 0x3C
 
 0xB3 score,0 //Score
-0xB3<1> cellanim_slot,0 //Celanim
 0xB3 lives,3 //Lives
 0xB3 debug_start,cyclingMode //Selects the shorts cycling mode(Debug mode only)
 0xB3 speed,startSpeed //Speed at which the remix starts
-0xB3 sfx_plus,0 //Slot 7 has SFX
-0xB3 sfx_plus_2,1 //Slot 7 has SFX
 0xB3<1> lives_enabled, 1 //Enables lives. Since it's a gate, we want it always on
 0xB3 engine_loaded, SCENE_REC_rvlBasket //Starting scene
 0xB3 index, INDEX_rvlBasket //Starting index
@@ -362,8 +362,8 @@ set_sfx 3, u"GROUP_VOICE_SPEEDUP"
 stop
 
 tempoAndMusic:
-0x53 0x10001B8
-0x23 0x10001B8
+0x53 0x100023E
+0x23 0x100023E
 speed 0x100
 rest 0x30	// 1.0 beats
 0xBA 
