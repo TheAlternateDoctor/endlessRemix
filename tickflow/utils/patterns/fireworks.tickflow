@@ -10,6 +10,7 @@ sequenceFireworks:
     setrest 0, 0x18
     setrest 1, 0x30
     0x101<1> 2
+	0x8B 0,0
     rest 0xC
     fade<1> 1,1,1
     input 1

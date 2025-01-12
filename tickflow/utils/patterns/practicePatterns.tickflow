@@ -441,6 +441,7 @@ sequenceEmptyFireworks:
     setrest 0, 0x18
     setrest 1, 0x30
     0x101<1> 2
+	0x8B 0,0
     rest 0xC
     fade<1> 1,1,1
 stop
@@ -936,6 +937,7 @@ sequenceEmptyRhythmDoctor:
     0x108<1> 0
     0x101 1, 0, 0
     0x109<1>
+	0x104<1> 0
     fade<1> 1,1,1
 stop
 
@@ -1270,5 +1272,21 @@ sequenceEmptyWorkingDough:
     0x103<2>
 	0x101 0, 0, 1, 0
 	0x101 1, 1, 1, 0
+    fade<1> 1,1,1
+stop
+
+sequenceEmptyDjSchool:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_ntrDjSchool
+	sub 4
+	0x29<2> 
+    rest 0x8
+    pan 3, -0x39, -0x35 
+	0x8B 0,0
+    rest 0x8
+	0xB3 engine_loaded, SCENE_REC_ntrDjSchool
+	0xB3 index, INDEX_ntrDjSchool
     fade<1> 1,1,1
 stop

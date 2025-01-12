@@ -1,60 +1,138 @@
 tutorial:
-    0x89
+    async_call loadTutorialMusic
     0x21 120
+    call loadDrummerScene
+    0x7C 7,1,1
+    rest 0x60
 
-0x65<4> 0x12C, 0x3C
-0x65<3> 0, -0x50
-0x65<5> 2
+    0x68<3> -60, -60
+    0x65<4> 0x12C, 0x3C
+    0x65<3> 0, -0x55
+    0x65<5> 2
+    0x65<7> 0
+
+    engine 0x25
+    rest 0x18
+    0x8B 0, 0
+    0x104 0
+    zoom 0, 0xC0, 0xC0
+
+    //Drummer intro
 
     0xB3 practice_part, 0
-    fade<1> 7, 0, 0x60
-    rest 0x30 * 2
-
-    0x66 7, "agbBatter_tutorial_a"
+    async_call playTutorialSong
+    rest 0x30
+    rest 0x60
+    0x7C<1> 7, 0, 0x60
+    fade<1> 2, 0, 0x60
+    rest 0x30 * 4
+    async_call drummerTalk
+    
+    0x68<1> 9, "rvlEndless_tutorial_a_00"
     call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_a_01"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_a_02"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_a_03"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_a_04"
+    call textboxes
+    kill_loc drummerTalk
+    0x104 1
 
+    //Original games
     0xB3 practice_part, 1
     call baseWheel
+    0x58 0, 0x60
     fade 7, 0, 0x60
-    rest 0x60
+    rest 0xC0
+    zoom 0, 0x100,0x100
+    zoom 3, 0x500,0x500
     async_call roulette
     fade<1> 7, 0, 0x60
     rest 0xC0*2
+    0x66 9, "rvlEndless_tutorial_b"
+    call textboxesRegular
 
-    0x66 7, "agbBatter_tutorial_b"
-    call textboxes
-
+    //Old games
     0xB3 practice_part, 2
-
     rest 0xC0*2
-    0x66 7, "agbBatter_tutorial_a"
-    call textboxes
+    0x66 9, "rvlEndless_tutorial_c"
+    call textboxesRegular
 
+    //Other games
     0xB3 practice_part, 3
-
     rest 0xC0*2
-    0x66 7, "agbBatter_tutorial_a"
-    call textboxes
+    0x66 9, "rvlEndless_tutorial_d"
+    call textboxesRegular
 
+    //Drummer outro
     rest 0xC0*2
     kill_loc roulette
-    fade 7, 0, 0x60
+    0x7C 7, 0, 0x60
+    rest 0x60
+    call loadDrummerScene
+    rest 0x60
+    engine 0x25
+    rest 0x18
+    0x8B 0, 0
+    0x104 0
+    zoom 0, 0xC0, 0xC0
+    rest 0x18
+    async_call playTutorialSong
+    rest 0x30
+    rest 0x60
+    0x7C<1> 7, 0, 0x60
     rest 0xC0
 
-    fade<1> 7, 0, 0x60
-    rest 0x60
-    0x66 7, "agbBatter_tutorial_a"
+    async_call drummerTalk
+    0x68<1> 9, "rvlEndless_tutorial_e_00"
     call textboxes
+    kill_loc drummerTalk
+    0x104 1
     rest 0x60
+    async_call drummerTalk
+    0x68<1> 9, "rvlEndless_tutorial_e_01"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_e_02"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_e_03"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_e_04"
+    call textboxes
+    0x68<1> 9, "rvlEndless_tutorial_e_05"
+    call textboxes
+    kill_loc drummerTalk
+    0x104 1
+
+    rest 0x60
+    0x58 0, 0x60
     fade 7, 0, 0x60
     rest 0x60
     call loadBasketGirls
     async_call loadBasketGirlsLate
     async_call loadBasketGirlsLate2
+    remove_sfx 0xA
+    rest 0x30
+    call loadSong
+    sub 3
     rest 0x60
+    zoom 0, 0x100,0x100
 return
 
 textboxes:
+    async_call introIndicator
+    rest 0x30	// 1.0 beats
+    0x6D 1, 0x10002BA, 0x10002BB
+    sub 0
+    0x68<2> 
+    kill_loc introIndicator
+    0x103<5> "monkey_inst_wait", 1
+    rest 0x60	// 1.0 beats
+return
+
+textboxesRegular:
     0x66<1> 
     label 0x7B
     rest 0x30	// 1.0 beats
@@ -68,6 +146,29 @@ textboxes:
         goto 0x7B
     endif 
 return
+
+playTutorialSong:
+    0x53 0x1000281
+    0x23 0x1000281
+    speed 0x100
+    rest 0x30	// 1.0 beats
+    0xBA 
+    sub 2
+    0x88 
+    if 1
+        0x88<5> 
+    endif 
+    0x55 1
+    0x58 0, 1
+    rest 0x60
+    0x58 0x100, 0x60
+stop
+
+introIndicator:
+label 0xB022
+	0x103<5> "monkey_ready_L", 1
+	rest 0x60
+goto 0xB022
 
 roulette:
     set_cat 0
@@ -778,7 +879,7 @@ return
 
 recWheel:
     label 0x70AF
-    random 0x54
+    random 0x55
     switch
     case INDEX_rvlBasket
         0xB2 index
@@ -862,6 +963,20 @@ recWheel:
             endif
         endif
     break
+    case INDEX_ntrDjSchool
+        0xB2 index
+        if INDEX_ntrDjSchool //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            if INDEX_ntrBoxShow
+                goto 0x70AF
+            else
+                set_func patternSub, sequenceEmptyDjSchool
+                call loadDjSchool
+                set_func lateLoaderSub, loadDjSchoolLate
+            endif
+        endif
+    break
     default //Restart until we get something damnit
         goto 0x70AF
     break
@@ -925,3 +1040,52 @@ otherWheel:
     break
     endswitch
 return
+
+loadTutorialMusic:
+    remove_sfx 0xA
+    rest 0x18
+    set_sfx 0xA, u"GROUP_WSD_OPENING"
+stop
+
+loadDrummerScene:
+    0xB2<1> cellanim_slot
+    if 1
+        async_call unloadGameSlot4
+    else
+        async_call unloadGameSlot5
+    endif
+    rest 0xC
+    0xB2<1> cellanim_slot
+    if 1
+        set_sfx 4, u"GROUP_BASKET"
+        set_cellanim 4, u"rom:/cellanim/agbIntro_v0.zlib", -1
+        game_cellanim 0x25, 4
+        0xB3<1> cellanim_slot, 0
+    else
+        set_sfx 5, u"GROUP_BASKET"
+        set_cellanim 5, u"rom:/cellanim/agbIntro_v0.zlib", -1
+        game_cellanim 0x25, 5
+        0xB3<1> cellanim_slot, 1
+    endif
+    0x2B 0x25, 3
+return
+
+drummerTalk:
+    label 0x7009
+    0x104 1
+    random 5
+    switch 
+    case 0
+        rest 8
+    case 1
+        rest 8
+    case 2
+        rest 8
+    case 3
+        rest 8
+    case 4
+        rest 8
+    endswitch
+    0x104 2
+    rest 8
+goto 7009
