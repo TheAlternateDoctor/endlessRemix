@@ -1,0 +1,89 @@
+// Starts 0x18 beats early.
+// Don't forget to use set_cat 0,
+// else the pattern will be killed later on!
+// Also remember to set_cat 0x7D0 half a beat later
+// so the game can be properly killed when the player fails.
+
+sequenceDjSchool:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_ntrDjSchool
+	sub 4
+	0x29<2> 
+    rest 0x8
+    async_call permadark
+    pan 3, -0x39, -0x35 
+    rest 0x8
+	0xB3 engine_loaded, SCENE_REC_ntrDjSchool
+	0xB3 index, INDEX_ntrDjSchool
+    fade<1> 1,1,1
+    async_call dazzlesBeatAnim
+    random 3
+    switch
+    case 0
+        0xB3 score_add, 4
+        async_call djSchool1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call djSchool2
+        break
+    case 2
+        0xB3 score_add, 4
+        async_call djSchool3
+        break
+    endswitch
+    rest 0x48
+    input 1
+stop
+
+djSchool1:
+play_sfx 0x1000A2C
+async_call breakcomeonooh
+rest 0xC0
+play_sfx 0x1000A32
+rest 0x30
+async_call scratcho
+rest 0x90
+play_sfx 0x1000A2E
+async_call breakcomeonooh
+rest 0xC0
+play_sfx 0x1000A34
+rest 0x30
+async_call scratcho
+stop
+
+djSchool2:
+play_sfx 0x1000A2A
+rest 0x18
+async_call andstopooh
+rest 0x18
+rest 0x90
+play_sfx 0x1000A32
+rest 0x30
+async_call scratcho
+rest 0x90
+play_sfx 0x1000A2C
+async_call breakcomeonooh
+rest 0x90
+play_sfx 0x1000A32
+rest 0x30
+async_call scratcho
+stop
+
+djSchool3:
+play_sfx 0x1000A2C
+async_call breakcomeonooh
+rest 0x60
+play_sfx 0x1000A32
+rest 0x30
+async_call scratcho
+rest 0xF0
+play_sfx 0x1000A2E
+async_call breakcomeonooh
+rest 0x90
+play_sfx 0x1000A33
+rest 0x30
+async_call scratcho
+stop

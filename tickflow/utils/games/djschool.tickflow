@@ -1,3 +1,22 @@
+// play_sfx 0x1000A2C //Break, c'mon, ooh
+// play_sfx 0x1000A2D //Break, c'mon, ooh (crazy)
+// play_sfx 0x1000A2E //Break, c'mon, ooh (chill)
+// play_sfx 0x1000A2A //And stop, ooh
+// play_sfx 0x1000A32 //Scratcho, hey
+// play_sfx 0x1000A33 //Scratcho, hey (crazy)
+// play_sfx 0x1000A34 //Scratcho, hey (chill)
+
+// play_sfx 0x1000A2C
+// async_call breakcomeonooh
+
+// play_sfx 0x1000A2A
+// rest 0x18
+// async_call andstopooh
+
+// play_sfx 0x1000A32
+// rest 0x30
+// async_call scratcho
+
 scratcho:
 0x103 1
 0x104 2, 1

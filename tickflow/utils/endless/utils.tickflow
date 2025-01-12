@@ -8,7 +8,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x54
+        random 0x55
     endif
     switch
         case INDEX_agbBatter
@@ -1372,7 +1372,6 @@ loadNextGame:
                     set_func presequenceSub, presequenceBasketGirls
                     set_func lateLoaderSub, loadBasketGirlsLate
                     set_func perfCheckSub, checkA2
-                    0xB3 index, INDEX_rvlBasket
                 endif
             endif
         break
@@ -1413,7 +1412,6 @@ loadNextGame:
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadMeatGrinderLate
                     set_func perfCheckSub, checkA2
-                    0xB3 index, INDEX_skiMeat
                 endif
             endif
         break
@@ -1458,7 +1456,6 @@ loadNextGame:
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadUpbeatLate
                     set_func perfCheckSub, checkA2
-                    0xB3 index, INDEX_agbMetro
                 endif
             endif
         break
@@ -1523,7 +1520,6 @@ loadNextGame:
                     set_func presequenceSub, presequenceRhythmDoctor
                     set_func lateLoaderSub, loadRhythmDoctorLate
                     set_func perfCheckSub, checkA2
-                    0xB3 index, INDEX_7bgDoctor
                 endif
             endif
         break
@@ -1593,7 +1589,6 @@ loadNextGame:
                     call loadTambourine
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadTambourineLate
-                    0xB3 index, INDEX_rvlDonk
                 endif
             endif
         break
@@ -1614,6 +1609,33 @@ loadNextGame:
                 call loadPatapon
                 set_func presequenceSub, nop
                 set_func lateLoaderSub, nop
+            endif
+        break
+        case INDEX_ntrDjSchool
+            0xB2 index
+            if INDEX_ntrDjSchool //Stop games from being played next to each other
+                0xB2<1> is_debug
+                if 1
+                    goto 0xD0C6
+                endif
+                goto 0x70AD
+            else
+                if INDEX_ntrBoxShow
+                    goto 0x70AD
+                else
+                    0xB2<1> is_debug
+                    if 1
+                        0xB2 debug_current_index
+                        if INDEX_ntrDjSchool
+                            goto 0xD0C6
+                        endif
+                        0xB3 debug_current_index, INDEX_ntrDjSchool
+                    endif
+                    set_func patternSub, sequenceDjSchool
+                    call loadDjSchool
+                    set_func presequenceSub, nop
+                    set_func lateLoaderSub, loadDjSchoolLate
+                endif
             endif
         break
         default //Restart until we get something damnit

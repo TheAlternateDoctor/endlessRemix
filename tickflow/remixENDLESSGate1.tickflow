@@ -123,6 +123,7 @@
 #include utils/patterns/donkDonk.tickflow
 #include utils/patterns/tambourine.tickflow
 #include utils/patterns/patapon.tickflow
+#include utils/patterns/djschool.tickflow
 
 #include utils/patterns/practicePatterns.tickflow
 
