@@ -1,0 +1,221 @@
+// Nothing to report yet.
+
+sequenceSecondContact:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_ctrInterpreter
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_ctrInterpreter
+	0xB3 index, INDEX_ctrInterpreter
+	async_sub 0x56
+    fade<1> 1,1,1
+    0x103 0
+    0x102 
+    0x106<1> 
+    async_sub 0x57
+    0x103 0
+    0x100<1> 
+    async_sub 0x58
+    random 3
+    switch
+    case 0
+        async_call secondContact1
+        break
+    endswitch
+    rest 0x30
+    input 1
+stop
+
+secondContact1:
+    0x108 "rvlEndless_interpreter_alien_message_a"
+    async_call secondContact1MessageA
+    rest 0x90
+    0x100<2> 
+    rest 0x18	// 0.5 beats
+    0x100<3> 
+    0x102 
+    rest 0xC	// 0.25 beats
+    0x103 1
+    0x107 "rvlEndless_interpreter_correct_message_a", 0
+    0x107<1> "rvlEndless_interpreter_incorrect_message_a"
+    0x105<1>
+    rest 0xC
+    rest 0x90
+    0x104 1
+    rest 0x30	// 1.0 beats
+    0x105 
+    0x103 0
+    0x100<1> 
+
+    random 2
+    switch
+    case 0
+        0x107<1> "rvlEndless_interpreter_incorrect_message_b_01"
+        break
+    case 0
+        0x107<1> "rvlEndless_interpreter_incorrect_message_b_02"
+        break
+    endswitch
+    random 4
+    switch
+    case 0
+        0xB3 score_add, 8
+        async_call secondContact1MessageB1
+        break
+    case 1
+        0xB3 score_add, 8
+        async_call secondContact1MessageB2
+        break
+    case 2
+        0xB3 score_add, 8
+        async_call secondContact1MessageB3
+        break
+    case 3
+        0xB3 score_add, 8
+        async_call secondContact1MessageB4
+        break
+    endswitch
+
+stop
+
+secondContact1MessageA:
+    0x100 0xC0, 2
+    rest 0x30
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+stop
+
+secondContact1MessageB1:
+    0x10A<1> 
+    0x10A "rvlEndless_interpreter_correct_message_b_01_01", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_01_02", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_01_03", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_01_04", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_01_05", 0xA
+    0x108 "rvlEndless_interpreter_alien_message_b_01"
+    async_sub 0x58
+
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x30
+    0x100 0xC0, 2
+    rest 0x30
+    
+    0x100<2> 
+    rest 0x18	// 0.5 beats
+    0x100<3> 
+    0x102 
+    rest 0xC	// 0.25 beats
+    0x103 1
+    0x105<1>
+    rest 0xC
+    rest 0x90
+    0x104 1
+    rest 0x30	// 1.0 beats
+    0x105 
+    0x103 0
+    0x100<1> 
+stop
+
+secondContact1MessageB2:
+    0x10A<1> 
+    0x10A "rvlEndless_interpreter_correct_message_b_02_01", 0xA
+    0x108 "rvlEndless_interpreter_alien_message_b_02"
+    async_sub 0x58
+
+    0x100 0xC0, 2
+    rest 0x48
+    0x100 0xC0, 2
+    rest 0x48
+
+    0x100<2> 
+    rest 0x18	// 0.5 beats
+    0x100<3> 
+    0x102 
+    rest 0xC	// 0.25 beats
+    0x103 1
+    0x105<1>
+    rest 0xC
+    rest 0x90
+    0x104 1
+    rest 0x30	// 1.0 beats
+    0x105 
+    0x103 0
+    0x100<1> 
+stop
+
+secondContact1MessageB3:
+    0x10A<1> 
+    0x10A "rvlEndless_interpreter_correct_message_b_03_01", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_03_02", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_03_03", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_03_04", 0xA
+    0x108 "rvlEndless_interpreter_alien_message_b_03"
+    async_sub 0x58
+
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x30
+    0x100 0xC0, 2
+    rest 0x48
+
+    0x100<2> 
+    rest 0x18	// 0.5 beats
+    0x100<3> 
+    0x102 
+    rest 0xC	// 0.25 beats
+    0x103 1
+    0x105<1>
+    rest 0xC
+    rest 0x90
+    0x104 1
+    rest 0x30	// 1.0 beats
+    0x105 
+    0x103 0
+    0x100<1> 
+stop
+
+secondContact1MessageB4:
+    0x10A<1> 
+    0x10A "rvlEndless_interpreter_correct_message_b_04_01", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_04_02", 0xA
+    0x10A "rvlEndless_interpreter_correct_message_b_04_03", 0xA
+    0x108 "rvlEndless_interpreter_alien_message_b_04"
+    async_sub 0x58
+
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x18
+    0x100 0xC0, 2
+    rest 0x30
+
+    0x100<2> 
+    rest 0x18	// 0.5 beats
+    0x100<3> 
+    0x102 
+    rest 0xC	// 0.25 beats
+    0x103 1
+    0x105<1>
+    rest 0xC
+    rest 0x90
+    0x104 1
+    rest 0x30	// 1.0 beats
+    0x105 
+    0x103 0
+    0x100<1> 
+stop

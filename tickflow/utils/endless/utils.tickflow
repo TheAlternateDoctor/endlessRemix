@@ -1638,6 +1638,25 @@ loadNextGame:
                 endif
             endif
         break
+        case INDEX_ctrInterpreter
+            0xB2 index
+            if INDEX_ctrInterpreter //Stop games from being played next to each other
+                0xB2<1> is_debug
+                if 1
+                    goto 0xD0C6
+                endif
+                goto 0x70AD
+            else
+                0xB2<1> is_debug
+                if 1
+                    0xB3 debug_current_index, INDEX_ctrInterpreter
+                endif
+                set_func patternSub, sequenceSecondContact
+                call loadSecondContact
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
+            endif
+        break
         default //Restart until we get something damnit
             goto 0xD0C6
         break

@@ -73,6 +73,73 @@ rvl_endless_remix
 >Don’t worry, you’ll have
 >some lives to spare on them.
 
-
 +rvlEndless_tutorial_e_05
 >Have fun out there!
+
+
+
++rvlEndless_interpreter_alien_message_a
+>0/　0/0/0
+
++rvlEndless_interpreter_incorrect_message_a
+>[Colour #0E49B3FF]Awawa![Colour #000000FF]
+
++rvlEndless_interpreter_correct_message_a
+>I/ wa/nna/ eat...
+
++rvlEndless_interpreter_alien_message_b_01
+>0/0/0/　0
+
++rvlEndless_interpreter_incorrect_message_b_01
+>[Colour #0E49B3FF]Human flesh![Colour #000000FF]
+
++rvlEndless_interpreter_incorrect_message_b_02
+>[Colour #0E49B3FF]Tentacle graft![Colour #000000FF]
+
++rvlEndless_interpreter_correct_message_b_01_01
+>Beef/ Bour/gui/gnon!
+
++rvlEndless_interpreter_correct_message_b_01_02
+>A/ pot-/au-/feu!
+
++rvlEndless_interpreter_correct_message_b_01_03
+>An/ om/e/lette!
+
++rvlEndless_interpreter_correct_message_b_01_04
+>Blan/quette /de / veau!
+
++rvlEndless_interpreter_correct_message_b_01_05
+>Some/ cam/em/bert!
+
++rvlEndless_interpreter_alien_message_b_02
+>0/　0
+
++rvlEndless_interpreter_correct_message_b_02_01 
+>Green/ borsch!
+
++rvlEndless_interpreter_alien_message_b_03
+>0/0/　0
+
++rvlEndless_interpreter_correct_message_b_03_01
+>Bi/bim/bap!
+
++rvlEndless_interpreter_correct_message_b_03_02
+>Tarte /ta/tin!
+
++rvlEndless_interpreter_correct_message_b_03_03
+>Tarte /aux /pommes!
+
++rvlEndless_interpreter_correct_message_b_03_04
+>Quiche /lo/rraine!
+
++rvlEndless_interpreter_alien_message_b_04
+>0/0/0/0/0
+
++rvlEndless_interpreter_correct_message_b_04_01
+>Fon/due /sa/voy/arde!
+
++rvlEndless_interpreter_correct_message_b_04_02
+>Fon/due /bour/gui/gnonne!
+
++rvlEndless_interpreter_correct_message_b_04_03
+>Spa/nish /om/e/lette!
