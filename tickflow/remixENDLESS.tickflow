@@ -120,6 +120,7 @@
 #include utils/patterns/fireworks.tickflow
 #include utils/patterns/patapon.tickflow
 #include utils/patterns/djschool.tickflow
+#include utils/patterns/secondContact.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
