@@ -58,33 +58,33 @@ secondContact1:
         0x107<1> "rvlEndless_interpreter_incorrect_message_b_02"
         break
     endswitch
-    random 4
-    // switch
-    // case 0
-    //     0xB3 score_add, 8
-    //     async_call secondContact1MessageB1
-    //     break
-    // case 1
-    //     0xB3 score_add, 6
-    //     async_call secondContact1MessageB2
-    //     break
-    // case 2
-    //     0xB3 score_add, 7
-    //     async_call secondContact1MessageB3
-    //     break
-    // case 3
-    //     0xB3 score_add, 9
-    //     async_call secondContact1MessageB4
-    //     break
-    // case 4
-        // 0xB3 score_add, 10
-        // async_call secondContact1MessageB5
-    //     break
-    // case 5
+    random 6
+    switch
+    case 0
+        0xB3 score_add, 8
+        async_call secondContact1MessageB1
+        break
+    case 1
+        0xB3 score_add, 6
+        async_call secondContact1MessageB2
+        break
+    case 2
+        0xB3 score_add, 7
+        async_call secondContact1MessageB3
+        break
+    case 3
+        0xB3 score_add, 9
+        async_call secondContact1MessageB4
+        break
+    case 4
+        0xB3 score_add, 10
+        async_call secondContact1MessageB5
+        break
+    case 5
         0xB3 score_add, 5
         async_call secondContact1MessageB6
-    //     break
-    // endswitch
+        break
+    endswitch
 
 stop
 
