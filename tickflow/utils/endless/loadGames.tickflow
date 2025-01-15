@@ -5927,15 +5927,16 @@ if 1
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrInterpreter_long.zlib", -1
-        0x2B 0x18, 3
+        0x2B 0x39, 3
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/ctrInterpreter_short.zlib", -1
-        0x2B 0x18, 1
+        0x2B 0x39, 1
         break
     case 2
         set_cellanim 4, u"rom:/cellanim/ctrInterpreter_remix02.zlib", -1
-        0x2B 0x18, 9
+        play_sfx 0x1000297
+        0x2B 0x39, 9
         break
     endswitch
     set_layout 6, u"rom:/layout/ctrInterpreter.zlib", -1
@@ -5950,15 +5951,16 @@ else
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ctrInterpreter_long.zlib", -1
-        0x2B 0x18, 3
+        0x2B 0x39, 3
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/ctrInterpreter_short.zlib", -1
-        0x2B 0x18, 1
+        0x2B 0x39, 1
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/ctrInterpreter_remix02.zlib", -1
-        0x2B 0x18, 9
+        play_sfx 0x1000297
+        0x2B 0x39, 9
         break
     endswitch
     set_layout 7, u"rom:/layout/ctrInterpreter.zlib", -1
