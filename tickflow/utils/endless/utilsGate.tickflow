@@ -11,34 +11,30 @@ stop
 
 playNextGameGate:
     set_cat 0
-    label 0x1009
+    0xB3 score_add, 1
+    get_async patternSub, 0
+    rest 0x18
+    0x201
+    if_geq 0x103
+        get_async perfCheckSub, 0
+    endif
+    rest 0x18
+    rest 0x30*2
+    call loadNextGame
+    rest 0x30*5-0xC
+    rest 0x30*3
+    get_async presequenceSub, 0x18
+    rest 0x30*5 - 0x18
+    get_async lateLoaderSub, 0
+    rest 0xC
+    call updateScoreGate
+    rest 0xC
     0xB2 lives
     if_neq 0
-        0xB3 score_add, 1
-        get_async patternSub, 0
-        rest 0x18
-        0x201
-        if_geq 0x103
-            get_async perfCheckSub, 0
-        endif
-        rest 0x18
-        rest 0x30*2
-        call loadNextGame
-        rest 0x30*5-0xC
-        rest 0x30*3
-        get_async presequenceSub, 0x18
-        rest 0x30*5 - 0x18
-        get_async lateLoaderSub, 0
-        rest 0xC
-        call updateScoreGate
-        rest 0xC
-        0xB2 lives
-        if_neq 0
-            0xB2 score
-            if_lt maxTurns
-                fade 1,1,1
-                goto 0x1009
-            endif
+        0xB2 score
+        if_lt maxTurns
+            fade 1,1,1
+            goto 0x1009
         endif
     endif
 stop
