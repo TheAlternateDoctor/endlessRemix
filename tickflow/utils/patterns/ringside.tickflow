@@ -59,7 +59,7 @@ sequenceRingSide:
     0xB3 score_add, 0
     async_call ringsidePattern
     async_call ringsideBeatAnims
-    rest 0x60
+    rest 0x48
     input 1
 stop
 

@@ -746,7 +746,7 @@ loadNextGame:
                 endif
                 set_func patternSub, sequenceRingSide
                 call loadRingSide
-                set_func presequenceSub, nop
+                set_func presequenceSub, presequenceRingside
                 set_func lateLoaderSub, nop
                 set_func perfCheckSub, checkA2
             endif
