@@ -1,5 +1,6 @@
 // Beat anims starts automatically.
 // Starts zoomed properly.
+isPosing=12
 
 winRingside:
     set_cat 0
@@ -14,6 +15,33 @@ winRingside:
     0x10A<4> 
 stop
 
+presequenceRingside:
+set_cat 0
+rest 0xC0
+random 3
+switch
+case 0
+    async_call ringsidePose
+    rest 0x30
+    0xB4 score_add, 1
+    0xB3 isPosing, 1
+    break
+case 1
+    rest 0x30
+    async_sub 0x56
+    rest 0x18
+    0xB4 score_add, 1
+    0xB3 isPosing, 0
+    break
+case 2
+    async_call ringsideBigGuy
+    rest 0x18
+    0xB4 score_add, 2
+    0xB3 isPosing, 0
+    break
+endswitch
+stop
+
 sequenceRingSide:
 	set_cat 0
     rest 0x8
@@ -23,51 +51,93 @@ sequenceRingSide:
 	0x29<2> 
     rest 0x10
     0x101 0
+    sub 0x63
     0x109 1
 	0xB3 engine_loaded, SCENE_rvlInterview
 	0xB3 index, INDEX_rvlInterview
     fade<1> 1,1,1
-    random 2
-    switch
-    case 0
-        0xB3 score_add, 5
-        async_call ringside1
-        break
-    case 1
-        0xB3 score_add, 5
-        async_call ringside2
-        break
-    endswitch
+    0xB3 score_add, 0
+    async_call ringsidePattern
     async_call ringsideBeatAnims
     rest 0x60
     input 1
 stop
 
-ringside1:
-async_sub 0x56
+ringsidePattern:
 rest 0x90
-async_sub 0x57
-rest 0xF0
-async_sub 0x56
-rest 0x90
-async_sub 0x59
+async_call ringsideRandomPattern
 rest 0xC0
+async_call ringsideRandomPattern
+rest 0xC0
+async_call ringsideRandomPattern
 stop
 
-ringside2:
-async_sub 0x56
-rest 0xC0
-rest 0x18
-async_sub 0x56
-rest 0x78
-async_sub 0x57
-rest 0x30
-rest 0xC0
-async_sub 0x56
+ringsideRandomPattern:
+random 3
+switch
+case 0
+    0xB2 isPosing
+    if 0
+        async_sub 0x5A
+    else
+        async_sub 0x5B
+    endif
+    rest 0x48
+    0xB4 score_add, 1
+    0xB3 isPosing, 1
+    break
+case 1
+    rest 0x30
+    async_sub 0x56
+    sub 0x63
+    rest 0x18
+    0xB4 score_add, 1
+    0xB3 isPosing, 0
+    break
+case 2
+    async_sub 0x57
+    rest 0x30
+    sub 0x63
+    0xB4 score_add, 2
+    0xB3 isPosing, 0
+    break
+endswitch
 stop
+
 
 ringsideBeatAnims:
 label 0x7EA4
 0x106
 rest 0x30
 goto 0x7EA4
+
+ringsidePose:
+set_cat 0
+play_sfx 0x1000675
+rest 0x30	// 1.0 beats
+0x100 3, 0x60
+0x101 1
+rest 0x30	// 1.0 beats
+0x107 
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+0x108 
+rest 0x30	// 1.0 beats
+0x108<1> 
+stop 
+
+ringsideBigGuy:
+set_cat 0
+rest 0x18	// 0.5 beats
+play_sfx 0x1000674
+rest 0x18	// 0.5 beats
+0x100 1, 0x78
+0x100 2, 0x90
+0x104 1, 6
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+0x104<1> 
+rest 0x30	// 1.0 beats
+rest 0x18	// 0.5 beats
+0x104<2> 
+stop 
