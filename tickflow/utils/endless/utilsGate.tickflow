@@ -1,3 +1,14 @@
+playNextGameGateWrapper:
+    set_cat 0
+    label 0x1009
+    0xB2 lives
+    if_neq 0
+        async_call playNextGameGate
+        rest 0x30*16
+        goto 0x1009
+    endif
+stop
+
 playNextGameGate:
     set_cat 0
     label 0x1009

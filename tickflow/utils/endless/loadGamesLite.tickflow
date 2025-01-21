@@ -1065,9 +1065,6 @@ endif
 0x2B 0x5, 0x10
 return
 
-loadMarcherLate:
-stop
-
 loadExhibitionMatch:
 0xB2<1> cellanim_slot
 if 1

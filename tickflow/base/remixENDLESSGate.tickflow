@@ -255,7 +255,7 @@ call playPataponPracticePatternGate
 call playBasketInterludeGate
 call playRhythmDoctorPracticePatternGate
 call playMrUpbeatGate
-call playNextGameGate
+call playNextGameGateWrapper
 stop 
 
 

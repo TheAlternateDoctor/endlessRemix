@@ -1668,37 +1668,43 @@ loadNextGame:
     // endif
 return
 
-playNextGame:
+playNextGameWrapper:
     set_cat 0
     label 0x1009
     0xB2 lives
     if_neq 0
-        get_async patternSub, 0
-        rest 0x18
-        0x58 0x100, 0x30
-        0xB2<1> lives_enabled
-        if 1
-            get_async perfCheckSub, 0
-        endif
-        rest 0x18
-        async_call distract
-        rest 0x30*2
-        call loadNextGame
-        rest 0x30*5-0xC
-        rest 0x30*3
-        get_async presequenceSub, 0x18
-        rest 0x30*5 - 0x18
-        get_async lateLoaderSub, 0
-        rest 0x18
-        0xB2 lives
-        if_neq 0
-            fade 1,1,1
-        endif
-        0xB2<1> is_debug
-        if 0
-            call updateScore
-        endif
+        async_call playNextGame
+        rest 0x30*16
         goto 0x1009
+    endif
+stop
+
+playNextGame:
+    set_cat 0
+    get_async patternSub, 0
+    rest 0x18
+    0x58 0x100, 0x30
+    0xB2<1> lives_enabled
+    if 1
+        get_async perfCheckSub, 0
+    endif
+    rest 0x18
+    async_call distract
+    rest 0x30*2
+    call loadNextGame
+    rest 0x30*5-0xC
+    rest 0x30*3
+    get_async presequenceSub, 0x18
+    rest 0x30*5 - 0x18
+    get_async lateLoaderSub, 0
+    rest 0x18
+    0xB2 lives
+    if_neq 0
+        fade 1,1,1
+    endif
+    0xB2<1> is_debug
+    if 0
+        call updateScore
     endif
 stop
 
