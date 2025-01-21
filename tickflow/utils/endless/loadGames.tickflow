@@ -3404,7 +3404,7 @@ rest 0xC
 0xB2<1> cellanim_slot
 if 1
     set_sfx 4, u"GROUP_PAJAMAS"
-    random 4
+    random 5
     switch
     case 0
         0x2B 0x3A, 0
@@ -3419,15 +3419,19 @@ if 1
         set_cellanim 4, u"rom:/cellanim/ctrPillow_remixGhost.zlib", -1
         break
     case 3
-        0x2B 0x3A, 0
+        0x2B 0x3A, 1
         set_cellanim 4, u"rom:/cellanim/ctrPillow_SIR.zlib", -1
+        break
+    case 4
+        0x2B 0x3A, 2
+        set_cellanim 4, u"rom:/cellanim/ctrPillow_r7ds.zlib", -1
         break
     endswitch
     game_cellanim 0x3A, 4
     0xB3<1> cellanim_slot, 0
 else
     set_sfx 5, u"GROUP_PAJAMAS"
-    random 4
+    random 5
     switch
     case 0
         0x2B 0x3A, 0
@@ -3442,14 +3446,17 @@ else
         set_cellanim 5, u"rom:/cellanim/ctrPillow_remixGhost.zlib", -1
         break
     case 3
-        0x2B 0x3A, 0
+        0x2B 0x3A, 1
         set_cellanim 5, u"rom:/cellanim/ctrPillow_SIR.zlib", -1
+        break
+    case 4
+        0x2B 0x3A, 2
+        set_cellanim 5, u"rom:/cellanim/ctrPillow_r7ds.zlib", -1
         break
     endswitch
     game_cellanim 0x3A, 5
     0xB3<1> cellanim_slot, 1
 endif
-0x2B 0x3A, 0xD
 return
 
 loadKarate:
@@ -5370,7 +5377,7 @@ endif
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    random 3
+    random 4
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/skiMeat_long.zlib", -1
@@ -5381,6 +5388,9 @@ if 1
     case 2
         set_cellanim 4, u"rom:/cellanim/skiMeat_arrange.zlib", -1
         break
+    case 3
+        set_cellanim 4, u"rom:/cellanim/skiMeat_short.zlib", -1
+        break
     endswitch
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 4
@@ -5390,7 +5400,7 @@ if 1
     endif
     0xB3<1> cellanim_slot, 0
 else
-    random 3
+    random 4
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/skiMeat_long.zlib", -1
@@ -5400,6 +5410,9 @@ else
         break
     case 2
         set_cellanim 5, u"rom:/cellanim/skiMeat_arrange.zlib", -1
+        break
+    case 3
+        set_cellanim 5, u"rom:/cellanim/skiMeat_short.zlib", -1
         break
     endswitch
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
@@ -5841,10 +5854,13 @@ endif
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    random 1
+    random 2
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrDJSchool_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 4, u"rom:/cellanim/ntrDJSchool_r4ds.zlib", -1
         break
     endswitch
     set_effect 4, u"rom:/effect/agbRabbit.zlib", -1
@@ -5852,10 +5868,13 @@ if 1
     game_effect 0x11, 4
     0xB3<1> cellanim_slot, 0
 else
-    random 1
+    random 2
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/ntrDJSchool_v0.zlib", -1
+        break
+    case 1
+        set_cellanim 5, u"rom:/cellanim/ntrDJSchool_r4ds.zlib", -1
         break
     endswitch
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1

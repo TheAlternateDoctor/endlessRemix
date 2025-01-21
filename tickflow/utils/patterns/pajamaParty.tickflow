@@ -1,5 +1,5 @@
 // Starts with the background closed.
-// Make sure to open it if you use a throw!
+// Make sure to open it if you use a throw with async_call pajamaOpenBG!
 
 sequencePajama:
 	set_cat 0
@@ -11,7 +11,7 @@ sequencePajama:
     rest 0x10
 	0xB3 engine_loaded, SCENE_ctrPillow
 	0xB3 index, INDEX_ctrPillow
-    0x2B 0x3A
+    0x2B<1> 0x3A
     if 1
 	    0x104
     endif
@@ -40,7 +40,7 @@ async_sub 0x56
 rest 0xC0
 async_sub 0x57
 rest 0xC0
-0x104
+async_call pajamaOpenBG
 async_sub 0x56
 rest 0xC0
 async_sub 0x5A
@@ -61,7 +61,7 @@ async_sub 0x57
 rest 0x60
 async_sub 0x57
 rest 0xC0
-0x104
+async_call pajamaOpenBG
 async_sub 0x56
 rest 0x90
 async_sub 0x56
@@ -69,3 +69,9 @@ rest 0x30
 async_sub 0x5A
 stop
 
+pajamaOpenBG:
+    0x2B<1> 0x3A
+    if 0
+	    0x104
+    endif
+stop

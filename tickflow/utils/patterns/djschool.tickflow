@@ -19,7 +19,7 @@ sequenceDjSchool:
 	0xB3 engine_loaded, SCENE_REC_ntrDjSchool
 	0xB3 index, INDEX_ntrDjSchool
     fade<1> 1,1,1
-    async_call dazzlesBeatAnim
+    async_call djBeatAnim
     random 3
     switch
     case 0
@@ -88,3 +88,10 @@ play_sfx 0x1000A33
 rest 0x30
 async_call scratcho
 stop
+
+djBeatAnim:
+label 0xBEA7
+0x101 1
+0x102
+rest 0x60
+goto 0xBEA7
