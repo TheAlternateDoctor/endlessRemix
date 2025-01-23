@@ -1,4 +1,6 @@
 tutorial:
+    0x70 endPractice
+    0x6F<1>
     async_call loadTutorialMusic
     0x21 120
     call loadDrummerScene
@@ -13,6 +15,7 @@ tutorial:
 
     engine 0x25
     rest 0x18
+    0x2D 0
     0x8B 0, 0
     0x104 0
     zoom 0, 0xC0, 0xC0
@@ -50,6 +53,7 @@ tutorial:
     zoom 0, 0x100,0x100
     zoom 3, 0x500,0x500
     async_call roulette
+    0x2D 1
     fade<1> 7, 0, 0x60
     rest 0xC0*2
     0x66 9, "rvlEndless_tutorial_b"
@@ -76,6 +80,7 @@ tutorial:
     rest 0x60
     engine 0x25
     rest 0x18
+    0x2D 0
     0x8B 0, 0
     0x104 0
     zoom 0, 0xC0, 0xC0
@@ -109,16 +114,9 @@ tutorial:
     rest 0x60
     0x58 0, 0x60
     fade 7, 0, 0x60
+    0x6F
     rest 0x60
-    call loadBasketGirls
-    async_call loadBasketGirlsLate
-    async_call loadBasketGirlsLate2
-    remove_sfx 0xA
-    rest 0x30
-    call loadSong
-    sub 3
-    rest 0x60
-    zoom 0, 0x100,0x100
+    0x2D 1
 return
 
 textboxes:

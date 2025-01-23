@@ -11,7 +11,7 @@ playPataponPracticePatternGate:
             async_call checkA2
         endif
         rest 0x78
-        call loadBasketGirls
+        call loadBasketGirlsVanilla
         rest 0x24C
         async_call loadBasketGirlsLate
         async_call loadBasketGirlsLate2

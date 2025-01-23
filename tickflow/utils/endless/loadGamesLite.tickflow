@@ -514,6 +514,7 @@ endif
 0x2B 1, 3
 return
 
+loadBasketGirlsVanilla:
 loadBasketGirls:
 0xB2<1> cellanim_slot
 if 1
