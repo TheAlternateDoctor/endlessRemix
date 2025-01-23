@@ -5,7 +5,14 @@ playNextGameGateWrapper:
     if_neq 0
         async_call playNextGameGate
         rest 0x30*16
-        goto 0x1009
+        0xB2 lives
+        if_neq 0
+            0xB2 score
+            if_lt maxTurns
+                fade 1,1,1
+                goto 0x1009
+            endif
+        endif
     endif
 stop
 
