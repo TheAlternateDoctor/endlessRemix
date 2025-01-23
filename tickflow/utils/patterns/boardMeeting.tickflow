@@ -13,11 +13,20 @@ sequenceBoardMeeting:
 	0xB3 index, INDEX_rvlRotation
     fade<1> 1,1,1
     input 1
-    random 1
+    random 3
     switch
     case 0
         0xB3 score_add, 2
         async_call boardMeeting1
+        break
+    case 1
+        0xB3 score_add, 2
+        async_call boardMeeting2
+        break
+    case 2
+        0xB3 score_add, 2
+        async_call boardMeeting3
+        break
     endswitch
     async_call boardMeetingBeatAnimsAssistant
 stop
@@ -37,6 +46,34 @@ boardMeeting1:
     rest 0x90
     async_sub 0x56
     async_sub 0x63
+stop
+
+boardMeeting2:
+    async_sub 0x5A
+    rest 0xC0
+    async_sub 0x60
+    rest 0x90
+    0x102<1>
+    rest 0x30
+    0x102<2>
+    rest 0xC0
+    async_sub 0x63
+stop
+
+boardMeeting3:
+    async_sub 0x59
+    rest 0xC0
+    async_sub 0x5F
+    rest 0xA8
+    0x102<1>
+    rest 0x18
+    async_sub 0x5A
+    rest 0xC0
+    async_sub 0x60
+    rest 0x60
+    0x102<0>
+    rest 0x30
+    0x102<0>
 stop
 
 boardMeetingBeatAnimsAssistant:
