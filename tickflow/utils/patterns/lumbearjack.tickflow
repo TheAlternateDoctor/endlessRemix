@@ -30,6 +30,7 @@ sequenceLumbearjack:
 	0xB3 engine_loaded, SCENE_ctrWoodcat
 	0xB3 index, INDEX_ctrWoodcat
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x103<3>
     async_call lumbearjackBeatAnims
 stop

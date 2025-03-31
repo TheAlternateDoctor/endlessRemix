@@ -22,6 +22,7 @@ sequenceBasketGirls:
 	0xB3 engine_loaded, SCENE_REC_rvlBasket
 	0xB3 index, INDEX_rvlBasket
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     random 1
     switch
@@ -105,6 +106,7 @@ sequenceBasketInterlude:
     rest 0x10
 	0xB3 engine_loaded, 0x3C
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     set_cat 0x7D0
     0xB3 score_add, 4

@@ -15,6 +15,7 @@ sequenceSneakySpirits:
 	0xB3 engine_loaded, SCENE_agbGhost
 	0xB3 index, INDEX_agbGhost
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     0x101<1> 0xFA, 0
     0x107<1> 0

@@ -20,6 +20,7 @@ sequenceRhythmRally:
     0x101 1, 0, 0
     0x109<1>
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 2
     switch
     case 0

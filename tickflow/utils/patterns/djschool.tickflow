@@ -19,6 +19,7 @@ sequenceDjSchool:
 	0xB3 engine_loaded, SCENE_REC_ntrDjSchool
 	0xB3 index, INDEX_ntrDjSchool
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call djBeatAnim
     random 3
     switch

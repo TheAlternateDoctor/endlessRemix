@@ -47,6 +47,7 @@ sequenceMunchyMonk:
 	0xB3 engine_loaded, SCENE_ntrShugyo
 	0xB3 index, INDEX_ntrShugyo
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xB2 game_state
     switch
     case 0

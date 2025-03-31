@@ -16,6 +16,7 @@ sequenceBtSDS:
     rest 0x8
 	0xB3 engine_loaded, 0x1C
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
 stop
 

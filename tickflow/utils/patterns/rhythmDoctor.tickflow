@@ -33,6 +33,7 @@ sequenceRhythmDoctor:
     0x101 1, 0, 0
     0x109<1>
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xB2 game_state
     switch
     case 0
@@ -96,6 +97,7 @@ sequenceRhythmDoctorPractice:
 	0xB3 engine_loaded, 0x3C  
     input 1
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call rdBeatAnim
     rest 0x30
     async_call rdBeatAnim

@@ -16,6 +16,7 @@ sequenceLaunchParty:
 	0xB3 engine_loaded, SCENE_rvlRocket
 	0xB3 index, INDEX_rvlRocket
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x2B<1> 0x2E
     if_neq 1
         0x105<1>

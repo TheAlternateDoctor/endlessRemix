@@ -11,6 +11,7 @@ sequenceNinjaBodyguard:
 	0xB3 engine_loaded, SCENE_agbTono
 	0xB3 index, INDEX_agbTono
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x101
     0x103 1
     random 3
@@ -49,6 +50,7 @@ ninjaBodyguard1:
     0x101<2>
     rest 0x18
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
 stop
 

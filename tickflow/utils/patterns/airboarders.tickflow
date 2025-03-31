@@ -16,6 +16,7 @@ sequenceAirboarders:
 	0xB3 engine_loaded, SCENE_ntrAirBoard
 	0xB3 index, INDEX_ntrAirBoard
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 1
     switch
     case 0

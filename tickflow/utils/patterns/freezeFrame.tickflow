@@ -19,6 +19,7 @@ sequenceFreezeFrame:
         0x106 1
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     random 3
     switch

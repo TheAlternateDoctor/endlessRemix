@@ -11,6 +11,7 @@ sequenceSickBeats:
 	0xB3 engine_loaded, SCENE_agbVirus
 	0xB3 index, INDEX_agbVirus
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     0xAF<6> 0
     random 2

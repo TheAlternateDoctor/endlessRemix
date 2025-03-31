@@ -37,6 +37,7 @@ sequenceBunnyHop:
 	0xB3 engine_loaded, SCENE_agbRabbit
 	0xB3 index, INDEX_agbRabbit
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 bunnyHop1:

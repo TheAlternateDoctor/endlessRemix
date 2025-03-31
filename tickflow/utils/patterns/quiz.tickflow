@@ -15,6 +15,7 @@ sequenceQuiz:
 	0xB3 engine_loaded, SCENE_agbQuiz
 	0xB3 index, INDEX_agbQuiz
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 0
     random 1
     switch

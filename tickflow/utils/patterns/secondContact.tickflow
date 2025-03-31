@@ -11,6 +11,7 @@ sequenceSecondContact:
 	0xB3 engine_loaded, SCENE_ctrInterpreter
 	0xB3 index, INDEX_ctrInterpreter
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x103 0
     0x102 
     0x106<1> 

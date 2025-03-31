@@ -50,6 +50,7 @@ sequenceFlipperFlop:
 	0xB3 engine_loaded, SCENE_rvlGoma
 	0xB3 index, INDEX_rvlGoma
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 flipperFlop1:

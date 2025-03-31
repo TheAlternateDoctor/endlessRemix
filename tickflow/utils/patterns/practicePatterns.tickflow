@@ -13,6 +13,7 @@ sequenceEmptyAirboarders:
 	0xB3 engine_loaded, SCENE_ntrAirBoard
 	0xB3 index, INDEX_ntrAirBoard
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyAirRally:
@@ -28,6 +29,7 @@ sequenceEmptyAirRally:
     0x101<0> 1, 1
     0x101<1> 2, 1
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyAnimalAcrobat:
@@ -54,6 +56,7 @@ sequenceEmptyAnimalAcrobat:
         endif
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyBasketGirls:
 	set_cat 0
@@ -67,6 +70,7 @@ sequenceEmptyBasketGirls:
 	0xB3 engine_loaded, SCENE_REC_rvlBasket
 	0xB3 index, INDEX_rvlBasket
     fade<1> 1,1,1
+    set_cat 0x7D0
     label 0xBEA7
 	set_cat 0x7D0
     async_call basketBeat
@@ -84,6 +88,7 @@ sequenceEmptyBigRockFinish:
 	0xB3 engine_loaded, SCENE_ntrShortLive
 	0xB3 index, INDEX_ntrShortLive
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyBlueBear:
@@ -97,6 +102,7 @@ sequenceEmptyBlueBear:
 	0xB3 engine_loaded, SCENE_ctrBear
 	0xB3 index, INDEX_ctrBear
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyBlueBirds:
@@ -122,6 +128,7 @@ sequenceEmptyBlueBirds:
 	0xB3 engine_loaded, SCENE_ntrBlueBirds
 	0xB3 index, INDEX_ntrBlueBirds
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyBoardMeeting:
 	set_cat 0
@@ -134,6 +141,7 @@ sequenceEmptyBoardMeeting:
 	0xB3 engine_loaded, SCENE_rvlRotation
 	0xB3 index, INDEX_rvlRotation
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyBossaNova:
 	set_cat 0
@@ -149,6 +157,7 @@ sequenceEmptyBossaNova:
 	0xB3 index, INDEX_rvlRecieve
     rest 0x8
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyHopping:
 	set_cat 0
@@ -161,6 +170,7 @@ sequenceEmptyHopping:
 	0xB3 engine_loaded, SCENE_agbHopping
 	0xB3 index, INDEX_agbHopping
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyBtSWii:
@@ -175,6 +185,7 @@ sequenceEmptyBtSWii:
 	0xB3 index, INDEX_rvlAssemble
     0x8B 0, 0
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 
@@ -193,6 +204,7 @@ sequenceEmptyBunnyHop:
 	0xB3 engine_loaded, SCENE_agbRabbit
 	0xB3 index, INDEX_agbRabbit
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyCatchOfTheDay:
@@ -208,6 +220,7 @@ sequenceEmptyCatchOfTheDay:
 	0xB3 engine_loaded, SCENE_rvlFishing
 	0xB3 index, INDEX_rvlFishing
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyCatchyTune:
@@ -222,6 +235,7 @@ sequenceEmptyCatchyTune:
 	0xB3 engine_loaded, SCENE_ctrStep
 	0xB3 index, INDEX_ctrStep
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyCheerReaders:
@@ -235,6 +249,7 @@ sequenceEmptyCheerReaders:
 	0xB3 engine_loaded, SCENE_rvlBook
 	0xB3 index, INDEX_rvlBook
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x8B 0,0
 stop
 
@@ -249,6 +264,7 @@ sequenceEmptyClappyTrio:
 	0xB3 engine_loaded, SCENE_agbClap
 	0xB3 index, INDEX_agbClap
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x2B<2> INDEX_agbClap
     switch
     case 0
@@ -278,6 +294,7 @@ sequenceEmptyClapTrap:
 	0xB3 engine_loaded, SCENE_rvlSword
 	0xB3 index, INDEX_rvlSword
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xAF<6> 0
 stop
 
@@ -298,6 +315,7 @@ sequenceEmptyCoinToss:
     0x106 "readyCoin", 0, 2, 2, 0xC0*2, 0x1F, 0x4F, 0xD5, 0x1F, 0x4F, 0xD5
     rest 0x8
     fade<1> 1,1,1
+    set_cat 0x7D0
 return
 
 
@@ -312,6 +330,7 @@ sequenceEmptyDazzles:
 	0xB3 engine_loaded, SCENE_ntrBoxShow
 	0xB3 index, INDEX_ntrBoxShow
     fade<1> 1,1,1
+    set_cat 0x7D0
     rest 0x48
 stop
 sequenceEmptyDogNinja:
@@ -325,6 +344,7 @@ sequenceEmptyDogNinja:
 	0xB3 engine_loaded, SCENE_ntrNinja
 	0xB3 index, INDEX_ntrNinja
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyDonk:
 	set_cat 0
@@ -338,6 +358,7 @@ sequenceEmptyDonk:
     async_call donksetup
     rest 0x10
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyDoubleDate:
@@ -357,6 +378,7 @@ sequenceEmptyDoubleDate:
         0x10A<1>
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyTutorial:
@@ -370,6 +392,7 @@ sequenceEmptyTutorial:
 	0xB3 engine_loaded, SCENE_tutorial
 	0xB3 index, INDEX_tutorial
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyExhibitionMatch:
@@ -386,6 +409,7 @@ sequenceEmptyExhibitionMatch:
     0x10D<1>
     0x10A 0x18
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFanClub:
@@ -399,6 +423,7 @@ sequenceEmptyFanClub:
 	0xB3 engine_loaded, SCENE_ntrIdol
 	0xB3 index, INDEX_ntrIdol
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyFigureFighter:
 	set_cat 0
@@ -414,6 +439,7 @@ sequenceEmptyFigureFighter:
     0x10B 1
     0x10A 1 
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFillbots:
@@ -427,6 +453,7 @@ sequenceEmptyFillbots:
 	0xB3 engine_loaded, SCENE_ntrRobot
 	0xB3 index, INDEX_ntrRobot
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFireworks:
@@ -444,6 +471,7 @@ sequenceEmptyFireworks:
 	0x8B 0,0
     rest 0xC
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFlipperFlop:
@@ -461,6 +489,7 @@ sequenceEmptyFlipperFlop:
 	0xB3 engine_loaded, SCENE_rvlGoma
 	0xB3 index, INDEX_rvlGoma
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFlockstep:
@@ -477,6 +506,7 @@ sequenceEmptyFlockstep:
 	0xB3 engine_loaded, SCENE_rvlBird
 	0xB3 index, INDEX_rvlBird
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyForkLifter:
@@ -490,6 +520,7 @@ sequenceEmptyForkLifter:
 	0xB3 engine_loaded, SCENE_rvlFork
 	0xB3 index, INDEX_rvlFork
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFreezeFrame:
@@ -503,6 +534,7 @@ sequenceEmptyFreezeFrame:
 	0xB3 engine_loaded, SCENE_ntrCameraMan
 	0xB3 index, INDEX_ntrCameraMan
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call freezeFrameBeat
 stop
 
@@ -525,6 +557,7 @@ sequenceEmptyFrogHop:
 	0xB3 engine_loaded, SCENE_ntrFrog
 	0xB3 index, INDEX_ntrFrog
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyFruitBasket:
@@ -538,6 +571,7 @@ sequenceEmptyFruitBasket:
 	0xB3 engine_loaded, SCENE_ctrFruitBasket
 	0xB3 index, INDEX_ctrFruitBasket
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call fruitBasketBeatAnims
     async_sub 0x67
 stop
@@ -554,6 +588,7 @@ sequenceEmptyGleeClub:
 	0xB3 engine_loaded, SCENE_ntrChorus
 	0xB3 index, INDEX_ntrChorus
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyGolf:
@@ -568,6 +603,7 @@ sequenceEmptyGolf:
 	0xB3 engine_loaded, SCENE_rvlGolf
 	0xB3 index, INDEX_rvlGolf
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call golfSceneSetup
 stop
 
@@ -582,6 +618,7 @@ sequenceEmptyKarate:
 	0xB3 engine_loaded, SCENE_rvlKarate
 	0xB3 index, INDEX_rvlKarate
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyKitties:
@@ -599,6 +636,7 @@ sequenceEmptyKitties:
 	0xB3 engine_loaded, SCENE_ctrTeppan
 	0xB3 index, INDEX_ctrTeppan
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyLaunchParty:
@@ -612,6 +650,7 @@ sequenceEmptyLaunchParty:
 	0xB3 engine_loaded, SCENE_rvlRocket
 	0xB3 index, INDEX_rvlRocket
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x2B<1> 0x2E
     if_neq 1
         0x105<1>
@@ -631,6 +670,7 @@ sequenceEmptyLockstep:
 	0xB3 engine_loaded, SCENE_ntrBackbeat
 	0xB3 index, INDEX_ntrBackbeat
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyLoveRap:
@@ -660,6 +700,7 @@ sequenceEmptyLoveRap:
         endif
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyLumbearjack:
@@ -674,6 +715,7 @@ sequenceEmptyLumbearjack:
 	0xB3 engine_loaded, SCENE_ctrWoodcat
 	0xB3 index, INDEX_ctrWoodcat
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x103<3>
 stop
 
@@ -688,6 +730,7 @@ sequenceEmptyMarcher:
 	0xB3 engine_loaded, SCENE_agbMarcher
 	0xB3 index, INDEX_agbMarcher
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyMeatGrinder:
@@ -701,6 +744,7 @@ sequenceEmptyMeatGrinder:
 	0xB3 engine_loaded, SCENE_CUSTOM_skiMeat
 	0xB3 index, INDEX_skiMeat
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyMicroRow:
@@ -721,6 +765,7 @@ sequenceEmptyMicroRow:
 	0xB3 engine_loaded, SCENE_rvlFlea
 	0xB3 index, INDEX_rvlFlea
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyMonkeyWatch:
@@ -739,6 +784,7 @@ sequenceEmptyMonkeyWatch:
 	0xB3 engine_loaded, SCENE_rvlMonkeyWatch
 	0xB3 index, INDEX_rvlMonkeyWatch
     fade<1> 1,1,1
+    set_cat 0x7D0
 	set_cat 0x7D0
     label 0x7009
     0x101<3> 0x18, 0x180
@@ -762,6 +808,7 @@ sequenceEmptyUpbeat:
 	0xB3 engine_loaded, SCENE_REC_agbMetro
 	0xB3 index, INDEX_agbMetro
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyMunchyMonk:
@@ -787,6 +834,7 @@ sequenceEmptyMunchyMonk:
 	0xB3 engine_loaded, SCENE_ntrShugyo
 	0xB3 index, INDEX_ntrShugyo
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyNightWalk:
@@ -800,6 +848,7 @@ sequenceEmptyNightWalk:
 	0xB3 engine_loaded, SCENE_agbNightWalk
 	0xB3 index, INDEX_agbNightWalk
     fade<1> 1,1,1
+    set_cat 0x7D0
 	set_cat 0x7D0
     0x102
     0x100 0x30 * 0, 0
@@ -827,6 +876,7 @@ sequenceEmptyNinjaBodyguard:
 	0xB3 engine_loaded, SCENE_agbTono
 	0xB3 index, INDEX_agbTono
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x101<2>
 stop
 
@@ -841,6 +891,7 @@ sequenceEmptyPackingPests:
 	0xB3 engine_loaded, SCENE_rvlSort
 	0xB3 index, INDEX_rvlSort
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyPajama:
@@ -858,6 +909,7 @@ sequenceEmptyPajama:
 	    0x104
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyPatapon:
@@ -877,6 +929,7 @@ sequenceEmptyPatapon:
     0xB3<1> isPractice, 0
     // 0xB3<1> missedPattern, 0
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyPowerCalligraphy:
@@ -890,6 +943,7 @@ sequenceEmptyPowerCalligraphy:
 	0xB3 engine_loaded, SCENE_agbShuji
 	0xB3 index, INDEX_agbShuji
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 sequenceEmptyQuiz:
 	set_cat 0
@@ -905,6 +959,7 @@ sequenceEmptyQuiz:
 	0xB3 engine_loaded, SCENE_agbQuiz
 	0xB3 index, INDEX_agbQuiz
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyRatRace:
@@ -918,6 +973,7 @@ sequenceEmptyRatRace:
 	0xB3 engine_loaded, SCENE_agbRat
 	0xB3 index, INDEX_agbRat
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x102 1
     0x105 2
     0x101 1
@@ -939,6 +995,7 @@ sequenceEmptyRhythmDoctor:
     0x109<1>
 	0x104<1> 0
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyRhythmRally:
@@ -956,6 +1013,7 @@ sequenceEmptyRhythmRally:
     0x101 1, 0, 0
     0x109<1>
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call pingpongbeat
     rest 0x30
 stop
@@ -973,6 +1031,7 @@ sequenceEmptyRingSide:
 	0xB3 engine_loaded, SCENE_rvlInterview
 	0xB3 index, INDEX_rvlInterview
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptySSWii:
@@ -986,6 +1045,7 @@ sequenceEmptySSWii:
 	0xB3 engine_loaded, SCENE_rvlSamurai
 	0xB3 index, INDEX_rvlSamurai
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x10F
 stop
 
@@ -1000,6 +1060,7 @@ sequenceEmptyScrewBotFactory:
 	0xB3 engine_loaded, SCENE_rvlRobot
 	0xB3 index, INDEX_rvlRobot
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptySeeSaw:
@@ -1013,6 +1074,7 @@ sequenceEmptySeeSaw:
 	0xB3 engine_loaded, SCENE_rvlSeesaw
 	0xB3 index, INDEX_rvlSeesaw
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyShootEmUp:
@@ -1026,6 +1088,7 @@ sequenceEmptyShootEmUp:
 	0xB3 engine_loaded, SCENE_ntrShooting
 	0xB3 index, INDEX_ntrShooting
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptySickBeats:
@@ -1039,6 +1102,7 @@ sequenceEmptySickBeats:
 	0xB3 engine_loaded, SCENE_agbVirus
 	0xB3 index, INDEX_agbVirus
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xAF<6> 0
     0x10A 2
 	0x109 2
@@ -1056,6 +1120,7 @@ sequenceEmptySneakySpirits:
 	0xB3 engine_loaded, SCENE_agbGhost
 	0xB3 index, INDEX_agbGhost
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x101<1> 0xFA, 0
     0x107<1> 0
     0x104<1> 0
@@ -1072,6 +1137,7 @@ sequenceEmptySoumen:
 	0xB3 engine_loaded, SCENE_REC_swfSoumen
 	0xB3 index, INDEX_swfSoumen
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x106<1>
     0x104<1>
     zoom 3, -0xAE, 0xAE
@@ -1089,6 +1155,7 @@ sequenceEmptySpaceball:
 	0xB3 engine_loaded, SCENE_agbBatter
 	0xB3 index, INDEX_agbBatter
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x103
 stop
 
@@ -1105,6 +1172,7 @@ sequenceEmptySpaceDance:
 	0xB3 engine_loaded, SCENE_agbSpaceDance
 	0xB3 index, INDEX_agbSpaceDance
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptySplashdown:
@@ -1128,6 +1196,7 @@ sequenceEmptySplashdown:
 	0xB3 engine_loaded, SCENE_REC_ntrSynchro
 	0xB3 index, INDEX_ntrSynchro
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptySumoBros:
@@ -1142,6 +1211,7 @@ sequenceEmptySumoBros:
 	0xB3 engine_loaded, SCENE_ctrSumou
 	0xB3 index, INDEX_ctrSumou
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptySuperSamuraiSlice:
@@ -1155,6 +1225,7 @@ sequenceEmptySuperSamuraiSlice:
 	0xB3 engine_loaded, SCENE_ctrDotSamurai
 	0xB3 index, INDEX_ctrDotSamurai
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyTambourine:
@@ -1168,6 +1239,7 @@ sequenceEmptyTambourine:
 	0xB3 engine_loaded, SCENE_REC_rvlTambourine
 	0xB3 index, INDEX_rvlTambourine
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyTangotronic:
@@ -1181,6 +1253,7 @@ sequenceEmptyTangotronic:
 	0xB3 engine_loaded, SCENE_ctrTango
 	0xB3 index, INDEX_ctrTango
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x10E 1
     0x10D<1>
     0x10C 0, -0x12C, 0x3E8
@@ -1198,6 +1271,7 @@ sequenceEmptyTap:
 	0xB3 engine_loaded, SCENE_agbTap
 	0xB3 index, INDEX_agbTap
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyTapTroupe:
@@ -1219,6 +1293,7 @@ sequenceEmptyTapTroupe:
 	0xB3 engine_loaded, SCENE_REC_rvlTap
 	0xB3 index, INDEX_rvlTap
     fade<1> 1,1,1
+    set_cat 0x7D0
     zoom 3, 0x168, 0x168
     pan 3, 8, 0
     0x101
@@ -1242,6 +1317,7 @@ sequenceEmptyTongueLashing:
 	0xB3 engine_loaded, SCENE_ctrChameleon
 	0xB3 index, INDEX_ctrChameleon
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call tongueLashingBeat
 stop
 
@@ -1256,6 +1332,7 @@ sequenceEmptyTweezers:
 	0xB3 engine_loaded, SCENE_agbHair
 	0xB3 index, INDEX_agbHair
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyWorkingDough:
@@ -1273,6 +1350,7 @@ sequenceEmptyWorkingDough:
 	0x101 0, 0, 1, 0
 	0x101 1, 1, 1, 0
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sequenceEmptyDjSchool:
@@ -1289,4 +1367,5 @@ sequenceEmptyDjSchool:
 	0xB3 engine_loaded, SCENE_REC_ntrDjSchool
 	0xB3 index, INDEX_ntrDjSchool
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop

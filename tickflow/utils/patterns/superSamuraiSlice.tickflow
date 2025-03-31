@@ -15,6 +15,7 @@ sequenceSuperSamuraiSlice:
 	0xB3 engine_loaded, SCENE_ctrDotSamurai
 	0xB3 index, INDEX_ctrDotSamurai
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     random 5
     switch

@@ -34,6 +34,7 @@ coinTossFinalRemix:
 	0xB3 engine_loaded, SCENE_ntrCoinToss
 	0xB3 index, INDEX_ntrCoinToss
     fade<1> 1,1,1
+    set_cat 0x7D0
 	set_cat 0x7D0
     input 1
     0xAF<6> 0
@@ -79,5 +80,6 @@ coinTossLoadRecEngine:
     async_call checkEmptyCatch
     rest 0x8
     fade<1> 1,1,1
+    set_cat 0x7D0
 return
 

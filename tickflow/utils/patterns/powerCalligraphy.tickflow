@@ -15,6 +15,7 @@ sequencePowerCalligraphy:
 	0xB3 engine_loaded, SCENE_agbShuji
 	0xB3 index, INDEX_agbShuji
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 2
     switch
     case 0

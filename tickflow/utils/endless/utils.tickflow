@@ -1882,25 +1882,28 @@ goto 0x1007
 distract:
 0xB2 speed
 if_geq 0x140
-    random 100
-    if_leq 10
-        if_leq 5
-            random 10
-            if_gt 8
-                fade 1,0, 0x60
-            else
-                if_gt 5
-                    fade 1,0, 0xC0
+    0xB2 score
+    if_geq 300
+        random 100
+        if_leq 10
+            if_leq 5
+                random 10
+                if_gt 8
+                    fade 1,0, 0x60
                 else
-                    fade 1,0, 0xC0*2
+                    if_gt 5
+                        fade 1,0, 0xC0
+                    else
+                        fade 1,0, 0xC0*2
+                    endif
                 endif
-            endif
-        else
-            random 10
-            if_gt 8
-            0x58 0x0, 0x30
             else
-            0x58 0x50, 0x30
+                random 10
+                if_gt 8
+                0x58 0x0, 0x30
+                else
+                0x58 0x50, 0x30
+                endif
             endif
         endif
     endif

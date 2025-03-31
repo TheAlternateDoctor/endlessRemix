@@ -28,6 +28,7 @@ sequenceSplashdown:
 	0xB3 engine_loaded, SCENE_REC_ntrSynchro
 	0xB3 index, INDEX_ntrSynchro
     fade<1> 1,1,1
+    set_cat 0x7D0
     rest 0x30
     input 1
 stop

@@ -33,6 +33,7 @@ sequenceDonk:
         break
     endswitch
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 donkDonk1:

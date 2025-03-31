@@ -23,6 +23,7 @@ sequenceBlueBirds:
 	0xB3 engine_loaded, SCENE_ntrBlueBirds
 	0xB3 index, INDEX_ntrBlueBirds
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 3
     switch
     case 0

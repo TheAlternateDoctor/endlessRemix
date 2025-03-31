@@ -11,6 +11,7 @@ sequenceClapTrap:
 	0xB3 engine_loaded, SCENE_rvlSword
 	0xB3 index, INDEX_rvlSword
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     0xAF<6> 0
     random 1

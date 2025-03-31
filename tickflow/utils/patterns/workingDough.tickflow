@@ -16,6 +16,7 @@ sequenceWorkingDough:
 	0x101 1, 1, 1, 0
 	async_sub 0x56
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 3
     switch
     case 0

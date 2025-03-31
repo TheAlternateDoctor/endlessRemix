@@ -16,6 +16,7 @@ sequenceSSWii:
 	0xB3 engine_loaded, SCENE_rvlSamurai
 	0xB3 index, INDEX_rvlSamurai
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x10F
     input 1
     random 6

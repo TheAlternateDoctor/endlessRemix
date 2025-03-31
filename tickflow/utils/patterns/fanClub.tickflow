@@ -69,6 +69,7 @@ sequenceFanClub:
         endif
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xB2 game_state
     if 1
         random 2

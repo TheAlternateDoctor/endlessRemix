@@ -56,6 +56,7 @@ sequenceRingSide:
 	0xB3 engine_loaded, SCENE_rvlInterview
 	0xB3 index, INDEX_rvlInterview
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xB3 score_add, 0
     async_call ringsidePattern
     async_call ringsideBeatAnims

@@ -11,6 +11,7 @@ sequenceClappyTrio:
 	0xB3 engine_loaded, SCENE_agbClap
 	0xB3 index, INDEX_agbClap
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 2
     switch
     case 0
@@ -22,21 +23,21 @@ sequenceClappyTrio:
         async_call clappyTrio2
         break
     endswitch
-    0x2B<2> INDEX_agbClap
-    switch
-    case 0
-        0x105<2> "Clap_ver_short.bflyt"
-        break
-    case 1
-        0x105<2> "Clap_ver_long.bflyt"
-        break
-    case 2
-        0x105<2> "Clap_ver_arrange.bflyt"
-        break
-    case 4
-        0x105<2> "Clap_ver_remix.bflyt"
-        break
-    endswitch
+    // 0x2B<2> INDEX_agbClap
+    // switch
+    // case 1
+    //     0x105<2> "Clap_ver_short.bflyt"
+    //     break
+    // case 3
+    //     0x105<2> "Clap_ver_long.bflyt"
+    //     break
+    // case 5
+    //     0x105<2> "Clap_ver_arrange.bflyt"
+    //     break
+    // case 9
+    //     0x105<2> "Clap_ver_remix.bflyt"
+    //     break
+    // endswitch
     rest 0x30
     input 1
 stop

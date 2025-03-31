@@ -131,8 +131,8 @@
 #include utils/utils.tickflow
 #include utils/extraLoops.tickflow
 
-// #index 0x10B
-#index 0x1A
+#index 0x10B
+// #index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -309,6 +309,7 @@ set_cat 0
 async_call startingGame
 rest 0x30
 fade<1> 1,1,1
+    set_cat 0x7D0
 kill_loc bonusStuff
 0xB2<1> lives_enabled
 if 1
@@ -370,28 +371,24 @@ setSpeed:
         0xB3 speed, startSpeed
         break
     case 1
-        0x40<2> 0x1000291, 0xFF, speedOne
         speed speedOne //Slow speed
         0xB3 speed, speedOne
         set_countdown speedOne-0x100
 		call manzaiSetupStart
         break
     case 2
-        0x40<2> 0x1000291, 0xFF, speedTwo
         speed speedTwo //2nd Slowest speed
         0xB3 speed, speedTwo
         set_countdown speedTwo-0x100
 		call manzaiSetupStart
         break
     case 3
-        0x40<2> 0x1000291, 0xFF, speedThree
         speed speedThree //2nd fastest speed
         0xB3 speed, speedThree
         set_countdown speedThree-0x100
 		call manzaiSetupStart
         break
     case 4
-        0x40<2> 0x1000291, 0xFF, 0x200
         speed 0x200 //Fastest speed
         0xB3 speed, 0x200
         set_countdown 0x200-0x100

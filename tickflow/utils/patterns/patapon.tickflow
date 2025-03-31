@@ -14,6 +14,7 @@ sequencePatapon:
     0xB3<1> isPractice, 0
     // 0xB3<1> missedPattern, 0
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 1
     switch
     case 0
@@ -67,6 +68,7 @@ sequencePataponPractice:
     0xB3<1> isPractice, 1
     0xB3<1> missedPattern, 0
     fade<1> 1,1,1
+    set_cat 0x7D0
     0xB3 score_add, 8
     async_call pataponPractice
     rest 0x18

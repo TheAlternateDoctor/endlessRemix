@@ -12,6 +12,7 @@ sequenceExhibitionMatch:
     0x10D<1>
     0x10A 0x18
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 3
     switch
     case 0

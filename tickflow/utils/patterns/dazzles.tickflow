@@ -22,6 +22,7 @@ sequenceDazzles:
 	0xB3 engine_loaded, SCENE_ntrBoxShow
 	0xB3 index, INDEX_ntrBoxShow
     fade<1> 1,1,1
+    set_cat 0x7D0
     async_call dazzlesBeatAnim
     rest 0x48
     input 1

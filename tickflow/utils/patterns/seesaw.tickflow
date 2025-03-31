@@ -31,6 +31,7 @@ sequenceSeeSaw:
 	0xB3 engine_loaded, SCENE_rvlSeesaw
 	0xB3 index, INDEX_rvlSeesaw
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     random 3
     switch

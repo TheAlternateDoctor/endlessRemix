@@ -16,6 +16,7 @@ sequencePajama:
 	    0x104
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 3
     switch
     case 0

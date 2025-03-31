@@ -49,6 +49,7 @@ sequenceSumoBros:
 	0xB3 engine_loaded, SCENE_ctrSumou
 	0xB3 index, INDEX_ctrSumou
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 sumoBrosSlap1:

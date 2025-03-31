@@ -16,6 +16,7 @@ sequenceUpbeat:
 	0xB3 engine_loaded, SCENE_REC_agbMetro
 	0xB3 index, INDEX_agbMetro
     fade<1> 1,1,1
+    set_cat 0x7D0
     input 1
     rest 0xA8
     async_call metronome, 0x18

@@ -58,6 +58,7 @@ sequenceBossaNova:
 	0xB3 index, INDEX_rvlRecieve
     rest 0x8
     fade<1> 1,1,1
+    set_cat 0x7D0
 stop
 
 bossaNova1:

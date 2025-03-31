@@ -26,6 +26,7 @@ sequenceCheerReaders:
 	0xB3 engine_loaded, SCENE_rvlBook
 	0xB3 index, INDEX_rvlBook
     fade<1> 1,1,1
+    set_cat 0x7D0
     0x8B 0,0
     rest 0x48
     input 1

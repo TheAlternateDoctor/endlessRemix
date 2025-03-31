@@ -31,6 +31,7 @@ sequenceMicroRow:
 	0xB3 engine_loaded, SCENE_rvlFlea
 	0xB3 index, INDEX_rvlFlea
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 1
     switch
     case 0

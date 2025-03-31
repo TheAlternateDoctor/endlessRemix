@@ -70,6 +70,7 @@ sequenceMarcher:
 	0xB3 engine_loaded, SCENE_agbMarcher
 	0xB3 index, INDEX_agbMarcher
     fade<1> 1,1,1
+    set_cat 0x7D0
     rest 0x30*15
     rest 0x18
     input 0

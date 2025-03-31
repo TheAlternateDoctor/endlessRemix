@@ -18,6 +18,7 @@ sequenceCatchOfTheDay:
 	0xB3 engine_loaded, SCENE_rvlFishing
 	0xB3 index, INDEX_rvlFishing
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 4
     switch
     case 0

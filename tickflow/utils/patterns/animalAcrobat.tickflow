@@ -34,6 +34,7 @@ sequenceAnimalAcrobat:
         endif
     endif
     fade<1> 1,1,1
+    set_cat 0x7D0
     random 4
     switch
     case 0
