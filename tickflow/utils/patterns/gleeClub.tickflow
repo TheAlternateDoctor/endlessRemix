@@ -18,7 +18,7 @@ sequenceGleeClub:
 	0xB3 index, INDEX_ntrChorus
     fade<1> 1,1,1
     set_cat 0x7D0
-    random 3
+    random 2
     switch
     case 0
         0xB3 score_add, 3
@@ -75,7 +75,7 @@ gleeClub1:
     0x106
 stop
 
-gleeClub2:
+gleeClub3:
     0x104<1> 0,0,0
     0x104<1> 1,0,0
     0x104<1> 2,0,0
@@ -109,7 +109,7 @@ gleeClub2:
     0x100 0
 stop
 
-gleeClub3:
+gleeClub2:
     0x104<1> 0,0,0
     0x104<1> 1,0,0
     0x104<1> 2,0,0

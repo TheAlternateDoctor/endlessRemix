@@ -1339,7 +1339,7 @@ else
         0x2B 0x21, 2
         set_cellanim 5, u"rom:/cellanim/rvlDate_klonoa.zlib", -1
         break
-    case 5
+    case 6
         0x2B 0x21, 3
         set_cellanim 5, u"rom:/cellanim/rvlDate_Garden.zlib", -1
         break
@@ -1359,7 +1359,7 @@ endif
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/swfSoumen_v0.zlib", -1
@@ -1367,17 +1367,23 @@ if 1
     case 1
         set_cellanim 4, u"rom:/cellanim/swfSoumen_waluigi.zlib", -1
         break
+    case 2
+        set_cellanim 4, u"rom:/cellanim/swfSoumen_mm.zlib", -1
+        break
     endswitch
     game_cellanim 0x1B, 4
     0xB3<1> cellanim_slot, 0
 else
-    random 2
+    random 3
     switch
     case 0
         set_cellanim 5, u"rom:/cellanim/swfSoumen_v0.zlib", -1
         break
     case 1
         set_cellanim 5, u"rom:/cellanim/swfSoumen_waluigi.zlib", -1
+        break
+    case 2
+        set_cellanim 5, u"rom:/cellanim/swfSoumen_mm.zlib", -1
         break
     endswitch
     game_cellanim 0x1B, 5
@@ -1668,51 +1674,55 @@ rest 0xC
 0x2B 0x13, 0
 0xB2<1> cellanim_slot
 if 1
-    random 6
+    random 7
     switch
     case 0
-        set_cellanim 4, u"rom:/cellanim/ntrSyncro_remix05.zlib", -1
+        set_cellanim 4, u"rom:/cellanim/ntrSyncro_remixDonut.zlib", -1
         break
     case 1
         set_cellanim 4, u"rom:/cellanim/ntrSyncro_remix09.zlib", -1
         break
     case 2
-        set_cellanim 4, u"rom:/cellanim/ntrSyncro_long.zlib", -1
+        set_cellanim 4, u"rom:/cellanim/ntrSyncro_remix05.zlib", -1
         break
     case 3
-        set_cellanim 4, u"rom:/cellanim/ntrSyncro_remixDonut.zlib", -1
+        set_cellanim 4, u"rom:/cellanim/ntrSyncro_practice.zlib", -1
         break
     case 4
-        set_cellanim 4, u"rom:/cellanim/ntrSyncro_practice.zlib", -1
-        0x2B 0x13, 1
+        set_cellanim 4, u"rom:/cellanim/ntrSyncro_long.zlib", -1
         break
     case 5
         set_cellanim 4, u"rom:/cellanim/ntrSyncro_Cruiser.zlib", -1
+        break
+    case 6
+        set_cellanim 4, u"rom:/cellanim/ntrSyncro_arrange.zlib", -1
         break
     endswitch
     game_cellanim 0x13, 4
     0xB3<1> cellanim_slot, 0
 else
-    random 6
+    random 7
     switch
     case 0
-        set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix9.zlib", -1
+        set_cellanim 5, u"rom:/cellanim/ntrSyncro_remixDonut.zlib", -1
         break
     case 1
-        set_cellanim 5, u"rom:/cellanim/ntrSyncro_arrange.zlib", -1
+        set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix09.zlib", -1
         break
     case 2
-        set_cellanim 5, u"rom:/cellanim/ntrSyncro_long.zlib", -1
+        set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix05.zlib", -1
         break
     case 3
-        set_cellanim 5, u"rom:/cellanim/ntrSyncro_remix4.zlib", -1
+        set_cellanim 5, u"rom:/cellanim/ntrSyncro_practice.zlib", -1
         break
     case 4
-        set_cellanim 5, u"rom:/cellanim/ntrSyncro_practice.zlib", -1
-        0x2B 0x13, 1
+        set_cellanim 5, u"rom:/cellanim/ntrSyncro_long.zlib", -1
         break
     case 5
         set_cellanim 5, u"rom:/cellanim/ntrSyncro_Cruiser.zlib", -1
+        break
+    case 6
+        set_cellanim 5, u"rom:/cellanim/ntrSyncro_arrange.zlib", -1
         break
     endswitch
     game_cellanim 0x13, 5
