@@ -1257,7 +1257,7 @@ else
         game_cellanim 0x14, 5
         0xB3<1> cellanim_slot, 1
         break
-    case 6
+    case 7
         set_cellanim 5, u"rom:/cellanim/ntrFrog_remix05ds.zlib", -1
         0x2B 0x14, 0x10
         game_cellanim 0x14, 5
