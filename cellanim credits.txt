@@ -99,6 +99,7 @@ ctrTeppan_klonoa.zlib - Aaronloll
 ctrTeppan_remix2.zlib - ???
 ctrTeppan_SIR.zlib - EpicHaxGuy
 ctrTeppan_wackyworkbench.zlib - deni_iguess
+ctrTeppan_RMSpace.zlib - Clicktuck
 ctrWoodCat_bomb.zlib - Alm
 ctrWoodCat_klonoaheroes.zlib - Sofuto
 ctrWoodCat_klonoa.zlib - Aaronloll
@@ -115,6 +116,7 @@ ntrBackbeat_remix6.zlib - ???
 ntrBackbeat_sandcanyon.zlib - deni_iguess
 ntrBackbeat_v1.zlib - ???
 ntrBackbeat_v2.zlib - ???
+ntrBackbeat_RMSpace.zlib - Clicktuck
 ntrBlueBirds_2.zlib - ???
 ntrBlueBirds_bomb.zlib - Alm
 ntrBlueBirds_rmx2.zlib - ???

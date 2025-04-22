@@ -1750,7 +1750,7 @@ endif
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    random 5
+    random 6
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ctrTeppan_long.zlib", -1
@@ -1766,6 +1766,9 @@ if 1
         break
     case 4
         set_cellanim 4, u"rom:/cellanim/ctrTeppan_wackyworkbench.zlib", -1
+        break
+    case 5
+        set_cellanim 4, u"rom:/cellanim/ctrTeppan_RMSpace.zlib", -1
         break
     endswitch
     game_cellanim 0x3E, 4
@@ -4385,7 +4388,7 @@ rest 0xC
 0xB2<1> cellanim_slot
 if 1
     set_sfx 4, u"GROUP_NTR_BACKBEAT"
-    random 7
+    random 8
     switch
     case 0
         set_cellanim 4, u"rom:/cellanim/ntrBackbeat_v0.zlib", -1
@@ -4407,6 +4410,9 @@ if 1
         break
     case 6
         set_cellanim 4, u"rom:/cellanim/ntrBackbeat_candymountain.zlib", -1
+        break
+    case 7
+        set_cellanim 4, u"rom:/cellanim/ntrBackbeat_RMSpace.zlib", -1
         break
     endswitch
     game_cellanim 0xF, 4
