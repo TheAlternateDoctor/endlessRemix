@@ -225,7 +225,7 @@ async_call speedup
 async_call lifeScoreCounter
 call playPataponPracticePatternGate
 call playBasketInterludeGate
-call playRhythmDoctorPracticePatternGate
+call playRiftYogaPracticePatternGate
 call playMrUpbeatGate
 call playNextGameGateWrapper
 stop 

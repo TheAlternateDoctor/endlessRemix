@@ -21,14 +21,82 @@ sequenceRiftYoga:
     fade<1> 1,1,1
     set_cat 0x7D0
     input 1
-    random 1
+	async_call yogaSetup
+    random 4
     switch
     case 0
+        0xB3 score_add, 3
+        async_call riftYoga1
+        break
+    case 1
+        0xB3 score_add, 4
+        async_call riftYoga2
+        break
+    case 2
         0xB3 score_add, 6
-        async_call ssWii1
-        async_call ssWiiCheck1
+        async_call riftYoga3
+        break
+    case 3
+        0xB3 score_add, 6
+        async_call riftYoga4
         break
     endswitch
+stop
+
+riftYoga1:
+	async_call doveBeatAnimEndless
+    call downwardDog
+    call makeATree
+    play_sfx sfx_doubleTimeVo
+    call yogaBeatAnimsStudents
+    call yogaBeatAnimsStudents
+    call warriorLeftHalf
+    call makeATree
+	async_call participantTree
+	async_call fanaticTree
+	async_call cadenceTree
+stop
+
+riftYoga2:
+	async_call doveBeatAnimEndless
+    play_sfx sfx_doubleTimeVo
+    call yogaBeatAnimsStudents
+    call yogaBeatAnimsStudents
+    call warriorRightHalf
+    rest 0x30
+    call makeATree
+    call warriorLeftHalf
+    call yogaBeatAnimsStudents
+    call yogaBeatAnimsStudents
+    call makeATree
+stop
+
+riftYoga3:
+	async_call doveBeatAnimEndless
+    call warriorLeft
+    call warriorRight
+    play_sfx sfx_doubleTimeVo
+    call yogaBeatAnimsStudents
+    call makeATreeHalf
+    call downwardDogHalf
+    call makeATreeHalf
+stop
+
+riftYoga4:
+    play_sfx sfx_tryToKeepUpVo
+	async_call doveBeatAnimEndless
+    call yogaBeatAnimsStudents
+    call yogaBeatAnimsStudents
+    call yogaBeatAnimsStudents
+    call yogaBeatAnimsStudents
+    call warriorRightActualHalf
+    rest 0x18
+    call makeATreeThird
+    call downwardDog
+    call warriorLeftThird
+	async_call participantLeft
+	async_call fanaticLeft
+    async_call cadenceLeft
 stop
 
 sequenceRiftYogaPractice:
@@ -45,16 +113,23 @@ sequenceRiftYogaPractice:
     set_cat 0x7D0
     input 1
 	async_call yogaSetup
-    play_sfx 0x100051F
+    play_sfx sfx_makeATreeVo
     call yogaBeatAnims
     call yogaBeatAnimsDoveTree
     call yogaBeatAnimsDoveTree
     call yogaBeatAnimsDoveTree
     call makeATreeDove
-    play_sfx 0x1000520
+    play_sfx sfx_warriorLeftVo
     call yogaBeatAnims
     call yogaBeatAnimsDoveLeft
     call yogaBeatAnimsDoveLeft
     call yogaBeatAnimsDoveLeft
     call warriorLeftDove
+stop
+
+doveBeatAnimEndless:
+    label 0x7009
+    async_call doveBeatAnim
+    rest 0x30
+    goto 0x7009
 stop

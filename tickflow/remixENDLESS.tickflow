@@ -133,8 +133,8 @@
 #include utils/utils.tickflow
 #include utils/extraLoops.tickflow
 
-#index 0x10B
-// #index 0x1A
+// #index 0x10B
+#index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -360,7 +360,7 @@ async_call speedup
 async_call lifeScoreCounter
 call playPataponPracticePattern
 call playBasketInterlude
-call playRhythmDoctorPracticePattern
+call playRiftYogaPracticePattern
 call playMrUpbeat
 call playNextGameWrapper
 stop 

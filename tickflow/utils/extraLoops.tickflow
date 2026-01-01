@@ -49,7 +49,7 @@ playBasketInterlude:
     endif
 return
 
-playRhythmDoctorPracticePattern:
+playRiftYogaPracticePattern:
     set_cat 0
     0xB2 lives
     if_neq 0
