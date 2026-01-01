@@ -34,11 +34,15 @@ stop
 
 basketGirls1:
 async_call basketThrow
-rest 0x90
+rest 0x60
+async_call basketBeatOne
+rest 0x30
 async_call basketBeat
 rest 0x30
 async_call basketThrow
-rest 0x90
+rest 0x60
+async_call basketBeatOne
+rest 0x30
 async_call basketBeat
 rest 0x30
 async_call basketThrow
@@ -72,24 +76,25 @@ async_call basketBeat
 rest 0x30
 async_call basketThrow
 rest 0x60
+async_call basketBeatOne
 rest 0x30
 async_call basketBeat
 rest 0x30
 async_call basketThrow
 rest 0x60
-// async_call basketBeat
+async_call basketBeatOne
 rest 0x30
 async_call basketBeat
 rest 0x30
 async_call basketThrow
 rest 0x60
-// async_call basketBeat
+async_call basketBeatOne
 rest 0x30
 async_call basketBeat
 rest 0x30
 async_call basketThrow
 rest 0x60
-// async_call basketBeat
+async_call basketBeatOne
 rest 0x30
 async_call basketBeat
 rest 0x30
@@ -116,19 +121,25 @@ sequenceBasketInterlude:
     rest 0x30
     async_call basketThrow
     rest 0x60
+    async_call basketBeatOne
     rest 0x30
     async_call basketBeat
     rest 0x30
     async_call basketThrow
     rest 0x60
+    async_call basketBeatOne
     rest 0x30
     async_call basketBeat
     rest 0x30
     async_call basketThrow
     rest 0x60
+    async_call basketBeatOne
     rest 0x30
     async_call basketBeat
     rest 0x30
     async_call basketThrow
+    rest 0x60
+    async_call basketBeatOne
+    rest 0x30
 stop
 

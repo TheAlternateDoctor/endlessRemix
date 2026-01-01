@@ -4,6 +4,12 @@ basketBeat:
     play_sfx 0x10011A5
 stop
 
+basketBeatOne:
+    // 0x103 0
+    0x103 1
+    play_sfx 0x10011A5
+stop
+
 basketThrow:
     0x102 1
     play_sfx 0x10010D3
