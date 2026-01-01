@@ -2492,3 +2492,27 @@ else
     0xB3<1> cellanim_slot, 1
 endif
 return
+
+loadRiftYoga:
+0xB2<1> cellanim_slot
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0xC
+0xB2<1> cellanim_slot
+if 1
+    set_sfx 4, u"GROUP_RIFT_YOGA"
+    set_cellanim 4, u"rom:/cellanim/pcRiftYoga_v0.zlib", -1
+    0x2B 0x25, 3
+    game_cellanim 0x25, 4
+    0xB3<1> cellanim_slot, 0
+else
+    set_sfx 5, u"GROUP_RIFT_YOGA"
+    set_cellanim 5, u"rom:/cellanim/pcRiftYoga_v0.zlib", -1
+    0x2B 0x25, 3
+    game_cellanim 0x25, 5
+    0xB3<1> cellanim_slot, 1
+endif
+return

@@ -35,11 +35,8 @@ playBasketInterlude:
             async_call checkA2
         endif
         rest 0x78
-        call loadRhythmDoctor
+        call loadRiftYoga
         rest 0x24C
-        async_call loadRhythmDoctorLate
-        async_call loadRhythmDoctorVoices
-        async_call nurseregularvoice
         rest 0x18
         0xB2 lives
         if_neq 0
@@ -56,7 +53,7 @@ playRhythmDoctorPracticePattern:
     set_cat 0
     0xB2 lives
     if_neq 0
-        async_call sequenceRhythmDoctorPractice
+        async_call sequenceRiftYogaPractice
         rest 0x18
         0x58 0x100, 0x30
         0xB2<1> lives_enabled

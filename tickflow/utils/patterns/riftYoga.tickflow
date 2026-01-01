@@ -1,0 +1,60 @@
+// Samurai's beat anims starts automatically.
+// Starts without effects like the rain or petals.
+
+winRiftyoga:
+async_call doveBeatAnimEnd
+async_call fanaticBeatAnimEnd
+async_call participantBeatAnimEnd
+async_call cadenceBeatAnim
+stop
+
+sequenceRiftYoga:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_riftYoga
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_riftYoga
+	0xB3 index, INDEX_riftYoga
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+    random 1
+    switch
+    case 0
+        0xB3 score_add, 6
+        async_call ssWii1
+        async_call ssWiiCheck1
+        break
+    endswitch
+stop
+
+sequenceRiftYogaPractice:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_riftYoga
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_riftYoga
+	0xB3 index, INDEX_riftYoga
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+	async_call yogaSetup
+    play_sfx 0x100051F
+    call yogaBeatAnims
+    call yogaBeatAnimsDoveTree
+    call yogaBeatAnimsDoveTree
+    call yogaBeatAnimsDoveTree
+    call makeATreeDove
+    play_sfx 0x1000520
+    call yogaBeatAnims
+    call yogaBeatAnimsDoveLeft
+    call yogaBeatAnimsDoveLeft
+    call yogaBeatAnimsDoveLeft
+    call warriorLeftDove
+stop
