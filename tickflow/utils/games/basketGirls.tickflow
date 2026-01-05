@@ -5,7 +5,6 @@ basketBeat:
 stop
 
 basketBeatOne:
-    // 0x103 0
     0x103 1
     play_sfx 0x10011A5
 stop
@@ -16,13 +15,13 @@ basketThrow:
     // 0x103 0
     0xA2
     0x100 0, 0x30
-    rest 0x30-10
+    rest 0x30-9
     0x101 0
-    rest 0x12 - 3
+    rest 0x12
     0xA2<2>
     if_neq 0
         play_sfx 0x10010CC
     endif
-    rest 0xC
     0x101 1
+    rest 0xC
 stop
