@@ -1,0 +1,567 @@
+// To use the subs:
+// IMPORTANT: all the main input (marked with *) apply their score one beat after they've been called
+//		- ntrSoccer_spawnBallStart: when you want the ball to be spawned in (likely used at the beginning of a section)
+//		* ntrSoccer_inputKickStart: must be called at the start of a section, or when a kickToe has been performed
+//		* ntrSoccer_inputKick: called after the first inputKickStart, handles consecutive inputs
+//		* ntrSoccer_inputKickToe: a high-kick-toe input
+//		* ntrSoccer_inputKickToeConsecutive: must be used when theres two consecutives kickToe, mainly used in Space Soccer 2
+//		- ntrSoccer_inputKickRespawn: call it 3 beats before you want the ball to appear, plays ball anim one beat after this sub has been called
+
+// 0xB3<1>
+legUsed = 6		  	// 0 = backLeg, 1 = frontLeg
+alreadyKicked = 7 	// 0 = false,   1 = true
+hasFailed = 8	  	// 0 = false,   1 = true
+playFailSFX = 9   	// 0 = false,   1 = true
+
+// 0xB3
+soccerInputTiming = 12
+freedInput = 13
+expectedLeg = 14   	// 0 = backLeg, 1 = frontLeg, 2 = nothing it just so the ball wouldnt glitch out lol
+
+
+ntrSoccer_prepareScene:
+	0x8B 0, 0
+	0x6A 1
+	0xB3<1> legUsed, 1
+	0xB3<1> alreadyKicked, 0
+	0xB3 expectedLeg, 0
+	0xB3<1> hasFailed, 0
+	kill_loc ntrSoccer_kickKeepLeg
+	kill_loc ntrSoccer_kickToe
+stop
+
+ntrSoccer_spawnBallStart:
+	async_call ntrSoccer_spawnBallSFX
+	0x107 0
+stop
+
+ntrSoccer_inputKickSequenceStart:
+	0xB3<1> alreadyKicked, 0
+	0xB2<1> hasFailed
+	
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+	
+	rest 0x18
+	0x100<0>
+	rest 0x18-8
+	async_call ntrSoccer_kickKeepLeg
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputKick
+stop
+
+ntrSoccer_inputKickStart:
+	0xB3<1> alreadyKicked, 0
+	0xB2<1> hasFailed
+	
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+	
+	rest 0x18
+	0x100<0>
+	rest 0x18-8
+	kill_loc ntrSoccer_kickToe
+	async_call ntrSoccer_kickKeepLeg
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputKick
+stop
+
+ntrSoccer_inputKick:
+	0xB3<1> alreadyKicked, 0
+	0xB2<1> hasFailed
+	
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+
+	rest 0x18
+	0x100<0>
+	rest 0x18-8
+	kill_loc ntrSoccer_kickToe
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputKick
+stop
+
+ntrSoccer_inputKickToe:
+	0xB3<1> alreadyKicked, 0
+	0xB2<1> hasFailed
+	
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+
+	rest 0x18
+	0x100<0>
+	rest 0x18-8
+	kill_loc ntrSoccer_kickKeepLeg
+	async_call ntrSoccer_kickToe
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputHigh
+	rest 0x18
+	
+	0xB2<1> hasFailed
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+	
+	0x100<1>
+	rest 0x8
+	0x100<2>
+	rest 0x30-8
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputToe
+
+stop
+
+ntrSoccer_inputKickToeConsecutive:
+	0xB3<1> alreadyKicked, 0
+	0xB2<1> hasFailed
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+	
+	rest 0x18
+	0x100<0>
+	rest 0x18-8
+	kill_loc ntrSoccer_kickKeepLeg
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputHigh
+	rest 0x18
+	
+	0xB2<1> hasFailed
+	if 1
+		call ntrSoccer_failedCheck
+		stop
+	endif
+	
+	0x100<1>
+	rest 0x8
+	0x100<2>
+	rest 0x30-8
+	0xB3 soccerInputTiming, 0
+	async_call ntrSoccer_setsoccerInputTimings
+	async_call ntrSoccer_checkFakeInputToe
+stop
+
+ntrSoccer_failedCheck:
+	0x6A 0
+	0xB3 expectedLeg, 2
+	0xB3<1> hasFailed, 1
+	0xB2<1> playFailSFX
+	if 1
+		0xB3<1> playFailSFX, 0
+		play_sfx 0x10007FA
+	endif
+return
+
+ntrSoccer_inputKickRespawn:
+	0xB2<1> hasFailed
+	if 1
+		rest 0x18
+		0xB3 expectedLeg, 2
+		0xB3<1> hasFailed, 0
+	
+		rest 0x18
+		async_call ntrSoccer_spawnBallStart
+	
+		rest 0x18
+		0xB3<1> hasFailed, 0
+	
+		rest 0x18
+	
+		rest 0x18
+		0xB3<1> hasFailed, 0
+	
+		rest 0x10
+		0x6A 1
+		0xB3<1> legUsed, 1
+		0xB3 expectedLeg, 0
+	endif
+stop
+
+ntrSoccer_setsoccerInputTimings:
+	rest 1
+	0xB3 soccerInputTiming, 1		// red circle
+	rest 1
+	0xB3 soccerInputTiming, 2		// small star
+	rest 2
+	0xB3 soccerInputTiming, 3		// big star
+	rest 3
+	0xB3 soccerInputTiming, 4		// ace
+	rest 2
+	0xB3 soccerInputTiming, 5		// big star
+	rest 3
+	0xB3 soccerInputTiming, 6		// small star
+	rest 1
+	0xB3 soccerInputTiming, 7		// red circle
+	rest 3
+	0xB3 soccerInputTiming, 0		// miss
+stop
+
+ntrSoccer_checkFakeInputKick:
+	set_countdown 0xF
+	0xB3 freedInput, 0
+	label 0x7009
+	
+	0x200<2> 0
+	if 1
+		0xB2 freedInput
+		if 1
+			async_call ntrSoccer_showInputAnimationKick
+			stop 
+		endif 
+	else 
+		0xB3 freedInput, 1
+	endif 
+
+	rest 1
+	dec_countdown 
+	get_countdown 
+	if_geq 0
+		goto 0x7009
+	endif 
+	
+	async_call ntrSoccer_showFailedInput
+stop
+
+ntrSoccer_checkFakeInputHigh:
+	set_countdown 0xF
+	0xB3 freedInput, 0
+	label 0x7009
+	
+	0x200<2> 0
+	if 1
+		0xB2 freedInput
+		if 1
+			async_call ntrSoccer_showInputAnimationHigh
+			stop 
+		endif 
+	else 
+		0xB3 freedInput, 1
+	endif 
+
+	rest 1
+	dec_countdown 
+	get_countdown 
+	if_geq 0
+		goto 0x7009
+	endif 
+	
+	async_call ntrSoccer_showFailedInput
+stop
+
+ntrSoccer_checkFakeInputToe:
+    set_countdown 0xF
+    0xB3 freedInput, 0
+	label 0x700A
+    0x200<2> 0                    
+    if 0                          
+        0xB2 freedInput           
+        if 1                      
+            async_call ntrSoccer_showInputAnimationToe
+            stop
+        endif
+    else
+        0xB3 freedInput, 1       
+    endif
+
+    rest 1
+    dec_countdown
+    get_countdown
+    if_geq 0
+        goto 0x700A
+    endif
+
+    async_call ntrSoccer_showFailedInput
+stop
+
+
+ntrSoccer_showInputAnimationKick:
+	0xB2 soccerInputTiming
+	switch 
+		case 1
+		case 2
+		case 3
+		case 4
+		case 5
+		case 6
+		case 7
+			async_call ntrSoccer_successBallKick
+			break 
+	endswitch 
+stop 
+
+ntrSoccer_showInputAnimationHigh:
+	0xB2 soccerInputTiming
+	switch 
+		case 1
+		case 2
+		case 3
+		case 4
+		case 5
+		case 6
+		case 7
+			async_call ntrSoccer_successBallHigh
+			break 
+	endswitch 
+stop 
+
+ntrSoccer_showInputAnimationToe:
+	0xB2 soccerInputTiming
+	switch 
+		case 1
+		case 2
+		case 3
+		case 4
+		case 5
+		case 6
+		case 7
+			async_call ntrSoccer_successBallToe
+			break 
+	endswitch 
+stop 
+
+ntrSoccer_successBallKick:
+	0xB2<1> legUsed
+	switch
+		case 0
+			// BackLeg
+			play_sfx 0x10007FB
+			0xB2 expectedLeg
+			// Change ball to front leg
+			if 0
+				0x109 0, 0
+				0xB3 expectedLeg, 1
+			endif
+		
+			// Keep ball in the BackLeg
+			if 1
+				0x107 2
+				0x10A 0
+			endif
+		break
+		
+		case 1
+			// FrontLeg
+			play_sfx 0x10007FB
+			0xB2 expectedLeg
+			// Change ball to back leg
+			if 1
+				0x108 0
+				0xB3 expectedLeg, 0
+			endif
+		
+			// Keep ball in the frontLeg
+			if 0
+				0x108 2
+				0x10B 0
+			endif
+		break
+	endswitch
+stop
+
+ntrSoccer_successBallHigh:
+	0xB2<1> legUsed
+	switch
+		case 0
+			// High back leg
+			play_sfx 0x10007FB
+			play_sfx 0x10007FC
+			0x10F
+		break
+		
+		case 1
+			// High front leg
+			play_sfx 0x10007FB
+			play_sfx 0x10007FC
+			0x10D 0
+		break
+	endswitch
+stop
+
+ntrSoccer_successBallToe:
+	0xB2<1> legUsed
+	switch
+		case 0
+			// Toe back leg
+			play_sfx 0x10007FB
+			play_sfx 0x10007FE
+			0xB3 expectedLeg, 1
+			0x10E
+		break
+		
+		case 1
+			// Toe front leg
+			play_sfx 0x10007FB
+			play_sfx 0x10007FE
+			0xB3 expectedLeg, 0
+			0x10E<1>
+		break
+	endswitch
+stop
+
+ntrSoccer_showFailedInput:
+	0x6A 0
+	0xB3 expectedLeg, 2
+	0xB3<1> hasFailed, 1
+	0xB3<1> playFailSFX, 1
+stop
+
+ntrSoccer_backupSoccers:
+	label 0xABCD
+		0x107 1
+		rest 0x60
+	goto 0xABCD
+stop
+
+ntrSoccer_kickKeepLeg:
+	label 0x9002
+	
+	0x200<2> 0
+	if 1
+		play_sfx 0x1000808
+		0xB2<1> legUsed
+	
+		if 0
+			0x107 2
+			0xB3<1> legUsed, 1
+			
+			label 0x9005
+			0x200<2> 0
+			if 1
+				rest 1
+				goto 0x9005
+			endif
+			
+			goto 0x9003
+		endif
+		
+		if 1
+			0x108 2
+			0xB3<1> legUsed, 0
+			
+			label 0x9004
+			0x200<2> 0
+			if 1
+				rest 1
+				goto 0x9004
+			endif
+			
+			goto 0x9003
+		endif
+	endif
+	
+	rest 1
+	label 0x9003
+	goto 0x9002
+stop
+
+ntrSoccer_kickToe:
+	label 0x9012
+	0x200<2> 0
+	if 1
+		0xB2<1> alreadyKicked
+		if 0
+			play_sfx 0x10007DE		//high sfx
+		endif
+		// else
+		if 1
+			play_sfx 0x1000808		//kick sfx
+		endif
+			
+		0xB2<1> legUsed
+		if 0
+			0x109 0, 2
+			0xB3<1> legUsed, 1
+			
+			label 0x9015
+			0x200<2> 0
+			if 1
+				rest 1
+				goto 0x9015
+			endif
+			
+			0xB2<1> alreadyKicked
+			if 0
+				0xB3<1> alreadyKicked, 1
+				0xB3<1> legUsed, 1
+				goto 0x9013
+			endif
+			
+			if 1
+				rest 1
+				0x10D 2
+				play_sfx 0x10007F3		//toe sfx
+				// 0xB3<1> alreadyKicked, 0
+				0xB3<1> legUsed, 0
+				goto 0x9013
+			endif
+		endif
+		// else 
+		if 1
+			0x10A 2
+			0xB3<1> legUsed, 0
+			
+			label 0x9014
+			0x200<2> 0
+			if 1
+				rest 1
+				goto 0x9014
+			endif
+			
+			0xB2<1> alreadyKicked
+			if 0
+				0xB3<1> alreadyKicked, 1
+				0xB3<1> legUsed, 0
+				goto 0x9013
+			endif
+			
+			if 1
+				rest 1
+				0x10B 2
+				play_sfx 0x10007F3		//toe sfx
+				// 0xB3<1> alreadyKicked, 0
+				0xB3<1> legUsed, 1
+				goto 0x9013
+			endif
+		endif
+	endif
+	
+	rest 1
+	label 0x9013
+	goto 0x9012
+stop
+
+ntrSoccer_spawnBallSFX:
+	set_cat 0
+	play_sfx 0x10007F8
+	rest 0xC
+	play_sfx 0x10007FD
+	rest 0xC
+	play_sfx 0x1000802
+	rest 0xC
+	play_sfx 0x10007F4
+	rest 0xC
+	play_sfx 0x10007F5
+	rest 0xC
+	play_sfx 0x10007F6
+	rest 0xC
+	play_sfx 0x10007F7
+	rest 0xC
+	play_sfx 0x10007F9
+	rest 0xC
+stop

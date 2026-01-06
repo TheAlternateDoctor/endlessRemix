@@ -1,0 +1,157 @@
+sequenceSpaceSoccer:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_ntrSoccer
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_ntrSoccer
+	0xB3 index, INDEX_ntrSoccer
+    async_call ntrSoccer_prepareScene
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+    random 1
+    // switch
+    // case 0
+    //     0xB3 score_add, 4
+    //     async_call basketGirls1
+    // endswitch
+    async_call spacesoccer5
+    rest 0x30*5
+    async_call ntrSoccer_inputKickRespawn
+    rest 0xC0
+    async_call ntrSoccer_inputKickRespawn
+    rest 0xC0
+stop
+
+spacesoccer1:
+    async_call ntrSoccer_spawnBallStart
+    rest 0x30
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+    async_call ntrSoccer_inputKickStart
+
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+    async_call ntrSoccer_inputKickStart
+stop
+
+spacesoccer2:
+    async_call ntrSoccer_spawnBallStart
+    rest 0x30
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+stop
+
+spacesoccer3:
+    async_call ntrSoccer_spawnBallStart
+    rest 0x30
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+
+    async_call ntrSoccer_inputKickToe
+	rest 0x90
+	async_call ntrSoccer_inputKickToeConsecutive
+	rest 0x90
+
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+
+stop
+
+spacesoccer4:
+    async_call ntrSoccer_spawnBallStart
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+stop
+
+spacesoccer5:
+    async_call ntrSoccer_spawnBallStart
+    rest 0x30
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKickToe
+    rest 0x90
+    async_call ntrSoccer_inputKickStart
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+    rest 0x30
+    async_call ntrSoccer_inputKick
+stop

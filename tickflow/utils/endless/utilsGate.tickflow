@@ -163,5 +163,8 @@ winSequence:
     case INDEX_rvlTap
         async_call winTapTroupe
         break
+    case INDEX_riftYoga
+        async_call winRiftyoga
+        break
     endswitch
 stop
