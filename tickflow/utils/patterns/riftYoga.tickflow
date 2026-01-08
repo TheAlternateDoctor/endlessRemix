@@ -80,6 +80,9 @@ riftYoga3:
     call makeATreeHalf
     call downwardDogHalf
     call makeATreeHalf
+	async_call cadenceTree
+	async_call participantTree
+	async_call fanaticTree
 stop
 
 riftYoga4:
@@ -115,12 +118,14 @@ sequenceRiftYogaPractice:
 	async_call yogaSetup
     play_sfx sfx_makeATreeVo
     call yogaBeatAnims
+    play_sfx sfx_makeATreeDove
     call yogaBeatAnimsDoveTree
     call yogaBeatAnimsDoveTree
     call yogaBeatAnimsDoveTree
     call makeATreeDove
     play_sfx sfx_warriorLeftVo
     call yogaBeatAnims
+    play_sfx sfx_warriorLeftDove
     call yogaBeatAnimsDoveLeft
     call yogaBeatAnimsDoveLeft
     call yogaBeatAnimsDoveLeft
