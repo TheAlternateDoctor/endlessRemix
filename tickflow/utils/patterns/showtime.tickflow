@@ -1,0 +1,60 @@
+sequenceShowtime:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_agbPenguin
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_agbPenguin
+	0xB3 index, INDEX_agbPenguin
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+    random 1
+	async_call agbPenguin_prepareScene
+    async_call showtime3
+    // switch
+    // case 0
+    //     0xB3 score_add, 4
+    //     async_call basketGirls1
+    // endswitch
+stop
+
+showtime1:
+	async_call agbPenguin_penguinWhite
+	rest 0x30 * 4
+	async_call agbPenguin_penguinWhite
+	rest 0x30 * 4
+	async_call agbPenguin_penguinWhite
+	rest 0x30 * 3
+	async_call agbPenguin_penguinGray
+stop
+
+showtime2:
+	async_call agbPenguin_penguinGrayEarly
+	rest 0x30 * 4
+	async_call agbPenguin_penguinWhite
+	rest 0x30 * 3
+	async_call agbPenguin_penguinBig
+stop
+
+showtime3:
+	async_call agbPenguin_penguinBigEarly
+	rest 0x30 * 3
+	async_call agbPenguin_penguinGray
+	rest 0x30 * 5
+	async_call agbPenguin_penguinWhite
+	rest 0x30 * 3
+	async_call agbPenguin_penguinGray
+stop
+
+showtime4:
+	async_call agbPenguin_penguinGrayEarly
+	rest 0x30 * 3
+	async_call agbPenguin_penguinBig
+	rest 0x30 * 5
+	async_call agbPenguin_penguinWhite
+	rest 0x30 * 3
+	async_call agbPenguin_penguinGray
+stop
