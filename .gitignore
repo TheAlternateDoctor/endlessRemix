@@ -6,3 +6,4 @@ bin/*.bin
 *.jar
 bin/*.btk
 textures/
+compile*
