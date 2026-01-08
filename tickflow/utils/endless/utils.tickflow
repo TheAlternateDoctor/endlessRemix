@@ -8,7 +8,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x58
+        random 0x59
     endif
     switch
         case INDEX_agbBatter
@@ -1701,6 +1701,25 @@ loadNextGame:
                     set_func presequenceSub, nop
                     set_func lateLoaderSub, loadSpaceSoccerLate
                 endif
+            endif
+        break
+        case INDEX_agbPenguin
+            0xB2 index
+            if INDEX_agbPenguin //Stop games from being played next to each other
+                0xB2<1> is_debug
+                if 1
+                    goto 0xD0C6
+                endif
+                goto 0x70AD
+            else
+                0xB2<1> is_debug
+                if 1
+                    0xB3 debug_current_index, INDEX_agbPenguin
+                endif
+                set_func patternSub, sequenceShowtime
+                call loadShowtime
+                set_func presequenceSub, nop
+                set_func lateLoaderSub, nop
             endif
         break
         default //Restart until we get something damnit

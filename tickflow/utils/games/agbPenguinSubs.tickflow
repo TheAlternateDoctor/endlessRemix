@@ -1,0 +1,542 @@
+penguinInputTiming = 12
+freedInput = 13
+pressedButton = 14
+
+agbPenguin_prepareScene:
+	0x8B 0, 0
+	0x104<4> "gorilla_beat_2", 1
+	0x103<5> "monkey_ready_L", -1
+	0x106 "water2", -1, 0x78, 0, 0, 0, 0, 0x100, -0x17, 0, 0x100
+	0x101<1> 2
+	0x104<1> 1
+	0xB3 pressedButton, 0
+	async_call agbPenguin_monkeyAnimation
+stop
+//--------------------------------------------------- PENGUIN ACTIONS ----------------------------------------------------------------
+agbPenguin_penguinWhite:
+	async_call agbPenguin_whitePenguinSounds
+	async_call agbPenguin_monkey2beat
+	
+	0x106 "penguin_w_step_1", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30	// 1.0 beats
+	0x106 "penguin_w_step_2", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	0x100 0
+	
+	rest 0x30-8
+	0xB3 penguinInputTiming, 0
+	async_call agbPenguin_setpenguinInputTimings
+	async_call agbPenguin_checkFakeInputWhite
+stop 
+
+agbPenguin_penguinGray:
+	async_call agbPenguin_grayPenguinSounds
+	async_call agbPenguin_monkey3beat
+	
+	0x106 "penguin_g_step_1", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30	// 0.6666667 beats
+	0x106 "penguin_g_step_2", -1, 0x60, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30	// 0.33333334 beats
+	0x100 0
+	
+	rest 0x30-8
+	0xB3 penguinInputTiming, 0
+	async_call agbPenguin_setpenguinInputTimings
+	async_call agbPenguin_checkFakeInputGray
+stop 
+
+agbPenguin_penguinGrayEarly:
+	async_call agbPenguin_grayPenguinSoundsEarly
+	async_call agbPenguin_monkey2beat
+	
+	0x106 "penguin_g_step_2", -1, 0x60, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30	// 0.33333334 beats
+	0x100 0
+	
+	rest 0x30-8
+	0xB3 penguinInputTiming, 0
+	async_call agbPenguin_setpenguinInputTimings
+	async_call agbPenguin_checkFakeInputGray
+stop 
+
+agbPenguin_penguinBig:
+	async_call agbPenguin_bigPenguinSounds
+	async_call agbPenguin_monkey5beat
+	
+	0x106 "penguin_b_step_1", -1, 0x30, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30	// 1.0 beats
+	0x106 "penguin_b_step_2", -1, 0xC0, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x90	// 3.0 beats
+	0x100 0
+	
+	rest 0x30-8
+	0xB3 penguinInputTiming, 0
+	async_call agbPenguin_setpenguinInputTimings
+	async_call agbPenguin_checkFakeInputBig
+stop 
+
+agbPenguin_penguinBigEarly:
+	async_call agbPenguin_bigPenguinSoundsEarly
+	async_call agbPenguin_monkey4beat
+	
+	0x106 "penguin_b_step_2", -1, 0xC0, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x90	// 3.0 beats
+	0x100 0
+	
+	rest 0x30-8
+	0xB3 penguinInputTiming, 0
+	async_call agbPenguin_setpenguinInputTimings
+	async_call agbPenguin_checkFakeInputBig
+stop 
+
+//--------------------------------------------------------- SOUNDS -------------------------------------------------------------------
+agbPenguin_whitePenguinSounds:
+	play_sfx 0x10007F6
+	rest 0x18
+	play_sfx 0x10007F7
+	rest 0x18
+	play_sfx 0x10007F6
+	rest 0x18
+	play_sfx 0x10007F7
+	rest 0x18
+	play_sfx 0x10007F9
+stop 
+
+agbPenguin_grayPenguinSounds:
+	rest 0x30	// 1.0 beats
+agbPenguin_grayPenguinSoundsEarly:
+	play_sfx 0x10007FD
+	rest 0x30	// 1.0 beats
+	play_sfx 0x1000802
+	rest 0x30	// 1.0 beats
+	play_sfx 0x10007F4
+	rest 0x30	// 1.0 beats
+stop 
+
+agbPenguin_bigPenguinSounds:
+	rest 0x30	// 1.0 beats
+agbPenguin_bigPenguinSoundsEarly:
+	play_sfx 0x1000808
+	rest 0x60	// 2.0 beats
+	play_sfx 0x10007DE
+	rest 0x60	// 2.0 beats
+	play_sfx 0x10007F3
+	rest 0x60	// 2.0 beats
+stop 
+//---------------------------------------------------- MONKEY ACTIONS ---------------------------------------------------------------
+agbPenguin_monkey1beat:
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+stop 
+
+agbPenguin_monkey2beat:
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+stop 
+
+agbPenguin_monkey3beat:
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+stop 
+
+agbPenguin_monkey4beat:
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+stop 
+
+agbPenguin_monkey5beat:
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+	0x104<4> "gorilla_beat_0", 1
+	rest 0x30	// 1.0 beats
+stop
+//-------------------------------------------------- TIMING -------------------------------------------------------------------
+agbPenguin_setpenguinInputTimings:
+	rest 1
+	0xB3 penguinInputTiming, 1		// red circle
+	rest 1
+	0xB3 penguinInputTiming, 2		// small star
+	rest 2
+	0xB3 penguinInputTiming, 3		// big star
+	rest 3
+	0xB3 penguinInputTiming, 4		// ace
+	rest 2
+	0xB3 penguinInputTiming, 5		// big star
+	rest 3
+	0xB3 penguinInputTiming, 6		// small star
+	rest 1
+	0xB3 penguinInputTiming, 7		// red circle
+	rest 3
+	0xB3 penguinInputTiming, 0		// miss
+stop
+//-------------------------------------------------- INPUT LOGIC --------------------------------------------------------------------
+//-------------------------------------------------- White Penguin
+agbPenguin_checkFakeInputWhite:
+	set_countdown 0xF
+	0xB3 freedInput, 0
+	label 0x7009
+	
+	0x200<2> 0
+	if 1
+		0xB2 freedInput
+		if 1
+			async_call agbPenguin_showInputAnimationWhite
+			stop 
+		endif 
+	else 
+		0xB3 freedInput, 1
+	endif 
+	
+	0x106 "penguin_w_stay", -1, 2, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 1
+	
+	dec_countdown 
+	get_countdown 
+	if_geq 0
+		goto 0x7009
+	endif 
+	
+	async_call agbPenguin_showFailedInputWhite
+stop
+
+//-------------------------------------------------- Gray Penguin 
+agbPenguin_checkFakeInputGray:
+	set_countdown 0xF
+	0xB3 freedInput, 0
+	label 0x7009
+	
+	0x200<2> 0
+	if 1
+		0xB2 freedInput
+		if 1
+			async_call agbPenguin_showInputAnimationGray
+			stop 
+		endif 
+	else 
+		0xB3 freedInput, 1
+	endif 
+	
+	0x106 "penguin_g_stay", -1, 1, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 1
+	
+	dec_countdown 
+	get_countdown 
+	if_geq 0
+		goto 0x7009
+	endif 
+	
+	async_call agbPenguin_showFailedInputGray
+stop
+
+//-------------------------------------------------- Big Penguin 
+agbPenguin_checkFakeInputBig:
+	set_countdown 0xF
+	0xB3 freedInput, 0
+	label 0x7009
+	
+	0x200<2> 0
+	if 1
+		0xB2 freedInput
+		if 1
+			async_call agbPenguin_showInputAnimationBig
+			stop 
+		endif 
+	else 
+		0xB3 freedInput, 1
+	endif 
+	
+	0x106 "penguin_b_stay", -1, 1, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 1
+	
+	dec_countdown 
+	get_countdown 
+	if_geq 0
+		goto 0x7009
+	endif 
+	
+	async_call agbPenguin_showFailedInputBig
+stop
+//-------------------------------------------- PENGUIN ANIMATIONS -------------------------------------------------------------------
+//-------------------------------------------- White penguin
+agbPenguin_showInputAnimationWhite:
+	0xB2 penguinInputTiming
+	switch 
+		case 1
+			async_call agbPenguin_barelyWhitePenguin
+			break 
+		case 2
+			async_call agbPenguin_succesWhitePenguin
+			break 
+		case 3
+			async_call agbPenguin_succesWhitePenguin
+			break 
+		case 4
+			async_call agbPenguin_succesWhitePenguin
+			break 
+		case 5
+			async_call agbPenguin_succesWhitePenguin
+			break 
+		case 6
+			async_call agbPenguin_succesWhitePenguin
+			break 
+		case 7
+			async_call agbPenguin_barelyWhitePenguin
+			break 
+	endswitch 
+stop 
+
+agbPenguin_succesWhitePenguin:
+	0x104<4> "gorilla_beat_1", 1
+	0x103<5> "monkey_beat", -1
+	random 4
+	switch
+		case 0
+			0x106 "penguin_w_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		
+		case 1
+			0x106 "penguin_w_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		
+		case 2
+			0x106 "penguin_w_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		
+		case 3
+			0x106 "penguin_w_special", -1, 0x9C, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+	endswitch
+	rest 0x30	// 1.0 beats
+	
+	play_sfx 0x10007FA
+	
+	rest 0x18	// 0.5 beats
+	play_sfx 0x10007FC
+stop
+
+agbPenguin_barelyWhitePenguin:
+	0x104<4> "gorilla_beat_1", 1
+	0x103<5> "monkey_wait", -1
+	0x106 "penguin_w_miss", -1, 0x6A, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x60	// 2.0 beats
+	0x106 "splash", -1, 0x40, 0, 1, -0x12, 0x30, 0x100, -0x12, 0x30, 0x100
+	play_sfx 0x10007FF
+
+stop 
+
+agbPenguin_showFailedInputWhite:
+	0x106 "penguin_w_miss", -1, 0x6A, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x60
+	0x106 "splash", -1, 0x40, 0, 1, -0x12, 0x30, 0x100, -0x12, 0x30, 0x100
+	play_sfx 0x10007FF
+stop 
+
+//-------------------------------------------- Gray penguin
+agbPenguin_showInputAnimationGray:
+	0xB2 penguinInputTiming
+	switch 
+		case 1
+			async_call agbPenguin_barelyGrayPenguin
+			break 
+		case 2
+			async_call agbPenguin_succesGrayPenguin
+			break 
+		case 3
+			async_call agbPenguin_succesGrayPenguin
+			break 
+		case 4
+			async_call agbPenguin_succesGrayPenguin
+			break 
+		case 5
+			async_call agbPenguin_succesGrayPenguin
+			break 
+		case 6
+			async_call agbPenguin_succesGrayPenguin
+			break 
+		case 7
+			async_call agbPenguin_barelyGrayPenguin
+			break 
+	endswitch 
+stop 
+
+agbPenguin_succesGrayPenguin:
+	0x104<4> "gorilla_beat_1", 1
+	0x103<5> "monkey_beat", -1
+	random 4
+	switch
+		case 0
+			0x106 "penguin_g_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		
+		case 1
+			0x106 "penguin_g_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		
+		case 2
+			0x106 "penguin_g_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+		
+		case 3
+			0x106 "penguin_g_special", -1, 0x9C, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+		break
+	endswitch
+	
+	rest 0x30	// 1.0 beats
+	
+	play_sfx 0x10007FA
+	
+	rest 0x18	// 0.5 beats
+	play_sfx 0x10007FB
+stop 
+
+agbPenguin_barelyGrayPenguin:
+	0x104<4> "gorilla_beat_1", 1
+	0x103<5> "monkey_wait", -1
+	0x106 "penguin_g_miss", -1, 0x6A, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x60	// 2.0 beats
+	0x106 "splash", -1, 0x40, 0, 1, -0x12, 0x30, 0x100, -0x12, 0x30, 0x100
+	play_sfx 0x10007FF
+stop 
+
+agbPenguin_showFailedInputGray:
+	0x106 "penguin_g_miss", -1, 0x6A, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x60
+	0x106 "splash", -1, 0x40, 0, 1, -0x12, 0x30, 0x100, -0x12, 0x30, 0x100
+	play_sfx 0x10007FF
+stop 
+
+//-------------------------------------------- Big penguin
+agbPenguin_showInputAnimationBig:
+	0xB2 penguinInputTiming
+	switch 
+		case 1
+			async_call agbPenguin_barelyBigPenguin
+			break 
+		case 2
+			async_call agbPenguin_succesBigPenguin
+			break 
+		case 3
+			async_call agbPenguin_succesBigPenguin
+			break 
+		case 4
+			async_call agbPenguin_succesBigPenguin
+			break 
+		case 5
+			async_call agbPenguin_succesBigPenguin
+			break 
+		case 6
+			async_call agbPenguin_succesBigPenguin
+			break 
+		case 7
+			async_call agbPenguin_barelyBigPenguin
+			break 
+	endswitch 
+stop 
+
+agbPenguin_succesBigPenguin:
+	0x104<4> "gorilla_beat_1", 1
+	0x103<5> "monkey_beat", -1
+	0x106 "penguin_b_jump", -1, 0x90, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30	// 1.0 beats
+	
+	play_sfx 0x10007FA
+	
+	rest 0x18	// 0.5 beats
+	play_sfx 0x10007FB
+stop 
+
+agbPenguin_barelyBigPenguin:
+	0x104<4> "gorilla_beat_1", 1
+	0x103<5> "monkey_wait", -1
+	0x106 "penguin_b_miss", -1, 0x6A, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x60	// 2.0 beats
+	0x106 "splash", -1, 0x40, 0, 1, -0x12, 0x30, 0x100, -0x12, 0x30, 0x100
+	play_sfx 0x10007FF
+
+stop 
+
+agbPenguin_showFailedInputBig:
+	0x106 "penguin_b_miss", -1, 0x6A, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x60
+	0x106 "splash", -1, 0x40, 0, 1, -0x12, 0x30, 0x100, -0x12, 0x30, 0x100
+	play_sfx 0x10007FF
+stop 
+//-----------------------------------------------------------------------------------------------------------------------------------
+
+agbPenguin_monkeyAnimation:
+	label 0x9002
+		0x200<2> 0              
+		if 1
+			play_sfx 0x1000800
+			0xB3 pressedButton, 1
+			0x104<4> "gorilla_beat_1", 1
+			0x103<5> "monkey_wait", -1
+			
+			0xB2 pressedButton
+			if 1
+				rest 0x60
+				0x103<5> "monkey_ready_S", -1
+				rest 0x2
+				0xB3 pressedButton, 0	
+			endif
+			
+			label 0x9004
+			0x200<2> 0
+			if 1
+				rest 1
+				goto 0x9004
+			endif
+			
+		endif
+	rest 1
+	label 0x9003
+	goto 0x9002
+stop
+//-----------------------------------------------------------------------------------------------------------------------------------
+agbPenguin_prepareScene2:
+	0x103<5> "monkey_ready_L", -1
+	0x104<4> "gorilla_beat_2", 1
+	0x106 "water2", -1, 0x78, 0, 0, 0, 0, 0x100, -0x17, 0, 0x100
+	0x101<1> 2
+	0x104<1> 1
+stop
+
+agbPenguin_prepareIntroBee:
+	0x106 "hammer_2", -1, 0x210, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	0x106 "hatDown", -1, 0x168, 0, 1, -0x9D, -0x92, 0x100, -0x9D, 0x9, 0x100
+	0x106 "light", -1, 0x168, 0, 1, -0x9D, -0x92, 0x100, -0x9D, 0x9, 0x100
+	0x106 "hatDown_2", -1, 0x210, 0, 1, -0x9D, 0x9, 0x100, -0x9D, 0x9, 0x100
+	0x106 "monkeyStart", -1, 0x210, 0, 1, 0, 0, 0x100, 0, 0, 0x100
+	rest 0x30
+	async_call agbPenguin_prepareScene2
+	rest 0xF0
+	rest 0x68
+	async_call agbPenguin_monkeyAnimation
+	0x104<4> "gorilla_ready_01", 1
+stop
+
+agbPenguin_prepareScene3:
+	0x103<5> "monkey_ready_L", -1
+	0x104<4> "gorilla_ready_02", 1
+	0x106 "water2", -1, 0x78, 0, 0, 0, 0, 0x100, -0x17, 0, 0x100
+	0x101<1> 2
+	0x104<1> 1
+	async_call agbPenguin_monkeyAnimation
+stop
