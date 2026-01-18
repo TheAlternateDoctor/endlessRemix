@@ -2349,9 +2349,9 @@ loadRhythmDoctorLate:
 rest 0xC
 0xB2<1> cellanim_slot
 if 1
-    set_sfx 5, u"GROUP_POMERANIAN"
+    set_sfx 5, u"GROUP_PUFF_PIECE"
 else
-    set_sfx 4, u"GROUP_POMERANIAN"
+    set_sfx 4, u"GROUP_PUFF_PIECE"
 endif
 stop
 

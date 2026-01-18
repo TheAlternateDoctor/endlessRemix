@@ -4,10 +4,56 @@ stop
 
 regularsvtnicoleonly:
 play_sfx 0x10011AA
-0x101 0
-0x103 0
-rest 0
+0x2B<1> SCENE_REC_7bgDoctor
+switch
+case 5
+    0x102 0
+    break
+case 4
+    0x101 0
+default
+    0x104 0
+    break
+endswitch
 0x100 0, 0x30
+stop
+
+regularsvtnicoledouble:
+play_sfx 0x10011AA
+0x2B<1> SCENE_REC_7bgDoctor
+switch
+case 5
+    0x102 0
+    break
+case 4
+    0x101 0
+default
+    0x104 0
+    break
+endswitch
+0x100 0, 0x60
+stop
+
+regularsvtnicolehalf:
+play_sfx 0x10011AA
+0x2B<1> SCENE_REC_7bgDoctor
+switch
+case 5
+    0x102 0
+    break
+case 4
+    0x101 1
+    0x104<1> 0
+    break
+default
+    0x104 0
+    break
+endswitch
+0x100 0, 0x18
+rest 0x18
+if 4
+    0x106<2>
+endif
 stop
 
 coleoffbeat:

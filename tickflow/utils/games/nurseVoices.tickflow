@@ -130,6 +130,17 @@ play_sfx 0x1000B1C
 rest 0x30
 stop
 
+nurselongvoice:
+rest 0xC
+rest 0x18
+play_sfx 0x1000B1B
+unrest 0x6
+rest 0x30
+rest 0x30
+play_sfx 0x1000B1C
+rest 0x30
+stop
+
 nurselongvoiceget:
 rest 0xC
 rest 0x18
@@ -145,6 +156,7 @@ play_sfx 0x1000B1A
 stop
 
 nurselongvoicesetgo:
+set_cat 0
 //play_sfx 0x1000B1A
 rest 0x18
 rest 0x18
@@ -205,4 +217,19 @@ play_sfx 0x1000B16
 rest 0x30 
 rest 0x18
 play_sfx 0x1000B19
+stop
+
+rhythmDoctorNurseCueInHalf:
+async_call nurseshortready
+rest 0x30
+async_call nurseshortsub
+async_call nurseshortvoice
+stop
+
+rhythmDoctorNurseCueInNormal:
+async_call nurseregularready
+async_call nurseregularreadysub0
+rest 0x60
+async_call nurseregularvoice
+async_call nurseshortvoice
 stop

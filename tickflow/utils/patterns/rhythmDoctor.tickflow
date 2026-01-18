@@ -3,19 +3,23 @@
 presequenceRhythmDoctor:
 async_call loadRhythmDoctorVoices
 rest 0x18
-random 2
-    set_condvar 1
+random 3
 switch
-case 1
-    async_call ianlongvoiceremix
-    0xB3 game_state, 1
-    break
-default
+case 0
     0xB3 game_state, 0
+    rest 0x48
+    async_call nurseregularvoice
     break
-endswitch
-rest 0x48
-async_call nurseregularvoice
+case 1
+    0xB3 game_state, 1
+    rest 0x48
+    async_call nurseregularvoice
+    break
+case 2
+    0xB3 game_state, 2
+    rest 0x18
+    async_call nurselongvoicesetgo
+    break
 stop
 
 sequenceRhythmDoctor:
@@ -28,53 +32,86 @@ sequenceRhythmDoctor:
     rest 0x10
 	0xB3 engine_loaded, SCENE_REC_7bgDoctor
 	0xB3 index, INDEX_7bgDoctor
-    0x109
-    0x108<1> 0
-    0x101 1, 0, 0
-    0x109<1>
+    async_call rhythmDoctorSetup
     fade<1> 1,1,1
     set_cat 0x7D0
     0xB2 game_state
     switch
     case 0
-        0xB3 score_add, 10
+        0xB3 score_add, 8
         async_call rhythmDoctor1
         break
     case 1
-        0xB3 score_add, 10
+        0xB3 score_add, 12
         async_call rhythmDoctor2
+        break
+    case 2
+        0xB3 score_add, 8
+        async_call rhythmDoctor3
         break
     endswitch
     input 1
+    set_cat 0
+    rest 0x30*16-0x10
+    pan 2, 0, 0
 stop
 
 rhythmDoctor1:
     async_call regularsvtnicoleonly
-    rest 0x30
-    async_call ianlongvoice
-    rest 0x30
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
     async_call regularsvtnicoleonly
     rest 0x60
     async_call regularsvtnicoleonly
     rest 0x60
-    async_call combinationsvtcole
-    rest 0xC0
-    async_call combinationsvtcole
-    rest 0x30
-	play_sfx 0x1000FF9 //ian stop
-    rest 0x90
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
 	play_sfx 0x1000FF4 //nurse stop
     async_call regularsvtnicoleonly
     rest 0x60
 stop
 
 rhythmDoctor2:
-    async_call combinationsvtcole
-    rest 0xC0
-    async_call combinationsvtcole
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call rhythmDoctorNurseCueInHalf, 0x30
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicoleonly
+    rest 0x60
+    async_call regularsvtnicolehalf
     rest 0x30
-	play_sfx 0x1000FF9 //ian stop
-    rest 0x90
+    async_call regularsvtnicolehalf
+    rest 0x30
+    async_call regularsvtnicolehalf
+    rest 0x30
+    async_call regularsvtnicolehalf
+    rest 0x30
+    async_call regularsvtnicolehalf
+    rest 0x30
+    async_call regularsvtnicolehalf
+    rest 0x30
+    async_call regularsvtnicolehalf
+    rest 0x18
+	play_sfx 0x1000FF4 //nurse stop
+    rest 0x18
+    async_call regularsvtnicolehalf
+stop
+
+rhythmDoctor3:
+    async_call regularsvtnicoledouble
+    rest 0xC0
+    async_call nurseregularvoice, 0x30
+    async_call nurseregularsub, 0x30
+    async_call regularsvtnicoledouble
+    rest 0xC0
     async_call regularsvtnicoleonly
     rest 0x60
     async_call regularsvtnicoleonly
@@ -86,35 +123,46 @@ rhythmDoctor2:
     rest 0x60
 stop
 
-sequenceRhythmDoctorPractice:
-	set_cat 0
-    rest 0x8
-	call changeEngine
-	engine 0x3C
-	sub 4
-	0x29<2> 
-    rest 0x10
-	0xB3 engine_loaded, 0x3C  
-    input 1
-    fade<1> 1,1,1
-    set_cat 0x7D0
-    async_call rdBeatAnim
-    rest 0x30
-    async_call rdBeatAnim
-    rest 0x30
-    async_call regularsvtnicoleonly
-    rest 0x60
-    async_call regularsvtnicoleonly
-    rest 0x60
-    async_call regularsvtnicoleonly
-    rest 0x60
-    async_call regularsvtnicoleonly
-    rest 0x60
-    async_call regularsvtnicoleonly
-    rest 0x60
-    async_call regularsvtnicoleonly
-    rest 0x60
-	play_sfx 0x1000FF4 //nurse stop
-    async_call regularsvtnicoleonly
-    rest 0x60
+
+rhythmDoctorWindowDance:
+    pan_gradual 2, 1, 1, 0xC0, 320, 0
+    rest 0xC0
+    pan 2, -310, 0
+    pan_gradual 2, 1, 1, 0x240, 320, 0
+    rest 0x30*12
+    pan 2, -310, 0
+    pan_gradual 2, 1, 1, 0xC0, 320, 0
+    rest 0xC0
+    pan 2, -310, 0
+    pan_gradual 2, 1, 1, 0x90, 320, 0
+    rest 0xC0
+stop
+
+rhythmDoctorSetup:
+    0x2B<1> SCENE_REC_7bgDoctor
+    switch
+    case 1 //ATT Hospital
+        0x106<3> 1
+        zoom 3, 120, 120
+        async_call rhythmDoctorWindowDance
+    case 0 //ATT Cole
+        0x101 2
+        0x107<1> 1
+        break
+    case 2 //ATT Nicole
+    case 4 //Puff Piece normal
+        0x101 0
+        0x107<1> 1
+        break
+    case 3 //ATT Together
+        0x107<1> 1
+    case 5 //Pomeranian
+        0x101 1
+        break
+    endswitch
+    //Puff Piece throwing (missing the windup)
+    //Windup seemingly beat anim
+    // 0x101 1
+    0x101<1> 1
+    0x104<1> 0
 stop
