@@ -41,6 +41,10 @@ sequenceRiftYoga:
         async_call riftYoga4
         break
     endswitch
+    rest 0x30*16
+	async_call participantBeatAnimEnd
+	async_call fanaticBeatAnimEnd
+	async_call doveBeatAnimEnd
 stop
 
 riftYoga1:
