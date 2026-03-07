@@ -82,8 +82,6 @@ INDEX_tutorial = 0x43
 // Indexes - Recreations
 INDEX_rvlBasket = 0x44
 INDEX_ntrAssembly = 0x45
-INDEX_rvlComedians = 0x46
-INDEX_tpaFrontier = 0x47
 INDEX_skiMeat = 0x48
 INDEX_swfSoumen = 0x49
 INDEX_agbMetro = 0x4A

@@ -6084,7 +6084,6 @@ else
         0x2B SCENE_ctrSumou, 5
         break
     endswitch
-    endswitch
     set_effect 5, u"rom:/effect/agbRabbit.zlib", -1
     game_cellanim 0x3C, 5
     0xB2 engine_loaded
