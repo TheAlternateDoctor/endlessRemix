@@ -17,3 +17,8 @@ To install Endless Remix, do the following:
 Each minigame has its own tickflow file under tickflow/utils/patterns. To add a new pattern, simply go to the file for the minigame of your choice, add a new sub under the name `minigameX` (with `minigame` the name of the minigame, and `X` the place your sub is), and start making cues. Remember to check for additional information at the top of the file.
 To add it to the pool of patterns, edit `sequenceMinigame` by adding it to the switch case containing the patterns, and incrementing the `random` instruction before it by one.
 Minigames requiring a countin, or any kind of pre-pattern sfx can use the `preSequenceMinigame` sub, which starts 5 beats before the transition.
+
+# How to download
+
+Last stable is available through the [Release Tab](https://github.com/TheAlternateDoctor/endlessRemix/releases/latest)!
+Last version is available through [Actions](https://github.com/TheAlternateDoctor/endlessRemix/actions)! A mirror is also available [here for RHMPatch](https://nightly.link/TheAlternateDoctor/endlessRemix/workflows/rhmpatch/main), and [here for Saltwater](https://nightly.link/TheAlternateDoctor/endlessRemix/workflows/saltwater/main).
