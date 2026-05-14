@@ -43,6 +43,7 @@
 #include utils/games/riftYoga.tickflow
 #include utils/games/ntrSoccerSubs.tickflow
 #include utils/games/agbPenguinSubs.tickflow
+#include utils/games/ntrLoveLabSubs.tickflow
 
 #include utils/patterns/basketGirls.tickflow
 #include utils/patterns/spaceball.tickflow
@@ -128,6 +129,7 @@
 #include utils/patterns/riftYoga.tickflow
 #include utils/patterns/spaceSoccer.tickflow
 #include utils/patterns/showtime.tickflow
+#include utils/patterns/loveLab.tickflow
 
 #include utils/patterns/practicePatterns.tickflow
 

@@ -42,6 +42,7 @@
 #include utils/games/riftYoga.tickflow
 #include utils/games/ntrSoccerSubs.tickflow
 #include utils/games/agbPenguinSubs.tickflow
+#include utils/games/ntrLoveLabSubs.tickflow
 
 #include utils/patterns/basketGirls.tickflow
 #include utils/patterns/spaceball.tickflow
@@ -127,6 +128,7 @@
 #include utils/patterns/riftYoga.tickflow
 #include utils/patterns/spaceSoccer.tickflow
 #include utils/patterns/showtime.tickflow
+#include utils/patterns/loveLab.tickflow
 
 #include utils/performance/utils.tickflow
 #include utils/performance/drumPractice.tickflow
@@ -361,7 +363,10 @@ endif
 0xB2<1> lives_enabled
 call updateScore
 async_call speedup
-async_call lifeScoreCounter
+0xB2<1> is_debug
+if_neq 1
+	async_call lifeScoreCounter
+endif
 call playPataponPracticePattern
 call playBasketInterlude
 call playRiftYogaPracticePattern

@@ -196,7 +196,7 @@ stop
 
 baseWheel:
     label 0x70AE
-    random 0x54
+    random totalIndexes
     switch
         case INDEX_agbBatter
             0xB2 engine_loaded
@@ -877,7 +877,7 @@ return
 
 recWheel:
     label 0x70AF
-    random 0x55
+    random totalIndexes
     switch
     case INDEX_rvlBasket
         0xB2 index
@@ -975,6 +975,44 @@ recWheel:
             endif
         endif
     break
+    case INDEX_ntrSoccer
+        0xB2 index
+        if INDEX_ntrSoccer //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            if SCENE_ntrIdol
+                goto 0x70AF
+            else
+                set_func patternSub, sequenceEmptySpaceSoccer
+                call loadSpaceSoccer
+                set_func lateLoaderSub, loadSpaceSoccerLate
+            endif
+        endif
+    break
+    case INDEX_agbPenguin
+        0xB2 index
+        if INDEX_agbPenguin //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            set_func patternSub, sequenceEmptyShowtime
+            call loadShowtime
+            set_func lateLoaderSub, nop
+        endif
+    break
+    case INDEX_ntrLoveLab
+        0xB2 index
+        if INDEX_ntrLoveLab //Stop games from being played next to each other
+            goto 0x70AF
+        else
+            if SCENE_ntrIdol
+                goto 0x70AF
+            else
+                set_func patternSub, sequenceEmptyLoveLab
+                call loadLoveLab
+                set_func lateLoaderSub, nop
+            endif
+        endif
+    break
     default //Restart until we get something damnit
         goto 0x70AF
     break
@@ -983,7 +1021,7 @@ return
 
 otherWheel:
     label 0x70B0
-    random 0x54
+    random totalIndexes
     switch
     case INDEX_skiMeat //Open Sesame Tofu!
         0xB2 index
@@ -1030,6 +1068,16 @@ otherWheel:
         else
             set_func patternSub, sequenceEmptyPatapon
             call loadPatapon
+            set_func lateLoaderSub, nop
+        endif
+    break
+    case INDEX_riftYoga
+        0xB2 index
+        if INDEX_riftYoga //Stop games from being played next to each other
+            goto 0x70B0
+        else
+            set_func patternSub, sequenceEmptyRiftYoga
+            call loadRiftYoga
             set_func lateLoaderSub, nop
         endif
     break

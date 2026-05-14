@@ -1,0 +1,86 @@
+loveLabMeasures = 15
+
+sequenceLoveLab:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_ntrLoveLab
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_ntrLoveLab
+	0xB3 index, INDEX_ntrLoveLab
+	0x112<3>
+	0x8B<1> 0, 14, -43, 28
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+    0xB3 score_add, 0
+    0xB3 loveLabMeasures, 4
+	async_call lovelabRemixTransition
+    random 4
+    switch
+    case 0
+        0xB4 score_add, 1
+        0xB4 loveLabMeasures, -1
+        call lovelabOneHeartStart
+        break
+    // case 1
+    //     0xB4 score_add, 1
+    //     0xB4 loveLabMeasures, -1
+    //     call lovelabOneHeartOffbeatStart
+    //     break
+    case 1
+        0xB4 score_add, 2
+        0xB4 loveLabMeasures, -1
+        call lovelabTwoHeartStart
+        break
+    case 2
+        0xB4 score_add, 3
+        0xB4 loveLabMeasures, -2
+        call lovelabThreeHeartStart
+        break
+    case 3
+        0xB4 score_add, 5
+        0xB4 loveLabMeasures, -2
+        call lovelabFiveHeartStart
+        break
+    endswitch
+    label 0x7009
+    set_condvar 5
+    0xB2 loveLabMeasures
+    if 1
+        random 3
+    else
+        random 5
+    endif
+    switch
+    case 0
+        0xB4 score_add, 1
+        0xB4 loveLabMeasures, -1
+        call lovelabOneHeart
+        break
+    case 1
+        0xB4 score_add, 1
+        0xB4 loveLabMeasures, -1
+        rest 0x18
+        call lovelabOneHeartOffbeat
+        break
+    case 2
+        0xB4 score_add, 2
+        0xB4 loveLabMeasures, -1
+        call lovelabTwoHeart
+        break
+    case 3
+        0xB4 score_add, 3
+        0xB4 loveLabMeasures, -2
+        call lovelabThreeHeart
+        break
+    case 4
+        0xB4 score_add, 5
+        0xB4 loveLabMeasures, -2
+        call lovelabFiveHeart
+        break
+    endswitch
+    goto 0x7009
+stop

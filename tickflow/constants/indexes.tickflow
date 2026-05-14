@@ -96,3 +96,6 @@ INDEX_ntrDjSchool = 0x54
 INDEX_riftYoga = 0x55
 INDEX_ntrSoccer = 0x56
 INDEX_agbPenguin = 0x57
+INDEX_ntrLoveLab = 0x58
+
+totalIndexes = 0x58

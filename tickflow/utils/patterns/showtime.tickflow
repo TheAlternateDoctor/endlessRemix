@@ -11,14 +11,26 @@ sequenceShowtime:
     fade<1> 1,1,1
     set_cat 0x7D0
     input 1
-    random 1
 	async_call agbPenguin_prepareScene
-    async_call showtime3
-    // switch
-    // case 0
-    //     0xB3 score_add, 4
-    //     async_call basketGirls1
-    // endswitch
+	random 4
+    switch
+    case 0
+        0xB3 score_add, 4
+        async_call showtime1
+		break
+    case 1
+        0xB3 score_add, 4
+        async_call showtime2
+		break
+    case 2
+        0xB3 score_add, 3
+        async_call showtime3
+		break
+    case 3
+        0xB3 score_add, 4
+        async_call showtime4
+		break
+    endswitch
 stop
 
 showtime1:

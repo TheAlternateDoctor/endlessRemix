@@ -932,6 +932,25 @@ sequenceEmptyPatapon:
     set_cat 0x7D0
 stop
 
+sequenceEmptyRiftYoga:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_riftYoga
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_riftYoga
+	0xB3 index, INDEX_riftYoga
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+	async_call yogaSetup
+    label 0x7009
+        call yogaBeatAnims
+    goto 0x7009
+stop
+
 sequenceEmptyPowerCalligraphy:
 	set_cat 0
     rest 0x8
@@ -1368,4 +1387,58 @@ sequenceEmptyDjSchool:
 	0xB3 index, INDEX_ntrDjSchool
     fade<1> 1,1,1
     set_cat 0x7D0
+stop
+
+sequenceEmptySpaceSoccer:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_ntrSoccer
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_ntrSoccer
+	0xB3 index, INDEX_ntrSoccer
+    async_call ntrSoccer_prepareScene
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+stop
+
+sequenceEmptyShowtime:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_agbPenguin
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_agbPenguin
+	0xB3 index, INDEX_agbPenguin
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+	async_call agbPenguin_prepareScene
+    label 0x7009
+        async_call agbPenguin_monkey1beat
+        rest 0x30
+    goto 0x7009
+stop
+
+sequenceEmptyLoveLab:
+	set_cat 0
+    rest 0x8
+	call changeEngine
+	engine SCENE_REC_ntrLoveLab
+	sub 4
+	0x29<2> 
+    rest 0x10
+	0xB3 engine_loaded, SCENE_REC_ntrLoveLab
+	0xB3 index, INDEX_ntrLoveLab
+	0x112<3>
+	0x8B<1> 0, 14, -43, 28
+    fade<1> 1,1,1
+    set_cat 0x7D0
+    input 1
+	async_call lovelabSetup
 stop

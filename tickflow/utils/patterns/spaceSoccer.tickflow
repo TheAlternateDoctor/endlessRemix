@@ -12,13 +12,29 @@ sequenceSpaceSoccer:
     fade<1> 1,1,1
     set_cat 0x7D0
     input 1
-    random 1
-    // switch
-    // case 0
-    //     0xB3 score_add, 4
-    //     async_call basketGirls1
-    // endswitch
-    async_call spacesoccer5
+    random 5
+    switch
+    case 0
+        0xB3 score_add, 14
+        async_call spacesoccer1
+        break
+    case 1
+        0xB3 score_add, 12
+        async_call spacesoccer2
+        break
+    case 2
+        0xB3 score_add, 11
+        async_call spacesoccer3
+        break
+    case 3
+        0xB3 score_add, 12
+        async_call spacesoccer4
+        break
+    case 4
+        0xB3 score_add, 12
+        async_call spacesoccer5
+        break
+    endswitch
     rest 0x30*5
     async_call ntrSoccer_inputKickRespawn
     rest 0xC0
